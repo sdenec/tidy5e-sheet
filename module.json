@@ -11,5 +11,5 @@
 	"styles": ["/styles/tidy5e-sheet.css"],
   "url": "https://github.com/sdenec/tidy5e-sheet",
   "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",
-  "download": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/tidy5e-sheet.zip"
+  "download": "https://github.com/sdenec/tidy5e-sheet/raw/master/tidy5e-sheet.zip"
 }
