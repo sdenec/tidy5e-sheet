@@ -1,5 +1,5 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-	<div class="tidy5e-sheet{{#if actor.flags.tidy5e-sheet.allow-delete}} allow-delete{{/if}}">
+	<div class="tidy5e-sheet">
 		{{!-- Sheet Header --}}
 		<header class="flex tidy5e-header">
 			<div class="profile hp-{{data.attributes.hp.value}} deathsuccess-{{data.attributes.death.success}} deathfailure-{{data.attributes.death.failure}}">
@@ -144,7 +144,7 @@
 		</nav>
 
 		{{!-- NPC Sheet Body --}}
-		<section class="sheet-body">
+		<section class="sheet-body{{#if actor.flags.tidy5e-sheet.tidy5e-allow-delete}} tidy5e-allow-delete{{/if}}">
 
 			<div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
 
