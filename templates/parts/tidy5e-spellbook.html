@@ -1,0 +1,136 @@
+<div class="inventory-filters spellbook-filters">
+  <ul class="filter-list flexrow" data-filter="spellbook">
+    <li class="filter-title">{{localize "DND5E.Filter"}}</li>
+    <li class="filter-item" data-filter="action">{{localize "DND5E.Action"}}</li>
+    <li class="filter-item" data-filter="bonus">{{localize "DND5E.BonusAction"}}</li>
+    <li class="filter-item" data-filter="reaction">{{localize "DND5E.Reaction"}}</li>
+    <li class="filter-item" data-filter="concentration">{{localize "DND5E.AbbreviationConc"}}</li>
+    <li class="filter-item" data-filter="ritual">{{localize "DND5E.Ritual"}}</li>
+    <li class="filter-item" data-filter="prepared">{{localize "DND5E.Prepared"}}{{#if preparedSpells}} ({{preparedSpells}}){{/if}}</li>
+    <li class="delete-lock"><div class="allow-delete-toggle"><span class="delete-disabled" title="show item delete button"><i class="fas fa-lock"></i>Delete disabled</span><span class="delete-enabled" title="hide item delete button"><i class="fas fa-unlock"></i>Delete enabled</span></div></li>
+  </ul>
+</div>
+
+<ol class="inventory-list">
+  {{#each spellbook as |section|}}
+  <li class="item flexrow inventory-header spellbook-header">
+    <div class="item-name flexrow">
+      <h3>{{section.label}}</h3>
+    </div>
+
+    <div class="spell-detail spell-slots">
+      {{#if section.usesSlots}}
+      <input type="text" name="data.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
+      data-dtype="Number"/>
+      <span class="sep"> / </span>
+      <span class="spell-max" data-level="{{section.prop}}" data-slots="{{section.slots}}">
+        {{{section.slots}}}
+        {{#if ../editable}}
+        <a class="slot-max-override" title="{{localize 'DND5E.SpellProgOverride'}}">
+          <i class="fas fa-pencil-alt"></i>
+        </a>
+        {{/if}}
+        {{ else }}
+        <span class="spell-slots">{{{section.uses}}}</span>
+        <span class="sep"> / </span>
+        <span class="spell-max">{{{section.slots}}}</span>
+        {{/if}}
+      </div>
+
+      <div class="spell-detail spell-school" title="{{localize "DND5E.SpellSchool"}}">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll-old" class="fas fa-scroll-old" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288v-57.37c0-4.24-1.69-8.31-4.69-11.31L512 256l27.31-27.31c3-3 4.69-7.07 4.69-11.31v-50.75c0-4.24-1.69-8.31-4.69-11.31L512 128l26.86-26.86c3.27-3.27 5.21-7.84 4.86-12.45C539.98 39.15 498.48 0 448 0H111.59C121.74 13.41 128 29.92 128 48v137.37c0 4.24 1.69 8.31 4.69 11.31L160 224l-27.31 27.31c-3 3-4.69 7.07-4.69 11.31V416c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zm187.31-23.88L416 416l-27.31-27.31c-3-3-7.07-4.69-11.31-4.69H288v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H454.63c-4.25 0-8.32 1.69-11.32 4.69z"></path></svg>
+      </div>
+      <div class="spell-detail spell-action" title="{{localize "DND5E.SpellUsage"}}"><i class="fas fa-hourglass"></i></div>
+      <div class="spell-detail spell-target" title="{{localize "DND5E.SpellTarget"}}">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hand-sparkles" class="fas fa-hand-sparkles" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M106.66,170.64l.09,0,49.55-20.65a7.32,7.32,0,0,0,3.68-6h0a7.29,7.29,0,0,0-3.68-6l-49.57-20.67-.07,0L86,67.68a6.66,6.66,0,0,0-11.92,0l-20.7,49.63-.05,0L3.7,138A7.29,7.29,0,0,0,0,144H0a7.32,7.32,0,0,0,3.68,6L53.27,170.6l.07,0L74,220.26a6.65,6.65,0,0,0,11.92,0l20.69-49.62ZM471.38,467.41l-1-.42-1-.5a38.67,38.67,0,0,1,0-69.14l1-.49,1-.43,37.49-15.63,15.63-37.48.41-1,.47-.95c3.85-7.74,10.58-13.63,18.35-17.34,0-1.33.25-2.69.27-4V144a32,32,0,0,0-64,0v72a8,8,0,0,1-8,8H456a8,8,0,0,1-8-8V64a32,32,0,0,0-64,0V216a8,8,0,0,1-8,8H360a8,8,0,0,1-8-8V32a32,32,0,0,0-64,0V216a8,8,0,0,1-8,8H264a8,8,0,0,1-8-8V64a32,32,0,0,0-64,0v241l-23.59-32.49a40,40,0,0,0-64.71,47.09L229.3,492.21A48.07,48.07,0,0,0,268.09,512H465.7c19.24,0,35.65-11.73,43.24-28.79l-.07-.17ZM349.79,339.52,320,351.93l-12.42,29.78a4,4,0,0,1-7.15,0L288,351.93l-29.79-12.41a4,4,0,0,1,0-7.16L288,319.94l12.42-29.78a4,4,0,0,1,7.15,0L320,319.94l29.79,12.42a4,4,0,0,1,0,7.16ZM640,431.91a7.28,7.28,0,0,0-3.68-6l-49.57-20.67-.07,0L566,355.63a6.66,6.66,0,0,0-11.92,0l-20.7,49.63-.05,0L483.7,426a7.28,7.28,0,0,0-3.68,6h0a7.29,7.29,0,0,0,3.68,5.95l49.57,20.67.07,0L554,508.21a6.65,6.65,0,0,0,11.92,0l20.69-49.62h0l.09,0,49.55-20.66a7.29,7.29,0,0,0,3.68-5.95h0Z"></path></svg>
+      </div>
+
+      <div class="item-controls">
+        {{#if section.canCreate}}
+        <a class="item-control item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
+        </a>
+        {{/if}}
+      </div>
+    </li>
+
+    <ol class="item-list">
+      {{#each section.spells as |item i|}}
+      <li class="item flexrow {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}" {{~#if data.preparation.prepared}} title="Prepared" {{/if}}>
+        <div class="item-name flexrow rollable">
+          <div class="item-image" style="background-image: url({{item.img}})"></div>
+          <h4>{{item.name}}</h4>
+          {{#if item.data.uses.value }}
+          <div class="item-detail spell-uses">Uses {{item.data.uses.value}} / {{item.data.uses.max}}</div>
+          {{/if}}
+        </div>
+
+        {{#if ../../owner}}
+        <div class="spell-details spell-prepared">
+          {{#if section.canPrepare}}
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}"><!-- <i class="far fa-bookmark"></i><i class="fas fa-bookmark"></i> -->
+            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="book-alt" class="far fa-book-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M435.1 399.7c-4.2 13-4.2 51.6 0 64.6 7.3 1.4 12.9 7.9 12.9 15.7v16c0 8.8-7.2 16-16 16H80c-44.2 0-80-35.8-80-80V80C0 35.8 35.8 0 80 0h352c8.8 0 16 7.2 16 16v368c0 7.8-5.5 14.2-12.9 15.7zm-41.1.3H80c-17.6 0-32 14.4-32 32 0 17.7 14.3 32 32 32h314c-2.7-17.3-2.7-46.7 0-64zm6-352H80c-17.7 0-32 14.3-32 32v278.7c9.8-4.3 20.6-6.7 32-6.7h320V48z"></path></svg>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book-alt" class="fas fa-book-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 358.4V25.6c0-16-9.6-25.6-25.6-25.6H96C41.6 0 0 41.6 0 96v320c0 54.4 41.6 96 96 96h326.4c12.8 0 25.6-9.6 25.6-25.6v-16c0-6.4-3.2-12.8-9.6-19.2-3.2-16-3.2-60.8 0-73.6 6.4-3.2 9.6-9.6 9.6-19.2zM380.8 448H96c-19.2 0-32-12.8-32-32s16-32 32-32h284.8v64z"></path></svg>
+          </a>
+          {{/if}}
+        </div>
+        {{/if}}
+
+        <div class="spell-detail spell-comps">
+          {{#each labels.components}}
+          <span class="spell-component {{this}}">{{this}}</span>
+          {{/each}}
+        </div>
+        <div class="spell-detail spell-school">{{labels.school}}</div>
+        <div class="spell-detail spell-action">{{labels.activation}}</div>
+        <div class="spell-detail spell-target" title="{{localize 'DND5E.Range'}}: {{labels.range}}">
+          {{#if labels.target}}
+          {{labels.target}}
+          {{else}}None
+          {{/if}}
+        </div>
+
+
+        {{#if ../../owner}}
+        <div class="item-controls">
+          <a class="item-control item-edit" title="Edit Item"><i class="fas fa-pencil-alt"></i></a>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ol>
+    {{else}}
+    {{#if owner}}
+    {{#if filters.spellbook.size}}
+    <li class="item flexrow"><p class="notes">{{localize "DND5E.FilterNoSpells"}}</p></li>
+    {{else}}
+    <li class="item flexrow inventory-header spellbook-header spellbook-empty">
+      <div class="item-controls">
+        <a class="item-control item-create" title="{{localize 'DND5E.SpellCreate'}}" data-type="spell"
+        data-level="{{lvl}}"><i class="fas fa-plus-circle"></i> {{localize "DND5E.SpellAdd"}}</a>
+      </div>
+    </li>
+    <li class="item flexrow"><p class="notes">{{localize "DND5E.NoSpellLevels"}}</p></li>
+    {{/if}}
+    {{/if}}
+    {{/each}}
+  </ol>
+
+<div class="spellcasting-ability flexrow">
+  <h3 class="spell-dc">{{localize "DND5E.SpellDC"}} {{data.attributes.spelldc}}</h3>
+  <h3>{{localize "DND5E.SpellAbility"}}</h3>
+  <select name="data.attributes.spellcasting" data-type="String">
+    {{#select data.attributes.spellcasting}}
+    <option value="">{{localize "DND5E.None"}}</option>
+    {{#each data.abilities as |abl a|}}
+    <option value="{{a}}">{{abl.label}}</option>
+    {{/each}}
+    {{/select}}
+  </select>
+  {{#if isNPC}}
+  <h3>{{localize "DND5E.SpellcasterLevel"}}</h3>
+  <input class="spellcasting-level" type="text" name="data.details.spellLevel"
+  value="{{data.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
+  {{/if}}
+</div>
