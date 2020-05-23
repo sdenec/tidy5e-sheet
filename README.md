@@ -1,6 +1,9 @@
 # Tidy5e Sheet
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI.
 
+## Preview
+![Tidy5e Sheet Preview](/preview/tidy5e-sheet_preview.gif)
+
 ## Installation
 See https://github.com/foundry-vtt-community/wiki/wiki/Modules#installing-modules. Open the Add-on Modules tab in the Configuration and Setup dialog. Click Install Module, paste https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json in as the Manifest URL, then click Install.
 
