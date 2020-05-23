@@ -8,5 +8,8 @@
 	"compatibleCoreVersion": "0.6.0",
 	"systems": ["dnd5e"],
 	"esmodules": ["tidy5e-sheet.js"],
-	"styles": ["/styles/tidy5e-sheet.css"]
+	"styles": ["/styles/tidy5e-sheet.css"],
+  "url": "https://github.com/sdenec/tidy5e-sheet",
+  "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",
+  "download": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/tidy5e-sheet.zip"
 }

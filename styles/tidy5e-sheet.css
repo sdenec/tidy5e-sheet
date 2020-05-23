@@ -465,7 +465,8 @@
 	width: calc(7.5ch + .3rem);
 	height: 16px;
 	text-align: right;
-	padding: 3px .15rem 0 .15rem;
+	padding: 2px .15rem 0 .15rem;
+	margin-bottom: -1px; 
 }
 
 .tidy5e .max-xp {
@@ -1749,7 +1750,11 @@
 
 .dnd5e.sheet.item .sheet-body .editor .editor-edit {
 	right: .75rem;
-	top: -.25rem;
+	top: 0;
+	padding: 0;
+	border: none;
+	box-shadow: none;
+	background: transparent;
 }
 
 .dnd5e.sheet.item .sheet-body .editor-content {
@@ -1922,4 +1927,40 @@
 
 .dnd5e.sheet.item .damage-parts li:first-child {
 	margin-top: 0;
+}
+
+/* actor flags */
+
+#actor-flags.app.dnd5e .window-content {
+	padding: 1rem 1rem 1rem 1rem;
+}
+
+#actor-flags.app.dnd5e .notes {
+	margin: 0;
+}
+
+#actor-flags.app.dnd5e .form-header {
+	margin: 1rem 0;
+	border: none;
+}
+
+#actor-flags.app.dnd5e .form-group {
+	margin: 4px 0;
+	padding: .5rem;
+	background: rgba(0,0,0,.1);
+	border-radius: 5px;
+}
+
+#actor-flags.app.dnd5e .form-group label {
+	line-height: 1.5;
+	padding-top: 1px;
+}
+
+#actor-flags.app.dnd5e .form-group input[type="text"] {
+	background: rgba(255,255,255,.3);
+}
+
+#actor-flags.app.dnd5e .form-group input[type="checkbox"] {
+	margin: 0;
+	cursor: pointer;
 }
