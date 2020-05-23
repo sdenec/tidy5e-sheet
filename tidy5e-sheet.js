@@ -27,13 +27,15 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		super.activateListeners(html);
 
 		// toggle item delete protection
-		html.find('.allow-delete-toggle').click(event => {
+		html.find('.tidy5e-delete-toggle').click(event => {
 			event.preventDefault();
 			let actor = this.actor;
-			if (actor.getFlag("tidy5e-sheet", "allow-delete")) {
-				actor.unsetFlag("tidy5e-sheet", "allow-delete");
+			if (actor.getFlag("tidy5e-sheet", "tidy5e-allow-delete")) {
+				actor.unsetFlag("tidy5e-sheet", "tidy5e-allow-delete");
+				console.log(actor);
 			} else {
-				actor.setFlag("tidy5e-sheet", "allow-delete", true);
+				actor.setFlag("tidy5e-sheet", "tidy5e-allow-delete", true);
+				console.log(actor);
 			}
 		});
 
@@ -49,6 +51,22 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 	}
 
+}
+
+async function addClassList(app, html, data) {
+	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+	let classList = [];
+	let items = data.actor.items;
+	for (let item of items) {
+		if (item.type === "class") {
+			let subclass = (item.data.subclass) ? ` (${item.data.subclass})` : ``;
+			classList.push(item.name + subclass);
+		}
+	};
+	classList = "<div style='display: inline-block; width: 400px; word-break: break-word;'>" + classList.join(" / ") + "</div>";
+	mergeObject(actor, {"data.flags.tidy5e.classlist": classList});
+	let classListTarget = html.find('.charlevel .level');
+	classListTarget.after(classList);
 }
 
 async function setSheetClasses(app, html, data) {
@@ -69,6 +87,7 @@ async function setSheetClasses(app, html, data) {
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", function() {
   preloadTidy5eHandlebarsTemplates();
+  
 });
 
 // Register Tidy5e Sheet and make default character sheet
@@ -78,10 +97,14 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
+	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 });
 
 Hooks.once("ready", () => {
+	if (window.BetterRolls) {
+	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
+	}
 	game.settings.register("tidy5e-sheet", "useRoundPortraits", {
 		name: "Character sheet uses round portraits.",
 		hint: "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame.",
