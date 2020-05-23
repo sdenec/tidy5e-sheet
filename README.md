@@ -2,9 +2,10 @@
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI.
 
 ## Installation
+See https://github.com/foundry-vtt-community/wiki/wiki/Modules#installing-modules. Open the Add-on Modules tab in the Configuration and Setup dialog. Click Install Module, paste https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json in as the Manifest URL, then click Install.
 
 ### Settings
-In the `Configure Settings` menu under `Module Settings` you can chose your prefered settings. Round Portraits and Hit Point Overlay Border can only be set by the DM for a consistent use of Portraits.
+In the `Configure Settings` menu for your world under `Module Settings` you can chose your prefered settings. Round Portraits and Hit Point Overlay Border can only be set by the DM for a consistent use of Portraits.
 
 ## New Character Sheet Features
 
@@ -77,3 +78,8 @@ I adjusted the appearance of the editor to better fit the space. I moved the edi
 To better fit the character sheet the default dnd5e item/spell sheets have been altered in the same way where possible.
 
 My aim was to make the plethora of information represented by lots of input fields as quickly readable as possible. I adjusted the text alignment of adjacend input fields and visually grouped labels and input fields.
+
+## License
+This Foundry VTT module, written by sdenec, is licensed under a Creative Commons Attribution 4.0 International License.
+
+This work is licensed under Foundry Virtual Tabletop EULA - Limited License Agreement for module development v 0.1.6.
