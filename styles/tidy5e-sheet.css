@@ -1118,6 +1118,10 @@
 
 /* Delete Protection */
 
+.tidy5e.sheet.actor #tidy5e-allow-delete {
+	display: none;
+}
+
 .tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
 	display: block;
   font-family: "Signika", "Palatino Linotype", serif;
@@ -1125,7 +1129,7 @@
   flex: 0 0 120px;
 }
 
-.tidy5e-sheet .sheet-body.tidy5e-allow-delete .tidy5e-delete-lock .tidy5e-delete-toggle,
+.tidy5e-sheet #tidy5e-allow-delete:checked ~ .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle,
 .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle:hover {
 	background: rgba(255,0,0,.3);
 }
@@ -1146,7 +1150,7 @@
   margin-right: .25rem;
 }
 
-.tidy5e-sheet .sheet-body.tidy5e-allow-delete .tidy5e-delete-disabled,
+.tidy5e-sheet #tidy5e-allow-delete:checked ~ .sheet-body .tidy5e-delete-disabled,
 .tidy5e-sheet .sheet-body .tidy5e-delete-enabled,
 .tidy5e-sheet .sheet-body .item-delete {
 	display: none;
@@ -1156,8 +1160,8 @@
 	color: rgba(255,0,0,.6);
 }
 
-.tidy5e-sheet .sheet-body.tidy5e-allow-delete .inventory-list .item-controls .item-delete,
-.tidy5e-sheet .sheet-body.tidy5e-allow-delete .tidy5e-delete-enabled {
+.tidy5e-sheet #tidy5e-allow-delete:checked ~ .sheet-body .item-delete,
+.tidy5e-sheet #tidy5e-allow-delete:checked ~ .sheet-body .tidy5e-delete-enabled {
 	display: block;
 }
 

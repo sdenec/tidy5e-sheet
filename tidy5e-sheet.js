@@ -26,19 +26,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	activateListeners(html) {
 		super.activateListeners(html);
 
-		// toggle item delete protection
-		html.find('.tidy5e-delete-toggle').click(event => {
-			event.preventDefault();
-			let actor = this.actor;
-			if (actor.getFlag("tidy5e-sheet", "tidy5e-allow-delete")) {
-				actor.unsetFlag("tidy5e-sheet", "tidy5e-allow-delete");
-				console.log(actor);
-			} else {
-				actor.setFlag("tidy5e-sheet", "tidy5e-allow-delete", true);
-				console.log(actor);
-			}
-		});
-
 		// set exhaustion level with tracking bar
 		html.find('.level-selection span').click(event => {
 			event.preventDefault();

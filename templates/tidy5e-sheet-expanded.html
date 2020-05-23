@@ -1,5 +1,5 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-	<div class="tidy5e-sheet">
+	<div class="tidy5e-sheet{{#if actor.flags.tidy5e-sheet.allow-delete}} allow-delete{{/if}}">
 		{{!-- Sheet Header --}}
 		<header class="flex tidy5e-header">
 			<div class="profile hp-{{data.attributes.hp.value}} deathsuccess-{{data.attributes.death.success}} deathfailure-{{data.attributes.death.failure}}">
@@ -140,11 +140,9 @@
 			<a class="item" data-tab="features">{{ localize "DND5E.Features" }}</a>
 			<a class="item" data-tab="spellbook">{{ localize "DND5E.Spellbook" }}</a>
 			<a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
-			<a class="item" data-tab="journal">Journal</a>
 		</nav>
 
 		{{!-- NPC Sheet Body --}}
-		<input type="checkbox" id="tidy5e-allow-delete" name="data.settings.allow-delete" data-type="Boolean" {{checked data.settings.allow-delete}}>
 		<section class="sheet-body">
 
 			<div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
@@ -292,42 +290,6 @@
 					<article class="background-notes">
 						<div class="section-titles">Background</div>
 						{{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
-					</article>
-				</div>
-			</div>
-
-			{{!-- Journal Tab --}}
-			<div class="tab journal flexrow" data-group="primary" data-tab="journal">
-				<div class="left-notes note-entries">
-					<article>
-						<div class="section-titles">
-							<input type="text" name="data.details.notes1name" value="{{data.details.notes1name}}" placeholder="Persons of Interest"/>
-						</div>
-						{{editor content=data.details.notes1.value target="data.details.notes1.value" button=true owner=owner editable=editable}}
-					</article>
-					<article>
-						<div class="section-titles">
-							<input type="text" name="data.details.notes2name" value="{{data.details.notes2name}}" placeholder="Locations of Interest"/>
-						</div>
-						{{editor content=data.details.notes2.value target="data.details.notes2.value" button=true owner=owner editable=editable}}
-					</article>
-					<article>
-						<div class="section-titles">
-							<input type="text" name="data.details.notes3name" value="{{data.details.notes3name}}" placeholder="Quests"/>
-						</div>
-						{{editor content=data.details.notes3.value target="data.details.notes3.value" button=true owner=owner editable=editable}}
-					</article>
-					<article>
-						<div class="section-titles">
-							<input type="text" name="data.details.notes4name" value="{{data.details.notes4name}}" placeholder="Miscellaneous"/>
-						</div>
-						{{editor content=data.details.notes4.value target="data.details.notes4.value" button=true owner=owner editable=editable}}
-					</article>
-				</div>
-				<div class="right-notes note-entries">
-					<article class="journal-notes">
-						<div class="section-titles">Journal Entries</div>
-						{{editor content=data.details.notes.value target="data.details.notes.value" button=true owner=owner editable=editable}}
 					</article>
 				</div>
 			</div>
