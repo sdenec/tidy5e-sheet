@@ -22,7 +22,7 @@ When your character's hit points are reduced the portrait gradually gets covered
 **This feature can be disabled individually in the settings.**
 
 #### Overlay Border
-In case you are using a custom frame in your protrait images you might want to adjust the overlay to only cover the portrait. You can adjust the hit point overlay border with in the setting to try and accomodate your frame.
+In case you are using a custom frame in your portraits you might want to adjust the overlay to only cover the portrait. You can adjust the hit point overlay border width to try and accomodate your frame.
  **This feature can be set by the DM in the settings.**
 
 
@@ -31,7 +31,7 @@ When your character is reduced to 0 hit points the death save box appears on the
 **When manually restoring hit points the death save box will only vanish if the success or failure count is emtied or reset to '0'.**
 
 ### Rest Button
-On the lower left of your portrait picture is the relocated Rest Button. When you hover over it you can chose to take a short rest (partly elapsed hourglass) or a long rest (fully elapsed hourglas).
+On the lower left of your portrait picture is the relocated Rest Button. When you hover over it you can chose to take a short rest (partly elapsed hourglass) or a long rest (fully elapsed hourglass).
 
 ### Animated Inspiration Indicator
 On the lower right of your portrait picture is the relocated inspiration indicator. When you click the button a glowing die appears - also a label informs you if you have inspiration (1) or don't (0). The active indicator animates in a subtle pulse motion to remind players that they have inspiration to spend.
