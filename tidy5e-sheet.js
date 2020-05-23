@@ -6,8 +6,7 @@ import { preloadTidy5eHandlebarsTemplates } from "./templates/tidy5e-templates.j
 
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	get template() {
-		//if ( !game.user.isGM && this.actor.limited && game.settings.get("tidy5e", "useExpandedSheet")) return "modules/tidy5e-sheet/templates/tidy5e-sheet-expanded.html";
-		//if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-sheet-ltd.html";
+		if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/tidy5e-sheet.html";
 	}
 	
