@@ -12,7 +12,7 @@ In the `Configure Settings` menu for your world under `Module Settings` you can 
 
 ## New Character Sheet Features
 
-I implented a few new features or redesigned existing ones to hopefully make them more noticable and easier/more fun to use.
+I implemented a few new features or redesigned existing ones to hopefully make them more noticable and easier/more fun to use.
 
 ### Square (default) or round Profile Picture
 Depending on your prefered portrait format you can display it squared (default by FVTT) or rounded. This setting is best suited for rounded profile pictures and ensures a nicer look. The hit point overlay, rest button and inspiration indicator will be rounded as well. This setting also looks good on square portrait images without custom frames as they get cropped. **This feature can be set by the DM in the settings.**
