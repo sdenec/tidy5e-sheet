@@ -2172,7 +2172,7 @@
 
 .dnd5e.sheet.item .sheet-body .tab.details .form-group input:disabled {
 	background: transparent;
-	color: rgba(0,0,0,.2);
+	color: rgba(0,0,0,.7);
 }
 
 .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.save.dc"] {
@@ -2300,4 +2300,52 @@
 
 .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button:hover {
 	background: rgba(0,0,0,.6);
+}
+
+/* ------------------------ */
+/*    Support Magic Items   */
+/* ------------------------ */
+
+.tidy5e.sheet.actor .magic-items-spells-content {
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head {
+	padding: .5rem 0;
+	margin: .5rem 0 0 0;
+	border: none;
+	border-top: 3px solid rgba(0,0,0,0.3);
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head h3 {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .inventory-header.spellbook-header,
+.tidy5e.sheet.actor .magic-items-spells-content .spellbook-header div,
+.tidy5e.sheet.actor .magic-items-spells-content .magic-item {
+	border: none;
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .spell-slots input:last-child {
+	text-align: left;
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
+	border-right: 1px solid rgba(0,0,0,.15);
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .magic-item div:last-child {
+	border-right: none;
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .magic-item-image {
+	border-radius: 5px 0 0 5px;
+}
+
+.tidy5e.sheet.actor .magic-items-spells-content .magic-item-image:hover {
+	background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
