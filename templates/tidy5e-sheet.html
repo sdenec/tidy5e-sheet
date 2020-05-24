@@ -1,8 +1,10 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-	<div class="tidy5e-sheet">
+	<div class="tidy5e-sheet{{#if actor.flags.tidy5e-sheet.allow-delete}} allow-delete{{/if}}">
 		{{!-- Sheet Header --}}
 		<header class="flex tidy5e-header">
 			<div class="profile hp-{{data.attributes.hp.value}} deathsuccess-{{data.attributes.death.success}} deathfailure-{{data.attributes.death.failure}}">
+
+				{{!-- Death Saves --}}
 				<div class="death-saves">
 					<div class="counter-value">
 						<i class="fas fa-check"></i>
@@ -17,11 +19,44 @@
 						<i class="fas fa-times"></i>
 					</div>
 				</div>
+
+				{{!-- Portrait --}}
 				<div class="portrait">
 					<img src="{{actor.img}}" alt="{{actor.name}}" title="Edit Image" data-edit="img">
 				</div>
+
+				{{!-- HP Overlay --}}
 				<div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / {{data.attributes.hp.max}}) * {{data.attributes.hp.value}}) ), rgba(255,255,255,1) calc(100% - ((100% / {{data.attributes.hp.max}}) * {{data.attributes.hp.value}}) ), rgba(255,255,255,1) 100%);">
-				</div>				
+				</div>
+
+				{{!-- Exhaustion --}}
+				<div class="exhaustion-container level-{{data.attributes.exhaustion}} has-note">
+					<div class="level-display">{{data.attributes.exhaustion}}</div>
+      		<div class="note">
+      			<h4>{{ localize "DND5E.Exhaustion" }} Level {{data.attributes.exhaustion}}</h4>
+      			<p class="lvl-0">No negative Effects</p>
+      			<p class="lvl-1 lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">Disadvantage on Ability Checks</p>
+      			<p class="lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">Speed halved</p>
+      			<p class="lvl-3 lvl-4 lvl-5 lvl-6">Disadvantage on Attack rolls and Saving Throws</p>
+      			<p class="lvl-4 lvl-5 lvl-6">Hit point maximum halved</p>
+      			<p class="lvl-5 lvl-6">Speed reduced to 0</p>
+      			<p class="lvl-6">Death</p>
+      		</div>
+      		<div class="exhaustion">
+      			<div class="exhaustion-icon"><i class="far fa-tired"></i></div>
+      			<ul class="exhaust-level">
+            	<li data-elvl="0">0</li>
+            	<li data-elvl="1">1</li>
+            	<li data-elvl="2">2</li>
+            	<li data-elvl="3">3</li>
+            	<li data-elvl="4">4</li>
+            	<li data-elvl="5">5</li>
+            	<li data-elvl="6">6</li>
+            </ul>
+      		</div>
+				</div>
+
+				{{!-- Inspiration --}}
 				<div class="inspiration has-note">
 					<input id="inspiration-checkbox" type="checkbox" name="data.attributes.inspiration" data-dtype="Boolean" {{checked data.attributes.inspiration}}>
 					<label for="inspiration-checkbox">
@@ -29,6 +64,8 @@
 					</label>
 					<div class="note">{{ localize 'DND5E.Inspiration' }}</div>
 				</div>
+
+				{{!-- Resting --}}
 				<div class="rest-container has-note">
 					<div class="note">Take a Rest</div>
 					<div class="resting">
@@ -38,6 +75,8 @@
 					</div>
 				</div>
 			</div>
+
+			{{!-- Character Details --}}
 			<div class="character-details">
 				<section class="flex general-information">
 					<h1 class="char-name">
@@ -59,6 +98,7 @@
 						</div>
 						{{/unless}}
 					</div>
+					{{!-- Character Class List --}}
 				</section>
 
 				{{!-- Character Summary --}}
@@ -144,7 +184,6 @@
 		</nav>
 
 		{{!-- NPC Sheet Body --}}
-		<input type="checkbox" id="tidy5e-allow-delete" name="data.settings.allow-delete" data-type="Boolean" {{checked data.settings.allow-delete}}>
 		<section class="sheet-body">
 
 			<div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
@@ -181,7 +220,7 @@
 
 				<section class="center-pane">
 
-					{{!-- Body Attributes --}}
+					{{!-- Resources --}}
 					<ul class="attributes flexrow">
 						{{#each resources as |res|}}
 						<li class="attribute resource">
@@ -215,36 +254,31 @@
 						{{/each}}
 					</ul>
 
+
 					{{!-- Traits --}}
-					<div class="traits-wrap">
+					<div class="traits-wrap{{#if actor.flags.tidy5e-sheet.traits-compressed}} compressed{{/if}}">
+						<header class=traits-toggle>
+							<h4>Character Traits</h4>
+							<div class="toggle-icon">
+								<i class="fas fa-caret-down"></i>
+								<i class="fas fa-caret-up"></i>
+							</div>
+						</header>
 						{{> "modules/tidy5e-sheet/templates/parts/tidy5e-traits.html"}}
 					</div>
 
-					<div class="exhaustion-counter flexrow">
-            <div class="counter-value level-{{data.attributes.exhaustion}} has-note">
-          		<div class="note">
-          			<h4>{{ localize "DND5E.Exhaustion" }} Level {{data.attributes.exhaustion}}</h4>
-          			<p class="lvl-0">No negative Effects</p>
-          			<p class="lvl-1 lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">Disadvantage on Ability Checks</p>
-          			<p class="lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">Speed halved</p>
-          			<p class="lvl-3 lvl-4 lvl-5 lvl-6">Disadvantage on Attack rolls and Saving Throws</p>
-          			<p class="lvl-4 lvl-5 lvl-6">Hit point maximum halved</p>
-          			<p class="lvl-5 lvl-6">Speed reduced to 0</p>
-          			<p class="lvl-6">Death</p>
-          		</div>
-              <!-- <input type="text" name="data.attributes.exhaustion" data-dtype="Number" placeholder="0" value="{{data.attributes.exhaustion}}"> -->
-              <div class="level-selection">
-              	<div class="exhaustion-icon"><i class="far fa-tired"></i></div>
-              	<span data-elvl="0">0</span>
-              	<span data-elvl="1">1</span>
-              	<span data-elvl="2">2</span>
-              	<span data-elvl="3">3</span>
-              	<span data-elvl="4">4</span>
-              	<span data-elvl="5">5</span>
-              	<span data-elvl="6">6</span>
-              </div>
-            </div>
-          </div>
+					{{!-- Favorites --}}
+					<div class="favorites-wrap{{#if actor.flags.tidy5e-sheet.favorites-compressed}} compressed{{/if}}">
+						<header class=favorites-toggle>
+							<h4>Favorites</h4>
+							<div class="toggle-icon">
+								 <i class="fas fa-caret-down"></i>
+								 <i class="fas fa-caret-up"></i>
+							</div>
+						</header>
+						<div class="favorites-target"></div>
+					</div>
+					
 				</section>
 			</div>
 
