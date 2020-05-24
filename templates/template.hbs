@@ -1,0 +1,48 @@
+<div class="inventory-list favorites">
+	{{#if favItems}}
+		<ol class="fav-item">
+			<!-- <li class="item inventory-header flexrow">
+				<h3>Item</h3>
+				<div class="item-detail item-action" title="Usage"><i class="fas fa-hourglass"></i></div>
+			</li>
+			-->
+			{{#each favItems as |item id|}}
+				{{> "modules/tidy5e-sheet/templates/item.hbs" item=item}}
+			{{/each}}
+		</ol>
+	{{/if}}
+	{{#if favFeats}}
+		<ol class="fav-feat">
+			<li class="item inventory-header"><h3>Features & Feats</h3></li>
+			{{#each favFeats as |feat lvl|}}
+				{{> "modules/tidy5e-sheet/templates/item.hbs" item=feat}}
+			{{/each}}
+		</ol>
+	{{/if}}
+	{{#if favSpells}}
+		<ol class="fav-spell">
+			{{#each favSpells as |section lvl|}}
+				{{#if section.spells}}
+					{{#if lvl}}
+						<li class="item inventory-header flexrow">                        
+							<h3>
+								{{#if section.isCantrip}}Cantrips{{else}}Spell Level {{lvl}}{{/if}}
+							</h3>
+							{{#if section.isCantrip}}
+								<span class="fav-spell-slots cantrip">∞/∞</span>
+							{{else}}
+								<span class="fav-spell-slots">
+									{{section.value}}/{{section.max}}
+								</span>
+							{{/if}}
+							<div class="item-detail item-action" title="Usage"><i class="fas fa-hourglass"></i></div>
+						</li>
+							{{#each section.spells as |spell id|}}
+								{{> "modules/tidy5e-sheet/templates/item.hbs" item=spell}}
+							{{/each}}
+					{{/if}}
+				{{/if}}
+			{{/each}}
+		</ol>
+	{{/if}}
+</div>
