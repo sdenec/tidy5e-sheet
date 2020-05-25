@@ -444,7 +444,7 @@
 }
 
 .tidy5e .char-name input {
-	height: 20px;
+	/*height: 20px;*/
 	line-height: 20px;
 	padding-top: 2px;
 }
@@ -594,7 +594,7 @@
 
 .tidy5e .header-attribute {
 	height: 80px;
-	flex: 1 0 100px;
+	flex: 1 1 130px;
 	text-align: center;
 	border-left: 1px solid rgba(0,0,0,.1);
 	padding: 0 5px;
@@ -606,6 +606,7 @@
 	height: 26px;
 	position: relative;
 	margin: 0;
+	white-space: nowrap;
 }
 
 .tidy5e .attribute-name input {
@@ -774,7 +775,7 @@
   border-radius: .5em;
   overflow: hidden;
   padding: 0;
-  flex: 0 0 200px;
+  flex: 0 0 215px;
   display: flex;
   flex-direction: column;
   height: 434px;
@@ -1590,6 +1591,10 @@
 .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i {
 	color: rgba(0,0,0,.4);
 	border: none; 
+}
+
+.tidy5e.sheet.actor .inventory-list .spell-school {
+	flex: 0 0 120px;
 }
 
 .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail.spell-slots {
