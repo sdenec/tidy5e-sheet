@@ -126,6 +126,7 @@
 
 .tidy5e .portrait {
 	width: 100%;
+	height: 100%;
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow:	0 0 10px rgba(0,0,0,.5) inset;
@@ -143,7 +144,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: center;
+	object-position: top;
 }
 
 /* Death Saves and HP-Overlay */
@@ -2229,7 +2230,7 @@
 
 .dnd5e.sheet.item .damage-header .damage-control::after {
 	display: inline-block;
-	content: 'Add Formular';
+	content: 'Add Formula';
 	margin-left: .25rem;
   font-size: 12px;
 }
