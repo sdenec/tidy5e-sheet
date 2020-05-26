@@ -168,6 +168,12 @@ async function addFavorites(app, html, data) {
 		if (isFav) {
 
 			// renderFavTab = true;
+			item.quantity = item.data.quantity;
+			console.log(item.quantity);
+			item.showquant = false;
+			if ( item.quantity != undefined && item.quantity > 1){
+				item.showquant = true;
+			}
 			
 			item.action = "";
 			if (item.data.activation) {
