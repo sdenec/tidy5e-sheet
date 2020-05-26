@@ -1,7 +1,7 @@
 <li class="item flexrow fav-item{{#if item.data.attuned}} attuned{{/if}}{{#if item.data.equipped}} equipped{{/if}}" data-item-id="{{item._id}}">
 	<div class="item-name flexrow rollable">
 		<div class="item-image" style="background-image: url({{item.img}})"></div>
-		<h4 title="Toggle Info">{{item.name}}{{#if item.data.quantity}} ({{item.data.quantity}}){{/if}}</h4>
+		<h4 title="Toggle Info">{{item.name}}{{#if item.showquant}} ({{item.data.quantity}}){{/if}}</h4>
 	</div>
 
   {{#if item.spellComps}}
