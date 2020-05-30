@@ -30,11 +30,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			event.preventDefault();
 			let actor = this.actor;
 
-			// clean up previous versions
-			// await actor.update({"data.-=allow-delete": null}); 
-			// await actor.update({"data.-=settings": null}); 
-
-			// set proper flag
 			if(actor.getFlag('tidy5e-sheet', 'allow-delete')){
 				await actor.unsetFlag('tidy5e-sheet', 'allow-delete');
 			} else {
@@ -77,7 +72,57 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  		});
 
 	}
+}
 
+// Migrate Traits to default dnd5e data
+async function migrateTraits(app, html, data) {
+	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+
+	if (!actor.getFlag('tidy5e-sheet', 'useCoreTraits')){
+	
+		console.log('Tidy5e Sheet | Data needs migration! Migrating.');
+
+		let coreTrait = (actor.data.data.details.trait !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
+		let coreIdeal = (actor.data.data.details.ideal !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
+		let coreBond = (actor.data.data.details.bond !== '') ? actor.data.data.details.bond+"<br>Migrated Content:" : '';
+		let coreFlaw = (actor.data.data.details.flaw !== '') ? actor.data.data.details.flaw+"<br>Migrated Content:" : '';
+
+		let trait = (actor.data.data.details.personality && actor.data.data.details.personality.value) ? coreTrait + actor.data.data.details.personality.value : actor.data.data.details.trait;
+		let ideal = (actor.data.data.details.ideals && actor.data.data.details.ideals.value) ? coreIdeal + actor.data.data.details.ideals.value : actor.data.data.details.ideal;
+		let bond = (actor.data.data.details.bonds && actor.data.data.details.bonds.value) ? coreBond + actor.data.data.details.bonds.value : actor.data.data.details.bond;
+		let flaw = (actor.data.data.details.flaws && actor.data.data.details.flaws.value) ? coreFlaw + actor.data.data.details.flaws.value : actor.data.data.details.flaw;
+
+		await actor.update({
+			"data.details.trait": trait,
+			"data.details.ideal": ideal,
+			"data.details.bond": bond,
+			"data.details.flaw": flaw,
+			"data.details.personality": null,
+			"data.details.-=personality": null,
+			"data.details.ideals": null,
+			"data.details.-=ideals": null,
+			"data.details.bonds": null,
+			"data.details.-=bonds": null,
+			"data.details.flaws": null,
+			"data.details.-=flaws": null,
+			"flags.tidy5e-sheet.useCoreTraits":true
+		});
+
+		console.log('Tidy5e Sheet | Data migrated to dnd5e core values.')
+	}
+}
+
+async function checkDeathSaveStatus(app, html, data){
+	var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+	var data = actor.data.data;
+	var currentHealth = data.attributes.hp.value;
+	var deathSaveSuccess = data.attributes.death.success;
+	var deathSaveFailure = data.attributes.death.failure;
+
+	if(currentHealth > 0 && deathSaveSuccess != 0 || currentHealth > 0 && deathSaveFailure != 0){
+			await actor.update({"data.attributes.death.success": 0});
+			await actor.update({"data.attributes.death.failure": 0});
+	}
 }
 
 async function addClassList(app, html, data) { 
@@ -95,7 +140,7 @@ async function addClassList(app, html, data) {
 		mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
 		let classListTarget = html.find('.level-information');
 		classListTarget.after(classList);
-		// console.log(actor);
+
 	};
 }
 
@@ -112,15 +157,6 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
 	};
-}
-
-
-async function hideFavorites(app, html, data) {
-	let favorites = html.find('.favorites-target');
-	console.log(favorites);
-	// if(favorites.childNodes.length < 1){
-	// 	console.log('hide Favs');
-	// }
 }
 
 // The following function is adapted for the Tidy5eSheet from the Favorites Item
@@ -147,8 +183,6 @@ async function addFavorites(app, html, data) {
 	let spellCount = 0
 	let items = data.actor.items;
 
-  // let renderFavTab = false;
-
 	for (let item of items) {
 		if (item.type == "class") continue;
 		if (item.flags.favtab === undefined || item.flags.favtab.isFavourite === undefined) {
@@ -167,7 +201,11 @@ async function addFavorites(app, html, data) {
 		
 		if (isFav) {
 
-			// renderFavTab = true;
+			item.quantity = item.data.quantity;
+			item.showquant = false;
+			if ( item.quantity != undefined && item.quantity > 1){
+				item.showquant = true;
+			}
 			
 			item.action = "";
 			if (item.data.activation) {
@@ -293,10 +331,26 @@ async function addFavorites(app, html, data) {
 
 }
 
-
 // Preload tidy5e Handlebars Templates
-Hooks.once("init", function() {
+Hooks.once("init", () => {
   preloadTidy5eHandlebarsTemplates();
+
+	// game.settings.register("tidy5e-sheet", "useDarkMode", {
+	// 	name: "Use alternate Dark Mode version of the sheet",
+	// 	hint: "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet. Goes well with D&D5E Dark Mode or as a Standalone.",
+	// 	scope: "user",
+	// 	config: true,
+	// 	default: false,
+	// 	type: Boolean,
+	// 	onChange: data => {
+ //      data === true ? document.body.classList.add("useTidy5eDark"):document.body.classList.remove("useTidy5eDark");
+ //     }
+	// });
+
+ //  const useDarkMode = game.settings.get('tidy5e-sheet', "useDarkMode");
+ //  if (useDarkMode === true) {
+ //    document.body.classList.add("useTidy5eDark");
+ //  }
 });
 
 // Register Tidy5e Sheet and make default character sheet
@@ -306,12 +360,16 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
+	migrateTraits(app, html, data);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	addFavorites(app, html, data);
+	checkDeathSaveStatus(app, html, data);
+	// console.log(data);
 });
 
 Hooks.once("ready", () => {
+
 	if (window.BetterRolls) {
 	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
 	}
@@ -326,7 +384,7 @@ Hooks.once("ready", () => {
 	game.settings.register("tidy5e-sheet", "disableHpOverlay", {
 		name: "Disable the Hit Point Overlay.",
 		hint: "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it.",
-		scope: "module",
+		scope: "user",
 		config: true,
 		default: false,
 		type: Boolean
@@ -342,7 +400,7 @@ Hooks.once("ready", () => {
 	game.settings.register("tidy5e-sheet", "noInspirationAnimation", {
 		name: "No inspiration indicator animation.",
 		hint: "If it's too distracting, you can disable the subtle animation of the glowing inspiration indicator.",
-		scope: "module",
+		scope: "user",
 		config: true,
 		default: false,
 		type: Boolean
