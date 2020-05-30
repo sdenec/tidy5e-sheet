@@ -2,7 +2,7 @@
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI.
 
 ## Preview
-![Tidy5e Sheet Preview](/preview/tidy5e-sheet_preview.gif)
+![Tidy5e Sheet Preview](/preview/tidy5e_0-1-5_preview.gif)
 
 ## Installation
 See https://github.com/foundry-vtt-community/wiki/wiki/Modules#installing-modules. Open the Add-on Modules tab in the Configuration and Setup dialog. Click Install Module, paste https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json in as the Manifest URL, then click Install.
@@ -25,7 +25,6 @@ When your character's hit points are reduced the portrait gradually gets covered
 In case you are using a custom frame in your portraits you might want to adjust the overlay to only cover the portrait. You can adjust the hit point overlay border width to try and accomodate your frame.
  **This feature can be set by the DM in the settings.**
 
-
 ### Death Save Overlay
 When your character is reduced to 0 hit points the death save box appears on the portrait. You can click the skull to roll a death saving throw or manually enter a number for success or failure.
 **When manually restoring hit points the death save box will only vanish if the success or failure count is emtied or reset to '0'.**
@@ -38,10 +37,16 @@ On the lower right of your portrait picture is the relocated inspiration indicat
 **If the animation is distracting it can be disabled individually in the settings.**
 
 ### Exhaustion Tracker
-In the `Attributes Tab` you'll find the relocated and restyled exhaustion tracker. You can click each number (0-6) to mark your character's exhaustion level, higlighted in color by severity, accompanied by a label highlighting the current effects.
+You'll find the relocated and restyled exhaustion tracker on you charater'S portrait upper left. You can click each number (0-6) to mark your character's exhaustion level, higlighted in color by severity, accompanied by a label always showing the current level and a hover label listing the current effects.
+
+### Collapsable Trait
+Traits are important but most of the time you probably won't look at them - so you can toggle them on and off depending on your preferences an needed space (for example if you use the favorites).
+
+### Favorite Items
+Inspired by The Favorites Tab and Sky's use for the favorite items and spells the sheet includes a collapsable section in the attributes tab for your favorites.
 
 ### Extendet Biography and Journal
-Additionally to the default `Biography`Textfield you now can enter your character's personality traits, ideals, bondy and flaws aswell as an appearance description. The Journal tab offers additional space for notes separated in 4 predefines text fields. Feel free to change the labels for the left hand fields. These sections are greatly inspired by Sky's alternate 5e sheet and are compatible should you chose to switch from either one.
+Additionally to the default `Biography`Textfield you can enter your character's personality traits, ideals, bonds and flaws aswell as an appearance description. If you use Roll20 Coverter or the DNDBeyond Exporter these fields will be populated by the imported Data. The Journal tab offers additional space for notes separated in 4 predefines text fields. Feel free to change the labels for the left hand fields. These sections are greatly inspired by Sky's alternate 5e sheet and are compatible should you chose to switch from either one.
 
 ### Delete Protection
 When you handle items, skills and spells it might happen that you delete something by accident. There are plugins to enable a delete dialogue but I find it cumbersome for deleting multiple items. I implemented a switch to show/hide the delete button from you charachter's inventory, features and spellbook. The lock ist located on the right side of the filter bar. It will remember your setting even if you refresh. For extra security you might install a delete dialogue plugin as well.
