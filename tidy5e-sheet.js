@@ -31,11 +31,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			event.preventDefault();
 			let actor = this.actor;
 
-			// clean up previous versions
-			// await actor.update({"data.-=allow-delete": null}); 
-			// await actor.update({"data.-=settings": null}); 
-
-			// set proper flag
 			if(actor.getFlag('tidy5e-sheet', 'allow-delete')){
 				await actor.unsetFlag('tidy5e-sheet', 'allow-delete');
 			} else {
@@ -80,42 +75,41 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	}
 }
 
-// Handle previous editor Data
-async function detectCustomEditorFields(app, html, data) {
-	var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
-	var data = actor.data.data;
+// Migrate Traits to default dnd5e data
+async function migrateTraits(app, html, data) {
+	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 
-	var customFieldTrait = data.details.personality;
-	var customFieldIdeal = data.details.ideals;
-	var customFieldBond = data.details.bonds;
-	var customFieldFlaw = data.details.flaws;
+	if (!actor.getFlag('tidy5e-sheet', 'useCoreTraits')){
+	
+		console.log('Tidy5e Sheet | Data needs migration! Migrating.');
 
-	if( customFieldTrait && customFieldTrait.value !== null || 
-			customFieldIdeal && customFieldIdeal.value !== null || 
-			customFieldBond && customFieldBond.value !== null || 
-			customFieldFlaw && customFieldFlaw.value !== null){
+		let coreTrait = (actor.data.data.details.trait !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
+		let coreIdeal = (actor.data.data.details.ideal !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
+		let coreBond = (actor.data.data.details.bond !== '') ? actor.data.data.details.bond+"<br>Migrated Content:" : '';
+		let coreFlaw = (actor.data.data.details.flaw !== '') ? actor.data.data.details.flaw+"<br>Migrated Content:" : '';
 
-		let importMessage = "<div class='data-import-message'><p>It appears you have data from custom fields for Traits, Ideals, Bonds or Flaws from either Sky's alternate 5e Sheet or a previous version of Tidy5e Sheet. This version of Tidy5e is updated to use the default fields of the dnd5e System to ensure compatibility.</p><button class='append-editor-data'>Migrate Data to this sheet.</button></div>";
-		html.find('.tab.biography').prepend(importMessage);
+		let trait = (actor.data.data.details.personality && actor.data.data.details.personality.value) ? coreTrait + actor.data.data.details.personality.value : actor.data.data.details.trait;
+		let ideal = (actor.data.data.details.ideals && actor.data.data.details.ideals.value) ? coreIdeal + actor.data.data.details.ideals.value : actor.data.data.details.ideal;
+		let bond = (actor.data.data.details.bonds && actor.data.data.details.bonds.value) ? coreBond + actor.data.data.details.bonds.value : actor.data.data.details.bond;
+		let flaw = (actor.data.data.details.flaws && actor.data.data.details.flaws.value) ? coreFlaw + actor.data.data.details.flaws.value : actor.data.data.details.flaw;
 
-		html.find('.data-import-message .append-editor-data').click( async (event) => {
-			await actor.update({"data.details.trait": data.details.trait +"<hr>"+ customFieldTrait.value});
-			await actor.update({"data.details.ideal": data.details.ideal +"<hr>"+ customFieldIdeal.value});
-			await actor.update({"data.details.bond": data.details.bond +"<hr>"+ customFieldBond.value});
-			await actor.update({"data.details.flaw": data.details.flaw +"<hr>"+ customFieldFlaw.value});
-			discardCustomEditorData();
- 		});
+		await actor.update({
+			"data.details.trait": trait,
+			"data.details.ideal": ideal,
+			"data.details.bond": bond,
+			"data.details.flaw": flaw,
+			"data.details.personality": null,
+			"data.details.-=personality": null,
+			"data.details.ideals": null,
+			"data.details.-=ideals": null,
+			"data.details.bonds": null,
+			"data.details.-=bonds": null,
+			"data.details.flaws": null,
+			"data.details.-=flaws": null,
+			"flags.tidy5e-sheet.useCoreTraits":true
+		});
 
- 		async function discardCustomEditorData(){
-			await actor.update({"data.details.-=personality.value": null});
-			await actor.update({"data.details.-=personality": null});
-			await actor.update({"data.details.-=ideals.value": null});
-			await actor.update({"data.details.-=ideals": null});
-			await actor.update({"data.details.-=bonds.value": null});
-			await actor.update({"data.details.-=bonds": null});
-			await actor.update({"data.details.-=flaws.value": null});
-			await actor.update({"data.details.-=flaws": null});
- 		}
+		console.log('Tidy5e Sheet | Data migrated to dnd5e core values.')
 	}
 }
 
@@ -130,8 +124,6 @@ async function checkDeathSaveStatus(app, html, data){
 			await actor.update({"data.attributes.death.success": 0});
 			await actor.update({"data.attributes.death.failure": 0});
 	}
-
-	// let currentHealth = actor.data.
 }
 
 async function addClassList(app, html, data) { 
@@ -211,7 +203,6 @@ async function addFavorites(app, html, data) {
 		if (isFav) {
 
 			item.quantity = item.data.quantity;
-			// console.log(item.quantity);
 			item.showquant = false;
 			if ( item.quantity != undefined && item.quantity > 1){
 				item.showquant = true;
@@ -344,6 +335,7 @@ async function addFavorites(app, html, data) {
 
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
+
   preloadTidy5eHandlebarsTemplates();
   document.body.classList.add("useTidy5e");
 
@@ -371,22 +363,13 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
-	detectCustomEditorFields(app, html, data);
+	migrateTraits(app, html, data);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	addFavorites(app, html, data);
 	checkDeathSaveStatus(app, html, data);
 	// console.log(data);
 });
-
-/*
-Hooks.on("renderItemSheet", (app, html, data) => {
-	let element = app._element[0];
-	let classList = element.classList;
-	console.log(classList);
-	console.log(app);
-});
-*/
 
 Hooks.once("ready", () => {
 
