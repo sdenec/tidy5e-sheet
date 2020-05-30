@@ -17,6 +17,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			width: 740
 		});
 	}
+
 	
 	_createEditor(target, editorOptions, initialContent) {
 		editorOptions.min_height = 200;
@@ -77,7 +78,45 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  		});
 
 	}
+}
 
+// Handle previous editor Data
+async function detectCustomEditorFields(app, html, data) {
+	var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+	var data = actor.data.data;
+
+	var customFieldTrait = data.details.personality;
+	var customFieldIdeal = data.details.ideals;
+	var customFieldBond = data.details.bonds;
+	var customFieldFlaw = data.details.flaws;
+
+	if( customFieldTrait && customFieldTrait.value !== null || 
+			customFieldIdeal && customFieldIdeal.value !== null || 
+			customFieldBond && customFieldBond.value !== null || 
+			customFieldFlaw && customFieldFlaw.value !== null){
+
+		let importMessage = "<div class='data-import-message'><p>It appears you have data from custom fields for Traits, Ideals, Bonds or Flaws from either Sky's alternate 5e Sheet or a previous version of Tidy5e Sheet. This version of Tidy5e is updated to use the default fields of the dnd5e System to ensure compatibility.</p><button class='append-editor-data'>Migrate Data to this sheet.</button></div>";
+		html.find('.tab.biography').prepend(importMessage);
+
+		html.find('.data-import-message .append-editor-data').click( async (event) => {
+			await actor.update({"data.details.trait": data.details.trait +"<hr>"+ customFieldTrait.value});
+			await actor.update({"data.details.ideal": data.details.ideal +"<hr>"+ customFieldIdeal.value});
+			await actor.update({"data.details.bond": data.details.bond +"<hr>"+ customFieldBond.value});
+			await actor.update({"data.details.flaw": data.details.flaw +"<hr>"+ customFieldFlaw.value});
+			discardCustomEditorData();
+ 		});
+
+ 		async function discardCustomEditorData(){
+			await actor.update({"data.details.-=personality.value": null});
+			await actor.update({"data.details.-=personality": null});
+			await actor.update({"data.details.-=ideals.value": null});
+			await actor.update({"data.details.-=ideals": null});
+			await actor.update({"data.details.-=bonds.value": null});
+			await actor.update({"data.details.-=bonds": null});
+			await actor.update({"data.details.-=flaws.value": null});
+			await actor.update({"data.details.-=flaws": null});
+ 		}
+	}
 }
 
 async function addClassList(app, html, data) { 
@@ -95,7 +134,7 @@ async function addClassList(app, html, data) {
 		mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
 		let classListTarget = html.find('.level-information');
 		classListTarget.after(classList);
-		// console.log(actor);
+
 	};
 }
 
@@ -112,15 +151,6 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
 	};
-}
-
-
-async function hideFavorites(app, html, data) {
-	let favorites = html.find('.favorites-target');
-	console.log(favorites);
-	// if(favorites.childNodes.length < 1){
-	// 	console.log('hide Favs');
-	// }
 }
 
 // The following function is adapted for the Tidy5eSheet from the Favorites Item
@@ -147,8 +177,6 @@ async function addFavorites(app, html, data) {
 	let spellCount = 0
 	let items = data.actor.items;
 
-  // let renderFavTab = false;
-
 	for (let item of items) {
 		if (item.type == "class") continue;
 		if (item.flags.favtab === undefined || item.flags.favtab.isFavourite === undefined) {
@@ -167,9 +195,8 @@ async function addFavorites(app, html, data) {
 		
 		if (isFav) {
 
-			// renderFavTab = true;
 			item.quantity = item.data.quantity;
-			console.log(item.quantity);
+			// console.log(item.quantity);
 			item.showquant = false;
 			if ( item.quantity != undefined && item.quantity > 1){
 				item.showquant = true;
@@ -301,8 +328,25 @@ async function addFavorites(app, html, data) {
 
 
 // Preload tidy5e Handlebars Templates
-Hooks.once("init", function() {
+Hooks.once("init", () => {
   preloadTidy5eHandlebarsTemplates();
+  document.body.classList.add("useTidy5e");
+
+	game.settings.register("tidy5e-sheet", "useDarkMode", {
+		name: "Use alternate Dark Mode version of the sheet",
+		hint: "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet. Goes well with D&D5E Dark Mode or as a Standalone.",
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean,
+		onChange: data => {
+      data === true ? document.body.classList.add("useTidy5eDark"):document.body.classList.remove("useTidy5eDark");
+     }
+	});
+
+  const useDarkMode = game.settings.get('tidy5e-sheet', "useDarkMode");
+  if (useDarkMode === true) 
+      document.body.classList.add("useTidy5eDark")
 });
 
 // Register Tidy5e Sheet and make default character sheet
@@ -312,12 +356,22 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
+	detectCustomEditorFields(app, html, data);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	addFavorites(app, html, data);
+	// console.log(data);
+});
+
+Hooks.on("renderItemSheet", (app, html, data) => {
+	let element = app._element[0];
+	let classList = element.classList;
+	console.log(classList);
+	console.log(app);
 });
 
 Hooks.once("ready", () => {
+
 	if (window.BetterRolls) {
 	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
 	}
@@ -332,7 +386,7 @@ Hooks.once("ready", () => {
 	game.settings.register("tidy5e-sheet", "disableHpOverlay", {
 		name: "Disable the Hit Point Overlay.",
 		hint: "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it.",
-		scope: "module",
+		scope: "user",
 		config: true,
 		default: false,
 		type: Boolean
@@ -348,7 +402,7 @@ Hooks.once("ready", () => {
 	game.settings.register("tidy5e-sheet", "noInspirationAnimation", {
 		name: "No inspiration indicator animation.",
 		hint: "If it's too distracting, you can disable the subtle animation of the glowing inspiration indicator.",
-		scope: "module",
+		scope: "user",
 		config: true,
 		default: false,
 		type: Boolean
