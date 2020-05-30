@@ -252,7 +252,10 @@
 }
 
 /* Inspiration & Rest */
-
+.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .inspiration, 
+.tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
+.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .rest-container, 
+.tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container, 
 .tidy5e .hp-0 .inspiration,
 .tidy5e .hp-0 .rest-container {
 	display: none;
@@ -1170,6 +1173,12 @@
 
 /* Exhaustion Portrait */
 
+.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container, 
+.tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container, 
+.tidy5e .hp-0 .exhaustion-container {
+	display: none;
+}
+
 .tidy5e .exhaustion-container {
 	position: absolute;
 	top: 0;
@@ -1757,7 +1766,7 @@
 }
 
 
-.tidy5e.sheet.actor .note-entries article.background-notes .editor {
+.tidy5e.sheet.actor .note-entries article.biography-notes .editor {
 	min-height: 271px;
 }
 
@@ -1786,6 +1795,8 @@
 /* ------------------------- */
 /* Support dnd5e Item sheet  */
 /* ------------------------- */
+
+/* Checkbox styling */
 
 .dnd5e.sheet.item input[type="checkbox"],
 .dnd5e.sheet.item button,
@@ -2052,6 +2063,7 @@
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group,
 .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group,
+.dnd5e.sheet.item .sheet-body .tab.magic-items .form-group,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group {
 	margin: 2px 0;
 	padding: .25rem;
@@ -2061,6 +2073,7 @@
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group.stacked,
 .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group.stacked,
+.dnd5e.sheet.item .sheet-body .tab.magic-items .form-group.stacked,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group.stacked {
 	display: flex;
 	flex-wrap: wrap;
@@ -2068,16 +2081,17 @@
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox,
 .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox,
+.dnd5e.sheet.item .sheet-body .tab.magic-items .form-group label.checkbox,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox {
 	position: relative;
 	z-index: 1;
 	margin: 2px;
-  padding: 2px 2px;
+  padding: 1px;
   display: flex;
 	border-radius: 3px;
 	overflow: hidden; 
   border: 1px solid rgba(0,0,0,.2);
-  height: 25px;
+  height: 24px;
   cursor: pointer;
 }
 
@@ -2160,9 +2174,9 @@
 }
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select,
-.dnd5e.sheet.item .sheet-body .tab.ite-betterRolls .form-group input,
+.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"],
 .dnd5e.sheet.item .sheet-body .tab.details .form-group select,
-.dnd5e.sheet.item .sheet-body .tab.details .form-group input {
+.dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"] {
 	background: rgba(255,255,255, .3);
 	border: none;
 }
@@ -2174,6 +2188,45 @@
 .dnd5e.sheet.item .sheet-body .tab.details .form-group select:hover,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover {
 	background: rgba(255,255,255, .5);
+}
+
+.dnd5e.sheet.item .sheet-body input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid rgba(0,0,0,.4);
+  background: rgba(255,255,255,.6) ;
+  border-radius: 3px;
+  transition: border .3s ease, background .3s ease;
+  box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
+  position: relative;
+}
+
+.dnd5e.sheet.item .sheet-body input[type="checkbox"]:hover {
+  border: 1px solid rgba(0,0,0,.8);
+  background: rgba(255,255,255,.8) ;
+}
+
+.dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked {
+  border: 1px solid rgba(0,0,0,.4);
+}
+
+.dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked::before {
+  content: '';
+  display: block;
+  background: url(../images/check-solid.svg) center no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  z-index: 1;
+}
+
+.dnd5e.sheet.item .sheet-body .checkbox input[type="checkbox"]:checked::before {
+  left: 11px;
 }
 
 .dnd5e.sheet.item h4.damage-header {
@@ -2331,6 +2384,144 @@
 
 /* Magic Item Sheet */
 
+.dnd5e.sheet.item .magic-items-content .magic-item-charges,
+.dnd5e.sheet.item .magic-items-content .magic-item-recharge input[type="text"] {
+	text-align: right;
+}
+
+.dnd5e.sheet.item .sheet-body .tab.magic-items {
+	padding: 0 .7rem 0 0;
+}
+
+.dnd5e.sheet.item .sheet-body .tab.magic-items .input-select {
+	height: 32px;
+	line-height: 30px;
+}
+
+.dnd5e.sheet.item .sheet-body .tab.magic-items .input-select label {
+	margin-left: 4px;
+}
+
+.dnd5e.sheet.item .magic-item-list {
+	clear: both;
+	padding: 0;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header {
+	margin: 0 0 .25rem 0;
+	padding-top: .5rem;
+	line-height: 20px;
+	background: transparent;
+	border: none;
+	border-top: 1px solid rgba(0,0,0,.1);
+	font-family: "Signika", sans-serif;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header:first-child,
+.dnd5e.sheet.item .magic-item-list .inventory-header .item-name,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-constrols-head{
+	border: none;
+}
+
+.dnd5e.sheet.item .magic-item-list .item.inventory-header .item-name {
+	flex: 1;
+	padding: 2px 0 0 4px;
+	border: none;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head {
+	color: rgba(0,0,0,.4);
+	padding-top: 2px;
+	margin-right: 4px;
+	text-align: center;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head {
+	margin-right: 0;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header h3 {
+	font-family: "Signika", sans-serif;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+
+.dnd5e.sheet.item .magic-item-list .item:not(.inventory-header) {
+	padding: 0;
+  line-height: 30px;
+  height: 30px;
+  background: rgba(0,0,0,.1);
+  border: none;
+  border-radius: 5px;
+  margin: 2px 0;
+  overflow: hidden; 
+}
+
+.dnd5e.sheet.item .magic-item-list .item .item-name {
+	padding: 0 .5rem 0 0;
+	flex: 1;
+}
+
+.dnd5e.sheet.item .magic-item-list .item .spell-level,
+.dnd5e.sheet.item .magic-item-list .item .spell-consumption,
+.dnd5e.sheet.item .magic-item-list .item .spell-upcast,
+.dnd5e.sheet.item .magic-item-list .item .spell-cost {
+	color: rgba(0,0,0,.6);
+	text-align: center;
+	border-left: 1px solid rgba(0,0,0,.15);
+	margin: 3px 4px 3px 0;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
+.dnd5e.sheet.item .magic-item-list .item .spell-consumption {
+	flex: 0 0 80px;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
+.dnd5e.sheet.item .magic-item-list .item .spell-cost {
+	flex: 0 0 50px;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
+.dnd5e.sheet.item .magic-item-list .item .spell-level {
+	flex: 0 0 70px;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
+.dnd5e.sheet.item .magic-item-list .item .spell-upcast {
+	flex: 0 0 85px;
+}
+
+.dnd5e.sheet.item .magic-item-list .item .feat-consumption {
+	flex: 0 0 80px;
+	margin: 4px 4px 4px 0px;
+	text-align: center;
+}
+
+.dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head,
+.dnd5e.sheet.item .magic-item-list .item-controls {
+	flex: 0 0 30px;
+	text-align: center;
+	justify-content: center;
+	border: none;
+}
+
+.dnd5e.sheet.item .magic-item-list .item-controls a {
+	flex:0 0 22px;
+	text-align: center;
+	font-size: 12px;
+	color: rgba(255,0,0,.5);
+	margin: 0;
+}
 
 /* ------------------------ */
 /* Support Dynamic Effects  */
@@ -2454,4 +2645,19 @@
 
 .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete {
 	color: rgba(255,0,0,.5);
+}
+
+/* Editor Import Message { */
+
+.tidy5e.dnd5e.sheet.actor.character .data-import-message {
+	flex: 0 0 100%;
+	margin: 0 0 1rem 0;
+	padding: 1rem;
+	border-radius: 5px;
+	background: rgba(250,100,0,.5);
+}
+
+.tidy5e.dnd5e.sheet.actor.character .data-import-message p {
+	padding: 0 1rem 1rem 1rem;
+	font-weight: 600;
 }
