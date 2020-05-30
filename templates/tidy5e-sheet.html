@@ -301,20 +301,20 @@
 			<div class="tab biography flexrow" data-group="primary" data-tab="biography">
 				<div class="left-notes note-entries">
 					<article>
-						<div class="section-titles biopage">Personality Traits</div>
-						{{editor content=data.details.personality.value target="data.details.personality.value" button=true owner=owner editable=editable}}
+						<div class="section-titles biopage">Traits</div>
+						{{editor content=data.details.trait target="data.details.trait" button=true owner=owner editable=editable}}
 					</article>
 					<article>
 						<div class="section-titles biopage">Ideals</div>
-						{{editor content=data.details.ideals.value target="data.details.ideals.value" button=true owner=owner editable=editable}}
+						{{editor content=data.details.ideal target="data.details.ideal" button=true owner=owner editable=editable}}
 					</article>
 					<article>
 						<div class="section-titles biopage">Bonds</div>
-						{{editor content=data.details.bonds.value target="data.details.bonds.value" button=true owner=owner editable=editable}}
+						{{editor content=data.details.bond target="data.details.bond" button=true owner=owner editable=editable}}
 					</article>
 					<article>
 						<div class="section-titles biopage">Flaws</div>
-						{{editor content=data.details.flaws.value target="data.details.flaws.value" button=true owner=owner editable=editable}}
+						{{editor content=data.details.flaw target="data.details.flaw" button=true owner=owner editable=editable}}
 					</article>
 				</div>
 
@@ -323,11 +323,12 @@
 						<div class="section-titles biopage">Appearance</div>
 						{{editor content=data.details.description.value target="data.details.description.value" button=true owner=owner editable=editable}}
 					</article>
-					<article class="background-notes">
-						<div class="section-titles">Background</div>
+					<article class="biography-notes">
+						<div class="section-titles">Background/Biography</div>
 						{{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
 					</article>
 				</div>
+
 			</div>
 
 			{{!-- Journal Tab --}}
