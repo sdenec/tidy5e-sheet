@@ -119,6 +119,21 @@ async function detectCustomEditorFields(app, html, data) {
 	}
 }
 
+async function checkDeathSaveStatus(app, html, data){
+	var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+	var data = actor.data.data;
+	var currentHealth = data.attributes.hp.value;
+	var deathSaveSuccess = data.attributes.death.success;
+	var deathSaveFailure = data.attributes.death.failure;
+
+	if(currentHealth > 0 && deathSaveSuccess != 0 || currentHealth > 0 && deathSaveFailure != 0){
+			await actor.update({"data.attributes.death.success": 0});
+			await actor.update({"data.attributes.death.failure": 0});
+	}
+
+	// let currentHealth = actor.data.
+}
+
 async function addClassList(app, html, data) { 
 	if (!game.settings.get("tidy5e-sheet", "hideClassList")) {
 		let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -360,15 +375,18 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	addFavorites(app, html, data);
+	checkDeathSaveStatus(app, html, data);
 	// console.log(data);
 });
 
+/*
 Hooks.on("renderItemSheet", (app, html, data) => {
 	let element = app._element[0];
 	let classList = element.classList;
 	console.log(classList);
 	console.log(app);
 });
+*/
 
 Hooks.once("ready", () => {
 
