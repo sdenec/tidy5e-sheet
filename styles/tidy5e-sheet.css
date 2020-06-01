@@ -1,6 +1,6 @@
 .tidy5e.dnd5e.sheet.actor.character {
 	min-width: 740px;
-	max-width: 740px;
+	/*max-width: 740px;*/
 	height: 720px;
 	min-height: 210px;
 }
