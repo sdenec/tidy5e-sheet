@@ -1,6 +1,6 @@
 .tidy5e.dnd5e.sheet.actor.character {
 	min-width: 740px;
-	max-width: 740px;
+	/*max-width: 740px;*/
 	height: 720px;
 	min-height: 210px;
 }
@@ -1790,6 +1790,20 @@
 
 .tidy5e.sheet.actor .note-entries article .editor .tox .tox-tbtn--select {
 	width: auto;
+}
+
+/* Portrait hover options */
+
+.tidy5e .exhaustionOnHover .exhaustion-container,
+.tidy5e .inspirationOnHover .inspiration,
+.tidy5e .restOnHover .rest-container {
+	display: none;
+}
+
+.tidy5e .exhaustionOnHover:hover .exhaustion-container,
+.tidy5e .inspirationOnHover:hover .inspiration,
+.tidy5e .restOnHover:hover .rest-container {
+	display: block;
 }
 
 /* ------------------------- */
