@@ -114,6 +114,18 @@ async function setSheetClasses(app, html, data) {
 	};
 }
 
+async function hidePortraitButtons(app, html, data){
+	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
+		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
+	};
+	if (game.settings.get("tidy5e-sheet", "restOnHover")) {
+		html.find('.tidy5e-sheet .profile').addClass('restOnHover');
+	};
+	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
+		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
+	};
+}
+
 
 async function hideFavorites(app, html, data) {
 	let favorites = html.find('.favorites-target');
@@ -309,6 +321,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	addFavorites(app, html, data);
+	hidePortraitButtons(app, html, data);
 });
 
 Hooks.once("ready", () => {
@@ -342,6 +355,30 @@ Hooks.once("ready", () => {
 	game.settings.register("tidy5e-sheet", "noInspirationAnimation", {
 		name: "No inspiration indicator animation.",
 		hint: "If it's too distracting, you can disable the subtle animation of the glowing inspiration indicator.",
+		scope: "module",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "exhaustionOnHover", {
+		name: "Show exhaustion tracker only on Hover",
+		hint: "If you check this option the exhaustion tracker will only be visible when you hover over the portrait",
+		scope: "module",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "restOnHover", {
+		name: "Show rest button only on Hover",
+		hint: "If you check this option the rest button will only be visible when you hover over the portrait",
+		scope: "module",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "inspirationOnHover", {
+		name: "Show inspiration indicator only on Hover",
+		hint: "If you check this option the inspiration indicator will only be visible when you hover over the portrait",
 		scope: "module",
 		config: true,
 		default: false,

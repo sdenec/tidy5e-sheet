@@ -1862,6 +1862,20 @@
 	width: auto;
 }
 
+/* Portrait hover options */
+
+.tidy5e .exhaustionOnHover .exhaustion-container,
+.tidy5e .inspirationOnHover .inspiration,
+.tidy5e .restOnHover .rest-container {
+	display: none;
+}
+
+.tidy5e .exhaustionOnHover:hover .exhaustion-container,
+.tidy5e .inspirationOnHover:hover .inspiration,
+.tidy5e .restOnHover:hover .rest-container {
+	display: block;
+}
+
 /* ------------------------- */
 /*     tidy5e Item sheet     */
 /* ------------------------- */
