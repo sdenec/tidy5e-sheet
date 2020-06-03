@@ -2130,14 +2130,20 @@
 	text-align: right
 }
 
-.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared {
+.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label{
 	flex: unset !important; 
 	padding-right: 8px;
 	margin: 0 .5rem 0 0;
 	flex-direction: row-reverse;
 }
 
-.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared input {
+.dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label{
+	margin-right: 0;
+}
+
+.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared input,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label input {
 	margin: 0 4px 0 0;
 }
 
