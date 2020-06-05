@@ -1,0 +1,38 @@
+<li class="item flexrow fav-item" data-item-id="{{item._id}}">
+    <div class="item-image flexrow rollable" style="background-image: url({{item.img}})"></div>
+    <div class="item-shortcuts flexrow">
+        {{#if item.hasAttack}} <span class="tag rollable attack" title="Roll Attack"><i class="ra ra-sword"></i></span> {{/if}}
+        {{#if item.hasDamage}} <span class="tag rollable damage" title="Roll Damage"><i class="fas fa-tint"></i></span> {{/if}}
+    </div>
+    <div class="item-name flexrow">        
+        <h4>{{item.name}}{{item.spellPrepMode}}</h4>
+    </div>
+    <div class="labels">
+        {{#each item.favLabels as |label id|}}
+            <span class="tag">{{label}}</span>
+        {{/each}}
+    </div>
+    {{#if item.data.quantity}} 
+        <div class="item-detail count">
+            <input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" {{#if item.editable}}{{else}}disabled{{/if}}> 
+        </div>
+    {{/if}}
+    <div class="item-detail uses">
+        {{#if item.data.uses.max}}
+            <span style="display:inline;">(</span>
+                <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
+            <span style="display:inline;">/</span>
+                <input data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>        
+            <span style="display:inline;">)</span>
+        {{else}}
+            {{#if item.editable}}<a class="addCharges" value="Add Charges">Add Charges</a>{{/if}}
+        {{/if}}
+    </div>
+    <div class="item-detail item-controlls">
+        {{#if item.canPrep}}<a class="item-control item-toggle {{item.toggleClass}}" data-path="data.equipped" title="{{item.toggleTitle}}"><i class="fas fa-sun"></i></a>{{/if}}
+        {{#if item.isItem}}<a class="item-control item-toggle {{item.toggleClass}}" data-path="data.preparation.prepared" title="{{item.toggleTitle}}"><i class="fas fa-shield-alt"></i></a>{{/if}}
+        
+        <a class="item-control item-edit" title="Edit Item" > <i class="fas fa-edit" ></i></a>
+        <a class="item-control item-fav" title="Remove from favourites" > <i class="fas fa-sign-out-alt" ></i></a>
+    </div>
+</li>

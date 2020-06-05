@@ -1,0 +1,48 @@
+<div class="tab inventory-list favourite" data-group="primary" data-tab="favourite">
+    {{#if favItems}}
+    <ol class="fav-item">
+        <li class="item inventory-header flexrow">
+            <h3>Item</h3>
+            <div class="item-detail count">Count</div>
+            <div class="item-detail uses">Uses</div>
+            <div class="item-detail item-controlls">Control</div>
+        </li>
+        {{#each favItems as |item id|}}
+            {{> "modules/favtab/templates/item.hbs" item=item}}
+        {{/each}}
+    </ol>
+    {{/if}}
+    {{#if favFeats}}
+    <ol class="fav-feat">
+        <li class="item inventory-header"><h3>Feats</h3></li>
+        {{#each favFeats as |feat lvl|}}
+            {{> "modules/favtab/templates/item.hbs" item=feat}}
+        {{/each}}
+    </ol>
+    {{/if}}
+    {{#if favSpells}}
+    <ol class="fav-spell">
+        {{#each favSpells as |section lvl|}}
+            {{#if section.spells}}
+                {{#if lvl}}
+                    <li class="item inventory-header flexrow">                        
+                        <h3>{{#if section.isCantrip}}Cantrip{{else}}Spell Level {{lvl}}{{/if}}</h3>
+                        {{#if section.isCantrip}}{{else}}
+                        <span class="spell-slots">
+                            <input type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.value" value="{{section.value}}" placeholder="0"/>
+                            /
+                            <input type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.max" value="{{section.max}}" placeholder="0"/>
+                        </span>
+                        {{/if}}
+                    </li>
+                {{else}}
+                    <li class="item inventory-header"><h3>Cantrips</h3></li>
+                {{/if}}
+            {{#each section.spells as |spell id|}}
+                {{> "modules/favtab/templates/item.hbs" item=spell}}
+            {{/each}}
+            {{/if}}
+        {{/each}}
+    </ol>
+    {{/if}}
+</div>

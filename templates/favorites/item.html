@@ -1,0 +1,21 @@
+<li class="item flexrow fav-item" data-item-id="{{id}}">
+    <div class="item-name flexrow rollable">
+        <div class="item-image" style="background-image: url({{item.img}})"></div>
+        <h4>{{item.name}}{{item.spellPrepMode}}</h4>
+    </div>
+    <div class="uses" style="flex:0 0 80px">
+        {{#if item.data.uses.max}}
+            <span style="display:inline;">(</span>
+                <input data-path="data.uses.value" type="text" ${inputStyle} value="{{item.data.uses.value}}" {{#if notEditable}}"disabled"{{/if}}>
+            <span style="display:inline;">/</span>
+                <input data-path="data.uses.max" type="text" ${inputStyle} value="{{item.data.uses.max}}" {{#if editable}}{{else}}"disabled"{{/if}}>        
+            <span style="display:inline;">)</span>
+        {{else}}
+            {{#if editable}}<a class="addCharges" value="Add Charges">Add Charges</a>{{/if}}
+        {{/if}}
+    </div>
+    <div class="item-controlls" style="flex:0 0 44px;">
+        <a class="item-control item-edit" title="Edit Item" > <i class="fas fa-edit" ></i></a>
+        <a class="item-control item-fav" title="Remove from favourites" > <i class="fas fa-sign-out-alt" ></i></a>
+    </div>
+</li>
