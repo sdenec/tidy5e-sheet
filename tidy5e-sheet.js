@@ -87,6 +87,39 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			await actor.update({"data.attributes.exhaustion": value});
  		});
 
+ 		// changing item qty and charges values (removing if both value and max are 0)
+    html.find('.item:not(.inventory-header) input').change(event => {
+    	let value = event.target.value;
+    	console.log(value);
+   //  	console.log('changing value');
+			// let actor = this.actor;
+      let itemId = $(event.target).parents('.item')[0].dataset.itemId;
+      console.log(itemId);
+   //    let path = event.target.dataset.path;
+   //    console.log(event.target);
+   //    let data = {};
+   //    console.log(data);
+   //    data[path] = Number(event.target.value);
+   //    console.log(actor.getOwnedItem(itemId));
+   //    console.log(data);
+   //    actor.getOwnedItem(itemId).update(data);
+      // app.activateFavs = true;
+    });
+
+    // creating charges for the item
+    html.find('.inventory-list .item .addCharges').click(event => {
+			let actor = this.actor;
+      let itemId = $(event.target).parents('.item')[0].dataset.itemId;
+      let item = actor.getOwnedItem(itemId);
+
+      item.data.uses = { value: 1, max: 1 };
+      let data = {};
+      data['data.uses.value'] = 1;
+      data['data.uses.max'] = 1;
+
+      actor.getOwnedItem(itemId).update(data);
+    });
+
 	}
 }
 
@@ -238,7 +271,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	checkDeathSaveStatus(app, html, data);
 	hidePortraitButtons(app, html, data);
-	// console.log(data);
+	console.log(data);
 });
 
 Hooks.once("ready", () => {

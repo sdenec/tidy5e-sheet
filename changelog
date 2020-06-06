@@ -1,5 +1,6 @@
 ** Sheet **
 - Exhaustion Tracker icon displays mood
+- fixed a bug where labels would check boxes across actor sheets when multiple sheets where open
 
 *Attributes Tab*
 - Dropdownboxes toggle icon adjusted to better communicate toggle state

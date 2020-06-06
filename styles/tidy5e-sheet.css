@@ -1180,47 +1180,68 @@
   margin-right: 4px;
 }
 
+.tidy5e.sheet.actor .favorites .inventory-list .item:hover .item-image {
+	background-image: url(../images/d20-333.svg) !important;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70%;
+}
+
+
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-image:hover {
+	background-image: url(../images/d20-highlight.svg) !important;
+}
+
 .tidy5e.sheet.actor .favorites .inventory-list .item-name {
 	cursor: default;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
-	overflow: visible;
+.tidy5e.sheet.actor .inventory-list .item .item-name h4 {
+	overflow-x: visible;
 	display: inline-block;
 	flex: initial;
 	cursor: pointer;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
 	font-size: 11px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-name h4 i {
+.tidy5e.sheet.actor .inventory-list .item-name h4 .info-icon {
 	font-size: 14px;
  	color: rgba(0,0,0,.2);
  	transition: color .3s ease;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-name h4:hover i {
+.tidy5e.sheet.actor .inventory-list .item-name h4:hover .info-icon {
  	color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-quantity {
+.tidy5e.sheet.actor .inventory-list .item-quantity {
 	display: flex;
 	margin-left: 4px;
 	text-align: center;
 	opacity: 0;
 	transition: opacity .3s ease;
 	flex: initial;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-quantity {
 	font-size: 11px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-quantity:focus-within,
-.tidy5e.sheet.actor .favorites .inventory-list .item-quantity:hover,
-.tidy5e.sheet.actor .favorites .inventory-list .item-quantity.isStack {
+.tidy5e.sheet.actor .inventory-list .item-quantity:focus-within,
+.tidy5e.sheet.actor .inventory-list .item:hover .item-quantity,
+.tidy5e.sheet.actor .inventory-list .item-quantity.isStack {
 	opacity: 1;
+}
+
+.tidy5e.sheet.actor .inventory-list .item-quantity input {
+	width: 23px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-quantity input {
 	height: 23px;
-	width: 23px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .state-display {
@@ -1278,15 +1299,8 @@
 	font-size: 11px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-uses input {
-	padding: 2px 4px 1px 0;
-}
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-uses input.uses-max {
-	padding: 2px 0 1px 4px;
-}
-
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-uses a.addCharges {
+.tidy5e.sheet.actor .inventory-list .item .item-uses a.addCharges {
 	display: block;
 	width: 100%;
 	text-align: center;
@@ -1294,7 +1308,7 @@
 	transition: opacity .3s ease;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-uses a.addCharges:hover {
+.tidy5e.sheet.actor .inventory-list .item:hover .item-uses a.addCharges {
 	opacity: 1;
 }
 
@@ -1302,8 +1316,8 @@
 	flex: 0 0 70px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-uses .uses-max,
-.tidy5e.sheet.actor .favorites .inventory-list .spell-slots .spell-max {
+.tidy5e.sheet.actor .inventory-list .item .item-uses .uses-max,
+.tidy5e.sheet.actor .inventory-list .item .spell-slots .spell-max {
 	text-align: left;
 }
 
@@ -1497,6 +1511,10 @@
 }
 
 /* Inventory */
+
+.tidy5e.sheet.actor .editable .rollable:hover {
+	text-shadow: none;
+}
 
 /* Filter */
 .tidy5e.sheet.actor .inventory-filters,
@@ -1807,6 +1825,7 @@
 
 .tidy5e.sheet.actor .inventory-list .item .item-name {
 	max-height: unset;
+	cursor: default;
 }
 
 .tidy5e.sheet.actor .inventory-list .item.spellbook-header .item-name {
@@ -1821,6 +1840,7 @@
 	background-size: cover;
 	border-radius: 5px 0px 0px 5px;
 	margin-right: .5rem;
+	cursor: pointer;
 }
 
 .tidy5e.sheet.actor .inventory-list .item.expanded .item-name .item-image {
@@ -1838,7 +1858,11 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .item-weight,
-.tidy5e.sheet.actor .inventory-list .item-uses,
+.tidy5e.sheet.actor .inventory-list .item-uses {
+	flex: 0 0 70px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item-level,
 .tidy5e.sheet.actor .inventory-list .item-action,
 .tidy5e.sheet.actor .inventory-list .item-create {
 	flex: 0 0 100px;
@@ -1852,9 +1876,13 @@
 .tidy5e.sheet.actor .inventory-list .item .item-uses input {
 	text-align: right;
 	width: 50%;
-	padding: 0 4px 1px 0;
+	padding: 0 4px 0 0;
 	color: rgba(0,0,0,.6);
 	line-height: 1;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-uses input.uses-max {
+	padding: 0 0 0 4px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item-summary {

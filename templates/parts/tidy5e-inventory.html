@@ -36,11 +36,17 @@
       <div class="item-name flexrow rollable" >
         <div class="item-image" style="background-image: url({{item.img}})"></div>
         <h4 title="Toggle Info">
-          {{item.name~}}
-          {{~#if item.isStack}}
-            ({{item.data.quantity}})
-          {{/if}}
+          <i class="fas fa-info-circle info-icon"></i>
+          {{item.name}}
         </h4>
+        {{#if item.data.quantity}}
+          <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+            (<input class="item-count" data-path="data.quantity" data-dtype="Number" type="text" value="{{item.data.quantity}}" maxlength="3" >)
+          </span>
+        {{/if}}
+       <!--  {{~#if item.isStack}}
+            ({{item.data.quantity}})
+          {{/if}} -->
       </div>
 
 
@@ -66,8 +72,12 @@
 
       <div class="item-detail item-uses">
         {{#if item.hasUses }}
-        <input type="text" value="{{item.data.uses.value}}" placeholder="0"/>
-        / {{item.data.uses.max}}
+        <input type="text" data-path="data.uses.value" value="{{item.data.uses.value}}" placeholder="0"/>
+        / <input class="uses-max" type="text" data-path="data.uses.max" value="{{item.data.uses.max}}">
+        <!-- {{item.data.uses.max}} -->
+
+        {{else}}
+        <a class="addCharges" value="Add">Add</a>
         {{/if}}
       </div>
 

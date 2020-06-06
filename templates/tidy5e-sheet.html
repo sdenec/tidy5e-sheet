@@ -58,8 +58,8 @@
 
 				{{!-- Inspiration --}}
 				<div class="inspiration has-note">
-					<input id="inspiration-checkbox" type="checkbox" name="data.attributes.inspiration" data-dtype="Boolean" {{checked data.attributes.inspiration}}>
-					<label for="inspiration-checkbox">
+					<input id="{{actor._id}}-inspiration" type="checkbox" name="data.attributes.inspiration" data-dtype="Boolean" {{checked data.attributes.inspiration}}>
+					<label for="{{actor._id}}-inspiration">
 						<i class="inspiration-icon fas fa-dice-d20"></i>
 					</label>
 					<div class="note">{{ localize 'DND5E.Inspiration' }}</div>
@@ -102,6 +102,7 @@
 				</section>
 
 				{{!-- Character Summary --}}
+
 				<ul class="flex origin-summary">
 					<li>
 						<input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="{{ localize 'DND5E.Race' }}">
@@ -164,13 +165,14 @@
 							<p>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</p>
 						</div>
 						<footer class="flex value-footer">
-							<label for="ini-mod">Mod</label>
-							<input id="ini-mod" name="data.attributes.init.value" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}" maxlength="2">
+							<label for="{{actor._id}}-ini-mod">Mod</label>
+							<input id="{{actor._id}}-ini-mod" name="data.attributes.init.value" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}" maxlength="2">
 						</footer>
 					</li>
 				</ul>
 
 			</div>
+
 		</header>
 		
 		{{!-- PC Sheet Navigation --}}
@@ -182,6 +184,7 @@
 			<a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
 			<a class="item" data-tab="journal">Journal</a>
 		</nav>
+
 
 		{{!-- NPC Sheet Body --}}
 		<section class="sheet-body">
@@ -228,12 +231,12 @@
 								<span class="res-options"><i class="fas fa-cog"></i></span>
 								<div class="res-rest">
 									<h4>Restore on rest</h4>
-									<input id="data.resources.{{res.name}}.sr" name="data.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}>
-									<label for="data.resources.{{res.name}}.sr" class="checkbox">
+									<input id="{{../actor._id}}-{{res.name}}.sr" name="data.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}>
+									<label for="{{../actor._id}}-{{res.name}}.sr" class="checkbox">
 										{{ localize "DND5E.RestS" }} 
 									</label>
-									<input id="data.resources.{{res.name}}.lr" name="data.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}>
-									<label for="data.resources.{{res.name}}.lr" class="checkbox">
+									<input id="{{../actor._id}}-{{res.name}}.lr" name="data.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}>
+									<label for="{{../actor._id}}-{{res.name}}.lr" class="checkbox">
 										{{ localize "DND5E.RestL" }} 
 									</label>
 								</div>
@@ -278,7 +281,6 @@
 						</header>
 						<div class="favorites-target"></div>
 					</div>
-					
 				</section>
 			</div>
 

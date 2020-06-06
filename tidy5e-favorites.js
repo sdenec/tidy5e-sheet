@@ -82,7 +82,7 @@ export const addFavorites = async function(app, html, data, position) {
   let spellPrepModeCount = 0
   let items = data.actor.items;
 
-  console.log(items);
+  // console.log(items);
 
   let renderFavTab = false;
 
@@ -266,7 +266,7 @@ export const addFavorites = async function(app, html, data, position) {
             let data = {};
             data[path] = Number(ev.target.value);
             app.actor.getOwnedItem(itemId).update(data);
-            app.activateFavs = true;
+            // app.activateFavs = true;
           })
 
           // creating charges for the item
