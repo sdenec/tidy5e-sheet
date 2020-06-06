@@ -7,7 +7,10 @@
 	"minimumCoreVersion": "0.6.0",
 	"compatibleCoreVersion": "0.6.0",
 	"systems": ["dnd5e"],
-	"esmodules": ["tidy5e-sheet.js"],
+	"esmodules": [
+		"tidy5e-sheet.js",	
+		"tidy5e-favorites.js"
+	],
 	"styles": [
 		"styles/tidy5e-sheet.css"
 	],

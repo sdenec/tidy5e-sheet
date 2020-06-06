@@ -1,0 +1,18 @@
+** Sheet **
+- Exhaustion Tracker icon displays mood
+
+*Attributes Tab*
+- Dropdownboxes toggle icon adjusted to better communicate toggle state
+
+**Favorites**
+
+- Marker is added to Attributes Tab when there are Favorites
+- Favorites Dropdown only visible if there are Favorites
+
+- Quantity can be changed
+- Charges are shown
+- Prepared/Equipped toggle
+
+**Item Sheets**
+*Features*
+- Charged Checkbox layout fixed
