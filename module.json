@@ -2,12 +2,15 @@
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"author": "sdenec#3813",
 	"minimumCoreVersion": "0.6.0",
-	"compatibleCoreVersion": "0.6.0",
+	"compatibleCoreVersion": "0.6.2",
 	"systems": ["dnd5e"],
-	"esmodules": ["tidy5e-sheet.js"],
+	"esmodules": [
+		"tidy5e-sheet.js",	
+		"tidy5e-favorites.js"
+	],
 	"styles": [
 		"styles/tidy5e-sheet.css"
 	],

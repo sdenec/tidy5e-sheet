@@ -692,7 +692,7 @@
 	margin-left: .5rem;
 }
 
-.tidy5e #ini-mod {
+.tidy5e input.ini-mod {
 	width: 5ch;
 }
 
@@ -717,7 +717,7 @@
   border: 1px solid rgba(0,0,0,.1);
   border-radius: 5px;
   overflow: hidden;
-  height: 434px;
+  height: 432px;
 }
 
 .tidy5e.sheet.actor .ability-scores .ability {
@@ -788,13 +788,13 @@
 .tidy5e.sheet.actor.character ul.skills-list {
 	margin: 0 .5rem;
   border: 1px solid rgba(0,0,0,.1);
-  border-radius: .5em;
+  border-radius: 5px;
   overflow: hidden;
   padding: 0;
   flex: 0 0 215px;
   display: flex;
   flex-direction: column;
-  height: 434px;
+  height: 432px;
 }
 
 .tidy5e.sheet.actor.character ul.skills-list li.skill {
@@ -805,6 +805,14 @@
   padding: 4px;
 }
 
+.tidy5e.sheet.actor.character ul.skills-list li.skill:first-child {
+  padding-top: 3px;
+}
+
+.tidy5e.sheet.actor.character ul.skills-list li.skill:last-child {
+  padding-bottom: 3px;
+}
+
 .tidy5e.sheet.actor.character ul.skills-list li.skill:nth-child(even) {
 	background: rgba(0,0,0,.1);
 }
@@ -812,6 +820,10 @@
 .tidy5e.sheet.actor ul.skills-list li.skill .skill-proficiency,
 .tidy5e.sheet.actor.character ul.skills-list li.skill h4 {
 	line-height: 16px;
+}
+
+.tidy5e.sheet.actor ul.skills-list li.skill .skill-proficiency i {
+	vertical-align: middle;
 }
 
 .tidy5e.sheet.actor ul.skills-list li.skill .skill-mod,
@@ -833,18 +845,30 @@
 
 .tidy5e.sheet.actor .center-pane ul.attributes {
 	margin: 0;
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 5px;
 }
 
 .tidy5e.sheet.actor .center-pane ul.attributes li.attribute {
-	margin: 0 0 0 .5rem;
-	height: 49px;
-	border: 1px solid rgba(0,0,0,.1);
-	border-radius: 5px;
+	margin: 0 0 1px 0;
+	padding: 1px 0 0 0;
+	height: 46px;
 	position: relative;
+	border: none;
+	border-radius: 0;
+	border-left: 1px solid rgba(0,0,0,.1);
+	border-top: 1px solid rgba(0,0,0,.1);
+	flex: 1 0 33%;
 }
 
-.tidy5e.sheet.actor .center-pane ul.attributes li.attribute:first-child {
-	margin: 0;
+.tidy5e.sheet.actor .center-pane ul.attributes li.attribute:nth-child(3n+1) {
+	border-left: 0; 
+}
+
+.tidy5e.sheet.actor .center-pane ul.attributes li.attribute:nth-child(-n+3) {
+	border-top: 0;
+	margin-bottom: 0; 
+	padding-top: 0;
 }
 
 /* Resource Restoration Menu */
@@ -861,8 +885,8 @@
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-options {
 	position: relative;
-  right: 1px;
-  bottom: -1px;
+  right: 2px;
+  bottom: 0;
   font-size: 12px;
   color: rgba(0,0,0,.5);
   transition: color .3s ease;
@@ -900,13 +924,15 @@
 
 .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox {
 	border: 1px solid rgba(0,0,0,.2);
-  padding: 3px 6px;
+  padding: 3px;
   margin: 0 2px;
   border-radius: 5px;
   font-size: 11px;
   font-family: "Signika", sans-serif;
   cursor: pointer;
   transition: background .3s ease;
+  position: relative;
+  bottom: 3px;
 }
 
 .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox:hover {
@@ -931,13 +957,15 @@
 .tidy5e.sheet.actor.character .attributes .resource .attribute-name {
 	margin: 0;
   font-size: 1rem;
-  height: 21px;
+  height: 20px;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 25px;
+	line-height: 25px;
 }
 
 .dnd5e.sheet.actor.character .attributes .resource .attribute-name input[type="text"] {
@@ -947,9 +975,14 @@
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value.multiple input {
+	font-size: 22px;
 	max-width: 3.5ch;
   height: 22px;
   padding-top: 2px;
+}
+
+.dnd5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
+	font-size: 23px;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value .res-value {
@@ -978,7 +1011,7 @@
 	color: rgba(0,0,0,.6);
 	cursor: pointer;
 	margin-left: .5rem;
-	padding: 0 8px;
+	padding: 0 4px 0 8px;
 }
 
 .tidy5e.sheet.actor .toggle-icon:hover {
@@ -995,15 +1028,17 @@
 	text-align: center;
 }
 
-.tidy5e.sheet.actor .traits-toggle .fa-caret-down,
-.tidy5e.sheet.actor .traits-wrap.compressed .traits-toggle .fa-caret-up,
-.tidy5e.sheet.actor .favorites-toggle .fa-caret-down,
-.tidy5e.sheet.actor .favorites-wrap.compressed .favorites-toggle .fa-caret-up {
+.tidy5e.sheet.actor .traits-toggle .fa-caret-right,
+.tidy5e.sheet.actor .traits-wrap.compressed .traits-toggle .fa-caret-down,
+.tidy5e.sheet.actor .favorites-toggle .fa-caret-right,
+.tidy5e.sheet.actor .favorites-wrap,
+.tidy5e.sheet.actor .favorites-wrap.compressed .favorites-toggle .fa-caret-down {
 	display: none;
 }
 
-.tidy5e.sheet.actor .traits-wrap.compressed .traits-toggle .fa-caret-down,
-.tidy5e.sheet.actor .favorites-wrap.compressed .favorites-toggle .fa-caret-down {
+.tidy5e.sheet.actor .favorites-wrap.hasFavs,
+.tidy5e.sheet.actor .traits-wrap.compressed .traits-toggle .fa-caret-right,
+.tidy5e.sheet.actor .favorites-wrap.compressed .favorites-toggle .fa-caret-right {
 	display: block;
 }
 
@@ -1021,7 +1056,7 @@
 
 .tidy5e.sheet.actor .traits label {
   flex: 0 0 140px;
-  line-height: 16px;
+  line-height: 24px;
   font-weight: normal;
   margin: 0 1rem 0 0;
   font-size: 13px;
@@ -1035,7 +1070,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-  padding: 4px;
+  padding: 0 4px;
 }
 
 .tidy5e.sheet.actor .traits .multiple {
@@ -1052,17 +1087,22 @@
 	margin-right: .5rem;
 }
 
+.tidy5e.sheet.actor .traits .form-group:first-child {
+	line-height: 23px;
+	height: 23px;
+}
+
 .tidy5e.sheet.actor .traits .form-group:nth-child(odd) {
 	background: rgba(0,0,0,.1);
 }
-
+/*
 .tidy5e.sheet.actor .traits .form-group:first-child {
 	padding-top: 3px;
-}
+}*/
 
 .tidy5e.sheet.actor .traits .form-group:last-child {
 	margin: 0;
-	padding-bottom: 3px;
+	/*padding-bottom: 3px;*/
 }
 
 .tidy5e.sheet .traits-list {
@@ -1073,7 +1113,7 @@
 .tidy5e.sheet.actor .traits input {
   text-align: right;
   font-size: 11px;
-  height: 16px;
+  height: 22px;
   padding-top: 1px;
   margin-right: 19px;
 }
@@ -1081,23 +1121,32 @@
 .tidy5e.sheet.actor .traits .actor-size {
   flex: 0 0 90px;
   font-size: 13px;
-  height: 17px;
-  margin-top: -1px;
+  height: 18px;
+  line-height: 23px;
+  margin-top: 2px;
   border: none;
-  padding: 0;
+  padding: 1px 0 0 0;
   font-family: "Signika", sans-serif;
   background: rgba(0,0,0,.15); 
 }
 
 .tidy5e.sheet.actor .traits .tag {
   display: inline-block;
-  margin: 1px 0 1px 0;
-  padding: 2px 3px 1px 3px;
-  font-size: 11px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 12px;
   border: none;
+  padding: 1px;
+  margin: 0;
+  background: transparent;
+  color: rgba(0,0,0,.6);
+}
+
+.tidy5e.sheet.actor .traits .tag span {
+  display: inline-block;
+  margin: 1px 0;
+  padding: 5px 4px 3px 4px;
   border-radius: 3px;
-  background: rgba(0, 0, 0, .15);
+  background: rgba(0, 0, 0, .1);
 }
 
 .dnd5e.sheet .trait-selector {
@@ -1111,8 +1160,8 @@
   float: none;
   margin-right: 0;
   text-align: center;
-  color: #999;
-  line-height: 16px;
+  color: #7a7971;
+  line-height: 24px;
   vertical-align: bottom;
 }
 
@@ -1122,54 +1171,204 @@
 
 /* Favorites */
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites {
-	border-radius: 5px;
+
+.tidy5e.sheet.actor .item[data-tab="attributes"] i {
+	margin-right: 4px;
+	color: rgba(0,0,0,.4);
+	position: relative;
+	top: 1px;
+}
+
+.tidy5e.sheet.actor .favorites i {
+	vertical-align: middle;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list {
+	/*border-radius: 5px;*/
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
 }
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites ol {
+.tidy5e.sheet.actor .favorites .inventory-list ol {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .item {
+.tidy5e.sheet.actor .favorites .inventory-list .item {
 	line-height: 23px;
 	border-radius: 0;
 	margin: 0;
 	margin: 1px 0;
+	overflow: hidden;
 }
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .item .item-name .item-image {
+.tidy5e.sheet.actor .favorites .inventory-list .item:nth-child(2) {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-image {
 	width: 23px;
 	height: 23px;
+  flex: 0 0 23px;
 	border-radius: 0;
+  background-size: cover;
+  margin-right: 4px;
 }
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites ol:last-child .item:last-child {
-	margin-bottom: 0;
+.tidy5e.sheet.actor .favorites .inventory-list .item:hover .item-image {
+	background-image: url(../images/d20-333.svg) !important;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70%;
 }
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .inventory-header {
+
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-image:hover {
+	background-image: url(../images/d20-highlight.svg) !important;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-name {
+	cursor: default;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-name h4 {
+	overflow-x: visible;
+	display: inline-block;
+	flex: initial;
+	cursor: pointer;
+	line-height: 28px;
+	padding-top: 2px;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
+	font-size: 11px;
+	line-height: 21px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item-name h4 .info-icon {
+	font-size: 14px;
+ 	color: rgba(0,0,0,.2);
+ 	transition: color .3s ease;
+ 	position: relative;
+ 	top: -1px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item-name h4:hover .info-icon {
+ 	color: rgba(0,0,0,.6);
+}
+
+.tidy5e.sheet.actor .inventory-list .item-quantity {
+	display: flex;
+	margin-left: 4px;
+	text-align: center;
+	opacity: 0;
+	transition: opacity .3s ease;
+	flex: initial;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-quantity {
+	font-size: 11px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item-quantity:focus-within,
+.tidy5e.sheet.actor .inventory-list .item .item-quantity:hover,
+.tidy5e.sheet.actor .inventory-list .item-quantity.isStack {
+	opacity: 1;
+}
+
+.tidy5e.sheet.actor .inventory-list .item-quantity input {
+	width: 23px;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-quantity input {
+	height: 23px;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .state-display {
+	flex: 0 0 16px;
+	margin: 0 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgba(0,0,0,.6);
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .state-display a {
+	color: rgba(0,0,0,.25);
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .state-display a.active {
+	color: rgba(0,0,0,.6);
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header,
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header:first-child {
 	background: transparent;
 	padding-top: 3px;
 	padding-left: 4px;
-	padding-right: 50px;
+	padding-right: 45px;
 	margin: 0;
 	line-height: 20px;
+  color: rgba(0,0,0,.4);
 }
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .item-action {
-	flex: 0 0 100px;
+
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots,
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots input {
+  color: rgba(0,0,0,.4);
 }
 
-.tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .fav-spell-slots {
-	flex: 0 0 70px; 
-	display: flex;
-	justify-content: center;
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:hover,
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:hover input,
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within,
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within input {
+  color: rgba(0,0,0,.8);
 }
+
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-charges {
+	flex: 0 0 55px;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .spell-comps,
+.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-action,
+.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-charges {
+	font-size: 11px;
+	line-height: 21px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-charges a.addCharges {
+	display: block;
+	width: 100%;
+	text-align: center;
+	opacity: 0;
+	transition: opacity .3s ease;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-charges:hover a.addCharges {
+	opacity: 1;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-action {
+	flex: 0 0 70px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-charges .uses-max,
+.tidy5e.sheet.actor .inventory-list .item .spell-slots .spell-max {
+	text-align: left;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .item-controls {
+	flex: 0 0 45px;
+}
+
 
 /* Exhaustion Portrait */
 
@@ -1275,6 +1474,10 @@
 	display: block;
 }
 
+.tidy5e .exhaustion-container .exhaustion-icon i {
+	display: none;
+}
+
 .tidy5e .exhaustion-container.level-0 .note p:not(.lvl-0),
 .tidy5e .exhaustion-container.level- .note p:not(.lvl-0),
 .tidy5e .exhaustion-container.level-1 .note p:not(.lvl-1),
@@ -1293,10 +1496,22 @@
 	background: transparent;
 }
 
+.tidy5e .exhaustion-container.level-0 .exhaustion-icon i:nth-child(1) {
+	display: inline-block;
+}
+
 .tidy5e .exhaustion-container:not(.level-):not(.level-0) .exhaustion-icon,
 .tidy5e .exhaustion-container.level-1 .exhaust-level li:nth-of-type(-n+2),
 .tidy5e .exhaustion-container.level-2 .exhaust-level li:nth-of-type(-n+3) {
 	background: rgba(255,255,0,.5);
+}
+
+.tidy5e .exhaustion-container.level-1 .exhaustion-icon i:nth-child(2) {
+	display: inline-block;
+}
+
+.tidy5e .exhaustion-container.level-2 .exhaustion-icon i:nth-child(3) {
+	display: inline-block;
 }
 
 .tidy5e .exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2) .exhaustion-icon,
@@ -1305,10 +1520,26 @@
 	background: rgba(255,120,0,.5);
 }
 
+.tidy5e .exhaustion-container.level-3 .exhaustion-icon i:nth-child(4) {
+	display: inline-block;
+}
+
+.tidy5e .exhaustion-container.level-4 .exhaustion-icon i:nth-child(5) {
+	display: inline-block;
+}
+
 .tidy5e .exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4) .exhaustion-icon,
 .tidy5e .exhaustion-container.level-5 .exhaust-level li:nth-of-type(-n+6),
 .tidy5e .exhaustion-container.level-6 .exhaust-level li:nth-of-type(-n+7) {
 	background: rgba(255,0,0,.5);
+}
+
+.tidy5e .exhaustion-container.level-5 .exhaustion-icon i:nth-child(6) {
+	display: inline-block;
+}
+
+.tidy5e .exhaustion-container.level-6 .exhaustion-icon i:nth-child(7) {
+	display: inline-block;
 }
 
 .tidy5e .exhaustion-container:not(.level-):not(.level-0) .level-display {
@@ -1324,6 +1555,10 @@
 }
 
 /* Inventory */
+
+.tidy5e.sheet.actor .editable .rollable:hover {
+	text-shadow: none;
+}
 
 /* Filter */
 .tidy5e.sheet.actor .inventory-filters,
@@ -1528,6 +1763,10 @@
 	color: rgba(0,0,0,.15);
 }
 
+.tidy5e.sheet.actor .inventory-list .item i {
+	vertical-align: middle;
+}
+
 .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail svg,
 .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail svg {
 	height: 13px;
@@ -1581,10 +1820,37 @@
 
 .tidy5e.sheet.actor .spell-slots,
 .tidy5e.sheet.actor .spell-comps {
-	flex: 0 0 75px;
+	flex: 0 0 55px;
 	text-align: center;
 	padding: 0;
 	border: none;
+}
+
+.tidy5e.sheet.actor .spell-comps {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-action,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-target,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-school,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-comps {
+  padding-top: 2px;
+  line-height: 28px;
+}
+
+.dnd5e.sheet.actor .spell-component.C,
+.dnd5e.sheet.actor .spell-component.R {
+    width: auto;
+    height: auto;
+    border: none;
+    color: #c9c7b8;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    padding: 2px 2px 0 2px;
+    margin: -2px 0 0 1px;
+    line-height: 10px;
 }
 
 .tidy5e.sheet.actor .spell-slots input,
@@ -1597,7 +1863,12 @@
 .tidy5e.sheet.actor .inventory-list .item-controls,
 .tidy5e.sheet.actor.character .inventory .item-controls,
 .tidy5e.sheet.actor.character .spellbook .item-controls {
-	flex: 0 0 50px;
+	flex: 0 0 55px;
+	justify-content: center;
+}
+
+.tidy5e.sheet.actor.character .spellbook .spellbook-empty .item-controls {
+	flex: 0 0 100%;
 	justify-content: center;
 }
 
@@ -1605,8 +1876,13 @@
 	border: none;
 }
 
+.dnd5e.sheet.actor .inventory-list .item-controls a {
+	flex: 0 0 18px;
+}
+
 .tidy5e.sheet.actor .inventory-list .item .item-name {
 	max-height: unset;
+	cursor: default;
 }
 
 .tidy5e.sheet.actor .inventory-list .item.spellbook-header .item-name {
@@ -1621,6 +1897,7 @@
 	background-size: cover;
 	border-radius: 5px 0px 0px 5px;
 	margin-right: .5rem;
+	cursor: pointer;
 }
 
 .tidy5e.sheet.actor .inventory-list .item.expanded .item-name .item-image {
@@ -1638,23 +1915,50 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .item-weight,
-.tidy5e.sheet.actor .inventory-list .item-uses,
+.tidy5e.sheet.actor .inventory-list .item-charges {
+	flex: 0 0 70px;
+}
+
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges input,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-weight {
+  padding-top: 2px;
+  line-height: 28px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item-level,
 .tidy5e.sheet.actor .inventory-list .item-action,
 .tidy5e.sheet.actor .inventory-list .item-create {
 	flex: 0 0 100px;
 }
 
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-uses {
-	text-align: center;
-	display: flex;
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-level,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-action {
+  padding-top: 2px;
+  line-height: 28px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-uses input {
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-recharge {
+	flex: initial;
+	padding: 0 4px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-charges input {
 	text-align: right;
 	width: 50%;
-	padding: 0 4px 1px 0;
+	padding: 0 4px 0 0;
 	color: rgba(0,0,0,.6);
 	line-height: 1;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-charges input.uses-max {
+	padding: 0 0 0 4px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item-summary {
@@ -1671,6 +1975,11 @@
   line-height: 18px;
   padding-top: 2px;
 }
+
+.tidy5e.sheet.actor .inventory-list .spellbook-empty a.item-create {
+	flex: 0 0 100%;
+}
+
 
 .tidy5e.sheet.actor.character .inventory .item-equipped,
 .tidy5e.sheet.actor.character .spellbook .spell-prepared {
@@ -2130,14 +2439,20 @@
 	text-align: right
 }
 
-.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared {
+.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label{
 	flex: unset !important; 
 	padding-right: 8px;
 	margin: 0 .5rem 0 0;
 	flex-direction: row-reverse;
 }
 
-.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared input {
+.dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label{
+	margin-right: 0;
+}
+
+.dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared input,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label input {
 	margin: 0 4px 0 0;
 }
 
