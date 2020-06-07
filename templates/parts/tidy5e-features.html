@@ -14,7 +14,7 @@
     <h3 class="item-name flexrow">{{localize section.label}}</h3>
 
     {{#if section.hasActions}}
-    <div class="item-detail item-uses">{{localize "DND5E.Uses"}}</div>
+    <div class="item-detail item-charges">{{localize "DND5E.Uses"}}</div>
     <div class="item-detail item-action">{{localize "DND5E.Usage"}}</div>
     {{/if}}
 
@@ -39,7 +39,7 @@
       </div>
 
       {{#if section.hasActions}}
-      <div class="item-detail item-uses">
+      <div class="item-detail item-charges">
         {{#if item.isOnCooldown}}
         <a class="item-recharge rollable">{{item.labels.recharge}}</a>
         {{else if item.data.recharge.value}}

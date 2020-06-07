@@ -692,7 +692,7 @@
 	margin-left: .5rem;
 }
 
-.tidy5e #ini-mod {
+.tidy5e input.ini-mod {
 	width: 5ch;
 }
 
@@ -717,7 +717,7 @@
   border: 1px solid rgba(0,0,0,.1);
   border-radius: 5px;
   overflow: hidden;
-  height: 434px;
+  height: 432px;
 }
 
 .tidy5e.sheet.actor .ability-scores .ability {
@@ -788,13 +788,13 @@
 .tidy5e.sheet.actor.character ul.skills-list {
 	margin: 0 .5rem;
   border: 1px solid rgba(0,0,0,.1);
-  border-radius: .5em;
+  border-radius: 5px;
   overflow: hidden;
   padding: 0;
   flex: 0 0 215px;
   display: flex;
   flex-direction: column;
-  height: 434px;
+  height: 432px;
 }
 
 .tidy5e.sheet.actor.character ul.skills-list li.skill {
@@ -803,6 +803,14 @@
   line-height: 16px;
   align-items: center;
   padding: 4px;
+}
+
+.tidy5e.sheet.actor.character ul.skills-list li.skill:first-child {
+  padding-top: 3px;
+}
+
+.tidy5e.sheet.actor.character ul.skills-list li.skill:last-child {
+  padding-bottom: 3px;
 }
 
 .tidy5e.sheet.actor.character ul.skills-list li.skill:nth-child(even) {
@@ -837,18 +845,30 @@
 
 .tidy5e.sheet.actor .center-pane ul.attributes {
 	margin: 0;
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 5px;
 }
 
 .tidy5e.sheet.actor .center-pane ul.attributes li.attribute {
-	margin: 0 0 0 .5rem;
-	height: 49px;
-	border: 1px solid rgba(0,0,0,.1);
-	border-radius: 5px;
+	margin: 0 0 1px 0;
+	padding: 1px 0 0 0;
+	height: 46px;
 	position: relative;
+	border: none;
+	border-radius: 0;
+	border-left: 1px solid rgba(0,0,0,.1);
+	border-top: 1px solid rgba(0,0,0,.1);
+	flex: 1 0 33%;
 }
 
-.tidy5e.sheet.actor .center-pane ul.attributes li.attribute:first-child {
-	margin: 0;
+.tidy5e.sheet.actor .center-pane ul.attributes li.attribute:nth-child(3n+1) {
+	border-left: 0; 
+}
+
+.tidy5e.sheet.actor .center-pane ul.attributes li.attribute:nth-child(-n+3) {
+	border-top: 0;
+	margin-bottom: 0; 
+	padding-top: 0;
 }
 
 /* Resource Restoration Menu */
@@ -865,8 +885,8 @@
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-options {
 	position: relative;
-  right: 1px;
-  bottom: -1px;
+  right: 2px;
+  bottom: 0;
   font-size: 12px;
   color: rgba(0,0,0,.5);
   transition: color .3s ease;
@@ -904,13 +924,15 @@
 
 .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox {
 	border: 1px solid rgba(0,0,0,.2);
-  padding: 3px 6px;
+  padding: 3px;
   margin: 0 2px;
   border-radius: 5px;
   font-size: 11px;
   font-family: "Signika", sans-serif;
   cursor: pointer;
   transition: background .3s ease;
+  position: relative;
+  bottom: 3px;
 }
 
 .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox:hover {
@@ -935,13 +957,15 @@
 .tidy5e.sheet.actor.character .attributes .resource .attribute-name {
 	margin: 0;
   font-size: 1rem;
-  height: 21px;
+  height: 20px;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 25px;
+	line-height: 25px;
 }
 
 .dnd5e.sheet.actor.character .attributes .resource .attribute-name input[type="text"] {
@@ -951,9 +975,14 @@
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value.multiple input {
+	font-size: 22px;
 	max-width: 3.5ch;
   height: 22px;
   padding-top: 2px;
+}
+
+.dnd5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
+	font-size: 23px;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value .res-value {
@@ -1027,7 +1056,7 @@
 
 .tidy5e.sheet.actor .traits label {
   flex: 0 0 140px;
-  line-height: 16px;
+  line-height: 24px;
   font-weight: normal;
   margin: 0 1rem 0 0;
   font-size: 13px;
@@ -1041,7 +1070,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-  padding: 4px;
+  padding: 0 4px;
 }
 
 .tidy5e.sheet.actor .traits .multiple {
@@ -1058,17 +1087,22 @@
 	margin-right: .5rem;
 }
 
+.tidy5e.sheet.actor .traits .form-group:first-child {
+	line-height: 23px;
+	height: 23px;
+}
+
 .tidy5e.sheet.actor .traits .form-group:nth-child(odd) {
 	background: rgba(0,0,0,.1);
 }
-
+/*
 .tidy5e.sheet.actor .traits .form-group:first-child {
 	padding-top: 3px;
-}
+}*/
 
 .tidy5e.sheet.actor .traits .form-group:last-child {
 	margin: 0;
-	padding-bottom: 3px;
+	/*padding-bottom: 3px;*/
 }
 
 .tidy5e.sheet .traits-list {
@@ -1079,7 +1113,7 @@
 .tidy5e.sheet.actor .traits input {
   text-align: right;
   font-size: 11px;
-  height: 16px;
+  height: 22px;
   padding-top: 1px;
   margin-right: 19px;
 }
@@ -1087,23 +1121,32 @@
 .tidy5e.sheet.actor .traits .actor-size {
   flex: 0 0 90px;
   font-size: 13px;
-  height: 17px;
-  margin-top: -1px;
+  height: 18px;
+  line-height: 23px;
+  margin-top: 2px;
   border: none;
-  padding: 0;
+  padding: 1px 0 0 0;
   font-family: "Signika", sans-serif;
   background: rgba(0,0,0,.15); 
 }
 
 .tidy5e.sheet.actor .traits .tag {
   display: inline-block;
-  margin: 1px 0 1px 0;
-  padding: 2px 3px 1px 3px;
-  font-size: 11px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 12px;
   border: none;
+  padding: 1px;
+  margin: 0;
+  background: transparent;
+  color: rgba(0,0,0,.6);
+}
+
+.tidy5e.sheet.actor .traits .tag span {
+  display: inline-block;
+  margin: 1px 0;
+  padding: 5px 4px 3px 4px;
   border-radius: 3px;
-  background: rgba(0, 0, 0, .15);
+  background: rgba(0, 0, 0, .1);
 }
 
 .dnd5e.sheet .trait-selector {
@@ -1117,8 +1160,8 @@
   float: none;
   margin-right: 0;
   text-align: center;
-  color: #999;
-  line-height: 16px;
+  color: #7a7971;
+  line-height: 24px;
   vertical-align: bottom;
 }
 
@@ -1201,16 +1244,21 @@
 	display: inline-block;
 	flex: initial;
 	cursor: pointer;
+	line-height: 28px;
+	padding-top: 2px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
 	font-size: 11px;
+	line-height: 21px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item-name h4 .info-icon {
 	font-size: 14px;
  	color: rgba(0,0,0,.2);
  	transition: color .3s ease;
+ 	position: relative;
+ 	top: -1px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item-name h4:hover .info-icon {
@@ -1231,7 +1279,7 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .item-quantity:focus-within,
-.tidy5e.sheet.actor .inventory-list .item:hover .item-quantity,
+.tidy5e.sheet.actor .inventory-list .item .item-quantity:hover,
 .tidy5e.sheet.actor .inventory-list .item-quantity.isStack {
 	opacity: 1;
 }
@@ -1285,22 +1333,18 @@
   color: rgba(0,0,0,.8);
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header h3 {
-  font-size: 12px;
-}
-
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-uses {
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-charges {
 	flex: 0 0 55px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .spell-comps,
 .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-action,
-.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-uses {
+.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-charges {
 	font-size: 11px;
+	line-height: 21px;
 }
 
-
-.tidy5e.sheet.actor .inventory-list .item .item-uses a.addCharges {
+.tidy5e.sheet.actor .inventory-list .item .item-charges a.addCharges {
 	display: block;
 	width: 100%;
 	text-align: center;
@@ -1308,7 +1352,7 @@
 	transition: opacity .3s ease;
 }
 
-.tidy5e.sheet.actor .inventory-list .item:hover .item-uses a.addCharges {
+.tidy5e.sheet.actor .inventory-list .item .item-charges:hover a.addCharges {
 	opacity: 1;
 }
 
@@ -1316,7 +1360,7 @@
 	flex: 0 0 70px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-uses .uses-max,
+.tidy5e.sheet.actor .inventory-list .item .item-charges .uses-max,
 .tidy5e.sheet.actor .inventory-list .item .spell-slots .spell-max {
 	text-align: left;
 }
@@ -1788,6 +1832,14 @@
 	align-items: center;
 }
 
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-action,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-target,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-school,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-comps {
+  padding-top: 2px;
+  line-height: 28px;
+}
+
 .dnd5e.sheet.actor .spell-component.C,
 .dnd5e.sheet.actor .spell-component.R {
     width: auto;
@@ -1812,6 +1864,11 @@
 .tidy5e.sheet.actor.character .inventory .item-controls,
 .tidy5e.sheet.actor.character .spellbook .item-controls {
 	flex: 0 0 55px;
+	justify-content: center;
+}
+
+.tidy5e.sheet.actor.character .spellbook .spellbook-empty .item-controls {
+	flex: 0 0 100%;
 	justify-content: center;
 }
 
@@ -1858,8 +1915,15 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .item-weight,
-.tidy5e.sheet.actor .inventory-list .item-uses {
+.tidy5e.sheet.actor .inventory-list .item-charges {
 	flex: 0 0 70px;
+}
+
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges input,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-weight {
+  padding-top: 2px;
+  line-height: 28px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item-level,
@@ -1868,12 +1932,24 @@
 	flex: 0 0 100px;
 }
 
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-uses {
-	text-align: center;
-	display: flex;
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-level,
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-action {
+  padding-top: 2px;
+  line-height: 28px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-uses input {
+.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-recharge {
+	flex: initial;
+	padding: 0 4px;
+}
+
+.tidy5e.sheet.actor .inventory-list .item .item-charges input {
 	text-align: right;
 	width: 50%;
 	padding: 0 4px 0 0;
@@ -1881,7 +1957,7 @@
 	line-height: 1;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-uses input.uses-max {
+.tidy5e.sheet.actor .inventory-list .item .item-charges input.uses-max {
 	padding: 0 0 0 4px;
 }
 
@@ -1899,6 +1975,11 @@
   line-height: 18px;
   padding-top: 2px;
 }
+
+.tidy5e.sheet.actor .inventory-list .spellbook-empty a.item-create {
+	flex: 0 0 100%;
+}
+
 
 .tidy5e.sheet.actor.character .inventory .item-equipped,
 .tidy5e.sheet.actor.character .spellbook .spell-prepared {

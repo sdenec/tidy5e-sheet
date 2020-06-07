@@ -91,19 +91,13 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     html.find('.item:not(.inventory-header) input').change(event => {
     	let value = event.target.value;
     	console.log(value);
-   //  	console.log('changing value');
-			// let actor = this.actor;
+			let actor = this.actor;
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
       console.log(itemId);
-   //    let path = event.target.dataset.path;
-   //    console.log(event.target);
-   //    let data = {};
-   //    console.log(data);
-   //    data[path] = Number(event.target.value);
-   //    console.log(actor.getOwnedItem(itemId));
-   //    console.log(data);
-   //    actor.getOwnedItem(itemId).update(data);
-      // app.activateFavs = true;
+      let path = event.target.dataset.path;
+      let data = {};
+      data[path] = Number(event.target.value);
+      actor.getOwnedItem(itemId).update(data);
     });
 
     // creating charges for the item
@@ -122,22 +116,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 	}
 }
-
-// store Scroll Position
-// function storeScrollPos(html){
-// 	let attributesTab = html.find('.tab.attributes');
-// 	if(attributesTab.hasClass('active')){
-// 		attributesTab.scroll(function(){
-// 			scrollPos = $(this).scrollTop();
-// 		});
-// 	} 
-// 	let tabs = html.find('.tab:not(.attributes)');
-// 	tabs.click(function(){
-// 	console.log($(this));
-// 		scrollPos = 0;
-// 		attributesTab.scrollTop(scrollPos);
-// 	});
-// }
 
 // Migrate Traits to default dnd5e data
 async function migrateTraits(app, html, data) {

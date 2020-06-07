@@ -18,7 +18,7 @@
     <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}"><i class="fas fa-weight-hanging"></i></div>
     {{/if}}
 
-    <div class="item-detail item-uses" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
+    <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
     <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i></div>
 
     {{#if ../owner}}
@@ -41,7 +41,7 @@
         </h4>
         {{#if item.data.quantity}}
           <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
-            (<input class="item-count" data-path="data.quantity" data-dtype="Number" type="text" value="{{item.data.quantity}}" maxlength="3" >)
+            (<input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="3" >)
           </span>
         {{/if}}
        <!--  {{~#if item.isStack}}
@@ -70,7 +70,7 @@
       </div>
       {{/if}}
 
-      <div class="item-detail item-uses">
+      <div class="item-detail item-charges">
         {{#if item.hasUses }}
         <input type="text" data-path="data.uses.value" value="{{item.data.uses.value}}" placeholder="0"/>
         / <input class="uses-max" type="text" data-path="data.uses.max" value="{{item.data.uses.max}}">

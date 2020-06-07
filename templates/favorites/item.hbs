@@ -31,22 +31,27 @@
   {{/if}}
 
   {{#if item.isItem}}
-  <div class="item-detail item-uses">
+  <div class="item-detail item-charges">
     {{#if item.data.uses.max}}
-    <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
-    / <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
+      <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
+      / <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
     {{else}}
-    {{#if item.editable}}<a class="addCharges" value="Add">Add</a>{{/if}}
+      {{#if item.editable}}<a class="addCharges" value="Add">Add</a>
+      {{/if}}
     {{/if}}
   </div>
   {{/if}}
   {{#if item.isFeat}}
-  <div class="item-detail item-uses">
-    {{#if item.data.uses.max}}
+  <div class="item-detail item-charges">
+    {{#if item.isOnCooldown}}
+      <a class="item-recharge rollable">{{item.labels.recharge}}</a>
+      {{else if item.data.recharge.value}}
+      {{localize "DND5E.Charged"}}
+    {{else if item.data.uses.max}}
     <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
     / <input class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
     {{else}}
-    {{#if item.editable}}<a class="addCharges" value="Add">Add</a>{{/if}}
+      {{#if item.editable}}<a class="addCharges" value="Add">Add</a>{{/if}}
     {{/if}}
   </div>
   {{/if}}

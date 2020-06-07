@@ -129,6 +129,13 @@ export const addFavorites = async function(app, html, data, position) {
             item.hasDamage = true;
           }
 
+          // is item chargeable and on Cooldown
+          item.isOnCooldown = false;
+          if( item.data.recharge && item.data.recharge.value && item.data.recharge.charged === false){
+            item.isOnCooldown = true;
+            item.labels = {recharge : "Recharge ["+item.data.recharge.value+"+]"};
+          }
+          console.log(item);
           // adding info if item has quantity more than one
           item.isStack = false;
           if (item.data.quantity && item.data.quantity > 1) {
@@ -244,8 +251,8 @@ export const addFavorites = async function(app, html, data, position) {
 
           // toggle item icon
           favHtml.find('.item-toggle').click(ev => {
-            event.preventDefault();
-            let itemId = event.currentTarget.closest(".item").dataset.itemId;
+            ev.preventDefault();
+            let itemId = ev.currentTarget.closest(".item").dataset.itemId;
             let item = app.actor.getOwnedItem(itemId);
             let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
             return item.update({ [attr]: !getProperty(item.data, attr) });
@@ -280,6 +287,14 @@ export const addFavorites = async function(app, html, data, position) {
             data['data.uses.max'] = 1;
 
             app.actor.getOwnedItem(itemId).update(data);
+          });
+
+          // charging features
+          favHtml.find('.item-recharge').click(ev => {
+            ev.preventDefault();
+            let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
+            let item = app.actor.getOwnedItem(itemId);
+            return item.rollRecharge();
           });
 
           // custom sorting
