@@ -2422,16 +2422,21 @@
   cursor: pointer;
 }
 
-
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox {
   flex: 0 0 calc((100% / 3) - 4px);
 }
 
-
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox:hover,
 .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox:hover {
-	background: rgba(0,0,0,.2);
+	/*background: rgba(0,0,0,.2);*/
+	background: rgba(0,100,0,.3);
+}
+
+.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox:hover  input::after,
+.dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover  input::after,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox:hover input::after {
+	background: #999;
 }
 
 .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.activation.cost"],
@@ -2499,7 +2504,8 @@
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input:checked::after,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input:checked::after {
 	/*background: rgba(0,255,0,.3);*/
-	background: none;
+	/*background: none;*/
+	display: none;
 }
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label,
