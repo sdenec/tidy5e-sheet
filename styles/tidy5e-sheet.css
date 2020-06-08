@@ -1272,10 +1272,13 @@
 	opacity: 0;
 	transition: opacity .3s ease;
 	flex: initial;
+	line-height: 28px;
+	padding-top: 2px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-quantity {
 	font-size: 11px;
+	line-height: 21px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item-quantity:focus-within,
@@ -1289,7 +1292,7 @@
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-quantity input {
-	height: 23px;
+	height: 21px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .state-display {
