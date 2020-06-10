@@ -59,9 +59,7 @@
             <i class="fas fa-info-circle info-icon"></i>
             {{item.name}}
           </h4>
-          {{#if item.data.uses.value }}
-          <div class="item-detail spell-uses">Uses {{item.data.uses.value}} / {{item.data.uses.max}}</div>
-          {{/if}}
+          
         </div>
 
         {{#if ../../owner}}
@@ -72,6 +70,11 @@
         </div>
         {{/if}}
 
+        {{#if item.data.uses.value }}
+        <div class="item-detail item-charges">
+          <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
+        </div>
+        {{/if}}
         <div class="spell-detail spell-comps">
           {{#each labels.components}}
           <span class="spell-component {{this}}">{{this}}</span>

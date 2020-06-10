@@ -1,2663 +1,601 @@
-.useTidy5eDark .tidy5e .dnd5e.sheet.actor.character {
-	min-width: 740px;
-	max-width: 740px;
-	height: 720px;
-	min-height: 210px;
+:root {
+	--primary-white: rgba(255,255,255,.75);
+	--secondary-white: rgba(255,255,255,.55);
+	--tertiary-white: rgba(255,255,255,.35);
+	--line-white: rgba(255,255,255,.15);
+	--light-white: rgba(255,255,255,.075);
+
+	/* tailwindcss green */
+	
+	--green-100: #F0FFF4;
+	--green-200: #C6F6D5;
+	--green-300: #9AE6B4;
+	--green-400: #68D391;
+	--green-500: #48BB78;
+	--green-600: #38A169;
+	--green-700: #2F855A;
+	--green-800: #276749;
+	--green-900: #22543D;
+
+	/* tailwindcss red */
+	
+	--red-100: #FFF5F5;
+	--red-200: #FED7D7;
+	--red-300: #FEB2B2;
+	--red-400: #FC8181;
+	--red-500: #F56565;
+	--red-600: #E53E3E;
+	--red-700: #C53030;
+	--red-800: #9B2C2C;
+	--red-900: #742A2A;
 }
 
-.useTidy5eDark .tidy5e.sheet .window-content {
-	padding: 0;
-	margin: 0;
+/* Sheet Content */
+.tidy5eDark .tidy5e.sheet .window-content {
+	color: var(--primary-white);
 }
 
-/* flex class */
-.useTidy5eDark .tidy5e .flex {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+/* Sheet Background */
+.tidy5eDark .tidy5e-sheet {
+    /*background-color: #121212;*/
+    background-color: rgba(0,0,0,.91);
 }
 
-.useTidy5eDark .tidy5e-sheet {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	overflow: hidden; 
+/* Sheet Header */
+.tidy5eDark .tidy5e-header {
+  background: rgba(255,255,255,.05);
 }
-
-.useTidy5eDark .tidy5e.sheet img,
-.useTidy5eDark .tidy5e.sheet svg {
-	vertical-align: middle;
-	border: none;
-	border-radius: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet input {
-	display: block;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	border: 1px solid transparent;
-	border-radius: 3px;
-	background: transparent;
-	transition: background .3s ease, border-color .3s ease;
-}
-
-.useTidy5eDark .tidy5e.sheet input:hover {
-	border: 1px solid rgba(0,0,0,.3);
-	background: rgba(0,0,0,.1);
-}
-
-.useTidy5eDark .tidy5e.sheet input:focus {
-	border: 1px solid rgba(0,0,0,.3);
-	background: rgba(0,0,0,0);
-}
-
-/* pointer styles */
-.useTidy5eDark .tidy5e.sheet input[type="checkbox"],
-.useTidy5eDark .tidy5e.sheet button,
-.useTidy5eDark .tidy5e.sheet select {
-	cursor: pointer;
-}
-
-.useTidy5eDark .tidy5e.sheet button:hover,
-.useTidy5eDark .tidy5e.sheet select:hover {
-	background: rgba(0,0,0,.1);
-}
-
-.useTidy5eDark .tidy5e-sheet h1,
-.useTidy5eDark .tidy5e-sheet h2,
-.useTidy5eDark .tidy5e-sheet h3 {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
-.useTidy5eDark .tidy5e p,
-.useTidy5eDark .tidy5e li {
-	margin: 0;
-	padding: 0;
-}
-
-.useTidy5eDark .tidy5e ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-/* #### Sheet Navigation #### */
-
-.useTidy5eDark .tidy5e-navigation {
-	font-family: "Signika", sans-serif;
-}
-
-.useTidy5eDark .tidy5e-navigation .item {
-	padding: 5px 1rem 0 1rem;
-	background: rgba(255,255,255,.2);
-	border: 1px solid transparent;
-	border-bottom: 1px solid rgba(0,0,0,.2);
-	transition: text-shadow .3s ease;
-	text-align: left;
-	height: 26px;
-}
-
-.useTidy5eDark .tidy5e-navigation .item.active {
-	background: transparent;
-	border: 1px solid rgba(0,0,0,.2);
-	border-bottom-color: transparent;
-	text-shadow: none;
-	font-weight: 600;
-	cursor: default;
-}
-
-.useTidy5eDark .tidy5e-navigation .item:first-child.active {
-	border-left-color: transparent;
-}
-
-.useTidy5eDark .tidy5e-navigation .item:last-child.active {
-	border-right-color: transparent;
-}
-
-/* #### Sheet Header #### */
-
-.useTidy5eDark .tidy5e-header {
-	padding: 1rem;
-	background: rgba(255,255,255,.2);
-}
-
-/* Portrait, Death Saves, Resting and Inspiration */
 
 /* Portrait */
-
-.useTidy5eDark .tidy5e .profile {
-	width: 150px;
-	height: 150px;
-	position: relative;
+.tidy5eDark .tidy5e .portrait {
+  box-shadow: 0 0 10px rgba(0,0,0,.95) inset;
+  border: 1px solid rgba(0,0,0,.95);
 }
 
-.useTidy5eDark .tidy5e .portrait {
-	width: 100%;
-	height: 100%;
-	border-radius: 5px;
-	overflow: hidden;
-	box-shadow:	0 0 10px rgba(0,0,0,.5) inset;
-	border: 1px solid rgba(0,0,0,.5);
-	position: relative;
-	mix-blend-mode: multiply;
-	z-index: 1;
+/* Inspiration Indicator */
+.tidy5eDark .tidy5e .inspiration label {
+  background: #555;
+  box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
+  border: 1px solid rgba(0,0,0,.7);
+  color: var(--secondary-white);
 }
 
-.useTidy5eDark .tidy5e .roundPortrait .portrait {
-	border-radius: 50%;
+.tidy5eDark .tidy5e .inspiration input:checked + label {
+  background: #121212;
+  color: rgba(255,255,255,1);
+  /*text-shadow: 0 0 10px rgba(118, 228, 255, 1);*/
 }
 
-.useTidy5eDark .tidy5e .portrait img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: top;
+/* Rest Button */
+.tidy5eDark .tidy5e .resting {
+  background: #555;
+  box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
+  border: 1px solid rgba(0,0,0,.7);
+  color: var(--primary-white);
 }
 
-/* Death Saves and HP-Overlay */
-
-.useTidy5eDark .tidy5e .death-saves,
-.useTidy5eDark .tidy5e .profile .hp-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border-radius: 5px;
+.tidy5eDark .tidy5e .resting-icon,
+.tidy5eDark .tidy5e .rest {
+  color: var(--primary-white);
 }
 
-.useTidy5eDark .tidy5e .profile.disable-hp-overlay .hp-overlay {
-	display: none;
+.tidy5eDark .tidy5e .rest:hover i {
+  color: rgba(255,255,255,1);
 }
 
-.useTidy5eDark .tidy5e .roundPortrait .death-saves,
-.useTidy5eDark .tidy5e .profile.roundPortrait  .hp-overlay {
-	border-radius: 50%;
+/* Exhaustion Tracker */
+.tidy5eDark .tidy5e .exhaustion {
+  background: #555;
+  box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
+  border: 1px solid rgba(0,0,0,.7);
 }
 
-.useTidy5eDark .tidy5e .death-saves {
-	display: none;
-	z-index: 20;
-	justify-content: center;
-	align-items: center;
-	text-shadow: 0 0 5px 1px #222;
+.tidy5eDark .tidy5e .exhaustion-icon,
+.tidy5eDark .tidy5e .exhaustion .exhaust-level li {
+  color: var(--primary-white);
 }
 
-.useTidy5eDark .tidy5e .profile.hp-0 .death-saves,
-.useTidy5eDark .tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .death-saves, 
-.useTidy5eDark .tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .death-saves {
-	display: flex;
+.tidy5eDark .tidy5e .exhaustion-container .level-display {
+  background: #555;
+  box-shadow: 0 0 8px rgba(0,0,0,.9) inset;
+  border: 1px solid rgba(0,0,0,.7);
+  color: var(--primary-white);
+  font-weight: 400;
 }
 
-.useTidy5eDark .tidy5e .profile.disable-hp-overlay .counter-value,
-.useTidy5eDark .tidy5e .profile:not(.deathfailure-0):not(.hp-0) .counter-value, 
-.useTidy5eDark .tidy5e .profile:not(.deathsuccess-0):not(.hp-0) .counter-value {
-	background: rgba(255,0,0,.3);
-	padding: 0 .5rem;
-	border-radius: 5px;
-}
-
-.useTidy5eDark .tidy5e .profile.disable-hp-overlay .counter-value,
-.useTidy5eDark .tidy5e .profile.disable-hp-overlay:not(.deathfailure-0):not(.hp-0) .counter-value, 
-.useTidy5eDark .tidy5e .profile.disable-hp-overlay:not(.deathsuccess-0):not(.hp-0) .counter-value {
-	background: rgba(255,0,0,.5);
-}
-
-.useTidy5eDark .tidy5e .death-saves .counter-value {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-}
-
-.useTidy5eDark .tidy5e .death-saves .counter-value input {
-	color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  height: 19px;
-  padding: 5px 4px 4px 4px;
-  min-width: unset;
-  text-align: center;
-  width: 18px;
-}
-
-.useTidy5eDark .tidy5e .death-saves .counter-value input:hover {
-	border-color: #fff;
-}
-
-.useTidy5eDark .tidy5e .profile .hp-overlay {
-	top: auto;
-	bottom: 0;
-	overflow: hidden;
-	border-width: 0;
-	border-style: solid;
-	border-color: #fff;
-}
-
-.useTidy5eDark .tidy5e .death-save {
-	position: relative;
-	margin: 0 .25rem;
-	color: rgba(255,255,255,.75);
-	font-size: 30px;
-	transition: color .3s ease;
-}
-
-.useTidy5eDark .tidy5e .death-save:hover {
-	color: #fff !important;
-}
-
-/* Inspiration & Rest */
-.useTidy5eDark .tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .inspiration, 
-.useTidy5eDark .tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
-.useTidy5eDark .tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .rest-container, 
-.useTidy5eDark .tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container, 
-.useTidy5eDark .tidy5e .hp-0 .inspiration,
-.useTidy5eDark .tidy5e .hp-0 .rest-container {
-	display: none;
-}
-
-.useTidy5eDark .tidy5e .inspiration {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	width: 40px;
-	height: 40px;
-	z-index: 5;
-}
-
-.useTidy5eDark .tidy5e .inspiration input {
-	display: none;
-}
-
-.useTidy5eDark .tidy5e .inspiration label {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 5px 0 5px 0;
-	font-size: 26px;
-	color: rgba(0,0,0,.4);
-	cursor: pointer;
-	box-shadow:	0 0 10px rgba(0,0,0,.5) inset;
-	border: 1px solid rgba(0,0,0,.5);
-	background: #ECE9DF;
-}
-
-.useTidy5eDark .tidy5e .roundPortrait .inspiration label {
-	border-radius: 50%;
-}
-
-.useTidy5eDark .tidy5e .inspiration label i {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-  text-align: center;
-  line-height: 38px;
-}
-
-.useTidy5eDark .tidy5e .inspiration label:hover {
-	color: rgba(255,255,255,.75);
-	text-shadow: 0 0 5px rgba(118, 228, 255, .5);
-}
-
-.useTidy5eDark .tidy5e .inspiration input:checked + label {
-	color: rgba(255,255,255,1);
-	text-shadow: 0 0 10px rgba(118, 228, 255, 1);
-	background: #999;
-}
-
-.useTidy5eDark .tidy5e .inspiration input:checked + label i {
-	color: #FFFFFF;
-  animation: glow 5s ease-in-out infinite alternate;
-}
-
-.useTidy5eDark .tidy5e .inspiration input:checked + label i.disable-animation {
-  animation: none;
-}
-
-@keyframes glow {
-	0% {
-		transform: scale(1);
-		text-shadow: 0 0 10px 6px #76E4FF;
-	}
-	25% {
-		transform: scale(1.2);
-		text-shadow: 0 0 12px 8px #76E4FF;
-	}
-	60% {
-		transform: scale(1);
-		text-shadow: 0 0 8px 4px #76E4FF;
-	}
-	100% {
-		transform: scale(1.1);
-		text-shadow: 0 0 11px 7px #76E4FF;
-	}
-}
-
-.useTidy5eDark .tidy5e .rest-container {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	z-index: 5;
-}
-
-.useTidy5eDark .tidy5e .resting {
-	width: 40px;
-	height: 40px;
-	overflow: hidden;
-	border-radius: 0 5px 0 5px;
-	transition: width .3s ease;
-	background: #ECE9DF;
-	display: flex;
-	box-shadow:	0 0 10px rgba(0,0,0,.5) inset;
-	border: 1px solid rgba(0,0,0,.5);
-}
-
-.useTidy5eDark .tidy5e .roundPortrait .resting {
-	border-radius: 20px;
-}
-
-.useTidy5eDark .tidy5e .resting:hover {
-	width: 110px;
-}
-
-.useTidy5eDark .tidy5e .resting-icon {
-	flex: 0 0 38px; 
-	display: flex;
-	width: 38px;
-	height: 38px;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	font-size: 20px;
-	color: rgba(0,0,0,.4);
-}
-
-
-.useTidy5eDark .tidy5e .resting .rest {
-	flex: 0 0 35px; 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 20px;
-	width: 35px;
-	height: 38px;
-	border-radius: 50%;
-	cursor: pointer;
-	border: none;
-	color: rgba(0,0,0,.4);
-	padding: 0;
-	text-shadow: none;
-}
-
-.useTidy5eDark .tidy5e .resting .rest i {
-	transition: color .3s ease, transform .3s ease;	
-}
-
-.useTidy5eDark .tidy5e .resting .rest:hover i {
-	color: rgba(0,0,0,.8);
-	transform: scale(1.2);
-}
-
-/* Hover Notes */
-
-.useTidy5eDark .tidy5e .note {
-	display: none;
-	position: absolute;
-	left: 50%;
-	bottom: calc(100% + .5rem );
-	background: rgba(0,0,0,.8);
-	color: #fff;
-	font-size: 12px;
-	padding: .5rem 1rem;
-	border-radius: 5px;
-	z-index: 50;
-	transform: translateX(-50%);
-	white-space: nowrap;
-}
-
-.useTidy5eDark .tidy5e .inspiration .note::after {
-	content: '(0)';
-	margin-left: .2rem;
-}
-
-.useTidy5eDark .tidy5e .inspiration #inspiration-checkbox:checked ~ .note::after {
-	content: '(1)';
-	margin-left: .2rem;
-}
-
-.useTidy5eDark .tidy5e .has-note:hover .note {
-	display: inline-block;
-}
-
-/* General Information */
-
-.useTidy5eDark .tidy5e .character-details {
-	margin-left: 1rem;
-	flex: 1;
-}
-
-.useTidy5eDark .tidy5e .general-information {
-	justify-content: space-between;
-	padding-bottom: 2px;
-}
-
-.useTidy5eDark .tidy5e .char-name {
-	flex: 1;
-	margin-right: .5rem;
-	padding-top: 5px;
-	font-size: 24px;
-}
-
-.useTidy5eDark .tidy5e .char-name input {
-	/*height: 20px;*/
-	line-height: 20px;
-	padding-top: 2px;
-}
-
-/* Level and Experience Information */
-
-.useTidy5eDark .tidy5e .level-information {
-	flex-direction: row-reverse;
-}
-
-.useTidy5eDark .tidy5e .level {
-  padding: .1rem .3rem 0.05rem .3rem;
-  border-radius: 3px;
-	background: rgba(0,0,0,.1);
+/* Character Level */
+.tidy5eDark .tidy5e .level {
+  background: var(--tertiary-white);
   color: rgba(0,0,0,.6);
-	font-size: 1.25rem;
 }
 
-.useTidy5eDark .tidy5e .experience {
-	margin-bottom: 1px;
+/* Character Classes */
+.tidy5eDark .tidy5e .class-list {
+	color: var(--secondary-white);	
 }
 
-.useTidy5eDark .tidy5e input.current-xp {
-	width: calc(7.5ch + .3rem);
-	height: 16px;
-	text-align: right;
-	padding: 2px .15rem 0 .15rem;
-	margin-bottom: -1px; 
+.tidy5eDark .tidy5e .class-list .subclass-info span {
+	background: var(--tertiary-white);
+	color: rgba(0,0,0,.87);
 }
 
-.useTidy5eDark .tidy5e .max-xp {
-	padding-top: 3px;
+/* Character Summary */
+.tidy5eDark .tidy5e .origin-summary {
+  border-bottom: 1px solid var(--line-white);
+  border-top: 1px solid var(--line-white);
 }
 
-.useTidy5eDark .tidy5e .max-xp::before {
-	content: '/';
-	margin-right: .15rem;
+.tidy5eDark .tidy5e .attribute-name::after {
+	border-color: var(--tertiary-white);
 }
 
-.useTidy5eDark .tidy5e .xp-tracker {
-	margin-right: .5rem;
+/* Text color */
+.tidy5eDark .dnd5e input[type="text"] {
+	color: var(--primary-white);	
 }
 
-.useTidy5eDark .tidy5e .noxp .xp-tracker {
-	display: none;
+.tidy5eDark .dnd5e input[type="text"]::placeholder {
+	color: var(--primary-white);
 }
 
-.useTidy5eDark .tidy5e .xp-bar-total {
-	width: 100%;
-	height: 5px;
-	border: 1px solid rgba(0,0,0,.5);
-	border-radius: 2px;
-	background: rgba(0,0,0,.2);
-	position: relative;
+.tidy5eDark .dnd5e.sheet .editable .rollable:hover {
+	/*color: rgba(255,255,255,1);*/
 }
 
-.useTidy5eDark .tidy5e .xp-bar-current {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	max-width: 100%;
-	background: #5EE192;
-	transition: width .3s ease;
+/* Sheet Navigation */
+.tidy5eDark .tidy5e.sheet.actor .item[data-tab="attributes"] i {
+	color: var(--tertiary-white);
 }
 
-/* Class List */
-
-.useTidy5eDark .tidy5e .class-list {
-	margin: 0;
-	padding: 0;
-	color: rgba(0,0,0,.6);
-	border-radius: 3px;
-	margin-left: 4px;
-	font-size: 11px;
+.tidy5eDark .tidy5e-navigation .item {
+  background: rgba(255,255,255,.05);
+  border: none;
+  box-shadow:	0 1px 0 0 var(--line-white);
 }
 
-.useTidy5eDark .tidy5e .class-list li {
-	position: relative;
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: flex-end;
-	align-items: center;
-	line-height: 11px;
-	margin: 2px 0;
+.tidy5eDark .tidy5e-navigation .item:hover {
+	color: var(--green-500);
 }
 
-.useTidy5eDark .tidy5e .class-list li:first-child {
-	margin-top: 0;
+.tidy5eDark .tidy5e-navigation .item.active {
+	color: var(--primary-white);
+    background: transparent;
+  box-shadow: 
+  	-1px 0 0 0 var(--line-white),
+  	1px 0 0 0 var(--line-white),
+  	0 -1px 0 0 var(--line-white),
+  	0 0 0 0 var(--line-white);
 }
 
-.useTidy5eDark .tidy5e .class-list li:last-child {
-	margin-bottom: 0;
+.tidy5eDark .tidy5e-navigation .item:first-child.active {
+  box-shadow: 
+  	0 0 0 0 var(--line-white),
+  	1px 0 0 0 var(--line-white),
+  	0 -1px 0 0 var(--line-white),
+  	0 0 0 0 var(--line-white);
 }
 
-.useTidy5eDark .tidy5e .class-list li:first-child::before {
-	content: none;
-}
-
-.useTidy5eDark .tidy5e .class-list .subclass-info span {
-	display: block;
-  width: 12px;
-  height: 12px;
-  font-size: 10px;
-  line-height: 12px;
-  text-align: center;
-  background: rgba(0,0,0,.3);
-  border-radius: 3px;
-  color: rgba(255,255,255,.6);
-  margin-right: 2px;
-}
-
-.useTidy5eDark .tidy5e .class-list .subclass-info .note {
-	left: auto;
-	right: calc(100% + 4px);
-	top: 50%;
-	bottom: auto;
-	transform: translate(0,-50%);
-}
-
-/* Origin Summary */
-
-.useTidy5eDark .tidy5e .origin-summary {
-	justify-content: space-between;
-	border-bottom: 1px solid rgba(0,0,0,.2);
-	border-top: 1px solid rgba(0,0,0,.2);
-	font-size: .9rem;
-	padding: .15rem 0;
-}
-
-.useTidy5eDark .tidy5e .origin-summary li {
-	flex: 1;
-	margin-right: .5rem;
-}
-
-.useTidy5eDark .tidy5e .origin-summary .proficiency {
-	flex: 0 1 20%;
-	margin: 0;
-	font-weight: 600;
-	text-align: center;
-}
-
-/* Header Attributes */
-
-.useTidy5eDark .tidy5e .header-attributes {
-	margin-top: 10px;
-}
-
-.useTidy5eDark .tidy5e .header-attribute {
-	height: 80px;
-	flex: 1 1 130px;
-	text-align: center;
-	border-left: 1px solid rgba(0,0,0,.1);
-	padding: 0 5px;
-}
-
-.useTidy5eDark .tidy5e .attribute-name {
-	font-size: 20px;
-	line-height: 20px;
-	height: 26px;
-	position: relative;
-	margin: 0;
-	white-space: nowrap;
-}
-
-.useTidy5eDark .tidy5e .attribute-name input {
-	margin: 0;
-}
-
-.useTidy5eDark .tidy5e .attribute-name::after {
-	display: block;
-	content: '';
-	height: 0;
-	width: 60%;
-	border-bottom: 1px solid rgba(0,0,0,.1);
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translate(-50%,0);
-}
-
-.useTidy5eDark .tidy5e .header-attributes li:first-child {
-	border: none;
-}
-
-.useTidy5eDark .tidy5e .header-attributes .value {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	font-size: 24px;
-	margin: 8px 0 2px 0;
-}
-
-.useTidy5eDark .tidy5e .header-attributes .value span,
-.useTidy5eDark .tidy5e .header-attributes .value p,
-.useTidy5eDark .tidy5e .header-attributes .value input {
-	height: 22px;
-	padding-top: 2px;
-}
-
-.useTidy5eDark .tidy5e .header-attributes .value span,
-.useTidy5eDark .tidy5e .header-attributes .value p {
-	line-height: 20px;
-}
-
-.useTidy5eDark .tidy5e .header-attributes .ac-display {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	height: 40px;
-  font-size: 44px;
-  padding-top: 4px;
-  margin: 4px auto;
-}
-
-.useTidy5eDark .tidy5e .header-attributes .value-footer{
-	font-family: "Signika", "Palatino Linotype", serif;
-	height: 18px;
-	font-size: 12px;
-	text-align: center;
-}
-
-.useTidy5eDark .tidy5e input.hp-min,
-.useTidy5eDark .tidy5e input.temphp {
-	text-align: right;
-}
-
-.useTidy5eDark .tidy5e input.hp-max,
-.useTidy5eDark .tidy5e input.max-temphp {
-	text-align: left;
-}
-
-.useTidy5eDark .tidy5e input.max-temphp {
-	margin-left: .5rem;
-}
-
-.useTidy5eDark .tidy5e #ini-mod {
-	width: 5ch;
-}
-
-/* Sheet Body */
-
-.useTidy5eDark .tidy5e .sheet-body {
-	padding: 1.5rem .25rem 1rem 1rem;
-}
-
-.useTidy5eDark .tidy5e.sheet .window-content .tab.attributes,
-.useTidy5eDark .tidy5e.sheet .window-content .tab.biography,
-.useTidy5eDark .tidy5e.sheet .window-content .tab.journal {
-	padding-right: .75rem;
+.tidy5eDark .tidy5e-navigation .item:last-child.active {
+  box-shadow: 
+  	-1px 0 0 0 var(--line-white),
+  	0 0 0 0 var(--line-white),
+  	0 -1px 0 0 var(--line-white),
+  	0 0 0 0 var(--line-white);
 }
 
 /* Ability Scores */
-
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores {
-	display: flex;
-  flex-direction: column;
-  flex: 0 72px;
-  border: 1px solid rgba(0,0,0,.1);
-  border-radius: 5px;
-  overflow: hidden;
-  height: 434px;
+.tidy5eDark .tidy5e.sheet.actor .ability-scores {
+	border: 1px solid var(--light-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability {
-	margin: 0;
-	height: unset;
-	flex: 1;
-  text-align: center;
-  border: none;
-  position: relative;
-  padding-bottom: 20px;
+.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-name {
+	border-top: 1px solid var(--light-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-name {
-	font-size: 16px;
-	border-top: 1px solid rgba(0,0,0,.1);
-	padding: 2px 0;
-	margin: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability:first-child .ability-name {
+.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability:first-child .ability-name {
 	border-top: none;
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability input.ability-score {
-	height: 26px;
-  padding-top: 4px;
-	margin-top: -4px;
-	width: 3ch;
+.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers {
+	opacity: .38;
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability input.ability-score:hover + .ability-modifiers {
-    visibility: visible;
+.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability:hover .ability-modifiers {
+	opacity: .87;
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers {
-	display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 24px;
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  opacity: .4;
-  transition: opacity .3s ease;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability:hover .ability-modifiers {
-	opacity: 1;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers span.ability-mod {
-	border: 1px solid rgba(0,0,0,.1);
-	border-left: none;
-	border-bottom: none;
-	border-radius: 0 50% 0 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers span.ability-save {
-	border: 1px solid rgba(0,0,0,.1);
-	border-right: none;
-	border-bottom: none;
-	border-radius: 50% 0 0 0;
+.tidy5eDark .dnd5e.sheet.actor .proficient .proficiency-toggle {
+	color: var(--primary-white);
 }
 
 /* Skill List */
-
-.useTidy5eDark .tidy5e.sheet.actor.character ul.skills-list {
-	margin: 0 .5rem;
-  border: 1px solid rgba(0,0,0,.1);
-  border-radius: .5em;
-  overflow: hidden;
-  padding: 0;
-  flex: 0 0 215px;
-  display: flex;
-  flex-direction: column;
-  height: 434px;
+.tidy5eDark .tidy5e.sheet.actor.character ul.skills-list {
+	border: 1px solid var(--light-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill {
-  height: unset;
-  flex: 1;
-  line-height: 16px;
-  align-items: center;
-  padding: 4px;
+.tidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill:nth-child(even) {
+	background: var(--light-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill:nth-child(even) {
-	background: rgba(0,0,0,.1);
+.tidy5eDark .dnd5e.sheet.actor ul.skills-list li.skill .skill-passive {
+	color: var(--tertiary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-proficiency,
-.useTidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill h4 {
-	line-height: 16px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-mod,
-.useTidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-passive {
-	text-align: right;
-}
-.useTidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-mod {
-	flex: 0 0 20px;
-}
-
-/* Center Pane */
-
-.useTidy5eDark .tidy5e.sheet.actor .center-pane {
-	display: flex;
-	flex-direction: column;
+.tidy5eDark .dnd5e.sheet.actor .proficiency-toggle.skill-proficiency {
+	color: var(--tertiary-white);
 }
 
 /* Resources */
-
-.useTidy5eDark .tidy5e.sheet.actor .center-pane ul.attributes {
-	margin: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .center-pane ul.attributes li.attribute {
-	margin: 0 0 0 .5rem;
-	height: 49px;
-	border: 1px solid rgba(0,0,0,.1);
-	border-radius: 5px;
-	position: relative;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .center-pane ul.attributes li.attribute:first-child {
-	margin: 0;
-}
-
-/* Resource Restoration Menu */
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	z-index: 10;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-options {
-	position: relative;
-  right: 1px;
-  bottom: -1px;
-  font-size: 12px;
-  color: rgba(0,0,0,.5);
-  transition: color .3s ease;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-rest {
-	display: none;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border-radius: 5px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover { 
-	width: 100%;
-	height: 100%;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover ~ * { 
-	opacity: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover .res-rest {
-	display: block;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-rest h4 {
-	margin: 0;
-  font-size: 16px;
-  line-height: 20px;
-  color: #555;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox {
-	border: 1px solid rgba(0,0,0,.2);
-  padding: 3px 6px;
-  margin: 0 2px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-family: "Signika", sans-serif;
-  cursor: pointer;
-  transition: background .3s ease;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox:hover {
-	background: rgba(0,0,0,.2);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header input:checked + label.checkbox {
-	background: rgba(0,0,0,.5);
-	color: #efefef;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover .res-options {
-	color: #111;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header input {
-	display: none;
-}
-
-/* Resource Managment */
-
-.useTidy5eDark .tidy5e.sheet.actor.character .attributes .resource .attribute-name {
-	margin: 0;
-  font-size: 1rem;
-  height: 21px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.useTidy5eDark .dnd5e.sheet.actor.character .attributes .resource .attribute-name input[type="text"] {
-	height: 20px;
-  margin: 0;
-  line-height: 24px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value.multiple input {
-	max-width: 3.5ch;
-  height: 22px;
-  padding-top: 2px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value .res-value {
-	text-align: right;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value .res-max {
-	text-align: left;
-}
-
-/* Character Traits */
-
-.useTidy5eDark .tidy5e.sheet.actor .traits-toggle,
-.useTidy5eDark .tidy5e.sheet.actor .favorites-toggle {
-	display: flex;
-	justify-content: space-between;
-	padding: 0 .25rem;
-	line-height: 24px;
-	align-items: center;
-	transition: background .3s ease;
-	border-radius: 5px;
-	color: rgba(0,0,0,.3);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .toggle-icon {
-	color: rgba(0,0,0,.6);
-	cursor: pointer;
-	margin-left: .5rem;
-	padding: 0 8px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .toggle-icon:hover {
-	color: rgba(0,0,0,.6);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits-toggle h4, 
-.useTidy5eDark .tidy5e.sheet.actor .favorites-toggle h4{
-	margin: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits-toggle i, 
-.useTidy5eDark .tidy5e.sheet.actor .favorites-toggle i {
-	text-align: center;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits-toggle .fa-caret-down,
-.useTidy5eDark .tidy5e.sheet.actor .traits-wrap.compressed .traits-toggle .fa-caret-up,
-.useTidy5eDark .tidy5e.sheet.actor .favorites-toggle .fa-caret-down,
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap.compressed .favorites-toggle .fa-caret-up {
-	display: none;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits-wrap.compressed .traits-toggle .fa-caret-down,
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap.compressed .favorites-toggle .fa-caret-down {
-	display: block;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits-wrap.compressed .traits,
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap.compressed .favorites-target {
-	display: none;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits {
-	border: 1px solid rgba(0,0,0,.1);
-	border-radius: 5px;
-	overflow: hidden;
-	margin: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits label {
-  flex: 0 0 140px;
-  line-height: 16px;
-  font-weight: normal;
-  margin: 0 1rem 0 0;
-  font-size: 13px;
-  color: #191813;
-	float: left;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .form-group,
-.useTidy5eDark .tidy5e.sheet.actor .traits .form-group-stacked {
-	margin: 0; 
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-  padding: 4px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .multiple {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .multiple > * {
-	flex: unset;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .multiple label {
-	margin-right: .5rem;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .form-group:nth-child(odd) {
-	background: rgba(0,0,0,.1);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .form-group:first-child {
-	padding-top: 3px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .form-group:last-child {
-	margin: 0;
-	padding-bottom: 3px;
-}
-
-.useTidy5eDark .tidy5e.sheet .traits-list {
-    line-height: 14px;
-    margin: 0 .5rem 0 .5rem;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits input {
-  text-align: right;
-  font-size: 11px;
-  height: 16px;
-  padding-top: 1px;
-  margin-right: 19px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .actor-size {
-  flex: 0 0 90px;
-  font-size: 13px;
-  height: 17px;
-  margin-top: -1px;
-  border: none;
-  padding: 0;
-  font-family: "Signika", sans-serif;
-  background: rgba(0,0,0,.15); 
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .tag {
-  display: inline-block;
-  margin: 1px 0 1px 0;
-  padding: 2px 3px 1px 3px;
-  font-size: 11px;
-  line-height: 11px;
-  border: none;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, .15);
-}
-
-.useTidy5eDark .dnd5e.sheet .trait-selector {
-    flex: 0 0 10px;
-    padding: 0;
-    color: #999;
-    font-size: 13px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits i.fas {
-  float: none;
-  margin-right: 0;
-  text-align: center;
-  color: #999;
-  line-height: 16px;
-  vertical-align: bottom;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .traits .configure-flags {
-    flex: 0;
-}
-
-/* Favorites */
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites {
-	border-radius: 5px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .item {
-	line-height: 23px;
-	border-radius: 0;
-	margin: 0;
-	margin: 1px 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .item .item-name .item-image {
-	width: 23px;
-	height: 23px;
-	border-radius: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites ol:last-child .item:last-child {
-	margin-bottom: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .inventory-header {
-	background: transparent;
-	padding-top: 3px;
-	padding-left: 4px;
-	padding-right: 50px;
-	margin: 0;
-	line-height: 20px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .item-action {
-	flex: 0 0 100px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .favorites-wrap .inventory-list.favorites .fav-spell-slots {
-	flex: 0 0 70px; 
-	display: flex;
-	justify-content: center;
-}
-
-/* Exhaustion Portrait */
-
-.useTidy5eDark .tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container, 
-.useTidy5eDark .tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container, 
-.useTidy5eDark .tidy5e .hp-0 .exhaustion-container {
-	display: none;
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 40px;
-	width: 40px;
-	z-index: 10;
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container .level-display {
-	display: block;
-	width: 20px;
-	height: 20px;
-	line-height: 18px;
-	text-align: center;
-	font-size: 14px;
-	position: absolute;
-  background: #ECE9DF;
-  box-shadow: 0 0 8px rgba(0,0,0,.5) inset;
-  border: 1px solid rgba(0,0,0,.5);
-	color: rgba(0,0,0,.5);
-	top: -4px;
-	left: -4px;
-	border-radius: 50%;
-	z-index: 1;
-	font-weight: 600;
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container .note {
-	top: calc(100% + .5rem);
-	left: 0;
-	bottom: auto;
-	transform: translate(0,0);
-}
-
-.useTidy5eDark .tidy5e .exhaustion {
-	height: 40px;
-	width: 40px;
-	overflow: hidden; 
-  border-radius: 5px 0 5px 0;
-  transition: width .3s ease;
-  background: #ECE9DF;
-  display: flex;
-  box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
-  border: 1px solid rgba(0,0,0,.5);
-}
-
-.useTidy5eDark .tidy5e .roundPortrait .exhaustion {
-	border-radius: 20px;
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container:hover .exhaustion {
-	width: 215px;
-}
-
-.useTidy5eDark .tidy5e .exhaustion .exhaustion-icon {
-	display: block;
-	flex: 0 0 38px; 
-	width: 38px;
-	height: 38px;
-	line-height: 42px;
-	text-align: center;
-	font-size: 30px;
-	position: relative;
-  color: rgba(0,0,0,.4);
-}
-
-.useTidy5eDark .tidy5e .exhaustion .exhaust-level {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	width: 175px;
-	flex: 1;
-}
-
-.useTidy5eDark .tidy5e .exhaustion .exhaust-level li {
-	flex: 0 0 25px;
-	text-align: center;
-	line-height: 40px;
-	cursor: pointer;
-	background: rgba(0,0,0,.2);
-}
-
-.useTidy5eDark .tidy5e .exhaustion .exhaust-level li:hover {
-	background: rgba(0,0,0,.3) !important;
-	color: #191813;
-}
-
-/* exhaustion effect note */
-
-.useTidy5eDark .tidy5e .exhaustion-container .note p {
-	color: rgba(255,255,255,1);
-	display: block;
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container.level-0 .note p:not(.lvl-0),
-.useTidy5eDark .tidy5e .exhaustion-container.level- .note p:not(.lvl-0),
-.useTidy5eDark .tidy5e .exhaustion-container.level-1 .note p:not(.lvl-1),
-.useTidy5eDark .tidy5e .exhaustion-container.level-2 .note p:not(.lvl-2),
-.useTidy5eDark .tidy5e .exhaustion-container.level-3 .note p:not(.lvl-3),
-.useTidy5eDark .tidy5e .exhaustion-container.level-4 .note p:not(.lvl-4),
-.useTidy5eDark .tidy5e .exhaustion-container.level-5 .note p:not(.lvl-5),
-.useTidy5eDark .tidy5e .exhaustion-container.level-6 .note p:not(.lvl-6) {
-	color: rgba(255,255,255,.4);
-	display: none;
-}
-
-/* exhaustion color coding */
-
-.useTidy5eDark .tidy5e .exhaustion-container.level-0 .exhaust-level li:nth-of-type(1) {
-	background: transparent;
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container:not(.level-):not(.level-0) .exhaustion-icon,
-.useTidy5eDark .tidy5e .exhaustion-container.level-1 .exhaust-level li:nth-of-type(-n+2),
-.useTidy5eDark .tidy5e .exhaustion-container.level-2 .exhaust-level li:nth-of-type(-n+3) {
-	background: rgba(255,255,0,.5);
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2) .exhaustion-icon,
-.useTidy5eDark .tidy5e .exhaustion-container.level-3 .exhaust-level li:nth-of-type(-n+4),
-.useTidy5eDark .tidy5e .exhaustion-container.level-4 .exhaust-level li:nth-of-type(-n+5) {
-	background: rgba(255,120,0,.5);
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4) .exhaustion-icon,
-.useTidy5eDark .tidy5e .exhaustion-container.level-5 .exhaust-level li:nth-of-type(-n+6),
-.useTidy5eDark .tidy5e .exhaustion-container.level-6 .exhaust-level li:nth-of-type(-n+7) {
-	background: rgba(255,0,0,.5);
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container:not(.level-):not(.level-0) .level-display {
-	background: rgb(255,255,0);
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2) .level-display {
-	background: rgb(255,175,0);
-}
-
-.useTidy5eDark .tidy5e .exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4) .level-display{
-	background: rgb(255,100,0);
-}
-
-/* Inventory */
-
-/* Filter */
-.useTidy5eDark .tidy5e.sheet.actor .inventory-filters,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-filters.spellbook-filters {
-  margin: 0 14px 1rem 0;
-	flex: 0 0 20px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-filters {
-	border-bottom: 1px solid rgba(0,0,0,.2);
-}
-
-.useTidy5eDark .tidy5e.sheet .filter-list .filter-item {
-    padding: 0 .5rem;
-    margin: 0; 
-    margin-left: 2px;
-    flex: unset;
-    cursor: pointer;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-filters h3,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-filters .filter-title {
-  font-family: "Signika", "Palatino Linotype", serif;
-  color: #4b4a44;
-  font-size: 13px;
-  margin-left: 0;
-}
-
-/* Delete Protection */
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
-	display: block;
-  font-family: "Signika", "Palatino Linotype", serif;
-  color: #4b4a44;
-  flex: 0 0 120px;
-}
-
-.useTidy5eDark .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle,
-.useTidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle:hover {
-	background: rgba(255,0,0,.3);
-}
-
-.useTidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle {
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  margin: 0 0 0 .25rem;
-  padding: 4px 8px 2px 8px;
-  background: rgba(0,0,0,.2);
-  border-radius: 5px 5px 0 0;
-  line-height: 12px;
-  cursor: pointer;
-}
-
-.useTidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle i {
-  margin-right: .25rem;
-}
-
-.useTidy5eDark .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-disabled,
-.useTidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-enabled,
-.useTidy5eDark .tidy5e-sheet .sheet-body .item-delete {
-	display: none;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls .item-delete {
-	color: rgba(255,0,0,.6);
-}
-
-.useTidy5eDark .tidy5e-sheet.allow-delete .sheet-body .item-delete,
-.useTidy5eDark .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-enabled {
-	display: block;
-}
-
-/* Currency */
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency {
-  margin: 0rem 14px .5rem 0;
-  padding-top: .5rem;
-	flex: 0 0 30px;
-	border-top: 2px solid rgb(0,0,0,.3);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency .currency {
-	list-style: none;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-header {
-	flex: 0 0 13px;
-	text-align: center;
-	align-items: center;
-	margin-right: .5rem;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item {
-  background: rgba(0,0,0,.1);
-  border-radius: 5px;
-  padding: 0 .5rem 0 0;
-  margin-right: .5rem;
-  line-height: 30px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item input {
-	text-align: right;
-	flex: 1;
-	padding-left: .5rem;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item label {
-	margin-left: .25rem;	
-	flex: unset;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert {
-	margin-right: 0;
-	padding: 0;
-	flex: 0 0 70px;
-	text-align: center;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a {
-	display: block;
-	background: rgba(0,0,0,.4);
-	color: rgba(255,255,255,.6);
-	border-radius: 5px;
-}
-
-/* Spellcasting Ability */
-
-.useTidy5eDark .tidy5e.sheet.actor .spellcasting-ability  {
-  margin: 0rem 14px 0 0;
-  padding-top: .5rem;
-	flex: 0 0 30px;
-	border-top: 2px solid rgb(0,0,0,.3);
-	align-items: center;
-}
-
-.useTidy5eDark .dnd5e.sheet.actor .spellcasting-ability h3 {
-	font-family: "Signika", "Palatino Linotype", serif;
-	font-size: 12px;
-	font-weight: 600;
-}
-
-.useTidy5eDark .dnd5e.sheet.actor .spellcasting-ability h3.spell-dc {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	font-size: 24px;
-  text-align: left;
-}
-
-.useTidy5eDark .dnd5e.sheet.actor .spellcasting-ability select {
-	margin: 0;
-}
-
-/* Inventory Items */
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list {
-	padding: 0 9px 1rem 0;
-  overflow-y: scroll;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header {
-	margin: 0 0 .25rem 0;
-	padding-top: .5rem;
-	line-height: 20px;
-	background: transparent;
-	border: none; 
-	border-top: 1px solid rgba(0,0,0,.1);
-	font-family: "Signika", sans-serif;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header:first-child,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header:first-child { 
-	padding-top: 0;
-	border: none; 
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header h3 {
-	font-family: "Signika", sans-serif;
-	margin: 0;
-	padding: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i {
-	color: rgba(0,0,0,.4);
-	border: none; 
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .spell-school {
-	flex: 0 0 120px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail.spell-slots {
-	color: rgba(0,0,0,.6);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail i,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .spell-detail svg,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail i {
-	vertical-align: middle;
-	color: rgba(0,0,0,.15);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail svg,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail svg {
-	height: 13px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list p.notes {
-	padding: .5rem;
+.tidy5eDark .tidy5e.sheet.actor .center-pane ul.attributes {
+	border: 1px solid var(--light-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item {
-	padding: 0;
-	line-height: 30px;
-	background: rgba(0,0,0,.1);
-	border: none; 
-	border-radius: 5px; 
-	margin: 2px 0;
+.tidy5eDark .dnd5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
+	color: var(--primary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-attuned {
-	flex: 0 0 16px;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%; 
-	font-size: 11px;
-	line-height: 16px;
-	text-align: center;
-	font-weight: 600;
-	margin: 7px 0;
-	background: rgba(0,0,0,.6); 
-	color: rgba(255,255,255,.6);
+.tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-options {
+	color: var(--tertiary-white);
 }
 
-/* Equipped/Prepared Highlight */
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item.attuned,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item.prepared {
-	background: rgba(210,0,255,.1);
+.tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-rest h4 {
+	color: var(--primary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-detail,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .spell-detail {
+.tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox {
 	border: none;
-	border-left: 1px solid rgba(0,0,0,.15);
-	color: rgba(0,0,0,.6);
+	background: var(--line-white);
+	color: var(--secondary-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.actor.character .item-detail.player-class {
-	text-align: center;
-	padding: 0 .5rem;
+.tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox:hover,
+.tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header input:checked + label.checkbox {
+	background: var(--green-500);
+	color: var(--primary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .spell-slots,
-.useTidy5eDark .tidy5e.sheet.actor .spell-comps {
-	flex: 0 0 75px;
-	text-align: center;
-	padding: 0;
-	border: none;
+/* Traits & Favorites */
+.tidy5eDark .tidy5e.sheet.actor .traits-toggle,
+.tidy5eDark .tidy5e.sheet.actor .favorites-toggle {
+	color: var(--tertiary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .spell-slots input,
-.useTidy5eDark .tidy5e.sheet.actor .spell-slots span.sep {
-	text-align: right;
-	padding-top: 1px;
-	line-height: 1;
+/** Traits **/
+
+.tidy5eDark .tidy5e.sheet.actor .toggle-icon {
+	color: var(--tertiary-white);	
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls,
-.useTidy5eDark .tidy5e.sheet.actor.character .inventory .item-controls,
-.useTidy5eDark .tidy5e.sheet.actor.character .spellbook .item-controls {
-	flex: 0 0 50px;
-	justify-content: center;
+.tidy5eDark .tidy5e.sheet.actor .toggle-icon:hover {
+	color: var(--primary-white);	
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls {
-	border: none;
+.tidy5eDark .tidy5e.sheet.actor .traits {
+	border-color: var(--light-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name {
-	max-height: unset;
+.tidy5eDark .tidy5e.sheet.actor .traits i.fas {
+	color: var(--tertiary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item.spellbook-header .item-name {
-	cursor: default;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name .item-image {
-	flex: unset; 
-	width: 30px;
-	height: 30px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 5px 0px 0px 5px;
-	margin-right: .5rem;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item.expanded .item-name .item-image {
-	border-radius: 5px 0 0 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image {
-	background-image: url(../images/d20-333.svg) !important;
-	background-size: 70%;
-  background-position: center;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image:hover {
-	background-image: url(../images/d20-highlight.svg) !important;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-weight,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-uses,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-action,
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-create {
-	flex: 0 0 100px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-uses {
-	text-align: center;
-	display: flex;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-uses input {
-	text-align: right;
-	width: 50%;
-	padding: 0 4px 1px 0;
-	color: rgba(0,0,0,.6);
-	line-height: 1;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary {
-	line-height: 1.5;
-	padding: .5rem;
-	border-top: 1px solid rgba(0,0,0,.1);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
-	background: rgba(0,0,0,.4);
-	border-radius: 5px;
-	font-weight: normal;
-	color: rgba(255,255,255,.6);
-  line-height: 18px;
-  padding-top: 2px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped,
-.useTidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared {
-	flex: 0 0 16px;
-	margin: 0 .25rem;
-}
- 
-.useTidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle,
-.useTidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle {
-	color: rgba(0,0,0,.25);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle.active,
-.useTidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle.active {
-	color: rgba(0,0,0,.6);
-}
-
-.useTidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle i,
-.useTidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle i {
-	width: 16px;
-	text-align: center;
-	vertical-align: middle;
-}
-
-.item-equipped .fas.fa-user-alt,
-.item-equipped .active .fas.fa-user-alt-slash {
-	display: none;
-}
-
-.item-equipped .fas.fa-user-alt-slash,
-.item-equipped .active .fas.fa-user-alt {
-	display: inline-block;
-}
-
-.spell-prepared .fas.fa-book-alt,
-.spell-prepared .active .far.fa-book-alt {
-	display: none;
-	height: 16px;
-}
-
-.spell-prepared .far.fa-book-alt,
-.spell-prepared .active .fas.fa-book-alt {
-	display: inline-block;
-	height: 16px;
-}
-
-/* Notes in Biography and Journal */
-
-.useTidy5eDark .tidy5e-sheet .left-notes {
-	margin-right: 1rem;
-}
-
-.useTidy5eDark .tidy5e-sheet .note-entries article {
-	background: rgba(0,0,0,.1);
-	border-radius: 5px;
-	padding: .5rem;
-	margin-bottom: 1rem;
-	position: relative;
-}
-
-.useTidy5eDark .tidy5e-sheet .note-entries article:hover .editor .editor-edit {
-	display: block;
-	padding: 0;
-	border: none;
-	box-shadow: none;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles {
-	font-weight: 600;
-	border-bottom: 1px solid rgba(0,0,0,.2);
-	padding-bottom: .25rem;
-	margin-bottom: .5rem;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles input {
-	margin-top: -1px;
-	margin-left: -1px;
-	height: 17px;
-  width: calc(100% - 26px);
-	font-weight: 600;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor,
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor .editor-content {
-	min-height: 50px;
-	padding: 0;
-	position: static;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor .editor-content ul {
-	list-style: disc;
-	padding-left: 20px;
-}
-
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article.biography-notes .editor {
-	min-height: 271px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article.journal-notes .editor {
-	min-height: 382px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor .editor-content,
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor .tox .tox-toolbar__group {
-	padding: 0;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor .tox .tox-tbtn {
-	width: 24px;
-	height: 24px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor .tox.tox-tinymce .tox-tbtn[title="Formats"] {
-	width: 90px;
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .note-entries article .editor .tox .tox-tbtn--select {
-	width: auto;
-}
-
-/* ------------------------- */
-/* Support dnd5e Item sheet  */
-/* ------------------------- */
-
-/* Checkbox styling */
-
-.useTidy5eDark .dnd5e.sheet.item input[type="checkbox"],
-.useTidy5eDark .dnd5e.sheet.item button,
-.useTidy5eDark .dnd5e.sheet.item select{
-	cursor: pointer;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .window-content {
-	padding: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header {
-	padding: 1rem;
-	border: none; 
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header img.profile {
-	flex: 0 0 80px;
-	width: 80px;
-	height: 80px;
-	border-radius: 5px;
-	margin-right: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header {
-	flex: 0 0 80px;
-	padding: 1rem;
-	background: rgba(255,255,255,.2);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .header-details {
-	margin-left: 1rem;
-	padding: .5rem 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header h1.charname {
-	padding: 0;
-	height: 30px;
-	line-height: 18px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header h1 input {
-	margin: 0;
-	padding: 0;
-	font-size: 24px;
-	height: 100%;
-	width: 100%;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle {
-	padding: .25rem .5rem;
-	background: rgba(0,0,0,.1);
-	border-radius: 5px;
-	color: rgba(0,0,0,.4);
-	display: flex;
-	align-items: flex-end;
-	height: 26px;
-	margin-left: 1rem;
-	flex: 0 1 140px; 
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle .item-type {
-	font-size: 20px;
-	line-height: 16px;
-	color: rgba(0,0,0,.7);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle .item-status {
-	font-size: 16px;
-	line-height: 14px;
-	margin-left: .25rem;
-	color: rgba(0,0,0,.4);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .summary {
-	border: 1px solid rgba(0,0,0,.2);
-	border-left: none;
-	border-right: none;
-	display: flex;
-	font-size: 14px;
-	font-family: "Signika", sans-serif;
-	height: 28px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .summary li {
-	margin: 0;
-	padding: .25rem .5rem;
-	float: none;
-	border: none;
-	border-left: 1px solid rgba(0,0,0,.1);
-	flex: 1;
-	line-height: 20px;
-	height: 26px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .summary li input {
-	height: 20px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .summary li:first-child {
-	border: none;
-	padding-left: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-header .summary li:last-child {
-	padding-right: 0;
-}
-
-/* navigation */
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-navigation {
-	font-family: "Signika", sans-serif;
-	margin: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-navigation .item {
-	margin: 0;
-	padding: 5px 1rem 0 1rem;
-	background: rgba(255,255,255,.2);
-	border: 1px solid transparent;
-	border-bottom: 1px solid rgba(0,0,0,.2);
-	transition: text-shadow .3s ease;
-	text-align: left;
-	font-size: 13px;
-	line-height: 16px;
-	height: 26px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-navigation .item.active {
-	background: transparent;
-	border: 1px solid rgba(0,0,0,.2);
-	border-bottom-color: transparent;
+.tidy5eDark .tidy5e.sheet.actor .traits a:hover i.fas {
+	color: var(--primary-white);
 	text-shadow: none;
-	font-weight: 600;
-	cursor: default;
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-navigation .item:first-child.active {
-	border-left-color: transparent;
+.tidy5eDark .tidy5e.sheet.actor .traits .form-group:nth-child(odd) {
+	background: var(--light-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-navigation .item:last-child.active {
-	border-right-color: transparent;
+.tidy5eDark .tidy5e.sheet.actor .traits label {
+	color: var(--primary-white);
 }
 
-/* item properties */
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .form-group {
-	border-bottom: 1px solid rgba(0,0,0,.1);
+.tidy5eDark .tidy5e.sheet.actor .traits .tag {
+	color: var(--primary-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .form-group:last-of-type {
-	border: none; 
+.tidy5eDark .tidy5e.sheet.actor .traits .tag span {
+	background: var(--line-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .form-group input {
-	flex: 0 0 50px;
+.tidy5eDark .tidy5e.sheet.actor .traits .actor-size {
+	background: var(--line-white);
+	color: var(--primary-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .properties-list {
-	margin-top: .25rem;
+.tidy5eDark .tidy5e.sheet.actor .traits .actor-size:hover {
+	background: var(--green-500);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .form-group + .properties-list {
-	margin-top: .5rem;
-}
-
-/* item sheet body */
-
-.useTidy5eDark .dnd5e.sheet.item {
-	min-height: 500px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body {
-	padding: 1rem;
-	padding-right: .25rem;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab {
-	padding: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .item-properties {
-	margin: 0;    
-	padding: 0 .5rem 0 0;
-  border-right: 1px solid rgba(0,0,0,.1);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .properties-list li {
-	margin: 0 0 2px 0;
-	border: 1px solid rgba(0,0,0,.1);
-	border-radius: 5px;
-	font-size: 11px;
-	line-height: 16px; 
-}
-
-/* item sheet editor */
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor {
-	margin-left: .5rem;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor .editor-edit {
-	right: .75rem;
-	top: 0;
-	padding: 0;
-	border: none;
+.tidy5eDark .tidy5e.sheet.actor .traits .actor-size:hover,
+.tidy5eDark .tidy5e.sheet.actor .traits .actor-size:focus {
 	box-shadow: none;
-	background: transparent;
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor-content {
-	margin: 0;
-	padding: 0 .75rem 0 0;
+.tidy5eDark .tidy5e.sheet.actor .traits .actor-size option {
+	color: #222;
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor-content::before {
-	display: block;
-	content: 'Mechanics/Flavor Text';
-	font-weight: 600;
-	line-height: 20px;
-	margin-bottom: .5rem
+/** Favorites **/
+.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item {
+	background: var(--light-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor-content *:first-child {
-	margin-top: 0;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.attuned,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.prepared {
+	background: rgba(34,84,61,.6);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details {
-	padding-right: .75rem;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-attuned {
+	background: var(--green-500);
+	color: rgba(0,0,0,.87);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor .tox .tox-toolbar__group {
-	padding: 0;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item.inventory-header {
+	background: none;
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor .tox .tox-tbtn {
-	width: 24px;
-	height: 24px;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-name h4 .info-icon {
+	color: var(--line-white);
+	margin-left: 1px;
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor .tox.tox-tinymce .tox-tbtn[title="Formats"] {
-	width: 90px;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-name h4:hover .info-icon {
+	color: var(--secondary-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .editor .tox .tox-tbtn--select {
-	width: auto;
+.tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle,
+.tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle {
+	color: var(--line-white);
 }
 
-/* details tab */
+.tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle:hover,
+.tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle:hover {
+	color: var(--green-500);
+}
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-header,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-header {
+.tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle.active,
+.tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle.active {
+	color: var(--green-500);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .state-display a {
+	color: var(--line-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .state-display a:hover {
+	color: var(--green-500);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .state-display a.active {
+	color: var(--green-500);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-comps,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-action,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .spell-comps,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-action,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-charges {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-charges input {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.actor .spell-component.C,
+.tidy5eDark .dnd5e.sheet.actor .spell-component.R {
+	background: var(--tertiary-white);
+	color: rgba(0,0,0,.95);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header:first-child {
+	color: var(--secondary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-detail,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .spell-detail {
+	border-color: var(--light-white);
+	color: var(--primary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots input,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:hover,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:hover input,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within input {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.actor .inventory-list .item-controls a {
+	color: var(--tertiary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a:hover {
+	color: var(--green-500);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail {
+	color: var(--line-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .spell-slots input,
+.tidy5eDark .tidy5e.sheet.actor .spell-slots span.sep,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .spell-max {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i{
+	color: var(--tertiary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override:hover i{
+	color: var(--green-500);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail i,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .spell-detail svg,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail i{
+	color: var(--light-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image {
+	background-image: url(../images/d20-444.svg) !important;
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image:hover {
+	background-image: url(../images/d20-highlight-green.svg) !important;
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image {
+	background-image: url(../images/d20-444.svg) !important;
+}
+
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image:hover {
+	background-image: url(../images/d20-highlight-green.svg) !important;
+}
+
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
+	background: var(--line-white);
+	color: var(--secondary-white);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a:hover,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create:hover {
+	background: var(--green-500);
+	color: var(--green-900);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-charges:hover a.addCharges {
+	color: var(--green-500);
+}
+
+/* XP Bar */
+.tidy5eDark .tidy5e .xp-bar-total {
+	background: #444;
+}
+
+.tidy5eDark .tidy5e .xp-bar-current {
+	background: var(--green-300);
+}
+
+/* Currency/Spellcasting Ability */
+.tidy5eDark .tidy5e.sheet.actor .spellcasting-ability,
+.tidy5eDark .tidy5e.sheet.actor .inventory-currency {
+	border-color: var(--secondary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select {
 	border: none;
-	margin: 1rem .5rem .5rem .5rem;
-	padding: 0; 
-	font-size: 20px;
+	background: var(--line-white);
+  color: var(--primary-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-header:first-child,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-header:first-child {
-	margin-top: 0;
+.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select:hover {
+	background: var(--green-500);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .form-group,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group {
-	margin: 2px 0;
-	padding: .25rem;
-	background: rgba(0,0,0, .075);
-	border-radius: 5px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group.stacked,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group.stacked,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .form-group.stacked,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group.stacked {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .form-group label.checkbox,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox {
-	position: relative;
-	z-index: 1;
-	margin: 2px;
-  padding: 1px;
-  display: flex;
-	border-radius: 3px;
-	overflow: hidden; 
-  border: 1px solid rgba(0,0,0,.2);
-  height: 24px;
-  cursor: pointer;
-}
-
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox {
-  flex: 0 0 calc((100% / 3) - 4px);
-}
-
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox:hover {
-	background: rgba(0,0,0,.2);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.activation.cost"],
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.target.value"],
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.range.value"],
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.duration.value"],
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.uses.value"],
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.damage.parts.0.0"] {
-	text-align: right
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared {
-	flex: unset !important; 
-	padding-right: 8px;
-	margin: 0 .5rem 0 0;
-	flex-direction: row-reverse;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared input {
-	margin: 0 4px 0 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input:disabled {
-	background: transparent;
-	color: rgba(0,0,0,.7);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.save.dc"] {
-	text-align: center;
-	flex: 0 0 30px; 
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input:disabled:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input:disabled:hover {
-	border: none !important;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input {
-	position: static;
-	margin: 0 4px 0 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input::after,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input::after {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	background: rgba(255,255,255,.3);
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input:checked::after,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input:checked::after {
-	background: rgba(0,255,0,.3);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label {
-	margin-left: .25rem;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"],
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"] {
-	background: rgba(255,255,255, .3);
-	border: none;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"]:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group button:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"]:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select:hover,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover {
-	background: rgba(255,255,255, .5);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 1px solid rgba(0,0,0,.4);
-  background: rgba(255,255,255,.6) ;
-  border-radius: 3px;
-  transition: border .3s ease, background .3s ease;
-  box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
-  position: relative;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body input[type="checkbox"]:hover {
-  border: 1px solid rgba(0,0,0,.8);
-  background: rgba(255,255,255,.8) ;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked {
-  border: 1px solid rgba(0,0,0,.4);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked::before {
-  content: '';
-  display: block;
-  background: url(../images/check-solid.svg) center no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%); 
-  z-index: 1;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .checkbox input[type="checkbox"]:checked::before {
-  left: 11px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item h4.damage-header {
-	margin: .5rem 0 0 .5rem;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .damage-control {
-	margin: 0 .5rem;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .damage-header .damage-control {
-	min-width: 150px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .damage-header .damage-control::after {
-	display: inline-block;
-	content: 'Add Formula';
-	margin-left: .25rem;
-  font-size: 12px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .damage-parts li {
-	margin-top: 4px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .damage-parts li:first-child {
-	margin-top: 0;
-}
-
-/* actor flags */
-
-#actor-flags.app.dnd5e .window-content {
-	padding: 1rem 1rem 1rem 1rem;
-}
-
-#actor-flags.app.dnd5e .notes {
-	margin: 0;
-}
-
-#actor-flags.app.dnd5e .form-header {
-	margin: 1rem 0;
-	border: none;
-}
-
-#actor-flags.app.dnd5e .form-group {
-	margin: 4px 0;
-	padding: .5rem;
-	background: rgba(0,0,0,.1);
-	border-radius: 5px;
-}
-
-#actor-flags.app.dnd5e .form-group label {
-	line-height: 1.5;
-	padding-top: 1px;
-}
-
-#actor-flags.app.dnd5e .form-group input[type="text"] {
-	background: rgba(255,255,255,.3);
-}
-
-#actor-flags.app.dnd5e .form-group input[type="checkbox"] {
-	margin: 0;
-	cursor: pointer;
-}
-
-/* ------------------------ */
-/*   Support Better Rolls   */
-/* ------------------------ */
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons {
-	margin: 8px 0; 
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag {
-	border: none;
-	margin: 2px 4px 2px 0; 
-}
-
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button {
-	border: 1px solid rgba(0,0,0,.2);
-	background: rgba(0,0,0,.4);
-	color: rgba(255,255,255,.8);
-	padding: .25rem .5rem;
+.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select:hover,
+.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select:focus {
 	box-shadow: none;
-	cursor: pointer;
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button:hover {
-	background: rgba(0,0,0,.6);
+.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select option {
+	border-radius: none;
+  color: rgba(0,0,0,.95);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .item-betterRolls input[type="text"], 
-.useTidy5eDark .dnd5e.sheet.item .item-betterRolls select {
-	height: 24px;
-	border: none;
-	background: rgba(255,255,255,.3); 
+/* Encumbrance Bar */
+
+.tidy5eDark .dnd5e.sheet.actor.character .encumbrance .encumbrance-bar {
+	background: var(--green-500);
 }
 
-/* ------------------------ */
-/*    Support Magic Items   */
-/* ------------------------ */
-
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content {
+/* Notes */
+.tidy5eDark .tidy5e-sheet .note-entries article {
+	background: var(--light-white);
+	overflow: hidden;
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .spellbook-filters.magic-items-head,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head {
-	padding: .5rem 0;
-	margin: .5rem 0 0 0;
-	border: none;
-	border-top: 3px solid rgba(0,0,0,0.3);
-	border-bottom: 1px solid rgba(0,0,0,0.3);
+.tidy5eDark .tidy5e-sheet .note-entries article:hover .editor .editor-edit:hover {
+	color: var(--green-500);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .spellbook-filters.magic-items-head h3,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head h3 {
-	font-size: 16px;
-	font-weight: 600;
+.tidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles {
+	border-color: var(--line-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .inventory-header.spellbook-header,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .inventory-header.spellbook-header,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .spellbook-header div,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .spellbook-header div,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item {
-	border: none;
+.tidy5eDark .tox.tox-tinymce {
+	background: var(--tertiary-white);
+	box-shadow: 0 0 0 8px var(--tertiary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .spell-slots input:last-child,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .spell-slots input:last-child {
-	text-align: left;
+.tidy5eDark .tidy5e.sheet.actor .inventory-filters h3,
+.tidy5eDark .tidy5e.sheet.actor .inventory-filters .filter-title {
+ color: var(--secondary-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
-	border-right: 1px solid rgba(0,0,0,.15);
+.tidy5eDark .tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
+	color: var(--primary-white); 
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div:last-child,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div:last-child {
-	border-right: none;
+.tidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle {
+	background: var(--line-white);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item-image,
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item-image {
-	border-radius: 5px 0 0 5px;
+.tidy5eDark .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle,
+.tidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle:hover {
+	background: var(--red-500);
 }
 
-.useTidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item-image:hover {
-	background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a.item-delete {
+	color: var(--red-500);
 }
 
-/* Magic Item Sheet */
-
-.useTidy5eDark .dnd5e.sheet.item .magic-items-content .magic-item-charges,
-.useTidy5eDark .dnd5e.sheet.item .magic-items-content .magic-item-recharge input[type="text"] {
-	text-align: right;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a.item-delete:hover {
+	color: var(--red-700);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items {
-	padding: 0 .7rem 0 0;
+.tidy5eDark .dnd5e.sheet input[type="text"]:hover,
+.tidy5eDark .dnd5e.sheet input[type="text"]:focus {
+	border-color: var(--green-500);
+	box-shadow: 0px 0px 3px var(--green-500), 0px 0px 3px var(--green-500);
+	/*box-shadow: none;*/
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .input-select {
-	height: 32px;
-	line-height: 30px;
+.tidy5eDark .dnd5e.sheet .filter-list .filter-item,
+.tidy5eDark .tidy5e.sheet.actor .inventory-filters {
+	border-color: var(--line-white);
 }
 
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .input-select label {
-	margin-left: 4px;
+.tidy5eDark .dnd5e.sheet .filter-list .filter-item:hover,
+.tidy5eDark .dnd5e.sheet .filter-list .filter-item.active {
+	text-shadow: none;
+	color: var(--green-500);
+	border-color: var(--green-500); 
 }
 
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list {
-	clear: both;
-	padding: 0;
+/* Magic Items */
+
+.tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
+.tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
+	border-color: var(--light-white);	
 }
 
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header {
-	margin: 0 0 .25rem 0;
-	padding-top: .5rem;
-	line-height: 20px;
-	background: transparent;
-	border: none;
-	border-top: 1px solid rgba(0,0,0,.1);
-	font-family: "Signika", sans-serif;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header:first-child,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .item-name,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-constrols-head{
-	border: none;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item.inventory-header .item-name {
-	flex: 1;
-	padding: 2px 0 0 4px;
-	border: none;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head {
-	color: rgba(0,0,0,.4);
-	padding-top: 2px;
-	margin-right: 4px;
-	text-align: center;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head {
-	margin-right: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header h3 {
-	font-family: "Signika", sans-serif;
-	font-size: 13px;
-	margin: 0;
-	padding: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.inventory-header) {
-	padding: 0;
-  line-height: 30px;
-  height: 30px;
-  background: rgba(0,0,0,.1);
-  border: none;
-  border-radius: 5px;
-  margin: 2px 0;
-  overflow: hidden; 
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .item-name {
-	padding: 0 .5rem 0 0;
-	flex: 1;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-level,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-consumption,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-upcast,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-cost {
-	color: rgba(0,0,0,.6);
-	text-align: center;
-	border-left: 1px solid rgba(0,0,0,.15);
-	margin: 3px 4px 3px 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-consumption {
-	flex: 0 0 80px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-cost {
-	flex: 0 0 50px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-level {
-	flex: 0 0 70px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-upcast {
-	flex: 0 0 85px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item .feat-consumption {
-	flex: 0 0 80px;
-	margin: 4px 4px 4px 0px;
-	text-align: center;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head,
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls {
-	flex: 0 0 30px;
-	text-align: center;
-	justify-content: center;
-	border: none;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a {
-	flex:0 0 22px;
-	text-align: center;
-	font-size: 12px;
-	color: rgba(255,0,0,.5);
-	margin: 0;
-}
-
-/* ------------------------ */
-/* Support Dynamic Effects  */
-/* ------------------------ */
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects {
-	padding: 0 .7rem 0 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects > div {
-	float: left;
-	width: calc(50% - 2px);
-	flex-direction: row-reverse;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects > div + div {
-	clear: none;
-	float: right;
-	width: calc(50% - 2px);
-	flex-direction: row-reverse;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects > div label,
-.useTidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects > div + div label {
-	padding-top: 1px;
-	margin: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list {
-	clear: both;
-	padding: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .effect-header {
-	margin: 0 0 .25rem 0;
-	padding-top: .5rem;
-	line-height: 20px;
-	background: transparent;
-	border: none;
-	border-top: 1px solid rgba(0,0,0,.1);
-	font-family: "Signika", sans-serif;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .effect-header:first-child,
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-name,
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-mode,
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-value,
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
-	border: none;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-name {
-	flex: 1;
-	padding-top: 2px;
-	border: none;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-mode,
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-value {
-	color: rgba(0,0,0,.4);
-	padding-top: 2px;
-	border: none;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .effect-header h3 {
-	font-family: "Signika", sans-serif;
-	font-size: 13px;
-	margin: 0;
-	padding: 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect {
-	padding: 0;
-  line-height: 30px;
-  background: rgba(0,0,0,.1);
-  border: none;
-  border-radius: 5px;
-  margin: 2px 0;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect .effect-name {
-	padding: 0 .5rem;
-	flex: 1;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-mode,
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-value {
-	color: rgba(0,0,0,.6);
-	flex: 0 0 70px;
-	text-align: center;
-	border-left: 1px solid rgba(0,0,0,.15);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls {
-	flex: 0 0 66px;
-	text-align: center;
-	justify-content: center;
-	border: none;
-	border-left: 1px solid rgba(0,0,0,.15);
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create {
-	flex: 1;
-	text-align: center;
-	width: 100%;
-	border-radius: 5px;
-	background: rgba(0,0,0,.4);
-	color: rgba(255,255,255,.6);
-	font-size: 12px;
-	font-weight: normal;
-	align-items: center;
-	padding-top: 2px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-edit,
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete {
-	flex:0 0 22px;
-	text-align: center;
-	font-size: 12px;
-}
-
-.useTidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete {
-	color: rgba(255,0,0,.5);
-}
-
-/* Editor Import Message { */
-
-.useTidy5eDark .tidy5e .dnd5e.sheet.actor.character .data-import-message {
-	flex: 0 0 100%;
-	margin: 0 0 1rem 0;
-	padding: 1rem;
-	border-radius: 5px;
-	background: rgba(250,100,0,.5);
-}
-
-.useTidy5eDark .tidy5e .dnd5e.sheet.actor.character .data-import-message p {
-	padding: 0 1rem 1rem 1rem;
-	font-weight: 600;
+.tidy5eDark .dnd5e.sheet.actor .spell-rechargeable,
+.tidy5eDark .dnd5e.sheet.actor .spell-level,
+.tidy5eDark .dnd5e.sheet.actor .spell-consumption,
+.tidy5eDark .dnd5e.sheet.actor .spell-upcast {
+	color: var(--primary-white);
 }

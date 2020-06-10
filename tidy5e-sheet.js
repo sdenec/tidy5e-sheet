@@ -218,22 +218,22 @@ async function hidePortraitButtons(app, html, data){
 Hooks.once("init", () => {
   preloadTidy5eHandlebarsTemplates();
 
-	// game.settings.register("tidy5e-sheet", "useDarkMode", {
-	// 	name: "Use alternate Dark Mode version of the sheet",
-	// 	hint: "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet. Goes well with D&D5E Dark Mode or as a Standalone.",
-	// 	scope: "user",
-	// 	config: true,
-	// 	default: false,
-	// 	type: Boolean,
-	// 	onChange: data => {
- //      data === true ? document.body.classList.add("useTidy5eDark"):document.body.classList.remove("useTidy5eDark");
- //     }
-	// });
+	game.settings.register("tidy5e-sheet", "useDarkMode", {
+		name: "Use alternate Dark Mode version of the sheet",
+		hint: "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet. Goes well with D&D5E Dark Mode or as a Standalone.",
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean,
+		onChange: data => {
+      data === true ? document.body.classList.add("tidy5eDark"):document.body.classList.remove("tidy5eDark");
+     }
+	});
 
- //  const useDarkMode = game.settings.get('tidy5e-sheet', "useDarkMode");
- //  if (useDarkMode === true) {
- //    document.body.classList.add("useTidy5eDark");
- //  }
+  const useDarkMode = game.settings.get('tidy5e-sheet', "useDarkMode");
+  if (useDarkMode === true) {
+    document.body.classList.add("tidy5eDark");
+  }
 });
 
 // Register Tidy5e Sheet and make default character sheet

@@ -12,7 +12,8 @@
 		"tidy5e-favorites.js"
 	],
 	"styles": [
-		"styles/tidy5e-sheet.css"
+		"styles/tidy5e-sheet.css",
+		"styles/tidy5e-darksheet.css"
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
   "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",

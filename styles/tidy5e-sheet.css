@@ -10,6 +10,15 @@
 	margin: 0;
 }
 
+.tidy5e.sheet a:hover {
+	text-shadow: none;
+}
+
+.tidy5e.sheet .editable .rollable:hover {
+	color: inherit;
+	text-shadow: none;
+}
+
 /* flex class */
 .tidy5e .flex {
 	display: flex;
@@ -97,7 +106,6 @@
 	background: rgba(255,255,255,.2);
 	border: 1px solid transparent;
 	border-bottom: 1px solid rgba(0,0,0,.2);
-	transition: text-shadow .3s ease;
 	text-align: left;
 	height: 26px;
 }
@@ -106,9 +114,9 @@
 	background: transparent;
 	border: 1px solid rgba(0,0,0,.2);
 	border-bottom-color: transparent;
-	text-shadow: none;
 	font-weight: 600;
 	cursor: default;
+	text-shadow: none;
 }
 
 .tidy5e-navigation .item:first-child.active {
@@ -396,7 +404,6 @@
 	border: none;
 	color: rgba(0,0,0,.4);
 	padding: 0;
-	text-shadow: none;
 }
 
 .tidy5e .resting .rest i {
@@ -1112,10 +1119,10 @@
 
 .tidy5e.sheet.actor .traits input {
   text-align: right;
-  font-size: 11px;
+  font-size: 12px;
   height: 22px;
   padding-top: 1px;
-  margin-right: 19px;
+  margin-right: 22px;
 }
 
 .tidy5e.sheet.actor .traits .actor-size {
@@ -1214,7 +1221,7 @@
 	border-bottom-right-radius: 5px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-image {
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-name .item-image {
 	width: 23px;
 	height: 23px;
   flex: 0 0 23px;
@@ -1223,7 +1230,7 @@
   margin-right: 4px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item:hover .item-image {
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image {
 	background-image: url(../images/d20-333.svg) !important;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1231,7 +1238,7 @@
 }
 
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-image:hover {
+.tidy5e.sheet.actor .favorites .inventory-list .item .item-name .item-image:hover {
 	background-image: url(../images/d20-highlight.svg) !important;
 }
 
@@ -1302,6 +1309,7 @@
 	justify-content: center;
 	align-items: center;
 	color: rgba(0,0,0,.6);
+	height: 23px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .state-display a {
@@ -1372,6 +1380,9 @@
 	flex: 0 0 45px;
 }
 
+.tidy5e.sheet.actor .favorites .inventory-list .item-controls a {
+	line-height: 23px;
+}
 
 /* Exhaustion Portrait */
 
@@ -1558,10 +1569,6 @@
 }
 
 /* Inventory */
-
-.tidy5e.sheet.actor .editable .rollable:hover {
-	text-shadow: none;
-}
 
 /* Filter */
 .tidy5e.sheet.actor .inventory-filters,
@@ -1824,6 +1831,7 @@
 .tidy5e.sheet.actor .spell-slots,
 .tidy5e.sheet.actor .spell-comps {
 	flex: 0 0 55px;
+	min-width: auto;
 	text-align: center;
 	padding: 0;
 	border: none;
@@ -2242,9 +2250,8 @@
 	margin: 0;
 	padding: 5px 1rem 0 1rem;
 	background: rgba(255,255,255,.2);
-	border: 1px solid transparent;
-	border-bottom: 1px solid rgba(0,0,0,.2);
-	transition: text-shadow .3s ease;
+	border: none;
+  box-shadow:	0 1px 0 0 rgba(0,0,0,.2);
 	text-align: left;
 	font-size: 13px;
 	line-height: 16px;
@@ -2253,19 +2260,29 @@
 
 .dnd5e.sheet.item .sheet-navigation .item.active {
 	background: transparent;
-	border: 1px solid rgba(0,0,0,.2);
-	border-bottom-color: transparent;
-	text-shadow: none;
+  box-shadow: 
+  	-1px 0 0 0 rgba(0,0,0,.2),
+  	1px 0 0 0 rgba(0,0,0,.2),
+  	0 -1px 0 0 rgba(0,0,0,.2),
+  	0 0 0 0 rgba(0,0,0,.2);
 	font-weight: 600;
 	cursor: default;
 }
 
 .dnd5e.sheet.item .sheet-navigation .item:first-child.active {
-	border-left-color: transparent;
+  box-shadow: 
+  	0 0 0 0 rgba(0,0,0,.2),
+  	1px 0 0 0 rgba(0,0,0,.2),
+  	0 -1px 0 0 rgba(0,0,0,.2),
+  	0 0 0 0 rgba(0,0,0,.2);
 }
 
 .dnd5e.sheet.item .sheet-navigation .item:last-child.active {
-	border-right-color: transparent;
+  box-shadow: 
+  	-1px 0 0 0 rgba(0,0,0,.2),
+  	0 0 0 0 rgba(0,0,0,.2),
+  	0 -1px 0 0 rgba(0,0,0,.2),
+  	0 0 0 0 rgba(0,0,0,.2);
 }
 
 /* item properties */
