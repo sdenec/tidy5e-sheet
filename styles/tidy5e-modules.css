@@ -206,10 +206,18 @@
 	border-radius: 5px 0 0 5px;
 }
 
-.tidy5e.sheet.actor .magic-items-spells-content .magic-item-image:hover {
-	background-size: 80%;
+.tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image,
+.tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image {
   background-repeat: no-repeat;
   background-position: center;
+	background-size: 70%;
+  background-image: url(../images/d20-333.svg) !important;
+  cursor: pointer;
+}
+
+.tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image:hover,
+.tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image:hover {
+  background-image: url(../images/d20-highlight.svg) !important;
 }
 
 /* Magic Item Sheet */
