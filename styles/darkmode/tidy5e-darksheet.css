@@ -5,29 +5,10 @@
   --light-white: rgba(255,255,255,.15);
   --faint-white: rgba(255,255,255,.075);
 
-  /* tailwindcss green */
-  
-  --green-100: #F0FFF4;
-  --green-200: #C6F6D5;
-  --green-300: #9AE6B4;
-  --green-400: #68D391;
   --green-500: #48BB78;
-  --green-600: #38A169;
-  --green-700: #2F855A;
-  --green-800: #276749;
-  --green-900: #22543D;
-
-  /* tailwindcss red */
-  
-  --red-100: #FFF5F5;
-  --red-200: #FED7D7;
-  --red-300: #FEB2B2;
-  --red-400: #FC8181;
+  --green-900: #22543D;  
   --red-500: #F56565;
-  --red-600: #E53E3E;
   --red-700: #C53030;
-  --red-800: #9B2C2C;
-  --red-900: #742A2A;
 }
 
 /* Sheet Content */
@@ -136,10 +117,6 @@
 
 .tidy5eDark .dnd5e input[type="text"]::placeholder {
   color: var(--primary-white);
-}
-
-.tidy5eDark .dnd5e.sheet .editable .rollable:hover {
-  /*color: rgba(255,255,255,1);*/
 }
 
 /* Sheet Navigation */
@@ -449,19 +426,19 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image {
-  background-image: url(../images/d20-444.svg) !important;
+  background-image: url(../../images/d20-444.svg) !important;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image:hover {
-  background-image: url(../images/d20-highlight-green.svg) !important;
+  background-image: url(../../images/d20-highlight-green.svg) !important;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image {
-  background-image: url(../images/d20-444.svg) !important;
+  background-image: url(../../images/d20-444.svg) !important;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image:hover {
-  background-image: url(../images/d20-highlight-green.svg) !important;
+  background-image: url(../../images/d20-highlight-green.svg) !important;
 }
 
 
@@ -588,18 +565,4 @@
   text-shadow: none;
   color: var(--green-500);
   border-color: var(--green-500); 
-}
-
-/* Magic Items */
-
-.tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
-.tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
-  border-color: var(--faint-white); 
-}
-
-.tidy5eDark .dnd5e.sheet.actor .spell-rechargeable,
-.tidy5eDark .dnd5e.sheet.actor .spell-level,
-.tidy5eDark .dnd5e.sheet.actor .spell-consumption,
-.tidy5eDark .dnd5e.sheet.actor .spell-upcast {
-  color: var(--primary-white);
 }

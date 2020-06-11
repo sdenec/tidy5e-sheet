@@ -457,7 +457,7 @@
 }
 
 .dnd5e.sheet.item .sheet-body .checkbox input[type="checkbox"]:checked::before {
-  left: 9px;
+  left: 11px;
 }
 
 .dnd5e.sheet.item h4.damage-header {

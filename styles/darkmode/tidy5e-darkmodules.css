@@ -1,0 +1,15 @@
+/* ------------------------ */
+/*    Support Magic Items   */
+/* ------------------------ */
+
+.tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
+.tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
+  border-color: var(--faint-white); 
+}
+
+.tidy5eDark .dnd5e.sheet.actor .spell-rechargeable,
+.tidy5eDark .dnd5e.sheet.actor .spell-level,
+.tidy5eDark .dnd5e.sheet.actor .spell-consumption,
+.tidy5eDark .dnd5e.sheet.actor .spell-upcast {
+  color: var(--primary-white);
+}
