@@ -13,7 +13,11 @@
 	],
 	"styles": [
 		"styles/tidy5e-sheet.css",
-		"styles/tidy5e-darksheet.css"
+		"styles/tidy5e-items.css",
+		"styles/tidy5e-modules.css",
+		"styles/tidy5e-darksheet.css",
+		"styles/tidy5e-darkitems.css",
+		"styles/tidy5e-darkmodules.css"
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
   "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",
