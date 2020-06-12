@@ -1017,7 +1017,6 @@
 }
 
 /* Character Traits */
-
 .tidy5e.sheet.actor .traits-toggle,
 .tidy5e.sheet.actor .favorites-toggle {
 	display: flex;
@@ -1194,6 +1193,11 @@
 
 /* Favorites */
 
+.tidy5e.sheet.actor .favorites {
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 5px;
+	overflow: hidden; 
+}
 
 .tidy5e.sheet.actor .item[data-tab="attributes"] i {
 	margin-right: 4px;
@@ -1223,18 +1227,18 @@
 	line-height: 23px;
 	border-radius: 0;
 	margin: 0;
-	margin: 1px 0;
+	margin: 1px 0 0 0;
 	overflow: hidden;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item:nth-child(2) {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	/*border-top-left-radius: 5px;*/
+	/*border-top-right-radius: 5px;*/
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item:last-child {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	/*border-bottom-left-radius: 5px;*/
+	/*border-bottom-right-radius: 5px;*/
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item .item-name .item-image {
@@ -1343,11 +1347,15 @@
 	padding-top: 3px;
 	padding-left: 4px;
 	padding-right: 45px;
-	margin: 0;
+	margin: 1px 0 0 0;
 	line-height: 20px;
   color: rgba(0,0,0,.4);
 }
 
+.tidy5e.sheet.actor .favorites .inventory-list:first-child .inventory-header {
+	padding-top: 2px;
+	margin-top: 0;
+}
 
 .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots,
 .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots input {
