@@ -1,6 +1,6 @@
-/* ------------------------ */
-/*   Support Better Rolls   */
-/* ------------------------ */
+/* ------------------------------------ */
+/*   Support Better Rolls / Minor QOL   */
+/* ------------------------------------ */
 
 .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons {
 	margin: 8px 0; 
@@ -309,6 +309,10 @@
 	flex: 1;
 }
 
+.dnd5e.sheet.item .magic-item-list .item.inventory-header .item-name {
+	cursor: default;
+}
+
 .dnd5e.sheet.item .magic-item-list .item .spell-level,
 .dnd5e.sheet.item .magic-item-list .item .spell-consumption,
 .dnd5e.sheet.item .magic-item-list .item .spell-upcast,
@@ -341,7 +345,7 @@
 
 .dnd5e.sheet.item .magic-item-list .item .feat-consumption {
 	flex: 0 0 80px;
-	margin: 4px 4px 4px 0px;
+	margin: 3px 4px 3px 0px;
 	text-align: center;
 }
 

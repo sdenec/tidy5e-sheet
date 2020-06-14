@@ -729,6 +729,7 @@
 .tidy5e.sheet .window-content .tab.biography,
 .tidy5e.sheet .window-content .tab.journal {
 	padding-right: .75rem;
+	overflow: auto; 
 }
 
 /* Ability Scores */
@@ -862,6 +863,7 @@
 .tidy5e.sheet.actor .center-pane {
 	display: flex;
 	flex-direction: column;
+	overflow-y: initial;
 }
 
 /* Resources */
@@ -870,6 +872,7 @@
 	margin: 0;
 	border: 1px solid rgba(0,0,0,.1);
 	border-radius: 5px;
+	flex: initial;
 }
 
 .tidy5e.sheet.actor .center-pane ul.attributes li.attribute {
@@ -1005,7 +1008,7 @@
 }
 
 .dnd5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
-	font-size: 23px;
+	font-size: 26px;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value .res-value {
@@ -1076,16 +1079,6 @@
 	margin: 0;
 }
 
-.tidy5e.sheet.actor .traits label {
-  flex: 0 0 140px;
-  line-height: 24px;
-  font-weight: normal;
-  margin: 0 1rem 0 0;
-  font-size: 13px;
-  color: #191813;
-	float: left;
-}
-
 .tidy5e.sheet.actor .traits .form-group,
 .tidy5e.sheet.actor .traits .form-group-stacked {
 	margin: 0; 
@@ -1103,10 +1096,6 @@
 
 .tidy5e.sheet.actor .traits .multiple > * {
 	flex: unset;
-}
-
-.tidy5e.sheet.actor .traits .multiple label {
-	margin-right: .5rem;
 }
 
 .tidy5e.sheet.actor .traits .form-group:first-child {
@@ -1133,8 +1122,8 @@
 }
 
 .tidy5e.sheet.actor .traits input {
-  text-align: right;
-  font-size: 12px;
+  text-align: left;
+  font-size: 13px;
   height: 22px;
   padding-top: 1px;
   margin-right: 22px;
@@ -1152,26 +1141,48 @@
   background: rgba(0,0,0,.15); 
 }
 
+.tidy5e.sheet.actor .traits label {
+  /*flex: 0 0 140px;*/
+  line-height: 24px;
+  font-weight: normal;
+  margin: 0 .5rem 0 0;
+  font-size: 13px;
+  color: #191813;
+	/*float: left;*/
+}
+
+.tidy5e.sheet.actor .traits .multiple label {
+	margin-right: .5rem;
+}
+
+.tidy5e.sheet.actor .traits label,
 .tidy5e.sheet.actor .traits .tag {
   display: inline-block;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 13px;
+  line-height: 13px;
   border: none;
-  padding: 1px;
+  padding: 1px 1px 1px 0;
   margin: 0;
   background: transparent;
   color: rgba(0,0,0,.6);
+  float: left;
 }
 
+
+.tidy5e.sheet.actor .traits label span,
 .tidy5e.sheet.actor .traits .tag span {
   display: inline-block;
-  margin: 1px 0;
-  padding: 5px 4px 3px 4px;
+  margin: 0 1px 0 0;
+  padding: 5px 4px 4px 4px;
   border-radius: 3px;
   background: rgba(0, 0, 0, .1);
 }
 
-.dnd5e.sheet .trait-selector {
+.tidy5e.sheet.actor .traits label span {
+	background: none;
+}
+
+.dnd5e.sheet .traits .trait-selector {
     flex: 0 0 10px;
     padding: 0;
     color: #999;
@@ -1609,6 +1620,10 @@
 
 .tidy5e.sheet.actor .inventory-filters {
 	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.tidy5e.sheet .filter-list {
+	max-width: initial;
 }
 
 .tidy5e.sheet .filter-list .filter-item {
@@ -2089,6 +2104,10 @@
 	padding: .5rem;
 	margin-bottom: 1rem;
 	position: relative;
+}
+
+.tidy5e-sheet .note-entries article:last-child {
+	margin-bottom: 0;
 }
 
 .tidy5e-sheet .note-entries article:hover .editor .editor-edit {

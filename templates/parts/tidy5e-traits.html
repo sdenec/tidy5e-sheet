@@ -1,7 +1,7 @@
 <div class="traits">
   <div class="form-group multiple">
     <div class="actor-size-group">
-      <label>{{localize "DND5E.Size"}}</label>
+      <label><span>{{localize "DND5E.Size"}}</span></label>
       <select class="actor-size" name="data.traits.size">
         {{#select data.traits.size}}
         {{#each config.actorSizes as |label size|}}
@@ -12,19 +12,19 @@
     </div>
 
     <div class="configure-flags-group">
-      <label>{{localize "DND5E.SpecialTraits"}}</label>
+      <label><span>{{localize "DND5E.SpecialTraits"}}</span></label>
       <a class="configure-flags"><i class="fas fa-cog"></i></a>
     </div>
   </div>
 
   <div class="form-group {{#unless data.traits.senses}}inactive{{/unless}}">
-    <label>{{localize "DND5E.Senses"}}</label>
+    <label><span>{{localize "DND5E.Senses"}}</span></label>
     <input type="text" name="data.traits.senses" value="{{data.traits.senses}}" placeholder="{{ localize 'DND5E.None' }}"/>
   </div>
 
   <div class="form-group {{data.traits.languages.cssClass}}">
     <article>
-      <label for="data.traits.languages">{{localize "DND5E.Languages"}}</label>
+      <label for="data.traits.languages"><span>{{localize "DND5E.Languages"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.languages.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>
@@ -36,7 +36,7 @@
 
   <div class="form-group {{data.traits.di.cssClass}}">
     <article>
-      <label for="data.traits.di">{{localize "DND5E.DamImm"}}</label>
+      <label for="data.traits.di"><span>{{localize "DND5E.DamImm"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.di.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>
@@ -48,7 +48,7 @@
 
   <div class="form-group {{data.traits.dr.cssClass}}">
     <article>
-      <label for="data.traits.dr">{{localize "DND5E.DamRes"}}</label>
+      <label for="data.traits.dr"><span>{{localize "DND5E.DamRes"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.dr.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>
@@ -60,7 +60,7 @@
 
   <div class="form-group {{data.traits.dv.cssClass}}">
     <article>
-      <label for="data.traits.dv">{{localize "DND5E.DamVuln"}}</label>
+      <label for="data.traits.dv"><span>{{localize "DND5E.DamVuln"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.dv.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>
@@ -72,7 +72,7 @@
 
   <div class="form-group {{data.traits.ci.cssClass}}">
     <article>
-      <label for="data.traits.ci">{{localize "DND5E.ConImm"}}</label>
+      <label for="data.traits.ci"><span>{{localize "DND5E.ConImm"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.ci.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>
@@ -85,7 +85,7 @@
   {{#if isCharacter}}
   <div class="form-group {{data.traits.weaponProf.cssClass}}">
     <article>
-      <label for="data.traits.weaponProf">{{localize "DND5E.TraitWeaponProf"}}</label>
+      <label for="data.traits.weaponProf"><span>{{localize "DND5E.TraitWeaponProf"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.weaponProf.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>
@@ -97,7 +97,7 @@
 
   <div class="form-group {{data.traits.armorProf.cssClass}}">
     <article>
-      <label for="data.traits.armorProf">{{localize "DND5E.TraitArmorProf"}}</label>
+      <label for="data.traits.armorProf"><span>{{localize "DND5E.TraitArmorProf"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.armorProf.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>
@@ -109,7 +109,7 @@
 
   <div class="form-group {{data.traits.toolProf.cssClass}}">
     <article>
-      <label for="data.traits.toolProf">{{localize "DND5E.TraitToolProf"}}</label>
+      <label for="data.traits.toolProf"><span>{{localize "DND5E.TraitToolProf"}}</span></label>
       <ul class="traits-list">
         {{#each data.traits.toolProf.selected as |v k|}}
         <li class="tag {{k}}"><span>{{v}}</span></li>

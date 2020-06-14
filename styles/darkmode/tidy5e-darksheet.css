@@ -111,11 +111,11 @@
 }
 
 /* Text color */
-.tidy5eDark .dnd5e input[type="text"] {
+.tidy5eDark .tidy5e input[type="text"] {
   color: var(--primary-white);  
 }
 
-.tidy5eDark .dnd5e input[type="text"]::placeholder {
+.tidy5eDark .tidy5e input[type="text"]::placeholder {
   color: var(--primary-white);
 }
 
@@ -181,7 +181,7 @@
   opacity: .87;
 }
 
-.tidy5eDark .dnd5e.sheet.actor .proficient .proficiency-toggle {
+.tidy5eDark .tidy5e.sheet.actor .proficient .proficiency-toggle {
   color: var(--primary-white);
 }
 
@@ -194,11 +194,11 @@
   background: var(--faint-white);
 }
 
-.tidy5eDark .dnd5e.sheet.actor ul.skills-list li.skill .skill-passive {
+.tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-passive {
   color: var(--tertiary-white);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .proficiency-toggle.skill-proficiency {
+.tidy5eDark .tidy5e.sheet.actor .proficiency-toggle.skill-proficiency {
   color: var(--tertiary-white);
 }
 
@@ -207,7 +207,7 @@
   border: 1px solid var(--faint-white);
 }
 
-.tidy5eDark .dnd5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
+.tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
   color: var(--primary-white);
 }
 
@@ -295,6 +295,10 @@
 }
 
 /** Favorites **/
+.tidy5eDark .tidy5e.sheet.actor .favorites {
+  border-color: var(--faint-white);
+}
+
 .tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item {
   background: var(--faint-white);
 }
@@ -312,6 +316,12 @@
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item.inventory-header {
   background: none;
 }
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header h3 {
+  font-weight: 400;
+  color: var(--tertiary-white);
+}
+
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-name h4 .info-icon {
   color: var(--light-white);
@@ -365,8 +375,8 @@
   color: var(--primary-white);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .spell-component.C,
-.tidy5eDark .dnd5e.sheet.actor .spell-component.R {
+.tidy5eDark .tidy5e.sheet.actor .spell-component.C,
+.tidy5eDark .tidy5e.sheet.actor .spell-component.R {
   background: var(--tertiary-white);
   color: rgba(0,0,0,.95);
 }
@@ -392,7 +402,7 @@
   color: var(--primary-white);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .inventory-list .item-controls a {
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a {
   color: var(--tertiary-white);
 }
 
@@ -477,29 +487,29 @@
   background: var(--faint-white);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select {
+.tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select {
   border: none;
   background: var(--light-white);
   color: var(--primary-white);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select:hover {
+.tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select:hover {
   background: var(--green-500);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select:hover,
-.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select:focus {
+.tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select:hover,
+.tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select:focus {
   box-shadow: none;
 }
 
-.tidy5eDark .dnd5e.sheet.actor .spellcasting-ability select option {
+.tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select option {
   border-radius: none;
   color: rgba(0,0,0,.95);
 }
 
 /* Encumbrance Bar */
 
-.tidy5eDark .dnd5e.sheet.actor.character .encumbrance .encumbrance-bar {
+.tidy5eDark .tidy5e.sheet.actor.character .encumbrance .encumbrance-bar {
   background: var(--green-500);
 }
 
@@ -507,6 +517,11 @@
 .tidy5eDark .tidy5e-sheet .note-entries article {
   background: var(--faint-white);
   overflow: hidden;
+}
+
+.tidy5e.sheet.actor .note-entries article .section-titles,
+.tidy5e.sheet.actor .note-entries article .section-titles input {
+  font-weight: 400;
 }
 
 .tidy5eDark .tidy5e-sheet .note-entries article:hover .editor .editor-edit:hover {
@@ -548,20 +563,20 @@
   color: var(--red-700);
 }
 
-.tidy5eDark .dnd5e.sheet input[type="text"]:hover,
-.tidy5eDark .dnd5e.sheet input[type="text"]:focus {
+.tidy5eDark .tidy5e.sheet input[type="text"]:hover,
+.tidy5eDark .tidy5e.sheet input[type="text"]:focus {
   border-color: var(--green-500);
   box-shadow: 0px 0px 3px var(--green-500), 0px 0px 3px var(--green-500);
   /*box-shadow: none;*/
 }
 
-.tidy5eDark .dnd5e.sheet .filter-list .filter-item,
+.tidy5eDark .tidy5e.sheet .filter-list .filter-item,
 .tidy5eDark .tidy5e.sheet.actor .inventory-filters {
   border-color: var(--light-white);
 }
 
-.tidy5eDark .dnd5e.sheet .filter-list .filter-item:hover,
-.tidy5eDark .dnd5e.sheet .filter-list .filter-item.active {
+.tidy5eDark .tidy5e.sheet .filter-list .filter-item:hover,
+.tidy5eDark .tidy5e.sheet .filter-list .filter-item.active {
   text-shadow: none;
   color: var(--green-500);
   border-color: var(--green-500); 

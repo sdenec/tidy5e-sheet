@@ -18,7 +18,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "dnd5e", "sheet", "actor", "character"],
 			blockFavTab: true,
-			width: 740
+			width: 740,
+			height: 720
 		});
 	}
 	

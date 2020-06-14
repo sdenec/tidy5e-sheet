@@ -1,0 +1,229 @@
+.tidy5eDark .dnd5e.sheet.item .window-content form {
+  background-color: rgba(0,0,0,.91);
+}
+
+/* Sheet Header */
+.tidy5eDark .dnd5e.sheet.item .sheet-header {
+  background: rgba(255,255,255,.05);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-header h1.charname input {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle {
+	background: var(--tertiary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle .item-status {
+  color: rgba(0,0,0,.5);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle .item-type {
+  color: rgba(0,0,0,.6);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-header .summary {
+	border-color: var(--faint-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-header .summary li {
+	color: var(--primary-white);
+}
+
+/* Navigation */
+
+.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item {
+  background: rgba(255,255,255,.05);
+  color: var(--primary-white);
+  border: none;
+  box-shadow: 0 1px 0 0 var(--light-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item:hover {
+  color: var(--green-500);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item.active {
+  color: var(--primary-white);
+  background: transparent;
+  text-shadow: none;
+  box-shadow: 
+    -1px 0 0 0 var(--light-white),
+    1px 0 0 0 var(--light-white),
+    0 -1px 0 0 var(--light-white),
+    0 0 0 0 var(--light-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item:first-child.active {
+  box-shadow: 
+    0 0 0 0 var(--light-white),
+    1px 0 0 0 var(--light-white),
+    0 -1px 0 0 var(--light-white),
+    0 0 0 0 var(--light-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item:last-child.active {
+  box-shadow: 
+    -1px 0 0 0 var(--light-white),
+    0 0 0 0 var(--light-white),
+    0 -1px 0 0 var(--light-white),
+    0 0 0 0 var(--light-white);
+}
+
+/* Description */
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .item-properties {
+	border-color: var(--faint-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .form-group label {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .properties-list li {
+	background-color: var(--faint-white);
+	border-color: var(--light-white);
+	color: var(--secondary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .editor {
+	color: var(--primary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .editor .editor-edit:hover {
+	color: var(--green-500);
+}
+
+/* Details */
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-header,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-header {
+	color: var(--secondary-white);
+}
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .form-group,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group {
+	background: var(--faint-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label {
+	color: var(--primary-white);
+	font-weight: 400;
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"],
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"] {
+	background: var(--light-white);
+	color: var(--primary-white);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"]:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group button:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"]:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select:focus {
+	box-shadow: 0 0 0 1px var(--green-500);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select option {
+	color: #121212;
+}
+
+.tidy5eDark .dnd5e.sheet.item .damage-header .damage-control:hover {
+	color: var(--green-500);
+}
+
+.tidy5eDark .dnd5e.sheet.item .damage-control.delete-damage {
+	color: var(--red-500);
+}
+
+.tidy5eDark .dnd5e.sheet.item .damage-control.delete-damage:hover {
+	color: var(--red-700);
+}
+
+.tidy5eDark .dnd5e.sheet.item .details .form-group span {
+	color: var(--secondary-white);
+}
+
+/* Checkboxes */
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .form-group label.checkbox,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox {
+	background: var(--green-500);
+	border-color: #666;
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox:hover {
+	background: var(--green-900);
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input::after,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input::after {
+	background: #555;
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox:hover input::after,
+.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox:hover input::after {
+	background: #444;
+}
+
+.tidy5eDark .dnd5e.sheet.item .sheet-body input[type="checkbox"] {
+	border-color: #444;
+}
+
+/* Special Traits */
+
+.tidy5eDark #actor-flags.app.dnd5e .window-content form {
+	background: rgba(0,0,0,.91);
+}
+
+.tidy5eDark #actor-flags.app.dnd5e .form-group {
+	background: var(--faint-white);
+	color: var(--primary-white);
+	padding: 4px 8px;
+}
+
+.tidy5eDark #actor-flags.app.dnd5e .notes {
+	color: var(--primary-white);
+}
+
+.tidy5eDark #actor-flags.app.dnd5e .form-header {
+	color: var(--tertiary-white);
+}
+
+.tidy5eDark #actor-flags.app.dnd5e .form-group label {
+	color: var(--primary-white);
+	font-weight: 400;
+}
+
+.tidy5eDark #actor-flags.app.dnd5e .form-group input[type="text"] {
+	border-radius: none;
+	flex: 0 0 250px;
+}
+
+.tidy5eDark #actor-flags.app.dnd5e .form-group input[type="text"]:hover,
+.tidy5eDark #actor-flags.app.dnd5e .form-group input[type="text"]:focus {
+	box-shadow: 0 0 0 1px var(--green-500);
+	/*background: var(--faint-white);*/
+}
+
+.tidy5eDark #actor-flags.app.dnd5e button {
+	background: var(--light-white);
+	color: var(--primary-white);
+	border: 1px solid var(--light-white); 
+}
+
+.tidy5eDark #actor-flags.app.dnd5e button:hover {
+	background: var(--green-500);
+	box-shadow: none;
+}

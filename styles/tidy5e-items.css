@@ -3,12 +3,21 @@
 /* Support dnd5e Item sheet  */
 /* ------------------------- */
 
+
+.dnd5e.sheet a:hover {
+	text-shadow: none;
+}
+
 /* Checkbox styling */
 
 .dnd5e.sheet.item input[type="checkbox"],
 .dnd5e.sheet.item button,
 .dnd5e.sheet.item select{
 	cursor: pointer;
+}
+
+.dnd5e.sheet.item input[type="checkbox"] {
+	margin: 2px;
 }
 
 .dnd5e.sheet.item .window-content {
@@ -224,6 +233,15 @@
 	background: transparent;
 }
 
+.dnd5e.sheet.item .sheet-body .editor .editor-edit i {
+	font-size: 1em;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+  text-shadow: none;
+}
+
 .dnd5e.sheet.item .sheet-body .editor-content {
 	margin: 0;
 	padding: 0 .75rem 0 0;
@@ -341,6 +359,7 @@
 .dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label{
 	flex: unset !important; 
+	/*flex: 0 0 75px !important; */
 	padding-right: 8px;
 	margin: 0 .5rem 0 0;
 	flex-direction: row-reverse;
@@ -352,6 +371,9 @@
 
 .dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared input,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label input {
+	width: 20px;
+	height: 20px;
+	top: initial;
 	margin: 0 4px 0 0;
 }
 
@@ -466,10 +488,13 @@
 
 .dnd5e.sheet.item .damage-control {
 	margin: 0 .5rem;
+	min-width: auto;
+	width: auto;
+	text-align: center;
 }
 
 .dnd5e.sheet.item .damage-header .damage-control {
-	min-width: 150px;
+
 }
 
 .dnd5e.sheet.item .damage-header .damage-control::after {
@@ -490,6 +515,10 @@
 /* actor flags */
 
 #actor-flags.app.dnd5e .window-content {
+	padding: 0;
+}
+
+#actor-flags.app.dnd5e .window-content form {
 	padding: 1rem 1rem 1rem 1rem;
 }
 
