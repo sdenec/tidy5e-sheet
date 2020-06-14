@@ -1,3 +1,8 @@
+*Version 0.1.10*
+
+- fix for trait selection (as of dnd5e 0.93 patch)
+- added generic coloredd d20 icon for darksheet to better suite the custom colors option
+
 *Version 0.1.9*
 
 - added a custom accent color option to module settings

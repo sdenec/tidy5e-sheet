@@ -179,41 +179,54 @@ async function addClassList(app, html, data) {
 				let subclass = (item.data.subclass) ? ` <div class="subclass-info has-note"><span>S</span><div class="note">${item.data.subclass}</div></div>` : ``;
 				classList.push(item.name + subclass);
 			}
-		};
+		}
 		classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
 		mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
 		let classListTarget = html.find('.level-information');
 		classListTarget.after(classList);
 
-	};
+	}
 }
 
 async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "useRoundPortraits")) {
 		html.find('.tidy5e-sheet .profile').addClass('roundPortrait');
-	};
+	}
 	if (game.settings.get("tidy5e-sheet", "disableHpOverlay")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-overlay');
-	};
+	}
 	if (game.settings.get("tidy5e-sheet", "noInspirationAnimation")) {
 		html.find('.tidy5e-sheet .inspiration label i').addClass('disable-animation');
-	};
+	}
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
-	};
+	}
 }
 
 async function hidePortraitButtons(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
-	};
+	}
 	if (game.settings.get("tidy5e-sheet", "restOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('restOnHover');
-	};
+	}
 	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
-	};
+	}
 }
+
+// can't figure out how to check if itemcollection is active and pass it to the item sheet :(
+// async function showContainerItems(app, html, data) { 
+// 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+// 	let items = data.actor.items;
+// 	for (let item of items) {
+// 		item.showcollection = false;
+// 		if (game.modules.get("itemcollection")?.active){
+// 			item.showcollection = true;
+// 		}
+// 	}
+// }
+
 
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
@@ -285,6 +298,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	checkDeathSaveStatus(app, html, data);
 	hidePortraitButtons(app, html, data);
+	// showContainerItems(app, html, data);
 	console.log(data);
 });
 
