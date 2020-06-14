@@ -231,9 +231,44 @@ Hooks.once("init", () => {
      }
 	});
 
+	game.settings.register("tidy5e-sheet", "primaryAccent", {
+		name: "Custom Primary Accent Color.",
+		hint: "Overwrite the default primary accent color (#48BB78) for Dark Mode used to highlight e. g. buttons, input field borders or hover states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
+		scope: "user",
+		config: true,
+		default: "",
+		type: String,
+		onChange: data => {
+      data === true ? document.documentElement.style.setProperty('--darkmode-primary-accent',primaryAccentColor)
+  :document.documentElement.style.setProperty('--darkmode-primary-accent',"#48BB78");
+  ;
+     }
+	});
+
+	game.settings.register("tidy5e-sheet", "secondaryAccent", {
+		name: "Custom Secondary Accent Color.",
+		hint: "Overwrite the default secondary accent color (#22543) for Dark Mode used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
+		scope: "user",
+		config: true,
+		default: "",
+		type: String,
+		onChange: data => {
+      data === true ? document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor)
+  :document.documentElement.style.setProperty('--darkmode-secondary-accent',"#22543D");
+     }
+	});
+
   const useDarkMode = game.settings.get('tidy5e-sheet', "useDarkMode");
   if (useDarkMode === true) {
     document.body.classList.add("tidy5eDark");
+  }
+  const primaryAccentColor = game.settings.get('tidy5e-sheet', "primaryAccent");
+  const secondaryAccentColor = game.settings.get('tidy5e-sheet', "secondaryAccent");
+  if(useDarkMode === true && primaryAccentColor !==  '') {
+  	document.documentElement.style.setProperty('--darkmode-primary-accent',primaryAccentColor);
+  }
+  if(useDarkMode === true && secondaryAccentColor !==  '') {
+   	document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor);	
   }
 });
 
@@ -254,10 +289,11 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 });
 
 Hooks.once("ready", () => {
-
+	
 	if (window.BetterRolls) {
 	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
 	}
+	
 	game.settings.register("tidy5e-sheet", "useRoundPortraits", {
 		name: "Character sheet uses round portraits.",
 		hint: "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame.",
