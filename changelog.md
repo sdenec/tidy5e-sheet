@@ -1,3 +1,7 @@
+*Version 0.1.9*
+
+- added a custom accent color option to module settings
+
 *Version 0.1.8*
 
 ** Sheet **
