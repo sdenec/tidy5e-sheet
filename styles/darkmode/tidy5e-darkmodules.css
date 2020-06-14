@@ -3,7 +3,7 @@
 /* ------------------------------------ */
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button:hover {
-	background: var(--green-500);
+	background: var(--darkmode-primary-accent);
 }
 
 /* ------------------------ */
@@ -14,18 +14,18 @@
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-mode,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-value,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
-	color: var(--primary-white);
+	color: var(--darkmode-primary-color);
   font-weight: 400;
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-name,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
-	color: var(--tertiary-white);
+	color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect {
-	background: var(--faint-white);
+	background: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect .effect-name {
@@ -33,48 +33,48 @@
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create {
-	background: var(--light-white);
+	background: var(--darkmode-light-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create:hover {
-	background: var(--green-500);
+	background: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-edit:hover {
-	color: var(--green-500);
+	color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete {
-	color: var(--red-500);
+	color: var(--danger-500);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete:hover {
-	color: var(--red-700);
+	color: var(--danger-700);
 }
 /* ------------------------ */
 /*    Support Magic Items   */
 /* ------------------------ */
 .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .spellbook-filters.magic-items-head,
 .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head {
-  border-color: var(--light-white);
+  border-color: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
 .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
-  border-color: var(--faint-white); 
+  border-color: var(--darkmode-faint-color); 
 }
 
 .tidy5eDark .dnd5e.sheet.actor .spell-rechargeable,
 .tidy5eDark .dnd5e.sheet.actor .spell-level,
 .tidy5eDark .dnd5e.sheet.actor .spell-consumption,
 .tidy5eDark .dnd5e.sheet.actor .spell-upcast {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
   font-weight: 400;
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-mode,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-value {
-	color: var(--primary-white):;
+	color: var(--darkmode-primary-color):;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image,
@@ -90,34 +90,34 @@
 /* Magic Item Sheet */
 
 .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items label {
-	color: var(--primary-white);
+	color: var(--darkmode-primary-color);
   font-weight: 400;
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"],
 .tidy5eDark .dnd5e.sheet.item .magic-items-content select {
 	border: none !important;
-	background: var(--faint-white);
-	color: var(--primary-white);
+	background: var(--darkmode-faint-color);
+	color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"]:hover,
 .tidy5eDark .dnd5e.sheet.item .magic-items-content select:hover,
 .tidy5eDark .dnd5e.sheet.item .magic-items-content select:focus {
 	border: none !important;
-	box-shadow: 0 0 0 1px var(--green-500);
+	box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.inventory-header) {
-	background: var(--faint-white);
-	color: var(--primary-white);
+	background: var(--darkmode-faint-color);
+	color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-level,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-consumption,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-upcast,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-cost {
-	color: var(--primary-white);
+	color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header:first-child,
@@ -127,14 +127,14 @@
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-constrols-head {
-	color: var(--tertiary-white);
+	color: var(--darkmode-tertiary-color);
 	font-weight: 400;
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a {
-	color: var(--red-500);
+	color: var(--danger-500);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a:hover {
-	color: var(--red-700);
+	color: var(--danger-700);
 }

@@ -1,19 +1,19 @@
-:root {
-  --primary-white: rgba(255,255,255,.75);
-  --secondary-white: rgba(255,255,255,.55);
-  --tertiary-white: rgba(255,255,255,.35);
-  --light-white: rgba(255,255,255,.15);
-  --faint-white: rgba(255,255,255,.075);
+.tidy5eDark {
+  --darkmode-primary-color: rgba(255,255,255,.75);
+  --darkmode-secondary-color: rgba(255,255,255,.55);
+  --darkmode-tertiary-color: rgba(255,255,255,.35);
+  --darkmode-light-color: rgba(255,255,255,.15);
+  --darkmode-faint-color: rgba(255,255,255,.075);
 
-  --green-500: #48BB78;
-  --green-900: #22543D;  
-  --red-500: #F56565;
-  --red-700: #C53030;
+  --darkmode-primary-accent: #48BB78;
+  --darkmode-secondary-accent: #22543D;
+  --danger-500: #F56565;
+  --danger-700: #C53030;
 }
 
 /* Sheet Content */
 .tidy5eDark .tidy5e.sheet .window-content {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 /* Sheet Background */
@@ -38,7 +38,7 @@
   background: #555;
   box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
-  color: var(--secondary-white);
+  color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e .inspiration input:checked + label {
@@ -52,12 +52,12 @@
   background: #555;
   box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e .resting-icon,
 .tidy5eDark .tidy5e .rest {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e .rest:hover i {
@@ -73,100 +73,100 @@
 
 .tidy5eDark .tidy5e .exhaustion-icon,
 .tidy5eDark .tidy5e .exhaustion .exhaust-level li {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e .exhaustion-container .level-display {
   background: #555;
   box-shadow: 0 0 8px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
   font-weight: 400;
 }
 
 /* Character Level */
 .tidy5eDark .tidy5e .level {
-  background: var(--tertiary-white);
+  background: var(--darkmode-tertiary-color);
   color: rgba(0,0,0,.6);
 }
 
 /* Character Classes */
 .tidy5eDark .tidy5e .class-list {
-  color: var(--secondary-white);  
+  color: var(--darkmode-secondary-color);  
 }
 
 .tidy5eDark .tidy5e .class-list .subclass-info span {
-  background: var(--tertiary-white);
+  background: var(--darkmode-tertiary-color);
   color: rgba(0,0,0,.87);
 }
 
 /* Character Summary */
 .tidy5eDark .tidy5e .origin-summary {
-  border-bottom: 1px solid var(--light-white);
-  border-top: 1px solid var(--light-white);
+  border-bottom: 1px solid var(--darkmode-light-color);
+  border-top: 1px solid var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e .attribute-name::after {
-  border-color: var(--tertiary-white);
+  border-color: var(--darkmode-tertiary-color);
 }
 
 /* Text color */
 .tidy5eDark .tidy5e input[type="text"] {
-  color: var(--primary-white);  
+  color: var(--darkmode-primary-color);  
 }
 
 .tidy5eDark .tidy5e input[type="text"]::placeholder {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 /* Sheet Navigation */
 .tidy5eDark .tidy5e.sheet.actor .item[data-tab="attributes"] i {
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e-navigation .item {
   background: rgba(255,255,255,.05);
   border: none;
-  box-shadow: 0 1px 0 0 var(--light-white);
+  box-shadow: 0 1px 0 0 var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e-navigation .item:hover {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e-navigation .item.active {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
     background: transparent;
   box-shadow: 
-    -1px 0 0 0 var(--light-white),
-    1px 0 0 0 var(--light-white),
-    0 -1px 0 0 var(--light-white),
-    0 0 0 0 var(--light-white);
+    -1px 0 0 0 var(--darkmode-light-color),
+    1px 0 0 0 var(--darkmode-light-color),
+    0 -1px 0 0 var(--darkmode-light-color),
+    0 0 0 0 var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e-navigation .item:first-child.active {
   box-shadow: 
-    0 0 0 0 var(--light-white),
-    1px 0 0 0 var(--light-white),
-    0 -1px 0 0 var(--light-white),
-    0 0 0 0 var(--light-white);
+    0 0 0 0 var(--darkmode-light-color),
+    1px 0 0 0 var(--darkmode-light-color),
+    0 -1px 0 0 var(--darkmode-light-color),
+    0 0 0 0 var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e-navigation .item:last-child.active {
   box-shadow: 
-    -1px 0 0 0 var(--light-white),
-    0 0 0 0 var(--light-white),
-    0 -1px 0 0 var(--light-white),
-    0 0 0 0 var(--light-white);
+    -1px 0 0 0 var(--darkmode-light-color),
+    0 0 0 0 var(--darkmode-light-color),
+    0 -1px 0 0 var(--darkmode-light-color),
+    0 0 0 0 var(--darkmode-light-color);
 }
 
 /* Ability Scores */
 .tidy5eDark .tidy5e.sheet.actor .ability-scores {
-  border: 1px solid var(--faint-white);
+  border: 1px solid var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-name {
-  border-top: 1px solid var(--faint-white);
+  border-top: 1px solid var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .ability-scores .ability:first-child .ability-name {
@@ -182,107 +182,107 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .proficient .proficiency-toggle {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 /* Skill List */
 .tidy5eDark .tidy5e.sheet.actor.character ul.skills-list {
-  border: 1px solid var(--faint-white);
+  border: 1px solid var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill:nth-child(even) {
-  background: var(--faint-white);
+  background: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-passive {
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .proficiency-toggle.skill-proficiency {
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 /* Resources */
 .tidy5eDark .tidy5e.sheet.actor .center-pane ul.attributes {
-  border: 1px solid var(--faint-white);
+  border: 1px solid var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-options {
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-rest h4 {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox {
   border: none;
-  background: var(--light-white);
-  color: var(--secondary-white);
+  background: var(--darkmode-light-color);
+  color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox:hover,
 .tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header input:checked + label.checkbox {
-  background: var(--green-500);
-  color: var(--primary-white);
+  background: var(--darkmode-primary-accent);
+  color: var(--darkmode-primary-color);
 }
 
 /* Traits & Favorites */
 .tidy5eDark .tidy5e.sheet.actor .traits-toggle,
 .tidy5eDark .tidy5e.sheet.actor .favorites-toggle {
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 /** Traits **/
 
 .tidy5eDark .tidy5e.sheet.actor .toggle-icon {
-  color: var(--tertiary-white); 
+  color: var(--darkmode-tertiary-color); 
 }
 
 .tidy5eDark .tidy5e.sheet.actor .toggle-icon:hover {
-  color: var(--primary-white);  
+  color: var(--darkmode-primary-color);  
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits {
-  border-color: var(--faint-white);
+  border-color: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits i.fas {
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits a:hover i.fas {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
   text-shadow: none;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .form-group:nth-child(odd) {
-  background: var(--faint-white);
+  background: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits label {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .tag {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .tag span {
-  background: var(--light-white);
+  background: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size {
-  background: var(--light-white);
-  color: var(--primary-white);
+  background: var(--darkmode-light-color);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size:hover {
-  background: var(--green-500);
+  background: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size:hover,
@@ -296,20 +296,20 @@
 
 /** Favorites **/
 .tidy5eDark .tidy5e.sheet.actor .favorites {
-  border-color: var(--faint-white);
+  border-color: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item {
-  background: var(--faint-white);
+  background: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.attuned,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.prepared {
-  background: rgba(34,84,61,.6);
+  background: var(--darkmode-secondary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-attuned {
-  background: var(--green-500);
+  background: var(--darkmode-primary-accent);
   color: rgba(0,0,0,.87);
 }
 
@@ -319,78 +319,78 @@
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header h3 {
   font-weight: 400;
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-name h4 .info-icon {
-  color: var(--light-white);
+  color: var(--darkmode-light-color);
   margin-left: 1px;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-name h4:hover .info-icon {
-  color: var(--secondary-white);
+  color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle,
 .tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle {
-  color: var(--light-white);
+  color: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle:hover,
 .tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle:hover {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle.active,
 .tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle.active {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .state-display a {
-  color: var(--light-white);
+  color: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .state-display a:hover {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .state-display a.active {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-comps,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-action,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 } 
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .spell-comps,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-action,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-charges {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-charges input {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .spell-component.C,
 .tidy5eDark .tidy5e.sheet.actor .spell-component.R {
-  background: var(--tertiary-white);
+  background: var(--darkmode-tertiary-color);
   color: rgba(0,0,0,.95);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header:first-child {
-  color: var(--secondary-white);
+  color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-detail,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .spell-detail {
-  border-color: var(--faint-white);
-  color: var(--primary-white);
+  border-color: var(--darkmode-faint-color);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots,
@@ -399,40 +399,40 @@
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:hover input,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within input {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a {
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a:hover {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail {
-  color: var(--light-white);
+  color: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .spell-slots input,
 .tidy5eDark .tidy5e.sheet.actor .spell-slots span.sep,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .spell-max {
-  color: var(--primary-white);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i{
-  color: var(--tertiary-white);
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override:hover i{
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail i,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .spell-detail svg,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail i{
-  color: var(--faint-white);
+  color: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image {
@@ -454,18 +454,17 @@
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
-  background: var(--light-white);
-  color: var(--secondary-white);
+  background: var(--darkmode-light-color);
+  color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a:hover,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create:hover {
-  background: var(--green-500);
-  color: var(--green-900);
+  background: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-charges:hover a.addCharges {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 /* XP Bar */
@@ -474,27 +473,27 @@
 }
 
 .tidy5eDark .tidy5e .xp-bar-current {
-  background: var(--green-500);
+  background: var(--darkmode-primary-accent);
 }
 
 /* Currency/Spellcasting Ability */
 .tidy5eDark .tidy5e.sheet.actor .spellcasting-ability,
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency {
-  border-color: var(--secondary-white);
+  border-color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item {
-  background: var(--faint-white);
+  background: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select {
   border: none;
-  background: var(--light-white);
-  color: var(--primary-white);
+  background: var(--darkmode-light-color);
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select:hover {
-  background: var(--green-500);
+  background: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .spellcasting-ability select:hover,
@@ -510,12 +509,12 @@
 /* Encumbrance Bar */
 
 .tidy5eDark .tidy5e.sheet.actor.character .encumbrance .encumbrance-bar {
-  background: var(--green-500);
+  background: var(--darkmode-primary-accent);
 }
 
 /* Notes */
 .tidy5eDark .tidy5e-sheet .note-entries article {
-  background: var(--faint-white);
+  background: var(--darkmode-faint-color);
   overflow: hidden;
 }
 
@@ -525,59 +524,59 @@
 }
 
 .tidy5eDark .tidy5e-sheet .note-entries article:hover .editor .editor-edit:hover {
-  color: var(--green-500);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles {
-  border-color: var(--light-white);
+  border-color: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tox.tox-tinymce {
-  background: var(--tertiary-white);
-  box-shadow: 0 0 0 8px var(--tertiary-white);
+  background: var(--darkmode-tertiary-color);
+  box-shadow: 0 0 0 8px var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-filters h3,
 .tidy5eDark .tidy5e.sheet.actor .inventory-filters .filter-title {
- color: var(--secondary-white);
+ color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
-  color: var(--primary-white); 
+  color: var(--darkmode-primary-color); 
 }
 
 .tidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle {
-  background: var(--light-white);
+  background: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle,
 .tidy5eDark .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle:hover {
-  background: var(--red-500);
+  background: var(--danger-500);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a.item-delete {
-  color: var(--red-500);
+  color: var(--danger-500);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a.item-delete:hover {
-  color: var(--red-700);
+  color: var(--danger-700);
 }
 
 .tidy5eDark .tidy5e.sheet input[type="text"]:hover,
 .tidy5eDark .tidy5e.sheet input[type="text"]:focus {
-  border-color: var(--green-500);
-  box-shadow: 0px 0px 3px var(--green-500), 0px 0px 3px var(--green-500);
+  border-color: var(--darkmode-primary-accent);
+  box-shadow: 0px 0px 3px var(--darkmode-primary-accent), 0px 0px 3px var(--darkmode-primary-accent);
   /*box-shadow: none;*/
 }
 
 .tidy5eDark .tidy5e.sheet .filter-list .filter-item,
 .tidy5eDark .tidy5e.sheet.actor .inventory-filters {
-  border-color: var(--light-white);
+  border-color: var(--darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e.sheet .filter-list .filter-item:hover,
 .tidy5eDark .tidy5e.sheet .filter-list .filter-item.active {
   text-shadow: none;
-  color: var(--green-500);
-  border-color: var(--green-500); 
+  color: var(--darkmode-primary-accent);
+  border-color: var(--darkmode-primary-accent); 
 }
