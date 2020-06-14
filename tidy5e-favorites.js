@@ -135,7 +135,7 @@ export const addFavorites = async function(app, html, data, position) {
             item.isOnCooldown = true;
             item.labels = {recharge : "Recharge ["+item.data.recharge.value+"+]"};
           }
-          console.log(item);
+          // console.log(item);
           // adding info if item has quantity more than one
           item.isStack = false;
           if (item.data.quantity && item.data.quantity > 1) {
