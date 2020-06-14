@@ -436,19 +436,19 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image {
-  background-image: url(../../images/d20-444.svg) !important;
+  background-image: url(../../images/d20-darkmode.svg) !important;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image:hover {
-  background-image: url(../../images/d20-highlight-green.svg) !important;
+  background-image: url(../../images/d20-darkmode-hover.svg) !important;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image {
-  background-image: url(../../images/d20-444.svg) !important;
+  background-image: url(../../images/d20-darkmode.svg) !important;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image:hover {
-  background-image: url(../../images/d20-highlight-green.svg) !important;
+  background-image: url(../../images/d20-darkmode-hover.svg) !important;
 }
 
 
