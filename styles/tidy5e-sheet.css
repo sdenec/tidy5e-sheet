@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: 'Signika';
-  src: url('../fonts/signika-light-webfont.woff2') format('woff2'),
-       url('../fonts/signika-light-webfont.woff') format('woff');
+  src: url('../fonts/signika-semibold-webfont.woff2') format('woff2'),
+       url('../fonts/signika-semibold-webfont.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
@@ -160,7 +160,7 @@
 	background: transparent;
 	border: 1px solid var(--default-light-color);
 	border-bottom-color: transparent;
-	font-weight: 600;
+	font-weight: 700;
 	cursor: default;
 	text-shadow: none;
 }
@@ -275,7 +275,7 @@
 
 .tidy5e .death-saves .counter-value input {
 	color: #fff;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   height: 19px;
   padding: 5px 4px 4px 4px;
@@ -655,7 +655,7 @@
 .tidy5e .origin-summary .proficiency {
 	flex: 0 1 20%;
 	margin: 0;
-	font-weight: 600;
+	font-weight: 700;
 	text-align: center;
 }
 
@@ -1184,7 +1184,7 @@
 .tidy5e.sheet.actor .traits label {
   /*flex: 0 0 140px;*/
   line-height: 20px;
-  font-weight: normal;
+  font-weight: 400;
   margin: 0 .5rem 0 0;
   font-size: 13px;
   color: #191813;
@@ -1495,7 +1495,7 @@
 	left: -4px;
 	border-radius: 50%;
 	z-index: 1;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .tidy5e .exhaustion-container .note {
@@ -1790,7 +1790,7 @@
 .dnd5e.sheet.actor .spellcasting-ability h3 {
 	font-family: "Signika", "Palatino Linotype", serif;
 	font-size: 12px;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .dnd5e.sheet.actor .spellcasting-ability h3.spell-dc {
@@ -1885,7 +1885,7 @@
 	font-size: 11px;
 	line-height: 16px;
 	text-align: center;
-	font-weight: 600;
+	font-weight: 700;
 	margin: 7px 0;
 	background: rgba(0,0,0,.6); 
 	color: rgba(255,255,255,.6);
@@ -2067,7 +2067,7 @@
 .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
 	background: var(--default-tertiary-color);
 	border-radius: 5px;
-	font-weight: normal;
+	font-weight: 400;
 	color: rgba(255,255,255,.6);
   line-height: 18px;
   padding-top: 2px;
@@ -2155,7 +2155,7 @@
 }
 
 .tidy5e.sheet.actor .note-entries article .section-titles {
-	font-weight: 600;
+	font-weight: 700;
 	border-bottom: 1px solid var(--default-light-color);
 	padding-bottom: .25rem;
 	margin-bottom: .5rem;
@@ -2166,7 +2166,7 @@
 	margin-left: -1px;
 	height: 17px;
   width: calc(100% - 26px);
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .tidy5e.sheet.actor .note-entries article .editor,
@@ -2234,5 +2234,5 @@
 
 .tidy5e.dnd5e.sheet.actor.character .data-import-message p {
 	padding: 0 1rem 1rem 1rem;
-	font-weight: 600;
+	font-weight: 700;
 }
