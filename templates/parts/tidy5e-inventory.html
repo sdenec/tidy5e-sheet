@@ -91,33 +91,6 @@
       </div>
       {{/if}}
     </li>
-    {{#if item.flags.itemcollection}}
-      {{item.showcollection}}
-      {{#if item.flags.itemcollection.contents}}
-      <li class="item flexrow">
-        <ol class="item-list container-list">
-          <li>Money in Container:{{item.data.currency.pp}} PP/{{item.data.currency.gp}} GP/{{item.data.currency.ep}} EP/{{item.data.currency.sp}} SP/{{item.data.currency.cp}} CP</li>
-          {{#each item.flags.itemcollection.contents as |content| }}
-          <li classs="item flexrow container-item">
-          <div class="item-name flexrow">
-            <div class="item-image" style="background-image: url({{content.img}})"></div>
-            <h4>{{content.name}} ({{content.data.quantity}})</h4>
-          </div>
-          <div class="item-details item-weight">
-            {{#if content.isStack}}
-            {{content.totalweigth}}
-            {{/if}}
-          </div>
-          </li>
-          {{/each}}
-        </ol>
-      </li>
-      {{else}}
-      <li classs="item container-item">
-        No items.
-      </li>
-      {{/if}}
-    {{/if}}
     {{/each}}
   </ol>
   {{/each}}

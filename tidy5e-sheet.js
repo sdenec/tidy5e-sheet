@@ -215,19 +215,6 @@ async function hidePortraitButtons(app, html, data){
 	}
 }
 
-// can't figure out how to check if itemcollection is active and pass it to the item sheet :(
-// async function showContainerItems(app, html, data) { 
-// 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
-// 	let items = data.actor.items;
-// 	for (let item of items) {
-// 		item.showcollection = false;
-// 		if (game.modules.get("itemcollection")?.active){
-// 			item.showcollection = true;
-// 		}
-// 	}
-// }
-
-
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
   preloadTidy5eHandlebarsTemplates();
@@ -298,7 +285,6 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	checkDeathSaveStatus(app, html, data);
 	hidePortraitButtons(app, html, data);
-	// showContainerItems(app, html, data);
 	console.log(data);
 });
 
