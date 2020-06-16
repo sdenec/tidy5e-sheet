@@ -111,6 +111,10 @@
   border-color: var(--darkmode-tertiary-color);
 }
 
+.tidy5e .origin-summary li span::after {
+  background: var(--darkmode-primary-color);
+}
+
 /* Text color */
 .tidy5eDark .tidy5e input[type="text"] {
   color: var(--darkmode-primary-color);  
@@ -218,6 +222,10 @@
   color: var(--darkmode-tertiary-color);
 }
 
+.tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover .res-options {
+  color: var(--darkmode-primary-accent);
+}
+
 .tidy5eDark .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header .res-rest h4 {
   color: var(--darkmode-primary-color);
 }
@@ -259,7 +267,7 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits a:hover i.fas {
-  color: var(--darkmode-primary-color);
+  color: var(--darkmode-primary-accent);
   text-shadow: none;
 }
 

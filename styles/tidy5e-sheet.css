@@ -1048,7 +1048,7 @@
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover .res-options {
-	color: #111;
+	color: var(--default-secondary-color);
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-header input {
@@ -1256,17 +1256,23 @@
 
 .tidy5e.sheet.actor .traits .tag span {
   display: inline-block;
-  margin: 0 1px 0 0;
+  margin: 0;
   padding: 2px 4px;
   border-radius: 3px;
   background: rgba(0, 0, 0, .1);
 }
 
-.dnd5e.sheet .traits .trait-selector {
+.tidy5e.sheet .traits .trait-selector {
     flex: 0 0 10px;
     padding: 0;
     color: #999;
     font-size: 13px;
+}
+
+.tidy5e.sheet .traits .trait-selector:hover i.fas,
+.tidy5e.sheet.actor .traits i.fas:hover {
+	color: var(--default-secondary-color);
+	text-shadow: none;
 }
 
 .tidy5e.sheet.actor .traits i.fas {
