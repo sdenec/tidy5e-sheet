@@ -562,11 +562,17 @@
   color: var(--danger-700);
 }
 
+.tidy5eDark .tidy5e.sheet input[type="text"] {
+  border: none;
+  box-shadow: 0px 0px 0 3px transparent inset;
+  transition: box-shadow .3s ease;
+}
+
 .tidy5eDark .tidy5e.sheet input[type="text"]:hover,
 .tidy5eDark .tidy5e.sheet input[type="text"]:focus {
-  border-color: var(--darkmode-primary-accent);
-  box-shadow: 0px 0px 3px var(--darkmode-primary-accent), 0px 0px 3px var(--darkmode-primary-accent);
-  /*box-shadow: none;*/
+  border: none;
+  background: none;
+  box-shadow: 0px 0px 0 1px var(--darkmode-primary-accent) inset;
 }
 
 .tidy5eDark .tidy5e.sheet .filter-list .filter-item,

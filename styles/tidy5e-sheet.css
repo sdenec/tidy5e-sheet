@@ -98,7 +98,7 @@
  
 .tidy5e.sheet input[type="text"]{
 	border: none;
-	box-shadow: 0px 0px 0 3px transparent;
+	box-shadow: 0px 0px 0 3px transparent inset;
 	transition: box-shadow .3s ease;
 }
 
@@ -107,7 +107,7 @@
 	border: none;
 	background: none;
 	/*border-color: var(--default-primary-accent);*/
-	box-shadow: 0px 0px 0px 1px var(--default-primary-accent);
+	box-shadow: 0px 0px 0px 1px var(--default-primary-accent) inset;
 }
 
 .tidy5e.sheet button:hover,
