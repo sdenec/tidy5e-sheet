@@ -21,5 +21,7 @@
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
   "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",
-  "download": "https://github.com/sdenec/tidy5e-sheet/raw/master/tidy5e-sheet.zip"
+  "download": "https://github.com/sdenec/tidy5e-sheet/raw/master/tidy5e-sheet.zip",
+  "minimumCoreVersion": "0.6.0",
+  "compatibleCoreVersion": "0.6.2"
 }
