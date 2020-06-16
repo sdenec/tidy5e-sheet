@@ -88,13 +88,33 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			await actor.update({"data.attributes.exhaustion": value});
  		});
 
+ 		// set input fields via editable elements
+ 		html.find('[contenteditable]').on('paste', function(e) {
+	    //strips elements added to the editable tag when pasting
+	    var $self = $(this);
+	    setTimeout(function() {$self.html($self.text());}, 0);
+		}).on('keypress', function(e) {
+	     //ignores enter key
+	     // return e.which != 13;
+	     // blur field on enter
+	     if(e.keyCode===13){
+        $(this).blur();
+      }
+		});
+
+ 		html.find('[contenteditable]').blur(async (event) => {
+    	let value = event.target.textContent;
+    	let target = event.target.dataset.target;
+    	html.find('input[type="hidden"][data-input="'+target+'"]').val(value).submit();
+ 		});
+
  		// changing item qty and charges values (removing if both value and max are 0)
     html.find('.item:not(.inventory-header) input').change(event => {
     	let value = event.target.value;
-    	console.log(value);
+    	// console.log(value);
 			let actor = this.actor;
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
-      console.log(itemId);
+      // console.log(itemId);
       let path = event.target.dataset.path;
       let data = {};
       data[path] = Number(event.target.value);
