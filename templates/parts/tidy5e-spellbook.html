@@ -53,7 +53,7 @@
     <ol class="item-list">
       {{#each section.spells as |item i|}}
       <li class="item flexrow {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}" {{~#if data.preparation.prepared}} title="Prepared" {{/if}}>
-        <div class="item-name flexrow rollable">
+        <div class="item-name flexrow">
           <div class="item-image" style="background-image: url({{item.img}})"></div>
           <h4>
             <i class="fas fa-info-circle info-icon"></i>

@@ -33,7 +33,7 @@
   <ol class="item-list">
     {{#each section.items as |item iid|}}
     <li class="item flexrow {{~#if item.data.attuned}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
-      <div class="item-name flexrow rollable" >
+      <div class="item-name flexrow" >
         <div class="item-image" style="background-image: url({{item.img}})"></div>
         <h4 title="Toggle Info">
           <i class="fas fa-info-circle info-icon"></i>

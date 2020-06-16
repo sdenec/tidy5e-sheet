@@ -20,6 +20,7 @@
 .tidy5eDark .tidy5e-sheet {
     /*background-color: #121212;*/
     background-color: rgba(0,0,0,.91);
+    font-weight: 300;
 }
 
 /* Sheet Header */
@@ -128,6 +129,7 @@
   background: rgba(255,255,255,.05);
   border: none;
   box-shadow: 0 1px 0 0 var(--darkmode-light-color);
+  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e-navigation .item:hover {
@@ -142,6 +144,7 @@
     1px 0 0 0 var(--darkmode-light-color),
     0 -1px 0 0 var(--darkmode-light-color),
     0 0 0 0 var(--darkmode-light-color);
+  font-weight: 600;
 }
 
 .tidy5eDark .tidy5e-navigation .item:first-child.active {
@@ -266,6 +269,7 @@
 
 .tidy5eDark .tidy5e.sheet.actor .traits label {
   color: var(--darkmode-primary-color);
+  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .tag {
@@ -292,6 +296,10 @@
 
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size option {
   color: #222;
+}
+
+.tidy5eDark .dnd5e.sheet .traits .trait-selector:hover {
+  color: var(--darkmode-primary-accent);
 }
 
 /** Favorites **/
@@ -400,6 +408,7 @@
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within input {
   color: var(--darkmode-primary-color);
+  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a {
@@ -412,13 +421,14 @@
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail {
-  color: var(--darkmode-light-color);
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .spell-slots input,
 .tidy5eDark .tidy5e.sheet.actor .spell-slots span.sep,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .spell-max {
   color: var(--darkmode-primary-color);
+  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i{
@@ -432,14 +442,14 @@
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-detail i,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .spell-detail svg,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail i{
-  color: var(--darkmode-faint-color);
+  color: var(--darkmode-light-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image {
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image {
   background-image: url(../../images/d20-darkmode.svg) !important;
 }
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image:hover {
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image:hover {
   background-image: url(../../images/d20-darkmode-hover.svg) !important;
 }
 
@@ -562,12 +572,16 @@
   color: var(--danger-700);
 }
 
+.tidy5eDark .tidy5e.sheet [contenteditable=true],
 .tidy5eDark .tidy5e.sheet input[type="text"] {
   border: none;
   box-shadow: 0px 0px 0 3px transparent inset;
   transition: box-shadow .3s ease;
+  font-weight: 300;
 }
 
+.tidy5eDark .tidy5e.sheet [contenteditable=true]:hover,
+.tidy5eDark .tidy5e.sheet [contenteditable=true]:focus,
 .tidy5eDark .tidy5e.sheet input[type="text"]:hover,
 .tidy5eDark .tidy5e.sheet input[type="text"]:focus {
   border: none;
@@ -585,4 +599,30 @@
   text-shadow: none;
   color: var(--darkmode-primary-accent);
   border-color: var(--darkmode-primary-accent); 
+}
+
+.tidy5eDark .tidy5e .origin-summary .proficiency {
+  font-weight: 600;
+}
+
+.tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-proficiency,
+.tidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill h4 {
+  font-weight: 300;
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name h4,
+.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
+  font-weight: 300;
+}
+
+.tidy5eDark .tidy5e.sheet.actor .rollable:hover {
+  color: var(--darkmode-primary-accent);
+}
+
+.tidy5eDark .dnd5e.sheet.actor .inventory-list .item .item-recharge {
+  color: var(--darkmode-primary-color);
+}
+
+.tidy5eDark .dnd5e.sheet.actor .inventory-list .item .item-recharge:hover {
+  color: var(--darkmode-primary-accent);
 }

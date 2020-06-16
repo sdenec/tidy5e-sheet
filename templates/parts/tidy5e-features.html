@@ -30,7 +30,7 @@
   <ol class="item-list">
     {{#each section.items as |item iid|}}
     <li class="item flexrow {{#if isDepleted}}depleted{{/if}}" data-item-id="{{item._id}}">
-      <div class="item-name flexrow rollable">
+      <div class="item-name flexrow">
         <div class="item-image" style="background-image: url({{item.img}})"></div>
         <h4>
           <i class="fas fa-info-circle info-icon"></i>
