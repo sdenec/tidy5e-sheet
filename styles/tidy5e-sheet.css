@@ -133,6 +133,7 @@
 	border-bottom: 1px solid var(--default-light-color);
 	text-align: left;
 	height: 26px;
+	flex: 1 1 auto;
 }
 
 .tidy5e-navigation .item:hover {
