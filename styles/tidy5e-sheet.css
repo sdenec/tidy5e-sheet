@@ -508,7 +508,7 @@
 	margin-left: .2rem;
 }
 
-.tidy5e .inspiration #inspiration-checkbox:checked ~ .note::after {
+.tidy5e .inspiration input:checked ~ .note::after {
 	content: '(1)';
 	margin-left: .2rem;
 }
@@ -1802,6 +1802,10 @@
 	background: var(--default-tertiary-color);
 	color: rgba(255,255,255,.6);
 	border-radius: 5px;
+}
+
+.tidy5e.sheet.actor .inventory-currency .currency-item.convert a:hover {
+  background: rgba(0,0,0,.6);
 }
 
 /* Spellcasting Ability */
