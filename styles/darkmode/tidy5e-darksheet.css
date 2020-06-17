@@ -66,14 +66,14 @@
 }
 
 /* Exhaustion Tracker */
-.tidy5eDark .tidy5e .exhaustion {
+.tidy5eDark .tidy5e .exhaustion-wrap {
   background: #555;
   box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
 }
 
 .tidy5eDark .tidy5e .exhaustion-icon,
-.tidy5eDark .tidy5e .exhaustion .exhaust-level li {
+.tidy5eDark .tidy5e .exhaustion-wrap .exhaust-level li {
   color: var(--darkmode-primary-color);
 }
 
