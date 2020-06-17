@@ -1,3 +1,7 @@
+*Version 0.1.13*
+
+- fixed a class name conflixt for exhaustion condition immunitiy
+
 *Version 0.1.12*
 
 - Inspiration Indicator counter fix (didn't show 1 when inspiration was active)
