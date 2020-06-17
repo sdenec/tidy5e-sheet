@@ -29,6 +29,10 @@
 	outline: none; 
 	display: inline-block;
 	border-radius: 3px;
+	-moz-user-select: text;
+	-khtml-user-select: text;
+	-webkit-user-select: text;
+	-o-user-select: text;
 }
 
 .tidy5e.sheet [contenteditable=true]:empty:before {

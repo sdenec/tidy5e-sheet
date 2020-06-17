@@ -111,7 +111,7 @@
   border-color: var(--darkmode-tertiary-color);
 }
 
-.tidy5e .origin-summary li span::after {
+.tidy5eDark .tidy5e .origin-summary li span::after {
   background: var(--darkmode-primary-color);
 }
 
