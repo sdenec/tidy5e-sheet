@@ -1,26 +1,30 @@
 <div class="favorites">
   {{#if favItems}}
     <ol class="inventory-list fav-item">
-      <li class="item inventory-header flexrow">
+      <li class="inventory-header flexrow">
         <h3>Items</h3>
         <div class="item-detail item-charges" title="Item Uses/Charges"><i class="fas fa-bolt"></i></div>
         <div class="item-detail item-action" title="Item Usage"><i class="fas fa-hourglass"></i></div>
       </li>
-      {{#each favItems as |item id|}}
-       {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=item}}
-      {{/each}}
+      <ol class="item-list">
+        {{#each favItems as |item id|}}
+         {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=item}}
+        {{/each}}
+      </ol>
     </ol>
   {{/if}}
   {{#if favFeats}}
     <ol class="inventory-list fav-feat">
-      <li class="item inventory-header flexrow">
+      <li class="inventory-header flexrow">
         <h3>Features</h3>
         <div class="item-detail item-charges" title="Feat Uses/Charges"><i class="fas fa-bolt"></i></div>
         <div class="item-detail item-action" title="Feat Usage"><i class="fas fa-hourglass"></i>
       </li>
-      {{#each favFeats as |feat lvl|}}
-      {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=feat}}
-      {{/each}}
+      <ol class="item-list">
+        {{#each favFeats as |feat lvl|}}
+        {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=feat}}
+        {{/each}}
+      </ol>
     </ol>
   {{/if}}
 
@@ -29,7 +33,7 @@
       <ol class="inventory-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
-            <li class="item inventory-header flexrow">                        
+            <li class="inventory-header flexrow">                        
               <h3>
               {{#if section.isAlways}}Always Prepared
               {{else if section.isAtWill}}At Will
@@ -51,9 +55,11 @@
               <div class="item-detail item-action" title="Spell Usage"><i class="fas fa-hourglass"></i>
             </li>
           {{/if}}
-          {{#each section.spells as |spell id|}}
-            {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
-          {{/each}}
+          <ol class="item-list">
+            {{#each section.spells as |spell id|}}
+              {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
+            {{/each}}
+          </ol>
         {{/if}}
       </ol>
     {{/each}}
@@ -63,7 +69,7 @@
       <ol class="inventory-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
-            <li class="item inventory-header flexrow">                        
+            <li class="inventory-header flexrow">                        
               <h3>
               {{#if section.isCantrip}}Cantrips
               {{else if section.isAlways}}Always Prepared
@@ -84,9 +90,11 @@
               <div class="item-detail item-action" title="Spell Usage"><i class="fas fa-hourglass"></i>
             </li>
           {{/if}}
-          {{#each section.spells as |spell id|}}
-            {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
-          {{/each}}
+          <ol class="item-list">
+            {{#each section.spells as |spell id|}}
+              {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
+            {{/each}}
+          </ol>
         {{/if}}
       </ol>
     {{/each}}
