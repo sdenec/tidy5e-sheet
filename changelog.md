@@ -1,3 +1,8 @@
+*Version 0.1.12*
+
+- Inspiration Indicator counter fix (didn't show 1 when inspiration was active)
+- minor css fixes
+
 *Version 0.1.11*
 
 - fixed rolls for Better Rolls in the Favorites section
