@@ -100,6 +100,11 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	     if(e.keyCode===13){
         $(this).blur();
       }
+
+      // #### TODO ####
+      // Set maxlength
+      // truncate pasted content to maxlength
+
 		});
 
  		html.find('[contenteditable]').blur(async (event) => {
