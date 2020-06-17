@@ -1804,6 +1804,10 @@
 	border-radius: 5px;
 }
 
+.tidy5e.sheet.actor .inventory-currency .currency-item.convert a:hover {
+  background: rgba(0,0,0,.6);
+}
+
 /* Spellcasting Ability */
 
 .tidy5e.sheet.actor .spellcasting-ability  {
