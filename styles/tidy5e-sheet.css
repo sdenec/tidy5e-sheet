@@ -508,7 +508,7 @@
 	margin-left: .2rem;
 }
 
-.tidy5e .inspiration #inspiration-checkbox:checked ~ .note::after {
+.tidy5e .inspiration input:checked ~ .note::after {
 	content: '(1)';
 	margin-left: .2rem;
 }
