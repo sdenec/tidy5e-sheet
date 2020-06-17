@@ -187,7 +187,6 @@ export const addFavorites = async function(app, html, data, position) {
                 favSpellsPrepMode['pact'].spells.push(item);
               }
               spellPrepModeCount++;
-              // item.spellPrepMode = ` (${CONFIG.DND5E.spellPreparationModes[item.data.preparation.mode]})`;
             } else {
               item.canPrep = true;
             }
@@ -256,7 +255,6 @@ export const addFavorites = async function(app, html, data, position) {
             let item = app.actor.getOwnedItem(itemId);
             let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
             return item.update({ [attr]: !getProperty(item.data, attr) });
-              //item.update(obj);
             });
 
           // removing item from favorite list
@@ -338,6 +336,7 @@ export const addFavorites = async function(app, html, data, position) {
             });
         }
 
+        // better rolls support
         if (window.BetterRolls) {
           BetterRolls.addItemContent(app.object, favHtml, ".item .item-name h4", ".item-properties", ".item-image");
         }
