@@ -267,14 +267,14 @@ Hooks.once("init", () => {
 
 	game.settings.register("tidy5e-sheet", "secondaryAccent", {
 		name: "Custom Secondary Accent Color.",
-		hint: "Overwrite the default secondary accent color (#22543) for Dark Mode used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
+		hint: "Overwrite the default secondary accent color (rgba(0,150,150,.325)) for Dark Mode used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
 		scope: "user",
 		config: true,
 		default: "",
 		type: String,
 		onChange: data => {
       data === true ? document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor)
-  :document.documentElement.style.setProperty('--darkmode-secondary-accent',"#22543D");
+  :document.documentElement.style.setProperty('--darkmode-secondary-accent',"rgba(0,150,150,.325)");
      }
 	});
 

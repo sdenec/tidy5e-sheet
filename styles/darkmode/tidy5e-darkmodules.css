@@ -69,7 +69,7 @@
 .tidy5eDark .dnd5e.sheet.actor .spell-consumption,
 .tidy5eDark .dnd5e.sheet.actor .spell-upcast {
   color: var(--darkmode-primary-color);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-mode,
@@ -91,7 +91,7 @@
 
 .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items label {
 	color: var(--darkmode-primary-color);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"],

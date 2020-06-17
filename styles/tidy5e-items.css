@@ -149,6 +149,16 @@
   	0 0 0 0 rgba(0,0,0,.2);
 	font-weight: 600;
 	cursor: default;
+	text-shadow: none;
+}
+
+.dnd5e.sheet.item .sheet-navigation .item:hover {
+	color: var(--default-primary-accent);
+	text-shadow: none;
+}
+
+.dnd5e.sheet.item .sheet-navigation .item.active:hover {
+	color: inherit;
 }
 
 .dnd5e.sheet.item .sheet-navigation .item:first-child.active {
@@ -324,27 +334,30 @@
   display: flex;
 	border-radius: 3px;
 	overflow: hidden; 
-  border: 1px solid #999;
+  border: 1px solid #b3b3b3;
   background: rgba(0,255,0,.3);
   height: 24px;
   cursor: pointer;
+  color: var(--default--primary-color);
+	font-size: 13px;
+	line-height: 20px;
+  flex: 0 0 calc(100% / 4 - 4px);
 }
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox {
-  flex: 0 0 calc((100% / 3) - 4px);
+  flex: 0 0 calc(100% / 3 - 4px);
 }
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox:hover,
 .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox:hover {
-	/*background: rgba(0,0,0,.2);*/
 	background: rgba(0,100,0,.3);
 }
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox:hover  input::after,
 .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover  input::after,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox:hover input::after {
-	background: #999;
+	background: #b8b8b8;
 }
 
 .dnd5e.sheet.item .sheet-body .tab.details .form-group input[name="data.activation.cost"],
@@ -356,10 +369,20 @@
 	text-align: right
 }
 
+.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"]:hover,
+.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select:hover,
+.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group button:hover,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"]:hover,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group select:hover,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover,
+.dnd5e.sheet.item .sheet-body .tab.details .form-group select:focus {
+	border: none; 
+  box-shadow: 0 0 0 1px var(--default-primary-accent);
+}
+
 .dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group.recharge label{
-	flex: unset !important; 
-	/*flex: 0 0 75px !important; */
+	flex: unset !important;
 	padding-right: 8px;
 	margin: 0 .5rem 0 0;
 	flex-direction: row-reverse;
@@ -395,7 +418,7 @@
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input {
 	position: static;
-	margin: 0 4px 0 0;
+	margin: 0;
 }
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input::after,
@@ -406,7 +429,6 @@
 	top: 0;
 	left: 0;
 	z-index: -1;
-	/*background: rgba(255,255,255,.3);*/
 	background: #D8D7D1;
 	width: 100%;
 	height: 100%;
@@ -415,8 +437,6 @@
 
 .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input:checked::after,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input:checked::after {
-	/*background: rgba(0,255,0,.3);*/
-	/*background: none;*/
 	display: none;
 }
 
@@ -447,39 +467,29 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid rgba(0,0,0,.4);
-  background: rgba(255,255,255,.6) ;
-  border-radius: 3px;
-  transition: border .3s ease, background .3s ease;
+  background: none;
+  border: 1px solid var(--default-tertiary-color); 
   box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
+  border-radius: 3px;
+  background-image: url(../images/check-default.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.dnd5e.sheet.item .sheet-body label input[type="checkbox"] {
+  border: none;
+  box-shadow: none;
   position: relative;
 }
 
-.dnd5e.sheet.item .sheet-body input[type="checkbox"]:hover {
-  border: 1px solid rgba(0,0,0,.8);
-  background: rgba(255,255,255,.8) ;
-}
-
 .dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked {
-  border: 1px solid rgba(0,0,0,.4);
+	background-color: rgba(0,255,0,.3);
+  background-image: url(../images/check-default-checked.svg);
 }
 
-.dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked::before {
-  content: '';
-  display: block;
-  background: url(../images/check-solid.svg) center no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%); 
-  z-index: 1;
-}
-
-.dnd5e.sheet.item .sheet-body .checkbox input[type="checkbox"]:checked::before {
-  left: 11px;
+.dnd5e.sheet.item .sheet-body label input[type="checkbox"]:checked {
+  background-color: transparent;
 }
 
 .dnd5e.sheet.item h4.damage-header {

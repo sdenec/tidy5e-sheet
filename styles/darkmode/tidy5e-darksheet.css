@@ -6,7 +6,7 @@
   --darkmode-faint-color: rgba(255,255,255,.075);
 
   --darkmode-primary-accent: #48BB78;
-  --darkmode-secondary-accent: #22543D;
+  --darkmode-secondary-accent: rgba(0,150,150,.325);
   --danger-500: #F56565;
   --danger-700: #C53030;
 }
@@ -120,7 +120,12 @@
   color: var(--darkmode-primary-color);  
 }
 
-.tidy5eDark .tidy5e input[type="text"]::placeholder {
+.tidy5eDark .tidy5e input[type="text"]::placeholder,
+.tidy5eDark .dnd5e input[type="text"]::placeholder {
+  color: var(--darkmode-tertiary-color);
+}
+
+.tidy5eDark .dnd5e input[type="text"] {
   color: var(--darkmode-primary-color);
 }
 
@@ -291,6 +296,7 @@
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size {
   background: var(--darkmode-light-color);
   color: var(--darkmode-primary-color);
+  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size:hover {
@@ -453,22 +459,13 @@
   color: var(--darkmode-light-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image {
-  background-image: url(../../images/d20-darkmode.svg) !important;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image svg path {
+  fill: rgba(255,255,255,.4);
 }
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image:hover {
-  background-image: url(../../images/d20-darkmode-hover.svg) !important;
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image:hover svg path {
+  fill: var(--darkmode-primary-accent);
 }
-
-.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image {
-  background-image: url(../../images/d20-darkmode.svg) !important;
-}
-
-.tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item .item-name:hover .item-image:hover {
-  background-image: url(../../images/d20-darkmode-hover.svg) !important;
-}
-
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
@@ -578,6 +575,10 @@
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a.item-delete:hover {
   color: var(--danger-700);
+}
+
+.tidy5eDark .tidy5e.sheet [contenteditable=true]:empty:before {
+  color: var(--darkmode-tertiary-color);
 }
 
 .tidy5eDark .tidy5e.sheet [contenteditable=true],
