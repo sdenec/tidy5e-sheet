@@ -724,7 +724,7 @@
 .tidy5e .attribute-name {
 	font-size: 20px;
 	line-height: 20px;
-	height: 26px;
+	height: 24px;
 	position: relative;
 	margin: 0;
 	white-space: nowrap;
@@ -753,7 +753,7 @@
 .tidy5e .header-attributes .value {
 	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
 	font-size: 24px;
-	margin: 8px 0 2px 0;
+	margin: 6px 0 2px 0;
 }
 
 .tidy5e .header-attributes .value span,
