@@ -339,7 +339,7 @@ export const addFavorites = async function(app, html, data, position) {
         }
 
         if (window.BetterRolls) {
-          BetterRolls.addItemContent(app.object, favHtml, ".item .item-name h4", ".item-properties", ".item > .rollable");
+          BetterRolls.addItemContent(app.object, favHtml, ".item .item-name h4", ".item-properties", ".item-image");
         }
 
       // adding the html to the appropiate containers

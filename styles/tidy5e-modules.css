@@ -162,6 +162,21 @@
 .tidy5e.sheet.actor .magic-items-spells-content {
 }
 
+
+.dnd5e.sheet.item .magic-items-content input[type="text"],
+.dnd5e.sheet.item .magic-items-content select {
+	border: none !important;
+	background: rgba(255,255,255, .3);
+	color: var(--default-primary-color);
+}
+
+.dnd5e.sheet.item .magic-items-content input[type="text"]:hover,
+.dnd5e.sheet.item .magic-items-content select:hover,
+.dnd5e.sheet.item .magic-items-content select:focus {
+	border: none !important;
+	box-shadow: 0 0 0 1px var(--default-primary-accent);
+}
+
 .tidy5e.sheet.actor .magic-items-feats-content .spellbook-filters.magic-items-head,
 .tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head {
 	padding: .5rem 0;

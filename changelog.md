@@ -1,3 +1,13 @@
+*Version 0.1.11*
+
+- fixed rolls for Better Rolls in the Favorites section
+- fixed a line break issue in the navigation for some translations
+- text fields for race, background and alignment now fit to content
+- d20 icon now is colored by the custom color overrides
+
+- added two new cuts for Signika font: light and semibold to make fonts in darkmode look crisper
+- various css fixed for consistent styling throughout the character and item sheet, better contrast and interaction hints
+
 *Version 0.1.10*
 
 - fix for trait selection (as of dnd5e 0.93 patch)

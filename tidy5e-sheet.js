@@ -88,13 +88,33 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			await actor.update({"data.attributes.exhaustion": value});
  		});
 
+ 		// set input fields via editable elements
+ 		html.find('[contenteditable]').on('paste', function(e) {
+	    //strips elements added to the editable tag when pasting
+	    var $self = $(this);
+	    setTimeout(function() {$self.html($self.text());}, 0);
+		}).on('keypress', function(e) {
+	     //ignores enter key
+	     // return e.which != 13;
+	     // blur field on enter
+	     if(e.keyCode===13){
+        $(this).blur();
+      }
+		});
+
+ 		html.find('[contenteditable]').blur(async (event) => {
+    	let value = event.target.textContent;
+    	let target = event.target.dataset.target;
+    	html.find('input[type="hidden"][data-input="'+target+'"]').val(value).submit();
+ 		});
+
  		// changing item qty and charges values (removing if both value and max are 0)
     html.find('.item:not(.inventory-header) input').change(event => {
     	let value = event.target.value;
-    	console.log(value);
+    	// console.log(value);
 			let actor = this.actor;
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
-      console.log(itemId);
+      // console.log(itemId);
       let path = event.target.dataset.path;
       let data = {};
       data[path] = Number(event.target.value);
@@ -215,19 +235,6 @@ async function hidePortraitButtons(app, html, data){
 	}
 }
 
-// can't figure out how to check if itemcollection is active and pass it to the item sheet :(
-// async function showContainerItems(app, html, data) { 
-// 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
-// 	let items = data.actor.items;
-// 	for (let item of items) {
-// 		item.showcollection = false;
-// 		if (game.modules.get("itemcollection")?.active){
-// 			item.showcollection = true;
-// 		}
-// 	}
-// }
-
-
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
   preloadTidy5eHandlebarsTemplates();
@@ -260,14 +267,14 @@ Hooks.once("init", () => {
 
 	game.settings.register("tidy5e-sheet", "secondaryAccent", {
 		name: "Custom Secondary Accent Color.",
-		hint: "Overwrite the default secondary accent color (#22543) for Dark Mode used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
+		hint: "Overwrite the default secondary accent color (rgba(0,150,150,.325)) for Dark Mode used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
 		scope: "user",
 		config: true,
 		default: "",
 		type: String,
 		onChange: data => {
       data === true ? document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor)
-  :document.documentElement.style.setProperty('--darkmode-secondary-accent',"#22543D");
+  :document.documentElement.style.setProperty('--darkmode-secondary-accent',"rgba(0,150,150,.325)");
      }
 	});
 
@@ -298,8 +305,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	checkDeathSaveStatus(app, html, data);
 	hidePortraitButtons(app, html, data);
-	// showContainerItems(app, html, data);
-	console.log(data);
+	// console.log(data);
 });
 
 Hooks.once("ready", () => {
