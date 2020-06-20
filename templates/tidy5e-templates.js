@@ -11,6 +11,7 @@ export const preloadTidy5eHandlebarsTemplates = async function() {
 
     // Actor Sheet Partials
     "modules/tidy5e-sheet/templates/parts/tidy5e-traits.html",
+    "modules/tidy5e-sheet/templates/parts/tidy5e-traits-small.html",
     "modules/tidy5e-sheet/templates/parts/tidy5e-inventory.html",
     "modules/tidy5e-sheet/templates/parts/tidy5e-features.html",
     "modules/tidy5e-sheet/templates/parts/tidy5e-spellbook.html"

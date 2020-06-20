@@ -814,6 +814,15 @@
 	overflow: auto; 
 }
 
+/* Left Pane */
+
+.tidy5e.sheet.actor.character .left-pane {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 0 280px;
+}
+
+
 /* Ability Scores */
 
 .tidy5e.sheet.actor .ability-scores {
@@ -938,6 +947,40 @@
 }
 .tidy5e.sheet.actor ul.skills-list li.skill .skill-mod {
 	flex: 0 0 20px;
+}
+
+
+/* Skill List Small */
+.tidy5e.sheet.actor.character ul.skills-list.small {
+  flex: 0 0 200px;
+  height: 326px;
+  margin: 0 0 0 8px;
+}
+
+.tidy5e.sheet.actor.character ul.skills-list.small li.skill {
+  height: unset;
+  flex: 1;
+  font-size: 12px;
+  line-height: 14px;
+  align-items: center;
+  padding: 2px 4px 0 4px;
+}
+
+.tidy5e.sheet.actor ul.skills-list.small li.skill .skill-proficiency {
+	font-size: 10px;
+}
+
+.tidy5e.sheet.actor ul.skills-list.small li.skill .skill-proficiency i {
+	vertical-align: baseline;
+}
+
+.tidy5e.sheet.actor.character ul.skills-list.small li.skill h4 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.tidy5e.sheet.actor.character ul.skills-list.small li.skill .skill-ability {
+  flex: 0 0 24px;
 }
 
 /* Center Pane */
@@ -1287,6 +1330,100 @@
 
 .tidy5e.sheet.actor .traits .configure-flags {
     flex: 0;
+}
+
+
+/* Character Traits Small */
+
+.tidy5e.sheet.actor .traits.small {
+	border: 1px solid var(--default-faint-color);
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 0;
+	width: 280px;
+}
+
+.tidy5e.sheet.actor .traits.small .form-group:first-child {
+	line-height: 14px;
+	height: auto;
+}
+
+.tidy5e.sheet.actor .traits.small .form-group:nth-child(odd) {
+	background: var(--default-faint-color);
+}
+
+.tidy5e.sheet.actor .traits.small .form-group:first-child label {
+	padding-top: 1px;
+}
+
+.tidy5e.sheet.actor .traits.small .form-group:last-child {
+	margin: 0;
+}
+
+.tidy5e.sheet.actor .traits.small .form-group article {
+  padding: 2px 0;
+}
+
+
+.tidy5e.sheet.actor .traits.small .senses {
+	position: relative;
+}
+
+.tidy5e.sheet.actor .traits.small .senses label {
+	position: absolute;
+	top: 2px;
+}
+
+.tidy5e.sheet.actor .traits.small .senses [contenteditable] {
+  font-size: 12px;
+  line-height: 14px;
+  height: auto;
+  width: 100%;
+  text-indent: 42px;
+}
+
+.tidy5e.sheet.actor .traits.small label {
+	display: inline;
+  line-height: 14px;
+  font-weight: 700;
+  margin: 0;
+  font-size: 12px;
+  color: #191813;
+	float: none;
+}
+
+.tidy5e.sheet.actor .traits.small .tag {
+  display: inline;
+  font-size: 12px;
+  line-height: 14px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: #191813;
+}
+
+.tidy5e.sheet.actor .traits.small .tag::after {
+	content: ',';
+}
+
+.tidy5e.sheet.actor .traits.small .tag:last-child::after {
+	content: none;
+}
+
+.tidy5e.sheet .traits .trait-selector {
+  flex: 0 0 10px;
+  color: #999;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 3px 0 0 0;
+  margin-left: 4px;
+}
+
+.tidy5e.sheet.actor .traits i.fas {
+  margin: 0;
+  line-height: 14px;
+  vertical-align: baseline;
 }
 
 /* Favorites */
