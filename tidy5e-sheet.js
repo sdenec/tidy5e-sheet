@@ -89,29 +89,65 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  		});
 
  		// set input fields via editable elements
- 		html.find('[contenteditable]').on('paste', function(e) {
-	    //strips elements added to the editable tag when pasting
-	    var $self = $(this);
-	    setTimeout(function() {$self.html($self.text());}, 0);
-		}).on('keypress', function(e) {
-	     //ignores enter key
-	     // return e.which != 13;
-	     // blur field on enter
-	     if(e.keyCode===13){
-        $(this).blur();
+    html.find('[contenteditable]').on('paste', function(e) {
+      //strips elements added to the editable tag when pasting
+      let $self = $(this);
+
+      // set maxlength
+      let maxlength = 40;
+      if($self[0].dataset.maxlength){
+        maxlength = parseInt($self[0].dataset.maxlength);
       }
 
-      // #### TODO ####
-      // Set maxlength
-      // truncate pasted content to maxlength
+      setTimeout(function() {
+        let textString = $self.text();
+        textString = textString.substring(0,maxlength);
+        $self.html(textString);
+      }, 0);
 
-		});
+    }).on('keypress', function(e) {
+      let $self = $(this);
+
+      // set maxlength
+      let maxlength = 40;
+      if($self[0].dataset.maxlength){
+        maxlength = parseInt($self[0].dataset.maxlength);
+      }
+
+      // only accept backspace, arrow keys and delete after maximum characters
+      let keys = [8,37,38,39,40,46];
+
+      if($(this).text().length === maxlength && keys.indexOf(e.keyCode) < 0) { 
+        e.preventDefault();
+      }
+
+       if(e.keyCode===13){
+        $(this).blur();
+      }
+    });
+
+    html.find('[contenteditable]').blur(async (event) => {
+      let value = event.target.textContent;
+      let target = event.target.dataset.target;
+      html.find('input[type="hidden"][data-input="'+target+'"]').val(value).submit();
+    });
 
  		html.find('[contenteditable]').blur(async (event) => {
     	let value = event.target.textContent;
     	let target = event.target.dataset.target;
     	html.find('input[type="hidden"][data-input="'+target+'"]').val(value).submit();
  		});
+
+    // actor size menu
+    html.find('.actor-size-select .size-label').on('click', function(){
+      let currentSize = $(this).data('size');
+      $(this).closest('ul').toggleClass('active').find('ul li[data-size="'+currentSize+'"]').addClass("current");
+    });
+    html.find('.actor-size-select .size-list li').on('click', async (event) => {
+      let value = event.target.dataset.size;
+      this.actor.update({"data.traits.size": value});
+      html.find('.actor-size-select').toggleClass('active');
+    });
 
  		// changing item qty and charges values (removing if both value and max are 0)
     html.find('.item:not(.inventory-header) input').change(event => {
@@ -138,6 +174,18 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       data['data.uses.max'] = 1;
 
       actor.getOwnedItem(itemId).update(data);
+    });
+
+    // toggle empty traits visibility in the traits list
+    html.find('.traits .toggle-traits').click( async (event) => {
+      let actor = this.actor;
+      if(actor.getFlag('tidy5e-sheet', 'traitsExpanded')){
+        console.log('unset flag');
+        await actor.unsetFlag('tidy5e-sheet', 'traitsExpanded');
+      } else {
+        console.log('set flag');
+        await actor.setFlag('tidy5e-sheet', 'traitsExpanded', true);
+      }
     });
 
 	}
@@ -181,6 +229,19 @@ async function migrateTraits(app, html, data) {
 	}
 }
 
+// handle traits list display
+async function toggleTraitsList(app, html, data){
+  html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
+  let visibleTraits = html.find('.traits .form-group:not(.trait-hidden)');
+  // console.log(visibleTraits);
+  for (let i = 0; i < visibleTraits.length; i++) {
+    if(i % 2 != 0){
+      visibleTraits[i].classList.add('even');
+    }
+  }
+}
+
+// Check Death Save Status
 async function checkDeathSaveStatus(app, html, data){
 	var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 	var data = actor.data.data;
@@ -194,6 +255,7 @@ async function checkDeathSaveStatus(app, html, data){
 	}
 }
 
+// Add Character Class List
 async function addClassList(app, html, data) { 
 	if (!game.settings.get("tidy5e-sheet", "hideClassList")) {
 		let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -213,6 +275,7 @@ async function addClassList(app, html, data) {
 	}
 }
 
+// Set Sheet Classes
 async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "useRoundPortraits")) {
 		html.find('.tidy5e-sheet .profile').addClass('roundPortrait');
@@ -228,6 +291,7 @@ async function setSheetClasses(app, html, data) {
 	}
 }
 
+// Set Portrait Hover Classes
 async function hidePortraitButtons(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
@@ -304,6 +368,7 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
+	toggleTraitsList(app, html, data)
 	addFavorites(app, html, data, scrollPos);
 	migrateTraits(app, html, data);
 	addClassList(app, html, data);
