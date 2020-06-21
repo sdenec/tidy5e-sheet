@@ -1,22 +1,4 @@
-<div class="traits small">
-  <!-- <div class="form-group multiple">
-    <div class="actor-size-group">
-      <label>{{localize "DND5E.Size"}}</label>
-      <select class="actor-size" name="data.traits.size">
-        {{#select data.traits.size}}
-        {{#each config.actorSizes as |label size|}}
-        <option value="{{size}}">{{label}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
-    </div>
-
-    <div class="configure-flags-group">
-      <label>{{localize "DND5E.SpecialTraits"}}</label>
-      <a class="configure-flags"><i class="fas fa-cog"></i></a>
-    </div>
-  </div> -->
-
+<div class="traits small{{#if actor.flags.tidy5e-sheet.traitsExpanded}} expanded{{/if}}{{#if actor.flags.tidy5e-sheet.traitsAlwaysVisible}} .always-visible{{/if}}">
   <div class="form-group senses {{#unless data.traits.senses}}inactive{{/unless}}">
     <article>
       <label>{{localize "DND5E.Senses"}}:</label>
@@ -106,4 +88,6 @@
     <a class="trait-selector" data-options="toolProficiencies" data-target="data.traits.toolProf"><i class="fas fa-pencil-alt"></i></a>
   </div>
   {{/if}}
+  <div class="toggle-traits">show/hide empty & edit</div>
+  <a class="item configure-flags">{{localize "DND5E.SpecialTraits"}} <i class="fas fa-cog"></i></a>
 </div>
