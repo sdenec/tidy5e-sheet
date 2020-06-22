@@ -2,7 +2,7 @@
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"author": "sdenec#3813",
 	"minimumCoreVersion": "0.6.0",
 	"compatibleCoreVersion": "0.6.3",
@@ -32,6 +32,11 @@
 			"lang": "de",
 			"name": "Deutsch",
 			"path": "lang/de.json"
+		},
+		{
+			"lang": "it",
+			"name": "Italian",
+			"path": "lang/it.json"
 		}
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
