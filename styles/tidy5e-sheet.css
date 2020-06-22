@@ -19,7 +19,7 @@
 	--default-secondary-color: rgba(0,0,0,.65);
 	--default-tertiary-color: rgba(0,0,0,.4);
 	--default-light-color: rgba(0,0,0,.2);
-	--default-faint-color: rgba(0,0,0,.1);
+	--default-faint-color: rgba(0,0,0,.075);
 	--default-primary-accent: #ff6400;
 	--default-secondary-accent: rgba(210,0,255,.1);
 }
@@ -714,7 +714,7 @@
 }
 
 .tidy5e .header-attribute {
-	height: 80px;
+	height: 76px;
 	flex: 1 1 130px;
 	text-align: center;
 	border-left: 1px solid var(--default-faint-color);
@@ -724,7 +724,7 @@
 .tidy5e .attribute-name {
 	font-size: 20px;
 	line-height: 20px;
-	height: 26px;
+	height: 24px;
 	position: relative;
 	margin: 0;
 	white-space: nowrap;
@@ -753,7 +753,7 @@
 .tidy5e .header-attributes .value {
 	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
 	font-size: 24px;
-	margin: 8px 0 2px 0;
+	margin: 6px 0 2px 0;
 }
 
 .tidy5e .header-attributes .value span,
@@ -1528,7 +1528,7 @@
 	transform: translate(0,0);
 }
 
-.tidy5e .exhaustion {
+.tidy5e .exhaustion-wrap {
 	height: 40px;
 	width: 40px;
 	overflow: hidden; 
@@ -1540,15 +1540,15 @@
   border: 1px solid rgba(0,0,0,.5);
 }
 
-.tidy5e .roundPortrait .exhaustion {
+.tidy5e .roundPortrait .exhaustion-wrap {
 	border-radius: 20px;
 }
 
-.tidy5e .exhaustion-container:hover .exhaustion {
+.tidy5e .exhaustion-container:hover .exhaustion-wrap {
 	width: 215px;
 }
 
-.tidy5e .exhaustion .exhaustion-icon {
+.tidy5e .exhaustion-wrap .exhaustion-icon {
 	display: block;
 	flex: 0 0 38px; 
 	width: 38px;
@@ -1560,7 +1560,7 @@
   color: var(--default-tertiary-color);
 }
 
-.tidy5e .exhaustion .exhaust-level {
+.tidy5e .exhaustion-wrap .exhaust-level {
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -1569,7 +1569,7 @@
 	flex: 1;
 }
 
-.tidy5e .exhaustion .exhaust-level li {
+.tidy5e .exhaustion-wrap .exhaust-level li {
 	flex: 0 0 25px;
 	text-align: center;
 	line-height: 40px;
@@ -1577,7 +1577,7 @@
 	background: var(--default-light-color);
 }
 
-.tidy5e .exhaustion .exhaust-level li:hover {
+.tidy5e .exhaustion-wrap .exhaust-level li:hover {
 	background: rgba(0,0,0,.4) !important;
 	color: #191813;
 }
