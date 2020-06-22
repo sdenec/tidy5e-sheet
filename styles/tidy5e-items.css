@@ -16,6 +16,16 @@
 	cursor: pointer;
 }
 
+.dnd5e.sheet.item input[type="text"] {
+	border: none;
+}
+
+.dnd5e.sheet.item input[type="text"]:hover,
+.dnd5e.sheet.item input[type="text"]:focus {
+	border: none;
+	box-shadow: 0 0 0 1px var(--default-primary-accent) inset;
+}
+
 .dnd5e.sheet.item input[type="checkbox"] {
 	margin: 2px;
 }
@@ -338,7 +348,7 @@
   background: rgba(0,255,0,.3);
   height: 24px;
   cursor: pointer;
-  color: var(--default--primary-color);
+  color: var(--default-secondary-color);
 	font-size: 13px;
 	line-height: 20px;
   flex: 0 0 calc(100% / 4 - 4px);
@@ -377,7 +387,7 @@
 .dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover,
 .dnd5e.sheet.item .sheet-body .tab.details .form-group select:focus {
 	border: none; 
-  box-shadow: 0 0 0 1px var(--default-primary-accent);
+  box-shadow: 0 0 0 1px var(--default-primary-accent) inset;
 }
 
 .dnd5e.sheet.item .sheet-body .tab.details .form-group label.prepared,

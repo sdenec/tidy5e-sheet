@@ -1,6 +1,25 @@
+*Version 0.2.0*
+
+- overhaul of the Character Sheet and addition of a NPC sheet, both with dark mode!
+- The sheet is compatible to most languages - occasionally there is a word that is particularly long and may be cut of or break out of its field. Some modules have their own css that changes the sheets css. As far as I have tested the available languages only Korean breaks the layout with the modules css.
+
+** Character Sheet **
+- Attributes, Skills and Traits got a little more compact to make room for the favorites.
+- Because of that there no longer is the need for the collapse-buttons for traits and favorites.
+- Fvorites can still be toggled to show & edit or hide empty trait fields.
+- traits got a bit reorganized: the size slect is now located below the character name, the special traits button is now below the traits list.
+
+** New NPC Sheet **
+The default NPC sheet was reoganized.
+
+- The general layout was fitted to the character sheet with the option for a round portrait and Hit Point Overlay.
+- The attributes were put into the header to be always visible.
+- the tabs were reduced to a single tab containing all abilities.
+- skills and traits only show proficient skills or available traits. They can be toggled to show all & edit.
+
 *Version 0.1.13*
 
-- fixed a class name conflixt for exhaustion condition immunitiy
+- fixed a class name conflict for exhaustion condition immunitiy
 
 *Version 0.1.12*
 

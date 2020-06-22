@@ -79,9 +79,8 @@
 			{{!-- Character Details --}}
 			<div class="character-details">
 				<section class="flex general-information">
-					<h1 class="char-name">
-						<input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
-					</h1>
+					<input data-input="{{actor._id}}-name" name="name" type="hidden" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
+          <h1 class="char-name" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-name" data-placeholder="{{ localize 'DND5E.Name' }}" data-maxlength="40">{{actor.name}}</h1>
 					<div class="flex level-information {{#if disableExperience}}noxp{{/if}}">
 						<h2 class="level">LVL {{data.details.level}}</h2>
 						{{#unless disableExperience}}
@@ -105,6 +104,15 @@
 
 				<ul class="flex origin-summary">
 					<li>
+						<ul class="actor-size-select">
+              <li><span class="size-label" data-size="{{data.traits.size}}">{{lookup config.actorSizes data.traits.size}}</span>
+                <ul class="size-list" data-target="data.traits.size">
+                  {{#each config.actorSizes as |label size|}}
+                    <li data-size="{{size}}">{{label}}</li>
+                  {{/each}}
+                </ul>
+              </li>
+            </ul>
 						<span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-race" data-placeholder="{{ localize 'DND5E.Race' }}">{{data.details.race}}</span>
 						<span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-background" data-placeholder="{{ localize 'DND5E.Background' }}">{{data.details.background}}</span>
 						<span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{data.details.alignment}}</span>
@@ -113,7 +121,7 @@
 						<input type="hidden" data-input="{{actor._id}}-alignment" name="data.details.alignment" value="{{data.details.alignment}}" placeholder="{{ localize 'DND5E.Alignment' }}">
 					</li>
 					<li class="proficiency">
-						<p>{{ localize 'DND5E.Proficiency' }}: {{numberFormat data.attributes.prof decimals=0 sign=true}}</p>
+						{{ localize 'DND5E.Proficiency' }}: {{numberFormat data.attributes.prof decimals=0 sign=true}}
 					</li>
 				</ul>
 
@@ -189,36 +197,43 @@
 		<section class="sheet-body">
 
 			<div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+				
+				<div class="left-pane">
+					{{!-- Ability Scores --}}
+					<ul class="ability-scores">
+						{{#each data.abilities as |ability id|}}
+						<li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
+							<h4 class="ability-name rollable">{{ability.label}}</h4>
+							<div class="ability-values">
+								<span class="ability-mod" title="Modifier">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+								<input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10" maxlength="2">
+								<span class="ability-save" title="Saving Throw">{{numberFormat ability.save decimals=0 sign=true}}</span>
+							</div>
+							<div class="ability-modifiers">
+								<input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
+								<a class="proficiency-toggle ability-proficiency" title="Proficiency">{{{ability.icon}}}</a>
+							</div>
+						</li>
+						{{/each}}
+					</ul>
 
-				{{!-- Ability Scores --}}
-				<ul class="ability-scores">
-					{{#each data.abilities as |ability id|}}
-					<li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
-						<h4 class="ability-name rollable">{{ability.label}}</h4>
-						<input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10" maxlength="2">
-						<div class="ability-modifiers">
-							<span class="ability-mod" title="Modifier">{{numberFormat ability.mod decimals=0 sign=true}}</span>
-							<input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
-							<a class="proficiency-toggle ability-proficiency" title="Proficiency">{{{ability.icon}}}</a>
-							<span class="ability-save" title="Saving Throw">{{numberFormat ability.save decimals=0 sign=true}}</span>
-						</div>
-					</li>
-					{{/each}}
-				</ul>
+					{{!-- Skills --}}
+					<ul class="skills-list">
+						{{#each data.skills as |skill s|}}
+						<li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
+							<input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
+							<a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
+							<h4 class="skill-name rollable">{{skill.label}}</h4>
+							<span class="skill-ability">{{skill.ability}}</span>
+							<span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
+							<span class="skill-passive" title="Passive {{skill.label}}">({{skill.passive}})</span>
+						</li>
+						{{/each}}
+					</ul>
 
-				{{!-- Skills --}}
-				<ul class="skills-list">
-					{{#each data.skills as |skill s|}}
-					<li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
-						<input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
-						<a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
-						<h4 class="skill-name rollable">{{skill.label}}</h4>
-						<span class="skill-ability">{{skill.ability}}</span>
-						<span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
-						<span class="skill-passive" title="Passive {{skill.label}}">({{skill.passive}})</span>
-					</li>
-					{{/each}}
-				</ul>
+					{{!-- Traits --}}
+					{{> "modules/tidy5e-sheet/templates/parts/tidy5e-traits.html"}}
+				</div>
 
 				<section class="center-pane">
 
@@ -256,30 +271,8 @@
 						{{/each}}
 					</ul>
 
-
-					{{!-- Traits --}}
-					<div class="traits-wrap{{#if actor.flags.tidy5e-sheet.traits-compressed}} compressed{{/if}}">
-						<header class=traits-toggle>
-							<h4>Character Traits</h4>
-							<div class="toggle-icon">
-								<i class="fas fa-caret-down"></i>
-								<i class="fas fa-caret-right"></i>
-							</div>
-						</header>
-						{{> "modules/tidy5e-sheet/templates/parts/tidy5e-traits.html"}}
-					</div>
-
 					{{!-- Favorites --}}
-					<div class="favorites-wrap{{#if actor.flags.tidy5e-sheet.favorites-compressed}} compressed{{/if}}">
-						<header class=favorites-toggle>
-							<h4>Favorites</h4>
-							<div class="toggle-icon">
-								 <i class="fas fa-caret-down"></i>
-								 <i class="fas fa-caret-right"></i>
-							</div>
-						</header>
-						<div class="favorites-target"></div>
-					</div>
+					<div class="favorites-target"></div>
 				</section>
 			</div>
 
