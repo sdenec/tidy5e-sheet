@@ -1,1 +1,93 @@
-"TIDY5E.test": "This is a test",
+{
+	"TIDY5E.EditActorImage": "Edit Image",
+
+	"TIDY5E.Exhaustion0": "No negative effects",
+	"TIDY5E.Exhaustion1": "Disadvantage on Ability Checks",
+	"TIDY5E.Exhaustion2": "Speed halved",
+	"TIDY5E.Exhaustion3": "Disadvantage on Attack rolls and Saving Throws",
+	"TIDY5E.Exhaustion4": "Hit point maximum halved",
+	"TIDY5E.Exhaustion5": "Speed reduced to 0",
+	"TIDY5E.Exhaustion6": "Death",
+
+	"TIDY5E.RestHint": "Take A Rest",
+	"TIDY5E.RestS": "Short Rest",
+	"TIDY5E.RestL": "Long Rest",
+
+	"TIDY5E.AttrHitPoints": "Hit Points",
+
+	"TIDY5E.HitDiceHint": "Use on Rest",
+
+	"TIDY5E.Journal": "Journal",
+
+	"TIDY5E.AbilitySave": "Saving Throw",
+	"TIDY5E.AbilityMod": "Modifier",
+	"TIDY5E.AbilityProf": "Proficiency",
+	"TIDY5E.SkillPassive": "Passive",
+
+	"TIDY5E.RestoreOnRest": "Restore on rest",
+
+
+	"TIDY5E.BioTraits": "Traits",
+	"TIDY5E.BioIdeals": "Ideals",
+	"TIDY5E.BioBonds": "Bonds",
+	"TIDY5E.BioFlaws": "Flaws",
+	"TIDY5E.BioAppearance": "Appearance",
+	"TIDY5E.BioBackground": "Background/Biography",
+
+	"TIDY5E.JournalPoi": "Persons of Interest",
+	"TIDY5E.JournalLoi": "Locations of Interest",
+	"TIDY5E.JournalQuests": "Quests",
+	"TIDY5E.JournalMisc": "Miscellaneous",
+	"TIDY5E.JournalEntries": "Journal Entries",
+
+
+	"TIDY5E.DeleteDisabled": "Delete Disabled",
+	"TIDY5E.DeleteEnabled": "Delete Enabled",
+	"TIDY5E.DeleteDisabledHint": "show item delete button",
+	"TIDY5E.DeleteEnabledHint": "hide item delete button",
+
+	"TIDY5E.ConvertCurrencyHint": "convert currency to highest coinage",
+	"TIDY5E.ConvertCurrencyButton": "convert",
+
+	"TIDY5E.Encumbrance": "Encumbrance",
+
+	"TIDY5E.Prepared": "Prepared",
+	"TIDY5E.Attuned": "Attuned",
+
+	"TIDY5E.EditItem": "Edit Item",
+	"TIDY5E.DeleteItem": "Delete Item",
+	"TIDY5E.EditSpell": "Edit Spell",
+	"TIDY5E.DeleteSpell": "Delete Spell",
+	"TIDY5E.AddFav": "Add to Favorites",
+	"TIDY5E.RemoveFav": "Remove from Favorites",
+
+
+	"TIDY5E.ToggleInfo": "Toggle Info",
+
+
+	"TIDY5E.SkillsShow" : "show/edit",
+	"TIDY5E.SkillsHide" : "hide",
+	"TIDY5E.SkillsNotProficient" : "not proficient",
+
+	"TIDY5E.TraitsShow" : "show/edit",
+	"TIDY5E.TraitsHide" : "hide",
+	"TIDY5E.TraitsEmpty" : "empty traits",
+
+	"TIDY5E.AbbrArmorClass" : "AC",
+
+	"TIDY5E.strAbility" : "Str",
+	"TIDY5E.dexAbility" : "Dex",
+	"TIDY5E.conAbility" : "Con",
+	"TIDY5E.intAbility" : "Int",
+	"TIDY5E.wisAbility" : "Wis",
+	"TIDY5E.chaAbility" : "Cha",
+
+	"TIDY5E.Abilities" : "Abilities",
+
+	"TIDY5E.SpellAlwaysPrepared": "Always Prepared",
+	"TIDY5E.SpellAtWill": "At Will",
+	"TIDY5E.SpellInnate": "Innate Spellcasting",
+	"TIDY5E.SpellPact": "Pact Magic",
+	"TIDY5E.SpellCantrips": "Cantrips",
+	"TIDY5E.SpellLevel": "Spell Level"
+}

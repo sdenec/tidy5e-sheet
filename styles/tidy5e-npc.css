@@ -316,15 +316,15 @@
 }
 
 .tidy5e.dnd5e.sheet.actor.npc ul.skills-list .toggle-proficient::before {
-  content: 'show/edit ';
+  content: attr(data-show);
 }
 
 .tidy5e.dnd5e.sheet.actor.npc ul.skills-list.expanded .toggle-proficient::before {
-  content: 'hide ';
+  content: attr(data-hide);
 }
 
 .tidy5e.dnd5e.sheet.actor.npc ul.skills-list.always-visible .toggle-proficient::before {
-  content: 'edit ';
+  content: attr(data-edit);
 }
 
 .tidy5e.dnd5e.sheet.actor.npc ul.skills-list .toggle-proficient:hover {

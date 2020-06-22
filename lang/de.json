@@ -1,0 +1,95 @@
+{
+	"TIDY5E.EditActorImage": "Bild bearbeiten",
+
+	"TIDY5E.Exhaustion0": "Kein negativer Effekt",
+	"TIDY5E.Exhaustion1": "Nachteil auf Fähigkeitsproben",
+	"TIDY5E.Exhaustion2": "Bewegung halbiert",
+	"TIDY5E.Exhaustion3": "Nachteil auf Angriffswürfe und Rettungswürfe",
+	"TIDY5E.Exhaustion4": "Maximale Trefferpunkte halbiert",
+	"TIDY5E.Exhaustion5": "Bewegung auf 0 reduziert",
+	"TIDY5E.Exhaustion6": "Tod",
+
+	"TIDY5E.RestHint": "Mach eine Rast",
+	"TIDY5E.RestS": "Kurze Rast",
+	"TIDY5E.RestL": "Lange Rast",
+
+	"TIDY5E.AttrHitPoints": "Trefferpunkte",
+
+	"TIDY5E.HitDiceHint": "bei Rast nutzen",
+
+	"TIDY5E.Journal": "Tagebuch",
+
+	"TIDY5E.AbilitySave": "Rettungswurf",
+	"TIDY5E.AbilityMod": "Modifikator",
+	"TIDY5E.AbilityProf": "Übung",
+	"TIDY5E.SkillPassive": "Passiv",
+
+	"TIDY5E.RestoreOnRest": "Bei Rast erneuern",
+
+
+	"TIDY5E.BioTraits": "Merkmale",
+	"TIDY5E.BioIdeals": "Ideale",
+	"TIDY5E.BioBonds": "Bindungen",
+	"TIDY5E.BioFlaws": "Mängel",
+	"TIDY5E.BioAppearance": "Erscheinung",
+	"TIDY5E.BioBackground": "Hintergrund/Biografie",
+
+	"TIDY5E.JournalPoi": "Interessante Persönlichkeiten",
+	"TIDY5E.JournalLoi": "Interessante Orte",
+	"TIDY5E.JournalQuests": "Aufträge",
+	"TIDY5E.JournalMisc": "Verschiedenes",
+	"TIDY5E.JournalEntries": "Tagebucheinträge",
+
+
+	"TIDY5E.DeleteDisabled": "Löschen deaktiviert",
+	"TIDY5E.DeleteEnabled": "Löschen aktiviert",
+	"TIDY5E.DeleteDisabledHint": "Zeige Löschen-Knopf",
+	"TIDY5E.DeleteEnabledHint": "Verstecke Löschen-Knopf",
+
+	"TIDY5E.ConvertCurrencyHint": "Währung in höchste Einheit konvertieren",
+	"TIDY5E.ConvertCurrencyButton": "konvertieren",
+
+	"TIDY5E.Encumbrance": "Belastung",
+
+	"TIDY5E.Prepared": "Vorbereited",
+	"TIDY5E.Attuned": "Abgestimmt",
+
+	"TIDY5E.EditItem": "Gegenstand bearbeiten",
+	"TIDY5E.DeleteItem": "Gegenstand löschen",
+	"TIDY5E.EditSpell": "Zauber bearbeiten",
+	"TIDY5E.DeleteSpell": "Zauber löschen",
+	"TIDY5E.AddFav": "Zu Favoriten hinzufügen",
+	"TIDY5E.RemoveFav": "Aus Favoriten entfernen",
+
+
+	"TIDY5E.ToggleInfo": "Infos umschalten",
+
+
+	"TIDY5E.SkillsShow" : "zeige/editiere",
+	"TIDY5E.SkillsHide" : "verstecke",
+	"TIDY5E.SkillsEdite" : "editiere",
+	"TIDY5E.SkillsNotProficient" : "ungeübte",
+
+	"TIDY5E.TraitsShow" : "zeige/editiere",
+	"TIDY5E.TraitsHide" : "verstecke",
+	"TIDY5E.TraitsEdit" : "editiere",
+	"TIDY5E.TraitsEmpty" : "leere",
+
+	"TIDY5E.AbbrArmorClass" : "RK",
+
+	"TIDY5E.strAbility" : "Stä",
+	"TIDY5E.dexAbility" : "Gew",
+	"TIDY5E.conAbility" : "Kon",
+	"TIDY5E.intAbility" : "Int",
+	"TIDY5E.wisAbility" : "Wei",
+	"TIDY5E.chaAbility" : "Cha",
+
+	"TIDY5E.Abilities" : "Fähigkeiten",
+
+	"TIDY5E.SpellAlwaysPrepared": "Immer vorbereitet",
+	"TIDY5E.SpellAtWill": "Nach Belieben",
+	"TIDY5E.SpellInnate": "Angeborenes Zauberwirken",
+	"TIDY5E.SpellPact": "Paktmagie",
+	"TIDY5E.SpellCantrips": "Zaubertricks",
+	"TIDY5E.SpellLevel": "Zauberstufe"
+}

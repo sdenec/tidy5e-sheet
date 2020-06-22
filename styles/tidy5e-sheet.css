@@ -227,6 +227,10 @@
 	z-index: 1;
 }
 
+.tidy5e.sheet.actor .profile.disable-hp-overlay .portrait {
+	mix-blend-mode: initial;
+}
+
 .tidy5e.sheet.actor .roundPortrait .portrait {
 	border-radius: 50%;
 }
@@ -461,7 +465,6 @@
 	color: var(--default-tertiary-color);
 }
 
-
 .tidy5e.sheet.actor .resting .rest {
 	flex: 0 0 35px; 
 	display: flex;
@@ -493,7 +496,7 @@
 	position: absolute;
 	left: 50%;
 	bottom: calc(100% + .5rem );
-	background: rgba(0,0,0,.6);
+	background: rgba(0,0,0,.9);
 	color: #fff;
 	font-size: 12px;
 	padding: .5rem 1rem;
@@ -1366,15 +1369,15 @@
 }
 
 .tidy5e.sheet.actor .traits .toggle-traits::before {
-  content: 'show/edit ';
+  content: attr(data-show);
 }
 
 .tidy5e.sheet.actor .traits.expanded .toggle-traits::before {
-  content: 'hide ';
+  content: attr(data-hide);
 }
 
 .tidy5e.sheet.actor .traits.always-visible .toggle-traits::before {
-  content: 'edit ';
+  content: attr(data-edit);
 }
 
 .tidy5e.sheet.actor .traits .toggle-traits:hover {
@@ -1848,7 +1851,8 @@
 	display: block;
   font-family: "Signika", "Palatino Linotype", serif;
   color: #4b4a44;
-  flex: 0 0 120px;
+  flex: 0 0 1px;
+  white-space: nowrap;
 }
 
 .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle,
@@ -1929,7 +1933,7 @@
 .tidy5e.sheet.actor .inventory-currency .currency-item.convert {
 	margin-right: 0;
 	padding: 0;
-	flex: 0 0 70px;
+	flex: 0 0 1px;
 	text-align: center;
 }
 
@@ -1938,6 +1942,7 @@
 	background: var(--default-tertiary-color);
 	color: rgba(255,255,255,.6);
 	border-radius: 5px;
+	padding: 0 8px;
 }
 
 .tidy5e.sheet.actor .inventory-currency .currency-item.convert a:hover {
