@@ -5,7 +5,7 @@
       <div class="profile">
         {{!-- Portrait --}}
         <div class="portrait">
-          <img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="Edit Image" data-edit="img">
+          <img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{localize "TIDY5E.EditActorImage"}}" data-edit="img">
         </div>
 
         {{!-- HP Overlay --}}
@@ -71,7 +71,7 @@
             </li>
 
             <li class="header-attribute armor-class">
-              <h2 class="attribute-name" title="{{ localize 'DND5E.ArmorClass' }}">AC</h2>
+              <h2 class="attribute-name" title="{{ localize 'DND5E.ArmorClass' }}">{{ localize 'TIDY5E.AbbrArmorClass' }}</h2>
               <input class="ac-display" name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}" data-dtype="Number" placeholder="10" maxlength="2">
             </li>
 
@@ -90,7 +90,7 @@
           <ul class="ability-scores">
             {{#each data.abilities as |ability id|}}
             <li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
-              <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{id}}</h4>
+              <h4 class="ability-name box-title rollable" title="{{ability.label}}"><!-- {{id}} -->{{ability.abbr}}</h4>
               <div class="value">
                 <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
               </div>
@@ -110,9 +110,7 @@
 
     {{!-- NPC Sheet Navigation --}}
     <nav class="flex tidy5e-navigation tabs" data-group="primary">
-      <a class="item active" data-tab="attributes"><!--{{ localize "DND5E.Attributes" }}-->Abilities</a>
-      <!-- <a class="item" data-tab="features">{{ localize "DND5E.Features" }}</a> -->
-      <!-- <a class="item" data-tab="spellbook">{{ localize "DND5E.Spellbook" }}</a> -->
+      <a class="item active" data-tab="attributes">{{ localize "TIDY5E.Abilities" }}</a>
       <a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
     </nav>
 
@@ -132,7 +130,7 @@
               <span class="skill-passive">({{skill.passive}})</span>
             </li>
             {{/each}}
-            <li class="toggle-proficient">not proficient skills</li>
+            <li class="toggle-proficient" data-show="{{ localize 'TIDY5E.SkillsShow' }}" data-hide="{{ localize 'TIDY5E.SkillsHide' }}" data-edit="{{ localize 'TIDY5E.SkillsEdit' }}"> {{ localize "TIDY5E.SkillsNotProficient" }}</li>
           </ul>
           {{!-- Traits --}}
           {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-traits.html"}}

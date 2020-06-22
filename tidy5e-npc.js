@@ -98,6 +98,11 @@ export default class Tidy5eNPC extends ActorSheet5e {
     const cr = parseFloat(data.data.details.cr || 0);
     const crLabels = {0: "0", 0.125: "1/8", 0.25: "1/4", 0.5: "1/2"};
     data.labels["cr"] = cr >= 1 ? String(cr) : crLabels[cr] || 1;
+    
+    Object.keys(data.data.abilities).forEach(id => {
+      data.data.abilities[id].abbr = game.i18n.localize(`TIDY5E.${id}Ability`);
+    });
+
     return data;
   }
 
