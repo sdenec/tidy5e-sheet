@@ -489,7 +489,7 @@
   border: none; 
 }
 
-.dnd5e.sheet.actor.npc .inventory-list .item .item-recharge {
+.tidy5e.sheet.actor.npc .inventory-list .item .item-recharge {
   font-size: 12px;
 }
 
@@ -633,11 +633,11 @@
   background-attachment: fixed;
 }
 
-.dnd5e.sheet.actor.npc .spellcasting-ability h3.spell-dc {
+.tidy5e.sheet.actor.npc .spellcasting-ability h3.spell-dc {
   font-size: 20px;
 }
 
-.dnd5e.sheet.actor.npc .spellcasting-ability select {
+.tidy5e.sheet.actor.npc .spellcasting-ability select {
   flex: 0 0 90px;
   margin-left: 4px;
   font-family: "Signika", "Palatino Linotype", serif;
