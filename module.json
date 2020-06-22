@@ -10,7 +10,7 @@
 	"esmodules": [
 		"tidy5e-sheet.js",	
 		"tidy5e-favorites.js",
-		"tidy5e-npc.js",
+		"tidy5e-npc.js"
 	],
 	"styles": [
 		"styles/tidy5e-sheet.css",
