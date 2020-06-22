@@ -178,14 +178,14 @@
   border-color: var(--darkmode-faint-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers {
+/*.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers {
   opacity: .38;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .ability-scores .ability:hover .ability-modifiers {
   opacity: .87;
 }
-
+*/
 .tidy5eDark .tidy5e.sheet.actor .proficient .proficiency-toggle {
   color: var(--darkmode-primary-color);
 }
@@ -195,7 +195,7 @@
   border: 1px solid var(--darkmode-faint-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill:nth-child(even) {
+.tidy5eDark .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill:nth-child(even) {
   background: var(--darkmode-faint-color);
 }
 
@@ -241,21 +241,18 @@
 }
 
 /* Traits & Favorites */
-.tidy5eDark .tidy5e.sheet.actor .traits-toggle,
-.tidy5eDark .tidy5e.sheet.actor .favorites-toggle {
-  color: var(--darkmode-tertiary-color);
+.tidy5eDark .tidy5e.sheet.actor .traits .toggle-traits,
+.tidy5eDark .tidy5e.sheet.actor .traits .configure-flags {
+  color: var(--darkmode-secondary-color);
+  border-color: var(--darkmode-faint-color);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .traits .toggle-traits:hover,
+.tidy5eDark .tidy5e.sheet.actor .traits .configure-flags:hover {
+  color: var(--darkmode-primary-color);
 }
 
 /** Traits **/
-
-.tidy5eDark .tidy5e.sheet.actor .toggle-icon {
-  color: var(--darkmode-tertiary-color); 
-}
-
-.tidy5eDark .tidy5e.sheet.actor .toggle-icon:hover {
-  color: var(--darkmode-primary-color);  
-}
-
 .tidy5eDark .tidy5e.sheet.actor .traits {
   border-color: var(--darkmode-faint-color);
 }
@@ -269,13 +266,18 @@
   text-shadow: none;
 }
 
-.tidy5eDark .tidy5e.sheet.actor .traits .form-group:nth-child(odd) {
+.tidy5eDark .tidy5e.sheet.actor .traits .form-group.even {
   background: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits label {
   color: var(--darkmode-primary-color);
-  font-weight: 300;
+  font-weight: 600;
+}
+
+.tidy5eDark .tidy5e.sheet.actor .traits .senses div[contenteditable="true"]:before {
+  color: var(--darkmode-primary-color);
+  font-weight: 600;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .tag {
@@ -324,8 +326,7 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-attuned {
-  background: var(--darkmode-primary-accent);
-  color: rgba(0,0,0,.87);
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item.inventory-header {
@@ -452,12 +453,12 @@
   color: var(--darkmode-light-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image svg path {
-  fill: rgba(255,255,255,.4);
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image i {
+  color: rgba(255,255,255,.4);
 }
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image:hover svg path {
-  fill: var(--darkmode-primary-accent);
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image:hover i {
+  color: var(--darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a,
@@ -526,8 +527,8 @@
   overflow: hidden;
 }
 
-.tidy5e.sheet.actor .note-entries article .section-titles,
-.tidy5e.sheet.actor .note-entries article .section-titles input {
+.tidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles,
+.tidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles input {
   font-weight: 400;
 }
 
@@ -601,6 +602,10 @@
   text-shadow: none;
   color: var(--darkmode-primary-accent);
   border-color: var(--darkmode-primary-accent); 
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list p.notes {
+  color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .origin-summary .proficiency {

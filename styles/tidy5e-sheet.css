@@ -42,7 +42,7 @@
   color: var(--default-tertiary-color);
 }
 
-.tidy5e.sheet.actor {
+.tidy5e.dnd5e.sheet.actor {
 	min-width: 740px;
 	height: 720px;
 	min-height: 210px;
@@ -999,11 +999,11 @@
 }
 
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill {
-  flex: 1;
+  flex: 0 0 18px;
   font-size: 12px;
   line-height: 14px;
   align-items: center;
-  padding: 1px 4px 2px 4px;
+  padding: 3px 4px 2px 4px;
   height: 18px;
 }
 
@@ -1018,6 +1018,7 @@
 
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
 	font-size: 10px;
+  line-height: 14px;
 }
 
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency i {
@@ -1540,7 +1541,7 @@
 	background: transparent;
 	padding-top: 3px;
 	padding-left: 4px;
-	padding-right: 45px;
+	padding-right: 37px;
 	margin: 1px 0 0 0;
 	line-height: 20px;
   color: var(--default-tertiary-color);
@@ -1563,7 +1564,16 @@
   color: rgba(0,0,0,.6);
 }
 
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots .spell-max {
+	text-align: left;
+}
+
+
 .tidy5e.sheet.actor .favorites .inventory-list .item .item-charges {
+	flex: 0 0 55px;
+}
+
+.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .item-charges {
 	flex: 0 0 55px;
 }
 
@@ -1573,6 +1583,7 @@
 	font-size: 12px;
 	line-height: 21px;
 }
+
 
 .tidy5e.sheet.actor .inventory-list .item .item-charges a.addCharges {
 	display: block;
@@ -1601,8 +1612,9 @@
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-controls a {
-	line-height: 23px;
-	font-size: 10px;
+	line-height: 21px;
+	font-size: 12px;
+	padding-top: 1px;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-controls a:hover {
@@ -2122,7 +2134,7 @@
 }
 
 .dnd5e.sheet.actor .inventory-list .item-controls a {
-	flex: 0 0 14px;
+	flex: 0 0 18px;
 }
 
 .dnd5e.sheet.actor .inventory-list .item-controls a:hover {
