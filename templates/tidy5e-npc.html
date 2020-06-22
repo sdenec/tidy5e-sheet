@@ -1,5 +1,5 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-  <div class="tidy5e-sheet">
+  <div class="tidy5e-sheet tidy5e-npc">
     {{!-- NPC Sheet Header --}}
     <header class="flex tidy5e-header">
       <div class="profile">
@@ -135,7 +135,7 @@
             <li class="toggle-proficient">not proficient skills</li>
           </ul>
           {{!-- Traits --}}
-          {{> "modules/tidy5e-npc/templates/npc/parts/tidy5e-npc-traits.html"}}
+          {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-traits.html"}}
         </div>
 
         <section class="center-pane flexcol">
@@ -172,8 +172,8 @@
               </div>
             </div>
           </div>          
-          {{> "modules/tidy5e-npc/templates/npc/parts/tidy5e-npc-features.html" sections=features}}
-          {{> "modules/tidy5e-npc/templates/npc/parts/tidy5e-npc-spellbook.html"}}
+          {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-features.html" sections=features}}
+          {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-spellbook.html"}}
         </section>
       </div>
 
