@@ -310,7 +310,7 @@ Hooks.once("init", () => {
 
 	game.settings.register("tidy5e-sheet", "useDarkMode", {
 		name: "Use alternate Dark Mode version of the sheet",
-		hint: "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet. Goes well with D&D5E Dark Mode or as a Standalone.",
+		hint: "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet.",
 		scope: "user",
 		config: true,
 		default: false,
