@@ -2,6 +2,20 @@
   background-color: rgba(0,0,0,.91);
 }
 
+.tidy5eDark .dnd5e.sheet.item input[type="text"] {
+	color: inherit;
+}
+
+.tidy5eDark .dnd5e.sheet.item input[type="text"]::placeholder {
+	color: var(--darkmode-tertiary-color);
+}
+
+.tidy5eDark .dnd5e.sheet.item input[type="text"]:hover,
+.tidy5eDark .dnd5e.sheet.item input[type="text"]:focus {
+	border: none;
+	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
+}
+
 /* Sheet Header */
 .tidy5eDark .dnd5e.sheet.item .sheet-header {
   background: rgba(255,255,255,.05);
@@ -135,7 +149,7 @@
 .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select:hover,
 .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover,
 .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select:focus {
-	box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
 }
 
 .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select option {
@@ -229,16 +243,21 @@
 	font-weight: 300;
 }
 
+.tidy5eDark #actor-flags.app.dnd5e .form-group input[type="text"]::placeholder {
+	color: var(--darkmode-tertiary-color);
+}
+
 .tidy5eDark #actor-flags.app.dnd5e .form-group input[type="text"] {
 	/*border-radius: none;*/
 	border: none;
 	flex: 0 0 250px;
 	background: var(--darkmode-faint-color);
+	color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark #actor-flags.app.dnd5e .form-group input[type="text"]:hover,
 .tidy5eDark #actor-flags.app.dnd5e .form-group input[type="text"]:focus {
-	box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
 }
 
 .tidy5eDark #actor-flags.app.dnd5e button {
