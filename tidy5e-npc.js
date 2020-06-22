@@ -30,7 +30,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
    */
   get template() {
     if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-sheet-ltd.html";
-    return "modules/tidy5e-npc/templates/tidy5e-npc.html";
+    return "modules/tidy5e-sheet/templates/tidy5e-npc.html";
   }
 
   /* -------------------------------------------- */
@@ -260,6 +260,25 @@ async function toggleTraitsList(app, html, data){
   }
 }
 
+// Set Sheet Classes
+async function setSheetClasses(app, html, data) {
+  if (game.settings.get("tidy5e-sheet", "useRoundNpcPortraits")) {
+    html.find('.tidy5e-sheet.tidy5e-npc .profile').addClass('roundPortrait');
+  }
+  if (game.settings.get("tidy5e-sheet", "disableNpcHpOverlay")) {
+    html.find('.tidy5e-sheet.tidy5e-npc .profile').addClass('disable-hp-overlay');
+  }
+  if (game.settings.get("tidy5e-sheet", "npcHpOverlayBorder") > 0) {
+    html.find('.tidy5e-sheet.tidy5e-npc .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
+  }
+  if (game.settings.get("tidy5e-sheet", "npcAlwaysShowTraits")) {
+    html.find('.tidy5e-sheet.tidy5e-npc .traits').addClass('always-visible');
+  }
+  if (game.settings.get("tidy5e-sheet", "npcAlwaysShowSkills")) {
+    html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
+  }
+}
+
 Actors.registerSheet("dnd5e", Tidy5eNPC, {
     types: ["npc"],
     makeDefault: true
@@ -275,11 +294,52 @@ Hooks.once("ready", () => {
   if (window.BetterRolls) {
     window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
   }
+  game.settings.register("tidy5e-sheet", "useRoundNpcPortraits", {
+    name: "NPC sheet uses round portraits.",
+    hint: "You should check this if you use round NPC portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame.",
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+  game.settings.register("tidy5e-sheet", "disableNpcHpOverlay", {
+    name: "Disable the NPC Hit Point Overlay.",
+    hint: "If you don't like the video game style Hit Point overlay on your NPC's portrait you can disable it.",
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+  game.settings.register("tidy5e-sheet", "npcHpOverlayBorder", {
+    name: "Border width for the NPC Hit Point overlay",
+    hint: "If your portrait has a frame you can adjust the NPC Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border.",
+    scope: "world",
+    config: true,
+    default: 0,
+    type: Number
+  });
+  game.settings.register("tidy5e-sheet", "npcAlwaysShowTraits", {
+    name: "Always show all NPC Traits",
+    hint: "When you don't want to hide and toggle empty NPC traits tick this box.",
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+  game.settings.register("tidy5e-sheet", "npcAlwaysShowSkills", {
+    name: "Always show all NPC Skills",
+    hint: "When you don't want to hide and toggle not proficient NPC skills tick this box.",
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
 
 });
 
 Hooks.on("renderTidy5eNPC", (app, html, data) => {
+  setSheetClasses(app, html, data);
   toggleSkillList(app, html, data);
-  toggleTraitsList(app, html, data)
+  toggleTraitsList(app, html, data);
   // console.log(data);
 });
