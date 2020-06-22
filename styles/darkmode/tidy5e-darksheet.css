@@ -29,55 +29,55 @@
 }
 
 /* Portrait */
-.tidy5eDark .tidy5e .portrait {
+.tidy5eDark .tidy5e.sheet.actor .portrait {
   box-shadow: 0 0 10px rgba(0,0,0,.95) inset;
   border: 1px solid rgba(0,0,0,.95);
 }
 
 /* Inspiration Indicator */
-.tidy5eDark .tidy5e .inspiration label {
+.tidy5eDark .tidy5e.sheet.actor .inspiration label {
   background: #555;
   box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
   color: var(--darkmode-secondary-color);
 }
 
-.tidy5eDark .tidy5e .inspiration input:checked + label {
+.tidy5eDark .tidy5e.sheet.actor .inspiration input:checked + label {
   background: #121212;
   color: rgba(255,255,255,1);
   /*text-shadow: 0 0 10px rgba(118, 228, 255, 1);*/
 }
 
 /* Rest Button */
-.tidy5eDark .tidy5e .resting {
+.tidy5eDark .tidy5e.sheet.actor .resting {
   background: #555;
   box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
   color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .tidy5e .resting-icon,
-.tidy5eDark .tidy5e .rest {
+.tidy5eDark .tidy5e.sheet.actor .resting-icon,
+.tidy5eDark .tidy5e.sheet.actor .rest {
   color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .tidy5e .rest:hover i {
+.tidy5eDark .tidy5e.sheet.actor .rest:hover i {
   color: rgba(255,255,255,1);
 }
 
 /* Exhaustion Tracker */
-.tidy5eDark .tidy5e .exhaustion-wrap {
+.tidy5eDark .tidy5e.sheet.actor .exhaustion-wrap {
   background: #555;
   box-shadow: 0 0 10px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
 }
 
-.tidy5eDark .tidy5e .exhaustion-icon,
-.tidy5eDark .tidy5e .exhaustion-wrap .exhaust-level li {
+.tidy5eDark .tidy5e.sheet.actor .exhaustion-icon,
+.tidy5eDark .tidy5e.sheet.actor .exhaustion-wrap .exhaust-level li {
   color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .tidy5e .exhaustion-container .level-display {
+.tidy5eDark .tidy5e.sheet.actor .exhaustion-container .level-display {
   background: #555;
   box-shadow: 0 0 8px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
@@ -86,48 +86,49 @@
 }
 
 /* Character Level */
-.tidy5eDark .tidy5e .level {
+.tidy5eDark .tidy5e.sheet.actor .level {
   background: var(--darkmode-tertiary-color);
   color: rgba(0,0,0,.6);
 }
 
 /* Character Classes */
-.tidy5eDark .tidy5e .class-list {
+.tidy5eDark .tidy5e.sheet.actor .class-list {
   color: var(--darkmode-secondary-color);  
 }
 
-.tidy5eDark .tidy5e .class-list .subclass-info span {
+.tidy5eDark .tidy5e.sheet.actor .class-list .subclass-info span {
   background: var(--darkmode-tertiary-color);
   color: rgba(0,0,0,.87);
 }
 
 /* Character Summary */
-.tidy5eDark .tidy5e .origin-summary {
+.tidy5eDark .tidy5e.sheet.actor .origin-summary {
   border-bottom: 1px solid var(--darkmode-light-color);
   border-top: 1px solid var(--darkmode-light-color);
 }
 
-.tidy5eDark .tidy5e .attribute-name::after {
+.tidy5eDark .tidy5e.sheet.actor .attribute-name::after {
   border-color: var(--darkmode-tertiary-color);
 }
 
-.tidy5eDark .tidy5e .origin-summary li span::after {
+.tidy5eDark .tidy5e.sheet.actor .origin-summary li span::after {
   background: var(--darkmode-primary-color);
 }
 
 /* Text color */
-.tidy5eDark .tidy5e input[type="text"] {
+.tidy5eDark .tidy5e.sheet.actor input[type="text"] {
   color: var(--darkmode-primary-color);  
 }
 
-.tidy5eDark .tidy5e input[type="text"]::placeholder,
-.tidy5eDark .dnd5e input[type="text"]::placeholder {
+.tidy5eDark .tidy5e.sheet.actor input[type="text"]::placeholder
+/*.tidy5eDark .dnd5e input[type="text"]::placeholder */
+{
   color: var(--darkmode-tertiary-color);
 }
-
+/*
 .tidy5eDark .dnd5e input[type="text"] {
   color: var(--darkmode-primary-color);
-}
+}*/
 
 /* Sheet Navigation */
 .tidy5eDark .tidy5e.sheet.actor .item[data-tab="attributes"] i {
@@ -173,16 +174,8 @@
 }
 
 /* Ability Scores */
-.tidy5eDark .tidy5e.sheet.actor .ability-scores {
-  border: 1px solid var(--darkmode-faint-color);
-}
-
-.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-name {
-  border-top: 1px solid var(--darkmode-faint-color);
-}
-
-.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability:first-child .ability-name {
-  border-top: none;
+.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability {
+  border-color: var(--darkmode-faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers {
@@ -198,11 +191,11 @@
 }
 
 /* Skill List */
-.tidy5eDark .tidy5e.sheet.actor.character ul.skills-list {
+.tidy5eDark .tidy5e.sheet.actor ul.skills-list {
   border: 1px solid var(--darkmode-faint-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill:nth-child(even) {
+.tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill:nth-child(even) {
   background: var(--darkmode-faint-color);
 }
 
@@ -235,14 +228,14 @@
   color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox {
+.tidy5eDark .tidy5e.sheet.actor ul.attributes li.resource .attribute-header label.checkbox {
   border: none;
   background: var(--darkmode-light-color);
   color: var(--darkmode-secondary-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header label.checkbox:hover,
-.tidy5eDark .tidy5e.sheet.actor.character ul.attributes li.resource .attribute-header input:checked + label.checkbox {
+.tidy5eDark .tidy5e.sheet.actor ul.attributes li.resource .attribute-header label.checkbox:hover,
+.tidy5eDark .tidy5e.sheet.actor ul.attributes li.resource .attribute-header input:checked + label.checkbox {
   background: var(--darkmode-primary-accent);
   color: var(--darkmode-primary-color);
 }
@@ -312,7 +305,7 @@
   color: #222;
 }
 
-.tidy5eDark .dnd5e.sheet .traits .trait-selector:hover {
+.tidy5eDark .tidy5e.sheet .traits .trait-selector:hover {
   color: var(--darkmode-primary-accent);
 }
 
@@ -354,18 +347,18 @@
   color: var(--darkmode-secondary-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle,
-.tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle {
+.tidy5eDark .tidy5e.sheet.actor .inventory .item-equipped .item-toggle,
+.tidy5eDark .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle {
   color: var(--darkmode-light-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle:hover,
-.tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle:hover {
+.tidy5eDark .tidy5e.sheet.actor .inventory .item-equipped .item-toggle:hover,
+.tidy5eDark .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle:hover {
   color: var(--darkmode-primary-accent);
 }
 
-.tidy5eDark .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle.active,
-.tidy5eDark .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle.active {
+.tidy5eDark .tidy5e.sheet.actor .inventory .item-equipped .item-toggle.active,
+.tidy5eDark .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle.active {
   color: var(--darkmode-primary-accent);
 }
 
@@ -483,11 +476,11 @@
 }
 
 /* XP Bar */
-.tidy5eDark .tidy5e .xp-bar-total {
+.tidy5eDark .tidy5e.sheet.actor .xp-bar-total {
   background: #444;
 }
 
-.tidy5eDark .tidy5e .xp-bar-current {
+.tidy5eDark .tidy5e.sheet.actor .xp-bar-current {
   background: var(--darkmode-primary-accent);
 }
 
@@ -523,7 +516,7 @@
 
 /* Encumbrance Bar */
 
-.tidy5eDark .tidy5e.sheet.actor.character .encumbrance .encumbrance-bar {
+.tidy5eDark .tidy5e.sheet.actor .encumbrance .encumbrance-bar {
   background: var(--darkmode-primary-accent);
 }
 
@@ -610,12 +603,12 @@
   border-color: var(--darkmode-primary-accent); 
 }
 
-.tidy5eDark .tidy5e .origin-summary .proficiency {
+.tidy5eDark .tidy5e.sheet.actor .origin-summary .proficiency {
   font-weight: 600;
 }
 
 .tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-proficiency,
-.tidy5eDark .tidy5e.sheet.actor.character ul.skills-list li.skill h4 {
+.tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill h4 {
   font-weight: 300;
 }
 
@@ -628,10 +621,10 @@
   color: var(--darkmode-primary-accent);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .inventory-list .item .item-recharge {
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-recharge {
   color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .dnd5e.sheet.actor .inventory-list .item .item-recharge:hover {
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-recharge:hover {
   color: var(--darkmode-primary-accent);
 }

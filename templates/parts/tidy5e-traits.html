@@ -1,85 +1,57 @@
-<div class="traits">
-  <div class="form-group multiple">
-    <div class="actor-size-group">
-      <label>{{localize "DND5E.Size"}}</label>
-      <select class="actor-size" name="data.traits.size">
-        {{#select data.traits.size}}
-        {{#each config.actorSizes as |label size|}}
-        <option value="{{size}}">{{label}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
-    </div>
-
-    <div class="configure-flags-group">
-      <label>{{localize "DND5E.SpecialTraits"}}</label>
-      <a class="configure-flags"><i class="fas fa-cog"></i></a>
-    </div>
-  </div>
-
-  <div class="form-group {{#unless data.traits.senses}}inactive{{/unless}}">
+<div class="traits small{{#if actor.flags.tidy5e-sheet.traitsExpanded}} expanded{{/if}}{{#if actor.flags.tidy5e-sheet.traitsAlwaysVisible}} .always-visible{{/if}}">
+  <div class="form-group senses {{#unless data.traits.senses}}inactive{{/unless}}">
     <article>
-      <label>{{localize "DND5E.Senses"}}</label>
-      <input type="text" name="data.traits.senses" value="{{data.traits.senses}}" placeholder="{{ localize 'DND5E.None' }}"/>
+      <div contenteditable="true" data-target="{{actor._id}}-senses" spellcheck="false" data-placeholder="{{ localize 'DND5E.None' }}" data-label="{{localize 'DND5E.Senses'}}:">{{data.traits.senses}}</div>
+      <input type="hidden" data-input="{{actor._id}}-senses" name="data.traits.senses" value="{{data.traits.senses}}" placeholder="{{ localize 'DND5E.None' }}"/>
     </article>
   </div>
 
   <div class="form-group {{data.traits.languages.cssClass}}">
     <article>
-      <label for="data.traits.languages">{{localize "DND5E.Languages"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.languages.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.languages">{{localize "DND5E.Languages"}}:</label>
+      {{#each data.traits.languages.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="languages" data-target="data.traits.languages"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{data.traits.di.cssClass}}">
     <article>
-      <label for="data.traits.di">{{localize "DND5E.DamImm"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.di.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.di">{{localize "DND5E.DamImm"}}:</label>
+      {{#each data.traits.di.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="damageTypes" data-target="data.traits.di"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{data.traits.dr.cssClass}}">
     <article>
-      <label for="data.traits.dr">{{localize "DND5E.DamRes"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.dr.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.dr">{{localize "DND5E.DamRes"}}:</label>
+      {{#each data.traits.dr.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="damageTypes" data-target="data.traits.dr"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{data.traits.dv.cssClass}}">
     <article>
-      <label for="data.traits.dv">{{localize "DND5E.DamVuln"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.dv.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.dv">{{localize "DND5E.DamVuln"}}:</label>
+      {{#each data.traits.dv.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="damageTypes" data-target="data.traits.dv"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{data.traits.ci.cssClass}}">
     <article>
-      <label for="data.traits.ci">{{localize "DND5E.ConImm"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.ci.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.ci">{{localize "DND5E.ConImm"}}:</label>
+      {{#each data.traits.ci.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="conditionTypes" data-target="data.traits.ci"><i class="fas fa-pencil-alt"></i></a>
   </div>
@@ -87,38 +59,34 @@
   {{#if isCharacter}}
   <div class="form-group {{data.traits.weaponProf.cssClass}}">
     <article>
-      <label for="data.traits.weaponProf">{{localize "DND5E.TraitWeaponProf"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.weaponProf.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.weaponProf">{{localize "DND5E.TraitWeaponProf"}}:</label>
+      {{#each data.traits.weaponProf.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="weaponProficiencies" data-target="data.traits.weaponProf"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{data.traits.armorProf.cssClass}}">
     <article>
-      <label for="data.traits.armorProf">{{localize "DND5E.TraitArmorProf"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.armorProf.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.armorProf">{{localize "DND5E.TraitArmorProf"}}:</label>
+      {{#each data.traits.armorProf.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="armorProficiencies" data-target="data.traits.armorProf"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{data.traits.toolProf.cssClass}}">
     <article>
-      <label for="data.traits.toolProf">{{localize "DND5E.TraitToolProf"}}</label>
-      <ul class="traits-list">
-        {{#each data.traits.toolProf.selected as |v k|}}
-        <li class="tag {{k}}"><span>{{v}}</span></li>
-        {{/each}}
-      </ul>
+      <label for="data.traits.toolProf">{{localize "DND5E.TraitToolProf"}}:</label>
+      {{#each data.traits.toolProf.selected as |v k|}}
+      <span class="tag {{k}}">{{v}}</span>
+      {{/each}}
     </article>
     <a class="trait-selector" data-options="toolProficiencies" data-target="data.traits.toolProf"><i class="fas fa-pencil-alt"></i></a>
   </div>
   {{/if}}
+  <div class="toggle-traits">empty traits</div>
+  <a class="item configure-flags">{{localize "DND5E.SpecialTraits"}} <i class="fas fa-cog"></i></a>
 </div>

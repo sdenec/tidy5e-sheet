@@ -79,9 +79,8 @@
 			{{!-- Character Details --}}
 			<div class="character-details">
 				<section class="flex general-information">
-					<h1 class="char-name">
-						<input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
-					</h1>
+					<input data-input="{{actor._id}}-name" name="name" type="hidden" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
+          <h1 class="char-name" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-name" data-placeholder="{{ localize 'DND5E.Name' }}" data-maxlength="40">{{actor.name}}</h1>
 					<div class="flex level-information {{#if disableExperience}}noxp{{/if}}">
 						<h2 class="level">LVL {{data.details.level}}</h2>
 						{{#unless disableExperience}}
@@ -201,7 +200,7 @@
 				
 				<div class="left-pane">
 					{{!-- Ability Scores --}}
-					<ul class="ability-scores small">
+					<ul class="ability-scores">
 						{{#each data.abilities as |ability id|}}
 						<li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
 							<h4 class="ability-name rollable">{{ability.label}}</h4>
@@ -219,7 +218,7 @@
 					</ul>
 
 					{{!-- Skills --}}
-					<ul class="skills-list small">
+					<ul class="skills-list">
 						{{#each data.skills as |skill s|}}
 						<li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
 							<input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
@@ -233,7 +232,7 @@
 					</ul>
 
 					{{!-- Traits --}}
-					{{> "modules/tidy5e-sheet/templates/parts/tidy5e-traits-small.html"}}
+					{{> "modules/tidy5e-sheet/templates/parts/tidy5e-traits.html"}}
 				</div>
 
 				<section class="center-pane">
@@ -272,18 +271,8 @@
 						{{/each}}
 					</ul>
 
-
 					{{!-- Favorites --}}
-					<!-- <div class="favorites-wrap{{#if actor.flags.tidy5e-sheet.favorites-compressed}} compressed{{/if}}">
-						<header class=favorites-toggle>
-							<h4>Favorites</h4>
-							<div class="toggle-icon">
-								 <i class="fas fa-caret-down"></i>
-								 <i class="fas fa-caret-right"></i>
-							</div>
-						</header> -->
 					<div class="favorites-target"></div>
-					<!-- </div> -->
 				</section>
 			</div>
 
