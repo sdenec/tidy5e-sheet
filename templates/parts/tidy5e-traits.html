@@ -1,4 +1,4 @@
-<div class="traits small{{#if actor.flags.tidy5e-sheet.traitsExpanded}} expanded{{/if}}{{#if actor.flags.tidy5e-sheet.traitsAlwaysVisible}} .always-visible{{/if}}">
+<div class="traits{{#if actor.flags.tidy5e-sheet.traitsExpanded}} expanded{{/if}}">
   <div class="form-group senses {{#unless data.traits.senses}}inactive{{/unless}}">
     <article>
       <div contenteditable="true" data-target="{{actor._id}}-senses" spellcheck="false" data-placeholder="{{ localize 'DND5E.None' }}" data-label="{{localize 'DND5E.Senses'}}:">{{data.traits.senses}}</div>
