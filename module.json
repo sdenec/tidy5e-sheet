@@ -40,12 +40,12 @@
 		},
 		{
       "lang": "ja",
-      "name": "日本語",
+      "name": "日本語 (Japanese)",
       "path": "lang/ja.json"
     },
 		{
 			"lang": "ko",
-			"name": "Korean",
+			"name": "한국어 (Korean)",
 			"path": "lang/ko.json"
 		}
 	],
