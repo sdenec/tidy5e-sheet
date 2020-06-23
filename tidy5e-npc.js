@@ -202,10 +202,8 @@ export default class Tidy5eNPC extends ActorSheet5e {
     html.find('.skills-list .toggle-proficient').click( async (event) => {
       let actor = this.actor;
       if(actor.getFlag('tidy5e-sheet', 'npcSkillsExpanded')){
-        console.log('unset flag');
         await actor.unsetFlag('tidy5e-sheet', 'npcSkillsExpanded');
       } else {
-        console.log('set flag');
         await actor.setFlag('tidy5e-sheet', 'npcSkillsExpanded', true);
       }
     });
@@ -214,11 +212,21 @@ export default class Tidy5eNPC extends ActorSheet5e {
     html.find('.traits .toggle-traits').click( async (event) => {
       let actor = this.actor;
       if(actor.getFlag('tidy5e-sheet', 'npcTraitsExpanded')){
-        console.log('unset flag');
         await actor.unsetFlag('tidy5e-sheet', 'npcTraitsExpanded');
       } else {
-        console.log('set flag');
         await actor.setFlag('tidy5e-sheet', 'npcTraitsExpanded', true);
+      }
+    });
+
+    // toggle item delete protection
+    html.find('.tidy5e-delete-toggle').click(async (event) => {
+      event.preventDefault();
+      let actor = this.actor;
+
+      if(actor.getFlag('tidy5e-sheet', 'allow-delete')){
+        await actor.unsetFlag('tidy5e-sheet', 'allow-delete');
+      } else {
+        await actor.setFlag('tidy5e-sheet', 'allow-delete', true);
       }
     });
   }
@@ -245,7 +253,6 @@ export default class Tidy5eNPC extends ActorSheet5e {
 async function toggleSkillList(app, html, data){
   html.find('.skills-list:not(.always-visible):not(.expanded) .skill:not(.proficient)').addClass('skill-hidden').hide();
   let visibleSkills = html.find('.skills-list .skill:not(.skill-hidden)');
-  // console.log(visibleSkills);
   for (let i = 0; i < visibleSkills.length; i++) {
     if(i % 2 != 0){
       visibleSkills[i].classList.add('even');
@@ -257,7 +264,6 @@ async function toggleSkillList(app, html, data){
 async function toggleTraitsList(app, html, data){
   html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
   let visibleTraits = html.find('.traits .form-group:not(.trait-hidden)');
-  // console.log(visibleTraits);
   for (let i = 0; i < visibleTraits.length; i++) {
     if(i % 2 != 0){
       visibleTraits[i].classList.add('even');
@@ -300,7 +306,7 @@ Hooks.once("ready", () => {
     window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
   }
   game.settings.register("tidy5e-sheet", "useRoundNpcPortraits", {
-    name: "NPC sheet uses round portraits.",
+    name: "NPC Sheets: Sheets use round portraits.",
     hint: "You should check this if you use round NPC portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame.",
     scope: "world",
     config: true,
@@ -308,7 +314,7 @@ Hooks.once("ready", () => {
     type: Boolean
   });
   game.settings.register("tidy5e-sheet", "disableNpcHpOverlay", {
-    name: "Disable the NPC Hit Point Overlay.",
+    name: "NPC Sheets: Disable the hit point overlay.",
     hint: "If you don't like the video game style Hit Point overlay on your NPC's portrait you can disable it.",
     scope: "world",
     config: true,
@@ -316,7 +322,7 @@ Hooks.once("ready", () => {
     type: Boolean
   });
   game.settings.register("tidy5e-sheet", "npcHpOverlayBorder", {
-    name: "Border width for the NPC Hit Point overlay",
+    name: "NPC Sheets: Border width for the hit point overlay",
     hint: "If your portrait has a frame you can adjust the NPC Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border.",
     scope: "world",
     config: true,
@@ -324,7 +330,7 @@ Hooks.once("ready", () => {
     type: Number
   });
   game.settings.register("tidy5e-sheet", "npcAlwaysShowTraits", {
-    name: "Always show all NPC Traits",
+    name: "NPC Sheets: Always show traits",
     hint: "When you don't want to hide and toggle empty NPC traits tick this box.",
     scope: "world",
     config: true,
@@ -332,7 +338,7 @@ Hooks.once("ready", () => {
     type: Boolean
   });
   game.settings.register("tidy5e-sheet", "npcAlwaysShowSkills", {
-    name: "Always show all NPC Skills",
+    name: "NPC Sheets: Always show skills",
     hint: "When you don't want to hide and toggle not proficient NPC skills tick this box.",
     scope: "world",
     config: true,
@@ -346,5 +352,4 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   setSheetClasses(app, html, data);
   toggleSkillList(app, html, data);
   toggleTraitsList(app, html, data);
-  // console.log(data);
 });
