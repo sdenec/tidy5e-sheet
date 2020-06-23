@@ -42,7 +42,12 @@
       "lang": "ja",
       "name": "日本語",
       "path": "lang/ja.json"
-    }
+    },
+		{
+			"lang": "ko",
+			"name": "Korean",
+			"path": "lang/ko.json"
+		}
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
   "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",
