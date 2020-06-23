@@ -82,7 +82,7 @@ export const addFavorites = async function(app, html, data, position) {
   let spellPrepModeCount = 0
   let items = data.actor.items;
 
-  // console.log(items);
+  console.log(items);
 
   let renderFavTab = false;
 
@@ -149,9 +149,9 @@ export const addFavorites = async function(app, html, data, position) {
           item.isOnCooldown = false;
           if( item.data.recharge && item.data.recharge.value && item.data.recharge.charged === false){
             item.isOnCooldown = true;
-            item.labels = {recharge : game.i18n.localize("DND5E.FeatureRechargeOn")+" ["+item.data.recharge.value+"+]"};
+            item.labels = {recharge : game.i18n.localize("DND5E.FeatureRechargeOn")+" ["+item.data.recharge.value+"+]", rechargeValue : "["+item.data.recharge.value+"+]"};
           }
-          console.log(item);
+          // console.log(item);
           // adding info if item has quantity more than one
           item.isStack = false;
           if (item.data.quantity && item.data.quantity > 1) {
