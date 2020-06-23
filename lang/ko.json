@@ -67,11 +67,11 @@
 
 	"TIDY5E.SkillsShow" : "보기/수정",
 	"TIDY5E.SkillsHide" : "숨기기",
-	"TIDY5E.SkillsNotProficient" : "숙련되지 않음",
+	"TIDY5E.SkillsNotProficient" : "숙련되지 않은 기술",
 
 	"TIDY5E.TraitsShow" : "보기/수정",
 	"TIDY5E.TraitsHide" : "숨기기",
-	"TIDY5E.TraitsEmpty" : "빈 특성 존재",
+	"TIDY5E.TraitsEmpty" : "비어 있는 특성",
 
 	"TIDY5E.AbbrArmorClass" : "AC",
 
