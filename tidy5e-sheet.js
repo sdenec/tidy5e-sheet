@@ -289,6 +289,9 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
 	}
+	if (game.settings.get("tidy5e-sheet", "pcAlwaysShowTraits")) {
+		html.find('.tidy5e-sheet .traits').addClass('always-visible');
+	}
 }
 
 // Set Portrait Hover Classes
@@ -368,11 +371,11 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
-	toggleTraitsList(app, html, data)
 	addFavorites(app, html, data, scrollPos);
 	migrateTraits(app, html, data);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
+	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
 	hidePortraitButtons(app, html, data);
 	// console.log(data);
@@ -392,6 +395,14 @@ Hooks.once("ready", () => {
 		default: false,
 		type: Boolean
 	});
+	game.settings.register("tidy5e-sheet", "hpOverlayBorder", {
+		name: "Border width for the Hit Point overlay",
+		hint: "If your portrait has a frame you can adjust the Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border.",
+		scope: "world",
+		config: true,
+		default: 0,
+		type: Number
+	});
 	game.settings.register("tidy5e-sheet", "disableHpOverlay", {
 		name: "Disable the Hit Point Overlay.",
 		hint: "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it.",
@@ -400,13 +411,13 @@ Hooks.once("ready", () => {
 		default: false,
 		type: Boolean
 	});
-	game.settings.register("tidy5e-sheet", "hpOverlayBorder", {
-		name: "Border width for the Hit Point overlay",
-		hint: "If your portrait has a frame you can adjust the Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border.",
-		scope: "world",
+	game.settings.register("tidy5e-sheet", "hideClassList", {
+		name: "Hide Character Class List",
+		hint: "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)",
+		scope: "user",
 		config: true,
-		default: 0,
-		type: Number
+		default: false,
+		type: Boolean
 	});
 	game.settings.register("tidy5e-sheet", "noInspirationAnimation", {
 		name: "No inspiration indicator animation.",
@@ -440,12 +451,12 @@ Hooks.once("ready", () => {
 		default: false,
 		type: Boolean
 	});
-	game.settings.register("tidy5e-sheet", "hideClassList", {
-		name: "Hide Character Class List",
-		hint: "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)",
-		scope: "world",
-		config: true,
-		default: false,
-		type: Boolean
-	});
+  game.settings.register("tidy5e-sheet", "pcAlwaysShowTraits", {
+    name: "Toggle Player Character Traits",
+    hint: "Check this if you want to show a button to toggle empty traits.",
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+  });
 });

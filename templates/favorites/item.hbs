@@ -38,7 +38,7 @@
       <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
       / <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
     {{else}}
-      {{#if item.editable}}<a class="addCharges" value="Add">Add</a>
+      {{#if item.editable}}<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
       {{/if}}
     {{/if}}
   </div>
@@ -53,7 +53,7 @@
     <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
     / <input class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
     {{else}}
-      {{#if item.editable}}<a class="addCharges" value="Add">Add</a>{{/if}}
+      {{#if item.editable}}<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>{{/if}}
     {{/if}}
   </div>
   {{/if}}

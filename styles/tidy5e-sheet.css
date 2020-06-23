@@ -1006,7 +1006,7 @@
   font-size: 12px;
   line-height: 14px;
   align-items: center;
-  padding: 3px 4px 2px 4px;
+  padding: 3px 4px 1px 4px;
   height: 18px;
 }
 
@@ -1935,6 +1935,7 @@
 	padding: 0;
 	flex: 0 0 1px;
 	text-align: center;
+	white-space: nowrap;
 }
 
 .tidy5e.sheet.actor .inventory-currency .currency-item.convert a {
@@ -2393,6 +2394,13 @@
 
 .tidy5e.sheet.actor .note-entries article .editor .tox .tox-tbtn--select {
 	width: auto;
+}
+
+.tidy5e.sheet.actor .editor ul,
+.tidy5e.sheet.actor .editor ol {
+	list-style: outside;
+  margin: 0.5em 0;
+  padding: 0 0 0 1.5em;
 }
 
 /* Portrait hover options */
