@@ -2,6 +2,10 @@
 	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
 }
 
+.npc .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle {
+  margin: 0;
+}
+
 /* XP and CR */
 .tidy5e.sheet.actor.npc .xp,
 .tidy5e.sheet.actor.npc .cr {
@@ -512,13 +516,6 @@
   color: var(--default-primary-color);
   font-weight: 700;
 }
-/*
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots:hover,
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots:hover input,
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots:focus-within,
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots:focus-within input {
-  color: var(--default-primary-color);
-}*/
 
 .tidy5e.sheet.actor.npc .inventory-list .inventory-header .slot-max-override {
   font-size: 10px;
@@ -536,7 +533,6 @@
 .tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-comps,
 .tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .item-action,
 .tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .item-charges {
-  /*font-size: 11px;*/
   line-height: 21px;
   overflow: hidden;
   white-space: nowrap;
@@ -546,7 +542,6 @@
 .tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-target,
 .tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-school,
 .tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-comps {
-  /*font-size: 10px;*/
   line-height: 21px;
   overflow: hidden;
   white-space: nowrap;
@@ -562,13 +557,11 @@
 
 .tidy5e.sheet.actor.npc .inventory-list .spell-action {
   flex: 0 0 90px;
-  /*font-size: 11px;*/
 }
 
 .tidy5e.sheet.actor.npc .inventory-list .spell-target,
 .tidy5e.sheet.actor.npc .inventory-list .spell-school {
   flex: 0 0 90px;
-  /*font-size: 11px;*/
 }
 
 .tidy5e.sheet.actor.npc .inventory-list .item .item-charges a.addCharges {
@@ -596,12 +589,6 @@
 .tidy5e.sheet.actor.npc .inventory-list .item-controls {
   flex: 0 0 40px;
 }
-/*
-.tidy5e.sheet.actor.npc .inventory-list .item-controls a {
-  line-height: 21px;
-  font-size: 12px;
-  padding-top: 1px;
-}*/
 
 .tidy5e.sheet.actor.npc .inventory-list .inventory-header .item-controls a.item-create {
   border-radius: 3px;
@@ -615,10 +602,6 @@
   font-size: 7px;
   position: relative;
   top: -1px;
-}
-
-.tidy5e.sheet.actor.npc .sheet-body .item-delete {
-  display: initial;
 }
 
 .tidy5e.sheet.actor.npc .inventory-list .item-controls a:hover {
