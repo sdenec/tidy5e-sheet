@@ -1,3 +1,34 @@
+*Version 0.2.4*
+
+- traits on character sheets can be placed under resources
+- delete lock added to npc sheet
+
+- new option to show the toggle button for character traits ! OFF BY DEFAULT !
+
+- skill width adjustment to better fit the skill customizer module
+
+- korean translation added
+- brazilian portuguese translation added
+
+*Version 0.2.3*
+
+- firefox css fix
+- various css width fixes
+- darkmode inline rolls fixed
+- more translations with default dnd5e strings
+- italian translation added
+- japanese translation added
+
+*Version 0.2.2*
+
+- minor css fix
+- german translation added
+
+*Version 0.2.1*
+
+- minor css fix
+- added language support
+
 *Version 0.2.0*
 
 - overhaul of the Character Sheet and addition of a NPC sheet, both with dark mode!
