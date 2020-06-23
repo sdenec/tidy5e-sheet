@@ -2396,6 +2396,13 @@
 	width: auto;
 }
 
+.tidy5e.sheet.actor .editor ul,
+.tidy5e.sheet.actor .editor ol {
+	list-style: outside;
+  margin: 0.5em 0;
+  padding: 0 0 0 1.5em;
+}
+
 /* Portrait hover options */
 
 .tidy5e.sheet.actor .exhaustionOnHover .exhaustion-container,
