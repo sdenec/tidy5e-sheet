@@ -1,0 +1,93 @@
+{
+	"TIDY5E.EditActorImage": "Editar Imagem",
+
+	"TIDY5E.Exhaustion0": "Nenhum efeito negativo",
+	"TIDY5E.Exhaustion1": "Desvantagem em teste de Pericias",
+	"TIDY5E.Exhaustion2": "Metade do movimento",
+	"TIDY5E.Exhaustion3": "Desvantagem em jogadas de Ataque e Salvaguardas",
+	"TIDY5E.Exhaustion4": "Redução de Pontos de vida maximo à metade",
+	"TIDY5E.Exhaustion5": "Movimento reduzido a 0",
+	"TIDY5E.Exhaustion6": "Morto",
+
+	"TIDY5E.RestHint": "Fazer um Descanço",
+	"TIDY5E.RestS": "D. Curto",
+	"TIDY5E.RestL": "D. Longo",
+
+	"TIDY5E.AttrHitPoints": "Pontos de vida",
+
+	"TIDY5E.HitDiceHint": "Usar no Descanço",
+
+	"TIDY5E.Journal": "Diário",
+
+	"TIDY5E.AbilitySave": "Salvaguarda",
+	"TIDY5E.AbilityMod": "Modificador",
+	"TIDY5E.AbilityProf": "Proficiência",
+	"TIDY5E.SkillPassive": "Passiva",
+
+	"TIDY5E.RestoreOnRest": "Restaurar no Descanço",
+
+
+	"TIDY5E.BioTraits": "Traços",
+	"TIDY5E.BioIdeals": "Ideias",
+	"TIDY5E.BioBonds": "Vinculos",
+	"TIDY5E.BioFlaws": "Fraquesas",
+	"TIDY5E.BioAppearance": "Aparência",
+	"TIDY5E.BioBackground": "Histórico/Biografia",
+
+	"TIDY5E.JournalPoi": "Pessoas Importantes",
+	"TIDY5E.JournalLoi": "Locais Importantes",
+	"TIDY5E.JournalQuests": "Missõs",
+	"TIDY5E.JournalMisc": "Diversos",
+	"TIDY5E.JournalEntries": "Entrada de Diário",
+
+
+	"TIDY5E.DeleteDisabled": "Remover Desabilitado",
+	"TIDY5E.DeleteEnabled": "Remover Habilitado",
+	"TIDY5E.DeleteDisabledHint": "exibir botão de remover item",
+	"TIDY5E.DeleteEnabledHint": "esconder botão de remover item",
+
+	"TIDY5E.ConvertCurrencyHint": "Converter moedas para a mais alta cunhagem",
+	"TIDY5E.ConvertCurrencyButton": "converter",
+
+	"TIDY5E.Encumbrance": "Sobrecarga",
+
+	"TIDY5E.Prepared": "Preparado",
+	"TIDY5E.Attuned": "Sintonizado",
+
+	"TIDY5E.EditItem": "Editar Item",
+	"TIDY5E.DeleteItem": "Remover Item",
+	"TIDY5E.EditSpell": "Editar Magia",
+	"TIDY5E.DeleteSpell": "Remover Magia",
+	"TIDY5E.AddFav": "Adicionar aos Favoritos",
+	"TIDY5E.RemoveFav": "Remover dos Favoritos",
+
+
+	"TIDY5E.ToggleInfo": "Alternar Informação",
+
+
+	"TIDY5E.SkillsShow" : "exibir/editar",
+	"TIDY5E.SkillsHide" : "esconder",
+	"TIDY5E.SkillsNotProficient" : "não proficiente",
+
+	"TIDY5E.TraitsShow" : "exibir/editar",
+	"TIDY5E.TraitsHide" : "esconder",
+	"TIDY5E.TraitsEmpty" : "traços vazios",
+
+	"TIDY5E.AbbrArmorClass" : "CA",
+
+	"TIDY5E.strAbility" : "For",
+	"TIDY5E.dexAbility" : "Des",
+	"TIDY5E.conAbility" : "Con",
+	"TIDY5E.intAbility" : "Int",
+	"TIDY5E.wisAbility" : "Sab",
+	"TIDY5E.chaAbility" : "Car",
+
+	"TIDY5E.Abilities" : "Habilidades",
+
+	"TIDY5E.SpellAlwaysPrepared": "Sempre Preparada",
+	"TIDY5E.SpellAtWill": "à Vontade",
+	"TIDY5E.SpellInnate": "Conjuração Inata",
+	"TIDY5E.SpellPact": "Magia de Pacto",
+	"TIDY5E.SpellCantrips": "Truques",
+	"TIDY5E.SpellLevel": "Nivel de Magia"
+}
