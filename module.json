@@ -37,7 +37,12 @@
 			"lang": "it",
 			"name": "Italian",
 			"path": "lang/it.json"
-		}
+		},
+		{
+      "lang": "ja",
+      "name": "日本語",
+      "path": "lang/ja.json"
+    }
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
   "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",
