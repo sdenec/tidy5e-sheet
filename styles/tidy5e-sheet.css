@@ -1935,6 +1935,7 @@
 	padding: 0;
 	flex: 0 0 1px;
 	text-align: center;
+	white-space: nowrap;
 }
 
 .tidy5e.sheet.actor .inventory-currency .currency-item.convert a {
