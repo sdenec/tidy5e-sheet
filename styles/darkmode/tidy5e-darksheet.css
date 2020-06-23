@@ -633,3 +633,14 @@
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-recharge:hover {
   color: var(--darkmode-primary-accent);
 }
+
+.tidy5eDark .tidy5e.sheet.actor a.entity-link, 
+.tidy5eDark .tidy5e.sheet.actor a.inline-roll {
+  background: var(--darkmode-primary-accent);
+  color: #121212; 
+}
+
+.tidy5eDark .tidy5e.sheet.actor a.entity-link i,
+.tidy5eDark .tidy5e.sheet.actor a.inline-roll i {
+  color: #121212;
+}
