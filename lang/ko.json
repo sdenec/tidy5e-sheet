@@ -1,0 +1,93 @@
+{
+	"TIDY5E.EditActorImage": "이미지 수정",
+
+	"TIDY5E.Exhaustion0": "부정적 효과 없음",
+	"TIDY5E.Exhaustion1": "능력 판정에 불리함",
+	"TIDY5E.Exhaustion2": "이동 속도 절반",
+	"TIDY5E.Exhaustion3": "공격 굴림과 내성 굴림에 불리함",
+	"TIDY5E.Exhaustion4": "최대 HP 절반",
+	"TIDY5E.Exhaustion5": "이동 속도 0",
+	"TIDY5E.Exhaustion6": "사망",
+
+	"TIDY5E.RestHint": "휴식 취하기",
+	"TIDY5E.RestS": "짧은 휴식",
+	"TIDY5E.RestL": "긴 휴식",
+
+	"TIDY5E.AttrHitPoints": "HP",
+
+	"TIDY5E.HitDiceHint": "휴식 중 사용",
+
+	"TIDY5E.Journal": "저널",
+
+	"TIDY5E.AbilitySave": "내성 굴림",
+	"TIDY5E.AbilityMod": "수정치",
+	"TIDY5E.AbilityProf": "숙련",
+	"TIDY5E.SkillPassive": "상시",
+
+	"TIDY5E.RestoreOnRest": "휴식시 복원",
+
+
+	"TIDY5E.BioTraits": "특성",
+	"TIDY5E.BioIdeals": "이상",
+	"TIDY5E.BioBonds": "유대",
+	"TIDY5E.BioFlaws": "단점",
+	"TIDY5E.BioAppearance": "외모",
+	"TIDY5E.BioBackground": "배경/일생",
+
+	"TIDY5E.JournalPoi": "흥미로운 인물",
+	"TIDY5E.JournalLoi": "흥미로운 장소",
+	"TIDY5E.JournalQuests": "퀘스트",
+	"TIDY5E.JournalMisc": "기타사항",
+	"TIDY5E.JournalEntries": "저널 항목",
+
+
+	"TIDY5E.DeleteDisabled": "삭제 비허용",
+	"TIDY5E.DeleteEnabled": "삭제 허용",
+	"TIDY5E.DeleteDisabledHint": "아이템 삭제 버튼 보이기",
+	"TIDY5E.DeleteEnabledHint": "아이템 삭제 버튼 숨기기",
+
+	"TIDY5E.ConvertCurrencyHint": "화폐를 고단위 화폐로 환금",
+	"TIDY5E.ConvertCurrencyButton": "환금",
+
+	"TIDY5E.Encumbrance": "적재량",
+
+	"TIDY5E.Prepared": "준비됨",
+	"TIDY5E.Attuned": "조율됨",
+
+	"TIDY5E.EditItem": "아이템 수정",
+	"TIDY5E.DeleteItem": "아이템 삭제",
+	"TIDY5E.EditSpell": "주문 수정",
+	"TIDY5E.DeleteSpell": "주문 삭제",
+	"TIDY5E.AddFav": "즐겨찾기에 추가",
+	"TIDY5E.RemoveFav": "줄겨찾기에서 삭제",
+
+
+	"TIDY5E.ToggleInfo": "정보 토글",
+
+
+	"TIDY5E.SkillsShow" : "보기/수정",
+	"TIDY5E.SkillsHide" : "숨기기",
+	"TIDY5E.SkillsNotProficient" : "숙련되지 않은 기술",
+
+	"TIDY5E.TraitsShow" : "보기/수정",
+	"TIDY5E.TraitsHide" : "숨기기",
+	"TIDY5E.TraitsEmpty" : "비어 있는 특성",
+
+	"TIDY5E.AbbrArmorClass" : "AC",
+
+	"TIDY5E.strAbility" : "근력",
+	"TIDY5E.dexAbility" : "민첩",
+	"TIDY5E.conAbility" : "건강",
+	"TIDY5E.intAbility" : "지능",
+	"TIDY5E.wisAbility" : "지혜",
+	"TIDY5E.chaAbility" : "매력",
+
+	"TIDY5E.Abilities" : "능력치",
+
+	"TIDY5E.SpellAlwaysPrepared": "항상 준비됨",
+	"TIDY5E.SpellAtWill": "의지",
+	"TIDY5E.SpellInnate": "타고난 주문 시전",
+	"TIDY5E.SpellPact": "계약 마법",
+	"TIDY5E.SpellCantrips": "소마법",
+	"TIDY5E.SpellLevel": "주문 레벨"
+}

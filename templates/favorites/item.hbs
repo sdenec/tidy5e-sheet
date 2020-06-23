@@ -46,7 +46,7 @@
   {{#if item.isFeat}}
   <div class="item-detail item-charges">
     {{#if item.isOnCooldown}}
-      <a class="item-recharge rollable">{{item.labels.recharge}}</a>
+      <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-bolt"></i>{{item.labels.rechargeValue}}</a>
       {{else if item.data.recharge.value}}
       {{localize "DND5E.Charged"}}
     {{else if item.data.uses.max}}
@@ -68,7 +68,7 @@
 
   <div class="item-detail item-action">
     {{#each item.favLabels as |label id|}}
-      <span>{{label}}</span>
+      <span title="{{label}}">{{label}}</span>
     {{/each}}
   </div>
 

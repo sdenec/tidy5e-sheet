@@ -232,7 +232,9 @@
 					</ul>
 
 					{{!-- Traits --}}
+					{{#if actor.flags.tidy5e-sheet.moveTraits}}{{else}}
 					{{> "modules/tidy5e-sheet/templates/parts/tidy5e-traits.html"}}
+					{{/if}}
 				</div>
 
 				<section class="center-pane">
@@ -270,6 +272,10 @@
 						</li>
 						{{/each}}
 					</ul>
+					{{!-- Traits --}}
+					{{#if actor.flags.tidy5e-sheet.moveTraits}}
+					{{> "modules/tidy5e-sheet/templates/parts/tidy5e-traits.html"}}
+					{{/if}}
 
 					{{!-- Favorites --}}
 					<div class="favorites-target"></div>

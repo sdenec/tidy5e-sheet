@@ -180,10 +180,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     html.find('.traits .toggle-traits').click( async (event) => {
       let actor = this.actor;
       if(actor.getFlag('tidy5e-sheet', 'traitsExpanded')){
-        console.log('unset flag');
         await actor.unsetFlag('tidy5e-sheet', 'traitsExpanded');
       } else {
-        console.log('set flag');
         await actor.setFlag('tidy5e-sheet', 'traitsExpanded', true);
       }
     });
@@ -275,8 +273,9 @@ async function addClassList(app, html, data) {
 	}
 }
 
-// Set Sheet Classes
+// Manage Sheet Options
 async function setSheetClasses(app, html, data) {
+	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 	if (game.settings.get("tidy5e-sheet", "useRoundPortraits")) {
 		html.find('.tidy5e-sheet .profile').addClass('roundPortrait');
 	}
@@ -289,13 +288,6 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
 	}
-	if (game.settings.get("tidy5e-sheet", "pcAlwaysShowTraits")) {
-		html.find('.tidy5e-sheet .traits').addClass('always-visible');
-	}
-}
-
-// Set Portrait Hover Classes
-async function hidePortraitButtons(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
 	}
@@ -305,6 +297,18 @@ async function hidePortraitButtons(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
 	}
+	if (game.settings.get("tidy5e-sheet", "moveTraits")) {
+		if(!actor.getFlag("tidy5e-sheet","moveTraits")){
+			await actor.setFlag("tidy5e-sheet","moveTraits", true);
+		}
+	} else {
+		if(actor.getFlag("tidy5e-sheet","moveTraits")){
+			await actor.unsetFlag("tidy5e-sheet","moveTraits");
+		}
+	}
+	if (!game.settings.get("tidy5e-sheet", "pcToggleTraits")) {
+		html.find('.tidy5e-sheet .traits').addClass('always-visible');
+	}
 }
 
 // Preload tidy5e Handlebars Templates
@@ -312,7 +316,7 @@ Hooks.once("init", () => {
   preloadTidy5eHandlebarsTemplates();
 
 	game.settings.register("tidy5e-sheet", "useDarkMode", {
-		name: "Use alternate Dark Mode version of the sheet",
+		name: "Use alternate dark mode",
 		hint: "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet.",
 		scope: "user",
 		config: true,
@@ -324,7 +328,7 @@ Hooks.once("init", () => {
 	});
 
 	game.settings.register("tidy5e-sheet", "primaryAccent", {
-		name: "Custom Primary Accent Color.",
+		name: "Primary accent color.",
 		hint: "Overwrite the default primary accent color (#48BB78) for Dark Mode used to highlight e. g. buttons, input field borders or hover states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
 		scope: "user",
 		config: true,
@@ -333,12 +337,11 @@ Hooks.once("init", () => {
 		onChange: data => {
       data === true ? document.documentElement.style.setProperty('--darkmode-primary-accent',primaryAccentColor)
   :document.documentElement.style.setProperty('--darkmode-primary-accent',"#48BB78");
-  ;
      }
 	});
 
 	game.settings.register("tidy5e-sheet", "secondaryAccent", {
-		name: "Custom Secondary Accent Color.",
+		name: "Secondary accent color.",
 		hint: "Overwrite the default secondary accent color (rgba(0,150,150,.325)) for Dark Mode used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
 		scope: "user",
 		config: true,
@@ -377,7 +380,6 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
-	hidePortraitButtons(app, html, data);
 	// console.log(data);
 });
 
@@ -388,7 +390,7 @@ Hooks.once("ready", () => {
 	}
 	
 	game.settings.register("tidy5e-sheet", "useRoundPortraits", {
-		name: "Character sheet uses round portraits.",
+		name: "PC Sheets: Sheets use round portraits.",
 		hint: "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame.",
 		scope: "world",
 		config: true,
@@ -396,7 +398,7 @@ Hooks.once("ready", () => {
 		type: Boolean
 	});
 	game.settings.register("tidy5e-sheet", "hpOverlayBorder", {
-		name: "Border width for the Hit Point overlay",
+		name: "PC Sheets: Border width for the hit point overlay",
 		hint: "If your portrait has a frame you can adjust the Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border.",
 		scope: "world",
 		config: true,
@@ -404,7 +406,7 @@ Hooks.once("ready", () => {
 		type: Number
 	});
 	game.settings.register("tidy5e-sheet", "disableHpOverlay", {
-		name: "Disable the Hit Point Overlay.",
+		name: "Disable the hit point overlay.",
 		hint: "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it.",
 		scope: "user",
 		config: true,
@@ -412,7 +414,7 @@ Hooks.once("ready", () => {
 		type: Boolean
 	});
 	game.settings.register("tidy5e-sheet", "hideClassList", {
-		name: "Hide Character Class List",
+		name: "Hide character class list",
 		hint: "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)",
 		scope: "user",
 		config: true,
@@ -428,7 +430,7 @@ Hooks.once("ready", () => {
 		type: Boolean
 	});
 	game.settings.register("tidy5e-sheet", "exhaustionOnHover", {
-		name: "Show exhaustion tracker only on Hover",
+		name: "Show exhaustion tracker on hover",
 		hint: "If you check this option the exhaustion tracker will only be visible when you hover over the portrait",
 		scope: "user",
 		config: true,
@@ -436,7 +438,7 @@ Hooks.once("ready", () => {
 		type: Boolean
 	});
 	game.settings.register("tidy5e-sheet", "restOnHover", {
-		name: "Show rest button only on Hover",
+		name: "Show rest button on hover",
 		hint: "If you check this option the rest button will only be visible when you hover over the portrait",
 		scope: "user",
 		config: true,
@@ -444,15 +446,23 @@ Hooks.once("ready", () => {
 		type: Boolean
 	});
 	game.settings.register("tidy5e-sheet", "inspirationOnHover", {
-		name: "Show inspiration indicator only on Hover",
+		name: "Show inspiration indicator on hover",
 		hint: "If you check this option the inspiration indicator will only be visible when you hover over the portrait",
 		scope: "user",
 		config: true,
 		default: false,
 		type: Boolean
 	});
-  game.settings.register("tidy5e-sheet", "pcAlwaysShowTraits", {
-    name: "Toggle Player Character Traits",
+  game.settings.register("tidy5e-sheet", "moveTraits", {
+    name: "Move traits below resources",
+    hint: "Check this if you want to show the traits below the resources.",
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+  game.settings.register("tidy5e-sheet", "pcToggleTraits", {
+    name: "Show Toggle button for character traits",
     hint: "Check this if you want to show a button to toggle empty traits.",
     scope: "user",
     config: true,

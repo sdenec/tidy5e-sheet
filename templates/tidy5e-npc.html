@@ -1,5 +1,5 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-  <div class="tidy5e-sheet tidy5e-npc">
+  <div class="tidy5e-sheet tidy5e-npc{{#if actor.flags.tidy5e-sheet.allow-delete}} allow-delete{{/if}}">
     {{!-- NPC Sheet Header --}}
     <header class="flex tidy5e-header">
       <div class="profile">
@@ -169,7 +169,8 @@
                 data-dtype="Number" placeholder="Init.">
               </div>
             </div>
-          </div>          
+          </div>
+          <div class="tidy5e-delete-lock"><label for="tidy5e-allow-delete" class="tidy5e-delete-toggle"><span class="tidy5e-delete-disabled" title="{{localize 'TIDY5E.DeleteDisabledHint'}}"><i class="fas fa-lock"></i>{{localize "TIDY5E.DeleteDisabled"}}</span><span class="tidy5e-delete-enabled" title="{{localize 'TIDY5E.DeleteEnabledHint'}}"><i class="fas fa-unlock"></i>{{localize "TIDY5E.DeleteEnabled"}}</span></label></div>
           {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-features.html" sections=features}}
           {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-spellbook.html"}}
         </section>
