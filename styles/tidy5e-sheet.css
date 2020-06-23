@@ -873,7 +873,7 @@
 	display: flex;
 	align-items: flex-start;
 	flex-wrap: wrap;
-	flex: 0 0 280px;
+	flex: 0 0 300px;
 }
 
 
@@ -996,7 +996,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  flex: 0 0 200px;
+  flex: 0 0 220px;
   height: 326px;
   margin: 0 0 0 8px;
 }
@@ -1008,6 +1008,7 @@
   align-items: center;
   padding: 3px 4px 1px 4px;
   height: 18px;
+  flex-wrap: nowrap;
 }
 
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill:nth-child(even) {
@@ -1017,6 +1018,8 @@
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill h4 {
   font-size: 12px;
   line-height: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
@@ -1211,7 +1214,8 @@
 	border-radius: 5px 5px 0 0;
 	overflow: visible;
 	margin: 8px 0 17px 0;
-	width: 280px;
+	/*width: 280px;*/
+	width: 100%;
 	position: relative;
 }
 
@@ -1237,6 +1241,7 @@
 .tidy5e.sheet.actor .traits .form-group:first-child  {
 	line-height: 14px;
 	height: auto;
+	border-radius: 5px 5px 0 0;
 }
 
 .tidy5e.sheet.actor .traits .form-group:nth-child(odd) {
@@ -1357,7 +1362,7 @@
 	border: 1px solid var(--default-faint-color);
 	border-top: 0;
 	border-radius: 0 0 3px 3px;
-	padding: 2px 8px;
+	padding: 2px 4px;
 	width: auto;
 	font-size: 10px;
   color: var(--default-secondary-color);
@@ -1393,7 +1398,7 @@
 	border: 1px solid var(--default-faint-color);
 	border-top: 0;
 	border-radius: 0 0 3px 3px;
-	padding: 2px 8px;
+	padding: 2px 4px;
 	width: auto;
 	font-size: 10px;
   color: var(--default-secondary-color);
@@ -1585,6 +1590,7 @@
 .tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-charges {
 	font-size: 12px;
 	line-height: 21px;
+	text-overflow: ellipsis;
 }
 
 
@@ -1603,6 +1609,7 @@
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-action {
 	flex: 0 0 70px;
+	padding: 0 8px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item .item-charges .uses-max,
@@ -2234,6 +2241,7 @@
 .tidy5e.sheet.actor .inventory-list .item .item-recharge {
 	flex: initial;
 	padding: 0 4px;
+	font-size: 13px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item .item-charges input {
