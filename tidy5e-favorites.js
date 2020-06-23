@@ -102,7 +102,7 @@ export const addFavorites = async function(app, html, data, position) {
 
       // add button to toggle favorite of the item in their native tab
       if (app.options.editable) {
-        let favBtn = $(`<a class="item-control item-fav" data-fav="${isFav}" title="${isFav ? "remove from favorites" : "add to favorites"}"><i class="${isFav ? "fas fa-bookmark" : "far fa-bookmark"}"></i></a>`);
+        let favBtn = $(`<a class="item-control item-fav" data-fav="${isFav}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}"><i class="${isFav ? "fas fa-bookmark" : "far fa-bookmark"}"></i></a>`);
         favBtn.click(ev => {
           app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
         });
@@ -114,11 +114,27 @@ export const addFavorites = async function(app, html, data, position) {
 
           // creating specific labels to be displayed
           let labels = {};
-          // if (item.data.components && item.data.components.concentration) {
-          //   labels.concentration = 'Concentration';
-          // }
+          let translation = {
+              none : game.i18n.localize("DND5E.None"),
+              action : game.i18n.localize("DND5E.Action"),
+              bonus : game.i18n.localize("DND5E.BonusAction"),
+              reaction : game.i18n.localize("DND5E.Reaction"),
+              legendary : game.i18n.localize("DND5E.LegAct"),
+              lair : game.i18n.localize("DND5E.LairAct"),
+              special : game.i18n.localize("DND5E.Special"),
+              day : game.i18n.localize("DND5E.TimeDay"),
+              hour : game.i18n.localize("DND5E.TimeHour"),
+              minute : game.i18n.localize("DND5E.TimeMinute")
+          }
+
+          function translateLabels (key){
+            let string = String(key);
+            return translation[string];
+          }
           if (item.data.activation && item.data.activation.type) {
-            labels.activation = `${item.data.activation.cost ? item.data.activation.cost+' ':''}${item.data.activation.type.capitalize()}`;
+            let key = item.data.activation.type;
+            // item.data.activation.type.capitalize()
+            labels.activation = `${item.data.activation.cost ? item.data.activation.cost+' ':''}${translateLabels(key)}`;
           }
 
           // adding info that damage and attacks are possible
@@ -133,9 +149,9 @@ export const addFavorites = async function(app, html, data, position) {
           item.isOnCooldown = false;
           if( item.data.recharge && item.data.recharge.value && item.data.recharge.charged === false){
             item.isOnCooldown = true;
-            item.labels = {recharge : "Recharge ["+item.data.recharge.value+"+]"};
+            item.labels = {recharge : game.i18n.localize("DND5E.FeatureRechargeOn")+" ["+item.data.recharge.value+"+]"};
           }
-          // console.log(item);
+          console.log(item);
           // adding info if item has quantity more than one
           item.isStack = false;
           if (item.data.quantity && item.data.quantity > 1) {
