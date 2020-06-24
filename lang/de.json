@@ -91,5 +91,7 @@
 	"TIDY5E.SpellInnate": "Angeborenes Zauberwirken",
 	"TIDY5E.SpellPact": "Paktmagie",
 	"TIDY5E.SpellCantrips": "Zaubertricks",
-	"TIDY5E.SpellLevel": "Zauberstufe"
+	"TIDY5E.SpellLevel": "Zauberstufe",
+
+	"TIDY5E.Environment" : "Umgebung"
 }
