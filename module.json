@@ -2,7 +2,7 @@
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"author": "sdenec#3813",
 	"minimumCoreVersion": "0.6.0",
 	"compatibleCoreVersion": "0.6.3",
@@ -13,6 +13,7 @@
 		"tidy5e-npc.js"
 	],
 	"styles": [
+		// "./systems/resources/app/public/fonts/signica-negative/signica-negative.css",
 		"styles/tidy5e-sheet.css",
 		"styles/tidy5e-items.css",
 		"styles/tidy5e-modules.css",
