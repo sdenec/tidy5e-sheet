@@ -45,12 +45,19 @@
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
           </div>
-          <h4>
+          <h4 title="{{localize "TIDY5E.ToggleInfo"}} ({{item.name}})">
             <!-- <i class="fas fa-info-circle info-icon"></i> -->
             {{item.name}}
           </h4>
-          
+
         </div>
+
+        {{#if ../../owner}}
+        <div class="spell-details spell-prepared">
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}"><i class="fas fa-book"></i></a>
+        </div>
+        {{/if}}
+          
 
         {{#if item.data.uses.value }}
         <div class="item-detail item-charges">
