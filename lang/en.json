@@ -89,5 +89,7 @@
 	"TIDY5E.SpellInnate": "Innate Spellcasting",
 	"TIDY5E.SpellPact": "Pact Magic",
 	"TIDY5E.SpellCantrips": "Cantrips",
-	"TIDY5E.SpellLevel": "Spell Level"
+	"TIDY5E.SpellLevel": "Spell Level",
+
+	"TIDY5E.Environment" : "Environment"
 }
