@@ -42,7 +42,7 @@
               </li>
             </ul>
             <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-type" data-placeholder="{{ localize 'DND5E.Type' }}">{{data.details.type}}</span>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}">({{data.details.environment}})</span>,
+            <span class="environment"><i class="fas fa-tree"></i><span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}">{{data.details.environment}}</span></span>,
             <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{data.details.alignment}}</span>
             <span class="source-info" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{ localize 'DND5E.Source' }}" class="source">{{data.details.source}}</span>
             <input type="hidden" data-input="{{actor._id}}-type" name="data.details.type" value="{{data.details.type}}" placeholder="{{ localize 'DND5E.Type' }}">

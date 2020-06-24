@@ -40,6 +40,28 @@
 	content: none;
 }
 
+.tidy5e.sheet.actor.npc .origin-summary .environment span {
+  display: none;
+  margin-left: 2px;
+}
+
+.tidy5e.sheet.actor.npc .origin-summary .environment i {
+  margin-right: 2px;
+  color: var(--default-tertiary-color);
+}
+
+
+.tidy5e.sheet.actor.npc .origin-summary .environment:hover i,
+.tidy5e.sheet.actor.npc .origin-summary .environment:focus-within i {
+  color: var(--default-primary-color);
+}
+
+.tidy5e.sheet.actor.npc .origin-summary .environment:hover span,
+.tidy5e.sheet.actor.npc .origin-summary .environment:focus-within span {
+  display: inline-block;
+}
+
+
 /* Size Select */
 
 .tidy5e.sheet.actor.npc .actor-size-select,
