@@ -83,11 +83,11 @@
 	font-weight: 600;
 }
 
-.tidy5e.sheet.actor.npc .origin-summary .environment i {
+.tidy5eDark .tidy5e.sheet.actor.npc .origin-summary .environment i {
 	color: var(--darkmode-tertiary-color);
 }
 
-.tidy5e.sheet.actor.npc .origin-summary .environment:hover i,
-.tidy5e.sheet.actor.npc .origin-summary .environment:focus-within i {
+.tidy5eDark .tidy5e.sheet.actor.npc .origin-summary .environment:hover i,
+.tidy5eDark .tidy5e.sheet.actor.npc .origin-summary .environment:focus-within i {
   color: var(--darkmode-primary-color);
 }
