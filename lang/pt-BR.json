@@ -55,7 +55,7 @@
 
 	"TIDY5E.Show" : "exibir/editar",
 	"TIDY5E.Hide" : "esconder",
-	"TIDY5E.Edit" : "edit",
+	"TIDY5E.Edit" : "edidar",
 	"TIDY5E.SkillsNotProficient" : "não proficiente",
 	"TIDY5E.TraitsEmpty" : "traços vazios",
 
@@ -70,7 +70,7 @@
 
 	"TIDY5E.Abilities" : "Habilidades",
 
-	"TIDY5E.Environment" : "Environment",
+	"TIDY5E.Environment" : "Ambiente",
 
 	"TIDY5E.AbbrMod" : "Mod"
 }
