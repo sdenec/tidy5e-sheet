@@ -13,8 +13,8 @@
 		"tidy5e-npc.js"
 	],
 	"styles": [
-		"../fonts/signika-negative.css",
-		"../fonts/modesto-condensed.css",
+		"fonts/signika-negative/signika-negative.css",
+		"../fonts/modesto-condensed/modesto-condensed.css",
 		"styles/tidy5e-sheet.css",
 		"styles/tidy5e-items.css",
 		"styles/tidy5e-modules.css",
