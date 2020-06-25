@@ -57,7 +57,7 @@
 
 	"TIDY5E.Show" : "表示/編集",
 	"TIDY5E.Hide" : "非表示",
-	"TIDY5E.Edit" : "edit",
+	"TIDY5E.Edit" : "編集",
 	"TIDY5E.SkillsNotProficient" : "未習熟",
 	"TIDY5E.TraitsEmpty" : "未設定の特徴",
 
@@ -72,7 +72,7 @@
 
 	"TIDY5E.Abilities" : "能力",
 
-	"TIDY5E.Environment" : "Environment",
+	"TIDY5E.Environment" : "環境",
 
-	"TIDY5E.AbbrMod" : "Mod"
+	"TIDY5E.AbbrMod" : "修正値"
 }

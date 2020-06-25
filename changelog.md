@@ -1,3 +1,25 @@
+*Attribution*
+Additional Translations generously provided by:
+Japanese: @BrotherSharp, @Asami
+Italian: @Simone [UTC +2]
+Korean: @KLO
+Brazilian Portuguese: @rinnocenti
+
+Thank you very much!
+
+
+*Version 0.2.5*
+
+- translation updates
+- added Support for Environment Field on NPCs
+- added prepared Spells for NPCs
+
+- updated fonts with official fonts provided by foundry
+
+- exhaustion is now hidden by default when exhaustion level is 0.
+
+- added darkmode support for skill customizer module
+
 *Version 0.2.4*
 
 - traits on character sheets can be placed under resources
