@@ -55,7 +55,7 @@
 
 	"TIDY5E.Show" : "보기/수정",
 	"TIDY5E.Hide" : "숨기기",
-	"TIDY5E.Edit" : "edit",
+	"TIDY5E.Edit" : "수정",
 	"TIDY5E.SkillsNotProficient" : "숙련되지 않은 기술",
 	"TIDY5E.TraitsEmpty" : "비어 있는 특성",
 
@@ -70,7 +70,7 @@
 
 	"TIDY5E.Abilities" : "능력치",
 
-	"TIDY5E.Environment" : "Environment",
+	"TIDY5E.Environment" : "환경",
 
-	"TIDY5E.AbbrMod" : "Mod"
+	"TIDY5E.AbbrMod" : "수정"
 }
