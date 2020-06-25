@@ -8,6 +8,117 @@
 	--default-secondary-accent: rgba(210,0,255,.1);
 }
 
+/* font settings */
+
+.tidy5e-sheet h1,
+.tidy5e-sheet h2,
+.tidy5e-sheet h3 {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.tidy5e.sheet.actor .ability-scores {
+	font-family: "Modesto Condensed", "Signika", serif;
+  /*letter-spacing: .02em;*/
+}
+
+.tidy5e.sheet.actor .ability-scores h4,
+.tidy5e.sheet.actor .ability-scores input,
+.tidy5e.sheet.actor .ability-scores span {
+	font-weight: 700;
+}
+
+.tidy5e-navigation {
+	font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor .header-attributes .value {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	font-size: 24px;
+	margin: 6px 0 2px 0;
+}
+
+.tidy5e.sheet.actor .header-attributes .ac-display {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	height: 40px;
+  font-size: 44px;
+  padding-top: 4px;
+  margin: 4px auto;
+}
+
+.tidy5e.sheet.actor .header-attributes .value-footer{
+	font-family: "Signika", sans-serif;
+	height: 18px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.tidy5e.sheet.actor ul.attributes li.resource .attribute-header label.checkbox {
+  font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor .inventory-filters h3,
+.tidy5e.sheet.actor .inventory-filters .filter-title {
+  font-family: "Signika", sans-serif;
+  color: #4b4a44;
+  font-size: 13px;
+  margin-left: 0;
+}
+
+.tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
+	display: block;
+  font-family: "Signika", sans-serif;
+  color: #4b4a44;
+  flex: 0 0 1px;
+  white-space: nowrap;
+}
+
+.tidy5e.sheet.actor .spellcasting-ability h3 {
+	font-family: "Signika", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+  flex: 0 0 1px;
+  margin-right: 4px;
+}
+
+.tidy5e.sheet.actor .spellcasting-ability h3.spell-dc {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	font-size: 24px;
+  text-align: left;
+}
+
+.tidy5e.sheet.actor .inventory-list .inventory-header,
+.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header {
+	font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor .inventory-list .inventory-header h3 {
+	font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor ul.attributes li.attribute {
+	font-family: "Modesto Condensed", "Signika", serif;
+  /*letter-spacing: .02em;*/
+}
+
+.tidy5e.sheet.actor ul.attributes li.attribute input,
+.tidy5e.sheet.actor ul.attributes li.attribute h4 {
+	font-weight: 700;
+}
+
+
+/* sheet settings */
+
 .tidy5e.sheet [contenteditable=true] {
 	border: none;
 	outline: none; 
@@ -120,15 +231,6 @@
 	background: var(--default-faint-color);
 }
 
-.tidy5e-sheet h1,
-.tidy5e-sheet h2,
-.tidy5e-sheet h3 {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
 .tidy5e.sheet.actor p,
 .tidy5e.sheet.actor li {
 	margin: 0;
@@ -142,10 +244,6 @@
 }
 
 /* #### Sheet Navigation #### */
-
-.tidy5e-navigation {
-	font-family: "Signika", sans-serif;
-}
 
 .tidy5e-navigation .item {
 	padding: 5px 1rem 0 1rem;
@@ -783,37 +881,17 @@
 	border: none;
 }
 
-.tidy5e.sheet.actor .header-attributes .value {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	font-size: 24px;
-	margin: 6px 0 2px 0;
-}
-
 .tidy5e.sheet.actor .header-attributes .value span,
 .tidy5e.sheet.actor .header-attributes .value p,
 .tidy5e.sheet.actor .header-attributes .value input {
 	height: 22px;
 	padding-top: 2px;
+	font-weight: 700;
 }
 
 .tidy5e.sheet.actor .header-attributes .value span,
 .tidy5e.sheet.actor .header-attributes .value p {
 	line-height: 20px;
-}
-
-.tidy5e.sheet.actor .header-attributes .ac-display {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	height: 40px;
-  font-size: 44px;
-  padding-top: 4px;
-  margin: 4px auto;
-}
-
-.tidy5e.sheet.actor .header-attributes .value-footer{
-	font-family: "Signika", "Palatino Linotype", serif;
-	height: 18px;
-	font-size: 12px;
-	text-align: center;
 }
 
 .tidy5e.sheet.actor input.hp-min,
@@ -1127,7 +1205,6 @@
   margin: 0 2px;
   border-radius: 5px;
   font-size: 11px;
-  font-family: "Signika", sans-serif;
   cursor: pointer;
   transition: background .3s ease;
   position: relative;
@@ -1181,7 +1258,7 @@
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
-	font-size: 26px;
+	font-size: 21px;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value .res-value {
@@ -1723,6 +1800,14 @@
 	display: none;
 }
 
+.tidy5e.sheet.actor .exhaustion-container.level-0 {
+	display: none;
+}
+
+.tidy5e.sheet.actor .profile:hover .exhaustion-container.level-0 {
+	display: block;
+}
+
 .tidy5e.sheet.actor .exhaustion-container.level-0 .note p:not(.lvl-0),
 .tidy5e.sheet.actor .exhaustion-container.level- .note p:not(.lvl-0),
 .tidy5e.sheet.actor .exhaustion-container.level-1 .note p:not(.lvl-1),
@@ -1828,23 +1913,7 @@
 	text-shadow: none;
 }
 
-.tidy5e.sheet.actor .inventory-filters h3,
-.tidy5e.sheet.actor .inventory-filters .filter-title {
-  font-family: "Signika", "Palatino Linotype", serif;
-  color: #4b4a44;
-  font-size: 13px;
-  margin-left: 0;
-}
-
 /* Delete Protection */
-
-.tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
-	display: block;
-  font-family: "Signika", "Palatino Linotype", serif;
-  color: #4b4a44;
-  flex: 0 0 1px;
-  white-space: nowrap;
-}
 
 .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle,
 .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle:hover{
@@ -1951,18 +2020,6 @@
 	align-items: center;
 }
 
-.tidy5e.sheet.actor .spellcasting-ability h3 {
-	font-family: "Signika", "Palatino Linotype", serif;
-	font-size: 12px;
-	font-weight: 700;
-}
-
-.tidy5e.sheet.actor .spellcasting-ability h3.spell-dc {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	font-size: 24px;
-  text-align: left;
-}
-
 .tidy5e.sheet.actor .spellcasting-ability select {
 	margin: 0;
 }
@@ -1982,7 +2039,6 @@
 	background: transparent;
 	border: none; 
 	border-top: 1px solid var(--default-faint-color);
-	font-family: "Signika", sans-serif;
 }
 
 .tidy5e.sheet.actor .inventory-list .inventory-header:first-child,
@@ -1992,7 +2048,6 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .inventory-header h3 {
-	font-family: "Signika", sans-serif;
 	margin: 0;
 	padding: 0;
 }
