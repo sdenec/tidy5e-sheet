@@ -1,6 +1,15 @@
 # Tidy5e Sheet
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI.
 
+## Attribution
+Additional Translations generously provided by:
+Japanese: @BrotherSharp, @Asami
+Italian: @Simone [UTC +2]
+Korean: @KLO
+Brazilian Portuguese: @rinnocenti
+
+Thank you very much!
+
 ## Preview
 ![Tidy5e Sheet Preview](/preview/tidy5e_0-1-5_preview.gif)
 
