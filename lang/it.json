@@ -21,10 +21,10 @@
 
 	"TIDY5E.SkillPassive": "Passiva",
 
-	"TIDY5E.RestoreOnRest": "Restore on rest",
+	"TIDY5E.RestoreOnRest": "Ripristina dopo il Riposo",
 
 	"TIDY5E.BioTraits": "Tratto di Personalità",
-	"TIDY5E.BioIdeals": "Idealo",
+	"TIDY5E.BioIdeals": "Ideale",
 	"TIDY5E.BioBonds": "Legame",
 	"TIDY5E.BioFlaws": "Difetto",
 	"TIDY5E.BioAppearance": "Aspetto",
@@ -56,9 +56,9 @@
 
 	"TIDY5E.TraitsShow" : "mostra/modifica",
 	"TIDY5E.TraitsHide" : "nascondi",
-	"TIDY5E.Edit" : "edit",
+	"TIDY5E.Edit" : "Modifica",
 	"TIDY5E.SkillsNotProficient" : "non competente",
-	"TIDY5E.TraitsEmpty" : "tratti vuoti",
+	"TIDY5E.TraitsEmpty" : "nessun tratto",
 
 	"TIDY5E.AbbrArmorClass" : "CA",
 
@@ -71,7 +71,7 @@
 
 	"TIDY5E.Abilities" : "Caratteristiche",
 
-	"TIDY5E.Environment" : "Environment",
+	"TIDY5E.Environment" : "Ambiente",
 
 	"TIDY5E.AbbrMod" : "Mod"
 }
