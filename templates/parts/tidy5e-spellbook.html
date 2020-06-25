@@ -52,7 +52,7 @@
 
     <ol class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item flexrow {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}" {{~#if data.preparation.prepared}} title="{{localize 'TIDY5E.Prepared'}}" {{/if}}>
+      <li class="item flexrow {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}" {{~#if data.preparation.prepared}} title="{{localize 'DND5E.Prepared'}}" {{/if}}>
         <div class="item-name flexrow">
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
@@ -87,7 +87,7 @@
         <div class="spell-detail spell-target" title="{{localize 'DND5E.Range'}}: {{labels.range}}">
           {{#if labels.target}}
           {{labels.target}}
-          {{else}}None
+          {{else}}{{ localize 'DND5E.None' }}
           {{/if}}
         </div>
 

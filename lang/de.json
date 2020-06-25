@@ -19,13 +19,9 @@
 
 	"TIDY5E.Journal": "Tagebuch",
 
-	"TIDY5E.AbilitySave": "Rettungswurf",
-	"TIDY5E.AbilityMod": "Modifikator",
-	"TIDY5E.AbilityProf": "Übung",
 	"TIDY5E.SkillPassive": "Passiv",
 
 	"TIDY5E.RestoreOnRest": "Bei Rast erneuern",
-
 
 	"TIDY5E.BioTraits": "Merkmale",
 	"TIDY5E.BioIdeals": "Ideale",
@@ -40,7 +36,6 @@
 	"TIDY5E.JournalMisc": "Verschiedenes",
 	"TIDY5E.JournalEntries": "Tagebucheinträge",
 
-
 	"TIDY5E.DeleteDisabled": "Löschen deaktiviert",
 	"TIDY5E.DeleteEnabled": "Löschen aktiviert",
 	"TIDY5E.DeleteDisabledHint": "Zeige Löschen-Knopf",
@@ -51,28 +46,17 @@
 
 	"TIDY5E.Encumbrance": "Belastung",
 
-	"TIDY5E.Prepared": "Vorbereited",
-	"TIDY5E.Attuned": "Abgestimmt",
-
-	"TIDY5E.EditItem": "Gegenstand bearbeiten",
-	"TIDY5E.DeleteItem": "Gegenstand löschen",
 	"TIDY5E.EditSpell": "Zauber bearbeiten",
 	"TIDY5E.DeleteSpell": "Zauber löschen",
 	"TIDY5E.AddFav": "Zu Favoriten hinzufügen",
 	"TIDY5E.RemoveFav": "Aus Favoriten entfernen",
 
-
 	"TIDY5E.ToggleInfo": "Infos umschalten",
 
-
-	"TIDY5E.SkillsShow" : "zeige/editiere",
-	"TIDY5E.SkillsHide" : "verstecke",
-	"TIDY5E.SkillsEdite" : "editiere",
+	"TIDY5E.Show" : "zeige/editiere",
+	"TIDY5E.Hide" : "verstecke",
+	"TIDY5E.Edit" : "editiere",
 	"TIDY5E.SkillsNotProficient" : "ungeübte",
-
-	"TIDY5E.TraitsShow" : "zeige/editiere",
-	"TIDY5E.TraitsHide" : "verstecke",
-	"TIDY5E.TraitsEdit" : "editiere",
 	"TIDY5E.TraitsEmpty" : "leere",
 
 	"TIDY5E.AbbrArmorClass" : "RK",
@@ -86,12 +70,7 @@
 
 	"TIDY5E.Abilities" : "Fähigkeiten",
 
-	"TIDY5E.SpellAlwaysPrepared": "Immer vorbereitet",
-	"TIDY5E.SpellAtWill": "Nach Belieben",
-	"TIDY5E.SpellInnate": "Angeborenes Zauberwirken",
-	"TIDY5E.SpellPact": "Paktmagie",
-	"TIDY5E.SpellCantrips": "Zaubertricks",
-	"TIDY5E.SpellLevel": "Zauberstufe",
+	"TIDY5E.Environment" : "Umgebung",
 
-	"TIDY5E.Environment" : "Umgebung"
+	"TIDY5E.AbbrMod" : "Mod"
 }

@@ -19,13 +19,9 @@
 
 	"TIDY5E.Journal": "저널",
 
-	"TIDY5E.AbilitySave": "내성 굴림",
-	"TIDY5E.AbilityMod": "수정치",
-	"TIDY5E.AbilityProf": "숙련",
 	"TIDY5E.SkillPassive": "상시",
 
 	"TIDY5E.RestoreOnRest": "휴식시 복원",
-
 
 	"TIDY5E.BioTraits": "특성",
 	"TIDY5E.BioIdeals": "이상",
@@ -40,7 +36,6 @@
 	"TIDY5E.JournalMisc": "기타사항",
 	"TIDY5E.JournalEntries": "저널 항목",
 
-
 	"TIDY5E.DeleteDisabled": "삭제 비허용",
 	"TIDY5E.DeleteEnabled": "삭제 허용",
 	"TIDY5E.DeleteDisabledHint": "아이템 삭제 버튼 보이기",
@@ -51,26 +46,17 @@
 
 	"TIDY5E.Encumbrance": "적재량",
 
-	"TIDY5E.Prepared": "준비됨",
-	"TIDY5E.Attuned": "조율됨",
-
-	"TIDY5E.EditItem": "아이템 수정",
-	"TIDY5E.DeleteItem": "아이템 삭제",
 	"TIDY5E.EditSpell": "주문 수정",
 	"TIDY5E.DeleteSpell": "주문 삭제",
 	"TIDY5E.AddFav": "즐겨찾기에 추가",
 	"TIDY5E.RemoveFav": "줄겨찾기에서 삭제",
 
-
 	"TIDY5E.ToggleInfo": "정보 토글",
 
-
-	"TIDY5E.SkillsShow" : "보기/수정",
-	"TIDY5E.SkillsHide" : "숨기기",
+	"TIDY5E.Show" : "보기/수정",
+	"TIDY5E.Hide" : "숨기기",
+	"TIDY5E.Edit" : "edit",
 	"TIDY5E.SkillsNotProficient" : "숙련되지 않은 기술",
-
-	"TIDY5E.TraitsShow" : "보기/수정",
-	"TIDY5E.TraitsHide" : "숨기기",
 	"TIDY5E.TraitsEmpty" : "비어 있는 특성",
 
 	"TIDY5E.AbbrArmorClass" : "AC",
@@ -84,10 +70,7 @@
 
 	"TIDY5E.Abilities" : "능력치",
 
-	"TIDY5E.SpellAlwaysPrepared": "항상 준비됨",
-	"TIDY5E.SpellAtWill": "의지",
-	"TIDY5E.SpellInnate": "타고난 주문 시전",
-	"TIDY5E.SpellPact": "계약 마법",
-	"TIDY5E.SpellCantrips": "소마법",
-	"TIDY5E.SpellLevel": "주문 레벨"
+	"TIDY5E.Environment" : "Environment",
+
+	"TIDY5E.AbbrMod" : "Mod"
 }
