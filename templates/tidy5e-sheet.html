@@ -57,7 +57,7 @@
 				</div>
 
 				{{!-- Inspiration --}}
-				<div class="inspiration has-note">
+				<div class="inspiration has-note {{#if actor.data.attributes.inspiration}}inspiration-1{{else}}inspiration-0{{/if}}">
 					<input id="{{actor._id}}-inspiration" type="checkbox" name="data.attributes.inspiration" data-dtype="Boolean" {{checked data.attributes.inspiration}}>
 					<label for="{{actor._id}}-inspiration">
 						<i class="inspiration-icon fas fa-dice-d20"></i>
