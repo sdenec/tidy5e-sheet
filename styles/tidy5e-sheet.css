@@ -1,19 +1,3 @@
-@font-face {
-  font-family: 'Signika';
-  src: url('../fonts/signika-light-webfont.woff2') format('woff2'),
-       url('../fonts/signika-light-webfont.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Signika';
-  src: url('../fonts/signika-semibold-webfont.woff2') format('woff2'),
-       url('../fonts/signika-semibold-webfont.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
 :root {
 	--default-primary-color: rgba(0,0,0,.87);
 	--default-secondary-color: rgba(0,0,0,.65);
@@ -23,6 +7,117 @@
 	--default-primary-accent: #ff6400;
 	--default-secondary-accent: rgba(210,0,255,.1);
 }
+
+/* font settings */
+
+.tidy5e-sheet h1,
+.tidy5e-sheet h2,
+.tidy5e-sheet h3 {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.tidy5e.sheet.actor .ability-scores {
+	font-family: "Modesto Condensed", "Signika", serif;
+  /*letter-spacing: .02em;*/
+}
+
+.tidy5e.sheet.actor .ability-scores h4,
+.tidy5e.sheet.actor .ability-scores input,
+.tidy5e.sheet.actor .ability-scores span {
+	font-weight: 700;
+}
+
+.tidy5e-navigation {
+	font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor .header-attributes .value {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	font-size: 24px;
+	margin: 6px 0 2px 0;
+}
+
+.tidy5e.sheet.actor .header-attributes .ac-display {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	height: 40px;
+  font-size: 44px;
+  padding-top: 4px;
+  margin: 4px auto;
+}
+
+.tidy5e.sheet.actor .header-attributes .value-footer{
+	font-family: "Signika", sans-serif;
+	height: 18px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.tidy5e.sheet.actor ul.attributes li.resource .attribute-header label.checkbox {
+  font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor .inventory-filters h3,
+.tidy5e.sheet.actor .inventory-filters .filter-title {
+  font-family: "Signika", sans-serif;
+  color: #4b4a44;
+  font-size: 13px;
+  margin-left: 0;
+}
+
+.tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
+	display: block;
+  font-family: "Signika", sans-serif;
+  color: #4b4a44;
+  flex: 0 0 1px;
+  white-space: nowrap;
+}
+
+.tidy5e.sheet.actor .spellcasting-ability h3 {
+	font-family: "Signika", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+  flex: 0 0 1px;
+  margin-right: 4px;
+}
+
+.tidy5e.sheet.actor .spellcasting-ability h3.spell-dc {
+	font-family: "Modesto Condensed", "Signika", serif;
+	font-weight: 700;
+  /*letter-spacing: .02em;*/
+	font-size: 24px;
+  text-align: left;
+}
+
+.tidy5e.sheet.actor .inventory-list .inventory-header,
+.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header {
+	font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor .inventory-list .inventory-header h3 {
+	font-family: "Signika", sans-serif;
+}
+
+.tidy5e.sheet.actor ul.attributes li.attribute {
+	font-family: "Modesto Condensed", "Signika", serif;
+  /*letter-spacing: .02em;*/
+}
+
+.tidy5e.sheet.actor ul.attributes li.attribute input,
+.tidy5e.sheet.actor ul.attributes li.attribute h4 {
+	font-weight: 700;
+}
+
+
+/* sheet settings */
 
 .tidy5e.sheet [contenteditable=true] {
 	border: none;
@@ -136,15 +231,6 @@
 	background: var(--default-faint-color);
 }
 
-.tidy5e-sheet h1,
-.tidy5e-sheet h2,
-.tidy5e-sheet h3 {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
 .tidy5e.sheet.actor p,
 .tidy5e.sheet.actor li {
 	margin: 0;
@@ -158,10 +244,6 @@
 }
 
 /* #### Sheet Navigation #### */
-
-.tidy5e-navigation {
-	font-family: "Signika", sans-serif;
-}
 
 .tidy5e-navigation .item {
 	padding: 5px 1rem 0 1rem;
@@ -799,37 +881,17 @@
 	border: none;
 }
 
-.tidy5e.sheet.actor .header-attributes .value {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	font-size: 24px;
-	margin: 6px 0 2px 0;
-}
-
 .tidy5e.sheet.actor .header-attributes .value span,
 .tidy5e.sheet.actor .header-attributes .value p,
 .tidy5e.sheet.actor .header-attributes .value input {
 	height: 22px;
 	padding-top: 2px;
+	font-weight: 700;
 }
 
 .tidy5e.sheet.actor .header-attributes .value span,
 .tidy5e.sheet.actor .header-attributes .value p {
 	line-height: 20px;
-}
-
-.tidy5e.sheet.actor .header-attributes .ac-display {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	height: 40px;
-  font-size: 44px;
-  padding-top: 4px;
-  margin: 4px auto;
-}
-
-.tidy5e.sheet.actor .header-attributes .value-footer{
-	font-family: "Signika", "Palatino Linotype", serif;
-	height: 18px;
-	font-size: 12px;
-	text-align: center;
 }
 
 .tidy5e.sheet.actor input.hp-min,
@@ -1143,7 +1205,6 @@
   margin: 0 2px;
   border-radius: 5px;
   font-size: 11px;
-  font-family: "Signika", sans-serif;
   cursor: pointer;
   transition: background .3s ease;
   position: relative;
@@ -1197,7 +1258,7 @@
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
-	font-size: 26px;
+	font-size: 21px;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute .attribute-value .res-value {
@@ -1469,12 +1530,12 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .item .item-name h4 {
-	overflow-x: visible;
 	display: inline-block;
 	flex: initial;
 	cursor: pointer;
 	line-height: 28px;
 	padding-top: 2px;
+	text-overflow: ellipsis;
 }
 
 .tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
@@ -1739,6 +1800,16 @@
 	display: none;
 }
 
+.tidy5e.sheet.actor .profile.autohide .exhaustion-container.level-0,
+.tidy5e.sheet.actor .profile.autohide .inspiration.inspiration-0 {
+	display: none;
+}
+
+.tidy5e.sheet.actor .profile.autohide:hover .exhaustion-container.level-0,
+.tidy5e.sheet.actor .profile.autohide:hover .inspiration.inspiration-0 {
+	display: block;
+}
+
 .tidy5e.sheet.actor .exhaustion-container.level-0 .note p:not(.lvl-0),
 .tidy5e.sheet.actor .exhaustion-container.level- .note p:not(.lvl-0),
 .tidy5e.sheet.actor .exhaustion-container.level-1 .note p:not(.lvl-1),
@@ -1844,23 +1915,7 @@
 	text-shadow: none;
 }
 
-.tidy5e.sheet.actor .inventory-filters h3,
-.tidy5e.sheet.actor .inventory-filters .filter-title {
-  font-family: "Signika", "Palatino Linotype", serif;
-  color: #4b4a44;
-  font-size: 13px;
-  margin-left: 0;
-}
-
 /* Delete Protection */
-
-.tidy5e.sheet.actor .inventory-filters .tidy5e-delete-lock {
-	display: block;
-  font-family: "Signika", "Palatino Linotype", serif;
-  color: #4b4a44;
-  flex: 0 0 1px;
-  white-space: nowrap;
-}
 
 .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle,
 .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle:hover{
@@ -1967,18 +2022,6 @@
 	align-items: center;
 }
 
-.tidy5e.sheet.actor .spellcasting-ability h3 {
-	font-family: "Signika", "Palatino Linotype", serif;
-	font-size: 12px;
-	font-weight: 700;
-}
-
-.tidy5e.sheet.actor .spellcasting-ability h3.spell-dc {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-	font-size: 24px;
-  text-align: left;
-}
-
 .tidy5e.sheet.actor .spellcasting-ability select {
 	margin: 0;
 }
@@ -1998,7 +2041,6 @@
 	background: transparent;
 	border: none; 
 	border-top: 1px solid var(--default-faint-color);
-	font-family: "Signika", sans-serif;
 }
 
 .tidy5e.sheet.actor .inventory-list .inventory-header:first-child,
@@ -2008,7 +2050,6 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .inventory-header h3 {
-	font-family: "Signika", sans-serif;
 	margin: 0;
 	padding: 0;
 }
@@ -2157,6 +2198,7 @@
 .tidy5e.sheet.actor .inventory-list .item .item-name {
 	max-height: unset;
 	cursor: default;
+	flex-wrap: nowrap;
 }
 
 .tidy5e.sheet.actor .inventory-list .item.spellbook-header .item-name {
@@ -2280,25 +2322,30 @@
 
 
 .tidy5e.sheet.actor .inventory .item-equipped,
-.tidy5e.sheet.actor .spellbook .spell-prepared {
+.tidy5e.sheet.actor .spellbook .spell-prepared,
+.tidy5e.sheet.actor .inventory-list .spell-prepared {
 	flex: 0 0 16px;
 	margin: 0 .25rem;
 }
  
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle,
-.tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle {
+.tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle,
+.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle  {
 	color: rgba(0,0,0,.25);
 }
 
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle:hover,
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle.active,
 .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle:hover,
-.tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle.active {
+.tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle.active,
+.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle:hover,
+.tidy5e.sheet.actor .inventory-list .prepared .spell-prepared .item-toggle {
 	color: rgba(0,0,0,.6);
 }
 
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle i,
-.tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle i {
+.tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle i,
+.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle i {
 	width: 16px;
 	text-align: center;
 	vertical-align: middle;

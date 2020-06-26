@@ -19,13 +19,9 @@
 
 	"TIDY5E.Journal": "Diário",
 
-	"TIDY5E.AbilitySave": "Salvaguarda",
-	"TIDY5E.AbilityMod": "Modificador",
-	"TIDY5E.AbilityProf": "Proficiência",
 	"TIDY5E.SkillPassive": "Passiva",
 
 	"TIDY5E.RestoreOnRest": "Restaurar no Descanço",
-
 
 	"TIDY5E.BioTraits": "Traços",
 	"TIDY5E.BioIdeals": "Ideias",
@@ -36,10 +32,9 @@
 
 	"TIDY5E.JournalPoi": "Pessoas Importantes",
 	"TIDY5E.JournalLoi": "Locais Importantes",
-	"TIDY5E.JournalQuests": "Missõs",
+	"TIDY5E.JournalQuests": "Missões",
 	"TIDY5E.JournalMisc": "Diversos",
 	"TIDY5E.JournalEntries": "Entrada de Diário",
-
 
 	"TIDY5E.DeleteDisabled": "Remover Desabilitado",
 	"TIDY5E.DeleteEnabled": "Remover Habilitado",
@@ -51,26 +46,17 @@
 
 	"TIDY5E.Encumbrance": "Sobrecarga",
 
-	"TIDY5E.Prepared": "Preparado",
-	"TIDY5E.Attuned": "Sintonizado",
-
-	"TIDY5E.EditItem": "Editar Item",
-	"TIDY5E.DeleteItem": "Remover Item",
 	"TIDY5E.EditSpell": "Editar Magia",
 	"TIDY5E.DeleteSpell": "Remover Magia",
 	"TIDY5E.AddFav": "Adicionar aos Favoritos",
 	"TIDY5E.RemoveFav": "Remover dos Favoritos",
 
-
 	"TIDY5E.ToggleInfo": "Alternar Informação",
 
-
-	"TIDY5E.SkillsShow" : "exibir/editar",
-	"TIDY5E.SkillsHide" : "esconder",
+	"TIDY5E.Show" : "exibir/editar",
+	"TIDY5E.Hide" : "esconder",
+	"TIDY5E.Edit" : "edidar",
 	"TIDY5E.SkillsNotProficient" : "não proficiente",
-
-	"TIDY5E.TraitsShow" : "exibir/editar",
-	"TIDY5E.TraitsHide" : "esconder",
 	"TIDY5E.TraitsEmpty" : "traços vazios",
 
 	"TIDY5E.AbbrArmorClass" : "CA",
@@ -84,10 +70,7 @@
 
 	"TIDY5E.Abilities" : "Habilidades",
 
-	"TIDY5E.SpellAlwaysPrepared": "Sempre Preparada",
-	"TIDY5E.SpellAtWill": "à Vontade",
-	"TIDY5E.SpellInnate": "Conjuração Inata",
-	"TIDY5E.SpellPact": "Magia de Pacto",
-	"TIDY5E.SpellCantrips": "Truques",
-	"TIDY5E.SpellLevel": "Nivel de Magia"
+	"TIDY5E.Environment" : "Ambiente",
+
+	"TIDY5E.AbbrMod" : "Mod"
 }

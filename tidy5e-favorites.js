@@ -82,7 +82,7 @@ export const addFavorites = async function(app, html, data, position) {
   let spellPrepModeCount = 0
   let items = data.actor.items;
 
-  console.log(items);
+  // console.log(items);
 
   let renderFavTab = false;
 

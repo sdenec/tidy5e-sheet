@@ -19,13 +19,9 @@
 
 	"TIDY5E.Journal": "Journal",
 
-	"TIDY5E.AbilitySave": "Saving Throw",
-	"TIDY5E.AbilityMod": "Modifier",
-	"TIDY5E.AbilityProf": "Proficiency",
 	"TIDY5E.SkillPassive": "Passive",
 
 	"TIDY5E.RestoreOnRest": "Restore on rest",
-
 
 	"TIDY5E.BioTraits": "Traits",
 	"TIDY5E.BioIdeals": "Ideals",
@@ -40,7 +36,6 @@
 	"TIDY5E.JournalMisc": "Miscellaneous",
 	"TIDY5E.JournalEntries": "Journal Entries",
 
-
 	"TIDY5E.DeleteDisabled": "Delete Disabled",
 	"TIDY5E.DeleteEnabled": "Delete Enabled",
 	"TIDY5E.DeleteDisabledHint": "show item delete button",
@@ -51,26 +46,17 @@
 
 	"TIDY5E.Encumbrance": "Encumbrance",
 
-	"TIDY5E.Prepared": "Prepared",
-	"TIDY5E.Attuned": "Attuned",
-
-	"TIDY5E.EditItem": "Edit Item",
-	"TIDY5E.DeleteItem": "Delete Item",
 	"TIDY5E.EditSpell": "Edit Spell",
 	"TIDY5E.DeleteSpell": "Delete Spell",
 	"TIDY5E.AddFav": "Add to Favorites",
 	"TIDY5E.RemoveFav": "Remove from Favorites",
 
-
 	"TIDY5E.ToggleInfo": "Toggle Info",
 
-
-	"TIDY5E.SkillsShow" : "show/edit",
-	"TIDY5E.SkillsHide" : "hide",
+	"TIDY5E.Show" : "show/edit",
+	"TIDY5E.Hide" : "hide",
+	"TIDY5E.Edit" : "edit",
 	"TIDY5E.SkillsNotProficient" : "not proficient",
-
-	"TIDY5E.TraitsShow" : "show/edit",
-	"TIDY5E.TraitsHide" : "hide",
 	"TIDY5E.TraitsEmpty" : "empty traits",
 
 	"TIDY5E.AbbrArmorClass" : "AC",
@@ -84,10 +70,7 @@
 
 	"TIDY5E.Abilities" : "Abilities",
 
-	"TIDY5E.SpellAlwaysPrepared": "Always Prepared",
-	"TIDY5E.SpellAtWill": "At Will",
-	"TIDY5E.SpellInnate": "Innate Spellcasting",
-	"TIDY5E.SpellPact": "Pact Magic",
-	"TIDY5E.SpellCantrips": "Cantrips",
-	"TIDY5E.SpellLevel": "Spell Level"
+	"TIDY5E.Environment" : "Environment",
+
+	"TIDY5E.AbbrMod" : "Mod"
 }

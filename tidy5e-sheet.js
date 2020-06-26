@@ -288,6 +288,9 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
 	}
+	if(game.settings.get("tidy5e-sheet", "hideIfZero")) {
+		html.find('.tidy5e-sheet .profile').addClass('autohide');
+	}
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
 	}
@@ -429,9 +432,25 @@ Hooks.once("ready", () => {
 		default: false,
 		type: Boolean
 	});
+	game.settings.register("tidy5e-sheet", "hideIfZero", {
+		name: "Hide Exhaustion and Inspiration when not available (0)",
+		hint: "Check this option if you want to hide Exhaustion if its level is 0 and Inspiration if you have none. Appears on hover.",
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
 	game.settings.register("tidy5e-sheet", "exhaustionOnHover", {
-		name: "Show exhaustion tracker on hover",
+		name: "Show exhaustion tracker only on hover",
 		hint: "If you check this option the exhaustion tracker will only be visible when you hover over the portrait",
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "inspirationOnHover", {
+		name: "Show inspiration indicator only on hover",
+		hint: "If you check this option the inspiration indicator will only be visible when you hover over the portrait",
 		scope: "user",
 		config: true,
 		default: false,
@@ -440,14 +459,6 @@ Hooks.once("ready", () => {
 	game.settings.register("tidy5e-sheet", "restOnHover", {
 		name: "Show rest button on hover",
 		hint: "If you check this option the rest button will only be visible when you hover over the portrait",
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-	game.settings.register("tidy5e-sheet", "inspirationOnHover", {
-		name: "Show inspiration indicator on hover",
-		hint: "If you check this option the inspiration indicator will only be visible when you hover over the portrait",
 		scope: "user",
 		config: true,
 		default: false,

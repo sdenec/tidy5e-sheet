@@ -395,6 +395,7 @@
   margin-right: 2px;
   font-family: Signika;
   height: 14px;
+  color: var(--default-primary-color);
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover,

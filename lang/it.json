@@ -19,16 +19,12 @@
 
 	"TIDY5E.Journal": "Diario",
 
-	"TIDY5E.AbilitySave": "Tiro Salvezza",
-	"TIDY5E.AbilityMod": "Modificatore",
-	"TIDY5E.AbilityProf": "Competenza",
 	"TIDY5E.SkillPassive": "Passiva",
 
-	"TIDY5E.RestoreOnRest": "Restore on rest",
-
+	"TIDY5E.RestoreOnRest": "Ripristina dopo il Riposo",
 
 	"TIDY5E.BioTraits": "Tratto di Personalità",
-	"TIDY5E.BioIdeals": "Idealo",
+	"TIDY5E.BioIdeals": "Ideale",
 	"TIDY5E.BioBonds": "Legame",
 	"TIDY5E.BioFlaws": "Difetto",
 	"TIDY5E.BioAppearance": "Aspetto",
@@ -51,27 +47,18 @@
 
 	"TIDY5E.Encumbrance": "Ingombro",
 
-	"TIDY5E.Prepared": "Preparato",
-	"TIDY5E.Attuned": "In Sintonia",
-
-	"TIDY5E.EditItem": "Modifica Oggetto",
-	"TIDY5E.DeleteItem": "Elimina Oggetto",
 	"TIDY5E.EditSpell": "Modifica Incantesimo",
 	"TIDY5E.DeleteSpell": "Elimina Incantesimo",
 	"TIDY5E.AddFav": "Aggiungi ai Preferiti",
 	"TIDY5E.RemoveFav": "Rimuovi dai Preferiti",
 
-
 	"TIDY5E.ToggleInfo": "Attiva/disattiva Info",
-
-
-	"TIDY5E.SkillsShow" : "mostra/modifica",
-	"TIDY5E.SkillsHide" : "nascondi",
-	"TIDY5E.SkillsNotProficient" : "non competente",
 
 	"TIDY5E.TraitsShow" : "mostra/modifica",
 	"TIDY5E.TraitsHide" : "nascondi",
-	"TIDY5E.TraitsEmpty" : "tratti vuoti",
+	"TIDY5E.Edit" : "Modifica",
+	"TIDY5E.SkillsNotProficient" : "non competente",
+	"TIDY5E.TraitsEmpty" : "nessun tratto",
 
 	"TIDY5E.AbbrArmorClass" : "CA",
 
@@ -84,10 +71,7 @@
 
 	"TIDY5E.Abilities" : "Caratteristiche",
 
-	"TIDY5E.SpellAlwaysPrepared": "Sempre Preparato",
-	"TIDY5E.SpellAtWill": "A Volontà",
-	"TIDY5E.SpellInnate": "Incantatore Innato",
-	"TIDY5E.SpellPact": "Pact Magic",
-	"TIDY5E.SpellCantrips": "Trucchetti",
-	"TIDY5E.SpellLevel": "Livello"
+	"TIDY5E.Environment" : "Ambiente",
+
+	"TIDY5E.AbbrMod" : "Mod"
 }

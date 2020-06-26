@@ -19,13 +19,9 @@
 
 	"TIDY5E.Journal": "記録",
 
-	"TIDY5E.AbilitySave": "ｾｰｳﾞｨﾝｸﾞ・ｽﾛｰ",
-	"TIDY5E.AbilityMod": "修正値",
-	"TIDY5E.AbilityProf": "習熟",
 	"TIDY5E.SkillPassive": "受動",
 
 	"TIDY5E.RestoreOnRest": "休憩時に回復",
-
 
 	"TIDY5E.BioTraits": "人格的特徴",
 	"TIDY5E.BioIdeals": "尊ぶもの",
@@ -40,7 +36,6 @@
 	"TIDY5E.JournalMisc": "その他",
 	"TIDY5E.JournalEntries": "資料",
 
-
 	"TIDY5E.DeleteDisabled": "削除禁止",
 	"TIDY5E.DeleteEnabled": "削除許可",
 	"TIDY5E.DeleteDisabledHint": "アイテム削除ボタン表示",
@@ -51,11 +46,6 @@
 
 	"TIDY5E.Encumbrance": "荷重",
 
-	"TIDY5E.Prepared": "準備済み",
-	"TIDY5E.Attuned": "同調済み",
-
-	"TIDY5E.EditItem": "アイテム編集",
-	"TIDY5E.DeleteItem": "アイテム削除",
 	"TIDY5E.EditSpell": "呪文編集",
 	"TIDY5E.DeleteSpell": "呪文削除",
 	"TIDY5E.AddFav": "お気に入り",
@@ -65,12 +55,10 @@
 	"TIDY5E.ToggleInfo": "詳細表示",
 
 
-	"TIDY5E.SkillsShow" : "表示/編集",
-	"TIDY5E.SkillsHide" : "非表示",
+	"TIDY5E.Show" : "表示/編集",
+	"TIDY5E.Hide" : "非表示",
+	"TIDY5E.Edit" : "編集",
 	"TIDY5E.SkillsNotProficient" : "未習熟",
-
-	"TIDY5E.TraitsShow" : "表示/編集",
-	"TIDY5E.TraitsHide" : "非表示",
 	"TIDY5E.TraitsEmpty" : "未設定の特徴",
 
 	"TIDY5E.AbbrArmorClass" : "AC",
@@ -84,10 +72,7 @@
 
 	"TIDY5E.Abilities" : "能力",
 
-	"TIDY5E.SpellAlwaysPrepared": "常に準備済",
-	"TIDY5E.SpellAtWill": "常に発動可能",
-	"TIDY5E.SpellInnate": "生得呪文発動能力",
-	"TIDY5E.SpellPact": "契約魔法",
-	"TIDY5E.SpellCantrips": "初級呪文",
-	"TIDY5E.SpellLevel": "呪文レベル"
+	"TIDY5E.Environment" : "環境",
+
+	"TIDY5E.AbbrMod" : "修正値"
 }

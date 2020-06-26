@@ -16,6 +16,11 @@
 	cursor: pointer;
 }
 
+.dnd5e.sheet.item button,
+.dnd5e.sheet.item select{
+	border: none;
+}
+
 .dnd5e.sheet.item input[type="text"] {
 	border: none;
 }

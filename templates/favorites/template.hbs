@@ -2,7 +2,7 @@
   {{#if favItems}}
     <ol class="inventory-list fav-item">
       <li class="inventory-header flexrow">
-        <h3>Items</h3>
+        <h3>{{localize 'DND5E.Inventory'}}</h3>
         <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
         <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i></div>
       </li>
@@ -16,7 +16,7 @@
   {{#if favFeats}}
     <ol class="inventory-list fav-feat">
       <li class="inventory-header flexrow">
-        <h3>Features</h3>
+        <h3>{{localize 'DND5E.Features'}}</h3>
         <div class="item-detail item-charges" title="{{localize 'DND5E.Uses'}}"><i class="fas fa-bolt"></i></div>
         <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i>
       </li>
@@ -35,10 +35,10 @@
           {{#if lvl}}
             <li class="inventory-header flexrow">                        
               <h3>
-              {{#if section.isAlways}}{{localize 'TIDY5E.SpellAlwaysPrepared'}}
-              {{else if section.isAtWill}}{{localize 'TIDY5E.SpellAtWill'}}
-              {{else if section.isInnate}}{{localize 'TIDY5E.SpellInnate'}}
-              {{else if section.isPact}}{{localize 'TIDY5E.SpellPact'}}
+              {{#if section.isAlways}}{{localize 'DND5E.SpellPrepAlways'}}
+              {{else if section.isAtWill}}{{localize 'DND5E.SpellPrepAtWill'}}
+              {{else if section.isInnate}}{{localize 'DND5E.SpellPrepInnate'}}
+              {{else if section.isPact}}{{localize 'DND5E.SpellProgPact'}}
               {{/if}}
               </h3>
               {{#if section.isPact}}
@@ -71,12 +71,12 @@
           {{#if lvl}}
             <li class="inventory-header flexrow">                        
               <h3>
-              {{#if section.isCantrip}}{{localize 'TIDY5E.SpellCantrips'}}
-              {{else if section.isAlways}}{{localize 'TIDY5E.SpellAlwaysPrepared'}}
-              {{else if section.isAtWill}}{{localize 'TIDY5E.SpellAtWill'}}
-              {{else if section.isInnate}}{{localize 'TIDY5E.SpellInnate'}}
-              {{else if section.isPact}}{{localize 'TIDY5E.SpellPact'}}
-              {{else}}{{localize 'TIDY5E.SpellLevel'}} {{lvl}}{{/if}}
+              {{#if section.isCantrip}}{{localize 'DND5E.SpellCantrip'}}
+              {{else if section.isAlways}}{{localize 'DND5E.SpellPrepAlways'}}
+              {{else if section.isAtWill}}{{localize 'DND5E.SpellPrepAtWill'}}
+              {{else if section.isInnate}}{{localize 'DND5E.SpellPrepInnate'}}
+              {{else if section.isPact}}{{localize 'DND5E.SpellProgPact'}}
+              {{else}}{{localize 'DND5E.SpellLevel'}} {{lvl}}{{/if}}
               </h3>
               {{#if section.isCantrip}}
                 <!-- <span class="spell-slots">∞/∞</span> -->

@@ -37,7 +37,7 @@
         <div class="item-image" style="background-image: url({{item.img}})">
           <i class="fa fa-dice-d20"></i>
         </div>
-        <h4 title="{{localize 'TIDY5E.ToggleInfo'}}">
+        <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
           <i class="fas fa-info-circle info-icon"></i>
           {{item.name}}
         </h4>
@@ -50,7 +50,7 @@
 
 
       {{~#if item.data.attuned}} 
-      <div class="item-attuned" title="{{localize 'TIDY5E.Attuned'}}"><i class="fas fa-user-circle"></i></div>
+      <div class="item-attuned" title="{{localize 'DND5E.Attuned'}}"><i class="fas fa-user-circle"></i></div>
       {{/if}}
 
       {{#if ../../owner}}
@@ -88,8 +88,8 @@
 
       {{#if ../../owner}}
       <div class="item-controls">
-        <a class="item-control item-edit" title='{{localize "TIDY5E.EditItem"}}'><i class="fas fa-pencil-alt"></i></a>
-        <a class="item-control item-delete" title='{{localize "TIDY5E.DeleteItem"}}'><i class="fas fa-trash"></i></a>
+        <a class="item-control item-edit" title='{{localize "DND5E.ItemEdit"}}'><i class="fas fa-pencil-alt"></i></a>
+        <a class="item-control item-delete" title='{{localize "DND5E.ItemDelete"}}'><i class="fas fa-trash"></i></a>
       </div>
       {{/if}}
     </li>

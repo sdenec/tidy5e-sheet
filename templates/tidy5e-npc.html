@@ -41,10 +41,12 @@
                 </ul>
               </li>
             </ul>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-type" data-placeholder="{{ localize 'DND5E.Type' }}">{{data.details.type}}</span>,
+            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-type" data-placeholder="{{ localize 'DND5E.Type' }}">{{data.details.type}}</span>
+            <span class="environment"><i class="fas fa-tree"></i><span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}">{{data.details.environment}}</span></span>,
             <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{data.details.alignment}}</span>
             <span class="source-info" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{ localize 'DND5E.Source' }}" class="source">{{data.details.source}}</span>
             <input type="hidden" data-input="{{actor._id}}-type" name="data.details.type" value="{{data.details.type}}" placeholder="{{ localize 'DND5E.Type' }}">
+            <input type="hidden" data-input="{{actor._id}}-environment" name="data.details.environment" value="{{data.details.environment}}" placeholder="{{ localize 'TIDY5E.Environment' }}">
             <input type="hidden" data-input="{{actor._id}}-alignment" name="data.details.alignment" value="{{data.details.alignment}}" placeholder="{{ localize 'DND5E.Alignment' }}">
             <input data-input="{{actor._id}}-source" name="data.details.source" type="hidden" value="{{data.details.source}}" placeholder="{{ localize 'DND5E.Source' }}">
           </li>
@@ -90,16 +92,16 @@
           <ul class="ability-scores">
             {{#each data.abilities as |ability id|}}
             <li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
-              <h4 class="ability-name box-title rollable" title="{{ability.label}}"><!-- {{id}} -->{{ability.abbr}}</h4>
+              <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
               <div class="value">
                 <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
               </div>
               <div class="ability-modifiers value-footer">
-                <span class="ability-mod" title="Modifier">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+                <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
                 <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
                 <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
                 {{{ability.icon}}}</a>
-                <span class="ability-save" title="Saving Throw">{{numberFormat ability.save decimals=0 sign=true}}</span>
+                <span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
               </div>
             </li>
             {{/each}}
@@ -130,7 +132,7 @@
               <span class="skill-passive">({{skill.passive}})</span>
             </li>
             {{/each}}
-            <li class="toggle-proficient" data-show="{{ localize 'TIDY5E.SkillsShow' }}" data-hide="{{ localize 'TIDY5E.SkillsHide' }}" data-edit="{{ localize 'TIDY5E.SkillsEdit' }}"> {{ localize "TIDY5E.SkillsNotProficient" }}</li>
+            <li class="toggle-proficient" data-show="{{ localize 'TIDY5E.Show' }}" data-hide="{{ localize 'TIDY5E.Hide' }}" data-edit="{{ localize 'TIDY5E.Edit' }}"> {{ localize "TIDY5E.SkillsNotProficient" }}</li>
           </ul>
           {{!-- Traits --}}
           {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-traits.html"}}

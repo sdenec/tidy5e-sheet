@@ -6,6 +6,14 @@ import { preloadTidy5eHandlebarsTemplates } from "./templates/tidy5e-npc-templat
  * Extends the base ActorSheet5e class.
  * @type {ActorSheet5e}
  */
+
+let npcScrollPos = 0;
+
+/* handlebars helper funtio to check if strings are empty */
+Handlebars.registerHelper('check', function(value, comparator) {
+  return (value === comparator) ? 'No content' : value;
+});
+
 export default class Tidy5eNPC extends ActorSheet5e {
 
   /**
@@ -94,6 +102,8 @@ export default class Tidy5eNPC extends ActorSheet5e {
   getData() {
     const data = super.getData();
 
+    // const environment = data.data.environment;
+
     // Challenge Rating
     const cr = parseFloat(data.data.details.cr || 0);
     const crLabels = {0: "0", 0.125: "1/8", 0.25: "1/4", 0.5: "1/2"};
@@ -139,6 +149,17 @@ export default class Tidy5eNPC extends ActorSheet5e {
    */
 	activateListeners(html) {
      super.activateListeners(html);
+
+    // store Scroll Pos
+    let attributesTab = html.find('.tab.attributes');
+    attributesTab.scroll(function(){
+      npcScrollPos = $(this).scrollTop();
+    });
+    let tabNav = html.find('a.item:not([data-tab="attributes"])');
+    tabNav.click(function(){
+      npcScrollPos = 0;
+      attributesTab.scrollTop(npcScrollPos);
+    });
 
     // Rollable Health Formula
     html.find(".health .rollable").click(this._onRollHealthFormula.bind(this));
@@ -229,7 +250,9 @@ export default class Tidy5eNPC extends ActorSheet5e {
         await actor.setFlag('tidy5e-sheet', 'allow-delete', true);
       }
     });
+
   }
+
 
   /* -------------------------------------------- */
 
@@ -247,6 +270,12 @@ export default class Tidy5eNPC extends ActorSheet5e {
     this.actor.update({"data.attributes.hp.value": hp, "data.attributes.hp.max": hp});
   }
 
+}
+
+// restore scroll position
+async  function restoreScrollPosition(app, html, data){
+  html.find('.tab.attributes').scrollTop(npcScrollPos);
+  // $('.tab.attributes').scrollTop(npcScrollPos);
 }
 
 // handle skills list display
@@ -269,6 +298,29 @@ async function toggleTraitsList(app, html, data){
       visibleTraits[i].classList.add('even');
     }
   }
+}
+
+// toggle item icon
+async function toggleItemMode(app, html, data){
+
+  // let items = data.actor.items;
+  // for (let item of items) {
+  //   let attr = item.type === "spell" ? "preparation.prepared" : "equipped";
+  //   let isActive = getProperty(item.data, attr);
+  //   item.toggleClass = isActive ? "active" : "";
+  //   if (item.type === "spell") {
+  //     item.toggleTitle = game.i18n.localize(isActive ? "DND5E.SpellPrepared" : "DND5E.SpellUnprepared");
+  //   } else {
+  //     item.toggleTitle = game.i18n.localize(isActive ? "DND5E.Equipped" : "DND5E.Unequipped");
+  //   }
+    html.find('.item-toggle').click(ev => {
+      ev.preventDefault();
+      let itemId = ev.currentTarget.closest(".item").dataset.itemId;
+      let item = app.actor.getOwnedItem(itemId);
+      let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
+      return item.update({ [attr]: !getProperty(item.data, attr) });
+    });
+  // }
 }
 
 // Set Sheet Classes
@@ -352,4 +404,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   setSheetClasses(app, html, data);
   toggleSkillList(app, html, data);
   toggleTraitsList(app, html, data);
+  toggleItemMode(app, html, data);
+  restoreScrollPosition(app, html, data);
+
 });

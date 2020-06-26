@@ -1,5 +1,10 @@
-.tidy5e.sheet.actor.npc .general-information {
-	font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+/*.tidy5e.sheet.actor.npc .general-information {
+	font-family: "Modesto Condensed", "Signika", serif;
+  font-weight: 700;
+}*/
+
+.tidy5e.sheet.actor.npc .ability-scores span {
+  font-weight: 400;
 }
 
 .npc .tidy5e-sheet .sheet-body .tidy5e-delete-lock .tidy5e-delete-toggle {
@@ -10,6 +15,8 @@
 .tidy5e.sheet.actor.npc .xp,
 .tidy5e.sheet.actor.npc .cr {
   font-size: 1.25rem;
+  font-family: "Modesto Condensed", "Signika", serif;
+  font-weight: 700;
 }
 
 .tidy5e.sheet.actor.npc .cr {
@@ -39,6 +46,28 @@
 .tidy5e.sheet.actor.npc .origin-summary li span::after {
 	content: none;
 }
+
+.tidy5e.sheet.actor.npc .origin-summary .environment span {
+  display: none;
+  margin-left: 2px;
+}
+
+.tidy5e.sheet.actor.npc .origin-summary .environment i {
+  margin-right: 2px;
+  color: var(--default-tertiary-color);
+}
+
+
+.tidy5e.sheet.actor.npc .origin-summary .environment:hover i,
+.tidy5e.sheet.actor.npc .origin-summary .environment:focus-within i {
+  color: var(--default-primary-color);
+}
+
+.tidy5e.sheet.actor.npc .origin-summary .environment:hover span,
+.tidy5e.sheet.actor.npc .origin-summary .environment:focus-within span {
+  display: inline-block;
+}
+
 
 /* Size Select */
 
@@ -225,7 +254,7 @@
 }
 
 .tidy5e.sheet.actor.npc .ability-scores .ability-modifiers.value-footer {
-  font-family: "Signika", "Palatino Linotype", serif;
+  font-family: "Signika", sans-serif;
   height: 18px;
   font-size: 12px;
   text-align: center;
@@ -623,7 +652,7 @@
 .tidy5e.sheet.actor.npc .spellcasting-ability select {
   flex: 0 0 90px;
   margin-left: 4px;
-  font-family: "Signika", "Palatino Linotype", serif;
+  font-family: "Signika", sans-serif;
 }
 
 .tidy5e.sheet.actor.npc .caster-ability,

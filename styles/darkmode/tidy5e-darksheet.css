@@ -1,5 +1,5 @@
 :root {
-  --darkmode-primary-color: rgba(255,255,255,.75);
+  --darkmode-primary-color: rgba(255,255,255,.7);
   --darkmode-secondary-color: rgba(255,255,255,.55);
   --darkmode-tertiary-color: rgba(255,255,255,.35);
   --darkmode-light-color: rgba(255,255,255,.15);
@@ -18,9 +18,9 @@
 
 /* Sheet Background */
 .tidy5eDark .tidy5e-sheet {
-    /*background-color: #121212;*/
-    background-color: rgba(0,0,0,.91);
-    font-weight: 300;
+  /*background-color: #121212;*/
+  background-color: rgba(0,0,0,.91);
+  font-family: "Signika Negative", sans-serif;
 }
 
 /* Sheet Header */
@@ -82,7 +82,6 @@
   box-shadow: 0 0 8px rgba(0,0,0,.9) inset;
   border: 1px solid rgba(0,0,0,.7);
   color: var(--darkmode-primary-color);
-  font-weight: 400;
 }
 
 /* Character Level */
@@ -139,7 +138,6 @@
   background: rgba(255,255,255,.05);
   border: none;
   box-shadow: 0 1px 0 0 var(--darkmode-light-color);
-  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e-navigation .item:hover {
@@ -154,7 +152,6 @@
     1px 0 0 0 var(--darkmode-light-color),
     0 -1px 0 0 var(--darkmode-light-color),
     0 0 0 0 var(--darkmode-light-color);
-  font-weight: 600;
 }
 
 .tidy5eDark .tidy5e-navigation .item:first-child.active {
@@ -272,12 +269,10 @@
 
 .tidy5eDark .tidy5e.sheet.actor .traits label {
   color: var(--darkmode-primary-color);
-  font-weight: 600;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .senses div[contenteditable="true"]:before {
   color: var(--darkmode-primary-color);
-  font-weight: 600;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .tag {
@@ -291,7 +286,6 @@
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size {
   background: var(--darkmode-light-color);
   color: var(--darkmode-primary-color);
-  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .traits .actor-size:hover {
@@ -334,7 +328,6 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header h3 {
-  font-weight: 400;
   color: var(--darkmode-tertiary-color);
 }
 
@@ -416,7 +409,6 @@
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within input {
   color: var(--darkmode-primary-color);
-  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-controls a {
@@ -436,7 +428,6 @@
 .tidy5eDark .tidy5e.sheet.actor .spell-slots span.sep,
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .spell-max {
   color: var(--darkmode-primary-color);
-  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i{
@@ -529,7 +520,6 @@
 
 .tidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles,
 .tidy5eDark .tidy5e.sheet.actor .note-entries article .section-titles input {
-  font-weight: 400;
 }
 
 .tidy5eDark .tidy5e-sheet .note-entries article:hover .editor .editor-edit:hover {
@@ -580,7 +570,6 @@
   border: none;
   box-shadow: 0px 0px 0 3px transparent inset;
   transition: box-shadow .3s ease;
-  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet [contenteditable=true]:hover,
@@ -609,17 +598,14 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .origin-summary .proficiency {
-  font-weight: 600;
 }
 
 .tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill .skill-proficiency,
 .tidy5eDark .tidy5e.sheet.actor ul.skills-list li.skill h4 {
-  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name h4,
 .tidy5eDark .tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
-  font-weight: 300;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .rollable:hover {

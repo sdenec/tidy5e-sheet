@@ -57,7 +57,7 @@
 				</div>
 
 				{{!-- Inspiration --}}
-				<div class="inspiration has-note">
+				<div class="inspiration has-note {{#if actor.data.attributes.inspiration}}inspiration-1{{else}}inspiration-0{{/if}}">
 					<input id="{{actor._id}}-inspiration" type="checkbox" name="data.attributes.inspiration" data-dtype="Boolean" {{checked data.attributes.inspiration}}>
 					<label for="{{actor._id}}-inspiration">
 						<i class="inspiration-icon fas fa-dice-d20"></i>
@@ -137,9 +137,9 @@
 							data-dtype="Number" placeholder="10" maxlength="3">
 						</div>
 						<footer class="flex value-footer">
-							<input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+Temp"
+							<input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}"
 							value="{{data.attributes.hp.temp}}" data-dtype="{{data.attributes.hp.type}}" maxlength="3">
-							<input name="data.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+Max"
+							<input name="data.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}"
 							value="{{data.attributes.hp.tempmax}}" data-dtype="{{data.attributes.hp.type}}" maxlength="3">
 						</footer>
 					</li>
@@ -172,7 +172,7 @@
 							<p>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</p>
 						</div>
 						<footer class="flex value-footer">
-							<label for="{{actor._id}}-ini-mod">Mod</label>
+							<label for="{{actor._id}}-ini-mod">{{ localize 'TIDY5E.AbbrMod' }}</label>
 							<input id="{{actor._id}}-ini-mod" class="ini-mod" name="data.attributes.init.value" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}" maxlength="2">
 						</footer>
 					</li>
@@ -205,13 +205,13 @@
 						<li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
 							<h4 class="ability-name rollable">{{ability.label}}</h4>
 							<div class="ability-values">
-								<span class="ability-mod" title="{{ localize 'TIDY5E.AbilityMod' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+								<span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
 								<input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10" maxlength="2">
-								<span class="ability-save" title="{{ localize 'TIDY5E.AbilitySave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
+								<span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
 							</div>
 							<div class="ability-modifiers">
 								<input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
-								<a class="proficiency-toggle ability-proficiency" title="{{ localize 'TIDY5E.AbilityProf' }}">{{{ability.icon}}}</a>
+								<a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">{{{ability.icon}}}</a>
 							</div>
 						</li>
 						{{/each}}
