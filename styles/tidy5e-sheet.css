@@ -1800,11 +1800,13 @@
 	display: none;
 }
 
-.tidy5e.sheet.actor .exhaustion-container.level-0 {
+.tidy5e.sheet.actor .profile.autohide .exhaustion-container.level-0,
+.tidy5e.sheet.actor .profile.autohide .inspiration.inspiration-0 {
 	display: none;
 }
 
-.tidy5e.sheet.actor .profile:hover .exhaustion-container.level-0 {
+.tidy5e.sheet.actor .profile.autohide:hover .exhaustion-container.level-0,
+.tidy5e.sheet.actor .profile.autohide:hover .inspiration.inspiration-0 {
 	display: block;
 }
 
