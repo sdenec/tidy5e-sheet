@@ -13,23 +13,23 @@
 .tidy5e-sheet h1,
 .tidy5e-sheet h2,
 .tidy5e-sheet h3 {
-	font-family: "Modesto Condensed", "Signika", serif;
-	font-weight: 700;
-  /*letter-spacing: .02em;*/
+	/*font-family: "Modesto Condensed", "Signika", serif;*/
+	/*font-weight: 700;*/
+	font-family: "Nodesto", "Signika", serif;
 	margin: 0;
 	padding: 0;
 	border: none;
 }
 
 .tidy5e.sheet.actor .ability-scores {
-	font-family: "Modesto Condensed", "Signika", serif;
-  /*letter-spacing: .02em;*/
+	/*font-family: "Modesto Condensed", "Signika", serif;*/
+	font-family: "Nodesto", "Signika", serif;
 }
 
 .tidy5e.sheet.actor .ability-scores h4,
 .tidy5e.sheet.actor .ability-scores input,
 .tidy5e.sheet.actor .ability-scores span {
-	font-weight: 700;
+	/*font-weight: 700;*/
 }
 
 .tidy5e-navigation {
@@ -37,17 +37,17 @@
 }
 
 .tidy5e.sheet.actor .header-attributes .value {
-	font-family: "Modesto Condensed", "Signika", serif;
-	font-weight: 700;
-  /*letter-spacing: .02em;*/
+	/*font-family: "Modesto Condensed", "Signika", serif;*/
+	/*font-weight: 700;*/
+	font-family: "Nodesto", "Signika", serif;
 	font-size: 24px;
 	margin: 6px 0 2px 0;
 }
 
 .tidy5e.sheet.actor .header-attributes .ac-display {
-	font-family: "Modesto Condensed", "Signika", serif;
-	font-weight: 700;
-  /*letter-spacing: .02em;*/
+	/*font-family: "Modesto Condensed", "Signika", serif;*/
+	/*font-weight: 700;*/
+	font-family: "Nodesto", "Signika", serif;
 	height: 40px;
   font-size: 44px;
   padding-top: 4px;
@@ -90,9 +90,9 @@
 }
 
 .tidy5e.sheet.actor .spellcasting-ability h3.spell-dc {
-	font-family: "Modesto Condensed", "Signika", serif;
-	font-weight: 700;
-  /*letter-spacing: .02em;*/
+	/*font-family: "Modesto Condensed", "Signika", serif;*/
+	/*font-weight: 700;*/
+	font-family: "Nodesto", "Signika", serif;
 	font-size: 24px;
   text-align: left;
 }
@@ -107,13 +107,13 @@
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute {
-	font-family: "Modesto Condensed", "Signika", serif;
-  /*letter-spacing: .02em;*/
+	/*font-family: "Modesto Condensed", "Signika", serif;*/
+	font-family: "Nodesto", "Signika", serif;
 }
 
 .tidy5e.sheet.actor ul.attributes li.attribute input,
 .tidy5e.sheet.actor ul.attributes li.attribute h4 {
-	font-weight: 700;
+	/*font-weight: 700;*/
 }
 
 
