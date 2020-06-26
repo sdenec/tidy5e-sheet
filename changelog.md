@@ -16,9 +16,11 @@ Thank you very much!
 
 - updated fonts with official fonts provided by foundry
 
-- exhaustion is now hidden by default when exhaustion level is 0.
+- new setting to autohide icons when their value is 0.
 
 - added darkmode support for skill customizer module
+
+- more darkmode css fixes
 
 *Version 0.2.4*
 
