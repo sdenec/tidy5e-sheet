@@ -8,6 +8,10 @@ Brazilian Portuguese: @rinnocenti
 Thank you very much!
 
 
+*Version 0.2.6*
+
+- reverted back to Nodesto until the Modesto Font becomes the default for dnd5e System
+
 *Version 0.2.5*
 
 - translation updates
