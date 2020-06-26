@@ -13,16 +13,16 @@
 		"tidy5e-npc.js"
 	],
 	"styles": [
-		"fonts/signika-negative/signika-negative.css",
+		"./fonts/signika-negative/signika-negative.css",
 		"../fonts/modesto-condensed/modesto-condensed.css",
-		"styles/tidy5e-sheet.css",
-		"styles/tidy5e-items.css",
-		"styles/tidy5e-modules.css",
-		"styles/tidy5e-npc.css",
-		"styles/darkmode/tidy5e-darksheet.css",
-		"styles/darkmode/tidy5e-darknpc.css",
-		"styles/darkmode/tidy5e-darkitems.css",
-		"styles/darkmode/tidy5e-darkmodules.css"
+		"./styles/tidy5e-sheet.css",
+		"./styles/tidy5e-items.css",
+		"./styles/tidy5e-modules.css",
+		"./styles/tidy5e-npc.css",
+		"./styles/darkmode/tidy5e-darksheet.css",
+		"./styles/darkmode/tidy5e-darknpc.css",
+		"./styles/darkmode/tidy5e-darkitems.css",
+		"./styles/darkmode/tidy5e-darkmodules.css"
 	],
 	"languages": [
 		{
