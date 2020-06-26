@@ -3,7 +3,7 @@
 }
 
 .tidy5eDark .dnd5e.sheet.item input[type="text"] {
-	color: inherit;
+	color: var(--darkmode-primary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item input[type="text"]::placeholder {
@@ -14,6 +14,10 @@
 .tidy5eDark .dnd5e.sheet.item input[type="text"]:focus {
 	border: none;
 	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
+}
+
+.dnd5e.sheet.item button {
+	color: var(--darkmode-primary-color);
 }
 
 /* Sheet Header */
@@ -269,4 +273,15 @@
 .tidy5eDark #actor-flags.app.dnd5e button:hover {
 	background: var(--darkmode-primary-accent);
 	box-shadow: none;
+}
+
+.tidy5eDark .dnd5e.sheet.item a.entity-link, 
+.tidy5eDark .dnd5e.sheet.item a.inline-roll {
+  background: var(--darkmode-primary-accent);
+  color: #121212; 
+}
+
+.tidy5eDark .dnd5e.sheet.item a.entity-link i,
+.tidy5eDark .dnd5e.sheet.item a.inline-roll i {
+  color: #121212;
 }
