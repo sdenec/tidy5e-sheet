@@ -193,13 +193,17 @@ export const addFavorites = async function(app, html, data, position) {
             break;
             case 'spell':
             if (item.data.preparation.mode && item.data.preparation.mode !== 'prepared') {
+
               if(item.data.preparation.mode == 'always') {
-                favSpellsPrepMode['always'].spells.push(item);
-              } else if(item.data.preparation.mode == 'atwill') {
+                // favSpellsPrepMode['always'].spells.push(item);
+                item.canPrep = true;
+                item.alwaysPrep = true;
+              } else 
+              if(item.data.preparation.mode == 'atwill') {
                 favSpellsPrepMode['atwill'].spells.push(item);
               } else if(item.data.preparation.mode == 'innate') {
                 favSpellsPrepMode['innate'].spells.push(item);
-              } else {
+              } else if(item.data.preparation.mode == 'pact'){
                 favSpellsPrepMode['pact'].spells.push(item);
               }
               spellPrepModeCount++;
