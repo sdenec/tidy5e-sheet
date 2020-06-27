@@ -7,6 +7,11 @@ import { addFavorites } from "./tidy5e-favorites.js";
 
 let scrollPos = 0;
 
+// handlebar helper compare string
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	
 	get template() {
@@ -383,7 +388,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
-	// console.log(data);
+	console.log(data);
 });
 
 Hooks.once("ready", () => {
