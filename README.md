@@ -7,6 +7,7 @@ Japanese: @BrotherSharp, @Asami
 Italian: @Simone [UTC +2]
 Korean: @KLO
 Brazilian Portuguese: @rinnocenti
+French: @temvaryen
 
 Thank you very much!
 
