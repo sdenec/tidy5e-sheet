@@ -416,6 +416,7 @@
 
 .tidy5e.sheet.actor.npc .inventory-list .item .item-name .item-image i {
   font-size: 18px;
+  line-height: 23px;
 }
 
 .tidy5e.sheet.actor.npc .inventory-list .inventory-header h3 {
@@ -677,6 +678,26 @@
   border-right: none;
 }
 
+.tidy5e.sheet.actor.npc .spellbook-title span {
+  display: none;
+  font-size: 14px;
+}
+
+.tidy5e.sheet.actor.npc .spellbook-title.toggle-spellbook span {
+  display: inline-block;
+}
+
+.tidy5e.sheet.actor.npc .spellbook-title.toggle-spellbook {
+  opacity: .4;
+  transition: opacity .3s ease;
+  cursor: pointer;
+}
+
+.tidy5e.sheet.actor.npc .spellbook-title.toggle-spellbook:hover,
+.tidy5e.sheet.actor.npc .spellbook-title.toggle-spellbook.show {
+  opacity: 1;
+}
+
 .tidy5e.sheet.actor.npc .counters {
   display: flex;
   flex: none;
@@ -723,3 +744,4 @@
   line-height: 12px;
   padding-top: 4px;
 }
+

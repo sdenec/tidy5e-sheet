@@ -342,6 +342,24 @@ async function setSheetClasses(app, html, data) {
   }
 }
 
+// Hide empty Spellbook
+async function hideSpellbook(app, html, data) {
+  let spellbook = html.find('.spellbook-header');
+
+  if (spellbook.hasClass('spellbook-empty')){
+    html.find('.spellbook-title').addClass('toggle-spellbook');
+    html.find('.spellbook-title span').show();
+    html.find('.spellbook-title + ol').hide();
+    html.find('.spellcasting-ability').hide();
+
+    $('.toggle-spellbook').on('click', function(){
+      html.find('.spellbook-title').toggleClass('show');
+      html.find('.spellbook-title + ol').toggle();
+      html.find('.spellcasting-ability').toggle();
+    });
+  }
+}
+
 Actors.registerSheet("dnd5e", Tidy5eNPC, {
     types: ["npc"],
     makeDefault: true
@@ -406,5 +424,5 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   toggleTraitsList(app, html, data);
   toggleItemMode(app, html, data);
   restoreScrollPosition(app, html, data);
-
+  hideSpellbook(app, html, data);
 });

@@ -315,7 +315,8 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.attuned,
-.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.prepared {
+.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.prepared,
+.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.alwaysPrepared  {
   background: var(--darkmode-secondary-accent);
 }
 

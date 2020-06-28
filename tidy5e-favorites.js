@@ -162,7 +162,11 @@ export const addFavorites = async function(app, html, data, position) {
           let isActive = getProperty(item.data, attr);
           item.toggleClass = isActive ? "active" : "";
           if (item.type === "spell") {
-            item.toggleTitle = game.i18n.localize(isActive ? "DND5E.SpellPrepared" : "DND5E.SpellUnprepared");
+            if(item.data.preparation.mode == 'always'){
+              item.toggleTitle = game.i18n.localize("DND5E.SpellPrepAlways");
+            } else {
+              item.toggleTitle = game.i18n.localize(isActive ? "DND5E.SpellPrepared" : "DND5E.SpellUnprepared");
+            }
           } else {
             item.toggleTitle = game.i18n.localize(isActive ? "DND5E.Equipped" : "DND5E.Unequipped");
           }
@@ -193,13 +197,17 @@ export const addFavorites = async function(app, html, data, position) {
             break;
             case 'spell':
             if (item.data.preparation.mode && item.data.preparation.mode !== 'prepared') {
+
               if(item.data.preparation.mode == 'always') {
-                favSpellsPrepMode['always'].spells.push(item);
-              } else if(item.data.preparation.mode == 'atwill') {
+                // favSpellsPrepMode['always'].spells.push(item);
+                item.canPrep = true;
+                item.alwaysPrep = true;
+              } else 
+              if(item.data.preparation.mode == 'atwill') {
                 favSpellsPrepMode['atwill'].spells.push(item);
               } else if(item.data.preparation.mode == 'innate') {
                 favSpellsPrepMode['innate'].spells.push(item);
-              } else {
+              } else if(item.data.preparation.mode == 'pact'){
                 favSpellsPrepMode['pact'].spells.push(item);
               }
               spellPrepModeCount++;

@@ -4,9 +4,22 @@ Japanese: @BrotherSharp, @Asami
 Italian: @Simone [UTC +2]
 Korean: @KLO
 Brazilian Portuguese: @rinnocenti
+French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.7*
+
+- french translation added
+
+- traits alternate placement fix (when gm and player had different settings the sheets would flash when opened simultaneously)
+- always prepared sorting fix for favorites
+- always prepared css styling
+
+- limited view css fix
+
+- npc sheets now hide empty spellbooks. It can be shown by clicking the headline or dragging a spell onto the npc sheet.
+- fixed max-length issue for CR field.
 
 *Version 0.2.6*
 

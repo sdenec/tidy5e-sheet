@@ -7,6 +7,11 @@ import { addFavorites } from "./tidy5e-favorites.js";
 
 let scrollPos = 0;
 
+// handlebar helper compare string
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	
 	get template() {
@@ -189,43 +194,44 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	}
 }
 
+// should no longer be needed
 // Migrate Traits to default dnd5e data
-async function migrateTraits(app, html, data) {
-	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+// async function migrateTraits(app, html, data) {
+// 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 
-	if (!actor.getFlag('tidy5e-sheet', 'useCoreTraits')){
+// 	if (!actor.getFlag('tidy5e-sheet', 'useCoreTraits')){
 	
-		console.log('Tidy5e Sheet | Data needs migration! Migrating.');
+// 		console.log('Tidy5e Sheet | Data needs migration! Migrating.');
 
-		let coreTrait = (actor.data.data.details.trait !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
-		let coreIdeal = (actor.data.data.details.ideal !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
-		let coreBond = (actor.data.data.details.bond !== '') ? actor.data.data.details.bond+"<br>Migrated Content:" : '';
-		let coreFlaw = (actor.data.data.details.flaw !== '') ? actor.data.data.details.flaw+"<br>Migrated Content:" : '';
+// 		let coreTrait = (actor.data.data.details.trait !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
+// 		let coreIdeal = (actor.data.data.details.ideal !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
+// 		let coreBond = (actor.data.data.details.bond !== '') ? actor.data.data.details.bond+"<br>Migrated Content:" : '';
+// 		let coreFlaw = (actor.data.data.details.flaw !== '') ? actor.data.data.details.flaw+"<br>Migrated Content:" : '';
 
-		let trait = (actor.data.data.details.personality && actor.data.data.details.personality.value) ? coreTrait + actor.data.data.details.personality.value : actor.data.data.details.trait;
-		let ideal = (actor.data.data.details.ideals && actor.data.data.details.ideals.value) ? coreIdeal + actor.data.data.details.ideals.value : actor.data.data.details.ideal;
-		let bond = (actor.data.data.details.bonds && actor.data.data.details.bonds.value) ? coreBond + actor.data.data.details.bonds.value : actor.data.data.details.bond;
-		let flaw = (actor.data.data.details.flaws && actor.data.data.details.flaws.value) ? coreFlaw + actor.data.data.details.flaws.value : actor.data.data.details.flaw;
+// 		let trait = (actor.data.data.details.personality && actor.data.data.details.personality.value) ? coreTrait + actor.data.data.details.personality.value : actor.data.data.details.trait;
+// 		let ideal = (actor.data.data.details.ideals && actor.data.data.details.ideals.value) ? coreIdeal + actor.data.data.details.ideals.value : actor.data.data.details.ideal;
+// 		let bond = (actor.data.data.details.bonds && actor.data.data.details.bonds.value) ? coreBond + actor.data.data.details.bonds.value : actor.data.data.details.bond;
+// 		let flaw = (actor.data.data.details.flaws && actor.data.data.details.flaws.value) ? coreFlaw + actor.data.data.details.flaws.value : actor.data.data.details.flaw;
 
-		await actor.update({
-			"data.details.trait": trait,
-			"data.details.ideal": ideal,
-			"data.details.bond": bond,
-			"data.details.flaw": flaw,
-			"data.details.personality": null,
-			"data.details.-=personality": null,
-			"data.details.ideals": null,
-			"data.details.-=ideals": null,
-			"data.details.bonds": null,
-			"data.details.-=bonds": null,
-			"data.details.flaws": null,
-			"data.details.-=flaws": null,
-			"flags.tidy5e-sheet.useCoreTraits":true
-		});
+// 		await actor.update({
+// 			"data.details.trait": trait,
+// 			"data.details.ideal": ideal,
+// 			"data.details.bond": bond,
+// 			"data.details.flaw": flaw,
+// 			"data.details.personality": null,
+// 			"data.details.-=personality": null,
+// 			"data.details.ideals": null,
+// 			"data.details.-=ideals": null,
+// 			"data.details.bonds": null,
+// 			"data.details.-=bonds": null,
+// 			"data.details.flaws": null,
+// 			"data.details.-=flaws": null,
+// 			"flags.tidy5e-sheet.useCoreTraits":true
+// 		});
 
-		console.log('Tidy5e Sheet | Data migrated to dnd5e core values.')
-	}
-}
+// 		console.log('Tidy5e Sheet | Data migrated to dnd5e core values.')
+// 	}
+// }
 
 // handle traits list display
 async function toggleTraitsList(app, html, data){
@@ -301,13 +307,9 @@ async function setSheetClasses(app, html, data) {
 		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
 	}
 	if (game.settings.get("tidy5e-sheet", "moveTraits")) {
-		if(!actor.getFlag("tidy5e-sheet","moveTraits")){
-			await actor.setFlag("tidy5e-sheet","moveTraits", true);
-		}
-	} else {
-		if(actor.getFlag("tidy5e-sheet","moveTraits")){
-			await actor.unsetFlag("tidy5e-sheet","moveTraits");
-		}
+		let altPos = html.find('.alt-trait-pos');
+		let traits = html.find('.traits');
+		altPos.append(traits);
 	}
 	if (!game.settings.get("tidy5e-sheet", "pcToggleTraits")) {
 		html.find('.tidy5e-sheet .traits').addClass('always-visible');
@@ -377,16 +379,18 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
+	// migrateTraits(app, html, data);
 	addFavorites(app, html, data, scrollPos);
-	migrateTraits(app, html, data);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
 	// console.log(data);
+	console.log("Tidy5e Sheet rendered!");
 });
 
 Hooks.once("ready", () => {
+	console.log("Tidy5e Sheet is ready!");
 	
 	if (window.BetterRolls) {
 	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
