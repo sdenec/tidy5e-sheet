@@ -162,7 +162,11 @@ export const addFavorites = async function(app, html, data, position) {
           let isActive = getProperty(item.data, attr);
           item.toggleClass = isActive ? "active" : "";
           if (item.type === "spell") {
-            item.toggleTitle = game.i18n.localize(isActive ? "DND5E.SpellPrepared" : "DND5E.SpellUnprepared");
+            if(item.data.preparation.mode == 'always'){
+              item.toggleTitle = game.i18n.localize("DND5E.SpellPrepAlways");
+            } else {
+              item.toggleTitle = game.i18n.localize(isActive ? "DND5E.SpellPrepared" : "DND5E.SpellUnprepared");
+            }
           } else {
             item.toggleTitle = game.i18n.localize(isActive ? "DND5E.Equipped" : "DND5E.Unequipped");
           }
