@@ -309,6 +309,10 @@
 	z-index: 1;
 }
 
+.tidy5e.sheet.actor .limited .portrait {
+	mix-blend-mode: normal;
+}
+
 .tidy5e.sheet.actor .profile.disable-hp-overlay .portrait {
 	mix-blend-mode: initial;
 }
@@ -2386,6 +2390,13 @@
 	margin-right: 1rem;
 }
 
+.tidy5e-sheet.limited .note-entries {
+  display: flex;
+  height: 100%;
+  align-items: stretch;
+}
+
+
 .tidy5e-sheet .note-entries article {
 	background: var(--default-faint-color);
 	border-radius: 5px;
@@ -2394,9 +2405,19 @@
 	position: relative;
 }
 
+.tidy5e-sheet.limited .note-entries article {
+  flex: 1;
+  margin: 0;
+}
+
 .tidy5e-sheet .note-entries article:last-child {
 	margin-bottom: 0;
 }
+
+.tidy5e-sheet.limited .note-entries article:last-child {
+  margin-left: 8px;
+}
+
 
 .tidy5e-sheet .note-entries article:hover .editor .editor-edit {
 	display: block;

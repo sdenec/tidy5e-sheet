@@ -385,7 +385,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
-	console.log(data);
+	// console.log(data);
 	console.log("Tidy5e Sheet rendered!");
 });
 

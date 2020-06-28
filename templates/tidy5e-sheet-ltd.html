@@ -1,5 +1,5 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-	<div class="tidy5e-sheet">
+	<div class="tidy5e-sheet limited">
 		{{!-- Sheet Header --}}
 		<header class="flex tidy5e-header">
 			<div class="profile">
@@ -14,7 +14,7 @@
 
 			{{!-- Biography Tab --}}
 			<div class="tab biography flexrow">
-				<div class="right-notes note-entries">
+				<div class="note-entries">
 					<article>
 						<div class="section-titles biopage">Appearance</div>
 						{{editor content=data.details.description.value target="data.details.description.value" button=true owner=owner editable=editable}}
