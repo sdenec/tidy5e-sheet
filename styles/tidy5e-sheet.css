@@ -2111,7 +2111,8 @@
 
 /* Equipped/Prepared Highlight */
 .tidy5e.sheet.actor .inventory-list .item.attuned,
-.tidy5e.sheet.actor .inventory-list .item.prepared {
+.tidy5e.sheet.actor .inventory-list .item.prepared,
+.tidy5e.sheet.actor .inventory-list .item.alwaysPrepared {
 	background: var(--default-secondary-accent);
 }
 
@@ -2228,6 +2229,7 @@
 
 .tidy5e.sheet.actor .favorites .inventory-list .item .item-name .item-image i {
   font-size: 18px;
+  line-height: 23px;
 }
 
 .tidy5e.sheet.actor .inventory-list .item.expanded .item-name .item-image {
@@ -2330,8 +2332,13 @@
  
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle,
 .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle,
-.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle  {
+.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle {
 	color: rgba(0,0,0,.25);
+}
+
+.tidy5e.sheet.actor .inventory-list .alwaysPrepared .spell-prepared {
+	display: none;
+	/*cursor: default;*/
 }
 
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle:hover,
