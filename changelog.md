@@ -8,6 +8,14 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.8*
+
+- editor fields now get saved when multiple ones are edited at the same time. Big Thanks to @Forien!
+
+- fixed the spell slot/spell slot override fields in favtab
+
+- clicking a modificator next to an attribute now let you roll an ability test or saving throws directly
+
 *Version 0.2.7*
 
 - french translation added

@@ -296,7 +296,14 @@ export const addFavorites = async function(app, html, data, position) {
             data[path] = Number(ev.target.value);
             app.actor.getOwnedItem(itemId).update(data);
             // app.activateFavs = true;
-          })
+          });
+
+          // changing the spell slot values and overrides
+          favHtml.find('.spell-slots input').change(ev => {
+            let path =  ev.target.dataset.target;
+            let data = Number(ev.target.value);
+            app.actor.update({[path]: data});
+          });
 
           // creating charges for the item
           favHtml.find('.addCharges').click(ev => {
