@@ -33,8 +33,33 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		super._createEditor(target, editorOptions, initialContent);
 	}
 
+	// save all simultaneously open editor field when one field is saved
+	async _onEditorSave(target, element, content) {
+  	return this.submit();
+	}
+
+	// _onRollAbilityTest(event) {
+ //    event.preventDefault();
+ //    let ability = event.currentTarget.parentElement.dataset.ability;
+ //    this.actor.rollAbility(ability, {event: event});
+ //  }
+
 	activateListeners(html) {
 		super.activateListeners(html);
+
+		// Modificator Ability Check
+    html.find('.ability-mod').click( async (event) => {
+    	event.preventDefault();
+	    let ability = event.currentTarget.parentElement.parentElement.dataset.ability;
+	    this.actor.rollAbilityTest(ability, {event: event});
+    });
+
+		// Modificator Ability Saving Throw
+    html.find('.ability-save').click( async (event) => {
+    	event.preventDefault();
+	    let ability = event.currentTarget.parentElement.parentElement.dataset.ability;
+	    this.actor.rollAbilitySave(ability, {event: event});
+    });
 
 		// store Scroll Pos
 		let attributesTab = html.find('.tab.attributes');
@@ -190,6 +215,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
         await actor.setFlag('tidy5e-sheet', 'traitsExpanded', true);
       }
     });
+
 
 	}
 }

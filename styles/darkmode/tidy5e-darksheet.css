@@ -175,14 +175,11 @@
   border-color: var(--darkmode-faint-color);
 }
 
-/*.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers {
-  opacity: .38;
+.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-mod:hover,
+.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability .ability-save:hover {
+  color: var(--darkmode-primary-accent);
 }
 
-.tidy5eDark .tidy5e.sheet.actor .ability-scores .ability:hover .ability-modifiers {
-  opacity: .87;
-}
-*/
 .tidy5eDark .tidy5e.sheet.actor .proficient .proficiency-toggle {
   color: var(--darkmode-primary-color);
 }
