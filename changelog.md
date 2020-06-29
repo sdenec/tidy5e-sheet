@@ -10,7 +10,7 @@ Thank you very much!
 
 *Version 0.2.8*
 
-- editor fields now get saved when multiple ones are edited at the same time.
+- editor fields now get saved when multiple ones are edited at the same time. Big Thanks to @Forien!
 
 - fixed the spell slot/spell slot override fields in favtab
 
