@@ -45,7 +45,7 @@
                 <span class="spell-slots">
                   <input type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.value" value="{{section.value}}" placeholder="0"/>
                   /
-                  <input class="spell-max" type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.max" value="{{section.max}}" placeholder="0"/>
+                  <input class="spell-max" type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.override" value="{{section.max}}" placeholder="0"/>
                 </span>
                 {{else}}
                 <!-- <span class="spell-slots">
@@ -84,7 +84,7 @@
                 <span class="spell-slots">
                   <input type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.value" value="{{section.value}}" placeholder="0"/>
                   /
-                  <input class="spell-max" type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.max" value="{{section.max}}" placeholder="0"/>
+                  <input class="spell-max" type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.override" value="{{section.max}}" placeholder="0"/>
                 </span>
               {{/if}}
               <div class="item-detail item-action" title="{{localize 'DND5E.SpellUsage'}}"><i class="fas fa-hourglass"></i>
