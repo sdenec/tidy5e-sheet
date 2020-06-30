@@ -150,6 +150,20 @@ export default class Tidy5eNPC extends ActorSheet5e {
 	activateListeners(html) {
      super.activateListeners(html);
 
+    // Modificator Ability Test Throw
+     html.find('.ability-mod').click( async (event) => {
+      event.preventDefault();
+      let ability = event.currentTarget.parentElement.parentElement.dataset.ability;
+      this.actor.rollAbilityTest(ability, {event: event});
+    });
+
+    // Modificator Ability Saving Throw
+    html.find('.ability-save').click( async (event) => {
+      event.preventDefault();
+      let ability = event.currentTarget.parentElement.parentElement.dataset.ability;
+      this.actor.rollAbilitySave(ability, {event: event});
+    });
+
     // store Scroll Pos
     let attributesTab = html.find('.tab.attributes');
     attributesTab.scroll(function(){
