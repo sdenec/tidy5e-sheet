@@ -262,7 +262,8 @@
   margin: 0 1px;
   background: var(--default-faint-color);
   border-radius: 3px;
-  display: block;
+  display: flex;
+  align-items: center;
   width: auto;
   position: static;
   opacity: 1;
@@ -272,9 +273,10 @@
 .tidy5e.sheet.actor.npc .ability-scores .ability .ability-modifiers span.ability-save {
   border: none;
   border-radius: 0;
-  height: 18px;
-  line-height: inherit;
+  height: 16px;
+  line-height: 16px;
   font-size: inherit;
+  flex: 1;
 }
 
 .tidy5e.sheet.actor.npc .ability-scores .ability .ability-modifiers a {
@@ -294,13 +296,19 @@
   background: var(--default-secondary-accent);
 }
 
+.tidy5e.sheet.actor.npc .ability-scores .ability .value-footer .sep {
+  flex: 0;
+  margin: 0;
+}
+
+.tidy5e.sheet.actor.npc .ability-scores .ability:not(.proficient) .value-footer .sep,
 .tidy5e.sheet.actor.npc .ability-scores .ability:not(.proficient) .value-footer .ability-save {
 	display: none;
 }
-
+/*
 .tidy5e.sheet.actor.npc .ability-scores .value-footer .ability-save::before {
 	content: '/';
-}
+}*/
 
 /* Left Pane */
 .tidy5e.sheet.actor.npc .left-pane {
