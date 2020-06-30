@@ -19,10 +19,7 @@ export const addFavorites = async function(app, html, data, position) {
   let favItems = [];
   let favFeats = [];
   let favSpellsPrepMode = {
-    'always': {
-      isAlways: true,
-      spells: []
-    }, 'atwill': {
+    'atwill': {
       isAtWill: true,
       spells: []
     }, 'innate': {
@@ -230,6 +227,32 @@ export const addFavorites = async function(app, html, data, position) {
             break;
           }
         }
+      }
+
+      // sorting favSpells alphabetically
+      const favSpellsArray = Object.keys(favSpells);
+      for (let key of favSpellsArray){
+        favSpells[key].spells.sort(function(a, b){
+         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+         if (nameA < nameB) //sort string ascending
+          return -1;
+         if (nameA > nameB)
+          return 1;
+         return 0; //default return value (no sorting)
+        });
+      }
+
+      // sorting favSpellsPrepMode alphabetically
+      const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
+      for (let key of favSpellsPrepModeArray){
+        favSpellsPrepMode[key].spells.sort(function(a, b){
+         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+         if (nameA < nameB) //sort string ascending
+          return -1;
+         if (nameA > nameB)
+          return 1;
+         return 0; //default return value (no sorting)
+        });
       }
 
       let attributesTab = html.find('.item[data-tab="attributes"]');
