@@ -10,8 +10,6 @@
 * and can be found at https://github.com/syl3r86/favtab.
 */
 export const addFavorites = async function(app, html, data, position) {
-  
-  let StoredPosition = position;
 
   // creating the favourite tab and loading favourited items
   let favMarker = $('<i class="fas fa-bookmark"></i>');
@@ -78,8 +76,6 @@ export const addFavorites = async function(app, html, data, position) {
   let spellCount = 0
   let spellPrepModeCount = 0
   let items = data.actor.items;
-
-  // console.log(items);
 
   let renderFavTab = false;
 
@@ -148,7 +144,6 @@ export const addFavorites = async function(app, html, data, position) {
             item.isOnCooldown = true;
             item.labels = {recharge : game.i18n.localize("DND5E.FeatureRechargeOn")+" ["+item.data.recharge.value+"+]", rechargeValue : "["+item.data.recharge.value+"+]"};
           }
-          // console.log(item);
           // adding info if item has quantity more than one
           item.isStack = false;
           if (item.data.quantity && item.data.quantity > 1) {
@@ -258,6 +253,7 @@ export const addFavorites = async function(app, html, data, position) {
       let attributesTab = html.find('.item[data-tab="attributes"]');
       let favContainer = html.find('.favorites-wrap');
       let favContent = html.find('.favorites-target');
+      let favoritesTab = html.find('.tab.attributes');
       if (renderFavTab) {
 
       // rendering of the favtab
@@ -399,7 +395,7 @@ export const addFavorites = async function(app, html, data, position) {
       favContainer.addClass('hasFavs');
       favContent.append(favHtml);
       attributesTab.prepend(favMarker);
-      $('.tab.attributes').scrollTop(position);
+      html.find('.tab.attributes').scrollTop(position.top);
     }
 
     Hooks.callAll("renderedTidy5eSheet", app, html, data);

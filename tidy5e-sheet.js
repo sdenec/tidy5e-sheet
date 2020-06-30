@@ -5,7 +5,7 @@ import ActorSheet5eCharacter from "../../systems/dnd5e/module/actor/sheets/chara
 import { preloadTidy5eHandlebarsTemplates } from "./templates/tidy5e-templates.js";
 import { addFavorites } from "./tidy5e-favorites.js";
 
-let scrollPos = 0;
+let position = 0;
 
 // handlebar helper compare string
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
@@ -38,30 +38,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
   	return this.submit();
 	}
 
-	// save scroll position
-  // async _render(force = false, options = {}) {
-  //   this.saveScrollPos();
-  //   await super._render(force, options);
-  //   this.setScrollPos();
-  // }
-  
-  // saveScrollPos() {
-  //   if (this.form === null) return;
-  //   const html = $(this.form);
-  //   this.scrollPos = {
-  //     top: html.scrollTop(),
-  //     left: html.scrollLeft()
-  //   }
-  // }
-  
-  // setScrollPos() {
-  //   if (this.form === null || this.scrollPos === undefined) return;
-  //   const html = $(this.form);
-  //   html.scrollTop(this.scrollPos.top);
-  //   html.scrollLeft(this.scrollPos.left);
-  // }
-  
-
 	activateListeners(html) {
 		super.activateListeners(html);
 
@@ -80,14 +56,14 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     });
 
 		// store Scroll Pos
-		let attributesTab = html.find('.tab.attributes');
+		const attributesTab = html.find('.tab.attributes');
 		attributesTab.scroll(function(){
-			scrollPos = $(this).scrollTop();
+			position = this.scrollPos = {top: attributesTab.scrollTop()};
 		});
 		let tabNav = html.find('a.item:not([data-tab="attributes"])');
 		tabNav.click(function(){
-			scrollPos = 0;
-			attributesTab.scrollTop(scrollPos);
+			this.scrollPos = {top: 0};
+			attributesTab.scrollTop(0);
 		});
 
 		// toggle item delete protection
@@ -200,10 +176,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  		// changing item qty and charges values (removing if both value and max are 0)
     html.find('.item:not(.inventory-header) input').change(event => {
     	let value = event.target.value;
-    	// console.log(value);
 			let actor = this.actor;
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
-      // console.log(itemId);
       let path = event.target.dataset.path;
       let data = {};
       data[path] = Number(event.target.value);
@@ -281,7 +255,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 async function toggleTraitsList(app, html, data){
   html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
   let visibleTraits = html.find('.traits .form-group:not(.trait-hidden)');
-  // console.log(visibleTraits);
   for (let i = 0; i < visibleTraits.length; i++) {
     if(i % 2 != 0){
       visibleTraits[i].classList.add('even');
@@ -430,7 +403,7 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	// migrateTraits(app, html, data);
-	addFavorites(app, html, data, scrollPos);
+	addFavorites(app, html, data, position);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
