@@ -12,7 +12,8 @@
 
 .tidy5e-sheet h1,
 .tidy5e-sheet h2,
-.tidy5e-sheet h3 {
+.tidy5e-sheet h3,
+.tidy5e-sheet h4.attribute-name {
 	/*font-family: "Modesto Condensed", "Signika", serif;*/
 	/*font-weight: 700;*/
 	font-family: "Nodesto", "Signika", serif;
@@ -421,6 +422,7 @@
 }
 
 /* Inspiration & Rest */
+.tidy5e.sheet.actor .profile .inspiration.disabled,
 .tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .inspiration, 
 .tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
 .tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .rest-container, 
@@ -1031,6 +1033,7 @@
 	font-size: 14px;
 	opacity: .4;
 	transition: opacity .3s ease;
+	cursor: pointer;
 }
 
 .tidy5e.sheet.actor .ability-scores .ability:hover .ability-mod,
@@ -1096,7 +1099,8 @@
 
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
 	font-size: 10px;
-  line-height: 14px;
+  /*line-height: 14px;*/
+  line-height: 1;
 }
 
 .tidy5e.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency i {
@@ -1704,6 +1708,7 @@
 
 /* Exhaustion Portrait */
 
+.tidy5e.sheet.actor .profile .exhaustion-container.disabled,
 .tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container, 
 .tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container, 
 .tidy5e.sheet.actor .hp-0 .exhaustion-container {

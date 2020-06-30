@@ -101,7 +101,7 @@
                 <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
                 <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
                 {{{ability.icon}}}</a>
-                <span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
+                <span class="sep">/</span><span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
               </div>
             </li>
             {{/each}}

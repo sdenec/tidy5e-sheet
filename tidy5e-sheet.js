@@ -5,7 +5,7 @@ import ActorSheet5eCharacter from "../../systems/dnd5e/module/actor/sheets/chara
 import { preloadTidy5eHandlebarsTemplates } from "./templates/tidy5e-templates.js";
 import { addFavorites } from "./tidy5e-favorites.js";
 
-let scrollPos = 0;
+let position = 0;
 
 // handlebar helper compare string
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
@@ -38,12 +38,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
   	return this.submit();
 	}
 
-	// _onRollAbilityTest(event) {
- //    event.preventDefault();
- //    let ability = event.currentTarget.parentElement.dataset.ability;
- //    this.actor.rollAbility(ability, {event: event});
- //  }
-
 	activateListeners(html) {
 		super.activateListeners(html);
 
@@ -62,14 +56,14 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     });
 
 		// store Scroll Pos
-		let attributesTab = html.find('.tab.attributes');
+		const attributesTab = html.find('.tab.attributes');
 		attributesTab.scroll(function(){
-			scrollPos = $(this).scrollTop();
+			position = this.scrollPos = {top: attributesTab.scrollTop()};
 		});
 		let tabNav = html.find('a.item:not([data-tab="attributes"])');
 		tabNav.click(function(){
-			scrollPos = 0;
-			attributesTab.scrollTop(scrollPos);
+			this.scrollPos = {top: 0};
+			attributesTab.scrollTop(0);
 		});
 
 		// toggle item delete protection
@@ -182,10 +176,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  		// changing item qty and charges values (removing if both value and max are 0)
     html.find('.item:not(.inventory-header) input').change(event => {
     	let value = event.target.value;
-    	// console.log(value);
 			let actor = this.actor;
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
-      // console.log(itemId);
       let path = event.target.dataset.path;
       let data = {};
       data[path] = Number(event.target.value);
@@ -263,7 +255,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 async function toggleTraitsList(app, html, data){
   html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
   let visibleTraits = html.find('.traits .form-group:not(.trait-hidden)');
-  // console.log(visibleTraits);
   for (let i = 0; i < visibleTraits.length; i++) {
     if(i % 2 != 0){
       visibleTraits[i].classList.add('even');
@@ -314,14 +305,20 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "disableHpOverlay")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-overlay');
 	}
+	if (game.settings.get("tidy5e-sheet", "disableInspiration")) {
+		html.find('.tidy5e-sheet .profile .inspiration').addClass('disabled');
+	}
 	if (game.settings.get("tidy5e-sheet", "noInspirationAnimation")) {
-		html.find('.tidy5e-sheet .inspiration label i').addClass('disable-animation');
+		html.find('.tidy5e-sheet .profile .inspiration label i').addClass('disable-animation');
 	}
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
 	}
 	if(game.settings.get("tidy5e-sheet", "hideIfZero")) {
 		html.find('.tidy5e-sheet .profile').addClass('autohide');
+	}
+	if (game.settings.get("tidy5e-sheet", "disableExhaustion")) {
+		html.find('.tidy5e-sheet .profile .exhaustion-container').addClass('disabled');
 	}
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
@@ -406,7 +403,7 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	// migrateTraits(app, html, data);
-	addFavorites(app, html, data, scrollPos);
+	addFavorites(app, html, data, position);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
@@ -450,6 +447,22 @@ Hooks.once("ready", () => {
 		name: "Hide character class list",
 		hint: "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)",
 		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "disableInspiration", {
+		name: "Disable Inspiration Tracker",
+		hint: "If your campaign doesn't use inspiration you can disable the tracker completely.",
+		scope: "world",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "disableExhaustion", {
+		name: "Disable Exhaustion Tracker",
+		hint: "If your campaign doesn't use exhaustion you can disable the tracker completely.",
+		scope: "world",
 		config: true,
 		default: false,
 		type: Boolean

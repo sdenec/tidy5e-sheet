@@ -10,8 +10,6 @@
 * and can be found at https://github.com/syl3r86/favtab.
 */
 export const addFavorites = async function(app, html, data, position) {
-  
-  let StoredPosition = position;
 
   // creating the favourite tab and loading favourited items
   let favMarker = $('<i class="fas fa-bookmark"></i>');
@@ -19,10 +17,7 @@ export const addFavorites = async function(app, html, data, position) {
   let favItems = [];
   let favFeats = [];
   let favSpellsPrepMode = {
-    'always': {
-      isAlways: true,
-      spells: []
-    }, 'atwill': {
+    'atwill': {
       isAtWill: true,
       spells: []
     }, 'innate': {
@@ -81,8 +76,6 @@ export const addFavorites = async function(app, html, data, position) {
   let spellCount = 0
   let spellPrepModeCount = 0
   let items = data.actor.items;
-
-  // console.log(items);
 
   let renderFavTab = false;
 
@@ -151,7 +144,6 @@ export const addFavorites = async function(app, html, data, position) {
             item.isOnCooldown = true;
             item.labels = {recharge : game.i18n.localize("DND5E.FeatureRechargeOn")+" ["+item.data.recharge.value+"+]", rechargeValue : "["+item.data.recharge.value+"+]"};
           }
-          // console.log(item);
           // adding info if item has quantity more than one
           item.isStack = false;
           if (item.data.quantity && item.data.quantity > 1) {
@@ -232,9 +224,36 @@ export const addFavorites = async function(app, html, data, position) {
         }
       }
 
+      // sorting favSpells alphabetically
+      const favSpellsArray = Object.keys(favSpells);
+      for (let key of favSpellsArray){
+        favSpells[key].spells.sort(function(a, b){
+         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+         if (nameA < nameB) //sort string ascending
+          return -1;
+         if (nameA > nameB)
+          return 1;
+         return 0; //default return value (no sorting)
+        });
+      }
+
+      // sorting favSpellsPrepMode alphabetically
+      const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
+      for (let key of favSpellsPrepModeArray){
+        favSpellsPrepMode[key].spells.sort(function(a, b){
+         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+         if (nameA < nameB) //sort string ascending
+          return -1;
+         if (nameA > nameB)
+          return 1;
+         return 0; //default return value (no sorting)
+        });
+      }
+
       let attributesTab = html.find('.item[data-tab="attributes"]');
       let favContainer = html.find('.favorites-wrap');
       let favContent = html.find('.favorites-target');
+      let favoritesTab = html.find('.tab.attributes');
       if (renderFavTab) {
 
       // rendering of the favtab
@@ -376,7 +395,7 @@ export const addFavorites = async function(app, html, data, position) {
       favContainer.addClass('hasFavs');
       favContent.append(favHtml);
       attributesTab.prepend(favMarker);
-      $('.tab.attributes').scrollTop(position);
+      html.find('.tab.attributes').scrollTop(position.top);
     }
 
     Hooks.callAll("renderedTidy5eSheet", app, html, data);

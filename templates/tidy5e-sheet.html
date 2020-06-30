@@ -128,7 +128,7 @@
 				{{!-- Header Attributes --}}
 				<ul class="flex header-attributes">
 					<li class="header-attribute">
-						<h2 class="attribute-name">{{ localize 'TIDY5E.AttrHitPoints' }}</h2>
+						<h4 class="attribute-name">{{ localize 'TIDY5E.AttrHitPoints' }}</h4>
 						<div class="flex value">
 							<input class="hp-min" name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}"
 							data-dtype="Number" placeholder="0" maxlength="3">
@@ -144,7 +144,7 @@
 						</footer>
 					</li>
 					<li class="header-attribute">
-						<h2 class="attribute-name">{{ localize 'DND5E.HitDice' }}</h2>
+						<h4 class="attribute-name">{{ localize 'DND5E.HitDice' }}</h4>
 						<div class="value">
 							<p>{{data.attributes.hd}}<span>/</span>{{data.details.level}}</p>
 						</div>
@@ -153,11 +153,11 @@
 						</footer>
 					</li>
 					<li class="header-attribute">
-						<h2 class="attribute-name">{{ localize 'DND5E.ArmorClass' }}</h2>
+						<h4 class="attribute-name">{{ localize 'DND5E.ArmorClass' }}</h4>
 						<input class="ac-display" name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}" data-dtype="Number" placeholder="10"maxlength="2">
 					</li>
 					<li class="header-attribute">
-						<h2 class="attribute-name">{{ localize 'DND5E.Speed' }}</h2>
+						<h4 class="attribute-name">{{ localize 'DND5E.Speed' }}</h4>
 						<div class="value">
 							<input name="data.attributes.speed.value" type="text" value="{{data.attributes.speed.value}}" placeholder="0">
 						</div>
@@ -166,8 +166,8 @@
 							value="{{data.attributes.speed.special}}" placeholder="{{ localize 'DND5E.SpeedSpecial' }}">
 						</footer>
 					</li>
-					<li class="header-attribute">
-						<h2 class="attribute-name">{{ localize 'DND5E.Initiative' }}</h2>
+					<li class="header-attribute initiative">
+						<h4 class="attribute-name">{{ localize 'DND5E.Initiative' }}</h4>
 						<div class="value">
 							<p>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</p>
 						</div>
