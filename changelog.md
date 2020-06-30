@@ -8,6 +8,16 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.9*
+
+- clickable ability mods now show a pointer on hover to indicate clickability
+- spells in the favtab are now sorted alphabetically
+- initiative is now clickable when CUB is active
+
+- new settings: option to disable inspiration/exhaustion tracker in the case your campaign doesn't use one of them
+
+- preventive line-height: 1 for skill icons (firefox fix)
+
 *Version 0.2.8*
 
 - editor fields now get saved when multiple ones are edited at the same time. Big Thanks to @Forien!
