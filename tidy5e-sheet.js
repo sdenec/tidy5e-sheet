@@ -38,11 +38,29 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
   	return this.submit();
 	}
 
-	// _onRollAbilityTest(event) {
- //    event.preventDefault();
- //    let ability = event.currentTarget.parentElement.dataset.ability;
- //    this.actor.rollAbility(ability, {event: event});
- //  }
+	// save scroll position
+  // async _render(force = false, options = {}) {
+  //   this.saveScrollPos();
+  //   await super._render(force, options);
+  //   this.setScrollPos();
+  // }
+  
+  // saveScrollPos() {
+  //   if (this.form === null) return;
+  //   const html = $(this.form);
+  //   this.scrollPos = {
+  //     top: html.scrollTop(),
+  //     left: html.scrollLeft()
+  //   }
+  // }
+  
+  // setScrollPos() {
+  //   if (this.form === null || this.scrollPos === undefined) return;
+  //   const html = $(this.form);
+  //   html.scrollTop(this.scrollPos.top);
+  //   html.scrollLeft(this.scrollPos.left);
+  // }
+  
 
 	activateListeners(html) {
 		super.activateListeners(html);
@@ -314,14 +332,20 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "disableHpOverlay")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-overlay');
 	}
+	if (game.settings.get("tidy5e-sheet", "disableInspiration")) {
+		html.find('.tidy5e-sheet .profile .inspiration').addClass('disabled');
+	}
 	if (game.settings.get("tidy5e-sheet", "noInspirationAnimation")) {
-		html.find('.tidy5e-sheet .inspiration label i').addClass('disable-animation');
+		html.find('.tidy5e-sheet .profile .inspiration label i').addClass('disable-animation');
 	}
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
 		html.find('.tidy5e-sheet .profile .hp-overlay').css({'border-width':game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px'});
 	}
 	if(game.settings.get("tidy5e-sheet", "hideIfZero")) {
 		html.find('.tidy5e-sheet .profile').addClass('autohide');
+	}
+	if (game.settings.get("tidy5e-sheet", "disableExhaustion")) {
+		html.find('.tidy5e-sheet .profile .exhaustion-container').addClass('disabled');
 	}
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
@@ -450,6 +474,22 @@ Hooks.once("ready", () => {
 		name: "Hide character class list",
 		hint: "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)",
 		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "disableInspiration", {
+		name: "Disable Inspiration Tracker",
+		hint: "If your campaign doesn't use inspiration you can disable the tracker completely.",
+		scope: "world",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	game.settings.register("tidy5e-sheet", "disableExhaustion", {
+		name: "Disable Exhaustion Tracker",
+		hint: "If your campaign doesn't use exhaustion you can disable the tracker completely.",
+		scope: "world",
 		config: true,
 		default: false,
 		type: Boolean
