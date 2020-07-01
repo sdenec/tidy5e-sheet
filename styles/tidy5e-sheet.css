@@ -1449,15 +1449,11 @@
 }
 
 .tidy5e.sheet.actor .traits .toggle-traits::before {
-  content: attr(data-show);
+  content: attr(data-show-traits);
 }
 
 .tidy5e.sheet.actor .traits.expanded .toggle-traits::before {
-  content: attr(data-hide);
-}
-
-.tidy5e.sheet.actor .traits.always-visible .toggle-traits::before {
-  content: attr(data-edit);
+  content: attr(data-hide-traits);
 }
 
 .tidy5e.sheet.actor .traits .toggle-traits:hover {
