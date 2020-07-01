@@ -8,6 +8,10 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.10*
+
+- fixed a data-attribute issue causing sheets between player and dm to update in unexpected ways.
+
 *Version 0.2.9*
 
 - clickable ability mods now show a pointer on hover to indicate clickability
