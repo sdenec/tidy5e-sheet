@@ -8,6 +8,15 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.11*
+
+- fixed display of unordered lists in the sheet. again.
+
+- fixed display of uses in the character and npc sheet
+
+- removed appearance field from npc limited sheet
+
+
 *Version 0.2.10*
 
 - fixed a data-attribute issue causing sheets between player and dm to update in unexpected ways.
