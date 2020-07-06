@@ -37,7 +37,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
    * @type {String}
    */
   get template() {
-    if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-sheet-ltd.html";
+    if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-npc-ltd.html";
     return "modules/tidy5e-sheet/templates/tidy5e-npc.html";
   }
 
