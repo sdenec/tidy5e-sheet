@@ -238,7 +238,14 @@
 	padding: 0;
 }
 
-.tidy5e.sheet.actor ul {
+/*.tidy5e.sheet.actor ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+*/
+
+.tidy5e.sheet .character-details ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
