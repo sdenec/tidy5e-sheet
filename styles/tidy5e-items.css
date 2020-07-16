@@ -280,10 +280,6 @@
 	margin-bottom: .5rem
 }
 
-.dnd5e.sheet.item .sheet-body .editor-content *:first-child {
-	margin-top: 0;
-}
-
 .dnd5e.sheet.item .sheet-body .tab.details {
 	padding-right: .75rem;
 }
