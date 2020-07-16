@@ -354,6 +354,9 @@ async function setSheetClasses(app, html, data) {
   if (game.settings.get("tidy5e-sheet", "npcAlwaysShowSkills")) {
     html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
   }
+  if (data.actor.token.actorLink) {
+    html.find('.tidy5e-sheet.tidy5e-npc').addClass('linked');
+  }
 }
 
 // Hide empty Spellbook
@@ -439,4 +442,5 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   toggleItemMode(app, html, data);
   restoreScrollPosition(app, html, data);
   hideSpellbook(app, html, data);
+  console.log(data);
 });
