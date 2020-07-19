@@ -272,7 +272,7 @@ async function checkDeathSaveStatus(app, html, data){
 
 	if(currentHealth > 0 && deathSaveSuccess != 0 || currentHealth > 0 && deathSaveFailure != 0){
 			await actor.update({"data.attributes.death.success": 0});
-			await actor.update({"data.attributes.death.failure": 0});
+		//	await actor.update({"data.attributes.death.failure": 0});
 	}
 }
 
