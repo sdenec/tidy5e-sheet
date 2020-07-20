@@ -354,9 +354,13 @@ async function setSheetClasses(app, html, data) {
   if (game.settings.get("tidy5e-sheet", "npcAlwaysShowSkills")) {
     html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
   }
-  if (data.actor.token.actorLink) {
-    html.find('.tidy5e-sheet.tidy5e-npc').addClass('linked');
-  }
+  // not properly working right now
+  // if (data.actor.token.actorLink && game.settings.get("tidy5e-sheet", "npcMarkLinked")) {
+  //   html.find('.tidy5e-sheet.tidy5e-npc').addClass('linked');
+  // }
+  // if (!data.actor.token.actorLink && game.settings.get("tidy5e-sheet", "npcMarkUnlinked")) {
+  //   html.find('.tidy5e-sheet.tidy5e-npc').addClass('unlinked');
+  // }
 }
 
 // Hide empty Spellbook
@@ -432,6 +436,23 @@ Hooks.once("ready", () => {
     default: false,
     type: Boolean
   });
+  // experimental but not working properly due to handling of the actorLink flag
+  // game.settings.register("tidy5e-sheet", "npcMarkLinked", {
+  //   name: "NPC Sheets: Experimental - Highlight Sheet when linked to Actor",
+  //   hint: "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted.",
+  //   scope: "world",
+  //   config: true,
+  //   default: false,
+  //   type: Boolean
+  // });
+  // game.settings.register("tidy5e-sheet", "npcMarkUnlinked", {
+  //   name: "NPC Sheets: Experimental - Highlight sheet when not linked to actor",
+  //   hint: "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted.",
+  //   scope: "world",
+  //   config: true,
+  //   default: false,
+  //   type: Boolean
+  // });
 
 });
 
@@ -442,5 +463,5 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   toggleItemMode(app, html, data);
   restoreScrollPosition(app, html, data);
   hideSpellbook(app, html, data);
-  console.log(data);
+  // console.log(data);
 });
