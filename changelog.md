@@ -8,6 +8,12 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.12*
+
+- fixed margin issue inside saved editor fields
+
+- added support for dice-tooltips thanks to @Majestic
+
 *Version 0.2.11*
 
 - fixed display of unordered lists in the sheet. again.

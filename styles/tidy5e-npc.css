@@ -3,6 +3,52 @@
   font-weight: 700;
 }*/
 
+.tidy5e-sheet.tidy5e-npc.linked {
+  box-shadow: 0 0 0 2px rgba(0,255,0,.75) inset;
+}
+
+.tidy5e-sheet.tidy5e-npc.unlinked {
+  box-shadow: 0 0 0 2px rgba(255,0,0,.75) inset;
+}
+
+.tidy5e.sheet.actor.npc .linked .char-name,
+.tidy5e.sheet.actor.npc .unlinked .char-name {
+  position: relative;
+}
+
+.tidy5e.sheet.actor.npc .linked .char-name {
+  padding-left: 44px;
+}
+
+.tidy5e.sheet.actor.npc .unlinked .char-name {
+  padding-left: 56px;
+}
+
+.tidy5e.sheet.actor.npc .linked .char-name::after,
+.tidy5e.sheet.actor.npc .unlinked .char-name::after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  padding: 2px 4px;
+  /*margin: 0 4px 5px 4px;*/
+  color: rgba(0,0,0,.75);
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.tidy5e.sheet.actor.npc .linked .char-name::after {
+  content: 'linked';
+  background: rgba(0,255,0,.5);
+}
+
+.tidy5e.sheet.actor.npc .unlinked .char-name::after {
+  content: 'unlinked';
+  background: rgba(255,0,0,.5);
+}
+
+
 .tidy5e.sheet.actor.npc .ability-scores span {
   font-weight: 400;
 }

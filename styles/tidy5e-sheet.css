@@ -2220,6 +2220,10 @@
 	flex-wrap: nowrap;
 }
 
+.tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover {
+	color: inherit;
+}
+
 .tidy5e.sheet.actor .inventory-list .item.spellbook-header .item-name {
 	cursor: default;
 }
@@ -2254,6 +2258,7 @@
 	border-radius: 5px 0 0 0;
 }
 
+.tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image,
 .tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image {
   background-image: none !important;
 }
