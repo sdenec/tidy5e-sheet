@@ -53,7 +53,7 @@
     <ol class="item-list">
       {{#each section.spells as |item i|}}
       <li class="item flexrow {{~#if data.preparation.prepared}} prepared{{/if}}{{#ifEquals data.preparation.mode 'always'}} alwaysPrepared{{/ifEquals}}" data-item-id="{{item._id}}" {{#ifEquals data.preparation.mode "always"}} title="{{item.toggleTitle}}"{{/ifEquals}}>
-        <div class="item-name flexrow">
+        <div class="item-name flexrow rollable">
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
           </div>
