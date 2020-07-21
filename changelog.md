@@ -8,6 +8,10 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.14*
+
+- fix for hit point overlay issue introduced in 0.2.13
+
 *Version 0.2.13*
 
 - added support for Modesto font
