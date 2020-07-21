@@ -17,6 +17,8 @@
       <div class="character-details">
         <section class="flex general-information">
           <input data-input="{{actor._id}}-name" name="name" type="hidden" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
+          <i class="link-state fas fa-link" title="Token linked to Actor"></i>
+          <i class="link-state fas fa-unlink" title="Token not linked to Actor"></i>
           <h1 class="char-name" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-name" data-placeholder="{{ localize 'DND5E.Name' }}" data-maxlength="40">{{actor.name}}</h1>
           <div class="flex cr-information">
             <div class="xp">
@@ -58,7 +60,7 @@
           {{!-- Header Attributes --}}
           <ul class="header-attributes">
             <li class="header-attribute health">
-              <h2 class="attribute-name rollable" title="Reroll Hit Points"><!-- <i class="fas fa-dice-d20"></i> -->{{ localize "DND5E.Health" }}</h2>
+              <h2 class="attribute-name rollable" title="Reroll Hit Points"><!-- <i class="fas fa-dice-d20"></i> -->{{ localize "DND5E.HitPoints" }}</h2>
               <div class="flex value">
                 <input class="hp-min" name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}"
                 data-dtype="Number" placeholder="10" maxlength="4">

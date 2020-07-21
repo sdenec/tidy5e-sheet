@@ -339,6 +339,7 @@ async function toggleItemMode(app, html, data){
 
 // Set Sheet Classes
 async function setSheetClasses(app, html, data) {
+  const {token} = app;
   if (game.settings.get("tidy5e-sheet", "useRoundNpcPortraits")) {
     html.find('.tidy5e-sheet.tidy5e-npc .profile').addClass('roundPortrait');
   }
@@ -355,12 +356,15 @@ async function setSheetClasses(app, html, data) {
     html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
   }
   // not properly working right now
-  // if (data.actor.token.actorLink && game.settings.get("tidy5e-sheet", "npcMarkLinked")) {
-  //   html.find('.tidy5e-sheet.tidy5e-npc').addClass('linked');
-  // }
-  // if (!data.actor.token.actorLink && game.settings.get("tidy5e-sheet", "npcMarkUnlinked")) {
-  //   html.find('.tidy5e-sheet.tidy5e-npc').addClass('unlinked');
-  // }
+  if (token && token.data.actorLink && game.settings.get("tidy5e-sheet", "npcMarkLinked")) {
+    html.find('.tidy5e-sheet.tidy5e-npc').addClass('linked');
+  }
+  if (token && !token.data.actorLink && game.settings.get("tidy5e-sheet", "npcMarkUnlinked")) {
+    html.find('.tidy5e-sheet.tidy5e-npc').addClass('unlinked');
+  }
+  if (!token && game.settings.get("tidy5e-sheet", "npcMarkUnlinked")) {
+    html.find('.tidy5e-sheet.tidy5e-npc').addClass('original');
+  }
 }
 
 // Hide empty Spellbook
@@ -437,22 +441,22 @@ Hooks.once("ready", () => {
     type: Boolean
   });
   // experimental but not working properly due to handling of the actorLink flag
-  // game.settings.register("tidy5e-sheet", "npcMarkLinked", {
-  //   name: "NPC Sheets: Experimental - Highlight Sheet when linked to Actor",
-  //   hint: "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted.",
-  //   scope: "world",
-  //   config: true,
-  //   default: false,
-  //   type: Boolean
-  // });
-  // game.settings.register("tidy5e-sheet", "npcMarkUnlinked", {
-  //   name: "NPC Sheets: Experimental - Highlight sheet when not linked to actor",
-  //   hint: "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted.",
-  //   scope: "world",
-  //   config: true,
-  //   default: false,
-  //   type: Boolean
-  // });
+  game.settings.register("tidy5e-sheet", "npcMarkLinked", {
+    name: "NPC Sheets: Experimental - Highlight Sheet when linked to Actor",
+    hint: "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted.",
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+  game.settings.register("tidy5e-sheet", "npcMarkUnlinked", {
+    name: "NPC Sheets: Experimental - Highlight sheet when not linked to actor",
+    hint: "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted.",
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
 
 });
 

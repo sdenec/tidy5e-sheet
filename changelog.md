@@ -8,6 +8,12 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.13*
+
+- added support for Modesto font
+- adapted 0.94 system changes  to the sheet
+- added experimental settings to highlight actorLink state for NPC sheets
+
 *Version 0.2.12*
 
 - fixed margin issue inside saved editor fields
