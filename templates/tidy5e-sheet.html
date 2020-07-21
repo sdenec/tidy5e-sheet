@@ -2,7 +2,7 @@
 	<div class="tidy5e-sheet{{#if actor.flags.tidy5e-sheet.allow-delete}} allow-delete{{/if}}">
 		{{!-- Sheet Header --}}
 		<header class="flex tidy5e-header">
-			<div class="profile hp-{{data.attributes.hp.value}} deathsuccess-{{data.attributes.death.success}} deathfailure-{{data.attributes.death.failure}}">
+			<div class="profile hp-{{data.attributes.hp.value}}-{{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}} deathsuccess-{{data.attributes.death.success}} deathfailure-{{data.attributes.death.failure}}">
 
 				{{!-- Death Saves --}}
 				<div class="death-saves">
@@ -24,9 +24,10 @@
 				<div class="portrait">
 					<img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{ localize 'TIDY5E.EditActorImage' }}" data-edit="img">
 				</div>
-
+<!-- ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}}) -->
+<!-- ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} ) -->
 				{{!-- HP Overlay --}}
-				<div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}})) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}}) ), rgba(255,255,255,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}})) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}}) ), rgba(255,255,255,1) 100%);">
+				<div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) 100%);">
 				</div>
 
 				{{!-- Exhaustion --}}

@@ -365,23 +365,23 @@
 	text-shadow: 0 0 5px 1px #222;
 }
 
-.tidy5e.sheet.actor .profile.hp-0 .death-saves,
+.tidy5e.sheet.actor .profile.hp-0-0 .death-saves,
 .tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .death-saves, 
 .tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .death-saves {
 	display: flex;
 }
 
 .tidy5e.sheet.actor .profile.disable-hp-overlay .counter-value,
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.hp-0) .counter-value, 
-.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.hp-0) .counter-value {
+.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.hp-0-0) .counter-value, 
+.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.hp-0-0) .counter-value {
 	background: rgba(255,0,0,.3);
 	padding: 0 .5rem;
 	border-radius: 5px;
 }
 
 .tidy5e.sheet.actor .profile.disable-hp-overlay .counter-value,
-.tidy5e.sheet.actor .profile.disable-hp-overlay:not(.deathfailure-0):not(.hp-0) .counter-value, 
-.tidy5e.sheet.actor .profile.disable-hp-overlay:not(.deathsuccess-0):not(.hp-0) .counter-value {
+.tidy5e.sheet.actor .profile.disable-hp-overlay:not(.deathfailure-0):not(.hp-0-0) .counter-value, 
+.tidy5e.sheet.actor .profile.disable-hp-overlay:not(.deathsuccess-0):not(.hp-0-0) .counter-value {
 	background: rgba(255,0,0,.5);
 }
 
@@ -434,8 +434,8 @@
 .tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
 .tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .rest-container, 
 .tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container, 
-.tidy5e.sheet.actor .hp-0 .inspiration,
-.tidy5e.sheet.actor .hp-0 .rest-container {
+.tidy5e.sheet.actor .hp-0-0 .inspiration,
+.tidy5e.sheet.actor .hp-0-0 .rest-container {
 	display: none;
 }
 
@@ -1714,7 +1714,7 @@
 .tidy5e.sheet.actor .profile .exhaustion-container.disabled,
 .tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container, 
 .tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container, 
-.tidy5e.sheet.actor .hp-0 .exhaustion-container {
+.tidy5e.sheet.actor .hp-0-0 .exhaustion-container {
 	display: none;
 }
 
