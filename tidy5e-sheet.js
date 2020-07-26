@@ -408,7 +408,9 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
-	app.inventoryPlus.addInventoryFunctions(html);
+	if (game.modules.get("inventory-plus")?.active){
+		app.inventoryPlus.addInventoryFunctions(html);
+	}
 	// console.log(data);
 	console.log("Tidy5e Sheet rendered!");
 });
