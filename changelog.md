@@ -8,6 +8,10 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.16*
+
+- introduced an javascript error in last update and fixed it.
+
 *Version 0.2.15*
 
 - added inventory+ support
