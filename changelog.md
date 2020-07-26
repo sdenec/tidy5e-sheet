@@ -8,6 +8,10 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.15*
+
+- added inventory+ support
+
 *Version 0.2.14*
 
 - fix for hit point overlay issue introduced in 0.2.13
