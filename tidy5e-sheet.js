@@ -402,17 +402,13 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
-	const m = game.modules.get("asdkasdksaj");
-	return m && m.active
 	// migrateTraits(app, html, data);
 	addFavorites(app, html, data, position);
 	addClassList(app, html, data);
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
-	if (m) {
-		app.inventoryPlus.addInventoryFunctions(html);
-	}
+	app.inventoryPlus.addInventoryFunctions(html);
 	// console.log(data);
 	console.log("Tidy5e Sheet rendered!");
 });
