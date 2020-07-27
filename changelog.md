@@ -8,6 +8,10 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.17*
+
+- better simple mobile support
+
 *Version 0.2.16*
 
 - introduced an javascript error in last update and fixed it.

@@ -2534,3 +2534,44 @@
 	padding: 0 1rem 1rem 1rem;
 	font-weight: 700;
 }
+
+/* Mobile Support for Simple Mobile */
+
+@media only screen and (max-width: 1000px) {
+	.tidy5e.sheet.actor .ability-scores,
+	.tidy5e.dnd5e.sheet.actor ul.skills-list {
+    height: 380px;
+	}
+
+	.dnd5e.sheet.actor.character ul.skills-list li.skill {
+		border: none;
+    flex: 0 0 21px;
+    height: 21px;
+	}
+
+	.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
+    margin-right: 4px;
+	}
+
+	.tidy5e.sheet.actor .favorites .inventory-list .item-controls {
+    flex: 0 0 48px;
+	}
+
+	.tidy5e.sheet.actor .favorites .inventory-list:first-child .inventory-header {
+    padding-right: 47px;
+	}
+
+	.tidy5e.sheet.actor .spell-slots, .tidy5e.sheet.actor .spell-comps {
+    flex: 0 0 65px;
+	}
+
+	.tidy5e.sheet.actor .inventory-list .item-controls,
+	.tidy5e.sheet.actor .inventory .item-controls,
+	.tidy5e.sheet.actor .spellbook .item-controls {
+    flex: 0 0 65px;
+	}
+	
+	::before {
+    font-size: 16px;
+	}
+} 
