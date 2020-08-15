@@ -49,10 +49,11 @@ export default class Tidy5eNPC extends ActorSheet5e {
    */
   _prepareItems(data) {
 
+
     // Categorize Items as Features and Spells
     const features = {
-      // weapons: { label: game.i18n.localize("DND5E.AttackPl"), items: [] , hasActions: true, dataset: {type: "weapon", "weapon-type": "natural"} },
       passive: { label: game.i18n.localize("DND5E.Features"), items: [], dataset: {type: "feat"} },
+      weapons: { label: game.i18n.localize("DND5E.AttackPl"), items: [] , hasActions: true, dataset: {type: "weapon", "weapon-type": "natural"} },
       actions: { label: game.i18n.localize("DND5E.ActionPl"), items: [] , hasActions: true, dataset: {type: "feat", "activation.type": "action"} },
       equipment: { label: game.i18n.localize("DND5E.Inventory"), items: [], dataset: {type: "loot"}}
     };
@@ -78,10 +79,21 @@ export default class Tidy5eNPC extends ActorSheet5e {
     const spellbook = this._prepareSpellbook(data, spells);
 
     // Organize Features
+    /*
     for ( let item of other ) {
       // if ( item.type === "weapon" ) features.weapons.items.push(item);
       // else 
       if ( item.type === "weapon" || item.type === "feat" ) {
+        if ( item.data.activation.type ) features.actions.items.push(item);
+        else features.passive.items.push(item);
+      }
+      else features.equipment.items.push(item);
+    }
+    */
+
+    for ( let item of other ) {
+      if ( item.type === "weapon" ) features.weapons.items.push(item);
+      else if ( item.type === "feat" ) {
         if ( item.data.activation.type ) features.actions.items.push(item);
         else features.passive.items.push(item);
       }
@@ -92,7 +104,6 @@ export default class Tidy5eNPC extends ActorSheet5e {
     data.features = Object.values(features);
     data.spellbook = spellbook;
   }
-
 
   /* -------------------------------------------- */
 
