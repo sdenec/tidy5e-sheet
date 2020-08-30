@@ -8,6 +8,14 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.19*
+
+- fixed an issue with updating item charges from within the NPC Sheet
+
+*Version 0.2.18*
+
+- minor css fix for 0.6.5
+
 *Version 0.2.17*
 
 - better simple mobile support
