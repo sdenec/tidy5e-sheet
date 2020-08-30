@@ -276,6 +276,32 @@ export default class Tidy5eNPC extends ActorSheet5e {
       }
     });
 
+    
+    // changing item qty and charges values (removing if both value and max are 0)
+    html.find('.item:not(.inventory-header) input').change(event => {
+      let value = event.target.value;
+      let actor = this.actor;
+      let itemId = $(event.target).parents('.item')[0].dataset.itemId;
+      let path = event.target.dataset.path;
+      let data = {};
+      data[path] = Number(event.target.value);
+      actor.getOwnedItem(itemId).update(data);
+    });
+
+    // creating charges for the item
+    html.find('.inventory-list .item .addCharges').click(event => {
+      let actor = this.actor;
+      let itemId = $(event.target).parents('.item')[0].dataset.itemId;
+      let item = actor.getOwnedItem(itemId);
+
+      item.data.uses = { value: 1, max: 1 };
+      let data = {};
+      data['data.uses.value'] = 1;
+      data['data.uses.max'] = 1;
+
+      actor.getOwnedItem(itemId).update(data);
+    });
+
   }
 
 

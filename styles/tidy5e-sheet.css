@@ -6,6 +6,7 @@
 	--default-faint-color: rgba(0,0,0,.075);
 	--default-primary-accent: #ff6400;
 	--default-secondary-accent: rgba(210,0,255,.1);
+	--always-prepared-accent: rgba(210,0,255,.1);
 }
 
 /* font settings */
@@ -2129,9 +2130,12 @@
 
 /* Equipped/Prepared Highlight */
 .tidy5e.sheet.actor .inventory-list .item.attuned,
-.tidy5e.sheet.actor .inventory-list .item.prepared,
-.tidy5e.sheet.actor .inventory-list .item.alwaysPrepared {
+.tidy5e.sheet.actor .inventory-list .item.prepared {
 	background: var(--default-secondary-accent);
+}
+
+.tidy5e.sheet.actor .inventory-list .item.alwaysPrepared {
+	background: var(--always-prepared-accent);
 }
 
 .tidy5e.sheet.actor .inventory-list .item-detail,
