@@ -11,6 +11,8 @@ Thank you very much!
 *Version 0.2.19*
 
 - fixed an issue with updating item charges from within the NPC Sheet
+- option to change custom highlight colors for default and Darkmode
+- option to define a separate highlight color for always prepared spells
 
 *Version 0.2.18*
 
