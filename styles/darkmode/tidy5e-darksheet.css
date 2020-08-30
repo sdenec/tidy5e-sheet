@@ -7,6 +7,7 @@
 
   --darkmode-primary-accent: #48BB78;
   --darkmode-secondary-accent: rgba(0,150,150,.325);
+  --darkmode-always-prepared-accent: rgba(0,150,150,.325);
   --danger-500: #F56565;
   --danger-700: #C53030;
 }
@@ -312,9 +313,12 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.attuned,
-.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.prepared,
-.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.alwaysPrepared  {
+.tidy5eDark .tidy5e.sheet.actor .inventory-list:not(.inventory-header) .item.prepared  {
   background: var(--darkmode-secondary-accent);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item.alwaysPrepared {
+  background: var(--darkmode-always-prepared-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-list .item-attuned {

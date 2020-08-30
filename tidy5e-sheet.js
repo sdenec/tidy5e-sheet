@@ -357,41 +357,85 @@ Hooks.once("init", () => {
 
 	game.settings.register("tidy5e-sheet", "primaryAccent", {
 		name: "Primary accent color.",
-		hint: "Overwrite the default primary accent color (#48BB78) for Dark Mode used to highlight e. g. buttons, input field borders or hover states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
+		hint: "Overwrite the default primary accent color (default: #ff6400/darkmode: #48BB78) used to highlight e. g. buttons, input field borders or hover states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
 		scope: "user",
 		config: true,
 		default: "",
 		type: String,
 		onChange: data => {
-      data === true ? document.documentElement.style.setProperty('--darkmode-primary-accent',primaryAccentColor)
-  :document.documentElement.style.setProperty('--darkmode-primary-accent',"#48BB78");
+			if(data){
+				document.documentElement.style.setProperty('--default-primary-accent',data);
+				document.documentElement.style.setProperty('--darkmode-primary-accent',data);
+			} else {
+				document.documentElement.style.setProperty('--default-primary-accent',"#ff6400");
+				document.documentElement.style.setProperty('--darkmode-primary-accent',"#48BB78");
+			}
      }
 	});
 
 	game.settings.register("tidy5e-sheet", "secondaryAccent", {
 		name: "Secondary accent color.",
-		hint: "Overwrite the default secondary accent color (rgba(0,150,150,.325)) for Dark Mode used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
+		hint: "Overwrite the default secondary accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
 		scope: "user",
 		config: true,
 		default: "",
 		type: String,
 		onChange: data => {
-      data === true ? document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor)
-  :document.documentElement.style.setProperty('--darkmode-secondary-accent',"rgba(0,150,150,.325)");
+			if(data){
+				document.documentElement.style.setProperty('--default-secondary-accent',data);
+				document.documentElement.style.setProperty('--darkmode-secondary-accent',data);
+			} else {
+				document.documentElement.style.setProperty('--default-secondary-accent',"rgba(210,0,255,.1)");
+				document.documentElement.style.setProperty('--darkmode-secondary-accent',"rgba(0,150,150,.325)");
+			}
      }
+	});
+
+	game.settings.register("tidy5e-sheet", "alwaysPreparedAccent", {
+		name: "Highlight Color for Always Prepared Spells.",
+		hint: "Overwrite the default accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) for Always Prepared Spells. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)",
+		scope: "user",
+		config: true,
+		default: "",
+		type: String,
+		onChange: data => {
+			if(data){
+				document.documentElement.style.setProperty('--always-prepared-accent',data);
+				document.documentElement.style.setProperty('--darkmode-always-prepared-accent',data);
+			} else {
+				document.documentElement.style.setProperty('--always-prepared-accent',"rgba(210,0,255,.1)");
+				document.documentElement.style.setProperty('--darkmode-always-prepared-accent',"rgba(0,150,150,.325)");
+			}
+    }
 	});
 
   const useDarkMode = game.settings.get('tidy5e-sheet', "useDarkMode");
   if (useDarkMode === true) {
     document.body.classList.add("tidy5eDark");
   }
+
   const primaryAccentColor = game.settings.get('tidy5e-sheet', "primaryAccent");
-  const secondaryAccentColor = game.settings.get('tidy5e-sheet', "secondaryAccent");
+  if(primaryAccentColor !==  '') {
+  	document.documentElement.style.setProperty('--default-primary-accent',primaryAccentColor);
+  }
   if(useDarkMode === true && primaryAccentColor !==  '') {
   	document.documentElement.style.setProperty('--darkmode-primary-accent',primaryAccentColor);
   }
+
+  const secondaryAccentColor = game.settings.get('tidy5e-sheet', "secondaryAccent");
+  if(secondaryAccentColor !==  '') {
+   	document.documentElement.style.setProperty('--default-secondary-accent',secondaryAccentColor);	
+  }
   if(useDarkMode === true && secondaryAccentColor !==  '') {
    	document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor);	
+  }
+  
+  const alwaysPreparedAccent = game.settings.get('tidy5e-sheet', "alwaysPreparedAccent");
+  if(alwaysPreparedAccent !==  '') {
+  	document.documentElement.style.setProperty('--always-prepared-accent',alwaysPreparedAccent);
+  } 
+  if(useDarkMode === true && alwaysPreparedAccent !==  '') {
+  	document.documentElement.style.setProperty('--darkmode-always-prepared-accent',alwaysPreparedAccent);
   }
 });
 
