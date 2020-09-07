@@ -2547,13 +2547,13 @@
     height: 380px;
 	}
 
-	.dnd5e.sheet.actor.character ul.skills-list li.skill {
+	.tidy5e.dnd5e.sheet.actor.character ul.skills-list li.skill {
 		border: none;
     flex: 0 0 21px;
     height: 21px;
 	}
 
-	.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
+	.tidy5e.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
     margin-right: 4px;
 	}
 
