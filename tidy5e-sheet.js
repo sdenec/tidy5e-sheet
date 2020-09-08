@@ -2,7 +2,7 @@ import { DND5E } from "../../systems/dnd5e/module/config.js";
 import ActorSheet5e from "../../systems/dnd5e/module/actor/sheets/base.js";
 import ActorSheet5eCharacter from "../../systems/dnd5e/module/actor/sheets/character.js";
 
-import { preloadTidy5eHandlebarsTemplates } from "./templates/tidy5e-templates.js";
+import { preloadTidy5eHandlebarsTemplates } from "./templates/actors/tidy5e-templates.js";
 import { addFavorites } from "./tidy5e-favorites.js";
 
 let position = 0;
@@ -15,8 +15,8 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	
 	get template() {
-		if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-sheet-ltd.html";
-		return "modules/tidy5e-sheet/templates/tidy5e-sheet.html";
+		if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
+		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
 	}
 	
 	static get defaultOptions() {

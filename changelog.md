@@ -3,10 +3,16 @@ Additional Translations generously provided by:
 Japanese: @BrotherSharp, @Asami
 Italian: @Simone [UTC +2]
 Korean: @KLO
-Brazilian Portuguese: @rinnocenti
+Brazilian Portuguese: @rinnocenti, brnmuller
 French: @temvaryen
 
 Thank you very much!
+
+*Version 0.2.20*
+
+- updated Brazilian Portuguese translation by brnmuller
+- fixed css-prefix errors. Thanks to akrigline for finding them!
+- added "Add" Button to all spell categories in the spellbook * experimental, don't know if this somehow breaks something*
 
 *Version 0.2.19*
 

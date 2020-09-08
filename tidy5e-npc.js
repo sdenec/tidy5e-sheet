@@ -1,5 +1,5 @@
 import ActorSheet5e from "../../systems/dnd5e/module/actor/sheets/base.js";
-import { preloadTidy5eHandlebarsTemplates } from "./templates/tidy5e-npc-templates.js";
+import { preloadTidy5eHandlebarsTemplates } from "./templates/actors/npc/tidy5e-npc-templates.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -37,8 +37,8 @@ export default class Tidy5eNPC extends ActorSheet5e {
    * @type {String}
    */
   get template() {
-    if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-npc-ltd.html";
-    return "modules/tidy5e-sheet/templates/tidy5e-npc.html";
+    if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/actors/npc/tidy5e-npc-ltd.html";
+    return "modules/tidy5e-sheet/templates/actors/npc/tidy5e-npc.html";
   }
 
   /* -------------------------------------------- */
