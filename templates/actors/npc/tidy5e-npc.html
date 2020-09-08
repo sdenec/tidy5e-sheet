@@ -137,7 +137,7 @@
             <li class="toggle-proficient" data-show-skills="{{ localize 'TIDY5E.Show' }}" data-hide-skills="{{ localize 'TIDY5E.Hide' }}"> {{ localize "TIDY5E.SkillsNotProficient" }}</li>
           </ul>
           {{!-- Traits --}}
-          {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-traits.html"}}
+          {{> "modules/tidy5e-sheet/templates/actors/npc/parts/tidy5e-npc-traits.html"}}
         </div>
 
         <section class="center-pane flexcol">
@@ -175,8 +175,8 @@
             </div>
           </div>
           <div class="tidy5e-delete-lock"><label for="tidy5e-allow-delete" class="tidy5e-delete-toggle"><span class="tidy5e-delete-disabled" title="{{localize 'TIDY5E.DeleteDisabledHint'}}"><i class="fas fa-lock"></i>{{localize "TIDY5E.DeleteDisabled"}}</span><span class="tidy5e-delete-enabled" title="{{localize 'TIDY5E.DeleteEnabledHint'}}"><i class="fas fa-unlock"></i>{{localize "TIDY5E.DeleteEnabled"}}</span></label></div>
-          {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-features.html" sections=features}}
-          {{> "modules/tidy5e-sheet/templates/npc/parts/tidy5e-npc-spellbook.html"}}
+          {{> "modules/tidy5e-sheet/templates/actors/npc/parts/tidy5e-npc-features.html" sections=features}}
+          {{> "modules/tidy5e-sheet/templates/actors/npc/parts/tidy5e-npc-spellbook.html"}}
         </section>
       </div>
 
