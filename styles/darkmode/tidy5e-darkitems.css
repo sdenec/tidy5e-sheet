@@ -16,7 +16,7 @@
 	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
 }
 
-.dnd5e.sheet.item button {
+.tidy5e.dnd5e.sheet.item button {
 	color: var(--darkmode-primary-color);
 }
 
