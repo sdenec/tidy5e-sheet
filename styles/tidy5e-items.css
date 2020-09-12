@@ -16,6 +16,10 @@
 	cursor: pointer;
 }
 
+.tidy5e.dnd5e.sheet.item input[type="checkbox"] {
+	height: 20px;
+}
+
 .tidy5e.dnd5e.sheet.item button,
 .tidy5e.dnd5e.sheet.item select{
 	border: none;
@@ -23,6 +27,7 @@
 
 .tidy5e.dnd5e.sheet.item input[type="text"] {
 	border: none;
+	padding: 0 6px;
 }
 
 .tidy5e.dnd5e.sheet.item input[type="text"]:hover,
