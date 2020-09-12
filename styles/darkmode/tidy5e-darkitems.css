@@ -1,58 +1,58 @@
-.tidy5eDark .dnd5e.sheet.item .window-content form {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .window-content form {
   background-color: rgba(0,0,0,.91);
 }
 
-.tidy5eDark .dnd5e.sheet.item input[type="text"] {
+.tidy5eDark .tidy5e.dnd5e.sheet.item input[type="text"] {
 	color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item input[type="text"]::placeholder {
+.tidy5eDark .tidy5e.dnd5e.sheet.item input[type="text"]::placeholder {
 	color: var(--darkmode-tertiary-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item input[type="text"]:hover,
-.tidy5eDark .dnd5e.sheet.item input[type="text"]:focus {
+.tidy5eDark .tidy5e.dnd5e.sheet.item input[type="text"]:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item input[type="text"]:focus {
 	border: none;
 	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
 }
 
-.tidy5e.dnd5e.sheet.item button {
+.tidy5eDark .tidy5e.dnd5e.sheet.item button {
 	color: var(--darkmode-primary-color);
 }
 
 /* Sheet Header */
-.tidy5eDark .dnd5e.sheet.item .sheet-header {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-header {
   background: rgba(255,255,255,.05);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-header h1.charname input {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-header h1.charname input {
 	color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-header .item-subtitle {
 	background: var(--darkmode-tertiary-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle .item-status {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-header .item-subtitle .item-status {
   color: rgba(0,0,0,.5);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-header .item-subtitle .item-type {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-header .item-subtitle .item-type {
   color: rgba(0,0,0,.6);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-header .summary {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-header .summary {
 	border-color: var(--darkmode-faint-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-header .summary li {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-header .summary li {
 	color: var(--darkmode-primary-color);
 	font-weight: 300;
 }
 
 /* Navigation */
 
-.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-navigation .item {
   background: rgba(255,255,255,.05);
   color: var(--darkmode-primary-color);
   border: none;
@@ -60,11 +60,11 @@
 	font-weight: 300;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item:hover {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-navigation .item:hover {
   color: var(--darkmode-primary-accent);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item.active {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-navigation .item.active {
   color: var(--darkmode-primary-color);
   background: transparent;
   text-shadow: none;
@@ -76,7 +76,7 @@
 	font-weight: 600;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item:first-child.active {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-navigation .item:first-child.active {
   box-shadow: 
     0 0 0 0 var(--darkmode-light-color),
     1px 0 0 0 var(--darkmode-light-color),
@@ -84,7 +84,7 @@
     0 0 0 0 var(--darkmode-light-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-navigation .item:last-child.active {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-navigation .item:last-child.active {
   box-shadow: 
     -1px 0 0 0 var(--darkmode-light-color),
     0 0 0 0 var(--darkmode-light-color),
@@ -94,130 +94,130 @@
 
 /* Description */
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .item-properties {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .item-properties {
 	border-color: var(--darkmode-faint-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .form-group label {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .item-properties .form-group label {
 	color: var(--darkmode-primary-color);
 	font-weight: 600;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .item-properties .properties-list li {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .item-properties .properties-list li {
 	background-color: var(--darkmode-faint-color);
 	border-color: var(--darkmode-light-color);
 	color: var(--darkmode-secondary-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .editor {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .editor {
 	color: var(--darkmode-primary-color);
 	font-weight: 300;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .editor .editor-edit:hover {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .editor .editor-edit:hover {
 	color: var(--darkmode-primary-accent);
 }
 
 /* Details */
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-header,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-header {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-header,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-header {
 	color: var(--darkmode-secondary-color);
 }
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .form-group,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.magic-items .form-group,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group {
 	background: var(--darkmode-faint-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group label {
 	color: var(--darkmode-primary-color);
 	font-weight: 300;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"],
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"] {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"],
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group select,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"] {
 	background: var(--darkmode-light-color);
 	color: var(--darkmode-primary-color);
 	font-weight: 300;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"]:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group button:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"]:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select:focus {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[type="text"]:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group select:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group button:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group input[type="text"]:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group select:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group button:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group select:focus {
 	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group select option {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group select option {
 	color: #121212;
 }
 
-.tidy5eDark .dnd5e.sheet.item .damage-header .damage-control:hover {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .damage-header .damage-control:hover {
 	color: var(--darkmode-primary-accent);
 }
 
-.tidy5eDark .dnd5e.sheet.item .damage-control.delete-damage {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .damage-control.delete-damage {
 	color: var(--danger-500);
 }
 
-.tidy5eDark .dnd5e.sheet.item .damage-control.delete-damage:hover {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .damage-control.delete-damage:hover {
 	color: var(--danger-700);
 }
 
-.tidy5eDark .dnd5e.sheet.item .details .form-group span {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .details .form-group span {
 	color: var(--darkmode-secondary-color);
 }
 
 /* Checkboxes */
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items .form-group label.checkbox,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.magic-items .form-group label.checkbox,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox {
 	background: var(--darkmode-primary-accent);
 	border-color: #666;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox:hover {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group label.checkbox:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.dynamiceffects .form-group label.checkbox:hover,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group label.checkbox:hover {
 	background: var(--darkmode-secondary-accent);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input::after,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input::after {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox input::after,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox input::after {
 	background: #555;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox:hover input::after,
-.tidy5eDark .dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox:hover input::after {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.item-betterRolls .form-group .checkbox:hover input::after,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body .tab.details .form-group .checkbox:hover input::after {
 	background: #444;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body input[type="checkbox"] {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body input[type="checkbox"] {
   border: 1px solid var(--darkmode-secondary-color); 
   box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
   background-image: url(../../images/check-darkmode.svg);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body label input[type="checkbox"] {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body label input[type="checkbox"] {
   border: none; 
   box-shadow: none;
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body input[type="checkbox"]:checked {
 	background-color: var(--darkmode-primary-accent);
   background-image: url(../../images/check-darkmode-checked.svg);
 }
 
-.tidy5eDark .dnd5e.sheet.item .sheet-body label input[type="checkbox"]:checked {
+.tidy5eDark .tidy5e.dnd5e.sheet.item .sheet-body label input[type="checkbox"]:checked {
 	background-color: transparent;
 }
 
@@ -275,13 +275,13 @@
 	box-shadow: none;
 }
 
-.tidy5eDark .dnd5e.sheet.item a.entity-link, 
-.tidy5eDark .dnd5e.sheet.item a.inline-roll {
+.tidy5eDark .tidy5e.dnd5e.sheet.item a.entity-link, 
+.tidy5eDark .tidy5e.dnd5e.sheet.item a.inline-roll {
   background: var(--darkmode-primary-accent);
   color: #121212; 
 }
 
-.tidy5eDark .dnd5e.sheet.item a.entity-link i,
-.tidy5eDark .dnd5e.sheet.item a.inline-roll i {
+.tidy5eDark .tidy5e.dnd5e.sheet.item a.entity-link i,
+.tidy5eDark .tidy5e.dnd5e.sheet.item a.inline-roll i {
   color: #121212;
 }
