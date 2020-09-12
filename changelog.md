@@ -8,6 +8,11 @@ French: @temvaryen
 
 Thank you very much!
 
+*Version 0.2.21*
+
+- item sheets are now registered as a specific Tidy5e-Sheet to prevent compatibitlity issues and consequently prefixing all styles to only apply to this sheet preventing default overrides. Big thanks to akrigline for the contribution :)
+Please make sure to check you item sheet setting to make sure the Tidy5e Itemsheet is set as default!
+
 *Version 0.2.20*
 
 - updated Brazilian Portuguese translation by brnmuller
