@@ -121,7 +121,7 @@
 
 /* sheet settings */
 
-.tidy5e.sheet [contenteditable=true] {
+.tidy5e.sheet [contenteditable] {
 	border: none;
 	outline: none; 
 	display: inline-block;
@@ -132,7 +132,7 @@
 	-o-user-select: text;
 }
 
-.tidy5e.sheet [contenteditable=true]:empty:before {
+.tidy5e.sheet [contenteditable]:empty:before {
   content: attr(data-placeholder);
   pointer-events: none;
   display: block; /* For Firefox */
@@ -201,7 +201,7 @@
 	box-shadow: none;
 }
  
-.tidy5e.sheet [contenteditable=true],
+.tidy5e.sheet [contenteditable],
 .tidy5e.sheet input[type="text"]{
 	border: none;
 	box-shadow: 0px 0px 0 3px transparent inset;
@@ -1374,14 +1374,14 @@
 	position: absolute;
 }
 
-.tidy5e.sheet.actor .traits .senses div[contenteditable="true"] {	
+.tidy5e.sheet.actor .traits .senses div[contenteditable] {	
   font-size: 12px;
   line-height: 14px;
   padding-top: 1px;
   width: 100%;
 }
 
-.tidy5e.sheet.actor .traits .senses div[contenteditable="true"]:before { 
+.tidy5e.sheet.actor .traits .senses div[contenteditable]:before { 
   content: attr(data-label);
   line-height: 14px;
   font-weight: 700;
