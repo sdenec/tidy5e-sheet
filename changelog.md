@@ -9,6 +9,9 @@ French: @temvaryen
 Thank you very much!
 
 *Version 0.2.22*
+- changed css selectors for contenteditable fields to be more generic to better support module compatibility. Thanks to illandril.
+
+*Version 0.2.22*
 
 - better rolls support for item sheets restored. Thanks to akrigline!
 
