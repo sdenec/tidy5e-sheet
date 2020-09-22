@@ -1,0 +1,76 @@
+{
+	"TIDY5E.EditActorImage": "编辑图像",
+
+	"TIDY5E.Exhaustion0": "无负面效应",
+	"TIDY5E.Exhaustion1": "属性检定具有劣势",
+	"TIDY5E.Exhaustion2": "速度减半",
+	"TIDY5E.Exhaustion3": "攻击和豁免检定具有劣势",
+	"TIDY5E.Exhaustion4": "生命值上限减半",
+	"TIDY5E.Exhaustion5": "速度降为0",
+	"TIDY5E.Exhaustion6": "死亡",
+
+	"TIDY5E.RestHint": "进行休息",
+	"TIDY5E.RestS": "短休息",
+	"TIDY5E.RestL": "长休息",
+
+	"TIDY5E.AttrHitPoints": "生命值",
+
+	"TIDY5E.HitDiceHint": "在短休时使用",
+
+	"TIDY5E.Journal": "日志",
+
+	"TIDY5E.SkillPassive": "被动技能",
+
+	"TIDY5E.RestoreOnRest": "休息时恢复",
+
+	"TIDY5E.BioTraits": "特点",
+	"TIDY5E.BioIdeals": "理念",
+	"TIDY5E.BioBonds": "牵绊",
+	"TIDY5E.BioFlaws": "缺点",
+	"TIDY5E.BioAppearance": "外貌",
+	"TIDY5E.BioBackground": "背景/传记",
+
+	"TIDY5E.JournalPoi": "相关人物",
+	"TIDY5E.JournalLoi": "相关地点",
+	"TIDY5E.JournalQuests": "任务",
+	"TIDY5E.JournalMisc": "杂项",
+	"TIDY5E.JournalEntries": "日志条目",
+
+	"TIDY5E.DeleteDisabled": "不可删除",
+	"TIDY5E.DeleteEnabled": "可以删除",
+	"TIDY5E.DeleteDisabledHint": "点击以显示删除按钮",
+	"TIDY5E.DeleteEnabledHint": "点击以隐藏删除按钮",
+
+	"TIDY5E.ConvertCurrencyHint": "将货币兑换为最高面额货币",
+	"TIDY5E.ConvertCurrencyButton": "兑换",
+
+	"TIDY5E.Encumbrance": "负重",
+
+	"TIDY5E.EditSpell": "编辑法术",
+	"TIDY5E.DeleteSpell": "删除法术",
+	"TIDY5E.AddFav": "添加到收藏",
+	"TIDY5E.RemoveFav": "从收藏中移除",
+
+	"TIDY5E.ToggleInfo": "切换显示信息",
+
+	"TIDY5E.Show" : "显示/编辑",
+	"TIDY5E.Hide" : "隐藏",
+	"TIDY5E.Edit" : "编辑",
+	"TIDY5E.SkillsNotProficient" : "非熟练项",
+	"TIDY5E.TraitsEmpty" : "空特质",
+
+	"TIDY5E.AbbrArmorClass" : "AC",
+
+	"TIDY5E.strAbility" : "力量",
+	"TIDY5E.dexAbility" : "敏捷",
+	"TIDY5E.conAbility" : "体质",
+	"TIDY5E.intAbility" : "智力",
+	"TIDY5E.wisAbility" : "感知",
+	"TIDY5E.chaAbility" : "魅力",
+
+	"TIDY5E.Abilities" : "属性",
+
+	"TIDY5E.Environment" : "环境",
+
+	"TIDY5E.AbbrMod" : "先攻加值"
+}
