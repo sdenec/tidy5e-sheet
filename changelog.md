@@ -1,12 +1,17 @@
 *Attribution*
 Additional Translations generously provided by:
-Japanese: @BrotherSharp, @Asami
-Italian: @Simone [UTC +2]
-Korean: @KLO
-Brazilian Portuguese: @rinnocenti, brnmuller
-French: @temvaryen
+- Japanese: @BrotherSharp, @Asami
+- Italian: @Simone [UTC +2]
+- Korean: @KLO
+- Brazilian Portuguese: @rinnocenti, brnmuller
+- French: @temvaryen
+- Chinese: @EternalRider
 
 Thank you very much!
+
+*Version 0.2.24*
+- Chinese translation added. Thanks to EternalRider!
+- CSS fix for double digit spellslots
 
 *Version 0.2.23*
 - changed css selectors for contenteditable fields to be more generic to better support module compatibility. Thanks to illandril.
