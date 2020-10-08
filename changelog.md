@@ -9,6 +9,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.2.26*
+- reacivated better rolls hooks for 0.6.6 compatibility
+
 *Version 0.2.25*
 - updated sheet for the 0.97 update.
 - css fix for paragraph spacing in item descriptions.

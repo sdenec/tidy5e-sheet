@@ -434,9 +434,10 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", () => {
   
-  // if (window.BetterRolls) {
-  //   window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
-  // }
+  // can be removed when 0.7.x is stable
+  if (window.BetterRolls) {
+    window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
+  }
 
   game.settings.register("tidy5e-sheet", "useRoundNpcPortraits", {
     name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.name")}`,
