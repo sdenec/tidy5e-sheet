@@ -12,7 +12,10 @@ export class Tidy5eItemSheet extends ItemSheet5e {
 Items.registerSheet("dnd5e", Tidy5eItemSheet, {makeDefault: true});
 
 Hooks.once("ready", () => {
-  // if (window.BetterRolls) {
-  //   window.BetterRolls.hooks.addItemSheet("Tidy5eItemSheet");
-  // }
+
+	// can be removed when 0.7.x is stable
+  if (window.BetterRolls) {
+    window.BetterRolls.hooks.addItemSheet("Tidy5eItemSheet");
+  }
+  
 });

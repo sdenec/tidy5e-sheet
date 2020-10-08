@@ -212,45 +212,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	}
 }
 
-// should no longer be needed
-// Migrate Traits to default dnd5e data
-// async function migrateTraits(app, html, data) {
-// 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
-
-// 	if (!actor.getFlag('tidy5e-sheet', 'useCoreTraits')){
-	
-// 		console.log('Tidy5e Sheet | Data needs migration! Migrating.');
-
-// 		let coreTrait = (actor.data.data.details.trait !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
-// 		let coreIdeal = (actor.data.data.details.ideal !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
-// 		let coreBond = (actor.data.data.details.bond !== '') ? actor.data.data.details.bond+"<br>Migrated Content:" : '';
-// 		let coreFlaw = (actor.data.data.details.flaw !== '') ? actor.data.data.details.flaw+"<br>Migrated Content:" : '';
-
-// 		let trait = (actor.data.data.details.personality && actor.data.data.details.personality.value) ? coreTrait + actor.data.data.details.personality.value : actor.data.data.details.trait;
-// 		let ideal = (actor.data.data.details.ideals && actor.data.data.details.ideals.value) ? coreIdeal + actor.data.data.details.ideals.value : actor.data.data.details.ideal;
-// 		let bond = (actor.data.data.details.bonds && actor.data.data.details.bonds.value) ? coreBond + actor.data.data.details.bonds.value : actor.data.data.details.bond;
-// 		let flaw = (actor.data.data.details.flaws && actor.data.data.details.flaws.value) ? coreFlaw + actor.data.data.details.flaws.value : actor.data.data.details.flaw;
-
-// 		await actor.update({
-// 			"data.details.trait": trait,
-// 			"data.details.ideal": ideal,
-// 			"data.details.bond": bond,
-// 			"data.details.flaw": flaw,
-// 			"data.details.personality": null,
-// 			"data.details.-=personality": null,
-// 			"data.details.ideals": null,
-// 			"data.details.-=ideals": null,
-// 			"data.details.bonds": null,
-// 			"data.details.-=bonds": null,
-// 			"data.details.flaws": null,
-// 			"data.details.-=flaws": null,
-// 			"flags.tidy5e-sheet.useCoreTraits":true
-// 		});
-
-// 		console.log('Tidy5e Sheet | Data migrated to dnd5e core values.')
-// 	}
-// }
-
 // handle traits list display
 async function toggleTraitsList(app, html, data){
   html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
@@ -462,11 +423,11 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 Hooks.once("ready", () => {
 	console.log("Tidy5e Sheet is ready!");
 	
-	// if (window.BetterRolls) {
-	//   window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
-	// }
+	// can be removed when 0.7.x is stable
+	if (window.BetterRolls) {
+	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
+	}
 
- 	//game.i18n.localize("Monday")
 	game.settings.register("tidy5e-sheet", "useRoundPortraits", {
 		name: game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.name"),
 		hint: game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.hint"),
