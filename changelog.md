@@ -9,6 +9,13 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.2.25*
+- updated sheet for the 0.97 update.
+- css fix for paragraph spacing in item descriptions.
+- removed better roll hooks. Sheets are now supported by default.
+- added translation strings for module settings.
+- added german translation for additional strings.
+
 *Version 0.2.24*
 - Chinese translation added. Thanks to EternalRider!
 - CSS fix for double digit spellslots

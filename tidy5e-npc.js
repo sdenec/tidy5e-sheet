@@ -434,61 +434,61 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", () => {
   
-  if (window.BetterRolls) {
-    window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
-  }
+  // if (window.BetterRolls) {
+  //   window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
+  // }
+
   game.settings.register("tidy5e-sheet", "useRoundNpcPortraits", {
-    name: "NPC Sheets: Sheets use round portraits.",
-    hint: "You should check this if you use round NPC portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame.",
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-  game.settings.register("tidy5e-sheet", "disableNpcHpOverlay", {
-    name: "NPC Sheets: Disable the hit point overlay.",
-    hint: "If you don't like the video game style Hit Point overlay on your NPC's portrait you can disable it.",
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.hint"),
     scope: "world",
     config: true,
     default: false,
     type: Boolean
   });
   game.settings.register("tidy5e-sheet", "npcHpOverlayBorder", {
-    name: "NPC Sheets: Border width for the hit point overlay",
-    hint: "If your portrait has a frame you can adjust the NPC Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border.",
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.hint"),
     scope: "world",
     config: true,
     default: 0,
     type: Number
   });
+  game.settings.register("tidy5e-sheet", "disableNpcHpOverlay", {
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
   game.settings.register("tidy5e-sheet", "npcAlwaysShowTraits", {
-    name: "NPC Sheets: Always show traits",
-    hint: "When you don't want to hide and toggle empty NPC traits tick this box.",
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.AlwaysShowTraits.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.AlwaysShowTraits.hint"),
     scope: "world",
     config: true,
     default: false,
     type: Boolean
   });
   game.settings.register("tidy5e-sheet", "npcAlwaysShowSkills", {
-    name: "NPC Sheets: Always show skills",
-    hint: "When you don't want to hide and toggle not proficient NPC skills tick this box.",
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.AlwaysShowSkills.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.AlwaysShowSkills.hint"),
     scope: "world",
     config: true,
     default: false,
     type: Boolean
   });
-  // experimental but not working properly due to handling of the actorLink flag
   game.settings.register("tidy5e-sheet", "npcMarkLinked", {
-    name: "NPC Sheets: Experimental - Highlight Sheet when linked to Actor",
-    hint: "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted.",
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.MarkLinked.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.MarkLinked.hint"),
     scope: "world",
     config: true,
     default: false,
     type: Boolean
   });
   game.settings.register("tidy5e-sheet", "npcMarkUnlinked", {
-    name: "NPC Sheets: Experimental - Highlight sheet when not linked to actor",
-    hint: "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted.",
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")} ${game.i18n.localize("TIDY5E.Settings.MarkUnlinked.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.MarkUnlinked.hint"),
     scope: "world",
     config: true,
     default: false,

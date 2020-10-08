@@ -72,5 +72,94 @@
 
 	"TIDY5E.Environment" : "Umgebung",
 
-	"TIDY5E.AbbrMod" : "Mod"
+	"TIDY5E.AbbrMod" : "Mod",
+
+
+	"TIDY5E.Settings.PcLabel" : "PC-Bogen: ",
+	"TIDY5E.Settings.NpcLabel" : "NPC-Bogen: ",
+
+	"TIDY5E.Settings.UseDarkMode" : {
+		"name" : "Alternativen Darkmode nutzen.",
+		"hint" : "Aktiviere diese Option um das alternate Darkmode Layout zu nutzen."
+	},
+	"TIDY5E.Settings.PrimaryAccentColor" : {
+		"name" : "Primäre Akzentfarbe.",
+		"hint" : "Überschreibt die primäre Akzentfarbe (Standard: #ff6400/Darkmode: #48BB78) um Buttons, Eingabefelder und Interaktionen hervorzuheben. Gültige Werte sind z. B. red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+	},
+	"TIDY5E.Settings.SecondaryAccentColor" : {
+		"name" : "Sekundäre Akzentfarbe.",
+		"hint" : "Überschreibt die sekundäre Akzentfarbe (Standard: rgba(210,0,255,.1)/Darkmode: rgba(0,150,150,.325)) um Buttons, Eingabefelder und Interaktionen hervorzuheben. Gültige Werte sind z. B. red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+	},
+	"TIDY5E.Settings.AlwaysPreparedAccentColor" : {
+		"name" : "Akzentfarbe für ständig vorbereitete Zaubersprüche.",
+		"hint" : "Überschreibt die Akzentfarbe (Standard: rgba(210,0,255,.1)/Darkmode: rgba(0,150,150,.325)) für ständig vorbereitete Zaubersprüche. Gültige Werte sind z. B. red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+	},
+	"TIDY5E.Settings.UseRoundPortraits" : {
+		"name" : "Bögen nutzen runde Portraits.",
+		"hint" : "Aktiviere diese Option wenn du runde Portraits nutzt. Portraits, Trefferpunkt-Overlays und Overlay Buttons werden abgerunden."
+	},
+	"TIDY5E.Settings.HpOverlayBorder" : {
+		"name" : "Rahmenstärke für Trefferpunkt-Overlay.",
+		"hint" : "Falls Portraits einen Rahmen haben kann mit dieser Option das Trefferpunkt-Overlay so angepasst werden, dass der Rahmen ausgespart wird."
+	},
+	"TIDY5E.Settings.DisableHpOverlay" : {
+		"name" : "Trefferpunkt-Overlay deaktivieren.",
+		"hint" : "Deaktiviert das Trefferpunkt-Overlay falls dir die Darstellung nicht gefällt."
+	},
+	"TIDY5E.Settings.HideClassList" : {
+		"name" : "Klassenliste verstecken.",
+		"hint" : "Diese Option versteckt die Auflictung der Charakterklaasen neben der XP-Anzeige. Der Bogen verkraftet bis zu 3 Klassen ohne Probleme, bei mehr kann sich das Layout verschieben."
+	},
+	"TIDY5E.Settings.DisableInspirationAnimation" : {
+		"name" : "Keine Inspiration-Animation.",
+		"hint" : "Deaktiviert den pulsierenden Effekt für den Inspiration-Marker."
+	},
+	"TIDY5E.Settings.DisableInspiration" : {
+		"name" : "Inspiration-Marker deaktivieren.",
+		"hint" : "Wenn deine Kampagne keine Inspiration nutzt, lässt sich der Marker deaktivieren."
+	},
+	"TIDY5E.Settings.DisableExhaustion" : {
+		"name" : "Erschöpfungsmarker deaktivieren.",
+		"hint" : "Wenn deine Kampagne keine Erschöpfung nutzt, lässt sich der Marker deaktivieren."
+	},
+	"TIDY5E.Settings.HideIfZero" : {
+		"name" : "Verstecke Erschöpfung und Inspiration solange sie Null betragen.",
+		"hint" : "Aktiviere diese Option um den Erschöpfung- und Inspiration-Marker zu verstecken solange die Werte Null betragen. Erscheinen wenn man über das Portrait fährt."
+	},
+	"TIDY5E.Settings.ExhaustionOnHover" : {
+		"name" : "Zeige Erschöpfung nur beim Daraufzeigen.",
+		"hint" : "Der Erschöpfung-Marker bleibt immer versteckt und erscheint nur beim Zeigen auf das Portrait."
+	},
+	"TIDY5E.Settings.InspirationOnHover" : {
+		"name" : "Zeige Inspiration nur beim Daraufzeigen.",
+		"hint" : "Der Inspiration-Marker bleibt immer versteckt und erscheint nur beim Zeigen auf das Portrait."
+	},
+	"TIDY5E.Settings.RestOnHover" : {
+		"name" : "Zeige Rasten-Button beim Daraufzeigen.",
+		"hint" : "Der Rasten-Button bleibt immer versteckt und erscheint nur beim Zeigen auf das Portrait."
+	},
+	"TIDY5E.Settings.MoveTraits" : {
+		"name" : "Schiebe Eigenschaften unter Resourcen.",
+		"hint" : "Aktivieren, um die Eigenschaftenliste unter die Ressourcen zu verschieben."
+	},
+	"TIDY5E.Settings.PcToggleTraits" : {
+		"name" : "Zeige Umschalter für Charakter-Eigenschaften.",
+		"hint" : "Aktivieren, um leere Charakter-Eigenschaften über einen Button ein-/auszublenden."
+	},
+	"TIDY5E.Settings.AlwaysShowTraits" : {
+		"name" : "NPC-Eigenschaften immer zeigen.",
+		"hint" : "Aktivieren, um immer alle NPC-Eigenschaften zu zeigen, auch leere."
+	},
+	"TIDY5E.Settings.AlwaysShowSkills" : {
+		"name" : "NPC-Fähigkeiten immer zeigen.",
+		"hint" : "Aktivieren, um immer alle MPC-Fähigkeiten zu zeigen, auch ungeübte."
+	},
+	"TIDY5E.Settings.MarkLinked" : {
+		"name" : "Mit Actor verknüpften Bogen hervorheben.",
+		"hint" : "Zeigt einen farbigen Rahmen um einen Bogen an, wenn das Token mit einem Actor verknüpft ist."
+	},
+	"TIDY5E.Settings.MarkUnlinked" : {
+		"name" : "Nicht mit Actor verknüpften Bogen hervorheben.",
+		"hint" : "Zeigt einen farbigen Rahmen um einen Bogen an, wenn das Token nicht mit einem Actor verknüpft ist."
+	}
 }

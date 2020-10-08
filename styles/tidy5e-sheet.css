@@ -239,12 +239,9 @@
 	padding: 0;
 }
 
-/*.tidy5e.sheet.actor ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.tidy5e.sheet.actor .item-summary p:not(:first-child) {
+	margin-top: .5em;
 }
-*/
 
 .tidy5e.sheet .character-details ul {
 	list-style: none;
