@@ -9,6 +9,11 @@
 	--always-prepared-accent: rgba(210,0,255,.1);
 }
 
+/* temporary color fix for core bug */
+.tidy5e.sheet.actor .inventory-list {
+	color: inherit !important;
+}
+
 /* font settings */
 
 .tidy5e-sheet h1,
@@ -2504,6 +2509,18 @@
 	list-style: outside;
   margin: 0.5em 0;
   padding: 0 0 0 1.5em;
+}
+
+.tidy5e.sheet.actor .editor {
+    min-height: 382px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tidy5e.sheet.actor .tox.tox-tinymce {
+    border: none;
+    flex: 1;
+    min-height: 100px;
 }
 
 /* Portrait hover options */
