@@ -9,6 +9,10 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.2.27*
+- css fixes to correct tiny mce editor height and item description text
+- Inventory+ doubled controls fix
+
 *Version 0.2.26*
 - reacivated better rolls hooks for 0.6.6 compatibility
 
