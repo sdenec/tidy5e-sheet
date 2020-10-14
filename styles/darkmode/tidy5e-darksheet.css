@@ -632,3 +632,8 @@
 .tidy5eDark .tidy5e.sheet.actor a.inline-roll i {
   color: #121212;
 }
+
+/* font color fix */
+.tidy5eDark .tidy5e.sheet.actor .inventory-list .item .item-name {
+  color: inherit !important;
+}
