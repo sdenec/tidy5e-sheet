@@ -74,6 +74,26 @@
 
 	"TIDY5E.AbbrMod" : "Mod",
 
+	"TIDY5E.Settings.PcPortraits" : {
+		"name" : "",
+		"hint" : ""
+	},
+	"TIDY5E.Settings.PcHpOverlay" : {
+		"name" : "",
+		"hint" : ""
+	},
+	"TIDY5E.Settings.PcHpOverlayBorder" : {
+		"name" : "",
+		"hint" : ""
+	},
+	"TIDY5E.Settings.ShowTraits" : {
+		"name" : "",
+		"hint" : ""
+	},
+	"TIDY5E.Settings.ShowSkills" : {
+		"name" : "",
+		"hint" : ""
+	},
 
 	"TIDY5E.Settings.PcLabel" : "PC Sheets: ",
 	"TIDY5E.Settings.NpcLabel" : "NPC Sheets: ",
