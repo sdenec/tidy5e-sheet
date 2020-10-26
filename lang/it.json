@@ -78,7 +78,11 @@
 
 	"TIDY5E.Settings.PcLabel" : "PC Sheets: ",
 	"TIDY5E.Settings.NpcLabel" : "NPC Sheets: ",
-
+	
+	"TIDY5E.Settings.UseExpandedSheet" : {
+		"name" : "Expanded View for the Limited Sheet.",
+		"hint" : "The expanded view for the limited sheet displays the entire character sheet (minus the Private Notes tab) to players with Limited permission for that actor."
+	},
 	"TIDY5E.Settings.UseDarkMode" : {
 		"name" : "Use alternate dark mode.",
 		"hint" : "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet."
@@ -160,7 +164,7 @@
 		"hint" : "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted."
 	},
 	"TIDY5E.Settings.MarkUnlinked" : {
-		"name" : "Experimental - Highlight sheet when not linked to actor.",
+		"name" : "Highlight sheet when not linked to actor.",
 		"hint" : "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted."
 	}
 }

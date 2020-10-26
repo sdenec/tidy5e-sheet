@@ -15,6 +15,7 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	
 	get template() {
+		if ( !game.user.isGM && this.actor.limited && game.settings.get("tidy5e-sheet", "useExpandedSheet")) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-expanded.html";
 		if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
 	}
@@ -428,6 +429,15 @@ Hooks.once("ready", () => {
 	if (window.BetterRolls) {
 	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
 	}
+
+  game.settings.register("tidy5e-sheet", "useExpandedSheet", {
+    name: game.i18n.localize("TIDY5E.Settings.UseExpandedSheet.name"),
+    hint: game.i18n.localize("TIDY5E.Settings.UseExpandedSheet.hint"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
 
 	game.settings.register("tidy5e-sheet", "useRoundPortraits", {
 		name: game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.name"),
