@@ -78,6 +78,10 @@
 	"TIDY5E.Settings.PcLabel" : "PC-Bogen: ",
 	"TIDY5E.Settings.NpcLabel" : "NPC-Bogen: ",
 
+	"TIDY5E.Settings.UseExpandedSheet" : {
+		"name" : "Erweitere Ansicht für eingeschränkte Characterbögen.",
+		"hint" : "Die erweiterete Ansicht für eingeschränkte Charakterbögen zeigt den gesamten Charakterbogen (ohne persönliche Notizen) für Spieler mit eingeschränkter Berechtigung für diesen Charakter."
+	},
 	"TIDY5E.Settings.UseDarkMode" : {
 		"name" : "Alternativen Darkmode nutzen.",
 		"hint" : "Aktiviere diese Option um das alternate Darkmode Layout zu nutzen."

@@ -9,6 +9,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.2.29*
+- added expanded limited character sheet
+
 *Version 0.2.28*
 - css fix to correct dark mode font color
 
