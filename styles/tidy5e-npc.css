@@ -448,7 +448,7 @@
   line-height: 23px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header h3 {
+.tidy5e.sheet.actor.npc .items-list .items-header h3 {
   font-size: 12px;
 }
 
@@ -528,8 +528,8 @@
   color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header,
-.tidy5e.sheet.actor.npc .items-list .inventory-header:first-child {
+.tidy5e.sheet.actor.npc .items-list .items-header,
+.tidy5e.sheet.actor.npc .items-list .items-header:first-child {
   background: transparent;
   padding-top: 0;
   padding-left: 4px;
@@ -539,13 +539,13 @@
   border: none;
 }
 
-.tidy5e.sheet.actor.npc .items-list:first-child .inventory-header {
+.tidy5e.sheet.actor.npc .items-list:first-child .items-header {
   padding-top: 2px;
   margin-top: 0;
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header,
-.tidy5e.sheet.actor.npc .items-list .inventory-header.spellbook-header {
+.tidy5e.sheet.actor.npc .items-list .items-header,
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header {
   margin: 0; 
   padding-top: 0; 
   line-height: 21px;
@@ -556,32 +556,32 @@
   font-size: 12px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header.spellbook-header.spellbook-empty .item-controls {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header.spellbook-empty .item-controls {
   flex: 1;
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header.spellbook-header.spellbook-empty .item-controls a.item-create {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header.spellbook-empty .item-controls a.item-create {
   line-height: 14px;
 }
 
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header.spellbook-header.spellbook-empty {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header.spellbook-empty {
   margin: 0;
   padding: 0; 
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header .spell-slots,
-.tidy5e.sheet.actor.npc .items-list .inventory-header .spell-slots input {
+.tidy5e.sheet.actor.npc .items-list .items-header .spell-slots,
+.tidy5e.sheet.actor.npc .items-list .items-header .spell-slots input {
   color: var(--default-primary-color);
   font-weight: 700;
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header .slot-max-override {
+.tidy5e.sheet.actor.npc .items-list .items-header .slot-max-override {
   font-size: 10px;
   line-height: 20px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header.spellbook-header .spell-detail i {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header .spell-detail i {
   vertical-align: baseline;
 }
 
@@ -589,24 +589,24 @@
   flex: 0 0 80px;
 }
 
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .spell-comps,
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .item-action,
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .item-charges {
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-comps,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .item-action,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .item-charges {
   line-height: 21px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .spell-action,
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .spell-target,
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .spell-school,
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .spell-comps {
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-action,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-target,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-school,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-comps {
   line-height: 21px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.tidy5e.sheet.actor.npc .items-list :not(.inventory-header) .spell-comps {
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-comps {
   flex: 0 0 50px;
 }
 
@@ -649,14 +649,14 @@
   flex: 0 0 40px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .inventory-header .item-controls a.item-create {
+.tidy5e.sheet.actor.npc .items-list .items-header .item-controls a.item-create {
   border-radius: 3px;
   line-height: 12px;
   padding-top: 2px;
   margin: 3px 0;
 }
 
-.tidy5e.sheet.actor.npc .inventory-header .item-controls a.item-create i {
+.tidy5e.sheet.actor.npc .items-header .item-controls a.item-create i {
   vertical-align: baseline;
   font-size: 7px;
   position: relative;

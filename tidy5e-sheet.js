@@ -175,7 +175,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     });
 
  		// changing item qty and charges values (removing if both value and max are 0)
-    html.find('.item:not(.inventory-header) input').change(event => {
+    html.find('.item:not(.items-header) input').change(event => {
     	let value = event.target.value;
 			let actor = this.actor;
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;

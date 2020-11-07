@@ -187,6 +187,7 @@
 			<a class="item" data-tab="inventory">{{ localize "DND5E.Inventory" }}</a>
 			<a class="item" data-tab="features">{{ localize "DND5E.Features" }}</a>
 			<a class="item" data-tab="spellbook">{{ localize "DND5E.Spellbook" }}</a>
+			<a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
 			<a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
 			<a class="item" data-tab="journal">{{ localize "TIDY5E.Journal" }}</a>
 		</nav>
@@ -290,6 +291,11 @@
 			{{!-- Spellbook Tab --}}
 			<div class="tab spellbook flexcol" data-group="primary" data-tab="spellbook">
 				{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html"}}
+			</div>
+
+			{{!-- Effects Tab --}}
+			<div class="tab effects flexcol" data-group="primary" data-tab="effects">
+				{{>  "modules/tidy5e-sheet/templates/actors/parts/tidy5e-effects.html"}}
 			</div>
 
 			{{!-- Biography Tab --}}

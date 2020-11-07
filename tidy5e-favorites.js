@@ -2,7 +2,7 @@
 * This file and its functions are 
 * adapted for the Tidy5eSheet from 
 * FavTab Module version 0.5.4 
-* by Felix Müller aka syl3r96 
+* by Felix Mï¿½ller aka syl3r96 
 * (Felix#6196 on Discord).
 *
 * It is licensed under a 
@@ -280,7 +280,7 @@ export const addFavorites = async function(app, html, data, position) {
           // Item Dragging
           let handler = ev => app._onDragStart(ev);
           favHtml.find('.item').each((i, li) => {
-            if (li.classList.contains("inventory-header")) return;
+            if (li.classList.contains("items-header")) return;
             li.setAttribute("draggable", true);
             li.addEventListener("dragstart", handler, false);
           });

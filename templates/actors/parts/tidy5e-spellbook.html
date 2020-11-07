@@ -13,7 +13,7 @@
 
 <ol class="inventory-list items-list">
   {{#each spellbook as |section|}}
-  <li class="item flexrow inventory-header spellbook-header">
+  <li class="item flexrow items-header spellbook-header">
     <div class="item-name flexrow">
       <h3>{{section.label}}</h3>
     </div>
@@ -111,7 +111,7 @@
     {{#if filters.spellbook.size}}
     <li class="item flexrow"><p class="notes">{{localize "DND5E.FilterNoSpells"}}</p></li>
     {{else}}
-    <li class="item flexrow inventory-header spellbook-header spellbook-empty">
+    <li class="item flexrow items-header spellbook-header spellbook-empty">
       <div class="item-controls flexrow">
         <a class="item-control item-create" title="{{localize 'DND5E.SpellCreate'}}" data-type="spell"
         data-level="{{lvl}}"><i class="fas fa-plus-circle"></i> {{localize "DND5E.SpellAdd"}}</a>
