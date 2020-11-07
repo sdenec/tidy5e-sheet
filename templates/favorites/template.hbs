@@ -1,6 +1,6 @@
 <div class="favorites">
   {{#if favItems}}
-    <ol class="inventory-list fav-item">
+    <ol class="inventory-list items-list fav-item">
       <li class="inventory-header flexrow">
         <h3>{{localize 'DND5E.Inventory'}}</h3>
         <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
@@ -14,7 +14,7 @@
     </ol>
   {{/if}}
   {{#if favFeats}}
-    <ol class="inventory-list fav-feat">
+    <ol class="inventory-list items-list fav-feat">
       <li class="inventory-header flexrow">
         <h3>{{localize 'DND5E.Features'}}</h3>
         <div class="item-detail item-charges" title="{{localize 'DND5E.Uses'}}"><i class="fas fa-bolt"></i></div>
@@ -30,7 +30,7 @@
 
   {{#if favSpellsPrepMode}}
     {{#each favSpellsPrepMode as |section lvl|}}
-      <ol class="inventory-list fav-spell">
+      <ol class="inventory-list items-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
             <li class="inventory-header flexrow">                        
@@ -66,7 +66,7 @@
   {{/if}}
   {{#if favSpells}}
     {{#each favSpells as |section lvl|}}
-      <ol class="inventory-list fav-spell">
+      <ol class="inventory-list items-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
             <li class="inventory-header flexrow">                        

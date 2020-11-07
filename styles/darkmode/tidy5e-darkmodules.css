@@ -2,7 +2,7 @@
 /*   Support Better Rolls / Minor QOL   */
 /* ------------------------------------ */
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button:hover {
+.tidy5eDark .tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button:hover {
 	background: var(--darkmode-primary-accent);
 }
 

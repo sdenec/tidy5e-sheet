@@ -9,7 +9,7 @@
   </ul>
 </div>
 
-<ol class="inventory-list">
+<ol class="inventory-list items-list">
   {{#each sections as |section sid|}}
   <li class="inventory-header flexrow">
     <h3 class="item-name flexrow">{{localize section.label}}</h3>
@@ -22,7 +22,7 @@
     <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i></div>
 
     {{#if ../owner}}
-    <div class="item-controls">
+    <div class="item-controls flexrow">
       <a class="item-control item-create" title='{{localize "DND5E.ItemCreate"}}' {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
         <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
       </a>
@@ -87,7 +87,7 @@
       </div>
 
       {{#if ../../owner}}
-      <div class="item-controls">
+      <div class="item-controls flexrow">
         <a class="item-control item-edit" title='{{localize "DND5E.ItemEdit"}}'><i class="fas fa-pencil-alt"></i></a>
         <a class="item-control item-delete" title='{{localize "DND5E.ItemDelete"}}'><i class="fas fa-trash"></i></a>
       </div>
