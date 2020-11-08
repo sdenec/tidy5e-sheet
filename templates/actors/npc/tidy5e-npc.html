@@ -116,6 +116,7 @@
     <nav class="flex tidy5e-navigation tabs" data-group="primary">
       <a class="item active" data-tab="attributes">{{ localize "TIDY5E.Abilities" }}</a>
       <a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
+      <a class="item" data-tab="journal">{{ localize "TIDY5E.Journal" }}</a>
     </nav>
 
     {{!-- NPC Sheet Body --}}
@@ -184,6 +185,43 @@
       <div class="tab biography flexcol" data-group="primary" data-tab="biography">
         {{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
       </div>
+
+      {{!-- Journal Tab --}}
+      <div class="tab journal flexrow" data-group="primary" data-tab="journal">
+        <div class="left-notes note-entries">
+          <article>
+            <div class="section-titles">
+              <input type="text" name="data.details.notes1name" value="{{data.details.notes1name}}" placeholder="{{ localize 'TIDY5E.JournalPoi' }}"/>
+            </div>
+            {{editor content=data.details.notes1.value target="data.details.notes1.value" button=true owner=owner editable=editable}}
+          </article>
+          <article>
+            <div class="section-titles">
+              <input type="text" name="data.details.notes2name" value="{{data.details.notes2name}}" placeholder="{{ localize 'TIDY5E.JournalLoi' }}"/>
+            </div>
+            {{editor content=data.details.notes2.value target="data.details.notes2.value" button=true owner=owner editable=editable}}
+          </article>
+          <article>
+            <div class="section-titles">
+              <input type="text" name="data.details.notes3name" value="{{data.details.notes3name}}" placeholder="{{ localize 'TIDY5E.JournalQuests' }}"/>
+            </div>
+            {{editor content=data.details.notes3.value target="data.details.notes3.value" button=true owner=owner editable=editable}}
+          </article>
+          <article>
+            <div class="section-titles">
+              <input type="text" name="data.details.notes4name" value="{{data.details.notes4name}}" placeholder="{{ localize 'TIDY5E.JournalMisc' }}"/>
+            </div>
+            {{editor content=data.details.notes4.value target="data.details.notes4.value" button=true owner=owner editable=editable}}
+          </article>
+        </div>
+        <div class="right-notes note-entries">
+          <article class="journal-notes">
+            <div class="section-titles">{{ localize 'TIDY5E.JournalEntries' }}</div>
+            {{editor content=data.details.notes.value target="data.details.notes.value" button=true owner=owner editable=editable}}
+          </article>
+        </div>
+      </div>
+
     </section>
   </div>
 </form>

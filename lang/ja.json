@@ -51,9 +51,7 @@
 	"TIDY5E.AddFav": "お気に入り",
 	"TIDY5E.RemoveFav": "お気に入りから削除",
 
-
 	"TIDY5E.ToggleInfo": "詳細表示",
-
 
 	"TIDY5E.Show" : "表示/編集",
 	"TIDY5E.Hide" : "非表示",
@@ -76,96 +74,113 @@
 
 	"TIDY5E.AbbrMod" : "修正値",
 
-
-	"TIDY5E.Settings.PcLabel" : "PC Sheets: ",
-	"TIDY5E.Settings.NpcLabel" : "NPC Sheets: ",
-
-	"TIDY5E.Settings.UseExpandedSheet" : {
-		"name" : "Expanded View for the Limited Sheet.",
-		"hint" : "The expanded view for the limited sheet displays the entire character sheet (minus the Private Notes tab) to players with Limited permission for that actor."
+	"TIDY5E.Settings.PcPortraits" : {
+		"name" : "",
+		"hint" : ""
 	},
+	"TIDY5E.Settings.PcHpOverlay" : {
+		"name" : "",
+		"hint" : ""
+	},
+	"TIDY5E.Settings.PcHpOverlayBorder" : {
+		"name" : "",
+		"hint" : ""
+	},
+	"TIDY5E.Settings.ShowTraits" : {
+		"name" : "",
+		"hint" : ""
+	},
+	"TIDY5E.Settings.ShowSkills" : {
+		"name" : "",
+		"hint" : ""
+	},
+
+
+	"TIDY5E.Settings.PcLabel" : "PCシート: ",
+	"TIDY5E.Settings.NpcLabel" : "NPCシート: ",
+
 	"TIDY5E.Settings.UseDarkMode" : {
-		"name" : "Use alternate dark mode.",
-		"hint" : "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet."
+		"name" : "ダークモードに切替",
+		"hint" : "このオプションをオンにすると､Tidy5eシートのダークモード･バージョンが有効になります。"
 	},
 	"TIDY5E.Settings.PrimaryAccentColor" : {
-		"name" : "Primary accent color.",
-		"hint" : "Overwrite the default primary accent color (default: #ff6400/darkmode: #48BB78) used to highlight e. g. buttons, input field borders or hover states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "主要アクセントカラー",
+		"hint" : "強調表示に使用されるダークモードのデフォルトの主要アクセントカラー（＃48BB78）を上書きします。ボタンや､入力欄の境界線､ホバー状態。/#ff0000 /rgba（255,0,0）/rgba（255,0,0,1）のような有効なCSS値を使用します"
 	},
 	"TIDY5E.Settings.SecondaryAccentColor" : {
-		"name" : "Secondary accent color.",
-		"hint" : "Overwrite the default secondary accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "副次アクセントカラー",
+		"hint" : "準備状態を強調表示するために使用されるダークモードのデフォルトの副次アクセントカラー（rgba（0,150,150.325））を上書きします。/＃ff0000 /rgba（255,0,0）/rgba（255,0,0,1)などの有効なCSS値を使用してください"
 	},
 	"TIDY5E.Settings.AlwaysPreparedAccentColor" : {
-		"name" : "Accent Color for Always Prepared Spells.",
-		"hint" : "Overwrite the default accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) for Always Prepared Spells. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "準備された呪文の色を強調表示",
+		"hint" : "準備された呪文のデフォルトのアクセントカラーを（デフォルト: rgba(210,0,255,1) / ダークモード: rgba(0,150,150,325) に上書きします。/＃ff0000 /rgba（255,0,0）/rgba（255,0,0,1)などの有効なCSS値を使用してください"
 	},
 	"TIDY5E.Settings.UseRoundPortraits" : {
-		"name" : "Sheets use round portraits.",
-		"hint" : "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame."
+		"name" : "PCシート：シートに円形ポートレートを使用",
+		"hint" : "円形のポートレートを使用する場合､確認する必要があります。HPオーバーレイとポートレートボタンを調整して見栄えを良くします。また､フレームのない正方形のポートレートでも見栄えがします。"
 	},
 	"TIDY5E.Settings.HpOverlayBorder" : {
-		"name" : "Border width for the hit point overlay.",
-		"hint" : "If your portrait has a frame you can adjust the Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border."
+		"name" : "PCシート：ヒット･ポイント･オーバーレイの境界線の幅",
+		"hint" : "ポートレートにフレームがある場合は､ヒット･ポイント･オーバーレイを調整してフレームの幅を補正できます。オーバーレイが境界線に色を付けない場合､見栄えがよくなることがあります。"
 	},
 	"TIDY5E.Settings.DisableHpOverlay" : {
-		"name" : "Disable the hit point overlay.",
-		"hint" : "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it."
+		"name" : "ヒット･ポイント･オーバーレイの無効化",
+		"hint" : "キャラクターのポートレートにコンピュータゲーム風のヒット･ポイント･オーバーレイが入るのが気に入らない場合､無効にすることができます。"
 	},
 	"TIDY5E.Settings.HideClassList" : {
-		"name" : "Hide character class list.",
-		"hint" : "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)"
+		"name" : "キャラクタークラス一覧を非表示",
+		"hint" : "このオプションにチェックを入れると､レベルの横にあるクラス一覧が非表示になります。シートは3つのクラスまではうまく表示できますが､それ以上は表示がずれることがあります。"
 	},
 	"TIDY5E.Settings.DisableInspirationAnimation" : {
-		"name" : "No inspiration indicator animation.",
-		"hint" : "If it's too distracting, you can disable the subtle animation of the glowing inspiration indicator."
+		"name" : "インスピレーションのアニメーションを停止",
+		"hint" : "必要でない場合､光るインスピレーションのアニメーション表示を無効にできます。"
 	},
 	"TIDY5E.Settings.DisableInspiration" : {
-		"name" : "Disable Inspiration Tracker.",
-		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
+		"name" : "インスピレーションを無効化",
+		"hint" : "キャンペーンでインスピレーションを使用しない場合､完全に無効化することができます。"
 	},
 	"TIDY5E.Settings.DisableExhaustion" : {
-		"name" : "Disable Exhaustion Tracker.",
-		"hint" : "If your campaign doesn't use exhaustion you can disable the tracker completely."
+		"name" : "消耗を無効化",
+		"hint" : "キャンペーンで消耗を使用しない場合､完全に無効化することができます。"
 	},
 	"TIDY5E.Settings.HideIfZero" : {
-		"name" : "Hide Exhaustion and Inspiration when not available (0).",
-		"hint" : "Check this option if you want to hide Exhaustion if its level is 0 and Inspiration if you have none. Appears on hover."
+		"name" : "消耗とインスピレーションが０の時､表示を隠す",
+		"hint" : "消耗レベルが0のときに表示を隠す場合､このオプションをオンにします。マウスカーソルを合わせると表示されます。"
 	},
 	"TIDY5E.Settings.ExhaustionOnHover" : {
-		"name" : "Show exhaustion tracker only on hover.",
-		"hint" : "If you check this option the exhaustion tracker will only be visible when you hover over the portrait."
+		"name" : "マウスカーソルを合わせたときだけ消耗を表示",
+		"hint" : "このオプションをオンにすると､ポートレートにカーソルを合わせたときにのみ､消耗レベルが表示されます"
 	},
 	"TIDY5E.Settings.InspirationOnHover" : {
-		"name" : "Show inspiration indicator only on hover.",
-		"hint" : "If you check this option the inspiration indicator will only be visible when you hover over the portrait."
+		"name" : "マウスカーソルを合わせたときだけインスピレーションを表示",
+		"hint" : "このオプションをオンにすると､ポートレートにカーソルを合わせたときにのみ､インスピレーションが表示されます"
 	},
 	"TIDY5E.Settings.RestOnHover" : {
-		"name" : "Show rest button on hover.",
-		"hint" : "If you check this option the rest button will only be visible when you hover over the portrait."
+		"name" : "マウスカーソルを合わせたときだけ休憩を表示",
+		"hint" : "このオプションをオンにすると､ポートレートにカーソルを合わせたときにのみ､休憩が表示されます"
 	},
 	"TIDY5E.Settings.MoveTraits" : {
-		"name" : "Move traits below resources.",
-		"hint" : "Check this if you want to show the traits below the resources."
+		"name" : "特徴をリソースの下に移動",
+		"hint" : "リソースの下に特徴を表示する場合は､これをチェックします。"
 	},
 	"TIDY5E.Settings.PcToggleTraits" : {
-		"name" : "Show Toggle button for character traits.",
-		"hint" : "Check this if you want to show a button to toggle empty traits."
+		"name" : "キャラクター特徴の切替ボタンを表示",
+		"hint" : "空の特徴を切り替えるボタンを表示する場合､これをオンにします。"
 	},
 	"TIDY5E.Settings.AlwaysShowTraits" : {
-		"name" : "Always show traits.",
-		"hint" : "When you don't want to hide and toggle empty NPC traits tick this box."
+		"name" : "常に特徴を表示",
+		"hint" : "空の特徴も含めて全て表示する場合､このボックスをチェックしてください。"
 	},
 	"TIDY5E.Settings.AlwaysShowSkills" : {
-		"name" : "Always show skills.",
-		"hint" : "When you don't want to hide and toggle not proficient NPC skills tick this box."
+		"name" : "常に技能を表示",
+		"hint" : "習熟技能も含めて全て表示する場合､このボックスにチェックしてください。"
 	},
 	"TIDY5E.Settings.MarkLinked" : {
-		"name" : "Highlight Sheet when linked to Actor.",
-		"hint" : "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted."
+		"name" : "アクターにリンクされているシートの強調表示",
+		"hint" : "間違ったシート編集をしているとき､リンクされたシートを強調表示できます。"
 	},
 	"TIDY5E.Settings.MarkUnlinked" : {
-		"name" : "Highlight sheet when not linked to actor.",
-		"hint" : "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted."
+		"name" : "アクターにリンクされていないシートの強調表示",
+		"hint" : "間違ったシート編集をしているとき､リンクされていないシートを強調表示できます。"
 	}
 }

@@ -11,9 +11,9 @@
   </ul>
 </div>
 
-<ol class="inventory-list">
+<ol class="inventory-list items-list">
   {{#each spellbook as |section|}}
-  <li class="item flexrow inventory-header spellbook-header">
+  <li class="item flexrow items-header spellbook-header">
     <div class="item-name flexrow">
       <h3>{{section.label}}</h3>
     </div>
@@ -41,7 +41,7 @@
       <div class="spell-detail spell-action" title="{{localize "DND5E.SpellUsage"}}"><i class="fas fa-hourglass"></i></div>
       <div class="spell-detail spell-target" title="{{localize "DND5E.SpellTarget"}}"><i class="fas fa-hand-paper"></i></div>
 
-      <div class="item-controls">
+      <div class="item-controls flexrow">
         {{#if section.canCreate}}
         <a class="item-control item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
           <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
@@ -98,7 +98,7 @@
 
 
         {{#if ../../owner}}
-        <div class="item-controls">
+        <div class="item-controls flexrow">
           <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i></a>
           <a class="item-control item-delete" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i></a>
         </div>
@@ -111,8 +111,8 @@
     {{#if filters.spellbook.size}}
     <li class="item flexrow"><p class="notes">{{localize "DND5E.FilterNoSpells"}}</p></li>
     {{else}}
-    <li class="item flexrow inventory-header spellbook-header spellbook-empty">
-      <div class="item-controls">
+    <li class="item flexrow items-header spellbook-header spellbook-empty">
+      <div class="item-controls flexrow">
         <a class="item-control item-create" title="{{localize 'DND5E.SpellCreate'}}" data-type="spell"
         data-level="{{lvl}}"><i class="fas fa-plus-circle"></i> {{localize "DND5E.SpellAdd"}}</a>
       </div>

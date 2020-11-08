@@ -65,8 +65,8 @@
   background: var(--darkmode-faint-color);
 }
 
-.tidy5eDark .tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots,
-.tidy5eDark .tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots input {
+.tidy5eDark .tidy5e.sheet.actor.npc .items-list .items-header .spell-slots,
+.tidy5eDark .tidy5e.sheet.actor.npc .items-list .items-header .spell-slots input {
 	color: var(--darkmode-primary-color);
 }
 

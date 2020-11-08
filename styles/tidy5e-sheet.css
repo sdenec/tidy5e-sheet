@@ -10,7 +10,7 @@
 }
 
 /* temporary color fix for core bug */
-.tidy5e.sheet.actor .inventory-list {
+.tidy5e.sheet.actor .items-list {
 	color: inherit !important;
 }
 
@@ -68,6 +68,30 @@
 	text-align: center;
 }
 
+/* movement specific attribute */
+.tidy5e.sheet.actor .header-attributes .movement {
+	position: relative;
+	overflow: hidden;
+}
+
+.tidy5e.sheet.actor .header-attributes .movement-primary,
+.tidy5e.sheet.actor .header-attributes .movement-special {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tidy5e.sheet.actor .header-attributes .configure-movement i {
+	font-size: 12px;
+  color: rgba(0,0,0,.5);
+  transition: color .3s ease;
+  cursor: pointer;
+}
+
+.tidy5e.sheet.actor .header-attributes .configure-movement:hover i {
+	color: var(--default-secondary-color)
+}
+
 .tidy5e.sheet.actor ul.attributes li.resource .attribute-header label.checkbox {
   font-family: "Signika", sans-serif;
 }
@@ -104,12 +128,12 @@
   text-align: left;
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header {
+.tidy5e.sheet.actor .items-list .items-header,
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header {
 	font-family: "Signika", sans-serif;
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header h3 {
+.tidy5e.sheet.actor .items-list .items-header h3 {
 	font-family: "Signika", sans-serif;
 }
 
@@ -934,6 +958,10 @@
 	padding: 1.5rem .25rem 1rem 1rem;
 }
 
+.tidy5e.sheet.actor .tab.biography {
+	max-width: unset;
+}
+
 .tidy5e.sheet .window-content .tab.attributes,
 .tidy5e.sheet .window-content .tab.biography,
 .tidy5e.sheet .window-content .tab.journal {
@@ -1516,19 +1544,19 @@
 	vertical-align: middle;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list {
+.tidy5e.sheet.actor .favorites .items-list {
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list ol {
+.tidy5e.sheet.actor .favorites .items-list ol {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item {
+.tidy5e.sheet.actor .favorites .items-list .item {
 	line-height: 23px;
 	border-radius: 0;
 	margin: 0;
@@ -1536,7 +1564,7 @@
 	overflow: hidden;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-name .item-image {
+.tidy5e.sheet.actor .favorites .items-list .item .item-name .item-image {
 	width: 23px;
 	height: 23px;
   flex: 0 0 23px;
@@ -1545,11 +1573,11 @@
   margin-right: 4px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header h3 {
+.tidy5e.sheet.actor .favorites .items-list .items-header h3 {
 	font-size: 12px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name h4 {
+.tidy5e.sheet.actor .items-list .item .item-name h4 {
 	display: inline-block;
 	flex: initial;
 	cursor: pointer;
@@ -1558,12 +1586,12 @@
 	text-overflow: ellipsis;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-name h4 {
+.tidy5e.sheet.actor .favorites .items-list .item-name h4 {
 	font-size: 12px;
 	line-height: 21px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-name h4 .info-icon {
+.tidy5e.sheet.actor .items-list .item-name h4 .info-icon {
 	font-size: 14px;
  	color: var(--default-light-color);
  	transition: color .3s ease;
@@ -1571,11 +1599,12 @@
  	top: -1px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-name h4:hover .info-icon {
+.tidy5e.sheet.actor .items-list .item-name h4:hover .info-icon {
  	color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .inventory-list .item-quantity {
+.tidy5e.sheet.actor .items-list .item-quantity {
+	align-items: center;
 	display: flex;
 	margin-left: 4px;
 	text-align: center;
@@ -1586,26 +1615,26 @@
 	padding-top: 2px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-quantity {
+.tidy5e.sheet.actor .favorites .items-list .item-quantity {
 	font-size: 12px;
 	line-height: 21px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-quantity:focus-within,
-.tidy5e.sheet.actor .inventory-list .item .item-quantity:hover,
-.tidy5e.sheet.actor .inventory-list .item-quantity.isStack {
+.tidy5e.sheet.actor .items-list .item-quantity:focus-within,
+.tidy5e.sheet.actor .items-list .item .item-quantity:hover,
+.tidy5e.sheet.actor .items-list .item-quantity.isStack {
 	opacity: 1;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-quantity input {
+.tidy5e.sheet.actor .items-list .item-quantity input {
 	width: 23px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-quantity input {
+.tidy5e.sheet.actor .favorites .items-list .item-quantity input {
 	height: 21px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .state-display {
+.tidy5e.sheet.actor .favorites .items-list .state-display {
 	flex: 0 0 16px;
 	margin: 0 4px;
 	display: flex;
@@ -1615,18 +1644,18 @@
 	height: 23px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .state-display a {
+.tidy5e.sheet.actor .favorites .items-list .state-display a {
 	color: rgba(0,0,0,.25);
 	font-size: 12px; 
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .state-display a:hover,
-.tidy5e.sheet.actor .favorites .inventory-list .state-display a.active {
+.tidy5e.sheet.actor .favorites .items-list .state-display a:hover,
+.tidy5e.sheet.actor .favorites .items-list .state-display a.active {
 	color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header,
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header:first-child {
+.tidy5e.sheet.actor .favorites .items-list .items-header,
+.tidy5e.sheet.actor .favorites .items-list .items-header:first-child {
 	background: transparent;
 	padding-top: 3px;
 	padding-left: 4px;
@@ -1636,46 +1665,46 @@
   color: var(--default-tertiary-color);
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list:first-child .inventory-header {
+.tidy5e.sheet.actor .favorites .items-list:first-child .items-header {
 	padding-top: 2px;
 	margin-top: 0;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots,
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots input {
+.tidy5e.sheet.actor .favorites .items-list .items-header .spell-slots,
+.tidy5e.sheet.actor .favorites .items-list .items-header .spell-slots input {
   color: var(--default-tertiary-color);
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:hover,
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:hover input,
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within,
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots:focus-within input {
+.tidy5e.sheet.actor .favorites .items-list .items-header .spell-slots:hover,
+.tidy5e.sheet.actor .favorites .items-list .items-header .spell-slots:hover input,
+.tidy5e.sheet.actor .favorites .items-list .items-header .spell-slots:focus-within,
+.tidy5e.sheet.actor .favorites .items-list .items-header .spell-slots:focus-within input {
   color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .spell-slots .spell-max {
+.tidy5e.sheet.actor .favorites .items-list .items-header .spell-slots .spell-max {
 	text-align: left;
 }
 
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-charges {
+.tidy5e.sheet.actor .favorites .items-list .item .item-charges {
 	flex: 0 0 55px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .inventory-header .item-charges {
+.tidy5e.sheet.actor .favorites .items-list .items-header .item-charges {
 	flex: 0 0 55px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .spell-comps,
-.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-action,
-.tidy5e.sheet.actor .favorites .inventory-list :not(.inventory-header) .item-charges {
+.tidy5e.sheet.actor .favorites .items-list :not(.items-header) .spell-comps,
+.tidy5e.sheet.actor .favorites .items-list :not(.items-header) .item-action,
+.tidy5e.sheet.actor .favorites .items-list :not(.items-header) .item-charges {
 	font-size: 12px;
 	line-height: 21px;
 	text-overflow: ellipsis;
 }
 
 
-.tidy5e.sheet.actor .inventory-list .item .item-charges a.addCharges {
+.tidy5e.sheet.actor .items-list .item .item-charges a.addCharges {
 	display: block;
 	width: 100%;
 	text-align: center;
@@ -1683,32 +1712,32 @@
 	transition: opacity .3s ease;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-charges:hover a.addCharges {
+.tidy5e.sheet.actor .items-list .item .item-charges:hover a.addCharges {
 	opacity: 1;
 	color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-action {
+.tidy5e.sheet.actor .favorites .items-list .item-action {
 	flex: 0 0 70px;
 	padding: 0 8px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-charges .uses-max,
-.tidy5e.sheet.actor .inventory-list .item .spell-slots .spell-max {
+.tidy5e.sheet.actor .items-list .item .item-charges .uses-max,
+.tidy5e.sheet.actor .items-list .item .spell-slots .spell-max {
 	text-align: left;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-controls {
+.tidy5e.sheet.actor .favorites .items-list .item-controls {
 	flex: 0 0 38px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-controls a {
+.tidy5e.sheet.actor .favorites .items-list .item-controls a {
 	line-height: 21px;
 	font-size: 12px;
 	padding-top: 1px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item-controls a:hover {
+.tidy5e.sheet.actor .favorites .items-list .item-controls a:hover {
 	color: rgba(0,0,0,.6);
 }
 
@@ -1965,7 +1994,7 @@
 	display: none;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-controls .item-delete {
+.tidy5e.sheet.actor .items-list .item-controls .item-delete {
 	color: rgba(255,0,0,.6);
 }
 
@@ -2049,13 +2078,13 @@
 
 /* Inventory Items */
 
-.tidy5e.sheet.actor .inventory-list {
+.tidy5e.sheet.actor .items-list {
 	padding: 0 9px 1rem 0;
   overflow-y: scroll;
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header {
+.tidy5e.sheet.actor .items-list .items-header,
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header {
 	margin: 0 0 .25rem 0;
 	padding-top: .5rem;
 	line-height: 20px;
@@ -2064,53 +2093,58 @@
 	border-top: 1px solid var(--default-faint-color);
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header:first-child,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header:first-child { 
+.tidy5e.sheet.actor .items-list .items-header:first-child,
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header:first-child { 
 	padding-top: 0;
 	border: none; 
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header h3 {
+.tidy5e.sheet.actor .items-list .items-header h3 {
 	margin: 0;
 	padding: 0;
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header .item-detail,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i {
+.tidy5e.sheet.actor .items-list .items-header .item-controls a.item-create,
+.tidy5e.sheet.actor .items-list .items-header .item-controls a.effect-create {
+	flex: 0 0 100%;
+}
+
+.tidy5e.sheet.actor .items-list .items-header .item-detail,
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header .spell-detail,
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header .spell-detail .slot-max-override i {
 	color: var(--default-tertiary-color);
 	border: none; 
 }
 
-.tidy5e.sheet.actor .inventory-list .spell-school {
+.tidy5e.sheet.actor .items-list .spell-school {
 	flex: 0 0 120px;
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail.spell-slots {
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header .spell-detail.spell-slots {
 	color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header .item-detail i,
-.tidy5e.sheet.actor .inventory-list .inventory-header .spell-detail svg,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail i {
+.tidy5e.sheet.actor .items-list .items-header .item-detail i,
+.tidy5e.sheet.actor .items-list .items-header .spell-detail svg,
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header .spell-detail i {
 	vertical-align: middle;
 	color: rgba(0,0,0,.15);
 }
 
-.tidy5e.sheet.actor .inventory-list .item i {
+.tidy5e.sheet.actor .items-list .item i {
 	vertical-align: middle;
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header .item-detail svg,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail svg {
+.tidy5e.sheet.actor .items-list .items-header .item-detail svg,
+.tidy5e.sheet.actor .items-list .items-header.spellbook-header .spell-detail svg {
 	height: 13px;
 }
 
-.tidy5e.sheet.actor .inventory-list p.notes {
+.tidy5e.sheet.actor .items-list p.notes {
 	padding: .5rem;
 }
 
-.tidy5e.sheet.actor .inventory-list .item {
+.tidy5e.sheet.actor .items-list .item {
 	padding: 0;
 	line-height: 30px;
 	background: var(--default-faint-color);
@@ -2119,7 +2153,7 @@
 	margin: 2px 0;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-attuned {
+.tidy5e.sheet.actor .items-list .item-attuned {
 	flex: 0 0 16px;
 	width: 16px;
 	font-size: 16px;
@@ -2131,18 +2165,18 @@
 }
 
 /* Equipped/Prepared Highlight */
-.tidy5e.sheet.actor .inventory-list .item.attuned,
-.tidy5e.sheet.actor .inventory-list .item.prepared {
+.tidy5e.sheet.actor .items-list .item.attuned,
+.tidy5e.sheet.actor .items-list .item.prepared {
 	background: var(--default-secondary-accent);
 }
 
-.tidy5e.sheet.actor .inventory-list .item.alwaysPrepared {
+.tidy5e.sheet.actor .items-list .item.alwaysPrepared {
 	background: var(--always-prepared-accent);
 }
 
-.tidy5e.sheet.actor .inventory-list .item-detail,
-.tidy5e.sheet.actor .inventory-list .item-controls,
-.tidy5e.sheet.actor .inventory-list .spell-detail {
+.tidy5e.sheet.actor .items-list .item-detail,
+.tidy5e.sheet.actor .items-list .item-controls,
+.tidy5e.sheet.actor .items-list .spell-detail {
 	border: none;
 	border-left: 1px solid rgba(0,0,0,.15);
 	color: rgba(0,0,0,.6);
@@ -2168,10 +2202,10 @@
 	align-items: center;
 }
 
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-action,
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-target,
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-school,
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .spell-comps {
+.tidy5e.sheet.actor .items-list :not(.items-header) .spell-action,
+.tidy5e.sheet.actor .items-list :not(.items-header) .spell-target,
+.tidy5e.sheet.actor .items-list :not(.items-header) .spell-school,
+.tidy5e.sheet.actor .items-list :not(.items-header) .spell-comps {
   padding-top: 2px;
   line-height: 28px;
 }
@@ -2196,7 +2230,7 @@
 	line-height: 1;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-controls,
+.tidy5e.sheet.actor .items-list .item-controls,
 .tidy5e.sheet.actor .inventory .item-controls,
 .tidy5e.sheet.actor .spellbook .item-controls {
 	flex: 0 0 55px;
@@ -2208,33 +2242,33 @@
 	justify-content: center;
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header .item-controls {
+.tidy5e.sheet.actor .items-list .items-header .item-controls {
 	border: none;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-controls a {
+.tidy5e.sheet.actor .items-list .item-controls a {
 	flex: 0 0 18px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-controls a:hover {
+.tidy5e.sheet.actor .items-list .item-controls a:hover {
 	color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name {
+.tidy5e.sheet.actor .items-list .item .item-name {
 	max-height: unset;
 	cursor: default;
 	flex-wrap: nowrap;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover {
+.tidy5e.sheet.actor .items-list .item .item-name.rollable:hover {
 	color: inherit;
 }
 
-.tidy5e.sheet.actor .inventory-list .item.spellbook-header .item-name {
+.tidy5e.sheet.actor .items-list .item.spellbook-header .item-name {
 	cursor: default;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name .item-image {
+.tidy5e.sheet.actor .items-list .item .item-name .item-image {
 	flex: unset; 
 	width: 30px;
 	height: 30px;
@@ -2248,76 +2282,78 @@
 	align-items: center;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name .item-image i {
+.tidy5e.sheet.actor .items-list .item .item-name .item-image i {
 	color: #333;
 	display: none;
   text-align: center;
   font-size: 22px;
 }
 
-.tidy5e.sheet.actor .favorites .inventory-list .item .item-name .item-image i {
+.tidy5e.sheet.actor .favorites .items-list .item .item-name .item-image i {
   font-size: 18px;
   line-height: 23px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item.expanded .item-name .item-image {
+.tidy5e.sheet.actor .items-list .item.expanded .item-name .item-image {
 	border-radius: 5px 0 0 0;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image,
-.tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image {
+.tidy5e.sheet.actor .items-list .item .item-name.rollable:hover .item-image,
+.tidy5e.sheet.actor .items-list .item .item-name:hover .item-image {
   background-image: none !important;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image i {
+.tidy5e.sheet.actor .items-list .item .item-name:hover .item-image i {
 	display: initial;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image:hover {
+.tidy5e.sheet.actor .items-list .item .item-name:hover .item-image:hover {
 	background-image: none !important;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-name:hover .item-image:hover i {
+.tidy5e.sheet.actor .items-list .item .item-name:hover .item-image:hover i {
 	color: var(--default-primary-accent);
 }
 
-.tidy5e.sheet.actor .inventory-list .item-weight,
-.tidy5e.sheet.actor .inventory-list .item-charges {
+.tidy5e.sheet.actor .items-list .item-weight,
+.tidy5e.sheet.actor .items-list .item-charges {
 	flex: 0 0 70px;
 }
 
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges,
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges input,
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-weight {
+.tidy5e.sheet.actor .items-list :not(.items-header) .item-charges,
+.tidy5e.sheet.actor .items-list :not(.items-header) .item-charges input,
+.tidy5e.sheet.actor .items-list :not(.items-header) .item-weight {
   padding-top: 2px;
   line-height: 28px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-level,
-.tidy5e.sheet.actor .inventory-list .item-action,
-.tidy5e.sheet.actor .inventory-list .item-create {
+.tidy5e.sheet.actor .items-list .item-level,
+.tidy5e.sheet.actor .items-list .item-action,
+.tidy5e.sheet.actor .items-list .item-create,
+.tidy5e.sheet.actor .items-list .effect-create {
 	flex: 0 0 100px;
 }
 
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-level,
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-action {
+.tidy5e.sheet.actor .items-list :not(.items-header) .item-level,
+.tidy5e.sheet.actor .items-list :not(.items-header) .item-action {
   padding-top: 2px;
   line-height: 28px;
 }
 
-.tidy5e.sheet.actor .inventory-list :not(.inventory-header) .item-charges {
+.tidy5e.sheet.actor .items-list :not(.items-header) .item-charges {
+	align-items: center;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-recharge {
+.tidy5e.sheet.actor .items-list .item .item-recharge {
 	flex: initial;
 	padding: 0 4px;
 	font-size: 13px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-charges input {
+.tidy5e.sheet.actor .items-list .item .item-charges input {
 	text-align: right;
 	width: 50%;
 	padding: 0 4px 0 0;
@@ -2325,16 +2361,17 @@
 	line-height: 1;
 }
 
-.tidy5e.sheet.actor .inventory-list .item .item-charges input.uses-max {
+.tidy5e.sheet.actor .items-list .item .item-charges input.uses-max {
 	padding: 0 0 0 4px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-summary {
+.tidy5e.sheet.actor .items-list .item-summary {
 	padding: .5rem;
 	border-top: 1px solid var(--default-faint-color);
 }
 
-.tidy5e.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
+.tidy5e.sheet.actor .items-list .items-header .item-controls a.item-create,
+.tidy5e.sheet.actor .items-list .items-header .item-controls a.effect-create {
 	background: var(--default-tertiary-color);
 	border-radius: 5px;
 	font-weight: 400;
@@ -2343,29 +2380,31 @@
   padding-top: 2px;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-controls a.item-create:hover {
+.tidy5e.sheet.actor .items-list .item-controls a.item-create:hover,
+.tidy5e.sheet.actor .items-list .item-controls a.effect-create:hover {
 	background: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .inventory-list .spellbook-empty a.item-create {
+.tidy5e.sheet.actor .items-list .spellbook-empty a.item-create,
+.tidy5e.sheet.actor .items-list .spellbook-empty a.effect-create {
 	flex: 0 0 100%;
 }
 
 
 .tidy5e.sheet.actor .inventory .item-equipped,
 .tidy5e.sheet.actor .spellbook .spell-prepared,
-.tidy5e.sheet.actor .inventory-list .spell-prepared {
+.tidy5e.sheet.actor .items-list .spell-prepared {
 	flex: 0 0 16px;
 	margin: 0 .25rem;
 }
  
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle,
 .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle,
-.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle {
+.tidy5e.sheet.actor .items-list .spell-prepared .item-toggle {
 	color: rgba(0,0,0,.25);
 }
 
-.tidy5e.sheet.actor .inventory-list .alwaysPrepared .spell-prepared {
+.tidy5e.sheet.actor .items-list .alwaysPrepared .spell-prepared {
 	display: none;
 	/*cursor: default;*/
 }
@@ -2374,14 +2413,14 @@
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle.active,
 .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle:hover,
 .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle.active,
-.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle:hover,
-.tidy5e.sheet.actor .inventory-list .prepared .spell-prepared .item-toggle {
+.tidy5e.sheet.actor .items-list .spell-prepared .item-toggle:hover,
+.tidy5e.sheet.actor .items-list .prepared .spell-prepared .item-toggle {
 	color: rgba(0,0,0,.6);
 }
 
 .tidy5e.sheet.actor .inventory .item-equipped .item-toggle i,
 .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle i,
-.tidy5e.sheet.actor .inventory-list .spell-prepared .item-toggle i {
+.tidy5e.sheet.actor .items-list .spell-prepared .item-toggle i {
 	width: 16px;
 	text-align: center;
 	vertical-align: middle;
@@ -2571,11 +2610,11 @@
     margin-right: 4px;
 	}
 
-	.tidy5e.sheet.actor .favorites .inventory-list .item-controls {
+	.tidy5e.sheet.actor .favorites .items-list .item-controls {
     flex: 0 0 48px;
 	}
 
-	.tidy5e.sheet.actor .favorites .inventory-list:first-child .inventory-header {
+	.tidy5e.sheet.actor .favorites .items-list:first-child .items-header {
     padding-right: 47px;
 	}
 
@@ -2583,7 +2622,7 @@
     flex: 0 0 65px;
 	}
 
-	.tidy5e.sheet.actor .inventory-list .item-controls,
+	.tidy5e.sheet.actor .items-list .item-controls,
 	.tidy5e.sheet.actor .inventory .item-controls,
 	.tidy5e.sheet.actor .spellbook .item-controls {
     flex: 0 0 65px;

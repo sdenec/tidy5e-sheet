@@ -1,7 +1,7 @@
 <div class="favorites">
   {{#if favItems}}
-    <ol class="inventory-list fav-item">
-      <li class="inventory-header flexrow">
+    <ol class="inventory-list items-list fav-item">
+      <li class="items-header flexrow">
         <h3>{{localize 'DND5E.Inventory'}}</h3>
         <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
         <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i></div>
@@ -14,8 +14,8 @@
     </ol>
   {{/if}}
   {{#if favFeats}}
-    <ol class="inventory-list fav-feat">
-      <li class="inventory-header flexrow">
+    <ol class="inventory-list items-list fav-feat">
+      <li class="items-header flexrow">
         <h3>{{localize 'DND5E.Features'}}</h3>
         <div class="item-detail item-charges" title="{{localize 'DND5E.Uses'}}"><i class="fas fa-bolt"></i></div>
         <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i>
@@ -30,10 +30,10 @@
 
   {{#if favSpellsPrepMode}}
     {{#each favSpellsPrepMode as |section lvl|}}
-      <ol class="inventory-list fav-spell">
+      <ol class="inventory-list items-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
-            <li class="inventory-header flexrow">                        
+            <li class="items-header flexrow">                        
               <h3>
               {{#if section.isAlways}}{{localize 'DND5E.SpellPrepAlways'}}
               {{else if section.isAtWill}}{{localize 'DND5E.SpellPrepAtWill'}}
@@ -66,10 +66,10 @@
   {{/if}}
   {{#if favSpells}}
     {{#each favSpells as |section lvl|}}
-      <ol class="inventory-list fav-spell">
+      <ol class="inventory-list items-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
-            <li class="inventory-header flexrow">                        
+            <li class="items-header flexrow">                        
               <h3>
               {{#if section.isCantrip}}{{localize 'DND5E.SpellCantrip'}}
               {{else if section.isAlways}}{{localize 'DND5E.SpellPrepAlways'}}

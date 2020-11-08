@@ -2,16 +2,16 @@
 /*   Support Better Rolls / Minor QOL   */
 /* ------------------------------------ */
 
-.tidy5e.sheet.actor .inventory-list .item-summary .item-buttons {
+.tidy5e.sheet.actor .items-list .item-summary .item-buttons {
 	margin: 8px 0; 
 }
 
-.tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag {
+.tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag {
 	border: none;
 	margin: 2px 4px 2px 0; 
 }
 
-.tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button {
+.tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button {
 	border: 1px solid rgba(0,0,0,.2);
 	background: rgba(0,0,0,.4);
 	color: rgba(255,255,255,.8);
@@ -20,7 +20,7 @@
 	cursor: pointer;
 }
 
-.tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button:hover {
+.tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button:hover {
 	background: rgba(0,0,0,.6);
 }
 
@@ -29,6 +29,10 @@
 	height: 24px;
 	border: none;
 	background: rgba(255,255,255,.3); 
+}
+
+.tidy5e.dnd5e.sheet.item .br5e-consume-container label {
+	width: 187px;
 }
 
 /* ------------------------ */
@@ -192,8 +196,8 @@
 	font-weight: 600;
 }
 
-.tidy5e.sheet.actor .magic-items-feats-content .inventory-header.spellbook-header,
-.tidy5e.sheet.actor .magic-items-spells-content .inventory-header.spellbook-header,
+.tidy5e.sheet.actor .magic-items-feats-content .items-header.spellbook-header,
+.tidy5e.sheet.actor .magic-items-spells-content .items-header.spellbook-header,
 .tidy5e.sheet.actor .magic-items-feats-content .spellbook-header div,
 .tidy5e.sheet.actor .magic-items-spells-content .spellbook-header div,
 .tidy5e.sheet.actor .magic-items-feats-content .magic-item,
@@ -260,7 +264,7 @@
 	padding: 0;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header {
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header {
 	margin: 0 0 .25rem 0;
 	padding-top: .5rem;
 	line-height: 20px;
@@ -270,45 +274,45 @@
 	font-family: "Signika", sans-serif;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header:first-child,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .item-name,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-constrols-head{
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header:first-child,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .item-name,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-level-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-consumption-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-upcast-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-cost-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-constrols-head{
 	border: none;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .item.inventory-header .item-name {
+.tidy5e.dnd5e.sheet.item .magic-item-list .item.items-header .item-name {
 	flex: 1;
 	padding: 2px 0 0 4px;
 	border: none;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head {
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-level-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-consumption-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-upcast-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-cost-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-controls-head {
 	color: rgba(0,0,0,.4);
 	padding-top: 2px;
 	margin-right: 4px;
 	text-align: center;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head {
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-controls-head {
 	margin-right: 0;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header h3 {
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header h3 {
 	font-family: "Signika", sans-serif;
 	font-size: 13px;
 	margin: 0;
 	padding: 0;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .item:not(.inventory-header) {
+.tidy5e.dnd5e.sheet.item .magic-item-list .item:not(.items-header) {
 	padding: 0;
   line-height: 30px;
   height: 30px;
@@ -324,7 +328,7 @@
 	flex: 1;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .item.inventory-header .item-name {
+.tidy5e.dnd5e.sheet.item .magic-item-list .item.items-header .item-name {
 	cursor: default;
 }
 
@@ -338,22 +342,22 @@
 	margin: 3px 4px 3px 0;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-consumption-head,
 .tidy5e.dnd5e.sheet.item .magic-item-list .item .spell-consumption {
 	flex: 0 0 80px;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-cost-head,
 .tidy5e.dnd5e.sheet.item .magic-item-list .item .spell-cost {
 	flex: 0 0 50px;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-level-head,
 .tidy5e.dnd5e.sheet.item .magic-item-list .item .spell-level {
 	flex: 0 0 70px;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-upcast-head,
 .tidy5e.dnd5e.sheet.item .magic-item-list .item .spell-upcast {
 	flex: 0 0 85px;
 }
@@ -364,7 +368,7 @@
 	text-align: center;
 }
 
-.tidy5e.dnd5e.sheet.item .magic-item-list .inventory-header .spell-controls-head,
+.tidy5e.dnd5e.sheet.item .magic-item-list .items-header .spell-controls-head,
 .tidy5e.dnd5e.sheet.item .magic-item-list .item-controls {
 	flex: 0 0 30px;
 	text-align: center;

@@ -2,7 +2,7 @@
 /*   Support Better Rolls / Minor QOL   */
 /* ------------------------------------ */
 
-.tidy5eDark .tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button:hover {
+.tidy5eDark .tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button:hover {
 	background: var(--darkmode-primary-accent);
 }
 
@@ -108,7 +108,7 @@
 	box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
 }
 
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.inventory-header) {
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.items-header) {
 	background: var(--darkmode-faint-color);
 	color: var(--darkmode-primary-color);
 }
@@ -120,13 +120,13 @@
 	color: var(--darkmode-primary-color);
 }
 
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header:first-child,
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .item-name,
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
-.tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-constrols-head {
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header:first-child,
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .item-name,
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-level-head,
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-consumption-head,
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-upcast-head,
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-cost-head,
+.tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-constrols-head {
 	color: var(--darkmode-tertiary-color);
 	font-weight: 400;
 }

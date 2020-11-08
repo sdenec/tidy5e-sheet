@@ -402,7 +402,7 @@
 }
 
 /* Fetaures, Inventory and Spells */
-.tidy5e.sheet.actor.npc .inventory-list {
+.tidy5e.sheet.actor.npc .items-list {
   padding: 0;
   overflow-y: visible;
   border: none;
@@ -420,13 +420,13 @@
   vertical-align: baseline;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list ol {
+.tidy5e.sheet.actor.npc .items-list ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item {
+.tidy5e.sheet.actor.npc .items-list .item {
   line-height: 23px;
   border-radius: 0;
   margin: 0;
@@ -434,7 +434,7 @@
   overflow: hidden;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-name .item-image {
+.tidy5e.sheet.actor.npc .items-list .item .item-name .item-image {
   width: 23px;
   height: 23px;
   flex: 0 0 23px;
@@ -443,16 +443,16 @@
   margin-right: 4px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-name .item-image i {
+.tidy5e.sheet.actor.npc .items-list .item .item-name .item-image i {
   font-size: 18px;
   line-height: 23px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header h3 {
+.tidy5e.sheet.actor.npc .items-list .items-header h3 {
   font-size: 12px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-name h4 {
+.tidy5e.sheet.actor.npc .items-list .item .item-name h4 {
   overflow-x: visible;
   display: inline-block;
   flex: initial;
@@ -461,12 +461,12 @@
   padding-top: 2px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-name h4 {
+.tidy5e.sheet.actor.npc .items-list .item-name h4 {
   font-size: 12px;
   line-height: 21px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-name h4 .info-icon {
+.tidy5e.sheet.actor.npc .items-list .item-name h4 .info-icon {
   font-size: 14px;
   color: var(--default-light-color);
   transition: color .3s ease;
@@ -474,11 +474,11 @@
   top: -1px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-name h4:hover .info-icon {
+.tidy5e.sheet.actor.npc .items-list .item-name h4:hover .info-icon {
   color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-quantity {
+.tidy5e.sheet.actor.npc .items-list .item-quantity {
   display: flex;
   margin-left: 4px;
   text-align: center;
@@ -489,26 +489,26 @@
   padding-top: 2px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-quantity {
+.tidy5e.sheet.actor.npc .items-list .item-quantity {
   font-size: 12px;
   line-height: 21px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-quantity:focus-within,
-.tidy5e.sheet.actor.npc .inventory-list .item .item-quantity:hover,
-.tidy5e.sheet.actor.npc .inventory-list .item-quantity.isStack {
+.tidy5e.sheet.actor.npc .items-list .item-quantity:focus-within,
+.tidy5e.sheet.actor.npc .items-list .item .item-quantity:hover,
+.tidy5e.sheet.actor.npc .items-list .item-quantity.isStack {
   opacity: 1;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-quantity input {
+.tidy5e.sheet.actor.npc .items-list .item-quantity input {
   width: 23px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-quantity input {
+.tidy5e.sheet.actor.npc .items-list .item-quantity input {
   height: 21px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .state-display {
+.tidy5e.sheet.actor.npc .items-list .state-display {
   flex: 0 0 16px;
   margin: 0 4px;
   display: flex;
@@ -518,18 +518,18 @@
   height: 23px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .state-display a {
+.tidy5e.sheet.actor.npc .items-list .state-display a {
   color: rgba(0,0,0,.25);
   font-size: 12px; 
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .state-display a:hover,
-.tidy5e.sheet.actor.npc .inventory-list .state-display a.active {
+.tidy5e.sheet.actor.npc .items-list .state-display a:hover,
+.tidy5e.sheet.actor.npc .items-list .state-display a.active {
   color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header,
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header:first-child {
+.tidy5e.sheet.actor.npc .items-list .items-header,
+.tidy5e.sheet.actor.npc .items-list .items-header:first-child {
   background: transparent;
   padding-top: 0;
   padding-left: 4px;
@@ -539,74 +539,74 @@
   border: none;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list:first-child .inventory-header {
+.tidy5e.sheet.actor.npc .items-list:first-child .items-header {
   padding-top: 2px;
   margin-top: 0;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header,
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header.spellbook-header {
+.tidy5e.sheet.actor.npc .items-list .items-header,
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header {
   margin: 0; 
   padding-top: 0; 
   line-height: 21px;
   border: none; 
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-recharge {
+.tidy5e.sheet.actor.npc .items-list .item .item-recharge {
   font-size: 12px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header.spellbook-header.spellbook-empty .item-controls {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header.spellbook-empty .item-controls {
   flex: 1;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header.spellbook-header.spellbook-empty .item-controls a.item-create {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header.spellbook-empty .item-controls a.item-create {
   line-height: 14px;
 }
 
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header.spellbook-header.spellbook-empty {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header.spellbook-empty {
   margin: 0;
   padding: 0; 
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots,
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .spell-slots input {
+.tidy5e.sheet.actor.npc .items-list .items-header .spell-slots,
+.tidy5e.sheet.actor.npc .items-list .items-header .spell-slots input {
   color: var(--default-primary-color);
   font-weight: 700;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .slot-max-override {
+.tidy5e.sheet.actor.npc .items-list .items-header .slot-max-override {
   font-size: 10px;
   line-height: 20px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header.spellbook-header .spell-detail i {
+.tidy5e.sheet.actor.npc .items-list .items-header.spellbook-header .spell-detail i {
   vertical-align: baseline;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-charges {
+.tidy5e.sheet.actor.npc .items-list .item .item-charges {
   flex: 0 0 80px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-comps,
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .item-action,
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .item-charges {
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-comps,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .item-action,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .item-charges {
   line-height: 21px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-action,
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-target,
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-school,
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-comps {
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-action,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-target,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-school,
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-comps {
   line-height: 21px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list :not(.inventory-header) .spell-comps {
+.tidy5e.sheet.actor.npc .items-list :not(.items-header) .spell-comps {
   flex: 0 0 50px;
 }
 
@@ -614,16 +614,16 @@
   line-height: 13px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .spell-action {
+.tidy5e.sheet.actor.npc .items-list .spell-action {
   flex: 0 0 90px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .spell-target,
-.tidy5e.sheet.actor.npc .inventory-list .spell-school {
+.tidy5e.sheet.actor.npc .items-list .spell-target,
+.tidy5e.sheet.actor.npc .items-list .spell-school {
   flex: 0 0 90px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-charges a.addCharges {
+.tidy5e.sheet.actor.npc .items-list .item .item-charges a.addCharges {
   display: block;
   width: 100%;
   text-align: center;
@@ -631,39 +631,39 @@
   transition: opacity .3s ease;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-charges:hover a.addCharges {
+.tidy5e.sheet.actor.npc .items-list .item .item-charges:hover a.addCharges {
   opacity: 1;
   color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-action {
+.tidy5e.sheet.actor.npc .items-list .item-action {
   flex: 0 0 120px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item .item-charges .uses-max,
-.tidy5e.sheet.actor.npc .inventory-list .item .spell-slots .spell-max {
+.tidy5e.sheet.actor.npc .items-list .item .item-charges .uses-max,
+.tidy5e.sheet.actor.npc .items-list .item .spell-slots .spell-max {
   text-align: left;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-controls {
+.tidy5e.sheet.actor.npc .items-list .item-controls {
   flex: 0 0 40px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .inventory-header .item-controls a.item-create {
+.tidy5e.sheet.actor.npc .items-list .items-header .item-controls a.item-create {
   border-radius: 3px;
   line-height: 12px;
   padding-top: 2px;
   margin: 3px 0;
 }
 
-.tidy5e.sheet.actor.npc .inventory-header .item-controls a.item-create i {
+.tidy5e.sheet.actor.npc .items-header .item-controls a.item-create i {
   vertical-align: baseline;
   font-size: 7px;
   position: relative;
   top: -1px;
 }
 
-.tidy5e.sheet.actor.npc .inventory-list .item-controls a:hover {
+.tidy5e.sheet.actor.npc .items-list .item-controls a:hover {
   color: rgba(0,0,0,.6);
 }
 

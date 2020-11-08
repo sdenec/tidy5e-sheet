@@ -155,18 +155,19 @@
 						<h4 class="attribute-name">{{ localize 'DND5E.ArmorClass' }}</h4>
 						<input class="ac-display" name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}" data-dtype="Number" placeholder="10"maxlength="2">
 					</li>
-					<li class="header-attribute">
-						<h4 class="attribute-name">{{ localize 'DND5E.Speed' }}</h4>
+					<li class="header-attribute movement">
+						<!-- <span class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></span> -->
+						<h4 class="attribute-name">{{ localize 'DND5E.Speed' }} ({{data.attributes.movement.units}})</h4>
 						<div class="value">
-							<input name="data.attributes.speed.value" type="text" value="{{data.attributes.speed.value}}" placeholder="0">
+							<p class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</p>
 						</div>
 						<footer class="flex value-footer">
-							<input type="text" class="speed" name="data.attributes.speed.special"
-							value="{{data.attributes.speed.special}}" placeholder="{{ localize 'DND5E.SpeedSpecial' }}">
+							<span class="movement-special" title="{{movement.special}}">{{movement.special}}</span>
+							<span class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></span>
 						</footer>
 					</li>
 					<li class="header-attribute initiative">
-						<h4 class="attribute-name">{{ localize 'DND5E.Initiative' }}</h4>
+						<h4 class="attribute-name rollable" data-action="rollInitiative">{{ localize 'DND5E.Initiative' }}</h4>
 						<div class="value">
 							<p>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</p>
 						</div>
@@ -187,6 +188,7 @@
 			<a class="item" data-tab="inventory">{{ localize "DND5E.Inventory" }}</a>
 			<a class="item" data-tab="features">{{ localize "DND5E.Features" }}</a>
 			<a class="item" data-tab="spellbook">{{ localize "DND5E.Spellbook" }}</a>
+			<a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
 			<a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
 			<a class="item" data-tab="journal">{{ localize "TIDY5E.Journal" }}</a>
 		</nav>
@@ -290,6 +292,11 @@
 			{{!-- Spellbook Tab --}}
 			<div class="tab spellbook flexcol" data-group="primary" data-tab="spellbook">
 				{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html"}}
+			</div>
+
+			{{!-- Effects Tab --}}
+			<div class="tab effects flexcol" data-group="primary" data-tab="effects">
+				{{>  "modules/tidy5e-sheet/templates/actors/parts/tidy5e-effects.html"}}
 			</div>
 
 			{{!-- Biography Tab --}}
