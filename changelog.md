@@ -9,6 +9,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.2.31*
+- updated japanese translation
+
 *Version 0.2.30*
 - fixed the drag and drop error in the fav tab
 
