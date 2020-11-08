@@ -156,17 +156,18 @@
 						<input class="ac-display" name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}" data-dtype="Number" placeholder="10"maxlength="2">
 					</li>
 					<li class="header-attribute movement">
-						<span class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></span>
+						<!-- <span class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></span> -->
 						<h4 class="attribute-name">{{ localize 'DND5E.Speed' }} ({{data.attributes.movement.units}})</h4>
 						<div class="value">
-							<span class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</span>
+							<p class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</p>
 						</div>
 						<footer class="flex value-footer">
 							<span class="movement-special" title="{{movement.special}}">{{movement.special}}</span>
+							<span class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></span>
 						</footer>
 					</li>
 					<li class="header-attribute initiative">
-						<h4 class="attribute-name">{{ localize 'DND5E.Initiative' }}</h4>
+						<h4 class="attribute-name rollable" data-action="rollInitiative">{{ localize 'DND5E.Initiative' }}</h4>
 						<div class="value">
 							<p>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</p>
 						</div>

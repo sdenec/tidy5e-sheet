@@ -121,14 +121,20 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor input[type="text"]::placeholder
-/*.tidy5eDark .dnd5e input[type="text"]::placeholder */
 {
   color: var(--darkmode-tertiary-color);
 }
-/*
-.tidy5eDark .dnd5e input[type="text"] {
-  color: var(--darkmode-primary-color);
-}*/
+
+/* movement settings */
+
+.tidy5eDark .tidy5e.sheet.actor .header-attributes .configure-movement i {
+  color: var(--darkmode-secondary-color);
+}
+
+.tidy5eDark .tidy5e.sheet.actor .header-attributes .configure-movement:hover i {
+  color: var(--darkmode-primary-accent)
+}
+
 
 /* Sheet Navigation */
 .tidy5eDark .tidy5e.sheet.actor .item[data-tab="attributes"] i {
@@ -455,13 +461,15 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a,
-.tidy5eDark .tidy5e.sheet.actor .items-list .items-header .item-controls a.item-create {
+.tidy5eDark .tidy5e.sheet.actor .items-list .items-header .item-controls a.item-create,
+.tidy5eDark .tidy5e.sheet.actor .items-list .items-header .item-controls a.effect-create {
   background: var(--darkmode-light-color);
   color: var(--darkmode-secondary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .inventory-currency .currency-item.convert a:hover,
-.tidy5eDark .tidy5e.sheet.actor .items-list .items-header .item-controls a.item-create:hover {
+.tidy5eDark .tidy5e.sheet.actor .items-list .items-header .item-controls a.item-create:hover,
+.tidy5eDark .tidy5e.sheet.actor .items-list .items-header .item-controls a.effect-create:hover {
   background: var(--darkmode-primary-accent);
 }
 

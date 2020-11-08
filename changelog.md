@@ -9,8 +9,10 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
-*Version 0.2.31*
+*Version 0.3.0*
 - updated japanese translation
+- updates for the 0.99 5e dnd system and foundry 0.7.6. Big thanks to akrigline
+- added journals to NPCs
 
 *Version 0.2.30*
 - fixed the drag and drop error in the fav tab

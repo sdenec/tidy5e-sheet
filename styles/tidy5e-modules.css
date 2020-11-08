@@ -31,6 +31,10 @@
 	background: rgba(255,255,255,.3); 
 }
 
+.tidy5e.dnd5e.sheet.item .br5e-consume-container label {
+	width: 187px;
+}
+
 /* ------------------------ */
 /* Support Dynamic Effects  */
 /* ------------------------ */
