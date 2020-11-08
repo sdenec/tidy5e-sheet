@@ -8,7 +8,7 @@
 	"compatibleCoreVersion": "0.7.6",
 	"system": ["dnd5e"],
 	"esmodules": [
-		"./tidy5e-sheet.js",	
+		"./tidy5e-sheet.js",
 		"./tidy5e-favorites.js",
 		"./tidy5e-npc.js",
 		"./tidy5e-item.js"
@@ -65,6 +65,11 @@
 			"lang": "cn",
 			"name": "Chinese",
 			"path": "lang/cn.json"
+		},
+		{
+			"lang": "cs",
+			"name": "Čeština",
+			"path": "lang/cs.json"
 		}
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
