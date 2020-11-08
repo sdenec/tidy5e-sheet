@@ -13,6 +13,7 @@ Thank you very much!
 - updated japanese translation
 - updates for the 0.99 5e dnd system and foundry 0.7.6. Big thanks to akrigline
 - added journals to NPCs
+- various css adjustments
 
 *Version 0.2.30*
 - fixed the drag and drop error in the fav tab
