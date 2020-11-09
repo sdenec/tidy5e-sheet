@@ -6,6 +6,7 @@ Additional Translations generously provided by:
 - Brazilian Portuguese: @rinnocenti, brnmuller
 - French: @temvaryen
 - Chinese: @EternalRider
+- Czech: @vitpetricak
 
 Thank you very much!
 
@@ -15,6 +16,7 @@ Thank you very much!
 - added temp hp to npc sheets
 - added switch to show legacy speed in pc/npc sheets
 - various css adjustments
+- czech language support
 
 *Version 0.3.0*
 - updated japanese translation
