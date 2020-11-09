@@ -6,8 +6,17 @@ Additional Translations generously provided by:
 - Brazilian Portuguese: @rinnocenti, brnmuller
 - French: @temvaryen
 - Chinese: @EternalRider
+- Czech: @vitpetricak
 
 Thank you very much!
+
+*Version 0.3.1*
+- fixed font color for darkmode item descriptions
+- updated pc/npc sheets to 5e 1.1.0
+- added temp hp to npc sheets
+- added switch to show legacy speed in pc/npc sheets
+- various css adjustments
+- czech language support
 
 *Version 0.3.0*
 - updated japanese translation

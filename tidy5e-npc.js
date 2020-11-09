@@ -276,6 +276,17 @@ export default class Tidy5eNPC extends ActorSheet5e {
       }
     });
 
+    // toggle legacy speed display
+    html.find('.legacy-switch').click(async (event) => {
+      event.preventDefault();
+      let actor = this.actor;
+
+      if(actor.getFlag('tidy5e-sheet', 'legacy-speed')){
+        await actor.unsetFlag('tidy5e-sheet', 'legacy-speed');
+      } else {
+        await actor.setFlag('tidy5e-sheet', 'legacy-speed', true);
+      }
+    });
     
     // changing item qty and charges values (removing if both value and max are 0)
     html.find('.item:not(.items-header) input').change(event => {

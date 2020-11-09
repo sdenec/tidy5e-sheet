@@ -69,8 +69,8 @@
                 data-dtype="Number" placeholder="10" maxlength="4">
               </div>
               <footer class="flex value-footer">
-                <input name="data.attributes.hp.formula" class="hpformula" type="text" placeholder="{{ localize 'DND5E.HealthFormula' }}"
-                value="{{data.attributes.hp.formula}}"  maxlength="12">
+                <input name="data.attributes.hp.formula" class="hpformula" type="text" placeholder="{{ localize 'DND5E.HPFormula' }}" value="{{data.attributes.hp.formula}}"  maxlength="12" title="{{ localize 'DND5E.HPFormula' }}">
+                <input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" value="{{data.attributes.hp.temp}}" data-dtype="{{data.attributes.hp.type}}" maxlength="3" title="+{{ localize 'DND5E.Temp' }}">
               </footer>
             </li>
 
@@ -79,7 +79,7 @@
               <input class="ac-display" name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}" data-dtype="Number" placeholder="10" maxlength="2">
             </li>
 
-            <li class="header-attribute npc-speed">
+            <!-- <li class="header-attribute npc-speed">
               <h2 class="attribute-name">{{ localize 'DND5E.Speed' }}</h2>
               <div class="value">
                 <input name="data.attributes.speed.value" type="text" value="{{data.attributes.speed.value}}" placeholder="0">
@@ -88,6 +88,27 @@
                 <input type="text" class="speed" name="data.attributes.speed.special"
                 value="{{data.attributes.speed.special}}" placeholder="{{ localize 'DND5E.SpeedSpecial' }}">
               </footer>
+            </li> -->
+            <li class="header-attribute npc-speed movement {{#if actor.flags.tidy5e-sheet.legacy-speed}} legacy-display{{/if}}">
+              <h4 class="attribute-name">{{ localize 'DND5E.Speed' }} ({{data.attributes.movement.units}}) <span class="legacy-switch"><i class="fas fa-toggle-on"></i><i class="fas fa-toggle-off"></i></span></h4>
+              <div class="speed-form">
+                <div class="value">
+                  <p class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</p>
+                </div>
+                <footer class="flex value-footer">
+                  <span class="movement-special" title="{{movement.special}}">{{movement.special}}</span>
+                  <span class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></span>
+                </footer>
+              </div>
+              <div class="speed-form-legacy">
+                <div class="value">
+                  <input name="data.attributes.speed.value" type="text" value="{{data.attributes.speed.value}}" placeholder="0">
+                </div>
+                <footer class="flex value-footer">
+                  <input type="text" class="speed" name="data.attributes.speed.special"
+                  value="{{data.attributes.speed.special}}" placeholder="{{ localize 'DND5E.SpeedSpecial' }}">
+                </footer>
+              </div>
             </li>
           </ul>
           {{!-- Ability Scores --}}
@@ -115,6 +136,7 @@
     {{!-- NPC Sheet Navigation --}}
     <nav class="flex tidy5e-navigation tabs" data-group="primary">
       <a class="item active" data-tab="attributes">{{ localize "TIDY5E.Abilities" }}</a>
+      <a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
       <a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
       <a class="item" data-tab="journal">{{ localize "TIDY5E.Journal" }}</a>
     </nav>
@@ -179,6 +201,11 @@
           {{> "modules/tidy5e-sheet/templates/actors/npc/parts/tidy5e-npc-features.html" sections=features}}
           {{> "modules/tidy5e-sheet/templates/actors/npc/parts/tidy5e-npc-spellbook.html"}}
         </section>
+      </div>
+
+      {{!-- Effects Tab --}}
+      <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+        {{>  "modules/tidy5e-sheet/templates/actors/parts/tidy5e-effects.html"}}
       </div>
 
       {{!-- Biography Tab --}}
