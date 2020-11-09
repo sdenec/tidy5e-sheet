@@ -191,6 +191,19 @@
   top: -1px;
 }
 
+.tidy5e.sheet.actor.npc .header-attributes .health .value-footer {
+  position: relative;
+}
+
+.tidy5e.sheet.actor.npc .header-attributes .health .value-footer .temphp{
+  text-align: center;
+  position: absolute;
+  bottom: -16px;
+}
+
+/*.tidy5e.sheet.actor.npc .header-attributes .health .value-footer .hpformula{*/
+}
+
 .tidy5e.sheet.actor.npc .header-attributes .armor-class {
 	flex: 0 0 50px;
 }
@@ -665,6 +678,54 @@
 
 .tidy5e.sheet.actor.npc .items-list .item-controls a:hover {
   color: rgba(0,0,0,.6);
+}
+
+.tidy5e.sheet.actor.npc .effects-list {
+  padding: 0 9px 1rem 0;
+  overflow-y: scroll;
+}
+
+.tidy5e.sheet.actor.npc .effects-list .items-header,
+.tidy5e.sheet.actor.npc .effects-list .items-header.spellbook-header {
+  margin: 0 0 .25rem 0;
+  padding-top: .5rem;
+  line-height: 20px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--default-faint-color);
+}
+
+.tidy5e.sheet.actor.npc .effects-list .items-header:first-child,
+.tidy5e.sheet.actor.npc .effects-list .items-header.spellbook-header:first-child {
+  padding-top: 0;
+  border: none;
+}
+
+.tidy5e.sheet.actor.npc .effects-list .items-header h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.tidy5e.sheet.actor.npc .effects-list .items-header h3 {
+  font-family: "Signika", sans-serif;
+  font-size: 16px;
+}
+
+.tidy5e.sheet.actor.npc .effects-list .item-detail,
+.tidy5e.sheet.actor.npc .effects-list .item-controls,
+.tidy5e.sheet.actor.npc .effects-list .spell-detail {
+  border: none;
+  border-left: 1px solid rgba(0,0,0,.15);
+  color: rgba(0,0,0,.6);
+}
+
+.tidy5e.sheet.actor.npc .effects-list .item-controls {
+  flex: 0 0 55px;
+  justify-content: center;
+}
+
+.tidy5e.sheet.actor.npc .effects-list .items-header .item-controls {
+  border: none;
 }
 
 .tidy5e.sheet.actor.npc .spellcasting-ability {
