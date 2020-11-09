@@ -12,7 +12,7 @@ Thank you very much!
 
 *Version 0.3.1*
 - fixed font color for darkmode item descriptions
-- updated npc sheets to 5e 0.99
+- updated pc/npc sheets to 5e 1.1.0
 - added temp hp to npc sheets
 - added switch to show legacy speed in pc/npc sheets
 - various css adjustments
