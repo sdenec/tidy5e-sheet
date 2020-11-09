@@ -2,7 +2,7 @@
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"author": "sdenec#3813",
 	"minimumCoreVersion": "0.7.6",
 	"compatibleCoreVersion": "0.7.6",

@@ -9,6 +9,13 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.3.1*
+- fixed font color for darkmode item descriptions
+- updated npc sheets to 5e 0.99
+- added temp hp to npc sheets
+- added switch to show legacy speed in pc/npc sheets
+- various css adjustments
+
 *Version 0.3.0*
 - updated japanese translation
 - updates for the 0.99 5e dnd system and foundry 0.7.6. Big thanks to akrigline

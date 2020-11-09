@@ -79,6 +79,18 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			}
  		});
 
+		// toggle legacy speed display
+		html.find('.legacy-switch').click(async (event) => {
+			event.preventDefault();
+			let actor = this.actor;
+
+			if(actor.getFlag('tidy5e-sheet', 'legacy-speed')){
+				await actor.unsetFlag('tidy5e-sheet', 'legacy-speed');
+			} else {
+				await actor.setFlag('tidy5e-sheet', 'legacy-speed', true);
+			}
+ 		});
+
 		// toggle traits
  		html.find('.traits-toggle').click(async (event) => {
 			event.preventDefault();

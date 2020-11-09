@@ -349,6 +349,11 @@
   color: var(--darkmode-secondary-color);
 }
 
+.tidy5eDark .tidy5e.sheet.actor .items-list .item-summary {
+  border-top: 1px solid var(--darkmode-faint-color);
+  color: var(--darkmode-primary-color);
+}
+
 .tidy5eDark .tidy5e.sheet.actor .inventory .item-equipped .item-toggle,
 .tidy5eDark .tidy5e.sheet.actor .spellbook .spell-prepared .item-toggle {
   color: var(--darkmode-light-color);

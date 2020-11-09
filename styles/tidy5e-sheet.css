@@ -88,6 +88,38 @@
   cursor: pointer;
 }
 
+.tidy5e.sheet.actor .header-attributes .movement .legacy-switch {
+	font-size: 14px;
+  position: relative;
+  bottom: 1px;
+  cursor: pointer;
+  opacity: .5;
+  transition: opacity .3s ease;
+}
+
+.tidy5e.sheet.actor .header-attributes .movement .legacy-switch:hover {
+	opacity: 1;
+}
+
+.tidy5e.sheet.actor .header-attributes .movement .legacy-switch .fa-toggle-off,
+.tidy5e.sheet.actor .header-attributes .movement.legacy-display .legacy-switch .fa-toggle-on {
+	display: none;
+}
+
+.tidy5e.sheet.actor .header-attributes .movement.legacy-display .legacy-switch .fa-toggle-off,
+.tidy5e.sheet.actor .header-attributes .movement .legacy-switch .fa-toggle-on {
+	display: inline-block;
+}
+
+.tidy5e.sheet.actor .header-attributes .movement .speed-form-legacy,
+.tidy5e.sheet.actor .header-attributes .movement.legacy-display .speed-form {
+	display: none;
+}
+
+.tidy5e.sheet.actor .header-attributes .movement.legacy-display .speed-form-legacy {
+	display: block;
+}
+
 .tidy5e.sheet.actor .header-attributes .configure-movement:hover i {
 	color: var(--default-secondary-color)
 }
@@ -2424,6 +2456,17 @@
 	width: 16px;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.tidy5e.sheet.actor .effects .item .effect-source,
+.tidy5e.sheet.actor .effects .item .effect-duration,
+.tidy5e.sheet.actor .effects .item .effect-controls {
+	border-right: none;
+	border-color: rgba(0,0,0,.15);
+}
+
+.tidy5e.sheet.actor .effects .item .effect-source {
+	line-height: 1.2;
 }
 
 .item-equipped .fas.fa-user-alt,
