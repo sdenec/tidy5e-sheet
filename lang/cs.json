@@ -28,7 +28,7 @@
 	"TIDY5E.BioBonds": "Pouta",
 	"TIDY5E.BioFlaws": "Vady",
 	"TIDY5E.BioAppearance": "Vzhled",
-	"TIDY5E.BioBackground": "Původ/Životopis",
+	"TIDY5E.BioBackground": "Zázemí/Životopis",
 
 	"TIDY5E.JournalPoi": "Zájmové osoby",
 	"TIDY5E.JournalLoi": "Zájmové lokace",
@@ -56,7 +56,7 @@
 	"TIDY5E.Show" : "zobrazit/upravit",
 	"TIDY5E.Hide" : "skrýt",
 	"TIDY5E.Edit" : "upravit",
-	"TIDY5E.SkillsNotProficient" : "nezdatné",
+	"TIDY5E.SkillsNotProficient" : "bez zdatnosti",
 	"TIDY5E.TraitsEmpty" : "prázdné rysy",
 
 	"TIDY5E.AbbrArmorClass" : "OČ",
