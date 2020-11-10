@@ -384,6 +384,16 @@
 	margin: 0;
 }
 
+.tidy5e.dnd5e.sheet.item .sheet-body .tab.magic-items .magic-item-sort .form-fields label {
+	flex:0 0 150px;
+}
+
+.tidy5e.dnd5e.sheet.item .magic-items .magic-item-sort .form-fields input {
+  width: 16px;
+  top: 0;
+  margin: 0 4px;
+}
+
 
 /* ----------------------------- */
 /*    Support Skill Customizer   */

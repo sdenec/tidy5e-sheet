@@ -10,6 +10,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.3.2*
+- css fix for new magic item module features
+
 *Version 0.3.1*
 - fixed font color for darkmode item descriptions
 - updated pc/npc sheets to 5e 1.1.0
