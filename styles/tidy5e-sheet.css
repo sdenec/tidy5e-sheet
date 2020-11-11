@@ -1616,6 +1616,7 @@
 	line-height: 28px;
 	padding-top: 2px;
 	text-overflow: ellipsis;
+	margin: 0;
 }
 
 .tidy5e.sheet.actor .favorites .items-list .item-name h4 {
@@ -2032,7 +2033,7 @@
 
 .tidy5e-sheet.allow-delete .sheet-body .item-delete,
 .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-enabled {
-	display: block;
+	display: inline;
 }
 
 /* Currency */
