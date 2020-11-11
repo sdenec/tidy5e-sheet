@@ -70,7 +70,12 @@
               </div>
               <footer class="flex value-footer">
                 <input name="data.attributes.hp.formula" class="hpformula" type="text" placeholder="{{ localize 'DND5E.HPFormula' }}" value="{{data.attributes.hp.formula}}"  maxlength="12" title="{{ localize 'DND5E.HPFormula' }}">
-                <input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" value="{{data.attributes.hp.temp}}" data-dtype="{{data.attributes.hp.type}}" maxlength="3" title="+{{ localize 'DND5E.Temp' }}">
+                <div class="npc-temp-health flex">
+                  <input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}"
+                  value="{{data.attributes.hp.temp}}" data-dtype="{{data.attributes.hp.type}}" maxlength="3" title="+{{ localize 'DND5E.Temp' }}">
+                  <input name="data.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}"
+                  value="{{data.attributes.hp.tempmax}}" data-dtype="{{data.attributes.hp.type}}" maxlength="3" title="+{{ localize 'DND5E.Max' }}">
+                </div>
               </footer>
             </li>
 
