@@ -10,6 +10,11 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.3.3*
+- fixed death saving throw rolls
+- darkmode css fixes
+- added max temp hp to npc sheet
+
 *Version 0.3.2*
 - css fix for new magic item module features
 
