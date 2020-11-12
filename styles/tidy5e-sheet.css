@@ -2033,7 +2033,7 @@
 
 .tidy5e-sheet.allow-delete .sheet-body .item-delete,
 .tidy5e-sheet.allow-delete .sheet-body .tidy5e-delete-enabled {
-	display: inline;
+	display: block;
 }
 
 /* Currency */
@@ -2266,6 +2266,7 @@
 .tidy5e.sheet.actor .items-list .item-controls,
 .tidy5e.sheet.actor .inventory .item-controls,
 .tidy5e.sheet.actor .spellbook .item-controls {
+	display: flex;
 	flex: 0 0 55px;
 	justify-content: center;
 }
