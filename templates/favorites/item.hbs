@@ -33,7 +33,7 @@
   {{/if}}
 
   {{#if item.isItem}}
-  <div class="item-detail item-charges">
+  <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
     {{#if item.data.uses.max}}
       <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
       / <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
@@ -44,7 +44,7 @@
   </div>
   {{/if}}
   {{#if item.isFeat}}
-  <div class="item-detail item-charges">
+  <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
     {{#if item.isOnCooldown}}
       <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-bolt"></i>{{item.labels.rechargeValue}}</a>
       {{else if item.data.recharge.value}}
@@ -59,7 +59,7 @@
   {{/if}}
 
   {{#if item.spellComps}}
-    <div class="spell-detail spell-comps">
+    <div class="spell-detail spell-comps" title="{{localize 'DND5E.SpellComponents'}}">
       {{item.spellComps}}
       {{#if item.spellCon}}<span class="spell-component C">C</span>{{/if}}
       {{#if item.spellRit}}<span class="spell-component R">R</span>{{/if}}
@@ -68,7 +68,7 @@
 
   <div class="item-detail item-action">
     {{#each item.favLabels as |label id|}}
-      <span title="{{label}}">{{label}}</span>
+      <span title="{{localize 'DND5E.Usage'}}: {{label}}">{{label}}</span>
     {{/each}}
   </div>
 

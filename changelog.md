@@ -10,6 +10,10 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.0*
+- file restructuring
+- complete css rewrite for maintainability
+
 *Version 0.3.3*
 - fixed death saving throw rolls
 - darkmode css fixes

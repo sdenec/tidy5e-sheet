@@ -1,0 +1,202 @@
+@import 'sheet-partials/_variables.scss';
+
+.tidy5e.sheet.actor {
+
+	min-width: 740px;
+	height: 720px;
+	min-height: 210px;
+
+	.window-content {
+		padding: 0;
+		margin: 0;
+
+		form {
+			height: 100%;
+    	overflow: hidden;
+    	display: flex;
+    	flex-direction: column;
+  	  flex-wrap: nowrap;
+	  }
+	}
+
+	.tidy5e-sheet {
+		display: flex;
+		flex: 1;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+	}
+
+	@import 'sheet-partials/_general.scss';
+
+	/* ### HEADER ### */
+	.tidy5e-header {
+		display: flex;
+    justify-content: center;
+		padding: 1rem;
+		background: rgba(255,255,255,.2);
+	}
+
+	@import 'sheet-partials/_portrait.scss';
+	@import 'sheet-partials/_character-details.scss';
+	@import 'sheet-partials/_navigation.scss';
+
+	/* #### SHEET BODY #### */
+
+	.sheet-body {
+		padding: 1rem .25rem 1rem 1rem;
+    flex: 1;
+    overflow: hidden;
+	}
+
+	@import 'sheet-partials/_tabs.scss';
+	@import 'sheet-partials/_main-tab.scss';
+	@import 'sheet-partials/_main-tab-favorites.scss';
+
+	/* Inventorys */
+	@import 'sheet-partials/_main-tab-inventory.scss';
+
+
+
+
+	/* Notes in Biography and Journal */
+
+	.left-notes,
+	.right-notes {
+		flex: 1;
+	}
+
+	.left-notes {
+		margin-right: 1rem;
+	}
+
+	.limited .note-entries {
+	  display: flex;
+	  height: 100%;
+	  align-items: stretch;
+	}
+
+	.note-entries article {
+		background: var(--default-faint-color);
+		border-radius: 5px;
+		padding: .5rem;
+		margin-bottom: 1rem;
+		position: relative;
+	}
+
+	.limited .note-entries article {
+	  flex: 1;
+	  margin: 0;
+	}
+
+	.note-entries article:last-child {
+		margin-bottom: 0;
+	}
+
+	.limited .note-entries article:last-child {
+	  margin-left: 8px;
+	}
+
+
+	.note-entries article:hover .editor .editor-edit {
+		display: block;
+		padding: 0;
+		border: none;
+		box-shadow: none;
+	}
+
+	.note-entries article .section-titles {
+		font-weight: 700;
+		border-bottom: 1px solid var(--default-light-color);
+		padding-bottom: .25rem;
+		margin-bottom: .5rem;
+	}
+
+	.note-entries article .section-titles input {
+		height: 17px;
+	  width: calc(100% - 26px);
+		font-weight: 700;
+	}
+
+	.note-entries article .editor,
+	.note-entries article .editor .editor-content {
+		min-height: 50px;
+		padding: 0;
+		position: static;
+	}
+
+	.note-entries article .editor .editor-content ul {
+		list-style: disc;
+		padding-left: 20px;
+	}
+
+	.note-entries article.biography-notes .editor {
+		min-height: 271px;
+	}
+
+	.note-entries article.journal-notes .editor {
+		min-height: 382px;
+	}
+
+	.note-entries article .editor .editor-content,
+	.note-entries article .editor .tox .tox-toolbar__group {
+		padding: 0;
+	}
+
+	.note-entries article .editor .tox .tox-tbtn {
+		width: 24px;
+		height: 24px;
+	}
+
+	.note-entries article .editor .tox.tox-tinymce .tox-tbtn[title="Formats"] {
+		width: 90px;
+	}
+
+	.note-entries article .editor .tox .tox-tbtn--select {
+		width: auto;
+	}
+
+	.editor ul,
+	.editor ol {
+		list-style: outside;
+	  margin: 0.5em 0;
+	  padding: 0 0 0 1.5em;
+	}
+
+	.editor {
+	    min-height: 382px;
+	    display: flex;
+	    flex-direction: column;
+	}
+
+	.tox.tox-tinymce {
+	    border: none;
+	    flex: 1;
+	    min-height: 100px;
+	}
+
+	/* Portrait hover options */
+
+	.exhaustionOnHover .exhaustion-container,
+	.inspirationOnHover .inspiration,
+	.restOnHover .rest-container {
+		display: none;
+	}
+
+	.exhaustionOnHover:hover .exhaustion-container,
+	.inspirationOnHover:hover .inspiration,
+	.restOnHover:hover .rest-container {
+		display: block;
+	}
+
+}
+
+/* Mobile Support for Simple Mobile */
+
+/*
+
+@media only screen and (max-width: 1000px) {
+
+
+} 
+*/

@@ -1,0 +1,635 @@
+/* Filters */
+.inventory-filters {
+  margin: 0 14px 1rem 0;
+	flex: 0 0 19px;
+	border-bottom: 1px solid var(--default-light-color);
+}
+
+.filter-list {
+	max-width: initial;
+	display: flex;
+	justify-content: flex-end;
+
+	.filter-title {
+		font-size: 12px;
+    line-height: 18px;
+    color: var(--default-secondary-color);
+	}
+
+	.filter-item {
+		font-size: 12px;
+	  padding: 0 .5rem;
+	  margin-left: 2px;
+	  flex: unset;
+	  cursor: pointer;
+	  border-bottom: 3px solid #b5b3a4;
+
+	  &:hover {
+			border-bottom: 3px solid #7a7971;
+	  }
+
+	  &.active {
+			border-bottom: 3px solid #44191A;
+	  }
+	} //.filter-item
+} //.filter-list
+
+/* Currency */
+
+.inventory-currency {
+
+  margin: 0rem 14px .5rem 0;
+  padding-top: .5rem;
+	flex: 0 0 30px;
+	border-top: 2px solid rgba(0,0,0,.3);
+
+	.currency {
+		display: flex;
+		align-items: center;
+		list-style: none;
+	}
+
+	.currency-header {
+		flex: 0 0 13px;
+		text-align: center;
+		align-items: center;
+		margin-right: .5rem;
+	}
+
+	.currency-item {
+		display: flex;
+		align-items: center;
+	  background: var(--default-faint-color);
+	  border-radius: 5px;
+	  padding: 0 .5rem 0 0;
+	  margin-right: .5rem;
+	  line-height: 30px;
+
+		input {
+			text-align: right;
+			flex: 1;
+			padding-left: .5rem;
+		}
+
+		label {
+			margin-left: .25rem;	
+			flex: unset;
+		}
+
+		&.convert {
+			margin-right: 0;
+			padding: 0;
+			flex: 0 0 1px;
+			text-align: center;
+			white-space: nowrap;
+		}
+
+		a {
+			display: block;
+			background: var(--default-tertiary-color);
+			color: rgba(255,255,255,.6);
+			border-radius: 5px;
+			padding: 0 8px;
+
+			&:hover {
+			  background: rgba(0,0,0,.6);
+			}
+		} // a
+	} // .currency-item
+} // .inventory-currency
+
+/* Spellcasting Ability */
+
+.spellcasting-ability  {
+	display: flex;
+  margin: 0rem 14px 0 0;
+  padding-top: .5rem;
+	border-top: 2px solid rgba(0,0,0,.3);
+	align-items: center;
+
+	.spellcasting-attribute {
+		display: flex;
+		align-items: center;
+	}
+	
+	h3 {
+		margin-right: 10px;
+	}
+
+	select {
+		margin: 0 0 0 5px;
+	}
+
+} //.spellcasting-ability
+
+/* Context Menu */
+
+
+
+
+	/* Inventory Items */
+
+	.items-list {
+		flex: 1;
+		padding: 0 9px 1rem 0;
+	  overflow-y: scroll;
+	}
+
+	.items-list .items-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 0 .25rem 0;
+		padding-top: .5rem;
+		line-height: 20px;
+		// border-top: 1px solid var(--default-faint-color);
+		
+		&:first-child { 
+			padding-top: 0;
+			// border: none; 
+		}
+	}
+
+	.items-list .items-header h3 {
+		font-size: 13px;
+		flex: 1 0 60px;
+		white-space: nowrap;
+	}
+
+	.items-list  .items-footer {
+		display: flex;
+		justify-content: flex-end;
+		flex: 1;
+		background: var(--default-light-color);
+		border-radius: 5px;
+
+		a {
+			flex: 0 0 120px;
+    	padding: 0 20px;
+			font-size: 12px;
+			text-align: center;
+			color: var(--default-secondary-color);
+			border-radius: 5px;
+			font-weight: 400;
+		  line-height: 18px;
+		  padding-top: 2px;
+		
+			&:hover {
+				background: var(--default-light-color);
+			}
+		}
+	}
+
+	.item .item-controls {
+		display: none;
+		min-width: 70px;
+		background: url(../../../ui/parchment.jpg) repeat;
+    border: 1px solid rgba(0,0,0,.2);
+    position: absolute;
+    z-index: 100;
+    border-radius: 5px;
+    padding: 2px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+	}
+
+	.item .item-controls a {
+		display: block;
+		padding: 5px 10px 5px 10px;
+		white-space: nowrap;
+		line-height: 1;
+		font-weight: 400;
+		font-size: 13px;
+
+		&:first-child {
+			border-radius: 3px 3px 0 0;
+		}
+
+		&:last-child {
+			border-radius: 3px;
+		}
+
+		&:hover {
+			background: rgba(255,255,255,.4);
+		}
+
+		i {
+    	margin-right: 5px;
+   		vertical-align: unset;
+   		width: 14px;
+		}
+
+		&.item-delete {
+			background: rgba(255,0,0,.6);
+			color: rgba(255,255,255,.6);
+
+			&:hover {
+				background: rgba(255,0,0,.6);
+				color: rgba(255,255,255,.8);			
+			}
+		}
+
+	}
+
+
+	.items-list .item {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		line-height: 30px;
+		background: var(--default-faint-color);
+		border-radius: 5px; 
+		margin: 2px 0;
+	}
+
+	.items-list .item i {
+		vertical-align: middle;
+	}
+
+	.items-list .item .item-name {
+		display: flex;
+		flex: 1;
+		cursor: default;
+		flex-wrap: nowrap;
+	}
+
+	.items-list .item .item-name.rollable:hover {
+		color: inherit;
+	}
+
+	.items-list .item .item-name h4 {
+		display: inline-block;
+		flex: initial;
+		cursor: pointer;
+		line-height: 28px;
+		padding-top: 2px;
+		text-overflow: ellipsis;
+		font-weight: 400;
+	}
+
+	.items-list .item-name h4 .info-icon {
+		font-size: 14px;
+	 	color: var(--default-light-color);
+	 	transition: color .3s ease;
+	 	position: relative;
+	 	top: -1px;
+	}
+
+	.items-list .item-name h4:hover .info-icon {
+	 	color: rgba(0,0,0,.6);
+	}
+
+	.items-list .item-quantity {
+		align-items: center;
+		display: flex;
+		margin-left: 4px;
+		text-align: center;
+		opacity: 0;
+		transition: opacity .3s ease;
+		flex: initial;
+		line-height: 28px;
+		padding-top: 2px;
+	}
+
+	.items-list .item-detail {
+		font-size: 12px;
+		text-align: center;
+		// border: none;
+    border-left: 1px solid rgba(0,0,0,.15);
+    color: rgba(0,0,0,.6);
+	}
+	
+	/* SPELL SLOTS */
+
+	.spell-level-slots {
+		flex: 0;
+		display: flex;
+	}
+
+	.items-list .item .item-charges .uses-max,
+	.items-list .item .spell-slots .spell-max {
+		text-align: left;
+	}
+
+	.items-list .item-quantity:focus-within,
+	.items-list .item .item-quantity:hover,
+	.items-list .item-quantity.isStack {
+		opacity: 1;
+	}
+
+	.items-list .item-quantity input {
+		width: 23px;
+	}
+	
+	.items-list .item .item-charges a.addCharges {
+		display: block;
+		width: 100%;
+		text-align: center;
+		opacity: 0;
+		transition: opacity .3s ease;
+	}
+
+	.items-list .item .item-charges:hover a.addCharges {
+		opacity: 1;
+		color: rgba(0,0,0,.6);
+	}
+
+
+	.items-list .spell-school,
+	.items-list .spell-action,
+	.items-list .spell-target {
+		flex: 0 0 120px;
+	}
+
+	.items-list .items-header .spell-detail.spell-slots {
+		display: flex;
+    flex: 0 0 1px;
+    align-items: center;
+    color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    padding: 0 5px;
+    margin-left: 10px;
+
+		.spell-max {    
+			display: flex;
+    	align-items: center;
+    	line-height: 19px;
+		}
+
+		input {
+			text-align: right;
+			height: 13px;
+		}
+
+		.slot-max-override {
+			margin: 1px 0 0 4px;
+			color: var(--default-tertiary-color);
+		}
+	}
+
+
+
+	.items-list p.notes {
+		padding: .5rem;
+	}
+
+	.items-list .item-attuned {
+		flex: 0 0 16px;
+		width: 16px;
+		font-size: 16px;
+		line-height: 14px;
+		text-align: center;
+		vertical-align: middle;
+		margin: 7px 0;
+		color: rgba(0,0,0,.6);
+	}
+
+	/* Equipped/Prepared Highlight */
+	.items-list .item.attuned,
+	.items-list .item.prepared {
+		background: var(--default-secondary-accent);
+	}
+
+	.items-list .item.alwaysPrepared {
+		background: var(--always-prepared-accent);
+	}
+
+	.item-detail.player-class {
+		text-align: center;
+		padding: 0 .5rem;
+	}
+
+	.spell-comps {
+		flex: 0 0 65px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.items-list :not(.items-header) .spell-action,
+	.items-list :not(.items-header) .spell-target,
+	.items-list :not(.items-header) .spell-school,
+	.items-list :not(.items-header) .spell-comps {
+	  padding-top: 2px;
+	  line-height: 28px;
+	}
+
+	.spell-component.C,
+	.spell-component.R {
+		width: auto;
+	  height: auto;
+	  border: none;
+	  color: #c9c7b8;
+	  background: rgba(0, 0, 0, 0.4);
+	  border-radius: 2px;
+	  padding: 1px 1px 0 1px;
+	  margin: 0px 0 0 1px;
+	  line-height: 12px;
+	}
+
+	.items-list .item .item-name .item-image {
+		flex: unset; 
+		width: 30px;
+		height: 30px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 5px 0px 0px 5px;
+		margin-right: .5rem;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.items-list .item .item-name .item-image i {
+		color: #333;
+		display: none;
+	  text-align: center;
+	  font-size: 22px;
+	}
+
+	.favorites .items-list .item .item-name .item-image i {
+	  font-size: 18px;
+	  line-height: 23px;
+	}
+
+	.items-list .item.expanded .item-name .item-image {
+		border-radius: 5px 0 0 0;
+	}
+
+	.items-list .item .item-name.rollable:hover .item-image,
+	.items-list .item .item-name:hover .item-image {
+	  background-image: none !important;
+	}
+
+	.items-list .item .item-name:hover .item-image i {
+		display: initial;
+	}
+
+	.items-list .item .item-name:hover .item-image:hover {
+		background-image: none !important;
+	}
+
+	.items-list .item .item-name:hover .item-image:hover i {
+		color: var(--default-primary-accent);
+	}
+
+	.items-list .item-weight,
+	.items-list .item-charges {
+		flex: 0 0 70px;
+	}
+
+	.items-list .item-level,
+	.items-list .item-action {
+		flex: 0 0 120px;
+	}
+
+	.items-list :not(.items-header) .item-charges,
+	.items-list :not(.items-header) .item-charges input,
+	.items-list :not(.items-header) .item-weight {
+	  padding-top: 2px;
+	  line-height: 28px;
+	}
+
+
+	.items-list :not(.items-header) .item-level,
+	.items-list :not(.items-header) .item-action {
+	  padding-top: 2px;
+	  line-height: 28px;
+	}
+
+	.items-list :not(.items-header) .item-charges {
+		align-items: center;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+
+	.items-list .item .item-recharge {
+		flex: initial;
+		padding: 0 4px;
+		font-size: 13px;
+	}
+
+	.items-list .item .item-charges input {
+		text-align: right;
+		width: 50%;
+		padding: 0 4px 0 0;
+		color: rgba(0,0,0,.6);
+		line-height: 1;
+	}
+
+	.items-list .item .item-charges input.uses-max {
+		padding: 0 0 0 4px;
+	}
+
+	.items-list .item-summary {
+		flex: 0 0 100%;
+		padding: .5rem;
+		border-top: 1px solid var(--default-faint-color);
+	}
+
+	.item-summary p:not(:first-child) {
+		margin-top: .5em;
+	}
+
+	.inventory .item-equipped,
+	.spellbook .spell-prepared,
+	.items-list .spell-prepared {
+		flex: 0 0 16px;
+		margin: 0 .25rem;
+	}
+	 
+	.inventory .item-equipped .item-toggle,
+	.spellbook .spell-prepared .item-toggle,
+	.items-list .spell-prepared .item-toggle {
+		color: rgba(0,0,0,.25);
+	}
+
+	.items-list .alwaysPrepared .spell-prepared {
+		display: none;
+	}
+
+	.inventory .item-equipped .item-toggle:hover,
+	.inventory .item-equipped .item-toggle.active,
+	.spellbook .spell-prepared .item-toggle:hover,
+	.spellbook .spell-prepared .item-toggle.active,
+	.items-list .spell-prepared .item-toggle:hover,
+	.items-list .prepared .spell-prepared .item-toggle {
+		color: rgba(0,0,0,.6);
+	}
+
+	.inventory .item-equipped .item-toggle i,
+	.spellbook .spell-prepared .item-toggle i,
+	.items-list .spell-prepared .item-toggle i {
+		width: 16px;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.effects .item .effect-source,
+	.effects .item .effect-duration,
+	.effects .item .effect-controls {
+		border-right: none;
+		border-color: rgba(0,0,0,.15);
+	}
+
+	.effects .item .effect-source {
+		line-height: 1.2;
+	}
+
+	.item-equipped .fas.fa-user-alt,
+	.item-equipped .active .fas.fa-user-alt-slash {
+		display: none;
+	}
+
+	.item-equipped .fas.fa-user-alt-slash,
+	.item-equipped .active .fas.fa-user-alt {
+		display: inline-block;
+	}
+
+	.spell-prepared .fas.fa-book-alt,
+	.spell-prepared .active .far.fa-book-alt {
+		display: none;
+		height: 16px;
+	}
+
+	.spell-prepared .far.fa-book-alt,
+	.spell-prepared .active .fas.fa-book-alt {
+		display: inline-block;
+		height: 16px;
+	}
+
+/* Delete Protection */
+
+// .allow-delete .tidy5e-delete-toggle,
+// .tidy5e-delete-toggle:hover{
+// 	background: rgba(255,0,0,.3);
+// }
+
+// .tidy5e-delete-toggle {
+//   display: flex;
+//   align-items: center;
+//   font-size: 12px;
+//   margin: 0 0 0 .25rem;
+//   padding: 4px 8px 2px 8px;
+//   background: var(--default-light-color);
+//   border-radius: 5px 5px 0 0;
+//   line-height: 12px;
+//   cursor: pointer;
+// }
+
+// .tidy5e-delete-toggle i {
+//   margin-right: .25rem;
+// }
+
+// .allow-delete .tidy5e-delete-disabled,
+// .tidy5e-delete-enabled,
+// .item-delete {
+// 	display: none;
+// }
+
+// .allow-delete .item-delete,
+// .allow-delete .tidy5e-delete-enabled {
+// 	display: block;
+// }

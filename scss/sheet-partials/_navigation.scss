@@ -1,0 +1,52 @@
+/* #### Sheet Navigation #### */
+
+.tidy5e-navigation {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+	.item {
+		padding: 5px 1rem 0 1rem;
+		background: rgba(255,255,255,.2);
+		border: 1px solid transparent;
+		border-bottom: 1px solid var(--default-light-color);
+		font-size: 13px;
+		text-align: left;
+		height: 26px;
+		flex: 1 1 auto;
+		
+		&:hover {
+			color: var(--default-primary-accent);
+		}
+	}
+
+	.item[data-tab="attributes"] i {
+		margin-right: 4px;
+		color: var(--default-tertiary-color);
+		position: relative;
+		top: 1px;
+	}
+
+	.item.active {
+		background: transparent;
+		border: 1px solid var(--default-light-color);
+		border-bottom-color: transparent;
+		font-weight: 700;
+		cursor: default;
+		text-shadow: none;
+		
+		&:hover {
+			color: inherit;
+		}
+	}
+
+	.item:first-child.active {
+		border-left-color: transparent;
+	}
+
+	.item:last-child.active {
+		border-right-color: transparent;
+	}
+}

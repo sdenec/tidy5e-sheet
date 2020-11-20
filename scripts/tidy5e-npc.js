@@ -1,5 +1,5 @@
-import ActorSheet5e from "../../systems/dnd5e/module/actor/sheets/base.js";
-import { preloadTidy5eHandlebarsTemplates } from "./templates/actors/npc/tidy5e-npc-templates.js";
+import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
+import { preloadTidy5eHandlebarsTemplates } from "./tidy5e-npc-templates.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -22,7 +22,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
    */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-      classes: ["tidy5e", "dnd5e", "sheet", "actor", "npc"],
+      classes: ["tidy5e", "sheet", "actor", "npc"],
       width: 740,
       height: 720
     });

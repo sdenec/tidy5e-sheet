@@ -1,7 +1,7 @@
 <div class="traits{{#if actor.flags.tidy5e-sheet.npcTraitsExpanded}} expanded{{/if}}">
   <div class="form-group {{#unless data.traits.senses}}inactive {{/unless}}">
     <article class="senses">
-      <div contenteditable="true" spellcheck="false" data-target="{{actor._id}}-senses" data-maxlength="100" data-placeholder="{{ localize 'DND5E.None' }}" data-label="{{localize 'DND5E.Senses'}}:">{{data.traits.senses}}</div>
+      <div contenteditable="true" spellcheck="false" data-target="{{actor._id}}-senses" data-maxlength="100" data-placeholder="{{ localize 'DND5E.None' }}" data-label="{{localize 'DND5E.Senses'}}:"><!-- {{data.traits.senses}} --><i class="fas fa-eye"></i></div>
       <input data-input="{{actor._id}}-senses" type="hidden" name="data.traits.senses" value="{{data.traits.senses}}" placeholder="{{ localize 'DND5E.None' }}"/>
     </article>
   </div>

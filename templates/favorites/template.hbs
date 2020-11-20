@@ -1,10 +1,8 @@
 <div class="favorites">
   {{#if favItems}}
     <ol class="inventory-list items-list fav-item">
-      <li class="items-header flexrow">
+      <li class="items-header">
         <h3>{{localize 'DND5E.Inventory'}}</h3>
-        <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
-        <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i></div>
       </li>
       <ol class="item-list">
         {{#each favItems as |item id|}}
@@ -15,10 +13,8 @@
   {{/if}}
   {{#if favFeats}}
     <ol class="inventory-list items-list fav-feat">
-      <li class="items-header flexrow">
+      <li class="items-header">
         <h3>{{localize 'DND5E.Features'}}</h3>
-        <div class="item-detail item-charges" title="{{localize 'DND5E.Uses'}}"><i class="fas fa-bolt"></i></div>
-        <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"><i class="fas fa-hourglass"></i>
       </li>
       <ol class="item-list">
         {{#each favFeats as |feat lvl|}}
@@ -33,7 +29,7 @@
       <ol class="inventory-list items-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
-            <li class="items-header flexrow">                        
+            <li class="items-header">                        
               <h3>
               {{#if section.isAlways}}{{localize 'DND5E.SpellPrepAlways'}}
               {{else if section.isAtWill}}{{localize 'DND5E.SpellPrepAtWill'}}
@@ -52,7 +48,6 @@
                   &ndash; / &ndash;
                 </span> -->
               {{/if}}
-              <div class="item-detail item-action" title="{{localize 'DND5E.SpellUsage'}}"><i class="fas fa-hourglass"></i>
             </li>
           {{/if}}
           <ol class="item-list">
@@ -69,7 +64,7 @@
       <ol class="inventory-list items-list fav-spell">
         {{#if section.spells}}
           {{#if lvl}}
-            <li class="items-header flexrow">                        
+            <li class="items-header">                        
               <h3>
               {{#if section.isCantrip}}{{localize 'DND5E.SpellCantrip'}}
               {{else if section.isAlways}}{{localize 'DND5E.SpellPrepAlways'}}
@@ -87,7 +82,6 @@
                   <input class="spell-max" type="text" ${inputStyle} data-target="data.spells.spell{{lvl}}.override" value="{{section.max}}" placeholder="0"/>
                 </span>
               {{/if}}
-              <div class="item-detail item-action" title="{{localize 'DND5E.SpellUsage'}}"><i class="fas fa-hourglass"></i>
             </li>
           {{/if}}
           <ol class="item-list">

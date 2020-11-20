@@ -1,20 +1,12 @@
-<ol class="items-list effects-list">
+<ul class="items-list effects-list">
 {{#each effects as |section sid|}}
     <li class="items-header flexrow" data-effect-type="{{section.type}}">
         <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
         <div class="effect-source">Source</div>
         <div class="effect-source">Duration</div>
-        
-        {{#if ../owner}}
-        <div class="item-controls effect-controls flexrow">
-            <a class="effect-control effect-create" data-action="create">
-                <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
-            </a>
-        </div>
-        {{/if}}
     </li>
 
-    <ol class="item-list">
+    <ul class="item-list">
     {{#each section.effects as |effect|}}
         <li class="item effect flexrow" data-effect-id="{{effect.id}}">
             <div class="item-name effect-name flexrow">
@@ -26,13 +18,22 @@
 
             {{#if ../../owner}}
             <div class="item-controls effect-controls flexrow">
-                <a class="effect-control" data-action="toggle"  title="{{localize 'DND5E.EffectToggle'}}"><i class="fas fa-power-off"></i></a>
-                <a class="effect-control" data-action="edit" title="{{localize 'DND5E.EffectEdit'}}"><i class="fas fa-edit"></i></a>
-                <a class="effect-control" data-action="delete" title="{{localize 'DND5E.EffectDelete'}}"><i class="fas fa-trash"></i></a>
+                <a class="effect-control item-toggle" data-action="toggle"  title="{{localize 'DND5E.EffectToggle'}}"><i class="fas fa-power-off"></i> {{localize 'DND5E.EffectToggle'}}</a>
+                <a class="effect-control item-edit" data-action="edit" title="{{localize 'DND5E.EffectEdit'}}"><i class="fas fa-edit"></i> {{localize 'DND5E.EffectEdit'}}</a>
+                <hr>
+                <a class="effect-control item-delete" data-action="delete" title="{{localize 'DND5E.EffectDelete'}}"><i class="fas fa-trash"></i> {{localize 'DND5E.EffectDelete'}}</a>
             </div>
             {{/if}}
         </li>
     {{/each}}
-    </ol>
+
+    {{#if ../owner}}
+    <li class="items-footer" data-effect-type="{{section.type}}">
+        <a class="effect-create" data-action="create">
+            <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
+        </a>
+    </li>
+    {{/if}}
+    </ul>
 {{/each}}
-</ol>
+</ul>

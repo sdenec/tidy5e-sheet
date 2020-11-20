@@ -1,0 +1,22 @@
+.window-content .tab {
+	height: 100%;
+	flex-direction: column;
+
+	&.active {
+	  display: flex;
+	}
+
+	&.attributes,
+	&.biography,
+	&.journal {
+		align-items: flex-start;
+		flex-direction: row;
+		padding-right: .75rem;
+		overflow-y: scroll;
+	}
+
+	&.inventory {
+	  overflow: hidden;
+	}
+
+}

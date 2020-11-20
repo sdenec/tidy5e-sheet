@@ -2,28 +2,28 @@
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.3.3",
+	"version": "0.4.0",
 	"author": "sdenec#3813",
 	"minimumCoreVersion": "0.7.6",
-	"compatibleCoreVersion": "0.7.6",
+	"compatibleCoreVersion": "0.7.7",
 	"system": ["dnd5e"],
 	"esmodules": [
-		"./tidy5e-sheet.js",
-		"./tidy5e-favorites.js",
-		"./tidy5e-npc.js",
-		"./tidy5e-item.js"
+		"./scripts/tidy5e-sheet.js",
+		"./scripts/tidy5e-favorites.js",
+		"./scripts/tidy5e-npc.js",
+		"./scripts/tidy5e-item.js"
 	],
 	"styles": [
 		"./fonts/signika-negative/signika-negative.css",
 		"../fonts/modesto-condensed/modesto-condensed.css",
-		"./styles/tidy5e-sheet.css",
-		"./styles/tidy5e-items.css",
-		"./styles/tidy5e-modules.css",
-		"./styles/tidy5e-npc.css",
-		"./styles/darkmode/tidy5e-darksheet.css",
-		"./styles/darkmode/tidy5e-darknpc.css",
-		"./styles/darkmode/tidy5e-darkitems.css",
-		"./styles/darkmode/tidy5e-darkmodules.css"
+		"./css/tidy5e-sheet.css",
+		"./css/tidy5e-items.css",
+		"./css/tidy5e-modules.css",
+		"./css/tidy5e-npc.css",
+		"./css/tidy5e-dark-sheet.css",
+		"./css/tidy5e-dark-npc.css",
+		"./css/tidy5e-dark-items.css",
+		"./css/tidy5e-dark-modules.css"
 	],
 	"languages": [
 		{
