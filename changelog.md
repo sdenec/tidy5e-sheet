@@ -11,6 +11,10 @@ Additional Translations generously provided by:
 Thank you very much!
 
 *Version 0.3.3*
+- fixed convert currency button
+- Korean Translation update
+
+*Version 0.3.3*
 - fixed death saving throw rolls
 - darkmode css fixes
 - added max temp hp to npc sheet
