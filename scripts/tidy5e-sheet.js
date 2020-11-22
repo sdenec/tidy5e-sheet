@@ -25,7 +25,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			classes: ["tidy5e", "sheet", "actor", "character"],
 			blockFavTab: true,
 			width: 740,
-			height: 720
+			// height: 720
+			height: 840
 		});
 	}
 
@@ -81,14 +82,27 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		});
 
 		// toggle item delete protection
-		html.find('.tidy5e-delete-toggle').click(async (event) => {
+		// html.find('.tidy5e-delete-toggle').click(async (event) => {
+		// 	event.preventDefault();
+		// 	let actor = this.actor;
+
+		// 	if(actor.getFlag('tidy5e-sheet', 'allow-delete')){
+		// 		await actor.unsetFlag('tidy5e-sheet', 'allow-delete');
+		// 	} else {
+		// 		await actor.setFlag('tidy5e-sheet', 'allow-delete', true);
+		// 	}
+ 	// 	});
+
+		// toggle item delete protection
+		html.find('.toggle-layout.inventory-layout').click(async (event) => {
+			console.log('clickes layout toggle');
 			event.preventDefault();
 			let actor = this.actor;
 
-			if(actor.getFlag('tidy5e-sheet', 'allow-delete')){
-				await actor.unsetFlag('tidy5e-sheet', 'allow-delete');
+			if(actor.getFlag('tidy5e-sheet', 'inventory-grid')){
+				await actor.unsetFlag('tidy5e-sheet', 'inventory-grid');
 			} else {
-				await actor.setFlag('tidy5e-sheet', 'allow-delete', true);
+				await actor.setFlag('tidy5e-sheet', 'inventory-grid', true);
 			}
  		});
 
@@ -236,7 +250,14 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
     html.find('.item-list .item').mousedown( function (event) {
 	    switch (event.which) {
+	      case 2:
+	      	// middle mouse opens item editor
+	      	event.preventDefault();
+	    		let item = event.currentTarget;
+	    		$(item).find('.item-edit').trigger('click');
+	      	break;
 	      case 3:
+	      	// right click opens context menu
 	      	itemContextMenu(event);
 	        break;
 	  	}
@@ -252,12 +273,14 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	    			contextTop = mouseY-itemTop+1,
 	    			contextLeft = mouseX-itemLeft+1;
 
-	    	console.log('mouseTop: '+mouseY+' / elementTop: '+itemTop);
-	    	console.log('mouseLeft: '+mouseX+' / elementLeft: '+itemLeft);
-	    	console.log('itemHeight: '+itemHeight+' / itemWidth: '+itemWidth);
-	    	// $(item).find('.context-menu').css({'top': top, 'left': left});
+	    	// console.log('mouseTop: '+mouseY+' / elementTop: '+itemTop);
+	    	// console.log('mouseLeft: '+mouseX+' / elementLeft: '+itemLeft);
+	    	// console.log('itemHeight: '+itemHeight+' / itemWidth: '+itemWidth);
+
 	    	$('.item .item-controls').hide();
-	    	$(item).find('.item-controls')
+	    	$(item)
+	    		.addClass('context')
+	    		.find('.item-controls')
 	    		.css({'top': contextTop+'px', 'left': contextLeft+'px'})
 	    		.slideDown(300);
 	    }
@@ -266,6 +289,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	    	switch (event.which) {
 		      case 1:
 		      if ( ! $(event.target).closest('.item .item-controls').length ) {
+		      	$('.item').removeClass('context');
 		        $('.item .item-controls').hide();
     			}
 		        break;
@@ -273,6 +297,56 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			});
 
 		});
+
+		// show item info on hover
+ 		html.find('.item-list .item').mouseenter( async (event) => {
+	    event.preventDefault();
+ 			console.log('mouse Enter item');
+ 			let li = $(event.currentTarget),
+ 					item = this.actor.getOwnedItem(li.data("item-id")),
+ 					itemData = item.data,
+ 					itemImg = itemData.img,
+ 					itemName = itemData.name,
+ 					itemType = itemData.type,
+ 					itemDescription = itemData.data.description.value;
+					html.find('#item-info-container-content').show();
+ 					html.find('#item-info-container-content .item-name').html(itemName);
+ 					// html.find('#item-info-container-content .item-type').text(itemType);
+ 					// html.find('#item-info-container-content .item-name').text(itemName);
+ 					// html.find('#item-info-container-content .item-name').text(itemName);
+ 					html.find('#item-info-container-content .item-description').html(itemDescription);
+
+	    console.log(itemData);
+ 		});
+
+ 		html.find('.item-list .item').mouseleave( function (event) {
+			html.find('#item-info-container-content').hide();
+ 			console.log('mouse Leave item');
+ 		});
+		// reference
+		/*
+		_onItemSummary(event) {
+	    event.preventDefault();
+	    let li = $(event.currentTarget).parents(".item"),
+	        item = this.actor.getOwnedItem(li.data("item-id")),
+	        chatData = item.getChatData({secrets: this.actor.owner});
+
+	    // Toggle summary
+	    if ( li.hasClass("expanded") ) {
+	      let summary = li.children(".item-summary");
+	      summary.slideUp(200, () => summary.remove());
+	    } else {
+	      let div = $(`<div class="item-summary">${chatData.description.value}</div>`);
+	      let props = $(`<div class="item-properties"></div>`);
+	      chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
+	      div.append(props);
+	      li.append(div.hide());
+	      div.slideDown(200);
+	    }
+	    li.toggleClass("expanded");
+	  }
+	  */
+
 
 
     // html.find('.tidy5e-sheet').mousedown( function (event) {
@@ -284,6 +358,31 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 
 	}
+}
+
+// count inventory items
+async function countInventoryItems(app, html, data){
+  html.find('.tab.inventory .item-list').each(function(){
+  	let itemlist = this;
+  	let items = $(itemlist).find('li');
+  	let itemCount = items.length - 1;
+  	$(itemlist).prev('.items-header').find('.item-name').append(' ('+itemCount+')');
+  });
+}
+
+// check magic items
+async function checkMagicItems(app, html, data){
+
+	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+
+  html.find('.tab.inventory .item').each(function(){
+ 		let li = $(this),
+				item = actor.getOwnedItem(li.data("item-id")),
+				itemData = item.data;
+		if(itemData.flags.magicitems && itemData.flags.magicitems.enabled) {
+			li.addClass('magic-item');
+		}
+  });
 }
 
 // handle traits list display
@@ -487,6 +586,8 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
+	countInventoryItems(app,html,data);
+	checkMagicItems(app, html, data);
 	// no longer needed
 	// if (game.modules.get("inventory-plus")?.active){
 	// 	app.inventoryPlus.addInventoryFunctions(html);

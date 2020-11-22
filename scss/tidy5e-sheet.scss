@@ -2,8 +2,10 @@
 
 .tidy5e.sheet.actor {
 
-	min-width: 740px;
-	height: 720px;
+	// min-width: 740px;
+	min-width: 620px;
+	// height: 720px;
+	// height: 840px;
 	min-height: 210px;
 
 	.window-content {
@@ -51,19 +53,20 @@
 
 	@import 'sheet-partials/_tabs.scss';
 	@import 'sheet-partials/_main-tab.scss';
-	@import 'sheet-partials/_main-tab-favorites.scss';
+	@import 'sheet-partials/_favorites.scss';
 
 	/* Inventorys */
-	@import 'sheet-partials/_main-tab-inventory.scss';
-
-
-
+	@import 'sheet-partials/_inventory.scss';
+	@import 'sheet-partials/_inventory-grid.scss';
 
 	/* Notes in Biography and Journal */
 
 	.left-notes,
 	.right-notes {
 		flex: 1;
+		height: 100%;
+    display: flex;
+    flex-direction: column;
 	}
 
 	.left-notes {
@@ -82,6 +85,7 @@
 		padding: .5rem;
 		margin-bottom: 1rem;
 		position: relative;
+	  flex:1;
 	}
 
 	.limited .note-entries article {

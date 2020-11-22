@@ -446,3 +446,42 @@
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:focus {
 	box-shadow: 0 0 0 1px var(--default-primary-accent) inset;
 }
+
+
+/* -------------------- */
+/*    Inventory Plus   */
+/* ------------------- */
+
+.tidy5e.sheet.actor {
+	.custom-category {
+		margin-right: auto;
+    font-size: 12px;
+
+    &:hover {
+    	color: var(--default-primary-accent);
+    }
+	}
+
+	.toggle-collapse {
+		width: 12px;
+		font-size: 18px;
+		margin-right: 5px;
+		color: var(--default-light-color);
+
+		&:hover {
+			color: var(--default-primary-color);
+		}
+	}
+
+	.inv-plus-stuff {
+
+		a {
+			margin-right: 5px;
+			color: var(--default-light-color);
+
+			&:hover {
+				color: var(--default-primary-color);
+			}
+		}
+	}
+}

@@ -216,8 +216,8 @@
 		<nav class="tidy5e-navigation tabs" data-group="primary">
 			<a class="item active" data-tab="attributes">{{ localize "DND5E.Attributes" }}</a>
 			<a class="item" data-tab="inventory">{{ localize "DND5E.Inventory" }}</a>
-			<a class="item" data-tab="features">{{ localize "DND5E.Features" }}</a>
 			<a class="item" data-tab="spellbook">{{ localize "DND5E.Spellbook" }}</a>
+			<a class="item" data-tab="features">{{ localize "DND5E.Features" }}</a>
 			<a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
 			<a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
 			<a class="item" data-tab="journal">{{ localize "TIDY5E.Journal" }}</a>
@@ -293,17 +293,25 @@
 
 			{{!-- Inventory Tab --}}
 			<div class="tab inventory" data-group="primary" data-tab="inventory">
-				{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory.html" sections=inventory}}
+				{{#if actor.flags.tidy5e-sheet.inventory-grid}} 
+					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-grid.html" sections=inventory}}
+					{{else}}
+					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory.html" sections=inventory}}
+				{{/if}}
+			</div>
+
+			{{!-- Spellbook Tab --}}
+			<div class="tab spellbook" data-group="primary" data-tab="spellbook">
+				{{#if actor.flags.tidy5e-sheet.spellbook-grid}} 
+					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-grid.html"}}
+					{{else}}
+					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html"}}
+				{{/if}}
 			</div>
 
 			{{!-- Features Tab --}}
 			<div class="tab features" data-group="primary" data-tab="features">
 				{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-features.html" sections=features}}
-			</div>
-
-			{{!-- Spellbook Tab --}}
-			<div class="tab spellbook" data-group="primary" data-tab="spellbook">
-				{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html"}}
 			</div>
 
 			{{!-- Effects Tab --}}

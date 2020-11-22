@@ -328,7 +328,7 @@
 .header-attributes {
 	display: flex;
 	align-items: flex-start;
-	flex: 0 0 140px;
+	flex: 0;
 }
 
 .header-attribute {
@@ -396,7 +396,6 @@
 
 .header-attributes .ac-display {
   position: relative;
-  flex: 0;
 }
 
 .header-attributes .ac-display svg {
@@ -420,9 +419,131 @@
 }
 
 .header-attributes .initiative {
-  flex: 0 0 70px;
+	width: 60px;
 }
 
 input.ini-mod {
 	flex: 0 1 1px;
 }
+
+/* Ability Scores */
+
+.ability-scores {
+	display: flex;
+	flex: 1;
+  border: none;
+  border-radius: 0;
+
+	.ability {
+	  text-align: center;
+	  padding-bottom: 0;
+	  border-left: 1px solid var(--default-faint-color);
+	  display: flex;
+	  flex: 1 0 60px;
+	  flex-direction: column;
+	  padding: 0 4px;
+
+		.ability-name {
+			position: relative;
+			font-size: 20px;
+			line-height: 1;
+			margin: 0;
+			
+			&::after {
+				display: block;
+		    content: '';
+		    height: 0;
+		    width: 60%;
+		    border-bottom: 1px solid var(--default-faint-color);
+		    position: absolute;
+		    left: 50%;
+		    bottom: -1px;
+		    transform: translate(-50%, 0);
+		  }
+		}
+
+		.ability-values {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		  margin-bottom: 1px;
+		}
+
+		.ability-score {
+			font-size: 24px;
+	    margin: 2px 0 2px 0;
+	    padding: 2px 0 0 0;
+	    text-align: center;
+	    font-family: "Modesto Condensed", "Palatino Linotype", serif;
+	    font-weight: 700;
+	    height: 23px;
+
+	    &:hover + .ability-modifiers {
+		    visibility: visible;
+		  }
+		}
+
+		.ability-modifiers {
+		  position: relative;
+		  justify-content: space-between;
+		  align-items: center;
+		  width: 50px;
+		  text-align: center;
+			display: flex;
+			height: auto;
+			margin: 0 auto;
+			padding: 0;
+			opacity: initial;
+		  font-size: 10px;
+		  border: 1px solid var(--default-tertiary-color);
+		  border-radius: 5px;
+		}
+
+		.ability-mod,
+		.ability-save {
+			flex: 1;
+			text-align: center;
+			font-size: 12px;
+			opacity: .4;
+			transition: opacity .3s ease;
+			cursor: pointer;
+			padding: 0 3px;
+			text-align: right;
+		}
+
+		.ability-save {
+			border-left: 1px solid var(--default-primary-color);
+			text-align: left;
+		}
+
+		.ability-mod:hover,
+		.ability-save:hover {
+			color: var(--default-primary-accent);
+		}
+
+		.proficiency-toggle {
+	    position: absolute;
+	    font-size: 10px;
+	    opacity: .4;
+	    transition: opacity .3s ease;
+	    left: 50%;
+	    bottom: -14px;
+	    transform: translateX(-50%);
+		}
+
+		.ability-modifiers .ability-proficiency {
+			line-height: 10px;
+		}
+
+		&:hover .ability-mod,
+		&:hover .ability-save {
+			opacity: 1;
+			text-shadow: none;
+		}
+
+		&:hover .proficiency-toggle {
+			opacity: 1;
+		}
+
+	} // .ability
+} // .ability-scores

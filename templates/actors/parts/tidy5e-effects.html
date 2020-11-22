@@ -1,39 +1,46 @@
-<ul class="items-list effects-list">
-{{#each effects as |section sid|}}
+<div class="list-layout">
+
+  <ul class="items-list effects-list">
+    {{#each effects as |section sid|}}
     <li class="items-header flexrow" data-effect-type="{{section.type}}">
-        <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
-        <div class="effect-source">Source</div>
-        <div class="effect-source">Duration</div>
+      <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+      <div class="items-header-labels">
+        <div class="items-header-source" title="{{effect.sourceName}}"><span>{{localize 'DND5E.Source'}}</span></div>
+        <div class="items-header-duration">{{localize 'DND5E.Duration'}}</div>
+      </div>
+      <!-- <div class="effect-source">Source</div> -->
+      <!-- <div class="effect-source">Duration</div> -->
     </li>
 
     <ul class="item-list">
-    {{#each section.effects as |effect|}}
-        <li class="item effect flexrow" data-effect-id="{{effect.id}}">
-            <div class="item-name effect-name flexrow">
-                <img class="item-image" src="{{effect.data.icon}}"/>
-                <h4>{{effect.data.label}}</h4>
-            </div>
-            <div class="effect-source">{{effect.sourceName}}</div>
-            <div class="effect-duration">{{effect.duration.label}}</div>
+      {{#each section.effects as |effect|}}
+      <li class="item effect flexrow" data-effect-id="{{effect.id}}">
+        <div class="item-name effect-name flexrow">
+          <img class="item-image" src="{{effect.data.icon}}"/>
+          <h4>{{effect.data.label}}</h4>
+        </div>
+        <div class="item-detail effect-source" title="{{effect.sourceName}}"><span>{{effect.sourceName}}</span></div>
+        <div class="item-detail effect-duration">{{effect.duration.label}}</div>
 
-            {{#if ../../owner}}
-            <div class="item-controls effect-controls flexrow">
-                <a class="effect-control item-toggle" data-action="toggle"  title="{{localize 'DND5E.EffectToggle'}}"><i class="fas fa-power-off"></i> {{localize 'DND5E.EffectToggle'}}</a>
-                <a class="effect-control item-edit" data-action="edit" title="{{localize 'DND5E.EffectEdit'}}"><i class="fas fa-edit"></i> {{localize 'DND5E.EffectEdit'}}</a>
-                <hr>
-                <a class="effect-control item-delete" data-action="delete" title="{{localize 'DND5E.EffectDelete'}}"><i class="fas fa-trash"></i> {{localize 'DND5E.EffectDelete'}}</a>
-            </div>
-            {{/if}}
-        </li>
-    {{/each}}
+        {{#if ../../owner}}
+        <div class="item-controls effect-controls flexrow">
+          <a class="effect-control item-toggle" data-action="toggle"  title="{{localize 'DND5E.EffectToggle'}}"><i class="fas fa-power-off"></i> {{localize 'DND5E.EffectToggle'}}</a>
+          <a class="effect-control item-edit" data-action="edit" title="{{localize 'DND5E.EffectEdit'}}"><i class="fas fa-edit"></i> {{localize 'DND5E.EffectEdit'}}</a>
+          <hr>
+          <a class="effect-control item-delete" data-action="delete" title="{{localize 'DND5E.EffectDelete'}}"><i class="fas fa-trash"></i> {{localize 'DND5E.EffectDelete'}}</a>
+        </div>
+        {{/if}}
+      </li>
+      {{/each}}
 
-    {{#if ../owner}}
-    <li class="items-footer" data-effect-type="{{section.type}}">
+      {{#if ../owner}}
+      <li class="items-footer" data-effect-type="{{section.type}}">
         <a class="effect-create" data-action="create">
-            <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
+          <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
         </a>
-    </li>
-    {{/if}}
+      </li>
+      {{/if}}
     </ul>
-{{/each}}
-</ul>
+    {{/each}}
+  </ul>
+</div>
