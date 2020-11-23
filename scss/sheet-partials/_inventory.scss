@@ -359,42 +359,102 @@
 		display: flex;
 	}
 
-	.items-list .item .item-charges .uses-max,
-	.items-list .item .spell-slots .spell-max {
-		text-align: left;
-	}
+.items-list {
 
-	.items-list .item-quantity:focus-within,
-	.items-list .item .item-quantity:hover,
-	.items-list .item-quantity.isStack {
-		opacity: 1;
-	}
+	.item {
 
-	.items-list .item-quantity input {
-		width: 23px;
-	}
-	
-	.items-list .item .item-charges a.addCharges {
-		display: block;
-		width: 100%;
-		text-align: center;
-		opacity: 0;
-		transition: opacity .3s ease;
-	}
+		.item-charges a.addCharges {
+			display: block;
+			width: 100%;
+			text-align: center;
+			opacity: 0;
+			transition: opacity .3s ease;
+		}
 
-	.items-list .item .item-charges:hover a.addCharges {
-		opacity: 1;
-		color: rgba(0,0,0,.6);
-	}
+		.item-charges:hover a.addCharges {
+			opacity: 1;
+			color: rgba(0,0,0,.6);
+		}
+
+		.item-charges .uses-max,
+		.spell-slots .spell-max {
+			text-align: left;
+		}
+		
+		.item-quantity {
+
+			&:hover
+			&.isStack,
+			&:focus-within  {
+				opacity: 1;
+			}
+			
+			input {
+				width: 23px;
+			}
+		}//.item-quaantity
+
+		/* Item Equipped/Prepared Highlight */
+		&.attuned,
+		&.prepared {
+			background: var(--default-secondary-accent);
+		}
+
+		&.alwaysPrepared {
+			background: var(--always-prepared-accent);
+		}
+
+		.item-name .item-image {
+			flex: 0 0 30px;
+			height: 30px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			border-radius: 5px 0px 0px 5px;
+			margin-right: .5rem;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+			i {
+				color: #333;
+				display: none;
+			  text-align: center;
+			  font-size: 22px;
+			}
+		}//.item-name .item-image
 
 
-	.items-list .spell-school,
-	.items-list .spell-action,
-	.items-list .spell-target {
+		&.expanded .item-name .item-image {
+			border-radius: 5px 0 0 0;
+		}
+
+		&:not(.context) .item-name.rollable:hover .item-image,
+		&:not(.context) .item-name:hover .item-image {
+		  background-image: none !important;
+		}
+
+		&:not(.context) .item-name:hover .item-image i {
+			display: initial;
+		}
+
+		&:not(.context) .item-name:hover .item-image:hover {
+			background-image: none !important;
+		}
+
+		&:not(.context) .item-name:hover .item-image:hover i {
+			color: var(--default-primary-accent);
+		}
+
+	}//.item
+
+	.spell-school,
+	.spell-action,
+	.spell-target {
 		flex: 0 0 120px;
 	}
 
-	.items-list .items-header .spell-detail.spell-slots {
+	.items-header .spell-detail.spell-slots {
 		display: flex;
     flex: 0 0 1px;
     align-items: center;
@@ -417,13 +477,13 @@
 			margin: 1px 0 0 4px;
 			color: var(--default-tertiary-color);
 		}
-	}
+	}//.items-header .spell-detail.spell-slots
 
-	.items-list p.notes {
+	p.notes {
 		padding: .5rem;
 	}
 
-	.items-list .item-attuned {
+	.item-attuned {
 		flex: 0 0 16px;
 		width: 16px;
 		font-size: 16px;
@@ -434,15 +494,7 @@
 		color: rgba(0,0,0,.6);
 	}
 
-	/* Equipped/Prepared Highlight */
-	.items-list .item.attuned,
-	.items-list .item.prepared {
-		background: var(--default-secondary-accent);
-	}
-
-	.items-list .item.alwaysPrepared {
-		background: var(--always-prepared-accent);
-	}
+}//.items-list
 
 	.spell-comps {
 		flex: 0 0 70px;
@@ -459,52 +511,6 @@
 	  padding: 1px 1px 0 1px;
 	  margin: 0px 0 0 1px;
 	  line-height: 12px;
-	}
-
-	.items-list .item .item-name .item-image {
-		flex: 0 0 30px;
-		height: 30px;
-		background-repeat: no-repeat;
-		background-size: cover;
-		border-radius: 5px 0px 0px 5px;
-		margin-right: .5rem;
-		cursor: pointer;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.items-list .item .item-name .item-image i {
-		color: #333;
-		display: none;
-	  text-align: center;
-	  font-size: 22px;
-	}
-
-	.favorites .items-list .item .item-name .item-image i {
-	  font-size: 18px;
-	  line-height: 23px;
-	}
-
-	.items-list .item.expanded .item-name .item-image {
-		border-radius: 5px 0 0 0;
-	}
-
-	.items-list .item:not(.context) .item-name.rollable:hover .item-image,
-	.items-list .item:not(.context) .item-name:hover .item-image {
-	  background-image: none !important;
-	}
-
-	.items-list .item:not(.context) .item-name:hover .item-image i {
-		display: initial;
-	}
-
-	.items-list .item:not(.context) .item-name:hover .item-image:hover {
-		background-image: none !important;
-	}
-
-	.items-list .item:not(.context) .item-name:hover .item-image:hover i {
-		color: var(--default-primary-accent);
 	}
 
 	.items-list .item-weight,
@@ -601,16 +607,6 @@
 		text-align: center;
 		vertical-align: middle;
 	}
-
-	.effects .item {
-
-		.effect-source,
-		.effect-duration,
-		.effect-controls {
-			border-right: none;
-			border-color: rgba(0,0,0,.15);
-		}
-	}//.effects .item
 
 	.item-equipped {
 

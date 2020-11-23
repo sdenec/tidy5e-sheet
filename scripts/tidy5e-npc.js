@@ -510,11 +510,11 @@ Hooks.once("ready", () => {
 });
 
 Hooks.on("renderTidy5eNPC", (app, html, data) => {
-  setSheetClasses(app, html, data);
-  toggleSkillList(app, html, data);
-  toggleTraitsList(app, html, data);
-  toggleItemMode(app, html, data);
-  restoreScrollPosition(app, html, data);
-  hideSpellbook(app, html, data);
-  // console.log(data);
+  // setSheetClasses(app, html, data);
+  // toggleSkillList(app, html, data);
+  // toggleTraitsList(app, html, data);
+  // toggleItemMode(app, html, data);
+  // restoreScrollPosition(app, html, data);
+  // hideSpellbook(app, html, data);
+  console.log(data);
 });
