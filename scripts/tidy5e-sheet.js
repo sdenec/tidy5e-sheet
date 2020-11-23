@@ -370,6 +370,25 @@ async function countInventoryItems(app, html, data){
   });
 }
 
+// count attuned items
+async function countAttunedItems(app, html, data){
+  let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+  // if no items are counted set default value to 3
+  if (!actor.data.data.details.attunedItemsCount) {
+  	await actor.update({"data.details.attunedItemsCount": 3});
+  }
+
+  let items = actor.data.items;
+	let attunedItems = 0;
+
+  for (var i = 0; i < items.length; i++){
+  	if (items[i].data.attuned){
+  		attunedItems++;
+  	}
+  }
+  html.find('.attuned-items-counter .attuned-items-current').text(attunedItems);
+}
+
 // check magic items
 async function checkMagicItems(app, html, data){
 
@@ -588,10 +607,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	checkDeathSaveStatus(app, html, data);
 	countInventoryItems(app,html,data);
 	checkMagicItems(app, html, data);
-	// no longer needed
-	// if (game.modules.get("inventory-plus")?.active){
-	// 	app.inventoryPlus.addInventoryFunctions(html);
-	// }
+	countAttunedItems(app, html, data);
 	// console.log(data);
 	console.log("Tidy5e Sheet rendered!");
 });

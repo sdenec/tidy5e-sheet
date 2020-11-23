@@ -99,19 +99,26 @@
 </div>
 
 {{#if isCharacter}}
-<div class="inventory-currency">  
-  <ul class="currency">
-    <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
-      <i class="fas fa-coins"></i>
-    </li>
-    {{#each data.currency as |v k|}}
-    <li class="currency-item" title="{{ lookup ../config.currencies k }}">
-      <input type="text" name="data.currency.{{k}}" id="data.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
-      <label for="data.currency.{{k}}" class="denomination {{k}}">{{ k }}</label>
-    </li>
-    {{/each}}
-    <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'TIDY5E.ConvertCurrencyHint'}}"><!-- {{localize "TIDY5E.ConvertCurrencyButton"}} --><i class="fas fa-funnel-dollar"></i></a></li>
-  </ul>
+<div class="inventory-footer">
+  
+  <div class="attuned-items-counter" title="Attuned Items">
+    <i class="fas fa-user-circle"></i> <span class="attuned-items-current"></span>/<input type="text" class="attuned-items-max" name="data.details.attunedItemsCount" value="{{data.details.attunedItemsCount}}" placeholder="0" title="Maximum Attunement">
+  </div>
+
+  <div class="inventory-currency">  
+    <ul class="currency">
+      <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
+        <i class="fas fa-coins"></i>
+      </li>
+      {{#each data.currency as |v k|}}
+      <li class="currency-item" title="{{ lookup ../config.currencies k }}">
+        <input type="text" name="data.currency.{{k}}" id="data.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
+        <label for="data.currency.{{k}}" class="denomination {{k}}">{{ k }}</label>
+      </li>
+      {{/each}}
+      <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'TIDY5E.ConvertCurrencyHint'}}"><!-- {{localize "TIDY5E.ConvertCurrencyButton"}} --><i class="fas fa-funnel-dollar"></i></a></li>
+    </ul>
+  </div>
 </div>
 {{/if}}
 

@@ -5,7 +5,7 @@
 
 	#item-info-container {
 		position: relative;
-    margin: 0 10px 10px 0;
+    margin: 0 8px 10px 0;
     width: 246px;
     border: 1px solid var(--default-faint-color);
     border-radius: 5px;
@@ -32,6 +32,8 @@
 
 	.items-list {
 
+		padding-left: 2px;
+
 		.items-header {
 			margin: 0;
 			padding: 0;
@@ -52,10 +54,20 @@
 			position: relative;
 			margin: 2px;
 			background: var(--default-faint-color);
+    	box-shadow: 0 0 1px 1px var(--default-light-color);
 			border-radius: 5px;
 
+			.item-quantity:not(.isStack):not(:hover) {
+				opacity: 0;
+				transition: opacity .3s ease;
+			}
+
+			&:hover .item-quantity:not(.isStack):not(:hover) {
+	    	opacity: 1;
+	    }
+
 			&.attuned {
-				border: 2px solid pink;
+    		border: 1px solid #FF1493;
 
 				.item-name {
 					border-radius: 3px;
@@ -63,23 +75,17 @@
 			}
 
 			&.equipped {
-				border: 2px solid limegreen;
+				box-shadow: 0 0 3px 2px var(--default-secondary-color);
 
-				.item-name {
-					border-radius: 3px;
-				}
+				// .item-name {
+				// 	border-radius: 3px;
+				// }
 			}
-
-			&.attuned.equipped {
-				border-right-color: pink;
-				border-bottom-color: pink;
-			}
-			
 
 			&.magic-item {
 				.item-image {
-					box-shadow: 0 0 5px 0px cyan inset;
-   				border: 2px solid aqua;
+    			box-shadow: 0 0 5px 0px yellow inset;
+    			border: 1px solid rgba(230,230,0,1);
    				border-radius: 5px
 				}
 
@@ -100,51 +106,52 @@
 				overflow: hidden;
 			}
 
-			.item-quantity,
-			.item-charges {
+			.item-stats {
 				position: absolute;
 		    right: 0;
 		    bottom: 0;
-		    left: 55%;
-		    margin: 0;
-		    padding: 0 2px;
-		    border: none;
-		    font-size: 12px;
-		    color: #efefef;
-		    display: flex;
-		    justify-content: flex-end;
+		    left: 0;
+		    padding: 0 2px 0 3px;
+		    height: 14px;
 
-				input {
-					height: 14px;
-			    text-shadow: 0 0 5px rgba(0,0,0,1);
+				.item-quantity,
+				.item-charges {
+			    border: none;
+			    font-size: 12px;
 			    color: #efefef;
-			    text-align: right;
-			    min-width: 0;
-			    width: 16px;
-					padding: 0;
-				}
-			}
+			    float: right;
 
-			.item-quantity:not(.isStack):not(:hover) {
-				opacity: 0;
-			}
-
-			.item-charges {
-				left: 0;
-				right: 45%;
-				line-height: 1;
-
-				input {
-					text-align: left;
+					input {
+						height: 14px;
+				    text-shadow: 0 0 5px rgba(0,0,0,1);
+				    color: #efefef;
+				    text-align: right;
+				    min-width: 0;
+				    width: 16px;
+						padding: 0;
+					}
 				}
 
-				.fa-bolt {
-					font-size: 8px;
-					margin-right: 1px;
-					text-shadow: 0 0 5px rgba(0,0,0,1);
+				.item-charges {
+					float: left;
+					line-height: 1;
+
+					input {
+						text-align: left;
+					}
+
+					.fa-bolt {
+						font-size: 8px;
+						margin-right: 1px;
+						text-shadow: 0 0 5px rgba(0,0,0,1);
+					}
+
 				}
 
 			}
+
+
+
 
 			.item-image {
 				display: flex;

@@ -484,4 +484,25 @@
 			}
 		}
 	}
+
+	.grid-layout .items-footer .item-control.remove-category,
+	.grid-layout .items-footer .item-control.remove-category:hover {
+		position: relative;
+		color: transparent;
+		z-index: 1;
+
+		i {
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			color: var(--default-light-color);
+		}
+
+		&:hover i {
+			color: var(--default-tertiary-color);
+		}
+		
+	}
 }

@@ -44,14 +44,39 @@
 	}
 } //.filter-list
 
+.inventory-footer {
+  margin: 0rem 14px .5rem 0;
+  padding-top: .5rem;
+  display: flex;
+	flex: 0 0 30px;
+	border-top: 2px solid rgba(0,0,0,.3);
+}
+
+.attuned-items-counter {
+	display: flex;
+	align-items: center;
+	margin-right: 40px;
+
+	.attuned-items-current {
+		font-size: 16px;
+	}
+
+	i {
+		font-size: 20px;
+    margin-right: 5px;
+    margin-left: 1px;
+	}
+
+	input {
+		width: 24px;
+    font-size: 16px;
+    font-family: 'Signika';
+	}
+}
+
 /* Currency */
 
 .inventory-currency {
-
-  margin: 0rem 14px .5rem 0;
-  padding-top: .5rem;
-	flex: 0 0 30px;
-	border-top: 2px solid rgba(0,0,0,.3);
 
 	.currency {
 		display: flex;
@@ -64,6 +89,10 @@
 		text-align: center;
 		align-items: center;
 		margin-right: .5rem;
+
+		i {
+			font-size: 20px;
+		}
 	}
 
 	.currency-item {
