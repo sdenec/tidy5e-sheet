@@ -10,7 +10,10 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
-*Version 0.3.3*
+*Version 0.3.5*
+- fixed NPC health calculation issue
+
+*Version 0.3.4*
 - fixed convert currency button
 - Korean Translation update
 
