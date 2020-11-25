@@ -14,27 +14,7 @@
   <div id="item-info-container">
     <i class="item-info-container-background fab fa-d-and-d"></i>
     <div id="item-info-container-content">
-      <div class="item-image"></div>
-      <h2 class="item-name">Big Sword</h2>
-      <p class="state-equipped">unequipped</p>
-      <p class="state-attunement">not attuned</p>
-      <p class="state-magical">magic item</p>
-
-      <p class="item-weight">2 lbs.</p>
-      <p class="item-price">25 GP</p>
-      <p class="item-charges">10/10</p>
-
-      <div class="item-description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Beatae, dolor, quia. Ipsum, consectetur ea. Debitis dignissimos, odio cumque, unde perferendis natus quos, alias necessitatibus officiis eius exercitationem maxime eaque explicabo voluptatum magni quasi. A recusandae vero maiores saepe praesentium tempora et nihil facilis eligendi molestiae. Ducimus, sequi dolorem porro sapiente.</p>
-      </div>
-
-      <div class="item-tags">
-        <span class="tag">Martial Melee</span>
-        <span class="tag">Equipped</span>
-        <span class="tag">Proficient</span>
-        <span class="tag">1 Action</span>
-        <span class="tag">5 Feet</span>
-      </div>
+      <!-- Info Card here -->
     </div>
   </div>
     
@@ -47,6 +27,9 @@
     <ul class="item-list">
       {{#each section.items as |item iid|}}
       <li class="item {{~#if item.data.attuned}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+        {{~#if item.data.attuned}} 
+          <div class="icon-attuned" title="{{localize 'DND5E.Attuned'}}"></div>
+        {{/if}}
         <div class="item-name rollable" >
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
@@ -66,6 +49,34 @@
             {{/if}}
           </div>
 
+        </div>
+
+        <div class="info-card {{~#if item.data.attuned}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}">
+          <h4>{{item.name}}</h4>
+          <div class="info-card-attributes">
+            <div class="info-card-image">
+              <img src="{{item.img}}" alt="">
+            </div>
+            <div class="info-card-states">
+              <p>{{~#if item.flags.magicitems.enabled}}Magic{{/if}} {{item.type}} <span>{{item.toggleTitle}}</span></p>
+              {{~#if item.data.attuned}}
+              <p>{{localize 'DND5E.Attuned'}}</p>
+              {{/if}}
+              {{#if item.hasUses }}
+              <p>{{localize 'DND5E.Charges'}}: {{item.data.uses.value}}/{{item.data.uses.max}}</p>
+              {{/if}}
+            </div>
+            <div class="info-card-trade">
+              <p>Value: {{item.data.price}}GP</p>
+              <p>Weight: {{item.data.weight}} lbs</p>
+              {{#if item.data.quantity}}
+              <p>Quantity: {{item.data.quantity}}</p>
+              {{/if}}
+            </div>
+            <div class="info-card-description">
+              <!-- item description -->
+            </div>
+          </div>
         </div>
 
         <!-- {{~#if item.data.attuned}}  -->

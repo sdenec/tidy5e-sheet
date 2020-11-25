@@ -298,64 +298,36 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 		});
 
-		// show item info on hover
+		// show/hid item info card on mouse enter/leave
+
  		html.find('.item-list .item').mouseenter( async (event) => {
 	    event.preventDefault();
- 			console.log('mouse Enter item');
  			let li = $(event.currentTarget),
  					item = this.actor.getOwnedItem(li.data("item-id")),
  					itemData = item.data,
- 					itemImg = itemData.img,
- 					itemName = itemData.name,
- 					itemType = itemData.type,
- 					itemDescription = itemData.data.description.value;
-					html.find('#item-info-container-content').show();
- 					html.find('#item-info-container-content .item-name').html(itemName);
- 					// html.find('#item-info-container-content .item-type').text(itemType);
- 					// html.find('#item-info-container-content .item-name').text(itemName);
- 					// html.find('#item-info-container-content .item-name').text(itemName);
- 					html.find('#item-info-container-content .item-description').html(itemDescription);
+	        chatData = item.getChatData({secrets: this.actor.owner}),
+ 					infoCard = li.find('.info-card'),
+ 					infoContainer = html.find('#item-info-container-content'),
+ 					itemDescription = itemData.data.description.value,
+ 					props = $(`<div class="info-card-properties"></div>`);
 
-	    console.log(itemData);
+ 					infoCard.clone().appendTo(infoContainer);
+
+ 					infoContainer.find('.info-card-description').html(itemDescription);
+
+	      	chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
+	      	infoContainer.find('.info-card').append(props);
+					infoContainer.show();
+
+ 			// console.log('mouse Enter item');
+	    // console.log(itemData);
  		});
 
  		html.find('.item-list .item').mouseleave( function (event) {
 			html.find('#item-info-container-content').hide();
- 			console.log('mouse Leave item');
+			html.find('#item-info-container-content .info-card').remove();
+ 			// console.log('mouse Leave item');
  		});
-		// reference
-		/*
-		_onItemSummary(event) {
-	    event.preventDefault();
-	    let li = $(event.currentTarget).parents(".item"),
-	        item = this.actor.getOwnedItem(li.data("item-id")),
-	        chatData = item.getChatData({secrets: this.actor.owner});
-
-	    // Toggle summary
-	    if ( li.hasClass("expanded") ) {
-	      let summary = li.children(".item-summary");
-	      summary.slideUp(200, () => summary.remove());
-	    } else {
-	      let div = $(`<div class="item-summary">${chatData.description.value}</div>`);
-	      let props = $(`<div class="item-properties"></div>`);
-	      chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
-	      div.append(props);
-	      li.append(div.hide());
-	      div.slideDown(200);
-	    }
-	    li.toggleClass("expanded");
-	  }
-	  */
-
-
-
-    // html.find('.tidy5e-sheet').mousedown( function (event) {
-    // 	switch (event.which) {
-    //     default:
-    //     	html.find('.item .item-controls.visible').removeClass('visible').hide();
-    // 	}
-    // });
-
 
 	}
 }
