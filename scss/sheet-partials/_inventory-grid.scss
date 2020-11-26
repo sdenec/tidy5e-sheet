@@ -9,25 +9,108 @@
     width: 246px;
     border: 1px solid var(--default-faint-color);
     border-radius: 5px;
-    overflow: hidden;
+    // overflow: hidden;
+    z-index: 1;
+
+		.item-info-container-background {
+			font-size: 150px;
+			color: var(--default-faint-color);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			z-index: -1;
+		}
 	}
   
   #item-info-container-content {
-  	display: none;
+  	// display: none;
+		height: 100%;
 
   	.info-card {
-			padding: 10px;
+			padding: 6px 8px 2px 8px;
+			border-radius: 5px;
+			overflow: hidden;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+
+			&.equipped {
+				background: rgba(50,205,50,.3);
+			}
+
+			&.magic-item {
+				box-shadow: 0 0 6px 2px yellow inset;
+			}
+
+			.info-card-name {
+				font-family: "Modesto Condensed";
+				font-size: 24px;
+				margin: 0 0 4px 0;
+				line-height: 1;
+			}
+
+			.info-card-image {
+				filter: grayscale(100%);
+				mix-blend-mode: screen;
+			}
+
+			.info-card-states,
+			.info-card-trade,
+			.info-card-amount,
+			.info-card-properties {
+				font-size: 12px;
+				display: flex;
+				justify-content: space-between;
+				border-top: 1px solid var(--default-faint-color);
+
+				span {
+					padding: 4px 0;
+				}
+
+				i {
+					width: 13px;
+					text-align: center;
+					margin-right: 4px;
+					vertical-align: middle;
+				}
+
+			}
+
+			.info-card-hint {
+				font-size: 12px;
+		    border-top: 1px solid var(--default-faint-color);
+		    padding: 4px;
+		    margin-top: 2px;
+		    font-style: italic;
+			}
+
+			.info-card-description {
+				flex: 1;
+				overflow: hidden;
+		    margin: 0 0 8px 0;
+		    border-top: 2px solid var(--default-light-color);
+		    border-bottom: 2px solid var(--default-light-color);
+			}
+
+			.info-card-properties {
+				justify-content: flex-start;
+				flex-wrap: wrap;
+				border: none;
+
+				span {
+					display: inline-block;
+					padding: 2px;
+					background: var(--default-light-color);
+					border: 1px solid var(--default-light-color);
+					margin: 0 2px 2px 0;
+					white-space: nowrap;
+					line-height: 1;
+					border-radius: 3px;
+				}
+			}
   	}
   }
-
-	.item-info-container-background {
-		font-size: 150px;
-		color: var(--default-faint-color);
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-	}
 
 	.items-list {
 
@@ -66,25 +149,24 @@
 	    }
 
 			.icon-attuned {
-    		// border: 1px solid #FF1493;
-    		font-size: 12px;
-    		color: yellow;
-		    width: 12px;
-		    height: 12px;
-		    background: #fff;
+    		font-size: 11.5px;
+		    overflow: hidden;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    color: var(--default-tertiary-color);
+		    width: 13px;
+		    height: 13px;
+		    background: yellow;
 		    position: absolute;
 		    top: 0px;
 		    right: 0px;
 		    border-radius: 50%;
 		    box-shadow: 0 0 3px 1px yellow;
-
-				.item-name {
-					border-radius: 3px;
-				}
 			}//.icon-attuned
 
 			&.equipped {
-				box-shadow: 0 0 1px 2px #32CD32;
+				box-shadow: 0 0 1px 2px rgba(50,205,50,1);
 			}
 
 			&.magic-item {
@@ -92,13 +174,6 @@
     			box-shadow: 0 0 5px 0px yellow inset;
     			border: 1px solid rgba(230,230,0,1);
    				border-radius: 5px
-				}
-
-				&.equipped,
-				&.attuned {
-					.item-image {
-						border-radius: 4px;
-					}
 				}
 			}//.magic-items
 

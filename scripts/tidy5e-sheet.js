@@ -308,6 +308,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	        chatData = item.getChatData({secrets: this.actor.owner}),
  					infoCard = li.find('.info-card'),
  					infoContainer = html.find('#item-info-container-content'),
+ 					infoBackground = html.find('.item-info-container-background'),
  					itemDescription = itemData.data.description.value,
  					props = $(`<div class="info-card-properties"></div>`);
 
@@ -316,15 +317,17 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  					infoContainer.find('.info-card-description').html(itemDescription);
 
 	      	chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
-	      	infoContainer.find('.info-card').append(props);
+	      	infoContainer.find('.info-card .info-card-description').after(props);
 					infoContainer.show();
+					infoBackground.hide();
 
  			// console.log('mouse Enter item');
-	    // console.log(itemData);
+	    console.log(itemData);
  		});
 
  		html.find('.item-list .item').mouseleave( function (event) {
 			html.find('#item-info-container-content').hide();
+			html.find('.item-info-container-background').show();
 			html.find('#item-info-container-content .info-card').remove();
  			// console.log('mouse Leave item');
  		});

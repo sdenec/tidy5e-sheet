@@ -339,7 +339,7 @@
 		display: flex;
 		justify-content: flex-end;
 		flex: 1;
-		background: var(--default-light-color);
+		background: var(--default-faint-color);
 		border-radius: 5px;
 
 		a {
@@ -424,9 +424,9 @@
 		}//.item-quaantity
 
 		/* Item Equipped/Prepared Highlight */
-		&.attuned,
+		&.equipped,
 		&.prepared {
-			background: var(--default-secondary-accent);
+			background: rgba(50,205,50,.3);
 		}
 
 		&.alwaysPrepared {
@@ -446,7 +446,7 @@
 			align-items: center;
 			
 			i {
-				color: #333;
+				color: var(--default-tertiary-color);
 				display: none;
 			  text-align: center;
 			  font-size: 22px;
@@ -472,7 +472,7 @@
 		}
 
 		&:not(.context) .item-name:hover .item-image:hover i {
-			color: var(--default-primary-accent);
+			color: var(--default-primary-color);
 		}
 
 	}//.item
@@ -519,7 +519,7 @@
 		line-height: 14px;
 		text-align: center;
 		vertical-align: middle;
-		margin: 7px 0;
+		margin: 7px 4px;
 		color: rgba(0,0,0,.6);
 	}
 
