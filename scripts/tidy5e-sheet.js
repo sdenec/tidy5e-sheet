@@ -95,14 +95,22 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 		// toggle item delete protection
 		html.find('.toggle-layout.inventory-layout').click(async (event) => {
-			console.log('clickes layout toggle');
+			// console.log('clicked layout toggle');
 			event.preventDefault();
 			let actor = this.actor;
 
-			if(actor.getFlag('tidy5e-sheet', 'inventory-grid')){
-				await actor.unsetFlag('tidy5e-sheet', 'inventory-grid');
+			if( $(event.currentTarget).hasClass('spellbook-layout')){
+				if(actor.getFlag('tidy5e-sheet', 'spellbook-grid')){
+					await actor.unsetFlag('tidy5e-sheet', 'spellbook-grid');
+				} else {
+					await actor.setFlag('tidy5e-sheet', 'spellbook-grid', true);
+				}
 			} else {
-				await actor.setFlag('tidy5e-sheet', 'inventory-grid', true);
+				if(actor.getFlag('tidy5e-sheet', 'inventory-grid')){
+					await actor.unsetFlag('tidy5e-sheet', 'inventory-grid');
+				} else {
+					await actor.setFlag('tidy5e-sheet', 'inventory-grid', true);
+				}
 			}
  		});
 
@@ -307,10 +315,10 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  					itemData = item.data,
 	        chatData = item.getChatData({secrets: this.actor.owner}),
  					infoCard = li.find('.info-card'),
- 					infoContainer = html.find('#item-info-container-content'),
+ 					infoContainer = li.closest('.inventory-list').find('.item-info-container-content'),
  					infoBackground = html.find('.item-info-container-background'),
  					itemDescription = itemData.data.description.value,
- 					props = $(`<div class="info-card-properties"></div>`);
+ 					props = $(`<div class="item-properties"></div>`);
 
  					infoCard.clone().appendTo(infoContainer);
 
@@ -322,6 +330,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 					infoBackground.hide();
 
  			// console.log('mouse Enter item');
+ 			console.log(infoCard);
 	    console.log(itemData);
  		});
 

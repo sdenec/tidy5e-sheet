@@ -7,15 +7,22 @@
     <li class="filter-item" data-filter="concentration">{{localize 'DND5E.AbbreviationConc'}}</li>
     <li class="filter-item" data-filter="ritual">{{localize 'DND5E.Ritual'}}</li>
     <li class="filter-item" data-filter="prepared">{{localize 'DND5E.Prepared'}}{{#if preparedSpells}} ({{preparedSpells}}){{/if}}</li>
-    <li class="toggle-layout inventory-layout spellbook-layout"><i class="fas fa-th-large" title="show grid layout"></i></li>
+    <li class="toggle-layout inventory-layout spellbook-layout"><i class="fas fa-th-list" title="show list layout"></i></li>
   </ul>
 </div>
 
-<div class="list-layout">
+<div class="grid-layout">
+
+  <div class="item-info-container">
+    <i class="item-info-container-background fab fa-d-and-d"></i>
+    <div class="item-info-container-content">
+      <!-- Info Card here -->
+    </div>
+  </div>
 
   <ul class="inventory-list items-list">
     {{#each spellbook as |section|}}
-    <li class="flexrow items-header spellbook-header">
+    <li class="items-header spellbook-header">
       <div class="spell-level-slots">
         <h3>{{section.label}}</h3>
 
@@ -36,12 +43,6 @@
         {{/if}}
 
       </div>
-      <div class="items-header-labels">
-        <div class="items-header-comps"><!-- {{localize 'DND5E.Components'}} -->Components</div>
-        <div class="items-header-school">{{localize 'DND5E.SpellSchool'}}</div>
-        <div class="items-header-target">{{localize 'DND5E.SpellTarget'}}</div>
-        <div class="items-header-usage">{{localize 'DND5E.SpellUsage'}}</div>
-      </div>
     </li>
 
     <ul class="item-list">
@@ -51,38 +52,52 @@
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
           </div>
-          <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
-            {{item.name}}
-          </h4>
-
         </div>
 
-        {{#if item.data.uses.per }}
-        <div class="item-detail item-charges">
-          <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
-        </div>
-        {{/if}}
-        <div class="item-detail spell-comps">
-          {{#each labels.components}}
-          <span class="spell-component {{this}}">{{this}}</span>
-          {{/each}}
-        </div>
-        <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}">{{labels.school}}</div>
-        <div class="item-detail spell-target" title="{{localize 'DND5E.SpellTarget'}} | {{localize 'DND5E.Range'}}: {{labels.range}}">
-          {{#if labels.target}}
-          {{labels.target}}
-          {{else}}{{ localize 'DND5E.None' }}
+        <div class="item-stats">
+          {{#if item.data.uses.per }}
+          <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.data.uses.value}}/{{item.data.uses.max}} ">
+            {{#if item.hasUses }}
+            <i class="fas fa-bolt"></i><input type="text" data-path="data.uses.value" value="{{item.data.uses.value}}" placeholder="0" maxlength="2" >
+            {{/if}}
+          </div>
           {{/if}}
         </div>
-        <div class="item-detail spell-action" title="{{localize 'DND5E.SpellUsage'}}">{{labels.activation}}</div>
+
+        <div class="info-card">
+          <p class="info-card-name">{{item.name}}</p>
+          <div class="info-card-states">
+            
+          </div>
+          <div class="info-card-amount">
+            {{#if item.hasUses }}
+            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
+            {{/if}}
+          </div>
+
+          <div class="item-detail spell-comps">
+            {{#each labels.components}}
+            <span class="spell-component {{this}}">{{this}}</span>
+            {{/each}}
+          </div>
+          <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}">{{labels.school}}</div>
+          <div class="item-detail spell-target" title="{{localize 'DND5E.SpellTarget'}} | {{localize 'DND5E.Range'}}: {{labels.range}}">
+            {{#if labels.target}}
+            {{labels.target}}
+            {{else}}{{ localize 'DND5E.None' }}
+            {{/if}}
+          </div>
+          <div class="item-detail spell-action" title="{{localize 'DND5E.SpellUsage'}}">{{labels.activation}}</div>
+
+        </div>
+
+        
 
 
         {{#if ../../owner}}
         <div class="item-controls spell-prepared">
-          {{#if ../../owner}}
           {{#if section.canPrepare}}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book"></i> {{item.toggleTitle}}</a>
-          {{/if}}
           {{/if}}
           <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
           <hr>
@@ -91,15 +106,16 @@
         {{/if}}
       </li>
       {{/each}}
+
       {{#if section.canCreate}}
       <li class="items-footer">
         <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-          <i class="fas fa-plus-circle"></i> {{localize 'DND5E.Add'}}
+          <i class="fas fa-plus-circle"></i>
         </a>
         {{else}}
         <!-- add button for all spell categories -->
         <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-          <i class="fas fa-plus-circle"></i> {{localize 'DND5E.Add'}}
+          <i class="fas fa-plus-circle"></i>
         </a>
       </li>
       {{/if}}

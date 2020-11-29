@@ -277,6 +277,7 @@
 		}//a
 
 	}//.item-controls
+
 }//.items-list
 
 .list-layout {
@@ -333,13 +334,30 @@
 
 		}
 
+		.item-properties {
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			border: none;
+
+			.tag {
+				display: inline-block;
+				padding: 1px 2px;
+				background: var(--default-light-color);
+				border: 1px solid var(--default-light-color);
+				margin: 0 2px 2px 0;
+				white-space: nowrap;
+				line-height: 1;
+				border-radius: 3px;
+			}
+		}
+
 	}//.item
 
 	.items-footer {
 		display: flex;
 		justify-content: flex-end;
 		flex: 1;
-		background: var(--default-faint-color);
+		// background: var(--default-faint-color);
 		border-radius: 5px;
 
 		a {

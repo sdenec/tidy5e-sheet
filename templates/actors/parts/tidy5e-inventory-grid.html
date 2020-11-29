@@ -11,37 +11,10 @@
 
 <div class="grid-layout">
 
-  <div id="item-info-container">
+  <div class="item-info-container">
     <i class="item-info-container-background fab fa-d-and-d"></i>
-    <div id="item-info-container-content">
+    <div class="item-info-container-content">
       <!-- Info Card here -->
-
-                  <div class="info-card {{~#if item.flags.magicitems.enabled}} magic-item {{/if}}{{~#if item.data.attuned}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}">
-                      <p class="info-card-name">Name</p>
-                      <div class="info-card-states">
-                        <span><i class="fas fa-magic"></i>Magic Item</span>
-                        <span><i class="fas fa-user-circle"></i>{{localize 'DND5E.Attuned'}}</span>
-                      </div>
-                      <div class="info-card-amount">
-                        <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> 10/10</span>
-                        <span><b>{{localize 'DND5E.Quantity'}}:</b> 1</span>
-                      </div>
-                      <div class="info-card-description">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id minus obcaecati repellendus voluptatum nam vel pariatur aspernatur qui impedit aut, sapiente animi ipsum possimus officia ab! Cumque tempora asperiores at voluptas neque exercitationem reiciendis, ipsum ab ea provident eius, omnis commodi rerum quasi, ad dicta voluptatem nulla fugit, eveniet ipsam corrupti nobis? Recusandae, ea unde, nemo itaque officia corporis. Sit quod id maxime sint nostrum nam laudantium. Doloribus ab est deleniti, possimus quas! Ducimus facere dignissimos porro minima quis. Totam mollitia amet in provident animi ipsam qui cumque aut a doloremque, nam voluptates nisi commodi similique placeat culpa veritatis earum!
-                        </p>
-                      </div>
-                      <div class="info-card-properties">
-                        <span class="tag">Bla</span>
-                        <span class="tag">Bla</span>
-                        <span class="tag">Bla</span>
-                        <span class="tag">Bla</span>
-                        <span class="tag">Bla</span>
-                      </div>
-                      <div class="info-card-hint">
-                        <span><i class="fas fa-mouse"></i> middle mouse click for full item info.</span>
-                      </div>
-                    </div>
     </div>
   </div>
     
@@ -55,7 +28,7 @@
       {{#each section.items as |item iid|}}
       <li class="item {{~#if item.data.attuned}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
         {{~#if item.data.attuned}} 
-          <!-- <div class="icon-attuned" title="{{localize 'DND5E.Attuned'}}"></div> --><i class="fas fa-user-circle icon-attuned" title="{{localize 'DND5E.Attuned'}}"></i>
+          <i class="fas fa-user-circle icon-attuned" title="{{localize 'DND5E.Attuned'}}"></i>
         {{/if}}
         <div class="item-name rollable" >
           <div class="item-image" style="background-image: url({{item.img}})">
@@ -82,14 +55,16 @@
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
             {{~#if item.flags.magicitems.enabled}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
-            {{~#if item.data.attuned}}<span><i class="fas fa-user-circle"></i>{{localize 'DND5E.Attuned'}}</span>{{/if}}
+            {{~#if item.data.attuned}}<span class="info-attuned"><i class="fas fa-user-circle"></i>{{localize 'DND5E.Attuned'}}</span>{{/if}}
           </div>
           <div class="info-card-amount">
             {{#if item.hasUses }}
             <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
             {{/if}}
             {{#if item.data.quantity}}
-            <span><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}}</span>
+            {{#if item.isStack}}
+            <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}}</span>
+            {{/if}}
             {{/if}}
           </div>
           <div class="info-card-description">
@@ -114,8 +89,6 @@
         <!-- </div> -->
         <!-- {{/if}} -->
 
-        
-
         <!-- <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"> -->
           <!-- {{#if item.data.activation.type }} -->
           <!-- {{item.labels.activation}} -->
@@ -124,10 +97,8 @@
 
         {{#if ../../owner}}
         <div class="item-controls item-equipped">
-          {{#if ../../owner}}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash"></i><i class="fas fa-user-alt"></i> {{item.toggleTitle}}</a>
           <a class="item-control item-attunement {{item.toggleClass}}"><i class="far fa-user-circle"></i><i class="fas fa-user-circle"></i> {{localize 'DND5E.Attuned'}}</a>
-          {{/if}}
           <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i>{{localize "DND5E.ItemEdit"}}</a>
           <hr class="context-divider">
           <a class="item-control item-delete"><i class="fas fa-trash"></i> {{localize "DND5E.ItemDelete"}}</a>

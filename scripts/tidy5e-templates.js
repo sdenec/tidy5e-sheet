@@ -15,6 +15,7 @@ export const preloadTidy5eHandlebarsTemplates = async function() {
     "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-grid.html",
     "modules/tidy5e-sheet/templates/actors/parts/tidy5e-features.html",
     "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html",
+    "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-grid.html",
     "modules/tidy5e-sheet/templates/actors/parts/tidy5e-effects.html"
   ];
 
