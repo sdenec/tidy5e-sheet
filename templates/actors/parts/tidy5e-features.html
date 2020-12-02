@@ -17,6 +17,8 @@
 
       {{#if section.hasActions}}
       <div class="items-header-labels">
+        <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
+        <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
         <div class="items-header-uses">{{localize 'DND5E.Uses'}}</div>
         <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
       </div>
@@ -24,6 +26,11 @@
       <div class="items-header-labels">
         <div class="items-header-subclass"><!-- {{localize 'DND5E.Subclass'}} -->Subclass</div>
         <div class="items-header-level">{{localize 'DND5E.Level'}}</div>
+      </div>
+      {{else}}
+      <div class="items-header-labels">
+        <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
+        <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
       </div>
       {{/if}}
     </li>
@@ -41,6 +48,12 @@
         </div>
 
         {{#if section.hasActions}}
+        <div class="item-detail item-source">
+          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
+        </div>
+        <div class="item-detail item-requirements">
+          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
+        </div>
         <div class="item-detail item-charges">
           {{#if item.isOnCooldown}}
           <a class="item-recharge rollable">{{item.labels.recharge}}</a>
@@ -66,6 +79,14 @@
         </div>
         <div class="item-detail item-level">
           <!-- Level -->{{item.data.levels}}
+        </div>
+
+        {{else}}
+        <div class="item-detail item-source">
+          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
+        </div>
+        <div class="item-detail item-requirements">
+          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
         </div>
         {{/if}}
 

@@ -215,7 +215,9 @@
  		.items-header-level,
  		.items-header-school, 
  		.items-header-target, 
- 		.items-header-duration {
+ 		.items-header-duration, 
+ 		.items-header-feat-source, 
+ 		.items-header-requirements {
  			width: 120px;
  		}
 
@@ -357,7 +359,7 @@
 		display: flex;
 		justify-content: flex-end;
 		flex: 1;
-		// background: var(--default-faint-color);
+		background: rgba(0,0,0,.03);
 		border-radius: 5px;
 
 		a {
@@ -395,6 +397,14 @@
 		align-items: center;
     border-left: 1px solid rgba(0,0,0,.15);
     color: rgba(0,0,0,.6);
+    overflow: hidden;
+
+    span.truncate {
+    	white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	padding: 0 4px;
+    }
 	}
 
 } //:not(.grid-layout) .items-list
@@ -567,7 +577,9 @@
 
 	.items-list .item-level,
 	.items-list .item-action,
-	.items-list .effect-duration {
+	.items-list .effect-duration,
+	.items-list .item-source,
+	.items-list .item-requirements {
 		flex: 0 0 120px;
 	}
 
