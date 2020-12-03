@@ -57,14 +57,17 @@
             {{~#if item.flags.magicitems.enabled}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
             {{~#if item.data.attuned}}<span class="info-attuned"><i class="fas fa-user-circle"></i>{{localize 'DND5E.Attuned'}}</span>{{/if}}
           </div>
+          {{#if item.hasUses }}
           <div class="info-card-amount">
-            {{#if item.hasUses }}
             <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
+          </div>
+           {{/if}}
+          <div class="info-card-amount">
+            {{#if item.totalWeight}}
+            <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{localize "DND5E.AbbreviationLbs"}}</span>
             {{/if}}
             {{#if item.data.quantity}}
-            {{#if item.isStack}}
             <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}}</span>
-            {{/if}}
             {{/if}}
           </div>
           <div class="info-card-description">

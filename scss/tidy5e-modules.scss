@@ -2,25 +2,30 @@
 /*   Support Better Rolls / Minor QOL   */
 /* ------------------------------------ */
 
-.tidy5e.sheet.actor .items-list .item-summary .item-buttons {
-	margin: 8px 0; 
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons {
+	margin: 4px 0; 
 }
 
-.tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag {
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons .tag {
 	border: none;
-	margin: 2px 4px 2px 0; 
+	border-radius: 0;
+	margin: 2px 4px 2px 0;
+	padding: 0;
+	background: none;
 }
 
-.tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button {
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons .tag button {
 	border: 1px solid rgba(0,0,0,.2);
 	background: rgba(0,0,0,.4);
 	color: rgba(255,255,255,.8);
 	padding: .25rem .5rem;
 	box-shadow: none;
 	cursor: pointer;
+	line-height: 1;
+	font-size: 12px;
 }
 
-.tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button:hover {
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons .tag button:hover {
 	background: rgba(0,0,0,.6);
 }
 

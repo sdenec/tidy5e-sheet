@@ -306,39 +306,45 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 		});
 
-		// show/hid item info card on mouse enter/leave
+		// show/hide grid layout item info card on mouse enter/leave
 
- 		html.find('.item-list .item').mouseenter( async (event) => {
+ 		html.find('.grid-layout .item-list .item').mouseenter( async (event) => {
 	    event.preventDefault();
  			let li = $(event.currentTarget),
  					item = this.actor.getOwnedItem(li.data("item-id")),
  					itemData = item.data,
-	        chatData = item.getChatData({secrets: this.actor.owner}),
- 					infoCard = li.find('.info-card'),
- 					infoContainer = li.closest('.inventory-list').find('.item-info-container-content'),
- 					infoBackground = html.find('.item-info-container-background'),
  					itemDescription = itemData.data.description.value,
- 					props = $(`<div class="item-properties"></div>`);
-
+	        chatData = item.getChatData({secrets: this.actor.owner}),
+ 					infoContainer = li.closest('.grid-layout').find('.item-info-container-content'),
+ 					infoCard = li.find('.info-card');
+ 					
  					infoCard.clone().appendTo(infoContainer);
 
- 					infoContainer.find('.info-card-description').html(itemDescription);
+ 			let	infoBackground = infoContainer.find('.item-info-container-background'),
+ 					infoDescription = infoContainer.find('.info-card-description'),
+ 					props = $(`<div class="item-properties"></div>`);
+
+ 					infoDescription.html(itemDescription);
 
 	      	chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
 	      	infoContainer.find('.info-card .info-card-description').after(props);
+
+
 					infoContainer.show();
 					infoBackground.hide();
 
- 			// console.log('mouse Enter item');
- 			console.log(infoCard);
+ 			let innerScrollHeight = infoDescription[0].scrollHeight;
+ 					console.log('ScrollHeight: '+innerScrollHeight+'/ContainerHeight: '+ infoDescription[0].clientHeight);
+ 					if(innerScrollHeight > infoDescription.height() ) {
+ 						infoDescription.addClass('overflowing');
+ 						infoDescription.after('<span class="truncated">&hellip;</span>');
+ 					}
 	    console.log(itemData);
  		});
 
  		html.find('.item-list .item').mouseleave( function (event) {
-			html.find('#item-info-container-content').hide();
 			html.find('.item-info-container-background').show();
-			html.find('#item-info-container-content .info-card').remove();
- 			// console.log('mouse Leave item');
+			html.find('.item-info-container-content .info-card').remove();
  		});
 
 	}

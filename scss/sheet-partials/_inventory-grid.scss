@@ -94,25 +94,27 @@
 			.info-card-description {
 				flex: 1;
 				overflow: hidden;
-		    margin: 0 0 8px 0;
 		    border-top: 2px solid var(--default-light-color);
 		    border-bottom: 2px solid var(--default-light-color);
+
+		    &.overflowing {
+		    	-webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+		    }
+			}
+
+			.truncated {
+				text-align: center;
+		    padding: 0 0 20px 0;
+		    font-size: 18px;
+		    height: 3px;
+		    line-height: 3px;
 			}
 
 			.item-properties {
-				justify-content: flex-start;
-				flex-wrap: wrap;
-				border: none;
+		    margin: 8px 0 0 0;
 
 				.tag {
-					display: inline-block;
-					padding: 1px 2px;
-					background: var(--default-light-color);
-					border: 1px solid var(--default-light-color);
-					margin: 0 2px 2px 0;
-					white-space: nowrap;
-					line-height: 1;
-					border-radius: 3px;
+					white-space: pre-wrap;
 				}
 			}
   	}
