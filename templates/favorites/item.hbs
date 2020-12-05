@@ -3,8 +3,8 @@
     <div class="item-image" style="background-image: url({{item.img}})">
       <i class="fa fa-dice-d20"></i>
     </div>
-    <h4  title="{{localize "TIDY5E.ToggleInfo"}} ({{item.name}})">
-      <i class="fas fa-info-circle info-icon"></i>
+    <h4  title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+      <!-- <i class="fas fa-info-circle info-icon"></i> -->
       {{item.name}}
       <!-- {{item.spellPrepMode}} -->
     </h4>
@@ -14,7 +14,7 @@
       </span>
     {{/if}}
   </div>
-
+<!-- 
   {{#if item.isItem}}
   <div class="state-display item-equipped">
     <a class="item-control item-toggle {{item.toggleClass}}" data-path="data.equipped" title="{{item.toggleTitle}}">
@@ -22,15 +22,15 @@
       <i class="fas fa-user-alt"></i>
     </a>
   </div>
-  {{/if}}
-
+  {{/if}} -->
+<!-- 
   {{#if item.canPrep}}
   <div class="state-display spell-details spell-prepared">
     <a class="item-control item-toggle {{item.toggleClass}}" data-path="data.preparation.prepared" title="{{item.toggleTitle}}">
       <i class="fas fa-book"></i>
     </a>
   </div>
-  {{/if}}
+  {{/if}} -->
 
   {{#if item.isItem}}
   <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
@@ -59,7 +59,7 @@
   {{/if}}
 
   {{#if item.spellComps}}
-    <div class="spell-detail spell-comps" title="{{localize 'DND5E.SpellComponents'}}">
+    <div class="item-detail spell-comps" title="{{localize 'DND5E.SpellComponents'}}">
       {{item.spellComps}}
       {{#if item.spellCon}}<span class="spell-component C">C</span>{{/if}}
       {{#if item.spellRit}}<span class="spell-component R">R</span>{{/if}}
@@ -72,12 +72,12 @@
     {{/each}}
   </div>
 
-  <div class="item-detail item-controls flexrow">
-    <a class="item-control item-edit" title="{{localize "DND5E.ItemEdit"}}">
-      <i class="fas fa-pencil-alt"></i>
+  <div class="item-controls">
+    <a class="item-control item-edit" title="{{localize 'TIDY5E.Edit'}}">
+      <i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.Edit'}}
     </a>
-    <a class="item-control item-fav" title="{{localize "TIDY5E.RemoveFav"}}">
-      <i class="fas fa-bookmark"></i>
+    <a class="item-control item-fav" title="{{localize 'TIDY5E.RemoveFav'}}">
+      <i class="fas fa-bookmark"></i> {{localize 'TIDY5E.RemoveFav'}}
     </a>
   </div>
 </li>

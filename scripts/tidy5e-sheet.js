@@ -256,6 +256,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       }
     });
 
+    // open context menu for items
     html.find('.item-list .item').mousedown( function (event) {
 	    switch (event.which) {
 	      case 2:
@@ -266,10 +267,13 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	      	break;
 	      case 3:
 	      	// right click opens context menu
+	      	$('.item').removeClass('context');
+	    		$('.item .item-controls').hide();
 	      	itemContextMenu(event);
 	        break;
 	  	}
 
+	  	// context menu calculations
 	    function itemContextMenu(e){
 	    	let item = e.currentTarget,
 	    			mouseX = event.clientX,
@@ -279,32 +283,52 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	    			itemHeight = $(item).height(),
 	    			itemWidth = $(item).width(),
 	    			contextTop = mouseY-itemTop+1,
-	    			contextLeft = mouseX-itemLeft+1;
+	    			contextLeft = mouseX-itemLeft+1,
+	    			contextWidth = $(item).find('.item-controls').width(),
+	    			contextHeight = $(item).find('.item-controls').height(),
+	    			contextRightBound = mouseX + contextWidth,
+	    			contextBottomBound = mouseY + contextHeight,
+	    			itemsList = $(item).closest('.items-list'),
+	    			itemsListRightBound = itemsList.offset().left + itemsList.width() - 17,
+	    			itemsListBottomBound = itemsList.offset().top + itemsList.height();
 
-	    	// console.log('mouseTop: '+mouseY+' / elementTop: '+itemTop);
-	    	// console.log('mouseLeft: '+mouseX+' / elementLeft: '+itemLeft);
-	    	// console.log('itemHeight: '+itemHeight+' / itemWidth: '+itemWidth);
+	    	// check right side bounds
+	    	if(contextRightBound > itemsListRightBound) {
+	    		let rightDiff = itemsListRightBound - contextRightBound;
+	    		contextLeft = contextLeft + rightDiff;
+	    	}
 
-	    	$('.item .item-controls').hide();
+	    	// check bottom bounds
+				if(contextBottomBound > itemsListBottomBound) {
+	    		let bottomDiff = itemsListBottomBound - contextBottomBound;
+	    		contextTop = contextTop + bottomDiff;
+	    	}
+
 	    	$(item)
 	    		.addClass('context')
 	    		.find('.item-controls')
 	    		.css({'top': contextTop+'px', 'left': contextLeft+'px'})
-	    		.slideDown(300);
+	    		.fadeIn(300);
 	    }
-
-	    $(document).mousedown( function (event) {
-	    	switch (event.which) {
-		      case 1:
-		      if ( ! $(event.target).closest('.item .item-controls').length ) {
-		      	$('.item').removeClass('context');
-		        $('.item .item-controls').hide();
-    			}
-		        break;
-		  	}
-			});
-
 		});
+
+    // close context menu on any click outside
+    $(document).mousedown( function (event) {
+    	switch (event.which) {
+	      case 1:
+	      if ( ! $(event.target).closest('.item .item-controls').length ) {
+	      	$('.item').removeClass('context');
+	        $('.item .item-controls').hide();
+  			}
+	      	break;
+	  	}
+		});
+
+		// prevent item info toggle
+    // html.find('.inventory-list .item h4').click(event => {
+  		// let item = event.currentTarget;
+  		// $(item).closest('.item').find('.item-edit').trigger('click');
+    // });
 
 		// show/hide grid layout item info card on mouse enter/leave
 

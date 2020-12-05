@@ -256,7 +256,7 @@
 	}
 
 	.resting:hover {
-		width: 120px;
+		width: 110px;
 	}
 
 	.resting-icon {
@@ -277,7 +277,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: 18px;
 		width: 32px;
 		height: 32px;
 		border-radius: 50%;
@@ -285,15 +284,19 @@
 		border: none;
 		color: var(--default-tertiary-color);
 		padding: 0;
+		font-size: 18px;
+		line-height: 32px;
+		font-family: "Signika";
+		font-weight: 700;
 	}
 
-	.resting .rest i {
+	.resting .rest {
 		transition: color .3s ease, transform .3s ease;	
 	}
 
-	.resting .rest:hover i {
+	.resting .rest:hover {
 		color: rgba(0,0,0,.6);
-		transform: scale(1.2);
+		// transform: scale(1.2);
 	}
 
 	/* Hover Notes */

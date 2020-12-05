@@ -146,14 +146,18 @@
     	box-shadow: 0 0 1px 1px var(--default-light-color);
 			border-radius: 5px;
 
-			.item-quantity:not(.isStack):not(:hover) {
-				opacity: 0;
-				transition: opacity .3s ease;
+			&.context {
+				border: 1px solid var(--default-primary-accent);
 			}
 
-			&:hover .item-quantity:not(.isStack):not(:hover) {
-	    	opacity: 1;
-	    }
+			// .item-quantity:not(.isStack):not(:hover) {
+			// 	opacity: 0;
+			// 	transition: opacity .3s ease;
+			// }
+
+			// &:hover .item-quantity:not(.isStack):not(:hover) {
+	    //  opacity: 1;
+	    // }
 
 			.icon-attuned {
     		font-size: 11.5px;

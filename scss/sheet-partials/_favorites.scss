@@ -1,5 +1,47 @@
+/* Favorites */
+.favorites {
+	&.list-layout {
+		display: block;
+	}
 
-	/* Favorites */
+	.items-list {
+		overflow: auto;
+		padding-right: 0;
+
+		.item {
+			.item-name {
+
+				h4 {
+					font-size: 12px;
+				}
+
+				.item-image {
+					flex: 0 0 20px;
+					height: 20px;
+
+					i {
+						font-size: 16px;
+					}
+				}
+			}//.item-name
+
+			.item-quantity {
+				font-size: 12px;
+
+				input {
+					height: 16px;
+				}
+			}//.item-quantity
+
+			.item-charges input {
+				height: 16px;
+			}
+
+		}//.item
+	}//.items-list
+
+}//.favorites
+
 /*
 	.favorites {
 		border-radius: 0;
