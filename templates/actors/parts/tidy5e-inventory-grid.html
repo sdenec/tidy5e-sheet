@@ -30,6 +30,11 @@
         {{~#if item.data.attuned}} 
           <i class="fas fa-user-circle icon-attuned" title="{{localize 'DND5E.Attuned'}}"></i>
         {{/if}}
+        {{~#if item.flags.favtab}} 
+        {{~#if item.flags.favtab.isFavorite}} 
+          <i class="fas fa-bookmark icon-fav" title="Favorite Item"></i>
+        {{/if}}
+        {{/if}}
         <div class="item-name rollable" >
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
@@ -37,11 +42,10 @@
         </div>
         <div class="item-stats">
           
-          {{#if item.data.quantity}}
+          <!-- {{#if item.data.quantity}} {{/if}} -->
           <span class="item-quantity{{#if item.isStack}} isStack{{/if}}" title="item quantity">
             <input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="2" >
           </span>
-          {{/if}}
 
           <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.data.uses.value}}/{{item.data.uses.max}} ">
             {{#if item.hasUses }}
@@ -63,12 +67,10 @@
           </div>
            {{/if}}
           <div class="info-card-amount">
-            {{#if item.totalWeight}}
+            <!-- {{#if item.totalWeight}} {{/if}} -->
             <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{localize "DND5E.AbbreviationLbs"}}</span>
-            {{/if}}
-            {{#if item.data.quantity}}
+            <!-- {{#if item.data.quantity}} {{/if}} -->
             <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}}</span>
-            {{/if}}
           </div>
           <div class="info-card-description">
             <!-- item description -->
@@ -78,33 +80,28 @@
           </div>
         </div>
 
-        <!-- {{~#if item.data.attuned}}  -->
-        <!-- <div class="item-attuned" title="{{localize 'DND5E.Attuned'}}"><i class="fas fa-user-circle"></i></div> -->
-        <!-- {{/if}} -->
-
-        <!-- {{#if ../../isCharacter}} -->
-        <!-- <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}"> -->
-          <!-- {{#if item.totalWeight}} -->
-          <!-- <div> -->
-            <!-- {{ item.totalWeight }} {{localize "DND5E.AbbreviationLbs"}} -->
-          <!-- </div> -->
-          <!-- {{/if}} -->
-        <!-- </div> -->
-        <!-- {{/if}} -->
-
-        <!-- <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}"> -->
-          <!-- {{#if item.data.activation.type }} -->
-          <!-- {{item.labels.activation}} -->
-          <!-- {{/if}} -->
-        <!-- </div> -->
-
         {{#if ../../owner}}
         <div class="item-controls item-equipped">
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash"></i><i class="fas fa-user-alt"></i> {{item.toggleTitle}}</a>
-          <a class="item-control item-attunement {{item.toggleClass}}"><i class="far fa-user-circle"></i><i class="fas fa-user-circle"></i> {{localize 'DND5E.Attuned'}}</a>
+          {{#ifNotEquals item.type 'tool' }}
+          {{#ifNotEquals item.type 'loot' }}
+          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash icon-off"></i><i class="fas fa-user-alt icon-on"></i> {{item.toggleTitle}}</a>
+          {{/ifNotEquals}}
+          {{/ifNotEquals}}
+          
+          {{#ifNotEquals item.type 'tool' }}
+          {{#ifNotEquals item.type 'backpack' }}
+          {{#ifNotEquals item.type 'loot' }}
+          <a class="item-control item-attunement {{~#if item.data.attuned}} active{{/if}}">
+            <span class="icon-off"><i class="far fa-user-circle"></i>Not {{localize 'DND5E.Attuned'}}</span>
+            <span class="icon-on"><i class="fas fa-user-circle"></i>{{localize 'DND5E.Attuned'}}</span>
+          </a>
+          {{/ifNotEquals}}
+          {{/ifNotEquals}}
+          {{/ifNotEquals}}
+          <hr class="context-divider">
           <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i>{{localize "DND5E.ItemEdit"}}</a>
           <hr class="context-divider">
-          <a class="item-control item-delete"><i class="fas fa-trash"></i> {{localize "DND5E.ItemDelete"}}</a>
+          <a class="item-control item-delete"><i class="fas fa-trash"></i>{{localize "DND5E.ItemDelete"}}</a>
         </div>
         {{/if}}
       </li>

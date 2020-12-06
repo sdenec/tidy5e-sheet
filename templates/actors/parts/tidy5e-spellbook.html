@@ -56,6 +56,9 @@
           </h4>
 
         </div>
+        {{~#if item.flags.favtab.isFavorite}} 
+        <div class="item-attuned" title="Favorite"><i class="fas fa-bookmark icon-fav"></i></div>
+        {{/if}}
 
         {{#if item.data.uses.per }}
         <div class="item-detail item-charges">
@@ -81,11 +84,12 @@
         <div class="item-controls spell-prepared">
           {{#if ../../owner}}
           {{#if section.canPrepare}}
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book"></i> {{item.toggleTitle}}</a>
+          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{item.toggleTitle}}</a>
           {{/if}}
           {{/if}}
+          <hr class="context-divider">
           <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
-          <hr>
+          <hr class="context-divider">
           <a class="item-control item-delete" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i> {{localize 'TIDY5E.DeleteSpell'}}</a>
         </div>
         {{/if}}

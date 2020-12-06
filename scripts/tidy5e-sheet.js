@@ -12,6 +12,10 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
+Handlebars.registerHelper('ifNotEquals', function(arg1, arg2, options) {
+    return (arg1 !== arg2) ? options.fn(this) : options.inverse(this);
+});
+
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	
 	get template() {
@@ -81,21 +85,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			attributesTab.scrollTop(0);
 		});
 
-		// toggle item delete protection
-		// html.find('.tidy5e-delete-toggle').click(async (event) => {
-		// 	event.preventDefault();
-		// 	let actor = this.actor;
-
-		// 	if(actor.getFlag('tidy5e-sheet', 'allow-delete')){
-		// 		await actor.unsetFlag('tidy5e-sheet', 'allow-delete');
-		// 	} else {
-		// 		await actor.setFlag('tidy5e-sheet', 'allow-delete', true);
-		// 	}
- 	// 	});
-
-		// toggle item delete protection
+		// toggle inventory layout
 		html.find('.toggle-layout.inventory-layout').click(async (event) => {
-			// console.log('clicked layout toggle');
 			event.preventDefault();
 			let actor = this.actor;
 
@@ -138,17 +129,17 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			}
  		});
 
-		// toggle favorites
- 		html.find('.favorites-toggle').click(async (event) => {
-			event.preventDefault();
-			let actor = this.actor;
+		// toggle favorites - deprecated
+ 		// html.find('.favorites-toggle').click(async (event) => {
+			// event.preventDefault();
+			// let actor = this.actor;
 
-			if(actor.getFlag('tidy5e-sheet', 'favorites-compressed')){
-				await actor.unsetFlag('tidy5e-sheet', 'favorites-compressed');
-			} else {
-				await actor.setFlag('tidy5e-sheet', 'favorites-compressed', true);
-			}
- 		});
+			// if(actor.getFlag('tidy5e-sheet', 'favorites-compressed')){
+			// 	await actor.unsetFlag('tidy5e-sheet', 'favorites-compressed');
+			// } else {
+			// 	await actor.setFlag('tidy5e-sheet', 'favorites-compressed', true);
+			// }
+ 		// });
 
 		// set exhaustion level with portrait icon
 		html.find('.exhaust-level li').click(async (event) => {
@@ -256,8 +247,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       }
     });
 
-    // open context menu for items
-    html.find('.item-list .item').mousedown( function (event) {
+    $('.tidy5e .item-list .item').mousedown( function (event) {
 	    switch (event.which) {
 	      case 2:
 	      	// middle mouse opens item editor
@@ -317,12 +307,25 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     	switch (event.which) {
 	      case 1:
 	      if ( ! $(event.target).closest('.item .item-controls').length ) {
-	      	$('.item').removeClass('context');
-	        $('.item .item-controls').hide();
+	      	$('.tidy5e .item').removeClass('context');
+	        $('.tidy5e .item .item-controls').hide();
   			}
 	      	break;
 	  	}
 		});
+
+		// update item attunement
+		html.find('.item-control.item-attunement').click( async (event) => {
+	    event.preventDefault();
+ 			let li = $(event.currentTarget).closest('.item'),
+ 					item = this.actor.getOwnedItem(li.data("item-id"));
+
+ 			if(item.data.data.attuned) {
+ 				this.actor.getOwnedItem(li.data("item-id")).update({'data.attuned': null});
+ 			} else {
+ 				this.actor.getOwnedItem(li.data("item-id")).update({'data.attuned': true});
+ 			}
+ 		});
 
 		// prevent item info toggle
     // html.find('.inventory-list .item h4').click(event => {
@@ -342,27 +345,26 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  					infoContainer = li.closest('.grid-layout').find('.item-info-container-content'),
  					infoCard = li.find('.info-card');
  					
- 					infoCard.clone().appendTo(infoContainer);
+ 			infoCard.clone().appendTo(infoContainer);
 
  			let	infoBackground = infoContainer.find('.item-info-container-background'),
  					infoDescription = infoContainer.find('.info-card-description'),
  					props = $(`<div class="item-properties"></div>`);
 
- 					infoDescription.html(itemDescription);
+ 			infoDescription.html(itemDescription);
 
-	      	chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
-	      	infoContainer.find('.info-card .info-card-description').after(props);
+	    chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
+	    infoContainer.find('.info-card .info-card-description').after(props);
 
-
-					infoContainer.show();
-					infoBackground.hide();
+			infoContainer.show();
+			infoBackground.hide();
 
  			let innerScrollHeight = infoDescription[0].scrollHeight;
- 					console.log('ScrollHeight: '+innerScrollHeight+'/ContainerHeight: '+ infoDescription[0].clientHeight);
- 					if(innerScrollHeight > infoDescription.height() ) {
- 						infoDescription.addClass('overflowing');
- 						infoDescription.after('<span class="truncated">&hellip;</span>');
- 					}
+
+			if(innerScrollHeight > infoDescription.height() ) {
+				infoDescription.addClass('overflowing');
+				infoDescription.after('<span class="truncated">&hellip;</span>');
+			}
 	    console.log(itemData);
  		});
 
@@ -400,7 +402,12 @@ async function countAttunedItems(app, html, data){
   		attunedItems++;
   	}
   }
+
   html.find('.attuned-items-counter .attuned-items-current').text(attunedItems);
+  if(attunedItems > actor.data.data.details.attunedItemsCount) {
+  	html.find('.attuned-items-counter').addClass('overattuned');
+  	ui.notifications.warn(`Attunement warning: You can't attune to more than ${actor.data.data.details.attunedItemsCount} items!`);
+  }
 }
 
 // check magic items

@@ -34,8 +34,8 @@
 
   {{#if favSpellsPrepMode}}
     {{#each favSpellsPrepMode as |section lvl|}}
+      {{#if section.spells}}
       <ul class="inventory-list items-list fav-spell">
-        {{#if section.spells}}
           {{#if lvl}}
             <li class="items-header spellbook-header">                        
               <h3>
@@ -63,14 +63,14 @@
               {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
             {{/each}}
           </ul>
-        {{/if}}
       </ul>
+      {{/if}}
     {{/each}}
   {{/if}}
   {{#if favSpells}}
     {{#each favSpells as |section lvl|}}
+      {{#if section.spells}}
       <ul class="inventory-list items-list fav-spell">
-        {{#if section.spells}}
           {{#if lvl}}
             <li class="items-header spellbook-header">
               <div class="spell-detail spell-slots">                    
@@ -102,8 +102,8 @@
               {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
             {{/each}}
           </ul>
-        {{/if}}
       </ul>
+      {{/if}}
     {{/each}}
   {{/if}}
 </div>

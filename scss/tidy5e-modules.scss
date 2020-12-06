@@ -480,6 +480,9 @@
 
 	.inv-plus-stuff {
 
+		opacity: 0;
+		transition: opacity .3s ease;
+
 		a {
 			margin-right: 5px;
 			color: var(--default-light-color);
@@ -488,6 +491,11 @@
 				color: var(--default-primary-color);
 			}
 		}
+
+	}
+	
+	.items-header:hover .inv-plus-stuff {
+		opacity: 1;
 	}
 
 	.grid-layout .items-footer .item-control.remove-category,
