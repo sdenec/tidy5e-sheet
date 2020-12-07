@@ -248,6 +248,11 @@
 	padding: 0 9px 8px 0;
   overflow-y: scroll;
 
+  .item-list {
+  	padding: 0;
+  	margin: 0;
+  }
+
 	.items-header {
 		display: flex;
 		justify-content: space-between;
@@ -255,11 +260,10 @@
 		margin: 0 0 .25rem 0;
 		padding-top: .5rem;
 		line-height: 20px;
-		// border-top: 1px solid var(--default-faint-color);
+		font-size: 12px;
 		
 		&:first-child { 
 			padding-top: 0;
-			// border: none; 
 		}
 
 		h3 {
@@ -483,8 +487,7 @@
 	   		text-align: center;
 			}
 
-			&.item-delete,
-			&.effect-delete {
+			&.warning {
 				background: rgba(255,0,0,.6);
 				color: rgba(255,255,255,.6);
 
@@ -512,7 +515,7 @@
 		flex: 0 0 120px;
 	}
 
-	.items-header .spell-detail.spell-slots {
+	.items-header .spell-slots {
 		display: flex;
     flex: 0 0 1px;
     align-items: center;
@@ -525,13 +528,11 @@
     	align-items: center;
     	line-height: 16px;
     	text-align: left;
-    	font-size: 12px;
 		}
 
 		input {
 			text-align: right;
 			height: 16px;
-			font-size: 12px; 
 		}
 
 		.slot-max-override {

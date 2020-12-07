@@ -247,6 +247,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       }
     });
 
+    // open context menu
     $('.tidy5e .item-list .item').mousedown( function (event) {
 	    switch (event.which) {
 	      case 2:
@@ -326,12 +327,6 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  				this.actor.getOwnedItem(li.data("item-id")).update({'data.attuned': true});
  			}
  		});
-
-		// prevent item info toggle
-    // html.find('.inventory-list .item h4').click(event => {
-  		// let item = event.currentTarget;
-  		// $(item).closest('.item').find('.item-edit').trigger('click');
-    // });
 
 		// show/hide grid layout item info card on mouse enter/leave
 
@@ -469,6 +464,24 @@ async function addClassList(app, html, data) {
 
 	}
 }
+
+// Copy magic item spell to favorites
+// async function copyMagicItems(app, html, data) { 
+// 	if ($('.tidy5e .magic-items-spells-content')) {
+// 		setTimeout(function(){ 
+// 		let magicItems = $('.tidy5e .magic-items-spells-content'),
+// 				target = $('.tidy5e .favorites-target .favorites'),
+// 				listWrapper = '<ul class="inventory-list items-list magic-list"></ul>';
+
+// 				target.append(listWrapper);
+
+// 				console.log(magicItems);
+// 				console.log(target);
+
+// 				magicItems.clone().appendTo($('.inventory-list.items-list.magic-list'));
+// 		 }, 50);
+// 	}
+// }
 
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {

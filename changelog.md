@@ -14,6 +14,16 @@ Thank you very much!
 - file restructuring
 - complete css rewrite for maintainability
 
+- character portrait can be edited when path is broken
+- moved all health related info below the portrait
+- moved Attributes back into the header
+- replaced trait description with icons to save space
+- added a grid view for inventory and spellbook
+- added a context menu for items controls (edit, delete, etc.)
+- removed a lot of icons and replaced them with either labels or color indicators
+- added an item counter in inventory headers (useful when categories are compacted e. g. with inventory+)
+- added an attunement 
+
 *Version 0.3.4*
 - fixed convert currency button
 - Korean Translation update

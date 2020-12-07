@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-	<div class="tidy5e-sheet{{#if actor.flags.tidy5e-sheet.allow-delete}} allow-delete{{/if}}">
+	<div class="tidy5e-sheet">
 		{{!-- Sheet Header --}}
 		<header class="tidy5e-header">
 			<section class="profile-wrap">
@@ -87,9 +87,9 @@
 					data-dtype="Number" placeholder="10" maxlength="3">
 				</div>
 				<div class="portrait-temp">
-					<input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}"
+					<input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
 					value="{{data.attributes.hp.temp}}" data-dtype="Number" maxlength="3">
-					<input name="data.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}"
+					<input name="data.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
 					value="{{data.attributes.hp.tempmax}}" data-dtype="Number" maxlength="3">
 				</div>
 

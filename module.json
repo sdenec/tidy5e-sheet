@@ -17,12 +17,12 @@
 		"./fonts/signika-negative/signika-negative.css",
 		"../fonts/modesto-condensed/modesto-condensed.css",
 		"./css/tidy5e-sheet.css",
-		"./css/tidy5e-items.css",
-		"./css/tidy5e-modules.css",
-		"./css/tidy5e-npc.css",
 		"./css/tidy5e-dark-sheet.css",
+		"./css/tidy5e-npc.css",
 		"./css/tidy5e-dark-npc.css",
+		"./css/tidy5e-items.css",
 		"./css/tidy5e-dark-items.css",
+		"./css/tidy5e-modules.css",
 		"./css/tidy5e-dark-modules.css"
 	],
 	"languages": [
