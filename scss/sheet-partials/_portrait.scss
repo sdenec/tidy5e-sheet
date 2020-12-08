@@ -531,15 +531,19 @@
 
 	.portrait-hd {
 		text-align: center;
-		margin-top: 3px;
-		font-size: 14px;
+		margin-top: 2px;
+		font-size: 12px;
 		line-height: 12px;
-		font-family: "Modesto Condensed", "Palatino Linotype", serif;
+		height: 14px;
+
+		div:not(.health) {
+			padding-top: 2px;
+		}
 	}
 
 	.portrait-hp {
 		display: flex;
-		margin-top: 2px;
+		margin-top: 1px;
     background: rgba(0,0,0,.1);
     border-radius: 5px;
 	}
@@ -547,13 +551,13 @@
 	.portrait-hp input,
 	.portrait-hp span {
 		font-family: "Modesto Condensed", "Palatino Linotype", serif;
-		font-size: 18px;
-		height: 18px;
+		font-size: 20px;
+		height: 20px;
 		font-weight: 700;
 	}
 
 	.portrait-hp span {
-		font-size: 14px;
+		font-size: 17px;
     padding: 2px 2px 0 2px;
 	}
 
