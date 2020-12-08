@@ -99,7 +99,7 @@ export const addFavorites = async function(app, html, data, position) {
         favBtn.click(ev => {
           app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
         });
-        html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls').prepend(favBtn);
+        html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls .item-edit').before(favBtn);
         if(item.flags.favtab.isFavorite){
           html.find(`.item[data-item-id="${item._id}"]`).addClass('isFav');
         }
