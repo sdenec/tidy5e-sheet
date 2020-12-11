@@ -5,7 +5,7 @@
 	"version": "0.4.0",
 	"author": "sdenec#3813",
 	"minimumCoreVersion": "0.7.6",
-	"compatibleCoreVersion": "0.7.7",
+	"compatibleCoreVersion": "0.7.8",
 	"system": ["dnd5e"],
 	"esmodules": [
 		"./scripts/tidy5e-sheet.js",
