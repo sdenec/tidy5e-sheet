@@ -12,6 +12,21 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
+
+// handlebar helper to see if an object, array, or set is empty
+Handlebars.registerHelper('tidy5e-isEmpty', (input) => {
+  if (!input) {
+    return true;
+  }
+  if (input instanceof Array) {
+    return input.length < 1;
+  }
+  if (input instanceof Set) {
+    return input.size < 1;
+  }
+  return isObjectEmpty(input);
+});
+
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	
 	get template() {
