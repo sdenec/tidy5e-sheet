@@ -1,5 +1,5 @@
 <div class="traits{{#if actor.flags.tidy5e-sheet.traitsExpanded}} expanded{{/if}}">
-  <div class="form-group {{#unless senses}}senses{{/unless}} {{#unless (or data.traits.senses (ne senses Object))}}inactive{{/unless}}">
+  <div class="form-group {{#unless senses}}senses{{/unless}} {{#if (and (eq data.traits.senses '') (tidy5e-isEmpty senses))}}inactive{{/if}}">
     <article>
       {{#if senses}}
       <label for="senses">{{localize "DND5E.Senses"}}:</label>
