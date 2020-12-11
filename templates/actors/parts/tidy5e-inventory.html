@@ -32,7 +32,7 @@
 
   <ol class="item-list">
     {{#each section.items as |item iid|}}
-    <li class="item flexrow {{~#if item.data.attuned}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+    <li class="item flexrow {{~#if (or item.data.attuned (eq data.attunement 2))}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
       <div class="item-name flexrow rollable" >
         <div class="item-image" style="background-image: url({{item.img}})">
           <i class="fa fa-dice-d20"></i>
@@ -49,7 +49,7 @@
       </div>
 
 
-      {{~#if item.data.attuned}} 
+      {{~#if (or item.data.attuned (eq data.attunement 2))}} 
       <div class="item-attuned" title="{{localize 'DND5E.Attuned'}}"><i class="fas fa-user-circle"></i></div>
       {{/if}}
 
