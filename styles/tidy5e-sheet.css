@@ -1471,7 +1471,8 @@
 	content: none;
 }
 
-.tidy5e.sheet .traits .trait-selector {
+.tidy5e.sheet .traits .trait-selector,
+.tidy5e.sheet.actor .traits .config-button {
   flex: 0 0 10px;
   color: #999;
   margin-left: 4px;
@@ -1480,11 +1481,13 @@
 	padding: 2px 0 0 0;
 }
 
-.tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .trait-selector {
+.tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .trait-selector,
+.tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .config-button {
 	display: none;
 }
 
 .tidy5e.sheet .traits .trait-selector:hover i.fas,
+.tidy5e.sheet .traits .config-button:hover i.fas,
 .tidy5e.sheet.actor .traits i.fas:hover {
 	color: var(--default-secondary-color);
 	text-shadow: none;
