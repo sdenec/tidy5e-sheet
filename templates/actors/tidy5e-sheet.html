@@ -156,14 +156,14 @@
 						<input class="ac-display" name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}" data-dtype="Number" placeholder="10"maxlength="2">
 					</li>
 					<li class="header-attribute movement {{#if actor.flags.tidy5e-sheet.legacy-speed}} legacy-display{{/if}}">
-						<h4 class="attribute-name">{{ localize 'DND5E.Speed' }} ({{data.attributes.movement.units}}) <span class="legacy-switch"><i class="fas fa-toggle-on"></i><i class="fas fa-toggle-off"></i></span></h4>
+						<h4 class="attribute-name">{{ localize "DND5E.Movement" }}<span class="legacy-switch"><i class="fas fa-toggle-on"></i><i class="fas fa-toggle-off"></i></span></h4>
 						<div class="speed-form">
 							<div class="value">
 								<p class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</p>
 							</div>
 							<footer class="flex value-footer">
 								<span class="movement-special" title="{{movement.special}}">{{movement.special}}</span>
-								<span class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></span>
+								<a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a>
 							</footer>
 						</div>
 						<div class="speed-form-legacy">

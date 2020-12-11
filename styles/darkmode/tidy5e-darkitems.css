@@ -285,3 +285,8 @@
 .tidy5eDark .tidy5e.dnd5e.sheet.item a.inline-roll i {
   color: #121212;
 }
+
+.tidy5eDark .tidy5e.dnd5e.sheet.item .item.effect,
+.tidy5eDark .tidy5e.dnd5e.sheet.item .item-name.effect-name {
+	color: var(--darkmode-primary-color);
+}
