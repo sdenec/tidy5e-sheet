@@ -24,6 +24,13 @@ Thank you very much!
 - added an item counter in inventory headers (useful when categories are compacted e. g. with inventory+)
 - added an attunement 
 
+*Version 0.3.6*
+- update to dnd5e 1.2.0 - thanks to akrigline
+- css fix for effects text color in item sheets
+
+*Version 0.3.5*
+- fixed NPC health calculation issue
+
 *Version 0.3.4*
 - fixed convert currency button
 - Korean Translation update
