@@ -10,26 +10,31 @@
           </div>
 
           {{!-- HP Overlay --}}
-          <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) 100%);">
+          <div class="hp-overlay-wrapper">
+            <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) 100%);">
             </div>
+          </div>
+          {{!-- Hit Points --}}
+          <div class="portrait-hp" title="{{ localize 'DND5E.HitPoints' }}">
+            <input class="hp-min" name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}"
+            data-dtype="Number" placeholder="0" maxlength="5">
+            <span class="value-seperator">/</span>
+            <input class="hp-max" name="data.attributes.hp.max" type="text" value="{{data.attributes.hp.max}}"
+            data-dtype="Number" placeholder="0" maxlength="5">
+          </div>
         </div>
 
         <div class="portrait-hd health" title="{{ localize 'DND5E.HPFormula' }}">
           <span class="rollable" title="Reroll Hit Points"><i class="fas fa-dice-six"></i><!-- {{ localize "DND5E.HitPoints" }} --></span>
           <input name="data.attributes.hp.formula" class="hpformula" type="text" placeholder="{{ localize 'DND5E.HPFormula' }}" value="{{data.attributes.hp.formula}}"  maxlength="12" title="{{ localize 'DND5E.HPFormula' }}: {{data.attributes.hp.formula}}">
         </div>
-        <div class="portrait-hp" title="{{ localize 'DND5E.HitPoints' }}">
-          <input class="hp-min" name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}"
-          data-dtype="Number" placeholder="0" maxlength="3">
-          <span class="value-seperator">/</span>
-          <input class="hp-max" name="data.attributes.hp.max" type="text" value="{{data.attributes.hp.max}}"
-          data-dtype="Number" placeholder="10" maxlength="3">
-        </div>
+        
+        {{!-- Temp Hit Points --}}
         <div class="portrait-temp">
           <input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
-          value="{{data.attributes.hp.temp}}" data-dtype="Number" maxlength="3">
+          value="{{data.attributes.hp.temp}}" data-dtype="Number" maxlength="5">
           <input name="data.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
-          value="{{data.attributes.hp.tempmax}}" data-dtype="Number" maxlength="3">
+          value="{{data.attributes.hp.tempmax}}" data-dtype="Number" maxlength="5">
         </div>
 
       </section>
@@ -86,7 +91,7 @@
             <li><h4>{{ localize 'DND5E.Speed' }}</h4></li>
             <li class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</li>
             <li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
-            <li class="configure-movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></li>
+            <li class="configure-movement"><a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
           </ul>
 
           <ul class="speed-form-legacy">

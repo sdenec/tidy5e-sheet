@@ -250,7 +250,7 @@
 		position: relative;
 
 		svg {
-			height: 15px;
+			height: 12px;
 
 			path {
 				fill: var(--default-tertiary-color);
@@ -276,11 +276,11 @@
 			flex: unset;
 		}
 
-		.form-group:first-child  {
-			line-height: 14px;
-			height: auto;
-			border-radius: 5px 5px 0 0;
-		}
+		// .form-group:first-child  {
+		// 	line-height: 14px;
+		// 	height: auto;
+		// 	border-radius: 5px 5px 0 0;
+		// }
 
 		.form-group:nth-child(odd) {
 			background: none;
@@ -294,9 +294,9 @@
 			display: none;
 		}
 
-		.form-group:first-child label {
-			padding-top: 1px;
-		}
+		// .form-group:first-child label {
+		// 	padding-top: 1px;
+		// }
 
 		.form-group:last-child {
 			margin: 0;
@@ -317,18 +317,15 @@
 		}
 
 		label {
+	    display: flex;
+	    justify-content: center;
+			font-size: 12px;
 		  line-height: 14px;
+		  margin-right: 4px;
 		}
 
 		.multiple label {
 			margin-right: .5rem;
-		}
-
-		.senses div[contenteditable] {	
-		  font-size: 12px;
-		  line-height: 14px;
-		  padding-top: 1px;
-		  width: 100%;
 		}
 
 		.tag {

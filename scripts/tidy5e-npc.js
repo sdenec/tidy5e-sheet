@@ -364,25 +364,27 @@ async function toggleTraitsList(app, html, data){
 
 // toggle item icon
 async function toggleItemMode(app, html, data){
+  html.find('.item-toggle').click(ev => {
+    ev.preventDefault();
+    let itemId = ev.currentTarget.closest(".item").dataset.itemId;
+    let item = app.actor.getOwnedItem(itemId);
+    let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
+    return item.update({ [attr]: !getProperty(item.data, attr) });
+  });
+}
 
-  // let items = data.actor.items;
-  // for (let item of items) {
-  //   let attr = item.type === "spell" ? "preparation.prepared" : "equipped";
-  //   let isActive = getProperty(item.data, attr);
-  //   item.toggleClass = isActive ? "active" : "";
-  //   if (item.type === "spell") {
-  //     item.toggleTitle = game.i18n.localize(isActive ? "DND5E.SpellPrepared" : "DND5E.SpellUnprepared");
-  //   } else {
-  //     item.toggleTitle = game.i18n.localize(isActive ? "DND5E.Equipped" : "DND5E.Unequipped");
-  //   }
-    html.find('.item-toggle').click(ev => {
-      ev.preventDefault();
-      let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-      let item = app.actor.getOwnedItem(itemId);
-      let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
-      return item.update({ [attr]: !getProperty(item.data, attr) });
-    });
-  // }
+// restore scroll position
+async  function resetTempHp(app, html, data){
+  let actor = app.actor,
+      temp = actor.data.data.attributes.hp.temp,
+      tempmax = actor.data.data.attributes.hp.tempmax;
+
+  if(temp == 0){
+    actor.update({ 'data.attributes.hp.temp': null });
+  }
+  if(tempmax == 0){
+    actor.update({ 'data.attributes.hp.tempmax': null });
+  }
 }
 
 // Set Sheet Classes
@@ -516,5 +518,6 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   toggleItemMode(app, html, data);
   restoreScrollPosition(app, html, data);
   hideSpellbook(app, html, data);
+  resetTempHp(app, html, data);
   // console.log(data);
 });

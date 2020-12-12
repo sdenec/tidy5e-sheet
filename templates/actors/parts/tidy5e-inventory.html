@@ -24,7 +24,7 @@
 
     <ul class="item-list">
       {{#each section.items as |item iid|}}
-      <li class="item {{~#if item.data.attuned}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+      <li class="item {{#if (or item.flags.magicitems.enabled item.data.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.data.equipped}}equipped{{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable" >
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
@@ -38,12 +38,14 @@
           </span>
         </div>
 
-
-        {{~#if item.data.attuned}} 
-        <div class="item-attuned" title="{{localize 'DND5E.Attuned'}}"><i class="fas fa-user-circle"></i></div>
+        {{~#if item.attunement}} 
+        <div class="item-attuned {{item.attunement.cls}}" title="{{localize item.attunement.title}}"><i class="fas fa-sun"></i></div>
         {{/if}}
+        
+        {{~#if item.flags.favtab}} 
         {{~#if item.flags.favtab.isFavorite}} 
-        <div class="item-attuned" title="Favorite"><i class="fas fa-bookmark icon-fav"></i></div>
+           <div class="item-attuned" title="Favorite"><i class="fas fa-bookmark icon-fav"></i></div>
+        {{/if}}
         {{/if}}
 
         {{#if ../../isCharacter}}
@@ -81,16 +83,13 @@
           {{/ifNotEquals}}
           {{/ifNotEquals}}
 
-          {{#ifNotEquals item.type 'tool' }}
-          {{#ifNotEquals item.type 'backpack' }}
-          {{#ifNotEquals item.type 'loot' }}
-          <a class="item-control item-attunement {{~#if item.data.attuned}} active{{/if}}">
-            <span class="icon-off"><i class="far fa-user-circle"></i>Not {{localize 'DND5E.Attuned'}}</span>
-            <span class="icon-on"><i class="fas fa-user-circle"></i>{{localize 'DND5E.Attuned'}}</span>
+          {{#if item.attunement}}
+          <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}">
+            <span class="icon-off"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>
+            <span class="icon-on"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>
           </a>
-          {{/ifNotEquals}}
-          {{/ifNotEquals}}
-          {{/ifNotEquals}}
+          {{/if}}
+
           <hr class="context-divider">
           <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i> {{localize "DND5E.ItemEdit"}}</a>
           <hr class="context-divider">
@@ -117,7 +116,8 @@
 <div class="inventory-footer">
   
   <div class="attuned-items-counter" title="Attuned Items">
-    <i class="fas fa-user-circle"></i> <span class="attuned-items-current"></span>/<input type="text" class="attuned-items-max" name="data.details.attunedItemsCount" value="{{data.details.attunedItemsCount}}" placeholder="0" title="Maximum Attunement">
+    <i class="fas fa-sun"></i> <span class="attuned-items-current">{{data.details.attunedItemsCount}}</span>/<span class="attuned-items-max">{{data.details.attunedItemsMax}}</span>
+    <input type="text" class="attuned-items-max" name="data.details.attunedItemsMax" value="{{data.details.attunedItemsMax}}" placeholder="0" title="Maximum Attunement">
   </div>
 
   <div class="inventory-currency">  

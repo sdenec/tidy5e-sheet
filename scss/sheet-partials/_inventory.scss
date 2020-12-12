@@ -69,7 +69,7 @@
 		color: #fff;
 	}
 
-	.attuned-items-current {
+	span {
 		font-size: 16px;
 	}
 
@@ -80,10 +80,22 @@
     margin-left: 1px;
 	}
 
-	input {
+	.attuned-items-max {
 		width: 24px;
+	}
+
+	input {
+		display: none;
     font-size: 16px;
     font-family: 'Signika';
+	}
+
+	&.isGM input {
+		display: inline;
+	}
+
+	&.isGM span.attuned-items-max {
+		display: none;
 	}
 }
 
@@ -350,7 +362,8 @@
 		}
 
 		&.alwaysPrepared {
-			background: var(--always-prepared-accent);
+			// background: var(--always-prepared-accent);
+			background: rgba(0,0,255,.15);
 		}
 
 		.item-name .item-image {
@@ -500,6 +513,10 @@
 
 		.context-divider {
 			margin: 1px 0;
+
+			&:first-child {
+				display: none;
+			}
 		}
 
 	}//.item-controls
@@ -551,6 +568,10 @@
     text-align: center;
     margin: 4px 4px 0 0;
     color: var(--default-secondary-color);
+
+    &.not-attuned {
+    	color: #CD5C5C;
+    }
 	}
 
 }//.items-list
@@ -569,6 +590,10 @@
 		position: relative;
 		border-radius: 5px; 
 		margin: 2px 0;
+
+		&.magic-item {
+			box-shadow: 0 0 2px 1px yellow inset;
+		}
 
 		&.context {
 			box-shadow: 0 0 3px 1px var(--default-primary-accent) inset;

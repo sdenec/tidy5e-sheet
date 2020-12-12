@@ -4,12 +4,13 @@
 	/* Portrait */
 
 	.profile-wrap {
-		width: 110px;
+		width: 150px;
+		position: relative;
 	}
 
 	.profile {
-		width: 110px;
-		height: 110px;
+		width: 150px;
+		height: 150px;
 		position: relative;
 	}
 
@@ -48,7 +49,7 @@
 	/* Death Saves and HP-Overlay */
 
 	.death-saves,
-	.profile .hp-overlay {
+	.profile .hp-overlay-wrapper {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -57,12 +58,23 @@
 		border-radius: 5px;
 	}
 
-	.profile.disable-hp-overlay .hp-overlay {
+	.profile .hp-overlay-wrapper {
+		overflow: hidden;
+		// border-width: 0;
+		// border-style: solid;
+		// border-color: #fff;
+	}
+
+	.profile .hp-overlay {
+		height: calc(100% - 20px);
+	}
+
+	.profile.disable-hp-overlay .hp-overlay-wrapper {
 		display: none;
 	}
 
 	.roundPortrait .death-saves,
-	.profile.roundPortrait .hp-overlay {
+	.profile.roundPortrait .hp-overlay-wrapper {
 		border-radius: 50%;
 	}
 
@@ -116,15 +128,6 @@
 		border-color: #fff;
 	}
 
-	.profile .hp-overlay {
-		top: auto;
-		bottom: 0;
-		overflow: hidden;
-		border-width: 0;
-		border-style: solid;
-		border-color: #fff;
-	}
-
 	.death-save {
 		position: relative;
 		margin: 0 .25rem;
@@ -143,8 +146,11 @@
 	.profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
 	.profile:not(.deathfailure-0):not(.deathfailure-) .rest-container, 
 	.profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container, 
+	.profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hd, 
+	.profile:not(.deathsuccess-0):not(.deathsuccess-) .portrait-hd,
 	.hp-0-0 .inspiration,
-	.hp-0-0 .rest-container {
+	.hp-0-0 .rest-container,
+	.hp-0-0 .portrait-hd {
 		display: none;
 	}
 
@@ -152,7 +158,7 @@
 	.inspiration {
 		position: absolute;
 		right: 0;
-		bottom: 0px;
+		top: 0px;
 		width: 34px;
 		height: 34px;
 		z-index: 5;
@@ -168,7 +174,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: 5px 0 5px 0;
+		border-radius: 0 5px 0 5px;
 		font-size: 24px;
 		color: var(--default-tertiary-color);
 		cursor: pointer;
@@ -236,8 +242,12 @@
 	.rest-container {
 		position: absolute;
 		left: 0;
-		bottom: 0px;
-		z-index: 5;
+		bottom: 0;
+		z-index: 25;
+	}
+
+	.roundPortrait .rest-container {
+		bottom: -7px;
 	}
 
 	.resting {
@@ -315,6 +325,11 @@
 		z-index: 50;
 		transform: translateX(-50%);
 		white-space: nowrap;
+	}
+
+	.inspiration .note {
+		bottom: auto;
+		top: calc(100% + .5rem );
 	}
 
 	.inspiration .note::after {
@@ -530,41 +545,80 @@
 	/* Portrait Hit Points */
 
 	.portrait-hd {
-		text-align: center;
-		margin-top: 2px;
-		font-size: 12px;
-		line-height: 12px;
-		height: 14px;
+    
+		position: absolute;
+    z-index: 25;
+    right: 0;
+    bottom: 0;
+    width: 34px;
+	  height: 34px;
+    background: #ECE9DF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5) inset;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 5px 0 5px 0px;
+    
 
-		div:not(.health) {
-			padding-top: 2px;
-		}
+    .current-hd {
+    	display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100%;
+	    font-family: 'Modesto Condensed';
+	    font-size: 20px;
+	    font-weight: 700;
+	    color: var(--default-secondary-color);
+    	padding: 2px 0 0 0;
+    }
+
+	}
+
+	.roundPortrait .portrait-hd {
+		bottom: -7px;
+		border-radius: 50%;
 	}
 
 	.portrait-hp {
-		display: flex;
-		margin-top: 1px;
-    background: rgba(0,0,0,.1);
+		position: absolute;
+    width: 100%;
+    left: 50%;
+    height: 20px;
+    font-size: 18px;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ECE9DF;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5) inset;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 0 0 5px 5px;
+	}
+
+	.roundPortrait .portrait-hp {
+		width: 90%;
     border-radius: 5px;
 	}
 
 	.portrait-hp input,
 	.portrait-hp span {
 		font-family: "Modesto Condensed", "Palatino Linotype", serif;
-		font-size: 20px;
-		height: 20px;
+		height: 100%;
 		font-weight: 700;
+    padding: 1px 0 0 0;
+    width: 40px;
 	}
 
 	.portrait-hp span {
-		font-size: 17px;
-    padding: 2px 2px 0 2px;
+		flex: 0;
+    padding: 0;
 	}
 
 	/* Portrait Hit Temp */
 
 	.portrait-temp {
 		display: flex;
+		justify-content: center;
 	}
 
 	.portrait-temp input {
@@ -573,6 +627,7 @@
 		line-height: 12px;
 		height: 14px;
 		padding: 1px 0;
+		width: 35px;
 	}
 
 	input.hp-min,

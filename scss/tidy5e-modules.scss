@@ -208,6 +208,12 @@
 		text-align: center;
 	}
 
+	.spellbook-header .spell-level {
+		flex-basis: calc(100% - 140px);
+	  text-align: right;
+	  padding-right: 20px;
+	}
+
 	.spell-rechargeable {
 		flex: 0 0 1px;
 		white-space: nowrap;

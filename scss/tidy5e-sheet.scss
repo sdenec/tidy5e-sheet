@@ -2,10 +2,7 @@
 
 .tidy5e.sheet.actor {
 
-	// min-width: 740px;
-	min-width: 620px;
-	// height: 720px;
-	// height: 840px;
+	min-width: 640px;
 	min-height: 210px;
 
 	.window-content {
@@ -35,7 +32,7 @@
 	.tidy5e-header {
 		display: flex;
     justify-content: center;
-		padding: 1rem;
+		padding: 10px 16px 16px 16px;
 		background: rgba(255,255,255,.2);
 	}
 

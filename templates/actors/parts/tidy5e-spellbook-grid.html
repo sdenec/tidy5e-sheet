@@ -47,26 +47,32 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{~#if data.preparation.prepared}} prepared{{/if}}{{#ifEquals data.preparation.mode 'always'}} prepared alwaysPrepared{{/ifEquals}}" data-item-id="{{item._id}}" {{#ifEquals data.preparation.mode "always"}} title="{{item.toggleTitle}}"{{/ifEquals}}>
+      <li class="item {{~#if section.canPrepare}} preparable{{/if}} {{~#if data.preparation.prepared}} prepared{{/if}}{{#ifEquals data.preparation.mode 'always'}} alwaysPrepared{{/ifEquals}}" data-item-id="{{item._id}}" {{#if section.canPrepare}} title="{{item.toggleTitle}}"{{/if}}>
+        {{~#if item.flags.favtab}} 
+        {{~#if item.flags.favtab.isFavorite}} 
+          <i class="fas fa-bookmark icon-fav" title="Favorite Item"></i>
+        {{/if}}
+        {{/if}}
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
           </div>
         </div>
 
+        {{#if item.data.uses.per }}
         <div class="item-stats">
-          {{#if item.data.uses.per }}
           <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.data.uses.value}}/{{item.data.uses.max}} ">
             {{#if item.hasUses }}
             <i class="fas fa-bolt"></i><input type="text" data-path="data.uses.value" value="{{item.data.uses.value}}" placeholder="0" maxlength="2" >
             {{/if}}
           </div>
-          {{/if}}
         </div>
+        {{/if}}
 
         <div class="info-card">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
+            <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
             {{#if ../../owner}}
             {{#if section.canPrepare}}
               <span>{{item.toggleTitle}}</span>
@@ -90,7 +96,7 @@
 
         {{#if ../../owner}}
         <div class="item-controls spell-prepared">
-          {{#if section.canPrepare}}
+          {{#if (and section.canPrepare (ne data.preparation.mode 'always')) }}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{item.toggleTitle}}</a>
           {{/if}}
           <hr class="context-divider">

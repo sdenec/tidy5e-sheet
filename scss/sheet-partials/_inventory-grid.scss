@@ -160,10 +160,15 @@
 		    height: 13px;
 		    background: yellow;
 		    position: absolute;
-		    top: 0px;
-		    right: 0px;
+		    top: -1px;
+		    right: -1px;
 		    border-radius: 50%;
 		    box-shadow: 0 0 3px 1px yellow;
+
+		    &.not-attuned {
+		    	background: #CD5C5C;
+		    	box-shadow: 0 0 3px 1px #CD5C5C;
+		    }
 			}//.icon-attuned
 
 			.icon-fav {
@@ -175,16 +180,43 @@
 		    font-size: 10px;
 			}
 
+			&.preparable .item-image {
+				box-shadow: 0 0 0 2px inset lightslategrey;
+    		border-radius: 5px;
+			}
+
 			&.equipped,
 			&.prepared {
 				box-shadow: 0 0 0 2px rgba(50,205,50,1);
 			}
 
+			&.prepared.alwaysPrepared {
+				box-shadow: 0 0 0 2px royalblue;
+			}
+
+			&.equipped .item-image,
+			&.prepared .item-image {
+    		box-shadow: 0 0 1px 2px inset greenyellow;
+				border-radius: 5px;
+			}
+
+			&.prepared.alwaysPrepared .item-image {
+    		box-shadow: 0 0 1px 2px inset deepskyblue;
+			}
+
 			&.magic-item {
 				.item-image {
-    			box-shadow: 0 0 5px 0px yellow inset;
-    			border: 1px solid rgba(230,230,0,1);
-   				border-radius: 5px
+					box-shadow: 0 0 0 1px yellow inset, 0 0 6px 4px yellow inset;
+    			border-radius: 5px;
+    			// box-shadow: 0 0 5px 0px yellow inset;
+    			// border: 1px solid rgba(230,230,0,1);
+   				// border-radius: 5px
+				}
+
+				&.equipped .item-image {
+					background-image: url(systems/dnd5e/icons/items/inventory/pearl.jpg);
+			    box-shadow: 0 0 0px 2px greenyellow inset, 0 0 0 3px yellow inset, 0 0 5px 6px yellow inset;
+			    border: none;
 				}
 			}//.magic-items
 

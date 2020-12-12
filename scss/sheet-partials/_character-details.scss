@@ -9,8 +9,8 @@
 .general-information {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
-	padding-bottom: 2px;
+	align-items: center;
+	// padding-bottom: 2px;
 }
 
 .char-name {
@@ -80,54 +80,25 @@
 /* Class List */
 
 .class-list {
+	display: flex;
 	margin: 0;
 	padding: 0;
 	color: rgba(0,0,0,.6);
-	border-radius: 3px;
 	margin-left: 4px;
 	font-size: 11px;
 
-	li {
-		position: relative;
-		display: flex;
-		flex-direction: row-reverse;
-		justify-content: flex-end;
-		align-items: center;
-		line-height: 11px;
-		margin: 2px 0;
-	}
-
-	li:first-child {
-		margin-top: 0;
-	}
-
-	li:last-child {
-		margin-bottom: 0;
+	li::before {
+		content: '/';
+		margin: 0 2px;
 	}
 
 	li:first-child::before {
 		content: none;
 	}
 
-	.subclass-info span {
-		display: block;
-	  width: 12px;
-	  height: 12px;
-	  font-size: 10px;
-	  line-height: 12px;
-	  text-align: center;
-	  background: rgba(0,0,0,.4);
-	  border-radius: 3px;
-	  color: rgba(255,255,255,.6);
-	  margin-right: 2px;
-	}
-
-	.subclass-info .note {
-		left: auto;
-		right: calc(100% + 4px);
-		top: 50%;
-		bottom: auto;
-		transform: translate(0,-50%);
+	.levels-info,
+	.subclass-info {
+		margin-left: 2px;
 	}
 
 } // .class-list
@@ -142,6 +113,7 @@
 	border-top: 1px solid var(--default-light-color);
 	font-size: 13px;
 	padding: 2px 0;
+	margin-top: 2px;
 	white-space: nowrap;
 
 	li {
@@ -250,15 +222,15 @@
 	display: flex;
 	border-bottom: 1px solid var(--default-light-color);
 	padding: 2px 0 2px 4px;
+	font-size: 13px;
 }
 
 .movement .legacy-switch {
-	font-size: 14px;
   cursor: pointer;
   opacity: .5;
   transition: opacity .3s ease;
   margin-right: 4px;
-  padding-top: 2px;
+  padding-top: 1px;
 }
 
 .movement .legacy-switch:hover {
@@ -285,7 +257,7 @@
 }
 
 .movement input {
-  height: 17px;
+  height: 16px;
   padding: 2px 0;
 }
 

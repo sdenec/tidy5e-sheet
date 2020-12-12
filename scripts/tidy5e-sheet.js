@@ -319,12 +319,18 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		html.find('.item-control.item-attunement').click( async (event) => {
 	    event.preventDefault();
  			let li = $(event.currentTarget).closest('.item'),
- 					item = this.actor.getOwnedItem(li.data("item-id"));
+ 					actor = this.actor,
+ 					item = actor.getOwnedItem(li.data("item-id"));
 
- 			if(item.data.data.attuned) {
- 				this.actor.getOwnedItem(li.data("item-id")).update({'data.attuned': null});
+ 			if(item.data.data.attunement == 2) {
+ 				actor.getOwnedItem(li.data("item-id")).update({'data.attunement': 1});
  			} else {
- 				this.actor.getOwnedItem(li.data("item-id")).update({'data.attuned': true});
+
+ 				if(actor.data.data.details.attunedItemsCount >= actor.data.data.details.attunedItemsMax) {
+			  	ui.notifications.warn(`Attunement warning: You can't attune to more than ${actor.data.data.details.attunedItemsCount} items!`);
+			  } else {
+ 					actor.getOwnedItem(li.data("item-id")).update({'data.attunement': 2});
+			  }
  			}
  		});
 
@@ -373,6 +379,9 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 // count inventory items
 async function countInventoryItems(app, html, data){
+	if(game.user.isGM) {
+		html.find('.attuned-items-counter').addClass('isGM');
+	}
   html.find('.tab.inventory .item-list').each(function(){
   	let itemlist = this;
   	let items = $(itemlist).find('li');
@@ -385,40 +394,46 @@ async function countInventoryItems(app, html, data){
 async function countAttunedItems(app, html, data){
   let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
   // if no items are counted set default value to 3
+  if (!actor.data.data.details.attunedItemsMax) {
+  	await actor.update({"data.details.attunedItemsMax": 3});
+  }
+
   if (!actor.data.data.details.attunedItemsCount) {
-  	await actor.update({"data.details.attunedItemsCount": 3});
+  	await actor.update({"data.details.attunedItemsCount": 0});
   }
 
   let items = actor.data.items;
 	let attunedItems = 0;
 
   for (var i = 0; i < items.length; i++){
-  	if (items[i].data.attuned){
+  	if (items[i].data.attunement == 2){
   		attunedItems++;
   	}
   }
 
-  html.find('.attuned-items-counter .attuned-items-current').text(attunedItems);
-  if(attunedItems > actor.data.data.details.attunedItemsCount) {
+  await actor.update({"data.details.attunedItemsCount": attunedItems});
+
+  // html.find('.attuned-items-counter .attuned-items-current').text(attunedItems);
+  if(actor.data.data.details.attunedItemsCount > actor.data.data.details.attunedItemsMax) {
   	html.find('.attuned-items-counter').addClass('overattuned');
   	ui.notifications.warn(`Attunement warning: You can't attune to more than ${actor.data.data.details.attunedItemsCount} items!`);
   }
 }
 
 // check magic items
-async function checkMagicItems(app, html, data){
+// async function checkMagicItems(app, html, data){
 
-	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+// 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 
-  html.find('.tab.inventory .item').each(function(){
- 		let li = $(this),
-				item = actor.getOwnedItem(li.data("item-id")),
-				itemData = item.data;
-		if(itemData.flags.magicitems && itemData.flags.magicitems.enabled) {
-			li.addClass('magic-item');
-		}
-  });
-}
+//   html.find('.tab.inventory .item').each(function(){
+//  		let li = $(this),
+// 				item = actor.getOwnedItem(li.data("item-id")),
+// 				itemData = item.data;
+// 		if(itemData.flags.magicitems && itemData.flags.magicitems.enabled) {
+// 			li.addClass('magic-item');
+// 		}
+//   });
+// }
 
 // handle traits list display
 async function toggleTraitsList(app, html, data){
@@ -446,25 +461,43 @@ async function checkDeathSaveStatus(app, html, data){
 }
 
 // Add Character Class List
-async function addClassList(app, html, data) { 
-	if (!game.settings.get("tidy5e-sheet", "hideClassList")) {
-		let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
-		let classList = [];
-		let items = data.actor.items;
-		for (let item of items) {
-			if (item.type === "class") {
-				let subclass = (item.data.subclass) ? ` <div class="subclass-info has-note"><span>S</span><div class="note">${item.data.subclass}</div></div>` : ``;
-				classList.push(item.name + subclass);
+// async function addClassList(app, html, data) { 
+// 	if (!game.settings.get("tidy5e-sheet", "hideClassList")) {
+// 		let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+// 		let classList = [];
+// 		let items = data.actor.items;
+// 		for (let item of items) {
+// 			if (item.type === "class") {
+// 				let subclass = (item.data.subclass) ? ` <div class="subclass-info has-note"><span>S</span><div class="note">${item.data.subclass}</div></div>` : ``;
+// 				classList.push(item.name + subclass);
+// 			}
+// 		}
+// 		classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
+// 		mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
+// 		let classListTarget = html.find('.level-information');
+// 		classListTarget.after(classList);
+
+// 	}
+// }
+	async function addClassList(app, html, data) { 
+		if (!game.settings.get("tidy5e-sheet", "hideClassList")) {
+			let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+			let classList = [];
+			let items = data.actor.items;
+			console.log(items);
+			for (let item of items) {
+				if (item.type === "class") {
+					let levels = (item.data.levels) ? `<span class="levels-info">${item.data.levels}</span>` : ``;
+					let subclass = (item.data.subclass) ? `<span class="subclass-info">(${item.data.subclass})</span>` : ``;
+					classList.push(item.name + levels + subclass);
+				}
 			}
+			classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
+			mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
+			let classListTarget = html.find('.general-information');
+			classListTarget.after(classList);
 		}
-		classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
-		mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
-		let classListTarget = html.find('.level-information');
-		classListTarget.after(classList);
-
 	}
-}
-
 // Copy magic item spell to favorites
 // async function copyMagicItems(app, html, data) { 
 // 	if ($('.tidy5e .magic-items-spells-content')) {
@@ -640,7 +673,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
 	countInventoryItems(app,html,data);
-	checkMagicItems(app, html, data);
+	// checkMagicItems(app, html, data);
 	countAttunedItems(app, html, data);
 	// console.log(data);
 	console.log("Tidy5e Sheet rendered!");
