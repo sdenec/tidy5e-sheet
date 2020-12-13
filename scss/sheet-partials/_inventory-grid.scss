@@ -196,12 +196,12 @@
 
 			&.equipped .item-image,
 			&.prepared .item-image {
-    		box-shadow: 0 0 1px 2px inset greenyellow;
+    		box-shadow: 0 0 1px 1px inset greenyellow;
 				border-radius: 5px;
 			}
 
 			&.prepared.alwaysPrepared .item-image {
-    		box-shadow: 0 0 1px 2px inset deepskyblue;
+    		box-shadow: 0 0 1px 1px inset deepskyblue;
 			}
 
 			&.magic-item {
@@ -215,7 +215,7 @@
 
 				&.equipped .item-image {
 					background-image: url(systems/dnd5e/icons/items/inventory/pearl.jpg);
-			    box-shadow: 0 0 0px 2px greenyellow inset, 0 0 0 3px yellow inset, 0 0 5px 6px yellow inset;
+			    box-shadow: 0 0 0px 1px greenyellow inset, 0 0 0 1px yellow inset, 0 0 4px 4px yellow inset;
 			    border: none;
 				}
 			}//.magic-items
