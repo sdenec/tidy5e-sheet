@@ -26,11 +26,13 @@
 }
 
 .level {
-  padding: .1rem .3rem 0.05rem .3rem;
+  padding: 4px 6px;
   border-radius: 3px;
 	background: var(--default-faint-color);
   color: rgba(0,0,0,.6);
 	font-size: 1.25rem;
+	line-height: 1;
+	height: 25px;
 }
 
 .experience {
@@ -82,10 +84,11 @@
 .class-list {
 	display: flex;
 	margin: 0;
-	padding: 0;
+	padding: 3px 0 0 0;
 	color: rgba(0,0,0,.6);
 	margin-left: 4px;
-	font-size: 11px;
+	font-size: 12px;
+	line-height: 1;
 
 	li::before {
 		content: '/';
@@ -111,8 +114,9 @@
 	justify-content: space-between;
 	border-bottom: 1px solid var(--default-light-color);
 	border-top: 1px solid var(--default-light-color);
-	font-size: 13px;
-	padding: 2px 0;
+	font-size: 12px;
+	line-height: 1;
+	padding: 3px 0 2px 0;
 	margin-top: 2px;
 	white-space: nowrap;
 
@@ -213,7 +217,7 @@
 
 .character-stats {
 	display: flex;
-	margin-top: 5px;
+	margin-top: 4px;
 }
 
 /* Character Movement */
@@ -221,16 +225,16 @@
 .movement {
 	display: flex;
 	border-bottom: 1px solid var(--default-light-color);
-	padding: 2px 0 2px 4px;
-	font-size: 13px;
+	padding: 3px 0 2px 4px;
+	font-size: 14px;
+	line-height: 1;
 }
 
 .movement .legacy-switch {
   cursor: pointer;
   opacity: .5;
   transition: opacity .3s ease;
-  margin-right: 4px;
-  padding-top: 1px;
+  margin-left: 4px;
 }
 
 .movement .legacy-switch:hover {
@@ -257,12 +261,17 @@
 }
 
 .movement input {
-  height: 16px;
-  padding: 2px 0;
+  height: 15px;
+  padding: 0;
+  margin-top: -1px;
 }
 
 .movement-special {
 	border-left: 2px solid var(--default-light-color);
+}
+
+.movement:not(:hover) .configure-movement {
+	opacity: 0;
 }
 
 .configure-movement i {
@@ -291,6 +300,7 @@
   width: 40px;
   text-align: center;
 }
+
 .speed-form-legacy .movement-special {
 	flex: 1;
 }

@@ -23,7 +23,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
       classes: ["tidy5e", "sheet", "actor", "npc"],
-      width: 740,
+      width: 690,
       height: 720
     });
   }
@@ -66,6 +66,10 @@ export default class Tidy5eNPC extends ActorSheet5e {
       item.isOnCooldown = item.data.recharge && !!item.data.recharge.value && (item.data.recharge.charged === false);
       item.isDepleted = item.isOnCooldown && (item.data.uses.per && (item.data.uses.value > 0));
       item.hasTarget = !!item.data.target && !(["none",""].includes(item.data.target.type));
+
+      // Item toggle state
+      this._prepareItemToggleState(item);
+      
       if ( item.type === "spell" ) arr[0].push(item);
       else arr[1].push(item);
       return arr;
@@ -100,9 +104,34 @@ export default class Tidy5eNPC extends ActorSheet5e {
       else features.equipment.items.push(item);
     }
 
+
     // Assign and return
     data.features = Object.values(features);
     data.spellbook = spellbook;
+  }
+
+  /* -------------------------------------------- */
+
+  /**
+   * A helper method to establish the displayed preparation state for an item
+   * @param {Item} item
+   * @private
+   */
+  _prepareItemToggleState(item) {
+    if (item.type === "spell") {
+      const isAlways = getProperty(item.data, "preparation.mode") === "always";
+      const isPrepared =  getProperty(item.data, "preparation.prepared");
+      item.toggleClass = isPrepared ? "active" : "";
+      if ( isAlways ) item.toggleClass = "fixed";
+      if ( isAlways ) item.toggleTitle = CONFIG.DND5E.spellPreparationModes.always;
+      else if ( isPrepared ) item.toggleTitle = CONFIG.DND5E.spellPreparationModes.prepared;
+      else item.toggleTitle = game.i18n.localize("DND5E.SpellUnprepared");
+    }
+    else {
+      const isActive = getProperty(item.data, "equipped");
+      item.toggleClass = isActive ? "active" : "";
+      item.toggleTitle = game.i18n.localize(isActive ? "DND5E.Equipped" : "DND5E.Unequipped");
+    }
   }
 
   /* -------------------------------------------- */
@@ -313,6 +342,75 @@ export default class Tidy5eNPC extends ActorSheet5e {
       actor.getOwnedItem(itemId).update(data);
     });
 
+    // open context menu
+    html.find('.item-list .item').mousedown( function (event) {
+      switch (event.which) {
+        case 2:
+          // middle mouse opens item editor
+          event.preventDefault();
+          let item = event.currentTarget;
+          $(item).find('.item-edit').trigger('click');
+          break;
+        case 3:
+          // right click opens context menu
+          $('.item').removeClass('context');
+          $('.item .item-controls').hide();
+          itemContextMenu(event);
+          break;
+      }
+
+      // context menu calculations
+      function itemContextMenu(e){
+        let item = e.currentTarget,
+            mouseX = event.clientX,
+            mouseY = event.clientY,
+            itemTop = $(item).offset().top,
+            itemLeft = $(item).offset().left,
+            itemHeight = $(item).height(),
+            itemWidth = $(item).width(),
+            contextTop = mouseY-itemTop+1,
+            contextLeft = mouseX-itemLeft+1,
+            contextWidth = $(item).find('.item-controls').width(),
+            contextHeight = $(item).find('.item-controls').height(),
+            contextRightBound = mouseX + contextWidth,
+            contextBottomBound = mouseY + contextHeight,
+            itemsList = $(item).closest('.items-list'),
+            itemsListRightBound = itemsList.offset().left + itemsList.width() - 17,
+            itemsListBottomBound = itemsList.offset().top + itemsList.height();
+
+        // check right side bounds
+        if(contextRightBound > itemsListRightBound) {
+          let rightDiff = itemsListRightBound - contextRightBound;
+          contextLeft = contextLeft + rightDiff;
+        }
+
+        // check bottom bounds
+        if(contextBottomBound > itemsListBottomBound) {
+          let bottomDiff = itemsListBottomBound - contextBottomBound;
+          contextTop = contextTop + bottomDiff;
+        }
+
+        $(item)
+          .addClass('context')
+          .find('.item-controls')
+          .css({'top': contextTop+'px', 'left': contextLeft+'px'})
+          .fadeIn(300);
+      }
+    });
+
+    // close context menu on any click outside
+    $(document).mousedown( function (event) {
+      switch (event.which) {
+        case 1:
+        if ( ! $(event.target).closest('.item .item-controls').length ) {
+          html.find('.item').removeClass('context');
+          html.find('.item .item-controls').hide();
+        }
+          break;
+      }
+    });
+
+
   }
 
 
@@ -419,21 +517,35 @@ async function setSheetClasses(app, html, data) {
 
 // Hide empty Spellbook
 async function hideSpellbook(app, html, data) {
-  let spellbook = html.find('.spellbook-header');
+  let spellbook = html.find('.spellbook-footer');
 
   if (spellbook.hasClass('spellbook-empty')){
     html.find('.spellbook-title').addClass('toggle-spellbook');
-    html.find('.spellbook-title span').show();
-    html.find('.spellbook-title + ol').hide();
+    // html.find('.spellbook-title .fa-caret-down').show();
+    // html.find('.spellbook-title .fa-caret-up').hide();
+    html.find('.spellbook-title + .list-layout').hide();
     html.find('.spellcasting-ability').hide();
 
     $('.toggle-spellbook').on('click', function(){
       html.find('.spellbook-title').toggleClass('show');
-      html.find('.spellbook-title + ol').toggle();
+      // html.find('.spellbook-title .fa-caret-down').toggle();
+      // html.find('.spellbook-title .fa-caret-up').toggle();
+      html.find('.spellbook-title + .list-layout').toggle();
       html.find('.spellcasting-ability').toggle();
     });
   }
 }
+
+// Hide empty Inventory Sections
+async function hideEmptyInventorySections(app, html, data) {
+  $('.tidy5e-npc .inventory-list:not(.spellbook-list) .items-header').each(function(){
+    if($(this).next('.item-list').find('li').length <= 1){
+      $(this).addClass('hidden');
+      $(this).next('.item-list').addClass('hidden');
+    }
+  });
+}
+
 
 Actors.registerSheet("dnd5e", Tidy5eNPC, {
     types: ["npc"],
@@ -519,5 +631,6 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   restoreScrollPosition(app, html, data);
   hideSpellbook(app, html, data);
   resetTempHp(app, html, data);
+  hideEmptyInventorySections(app, html, data);
   // console.log(data);
 });

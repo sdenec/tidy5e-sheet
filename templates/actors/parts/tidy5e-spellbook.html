@@ -15,7 +15,7 @@
 
   <ul class="inventory-list items-list">
     {{#each spellbook as |section|}}
-    <li class="flexrow items-header spellbook-header">
+    <li class="items-header spellbook-header">
       <div class="spell-level-slots">
         <h3>{{section.label}}</h3>
 
@@ -46,7 +46,7 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{~#if data.preparation.prepared}} prepared{{/if}}{{#ifEquals data.preparation.mode 'always'}} alwaysPrepared{{/ifEquals}}" data-item-id="{{item._id}}" {{#ifEquals data.preparation.mode "always"}} title="{{item.toggleTitle}}"{{/ifEquals}}>
+      <li class="item {{~#if data.preparation.prepared}} prepared{{/if}}{{#ifEquals data.preparation.mode 'always'}} alwaysPrepared{{/ifEquals}}" data-item-id="{{item._id}}" {{#ifEquals data.preparation.mode 'always'}} title="{{item.toggleTitle}}"{{/ifEquals}}>
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
@@ -86,10 +86,8 @@
 
         {{#if ../../owner}}
         <div class="item-controls spell-prepared">
-          {{#if ../../owner}}
           {{#if section.canPrepare}}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{item.toggleTitle}}</a>
-          {{/if}}
           {{/if}}
           <hr class="context-divider">
           <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
@@ -132,7 +130,7 @@
 <div class="spellcasting-ability">
   <h3 class="spell-dc">{{localize 'DND5E.SpellDC'}} {{data.attributes.spelldc}}</h3>
   <div class="spellcasting-attribute">
-    <p>{{localize 'DND5E.SpellAbility'}}</p>
+    <span>{{localize 'DND5E.SpellAbility'}}</span>
     <select name="data.attributes.spellcasting" data-type="String">
       {{#select data.attributes.spellcasting}}
       <option value="">{{localize 'DND5E.None'}}</option>

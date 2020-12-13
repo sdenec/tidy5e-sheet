@@ -16,10 +16,10 @@
 
       {{#if section.hasActions}}
       <div class="items-header-labels">
-        <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
-        <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
         <div class="items-header-uses">{{localize 'DND5E.Uses'}}</div>
         <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
+        <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
+        <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
       </div>
       {{else if section.isClass}}
       <div class="items-header-labels">
@@ -52,14 +52,7 @@
         {{/if}}
         {{/if}}
 
-
         {{#if section.hasActions}}
-        <div class="item-detail item-source">
-          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
-        </div>
-        <div class="item-detail item-requirements">
-          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
-        </div>
         <div class="item-detail item-charges">
           {{#if item.isOnCooldown}}
           <a class="item-recharge rollable">{{item.labels.recharge}}</a>
@@ -77,6 +70,13 @@
           {{#if item.data.activation.type }}
           {{item.labels.activation}}
           {{/if}}
+        </div>
+       
+        <div class="item-detail item-source">
+          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
+        </div>
+        <div class="item-detail item-requirements">
+          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
         </div>
 
         {{else if section.isClass}}
@@ -98,8 +98,9 @@
 
         {{#if ../../owner}}
         <div class="item-controls">
+          <hr class="context-divider">
           <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i> {{localize 'DND5E.ItemEdit'}}</a>
-          <hr>
+          <hr class="context-divider">
           <a class="item-control item-delete warning"><i class="fas fa-trash"></i> {{localize 'DND5E.ItemDelete'}}</a>
         </div>
         {{/if}}

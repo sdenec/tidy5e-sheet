@@ -24,9 +24,11 @@
           </div>
         </div>
 
-        <div class="portrait-hd health" title="{{ localize 'DND5E.HPFormula' }}">
+        <div class="portrait-hp-formula health" title="{{ localize 'DND5E.HPFormula' }}">
           <span class="rollable" title="Reroll Hit Points"><i class="fas fa-dice-six"></i><!-- {{ localize "DND5E.HitPoints" }} --></span>
-          <input name="data.attributes.hp.formula" class="hpformula" type="text" placeholder="{{ localize 'DND5E.HPFormula' }}" value="{{data.attributes.hp.formula}}"  maxlength="12" title="{{ localize 'DND5E.HPFormula' }}: {{data.attributes.hp.formula}}">
+          <div class="formula-edit">
+            <input name="data.attributes.hp.formula" class="hpformula" type="text" placeholder="{{ localize 'DND5E.HPFormula' }}" value="{{data.attributes.hp.formula}}"  maxlength="12" title="{{ localize 'DND5E.HPFormula' }}: {{data.attributes.hp.formula}}">
+          </div>
         </div>
         
         {{!-- Temp Hit Points --}}
@@ -70,7 +72,7 @@
               </li>
             </ul>
             <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-type" data-placeholder="{{ localize 'DND5E.Type' }}">{{data.details.type}}</span>
-            <span class="environment" title="{{ localize 'TIDY5E.Environment' }}"><i class="fas fa-tree"></i><span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}" data-maxlength="80">{{data.details.environment}}</span></span>
+            <span class="environment" title="{{ localize 'TIDY5E.Environment' }}"><i class="fas fa-tree"></i><span class="environment-label"><span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}" data-maxlength="80">{{data.details.environment}}</span></span></span>
             <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{data.details.alignment}}</span>
             <span class="source-info" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{ localize 'DND5E.Source' }}" class="source">{{data.details.source}}</span>
             <input type="hidden" data-input="{{actor._id}}-type" name="data.details.type" value="{{data.details.type}}" placeholder="{{ localize 'DND5E.Type' }}">
@@ -86,16 +88,19 @@
         {{!-- Character Movement --}}
 
         <section class="movement {{#if actor.flags.tidy5e-sheet.legacy-speed}} legacy-display{{/if}}">
-          <span class="legacy-switch"><i class="fas fa-toggle-on"></i><i class="fas fa-toggle-off"></i></span>
           <ul class="speed-form">
             <li><h4>{{ localize 'DND5E.Speed' }}</h4></li>
+            {{#if movement.primary}}
             <li class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</li>
+            {{/if}}
+            {{#if movement.special}}
             <li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
+            {{/if}}
             <li class="configure-movement"><a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
           </ul>
 
           <ul class="speed-form-legacy">
-            <li><h4>{{ localize 'DND5E.Speed' }} (Legacy)</h4></li>
+            <li><h4>Legacy {{ localize 'DND5E.Speed' }}</h4></li>
             <li class="movement-primary">
               <input name="data.attributes.speed.value" type="text" value="{{data.attributes.speed.value}}" placeholder="0">
             </li>
@@ -103,7 +108,8 @@
             <li class="movement-special">
               <input type="text" class="speed" name="data.attributes.speed.special" value="{{data.attributes.speed.special}}" placeholder="{{ localize 'DND5E.SpeedSpecial' }}">
             </li>
-          </ul>
+          </ul>          
+          <span class="legacy-switch" title="toggle between modern and legacy speed display"><i class="fas fa-toggle-on"></i><i class="fas fa-toggle-off"></i></span>
         </section>
 
         <section class="character-stats">
@@ -157,22 +163,24 @@
       <a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
       <a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
       <a class="item" data-tab="journal">{{ localize "TIDY5E.Journal" }}</a>
+      <div class="toggle-edit"><span title="Edit Inventory"><i class="fas fa-lock"></i><i class="fas fa-lock-open"></i></span></div>
     </nav>
 
     {{!-- NPC Sheet Body --}}
     <section class="sheet-body">
       <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
-        <div class="left-pane flexcol">
+
+        <div class="left-pane">
           {{!-- Skills --}}
-          <ul class="skills-list{{#if actor.flags.tidy5e-sheet.npcSkillsExpanded}} expanded{{/if}}{{#if actor.flags.tidy5e-sheet.npcSkillsAlwaysVisible}} .always-visible{{/if}}">
+          <ul class="skills-list {{#if actor.flags.tidy5e-sheet.npcSkillsExpanded}}expanded{{/if}} {{#if actor.flags.tidy5e-sheet.npcSkillsAlwaysVisible}}.always-visible{{/if}}">
             {{#each data.skills as |skill s|}}
-            <li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
+            <li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
               <input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
               <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
               <h4 class="skill-name rollable">{{skill.label}}</h4>
               <span class="skill-ability">{{skill.ability}}</span>
               <span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
-              <span class="skill-passive">({{skill.passive}})</span>
+              <span class="skill-passive" title="{{skill.label}} ({{ localize 'TIDY5E.SkillPassive' }})">({{skill.passive}})</span>
             </li>
             {{/each}}
             <li class="toggle-proficient" data-show-skills="{{ localize 'TIDY5E.Show' }}" data-hide-skills="{{ localize 'TIDY5E.Hide' }}"> {{ localize "TIDY5E.SkillsNotProficient" }}</li>
@@ -181,11 +189,11 @@
           {{> "modules/tidy5e-sheet/templates/actors/npc/parts/tidy5e-npc-traits.html"}}
         </div>
 
-        <section class="center-pane flexcol">
+        <section class="center-pane">
 
           {{!-- Legendary Actions --}}
           <div class="counters">
-            <div class="counter flexrow legendary">
+            <div class="counter legendary">
               <h4>{{ localize "DND5E.LegAct" }}</h4>
               <div class="counter-value">
                 <input type="text" name="data.resources.legact.value" data-dtype="Number" placeholder="0"
@@ -195,7 +203,7 @@
                 value="{{data.resources.legact.max}}">
               </div>
             </div>
-            <div class="counter flexrow legendary">
+            <div class="counter legendary">
               <h4>{{ localize "DND5E.LegRes" }}</h4>
               <div class="counter-value">
                 <input type="text" name="data.resources.legres.value" data-dtype="Number" placeholder="0"
@@ -205,7 +213,7 @@
                 value="{{data.resources.legres.max}}">
               </div>
             </div>
-            <div class="counter flexrow lair">
+            <div class="counter lair">
               <h4>{{ localize "DND5E.LairAct" }}</h4>
               <div class="counter-value">
                 <input name="data.resources.lair.value" type="checkbox" value="{{data.resources.lair.value}}"
@@ -222,17 +230,45 @@
       </div>
 
       {{!-- Effects Tab --}}
-      <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+      <div class="tab effects" data-group="primary" data-tab="effects">
         {{>  "modules/tidy5e-sheet/templates/actors/parts/tidy5e-effects.html"}}
       </div>
 
       {{!-- Biography Tab --}}
-      <div class="tab biography flexcol" data-group="primary" data-tab="biography">
-        {{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
+      <div class="tab biography" data-group="primary" data-tab="biography">
+        <div class="left-notes note-entries">
+          <article>
+            <div class="section-titles biopage">{{ localize "TIDY5E.BioTraits" }}</div>
+            {{editor content=data.details.trait target="data.details.trait" button=true owner=owner editable=editable}}
+          </article>
+          <article>
+            <div class="section-titles biopage">{{ localize "TIDY5E.BioIdeals" }}</div>
+            {{editor content=data.details.ideal target="data.details.ideal" button=true owner=owner editable=editable}}
+          </article>
+          <article>
+            <div class="section-titles biopage">{{ localize "TIDY5E.BioBonds" }}</div>
+            {{editor content=data.details.bond target="data.details.bond" button=true owner=owner editable=editable}}
+          </article>
+          <article>
+            <div class="section-titles biopage">{{ localize "TIDY5E.BioFlaws" }}</div>
+            {{editor content=data.details.flaw target="data.details.flaw" button=true owner=owner editable=editable}}
+          </article>
+        </div>
+
+        <div class="right-notes note-entries">
+          <article>
+            <div class="section-titles biopage">{{ localize "TIDY5E.BioAppearance" }}</div>
+            {{editor content=data.details.appearance target="data.details.appearance" button=true owner=owner editable=editable}}
+          </article>
+          <article class="biography-notes">
+            <div class="section-titles">{{ localize "TIDY5E.BioBackground" }}</div>
+            {{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
+          </article>
+        </div>
       </div>
 
       {{!-- Journal Tab --}}
-      <div class="tab journal flexrow" data-group="primary" data-tab="journal">
+      <div class="tab journal" data-group="primary" data-tab="journal">
         <div class="left-notes note-entries">
           <article>
             <div class="section-titles">

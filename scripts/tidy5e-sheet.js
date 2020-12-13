@@ -248,7 +248,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     });
 
     // open context menu
-    $('.tidy5e .item-list .item').mousedown( function (event) {
+    html.find('.item-list .item').mousedown( function (event) {
 	    switch (event.which) {
 	      case 2:
 	      	// middle mouse opens item editor
@@ -308,8 +308,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     	switch (event.which) {
 	      case 1:
 	      if ( ! $(event.target).closest('.item .item-controls').length ) {
-	      	$('.tidy5e .item').removeClass('context');
-	        $('.tidy5e .item .item-controls').hide();
+	      	html.find('.item').removeClass('context');
+	        html.find('.item .item-controls').hide();
   			}
 	      	break;
 	  	}

@@ -232,6 +232,7 @@
 
 .spellcasting-ability  {
 	display: flex;
+	justify-content: space-between;
   margin: 0rem 14px 0 0;
   padding-top: .5rem;
 	border-top: 2px solid rgba(0,0,0,.3);
@@ -240,14 +241,24 @@
 	.spellcasting-attribute {
 		display: flex;
 		align-items: center;
+		font-size: 12px;
 	}
 	
 	h3 {
 		margin-right: 10px;
+		font-size: 20px;
+    font-family: "Modesto Condensed", "Palatino Linotype", serif;
+	}
+
+	span {
+		font-weight: 700;
+		margin-right: 4px;
 	}
 
 	select {
-		margin: 0 0 0 5px;
+		height: 19px;
+		font-size: 12px;
+		font-family: Signika;
 	}
 
 } //.spellcasting-ability
@@ -269,9 +280,9 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin: 0 0 .25rem 0;
-		padding-top: .5rem;
-		line-height: 20px;
+		margin: 0 0 2px 0;
+		padding-top: 4px;
+		line-height: 16px;
 		font-size: 12px;
 		
 		&:first-child { 
@@ -280,7 +291,7 @@
 
 		h3 {
 			font-size: 12px;
-			flex: 1 0 50px;
+			flex: 1 0 70px;
 			white-space: nowrap;
 		}
 
@@ -288,6 +299,7 @@
 
 	.items-header-labels {
 		display: flex;
+		justify-content: flex-end;
 		flex: 0;
   	font-size: 12px;
  		color: var(--default-light-color);
@@ -372,7 +384,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			border-radius: 5px 0px 0px 5px;
-			margin-right: .5rem;
+			margin-right: 4px;
 			cursor: pointer;
 			display: flex;
 			justify-content: center;
@@ -437,6 +449,7 @@
 			flex: 0 0 100%;
 			padding: .5rem;
 			border-top: 1px solid var(--default-faint-color);
+			font-size: 12px;
 		}
 
 		.item-summary p:not(:first-child) {
@@ -550,6 +563,7 @@
 		input {
 			text-align: right;
 			height: 16px;
+			min-width: 16px;
 		}
 
 		.slot-max-override {
@@ -592,7 +606,7 @@
 		margin: 2px 0;
 
 		&.magic-item {
-			box-shadow: 0 0 2px 1px yellow inset;
+			box-shadow: 0 0 0 1px rgba(255,255,0,.6) inset;
 		}
 
 		&.context {
@@ -682,8 +696,8 @@
 
 	.tag {
 		display: inline-block;
-		padding: 2px;
-		background: var(--default-light-color);
+		padding: 2px 4px;
+		background: var(--default-faint-color);
 		border: 1px solid var(--default-light-color);
 		margin: 0 2px 1px 0;
 		white-space: nowrap;

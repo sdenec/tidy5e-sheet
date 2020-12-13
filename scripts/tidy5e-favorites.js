@@ -277,7 +277,6 @@ export const addFavorites = async function(app, html, data, position) {
 
       // open context menu
       favHtml.find('.item').mousedown( function (event) {
-        console.log("Item clicked");
         switch (event.which) {
           case 2:
             // middle mouse opens item editor
@@ -337,8 +336,8 @@ export const addFavorites = async function(app, html, data, position) {
         switch (event.which) {
           case 1:
           if ( ! $(event.target).closest('.item .item-controls').length ) {
-            $('.tidy5e .favorites .item').removeClass('context');
-            $('.tidy5e .favorites .item .item-controls').hide();
+            favHtml.find('.item').removeClass('context');
+            favHtml.find('.item .item-controls').hide();
           }
             break;
         }

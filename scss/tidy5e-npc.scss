@@ -1,5 +1,27 @@
 .tidy5e.sheet.actor.npc {
 
+  min-width: 690px;
+
+  .toggle-edit {
+    display: flex;
+    flex: 0;
+    align-items: center;
+    white-space: nowrap;
+    padding: 2px 1rem;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--default-light-color);
+    font-size: 13px;
+    text-align: left;
+    height: 26px;
+
+    span {
+      background: orange;
+      border-radius: 3px;
+      padding: 2px 6px;
+    }
+  }
+
   .linked {
     box-shadow: 0 0 0 2px rgba(0,255,0,.75) inset;
   }
@@ -27,20 +49,47 @@
 
   .profile-wrap {
     .health {
-      position: relative;
+      position: absolute;
+      z-index: 25;
+      right: 7px;
+      bottom: 14px;
 
       .rollable {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 22px;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .formula-edit {
+        background: var(--default-primary-color);
+        display: none;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        top: calc(50% + 1px);
-        left: 4px;
-        transform: translateY(-50%);
+        bottom: 100%;
+        right: 0;
+        width: 136px;
+        height: 20px;
+        border-radius: 5px;
+      }
+
+      &:hover .formula-edit,
+      .formula-edit:focus-within {
+        display: flex;
       }
 
       input {
-        height: 14px;
-        margin: 0 16px;
-        width: calc(100% - 32px);
         padding-top: 2px;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        border-radius: 5px;
+        margin: 0;
       }
     }
   }
@@ -69,7 +118,7 @@
         content: none;
       }
 
-      span {
+      .environment-label {
         display: none;
         position: absolute;
         bottom: 100%;
@@ -77,8 +126,14 @@
         transform: translateX(-50%);
         background: #fff;
         margin: 0;
-        padding: 2px 4px;
         z-index: 100;
+        border-radius: 3px;
+        padding: 1px;
+
+        span {
+          padding: 2px 4px;
+          margin: 0;
+        }
 
         &::after {
           position: absolute;
@@ -96,7 +151,7 @@
       }
 
       span:focus-within,
-      &:hover span {
+      &:hover .environment-label {
         display: inline-block;
       }
     }//.environment
@@ -105,6 +160,10 @@
   /* Left Pane */
   .left-pane {
     flex: 0 0 220px;
+  }
+
+  .center-pane {
+    min-height: 100%;
   }
 
   .counters {
@@ -119,13 +178,14 @@
     .counter {
       height: auto;
       line-height: 16px;
-      flex-direction: column;
       flex: 1;
-      align-items: center;
+      text-align: center;
 
       .counter-value {
         display: flex;
+        justify-content: center;
         padding-bottom: 2px;
+        margin-top: 3px;
       }
 
       input[type="text"]:first-of-type {
@@ -145,7 +205,6 @@
         width: 14px;
         height: 14px;
         margin: 0;
-        top: 2px;
       }
 
       h4 {
@@ -155,552 +214,107 @@
       }
     }//.counter
   }//.counters
-}
-
-.no .tidy5e.npc {
-
-  .general-information {
-  	font-family: "Modesto Condensed", "Signika", serif;
-    font-weight: 700;
-  }
-
-  .ability-scores span {
-    font-weight: 400;
-  }
-
-  /* Core Stats */
-
-  .npc-core-stats {
-  	display: flex;
-  	justify-content: flex-start;
-  }
-
-  .ability-scores {
-  	display: flex;
-  	flex-direction: row;
-  	height: auto;
-  	flex: 1;
-  	justify-content: flex-start;
-  	overflow: initial;
-  }
-
-  /* Attributes */
-  .header-attributes {
-  	display: flex;
-  	justify-content: flex-start;
-  	flex: 0 0 270px;
-  }
-
-  /* Ability Scores */
-
-  .ability-scores {
-  	border: none;
-  	margin-top: 7px;
-    border: none;
-    border-radius: 5px 5px 0 0;
-    padding: 3px 2px;
-    position: relative;
-  }
-
-  .ability-scores .ability {
-    margin: 0;
-    height: unset;
-    flex: 1;
-    text-align: center;
-    border: none;
-    position: relative;
-    padding-bottom: 0px;
-  }
-
-  .ability-scores .ability:last-child {
-    border: none; 
-  }
-
-  .ability-scores .ability .proficiency-toggle {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%,-1px);
-    display: flex;
-    justify-content: center;
-    width: 16px;
-    height: 14px;
-    padding: 1px 0;
-    border-radius: 0 0 5px 5px;
-    background: var(--default-faint-color);
-    opacity: 1;
-  }
-
-  .ability-scores .proficient .proficiency-toggle {
-    background: var(--default-secondary-accent);
-  }
-
-  .ability-scores .ability .ability-name {
-  	display: inline-block;
-  	font-size: 20px;
-    line-height: 20px;
-    height: 24px;
-    border: none;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-    text-transform: capitalize;
-    color: var(--default-primary-color);
-  }
-
-  .ability-scores .ability .ability-name:hover {
-  	color: var(--default-primary-accent);
-  }
-
-  .ability-scores .ability .ability-name::after {
-    display: block;
-    content: '';
-    height: 0;
-    width: 32px;
-    border-bottom: 1px solid var(--default-faint-color);
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%,0);
-  }
-
-  .ability-scores .value {
-      font-size: 24px;
-      margin: 6px 0 2px 0;
-  }
-
-  .ability-scores .ability-modifiers.value-footer {
-    font-family: "Signika", sans-serif;
-    height: 18px;
-    font-size: 12px;
-    text-align: center;
-    padding: 2px 1px;
-    margin: 0 1px;
-    background: var(--default-faint-color);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    width: auto;
-    position: static;
-    opacity: 1;
-  }
-
-  .ability-scores .ability .ability-modifiers span.ability-mod,
-  .ability-scores .ability .ability-modifiers span.ability-save {
-    border: none;
-    border-radius: 0;
-    height: 16px;
-    line-height: 16px;
-    font-size: inherit;
-    flex: 1;
-  }
-
-  .ability-scores .ability .ability-modifiers a {
-    font-size: 10px;
-    transition: opacity .3s ease;
-  }
-
-  .ability-scores .ability.proficient .ability-modifiers a {
-    color: var(--default-tertiary-color);
-  }
-
-  .ability-scores .ability.proficient .ability-modifiers a:hover {
-    color: var(--default-primary-color);
-  }
-
-  .ability-scores .ability.proficient .value-footer {
-    background: var(--default-secondary-accent);
-  }
-
-  .ability-scores .ability .value-footer .sep {
-    flex: 0;
-    margin: 0;
-  }
-
-  .ability-scores .ability:not(.proficient) .value-footer .sep,
-  .ability-scores .ability:not(.proficient) .value-footer .ability-save {
-  	display: none;
-  }
-  /*
-  .ability-scores .value-footer .ability-save::before {
-  	content: '/';
-  }*/
-
 
   /* Skills List */
+
   .skills-list {
-  	flex: 0;
-    height: auto;
-    margin-left: 0;
+
     margin-bottom: 17px;
     position: relative;
-    width: 100%;
+
+    &.always-visible {
+      margin-bottom: 0;
+    }
+
+    .skill:nth-child(even) {
+      background: none;
+    }
+
+    .skill.even {
+      background: var(--default-faint-color);
+    }
+
+    .toggle-proficient {
+    	position: absolute;
+      top: calc(100% + 1px);
+      left: 50%;
+      transform: translate(-50%,0);
+      font-size: 10px;
+      border: 1px solid var(--default-faint-color);
+      border-top: none;
+      padding: 2px 8px;
+      border-radius: 0 0 5px 5px;
+      cursor: pointer;
+      color: var(--default-secondary-color);
+      white-space: nowrap;
+    }
+
+    .toggle-proficient::before {
+      content: attr(data-show-skills);
+    }
+
+    .toggle-proficient:hover {
+      color: var(--default-primary-color);
+    }
+
+    &.expanded .toggle-proficient::before {
+      content: attr(data-hide-skills);
+    }
+
+    &.always-visible .toggle-proficient,
+    &:not(.expanded):not(.always-visible) .skill .skill-proficiency {
+    	display: none;
+    }
+  }//.skills-list
+
+  .inventory-list .items-footer,
+  .inventory-list .hidden {
+    display: none;
   }
 
-  .skills-list .skill:nth-child(even) {
-    background: none;
-  }
-
-  .skills-list .skill.even {
-    background: var(--default-faint-color);
-  }
-
-  .skills-list.always-visible {
-    margin-bottom: 0;
-  }
-
-  .skills-list .toggle-proficient {
-  	position: absolute;
-    top: calc(100% + 1px);
-    left: 50%;
-    transform: translate(-50%,0);
-    font-size: 10px;
-    border: 1px solid var(--default-faint-color);
-    border-top: none;
-    padding: 2px 8px;
-    border-radius: 0 0 5px 5px;
-    cursor: pointer;
-    color: var(--default-secondary-color);
-    white-space: nowrap;
-  }
-
-  .skills-list.always-visible .toggle-proficient {
-  	display: none;
-  }
-
-  .skills-list .toggle-proficient::before {
-    content: attr(data-show-skills);
-  }
-
-  .skills-list.expanded .toggle-proficient::before {
-    content: attr(data-hide-skills);
-  }
-
-  .skills-list .toggle-proficient:hover {
-  	color: var(--default-primary-color);
-  }
-
-  .skills-list:not(.expanded):not(.always-visible) .skill .skill-proficiency {
-  	display: none;
-  }
-
-  .traits {
-    width: 220px;
-  }
-
-  /* Fetaures, Inventory and Spells */
   .items-list {
-    padding: 0;
+    padding: 0 0 8px 0;
     overflow-y: visible;
-    border: none;
-    border-radius: 0;
-  }
 
-  .item[data-tab="attributes"] i {
-    margin-right: 4px;
-    color: var(--default-tertiary-color);
-    position: relative;
-    top: 1px;
-  }
+    /* Spells */
 
-  i {
-    vertical-align: baseline;
-  }
+    .spell-action,
+    .spell-target,
+    .spell-school,
+    .spell-comps {
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-  .items-list ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+    .items-header-comps,
+    .spell-comps {
+      flex: 0 0 50px;
+    }
 
-  .items-list .item {
-    line-height: 23px;
-    border-radius: 0;
-    margin: 0;
-    margin: 1px 0 0 0;
-    overflow: hidden;
-  }
+    .item-charges {
+      flex: 0 0 70px;
+    }
 
-  .items-list .item .item-name .item-image {
-    width: 23px;
-    height: 23px;
-    flex: 0 0 23px;
-    border-radius: 0;
-    background-size: cover;
-    margin-right: 4px;
-  }
+    .items-header-action,
+    .items-header-target,
+    .items-header-school
+    .spell-action,
+    .spell-target,
+    .spell-school {
+      flex: 0 0 90px;
+    }
 
-  .items-list .item .item-name .item-image i {
-    font-size: 18px;
-    line-height: 23px;
-  }
+    .items-header-action,
+    .item-action {
+      flex: 0 0 120px;
+    }
 
-  .items-list .items-header h3 {
-    font-size: 12px;
-  }
+  }//.items-list
 
-  .items-list .item .item-name h4 {
-    overflow-x: visible;
-    display: inline-block;
-    flex: initial;
-    cursor: pointer;
-    line-height: 21px;
-    padding-top: 2px;
-  }
-
-  .items-list .item-name h4 {
-    font-size: 12px;
-    line-height: 21px;
-  }
-
-  .items-list .item-name h4 .info-icon {
-    font-size: 14px;
-    color: var(--default-light-color);
-    transition: color .3s ease;
-    position: relative;
-    top: -1px;
-  }
-
-  .items-list .item-name h4:hover .info-icon {
-    color: rgba(0,0,0,.6);
-  }
-
-  .items-list .item-quantity {
+  .npc-spell-stats {
     display: flex;
-    margin-left: 4px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity .3s ease;
-    flex: initial;
-    line-height: 21px;
-    padding-top: 2px;
-  }
-
-  .items-list .item-quantity {
+    flex: 0;
     font-size: 12px;
-    line-height: 21px;
-  }
-
-  .items-list .item-quantity:focus-within,
-  .items-list .item .item-quantity:hover,
-  .items-list .item-quantity.isStack {
-    opacity: 1;
-  }
-
-  .items-list .item-quantity input {
-    width: 23px;
-  }
-
-  .items-list .item-quantity input {
-    height: 21px;
-  }
-
-  .items-list .state-display {
-    flex: 0 0 16px;
-    margin: 0 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(0,0,0,.6);
-    height: 23px;
-  }
-
-  .items-list .state-display a {
-    color: rgba(0,0,0,.25);
-    font-size: 12px; 
-  }
-
-  .items-list .state-display a:hover,
-  .items-list .state-display a.active {
-    color: rgba(0,0,0,.6);
-  }
-
-  .items-list .items-header,
-  .items-list .items-header:first-child {
-    background: transparent;
-    padding-top: 0;
-    padding-left: 4px;
-    margin: 0;
-    line-height: 21px;
-    color: var(--default-tertiary-color);
-    border: none;
-  }
-
-  .items-list:first-child .items-header {
-    padding-top: 2px;
-    margin-top: 0;
-  }
-
-  .items-list .items-header,
-  .items-list .items-header.spellbook-header {
-    margin: 0; 
-    padding-top: 0; 
-    line-height: 21px;
-    border: none; 
-  }
-
-  .items-list .item .item-recharge {
-    font-size: 12px;
-  }
-
-  .items-list .items-header.spellbook-header.spellbook-empty .item-controls {
-    flex: 1;
-  }
-
-  .items-list .items-header.spellbook-header.spellbook-empty .item-controls a.item-create {
-    line-height: 14px;
-  }
-
-
-  .items-list .items-header.spellbook-header.spellbook-empty {
-    margin: 0;
-    padding: 0; 
-  }
-
-  .items-list .items-header .spell-slots,
-  .items-list .items-header .spell-slots input {
-    color: var(--default-primary-color);
-    font-weight: 700;
-  }
-
-  .items-list .items-header .slot-max-override {
-    font-size: 10px;
-    line-height: 20px;
-  }
-
-  .items-list .items-header.spellbook-header .spell-detail i {
-    vertical-align: baseline;
-  }
-
-  .items-list .item .item-charges {
-    flex: 0 0 80px;
-  }
-
-  .items-list :not(.items-header) .spell-comps,
-  .items-list :not(.items-header) .item-action,
-  .items-list :not(.items-header) .item-charges {
-    line-height: 21px;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .items-list :not(.items-header) .spell-action,
-  .items-list :not(.items-header) .spell-target,
-  .items-list :not(.items-header) .spell-school,
-  .items-list :not(.items-header) .spell-comps {
-    line-height: 21px;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .items-list :not(.items-header) .spell-comps {
-    flex: 0 0 50px;
-  }
-
-  .spell-component {
-    line-height: 13px;
-  }
-
-  .items-list .spell-action {
-    flex: 0 0 90px;
-  }
-
-  .items-list .spell-target,
-  .items-list .spell-school {
-    flex: 0 0 90px;
-  }
-
-  .items-list .item .item-charges a.addCharges {
-    display: block;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transition: opacity .3s ease;
-  }
-
-  .items-list .item .item-charges:hover a.addCharges {
-    opacity: 1;
-    color: rgba(0,0,0,.6);
-  }
-
-  .items-list .item-action {
-    flex: 0 0 120px;
-  }
-
-  .items-list .item .item-charges .uses-max,
-  .items-list .item .spell-slots .spell-max {
-    text-align: left;
-  }
-
-  .items-list .item-controls {
-    flex: 0 0 40px;
-  }
-
-  .items-list .items-header .item-controls a.item-create {
-    border-radius: 3px;
-    line-height: 12px;
-    padding-top: 2px;
-    margin: 3px 0;
-  }
-
-  .items-header .item-controls a.item-create i {
-    vertical-align: baseline;
-    font-size: 7px;
-    position: relative;
-    top: -1px;
-  }
-
-  .items-list .item-controls a:hover {
-    color: rgba(0,0,0,.6);
-  }
-
-  .effects-list {
-    padding: 0 9px 1rem 0;
-    overflow-y: scroll;
-  }
-
-  .effects-list .items-header,
-  .effects-list .items-header.spellbook-header {
-    margin: 0 0 .25rem 0;
-    padding-top: .5rem;
-    line-height: 20px;
-    background: transparent;
-    border: none;
-    border-top: 1px solid var(--default-faint-color);
-  }
-
-  .effects-list .items-header:first-child,
-  .effects-list .items-header.spellbook-header:first-child {
-    padding-top: 0;
-    border: none;
-  }
-
-  .effects-list .items-header h3 {
-    margin: 0;
-    padding: 0;
-  }
-
-  .effects-list .items-header h3 {
-    font-family: "Signika", sans-serif;
-    font-size: 16px;
-  }
-
-  .effects-list .item-detail,
-  .effects-list .item-controls,
-  .effects-list .spell-detail {
-    border: none;
-    border-left: 1px solid rgba(0,0,0,.15);
-    color: rgba(0,0,0,.6);
-  }
-
-  .effects-list .item-controls {
-    flex: 0 0 55px;
-    justify-content: center;
-  }
-
-  .effects-list .items-header .item-controls {
-    border: none;
   }
 
   .spellcasting-ability {
@@ -709,58 +323,71 @@
     bottom: 0;
     background: url(../../../systems/dnd5e/ui/parchment.jpg) repeat;
     background-attachment: fixed;
-  }
 
-  .spellcasting-ability h3.spell-dc {
-    font-size: 20px;
-  }
+    .spell-dc {
+      flex: 1;
+      font-size: 20px;
+      font-family: "Modesto Condensed", "Palatino Linotype", serif;
+    }
 
-  .spellcasting-ability select {
-    flex: 0 0 90px;
-    margin-left: 4px;
-    font-family: "Signika", sans-serif;
-  }
+    select {
+      flex: 0 0 90px;
+      font-family: "Signika", sans-serif;
+    }
 
-  .caster-ability,
-  .caster-lvl {
+    input {
+      min-width: 16px;
+      height: 16px;
+    }
+  }//.spellcasting-ability
+
+  .caster-level {
     display: flex;
     align-items: center;
     flex: 0;
     white-space: nowrap;
-    margin-left: 8px;
-  }
-
-  .spellcasting-ability input {
-    flex: 0 0 20px;
+    margin-right: 4px;
   }
 
   .spellbook-title {
-    padding: 4px 0 4px 4px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4px 2px 0;
     margin: 4px 0;
     line-height: 1;
     border: 1px solid var(--default-light-color);
     border-left: none;
     border-right: none;
-  }
+    font-family: "Modesto Condensed", "Palatino Linotype", serif;
+    font-weight: 700;
+    font-size: 18px;
 
-  .spellbook-title span {
-    display: none;
-    font-size: 14px;
-  }
+    &.toggle-spellbook.show .fa-caret-down,
+    i {
+      display: none;
+    }
 
-  .spellbook-title.toggle-spellbook span {
-    display: inline-block;
-  }
+    &.toggle-spellbook .fa-caret-down,
+    &.show .fa-caret-up {
+      display: inline-block;
+    }
 
-  .spellbook-title.toggle-spellbook {
-    opacity: .4;
-    transition: opacity .3s ease;
-    cursor: pointer;
-  }
+    &.toggle-spellbook {
+      opacity: .4;
+      transition: opacity .3s ease;
+      cursor: pointer;
+    }
 
-  .spellbook-title.toggle-spellbook:hover,
-  .spellbook-title.toggle-spellbook.show {
-    opacity: 1;
+    &:hover,
+    &.show {
+      opacity: 1;
+    }
+  }//.spellbook-title
+
+  .spellbook-empty {
+    .notice {
+      font-size: 12px;
+    }
   }
 
 }
