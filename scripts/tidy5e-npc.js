@@ -538,14 +538,55 @@ async function hideSpellbook(app, html, data) {
 
 // Hide empty Inventory Sections
 async function hideEmptyInventorySections(app, html, data) {
-  $('.tidy5e-npc .inventory-list:not(.spellbook-list) .items-header').each(function(){
+  html.find('.inventory-list:not(.spellbook-list) .items-header').each(function(){
     if($(this).next('.item-list').find('li').length <= 1){
-      $(this).addClass('hidden');
-      $(this).next('.item-list').addClass('hidden');
+      // $(this).addClass('hidden');
+      // $(this).next('.item-list').addClass('hidden');
+      $(this).next('.item-list').remove();
+      $(this).remove();
     }
   });
+  let actor = app.actor,
+      legAct = actor.data.data.resources.legact.max,
+      legRes = actor.data.data.resources.legres.max,
+      lair = actor.data.data.resources.lair.value;
+
+  console.log(actor, legAct, legRes, lair);
+
+  if(!lair && legAct <= 1 && legRes <= 1) {
+    html.find('.counters').remove();
+  }
 }
 
+// add fav button for npc-favorites
+async function npcFavorites (app, html, data){
+
+  let items = data.actor.items;
+  
+  for (let item of items) {
+    // do not add the fav button for class items
+    if (item.type == "class") continue;
+
+    // making sure the flag to set favorites exists
+    if (item.flags.favtab === undefined || item.flags.favtab.isFavorite === undefined) {
+      item.flags.favtab = { isFavorite: false };
+        // DO NOT SAVE AT THIS POINT! saving for each and every item creates unneeded data and hogs the system
+        //app.actor.updateOwnedItem(item, true);
+    }
+    let isFav = item.flags.favtab.isFavorite;
+
+    if (app.options.editable) {
+      let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" data-fav="${isFav}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}"><i class="${isFav ? "fas fa-bookmark" : "far fa-bookmark"}"></i> ${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</a>`);
+      favBtn.click(ev => {
+        app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+      });
+      html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls .item-edit').before(favBtn);
+      if(item.flags.favtab.isFavorite){
+        html.find(`.item[data-item-id="${item._id}"]`).addClass('isFav');
+      }
+    }
+  }
+}
 
 Actors.registerSheet("dnd5e", Tidy5eNPC, {
     types: ["npc"],
@@ -632,5 +673,6 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   hideSpellbook(app, html, data);
   resetTempHp(app, html, data);
   hideEmptyInventorySections(app, html, data);
+  npcFavorites (app, html, data);
   // console.log(data);
 });
