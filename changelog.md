@@ -10,6 +10,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.3.7*
+- css fix for attuned items
+
 *Version 0.3.6*
 - update to dnd5e 1.2.0 - thanks to akrigline
 - css fix for effects text color in item sheets

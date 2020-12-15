@@ -32,7 +32,7 @@
 
   <ol class="item-list">
     {{#each section.items as |item iid|}}
-    <li class="item flexrow {{~#if (or item.data.attuned (eq data.attunement 2))}} attuned {{/if}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+    <li class="item flexrow {{item.attunement.cls}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
       <div class="item-name flexrow rollable" >
         <div class="item-image" style="background-image: url({{item.img}})">
           <i class="fa fa-dice-d20"></i>
@@ -49,7 +49,7 @@
       </div>
 
 
-      {{~#if (or item.data.attuned (eq data.attunement 2))}} 
+      {{~#if (eq data.attunement 2)}} 
       <div class="item-attuned" title="{{localize 'DND5E.Attuned'}}"><i class="fas fa-user-circle"></i></div>
       {{/if}}
 
@@ -110,7 +110,7 @@
       <label for="data.currency.{{k}}" class="denomination {{k}}">{{ lookup ../config.currencies k }}</label>
     </li>
     {{/each}}
-    <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize "TIDY5E.ConvertCurrencyHint"}}">{{localize "TIDY5E.ConvertCurrencyButton"}}</a></li>
+    <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'TIDY5E.ConvertCurrencyHint'}}">{{localize "TIDY5E.ConvertCurrencyButton"}}</a></li>
   </ol>
 </div>
 {{/if}}

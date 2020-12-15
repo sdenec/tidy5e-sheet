@@ -1600,6 +1600,10 @@
 	overflow: hidden;
 }
 
+.tidy5e.sheet.actor .favorites .items-list .item.attuned {
+	background: var(--default-secondary-accent);
+}
+
 .tidy5e.sheet.actor .favorites .items-list .item .item-name .item-image {
 	width: 23px;
 	height: 23px;
