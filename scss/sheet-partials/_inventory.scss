@@ -577,10 +577,13 @@
 	}
 
 	.item-attuned {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
-    margin: 4px 4px 0 0;
+    margin-right: 4px;
     color: var(--default-secondary-color);
 
     &.not-attuned {

@@ -46,7 +46,7 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{~#if data.preparation.prepared}} prepared{{/if}}{{#ifEquals data.preparation.mode 'always'}} alwaysPrepared{{/ifEquals}}" data-item-id="{{item._id}}" {{#ifEquals data.preparation.mode 'always'}} title="{{item.toggleTitle}}"{{/ifEquals}}>
+      <li class="item {{~#if data.preparation.prepared}} prepared{{/if}}{{#if (eq data.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}" {{#if (eq data.preparation.mode 'always')}} title="{{item.toggleTitle}}"{{/if}}>
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>

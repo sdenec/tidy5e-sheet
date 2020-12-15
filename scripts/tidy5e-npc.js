@@ -9,7 +9,7 @@ import { preloadTidy5eHandlebarsTemplates } from "./tidy5e-npc-templates.js";
 
 let npcScrollPos = 0;
 
-/* handlebars helper funtio to check if strings are empty */
+/* handlebars helper funtion to check if strings are empty */
 Handlebars.registerHelper('check', function(value, comparator) {
   return (value === comparator) ? 'No content' : value;
 });

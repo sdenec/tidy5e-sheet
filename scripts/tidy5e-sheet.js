@@ -7,15 +7,6 @@ import { addFavorites } from "./tidy5e-favorites.js";
 
 let position = 0;
 
-// handlebar helper compare string
-Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
-    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
-});
-
-Handlebars.registerHelper('ifNotEquals', function(arg1, arg2, options) {
-    return (arg1 !== arg2) ? options.fn(this) : options.inverse(this);
-});
-
 export class Tidy5eSheet extends ActorSheet5eCharacter {
 	
 	get template() {
@@ -484,7 +475,6 @@ async function checkDeathSaveStatus(app, html, data){
 			let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 			let classList = [];
 			let items = data.actor.items;
-			console.log(items);
 			for (let item of items) {
 				if (item.type === "class") {
 					let levels = (item.data.levels) ? `<span class="levels-info">${item.data.levels}</span>` : ``;
@@ -498,23 +488,6 @@ async function checkDeathSaveStatus(app, html, data){
 			classListTarget.after(classList);
 		}
 	}
-// Copy magic item spell to favorites
-// async function copyMagicItems(app, html, data) { 
-// 	if ($('.tidy5e .magic-items-spells-content')) {
-// 		setTimeout(function(){ 
-// 		let magicItems = $('.tidy5e .magic-items-spells-content'),
-// 				target = $('.tidy5e .favorites-target .favorites'),
-// 				listWrapper = '<ul class="inventory-list items-list magic-list"></ul>';
-
-// 				target.append(listWrapper);
-
-// 				console.log(magicItems);
-// 				console.log(target);
-
-// 				magicItems.clone().appendTo($('.inventory-list.items-list.magic-list'));
-// 		 }, 50);
-// 	}
-// }
 
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {

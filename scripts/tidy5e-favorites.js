@@ -75,7 +75,8 @@ export const addFavorites = async function(app, html, data, position) {
   
   let spellCount = 0
   let spellPrepModeCount = 0
-  let items = data.actor.items;
+  let items = data.items;
+      console.log(data);
 
   let renderFavTab = false;
 
@@ -84,6 +85,11 @@ export const addFavorites = async function(app, html, data, position) {
   for (let item of items) {
       // do not add the fav button for class items
       if (item.type == "class") continue;
+
+      item.notFeat = true;
+      if (item.type == "feat"){
+        item.notFeat = false;
+      }
 
       // making sure the flag to set favorites exists
       if (item.flags.favtab === undefined || item.flags.favtab.isFavorite === undefined) {
@@ -151,6 +157,27 @@ export const addFavorites = async function(app, html, data, position) {
           item.isStack = false;
           if (item.data.quantity && item.data.quantity > 1) {
             item.isStack = true;
+          }
+          // adding attunement info
+          item.canAttune = false;
+          item.attunementCls = '';
+          item.attunementTitle = '';
+
+            // console.log(item.attunement);
+          if(item.attunement) {
+            item.attunementCls = item.attunement.cls;
+            item.attunementTitle = item.attunement.title;
+          }
+
+          if (item.data.attunement) {
+            if( item.data.attunement == 1 || item.data.attunement == 2) {
+              item.canAttune = true;
+            }
+          }
+
+          item.isMagic = false;
+          if (item.flags.magicitems && item.flags.magicitems.enabled || item.data.properties  && item.data.properties.mgc){
+            item.isMagic = true;
           }
 
           let attr = item.type === "spell" ? "preparation.prepared" : "equipped";
@@ -357,19 +384,37 @@ export const addFavorites = async function(app, html, data, position) {
           });
 
           // editing the item
-          favHtml.find('.item-edit').click(ev => {
+          favHtml.find('.item-control.item-edit').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
             app.actor.getOwnedItem(itemId).sheet.render(true);
           });
 
           // toggle item icon
-          favHtml.find('.item-toggle').click(ev => {
+          favHtml.find('.item-control.item-toggle').click(ev => {
             ev.preventDefault();
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
             let item = app.actor.getOwnedItem(itemId);
             let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
             return item.update({ [attr]: !getProperty(item.data, attr) });
-            });
+          });
+
+          // update item attunement
+          favHtml.find('.item-control.item-attunement').click( async (ev) => {
+            event.preventDefault();
+            let itemId = ev.currentTarget.closest(".item").dataset.itemId;
+            let item = app.actor.getOwnedItem(itemId);
+
+            if(item.data.data.attunement == 2) {
+              app.actor.getOwnedItem(itemId).update({'data.attunement': 1});
+            } else {
+
+              if(app.actor.data.data.details.attunedItemsCount >= app.actor.data.data.details.attunedItemsMax) {
+                ui.notifications.warn(`Attunement warning: You can't attune to more than ${actor.data.data.details.attunedItemsCount} items!`);
+              } else {
+                app.actor.getOwnedItem(itemId).update({'data.attunement': 2});
+              }
+            }
+          });
 
           // removing item from favorite list
           favHtml.find('.item-fav').click(ev => {

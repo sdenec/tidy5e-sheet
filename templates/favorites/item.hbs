@@ -1,5 +1,5 @@
-<li class="item flexrow fav-item{{#if item.data.attuned}} attuned{{/if}}{{#if item.data.equipped}} equipped{{/if}}{{#if item.data.preparation.prepared}} prepared{{/if}}{{#if item.alwaysPrep}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}" {{#if item.canPrep}}title="{{item.toggleTitle}}{{/if}}">
-  <div class="item-name flexrow rollable">        
+<li class="item fav-item {{#if item.isMagic}} magic-item{{/if}} {{ item.attunementCls }} {{#if item.data.equipped}} equipped{{/if}}{{#if item.data.preparation.prepared}} prepared{{/if}}{{#if item.alwaysPrep}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}" {{#if item.canPrep}}title="{{item.toggleTitle}}{{/if}}">
+  <div class="item-name rollable">        
     <div class="item-image" style="background-image: url({{item.img}})">
       <i class="fa fa-dice-d20"></i>
     </div>
@@ -14,6 +14,10 @@
       </span>
     {{/if}}
   </div>
+
+  {{#if item.canAttune}} 
+    <div class="item-attuned {{item.attunementCls}}" title="{{localize item.attunementTitle}}"><i class="fas fa-sun"></i></div>
+  {{/if}}
 <!-- 
   {{#if item.isItem}}
   <div class="state-display item-equipped">
@@ -73,6 +77,18 @@
   </div>
 
   <div class="item-controls">
+    {{#if item.notFeat}}
+    {{#if (and (ne item.type 'tool') (ne item.type 'loot') )}}
+      <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash icon-off"></i><i class="fas fa-user-alt icon-on"></i> {{item.toggleTitle}}</a>
+    {{/if}}
+    {{/if}}
+    {{#if item.attunement}}
+      <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunementCls}}">
+        <span><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>
+      </a>
+    {{/if}}
+
+    <hr class="context-divider">
     <a class="item-control item-edit" title="{{localize 'TIDY5E.Edit'}}">
       <i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.Edit'}}
     </a>
