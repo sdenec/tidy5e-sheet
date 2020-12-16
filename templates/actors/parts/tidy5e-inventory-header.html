@@ -1,0 +1,10 @@
+<div class="inventory-filters">
+  <ul class="filter-list" data-filter="inventory">
+    <li class="filter-title" title="{{localize 'DND5E.Filter'}}"><i class="fas fa-filter"></i></li>
+    <li class="filter-item" data-filter="action">{{localize "DND5E.Action"}}</li>
+    <li class="filter-item" data-filter="bonus">{{localize "DND5E.BonusAction"}}</li>
+    <li class="filter-item" data-filter="reaction">{{localize "DND5E.Reaction"}}</li>
+    <li class="filter-item" data-filter="equipped">{{localize "DND5E.Equipped"}}{{#if equippedItems}} ({{equippedItems}}){{/if}}</li>
+    <li class="toggle-layout inventory-layout"><i class="fas fa-th-large toggle-grid" title="show grid layout"></i><i class="fas fa-th-list toggle-list" title="show list layout"></i></li>
+  </ul>
+</div>

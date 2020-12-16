@@ -19,4 +19,14 @@
 	  // overflow: hidden;
 	}
 
+	&.grid .toggle-grid,
+	.toggle-list {
+		display: none;
+	}
+
+	.toggle-grid,
+	&.grid .toggle-list {
+		display: inline-block;
+	}
+
 }

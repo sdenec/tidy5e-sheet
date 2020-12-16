@@ -1,15 +1,5 @@
-<div class="inventory-filters">
-  <ul class="filter-list" data-filter="spellbook">
-    <li class="filter-title" title="{{localize 'DND5E.Filter'}}"><i class="fas fa-filter"></i></li>
-    <li class="filter-item" data-filter="action">{{localize 'DND5E.Action'}}</li>
-    <li class="filter-item" data-filter="bonus">{{localize 'DND5E.BonusAction'}}</li>
-    <li class="filter-item" data-filter="reaction">{{localize 'DND5E.Reaction'}}</li>
-    <li class="filter-item" data-filter="concentration">{{localize 'DND5E.AbbreviationConc'}}</li>
-    <li class="filter-item" data-filter="ritual">{{localize 'DND5E.Ritual'}}</li>
-    <li class="filter-item" data-filter="prepared">{{localize 'DND5E.Prepared'}}{{#if preparedSpells}} ({{preparedSpells}}){{/if}}</li>
-    <li class="toggle-layout inventory-layout spellbook-layout"><i class="fas fa-th-large" title="show grid layout"></i></li>
-  </ul>
-</div>
+{{!-- Spellbook Header --}}
+{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-header.html"}}
 
 <div class="list-layout">
 
@@ -127,22 +117,5 @@
   </ul>
 </div>
 
-<div class="spellcasting-ability">
-  <h3 class="spell-dc">{{localize 'DND5E.SpellDC'}} {{data.attributes.spelldc}}</h3>
-  <div class="spellcasting-attribute">
-    <span>{{localize 'DND5E.SpellAbility'}}</span>
-    <select name="data.attributes.spellcasting" data-type="String">
-      {{#select data.attributes.spellcasting}}
-      <option value="">{{localize 'DND5E.None'}}</option>
-      {{#each data.abilities as |abl a|}}
-      <option value="{{a}}">{{abl.label}}</option>
-      {{/each}}
-      {{/select}}
-    </select>
-  </div>
-  {{#if isNPC}}
-  <h3>{{localize 'DND5E.SpellcasterLevel'}}</h3>
-  <input class="spellcasting-level" type="text" name="data.details.spellLevel"
-  value="{{data.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
-  {{/if}}
-</div>
+{{!-- Spellbook Footer --}}
+{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-footer.html"}}
