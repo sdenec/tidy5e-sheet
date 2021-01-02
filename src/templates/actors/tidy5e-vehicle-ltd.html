@@ -1,0 +1,27 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+	<div class="tidy5e-sheet limited">
+		{{!-- Sheet Header --}}
+		<header class="flex tidy5e-header">
+			<div class="profile">
+				<div class="portrait">
+					<img src="{{actor.img}}" alt="{{actor.name}}" data-edit="img">
+				</div>
+			</div>
+		</header>
+
+		{{!-- NPC Sheet Body --}}
+		<section class="sheet-body">
+
+			{{!-- Biography Tab --}}
+			<div class="tab biography flexrow">
+				<div class="note-entries">
+					<article class="background-notes">
+						<div class="section-titles">{{localize 'DND5E.Description'}}</div>
+						{{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
+					</article>
+				</div>
+			</div>
+
+		</section>
+	</div>
+</form>
