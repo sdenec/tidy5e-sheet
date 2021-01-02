@@ -10,6 +10,17 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.0*
+- complete sheet rewrite for better maintainablilty.
+- removed the dnd5e css class. Mod developers should target .tidy5e for sheet modifications.
+- added a right click context menu for item controls.
+- added middle click to quickly open item editor.
+- added a grid layout for inventory and spell book.
+- added a sheet lock to toggle between empty sections and add/delete button
+- added attunement counter
+- added NPC rest buttons
+- added vehicle sheet support
+
 *Version 0.3.7*
 - css fix for attuned items
 
