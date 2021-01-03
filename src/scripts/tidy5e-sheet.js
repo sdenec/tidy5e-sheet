@@ -353,7 +353,7 @@ async function setSheetClasses(app, html, data) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-overlay');
 	}
 	if (game.settings.get("tidy5e-sheet", "disableInspiration")) {
-		html.find('.tidy5e-sheet .profile .inspiration').addClass('disabled');
+		html.find('.tidy5e-sheet .profile .inspiration').remove();
 	}
 	if (game.settings.get("tidy5e-sheet", "noInspirationAnimation")) {
 		html.find('.tidy5e-sheet .profile .inspiration label i').addClass('disable-animation');
@@ -365,7 +365,7 @@ async function setSheetClasses(app, html, data) {
 		html.find('.tidy5e-sheet .profile').addClass('autohide');
 	}
 	if (game.settings.get("tidy5e-sheet", "disableExhaustion")) {
-		html.find('.tidy5e-sheet .profile .exhaustion-container').addClass('disabled');
+		html.find('.tidy5e-sheet .profile .exhaustion-container').remove();
 	}
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');

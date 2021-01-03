@@ -95,6 +95,7 @@
 		border: 1px solid var(--faint-color);
 		border-radius: 5px;
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.center-pane .resources .resource {

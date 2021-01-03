@@ -37,7 +37,7 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}" title="{{item.toggleTitle}}">
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}" title="{{item.toggleTitle}}">
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url({{item.img}})">
             <i class="fa fa-dice-d20"></i>
@@ -73,9 +73,10 @@
           <i class="fas fa-ellipsis-v"></i>
         </div>
         <div class="item-controls">
+          <hr class="context-divider">
           {{#if section.canPrepare}}
-          {{/if}}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{item.toggleTitle}}</a>
+          {{/if}}
           <hr class="context-divider">
           <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
           <hr class="context-divider">

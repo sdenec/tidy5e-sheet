@@ -10,6 +10,12 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.1*
+- fixed layout issue with resources plus module
+- fixed missing right click context menu for npc spells
+- fixed disable inspiration and exhaustion tracker (where still showing if users set additional display options)
+- fixed white text in dropdown elements for dark theme
+
 *Version 0.4.0*
 - complete sheet rewrite for better maintainablilty.
 - removed the dnd5e css class. Mod developers should target .tidy5e for sheet modifications.
