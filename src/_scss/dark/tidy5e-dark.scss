@@ -57,6 +57,10 @@
       color: var(--background);
     }
 
+    select option {
+      color: var(--background);
+    }
+
   }
   
   .tidy5e.sheet.item {
@@ -76,6 +80,10 @@
     .tox-sidebar-wrap {
       padding: 8px;
       background: var(--secondary-color);
+    }
+
+    select option {
+      color: var(--background);
     }
 
   }

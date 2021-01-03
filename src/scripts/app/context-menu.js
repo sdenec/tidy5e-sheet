@@ -1,7 +1,7 @@
 export const tidy5eContextMenu = function (html) {
   // open context menu
 
-  html.find('.item-list .item.context-enabled').mousedown( function (event) {
+  html.find('.item-list .item.context-enabled').mousedown( async (event) => {
     let target = event.target.class;
     switch (event.which) {
       case 2:
@@ -19,6 +19,7 @@ export const tidy5eContextMenu = function (html) {
         break;
       case 3:
         // right click opens context menu
+        event.preventDefault();
         if(!game.settings.get("tidy5e-sheet", "disableRightClick")){
           $('.item').removeClass('context');
           $('.item .item-controls').hide();
@@ -28,7 +29,7 @@ export const tidy5eContextMenu = function (html) {
     }
   });
 
-  html.find('.item-list .item .activate-controls').mousedown( function (event) {
+  html.find('.item-list .item .activate-controls').mousedown( async (event) => {
     if(game.settings.get("tidy5e-sheet", "disableRightClick")){
       switch (event.which) {
         case 1:
@@ -42,7 +43,7 @@ export const tidy5eContextMenu = function (html) {
   });
 
   // context menu calculations
-  function itemContextMenu(event){
+  async function itemContextMenu(event){
     let item = event.currentTarget;
     
     if($(item).hasClass('activate-controls')){
@@ -85,7 +86,7 @@ export const tidy5eContextMenu = function (html) {
   }
 
   // close context menu on any click outside
-  $(document).mousedown( function (event) {
+  $(document).mousedown( async (event) => {
     switch (event.which) {
       case 1:
       if ( ! $(event.target).closest('.item .item-controls').length && ! $(event.target).closest('.item .activate-controls').length ) {

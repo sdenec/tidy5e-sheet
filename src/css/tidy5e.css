@@ -1606,6 +1606,7 @@
   border: 1px solid var(--faint-color);
   border-radius: 5px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tidy5e.sheet.actor .center-pane .resources .resource {
