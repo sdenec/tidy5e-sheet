@@ -10,6 +10,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.3*
+- fixed "empty section" bug
+
 *Version 0.4.2*
 - new per user setting to show trait labels
 - new health indicator bar below portrait, toggle per user setting

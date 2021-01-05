@@ -126,5 +126,5 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
   setSheetClasses(app,html,data);
 	editProtection(app, html, data);
   toggleTraitsList(app, html, data);
-  console.log(data);
+  // console.log(data);
 });

@@ -110,6 +110,7 @@
   font-size: 12px;
   color: var(--background);
   border-radius: 5px;
+  margin-bottom: 8px;
 }
 
 .tidy5e.sheet.actor h1, .tidy5e.sheet.actor h2, .tidy5e.sheet.actor h3, .tidy5e.sheet.actor h4 {
