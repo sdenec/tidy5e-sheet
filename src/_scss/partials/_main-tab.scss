@@ -295,7 +295,7 @@
 
 		.form-group article {
 		  padding: 2px 0;
-		  display: flex;
+			display: flex;
 		}
 
 		.form-group article div {
@@ -304,7 +304,7 @@
 
 		.traits-list {
 		  line-height: 14px;
-		  margin: 0 .5rem 0 0;
+		  padding: 0 8px 0 0;
 		}
 
 		label {
@@ -312,7 +312,33 @@
 	    justify-content: center;
 			font-size: 12px;
 		  line-height: 14px;
-		  margin-right: 4px;
+			margin-right: 4px;
+			
+			span {
+				display: none;
+			}
+		}
+
+		&.show-labels {
+
+			.form-group article {
+				flex-wrap: wrap;
+			}
+			
+			label {
+				span {
+					display: inline-block;
+					margin-left: 4px;
+					font-weight: 700;
+					color: var(--secondary-color);
+				}
+			}
+
+			.traits-list {
+				flex: 1 0 100%;
+				line-height: 14px;
+				padding: 0 0 0 18px;
+			}
 		}
 
 		.multiple label {
@@ -356,12 +382,14 @@
 		  margin-right: 0;
 		  text-align: center;
 		  color: var(--tertiary-color);
-		  line-height: 14px;
+			line-height: 14px;
+			width: 14px;
 		  vertical-align: bottom;
 		}
 
 		svg {
 			height: 12px;
+			width: 14px;
 
 			path {
 				fill: var(--tertiary-color);

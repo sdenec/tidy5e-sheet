@@ -264,6 +264,15 @@ export const tidy5eSettings = function () {
 		default: false,
 		type: Boolean
 	});
+
+	game.settings.register("tidy5e-sheet", "showTraitLabels", {
+		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}/${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
 	
   game.settings.register("tidy5e-sheet", "moveTraits", {
 		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.MoveTraits.name")}`,

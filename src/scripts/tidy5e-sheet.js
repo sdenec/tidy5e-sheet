@@ -280,12 +280,12 @@ async function editProtection(app, html, data) {
     let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');
     html.find('.inventory-list .items-header:not(.spellbook-header), .effects-list .items-header').each(function(){
       if($(this).next('.item-list').find('li').length <= 1){
-        $(this).next('.item-list').remove();
-        $(this).remove();
+        $(this).next('.item-list').addClass('hidden').hide();
+				$(this).addClass('hidden').hide();
       }
     });
 
-    html.find('.inventory-list .items-footer').hide();
+    html.find('.inventory-list .items-footer').addClass('hidden').hide();
 		html.find('.inventory-list .item-control.item-delete').remove();
 
 		if (game.settings.get('tidy5e-sheet', "gmOnlyEffectsEdit") && !game.user.isGM ) {
@@ -296,7 +296,7 @@ async function editProtection(app, html, data) {
 
     itemContainer.each(function(){
 
-		  if($(this).children().length < 1){
+		  if($(this).children().length < 1 || $(this).find('.hidden').length >= $(this).children().length){
 				if( $(this).hasClass('effects-list') && !game.user.isGM && game.settings.get('tidy5e-sheet', 'gmOnlyEffectsEdit')){
 					// $(this).append(`<span class="notice">This section is empty.</span>`);
 					$(this).prepend(`<span class="notice">Only your GM can edit this section.</span>`);
@@ -313,8 +313,8 @@ async function editProtection(app, html, data) {
 
 			html.find('.effects-list .items-header').each(function(){
 				if($(this).next('.item-list').find('li').length < 1){
-					$(this).next('.item-list').remove();
-					$(this).remove();
+					$(this).next('.item-list').addClass('hidden').hide();
+					$(this).addClass('hidden').hide();
 				}
 			});
 	}
@@ -370,9 +370,7 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
 	}
-	// if (game.settings.get("tidy5e-sheet", "restOnHover")) {
-	// 	html.find('.tidy5e-sheet .profile').addClass('restOnHover');
-	// }
+	
 	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
 	}
@@ -383,6 +381,9 @@ async function setSheetClasses(app, html, data) {
 	}
 	if (!game.settings.get("tidy5e-sheet", "pcToggleTraits")) {
 		html.find('.tidy5e-sheet .traits').addClass('always-visible');
+	}
+	if (game.settings.get("tidy5e-sheet", "showTraitLabels")) {
+		html.find('.tidy5e-sheet .traits').addClass('show-labels');
 	}
 	if(game.user.isGM){
 		html.find('.tidy5e-sheet').addClass('isGM');

@@ -21,10 +21,10 @@
         <div class="item-detail effect-duration">{{effect.duration.label}}</div>
         
         {{#if ../../owner}}
-        <div class="activate-controls">
+        <div class="activate-context-menu">
           <i class="fas fa-ellipsis-v"></i>
         </div>
-        <div class="item-controls effect-controls">
+        <div class="item-controls effect-controls context-menu">
           <a class="effect-control" data-action="toggle" title="{{localize 'DND5E.EffectToggle'}}">
               <i class="fas {{#if effect.data.disabled}}fa-check{{else}}fa-times{{/if}}"></i> {{localize 'DND5E.EffectToggle'}}
           </a>

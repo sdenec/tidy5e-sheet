@@ -130,12 +130,12 @@
 			display: none;
 		}
 
-		.activate-controls {
+		.activate-context-menu {
 			display: none;
 		}
 
-		&.alt-context .item:hover .activate-controls,
-		&.alt-context .context .activate-controls {
+		&.alt-context .item:hover .activate-context-menu,
+		&.alt-context .context .activate-context-menu {
 			display: flex;
 		}
 	}//.items-list
@@ -288,7 +288,7 @@
 				border-radius: 0;
 			}
 
-			.activate-controls {
+			.activate-context-menu {
 				// display: none;
 				position: absolute;
 				top: 0%;

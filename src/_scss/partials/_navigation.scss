@@ -8,7 +8,7 @@
   flex-wrap: wrap;
 
 	.item {
-		padding: 5px 1rem 0 1rem;
+		padding: 5px 8px 0 8px;
 		background: var(--header-background);
 		border: 1px solid transparent;
 		border-bottom: 1px solid var(--header-border);
@@ -16,6 +16,10 @@
 		text-align: left;
 		height: 26px;
 		flex: 1 1 auto;
+
+		&:first-child {
+			padding-left: 16px;
+		}
 		
 		&:hover {
 			color: var(--primary-accent);
@@ -46,12 +50,13 @@
 		border-left-color: transparent;
 	}
 
-	.item:last-child.active {
-		border-right-color: transparent;
-	}
+	// .item:last-child.active {
+	// 	border-right-color: transparent;
+	// }
 
 	.toggle-allow-edit {
-    display: flex;
+		display: flex;
+		order: 2;
     flex: 0;
     align-items: center;
     white-space: nowrap;

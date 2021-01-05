@@ -10,6 +10,10 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.2*
+- added a per user setting to show trait labels
+- added some generic css to better support tabs added by mods into the sheet body (like downtime tracker)
+
 *Version 0.4.1*
 - fixed layout issue with resources plus module
 - fixed missing right click context menu for npc spells

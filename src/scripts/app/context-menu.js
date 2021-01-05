@@ -22,20 +22,20 @@ export const tidy5eContextMenu = function (html) {
         event.preventDefault();
         if(!game.settings.get("tidy5e-sheet", "disableRightClick")){
           $('.item').removeClass('context');
-          $('.item .item-controls').hide();
+          $('.item .context-menu').hide();
           itemContextMenu(event);
         }
         break;
     }
   });
 
-  html.find('.item-list .item .activate-controls').mousedown( async (event) => {
+  html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
     if(game.settings.get("tidy5e-sheet", "disableRightClick")){
       switch (event.which) {
         case 1:
           event.preventDefault();
           $('.item').removeClass('context');
-          $('.item .item-controls').hide();
+          $('.item .context-menu').hide();
           itemContextMenu(event);
           break;
       }
@@ -46,7 +46,7 @@ export const tidy5eContextMenu = function (html) {
   async function itemContextMenu(event){
     let item = event.currentTarget;
     
-    if($(item).hasClass('activate-controls')){
+    if($(item).hasClass('activate-context-menu')){
       item = item.parentNode;
     }
     
@@ -58,8 +58,8 @@ export const tidy5eContextMenu = function (html) {
     itemWidth = $(item).width(),
     contextTop = mouseY-itemTop+1,
     contextLeft = mouseX-itemLeft+1,
-    contextWidth = $(item).find('.item-controls').width(),
-    contextHeight = $(item).find('.item-controls').height(),
+    contextWidth = $(item).find('.context-menu').width(),
+    contextHeight = $(item).find('.context-menu').height(),
     contextRightBound = mouseX + contextWidth,
     contextBottomBound = mouseY + contextHeight,
     itemsList = $(item).closest('.items-list'),
@@ -80,7 +80,7 @@ export const tidy5eContextMenu = function (html) {
 
     $(item)
       .addClass('context')
-      .find('.item-controls')
+      .find('.context-menu')
       .css({'top': contextTop+'px', 'left': contextLeft+'px'})
       .fadeIn(300);
   }
@@ -89,9 +89,9 @@ export const tidy5eContextMenu = function (html) {
   $(document).mousedown( async (event) => {
     switch (event.which) {
       case 1:
-      if ( ! $(event.target).closest('.item .item-controls').length && ! $(event.target).closest('.item .activate-controls').length ) {
+      if ( ! $(event.target).closest('.item .context-menu').length && ! $(event.target).closest('.item .activate-context-menu').length ) {
         html.find('.item').removeClass('context');
-        html.find('.item .item-controls').hide();
+        html.find('.item .context-menu').hide();
       }
         break;
     }
