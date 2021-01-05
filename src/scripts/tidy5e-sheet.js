@@ -167,8 +167,9 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  			let li = $(event.currentTarget),
  					item = actor.getOwnedItem(li.data("item-id")),
  					itemData = item.data,
- 					itemDescription = itemData.data.description.value,
-	        chatData = item.getChatData({secrets: actor.owner}),
+ 					// itemDescription = itemData.data.description.value,
+					chatData = item.getChatData({secrets: actor.owner}),
+					itemDescription = chatData.description.value,
  					infoContainer = li.closest('.grid-layout').find('.item-info-container-content'),
  					infoCard = li.find('.info-card');
  					

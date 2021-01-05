@@ -87,6 +87,23 @@
     }
 
   }
+
+  .tidy5e.sheet.actor {
+    .tox-toolbar-overlord,
+    .tox-toolbar__primary {
+      background: #fff;
+      background-color: #fff;
+    }
+    
+    .tox .tox-toolbar-overlord button {
+      color: #222;
+    }
+
+    .tox-sidebar-wrap {
+      padding: 8px;
+      background: var(--secondary-color);
+    }
+  }
 }
 
 @import '_dark-modules.scss';
