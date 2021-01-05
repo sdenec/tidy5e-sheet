@@ -11,7 +11,12 @@ Additional Translations generously provided by:
 Thank you very much!
 
 *Version 0.4.2*
-- added a per user setting to show trait labels
+- new per user setting to show trait labels
+- new health indicator bar below portrait, toggle per user setting
+- new per user setting to show item controls without right click (only for item/spell list view and PCs - space reasons)
+- fixed layout of midiQol/Better Roll buttons in the item infos
+- added setting for future toggle to display roll buttons in context menu instead (has yet to be implemented by tposney - Better Rolls might come in the future)
+- fixed misaligned inventory + controls in list views
 - added some generic css to better support tabs added by mods into the sheet body (like downtime tracker)
 
 *Version 0.4.1*

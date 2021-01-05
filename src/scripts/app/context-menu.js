@@ -3,11 +3,11 @@ export const tidy5eContextMenu = function (html) {
 
   html.find('.item-list .item.context-enabled').mousedown( async (event) => {
     let target = event.target.class;
+    let item = event.currentTarget;
     switch (event.which) {
       case 2:
         // middle mouse opens item editor
         event.preventDefault();
-        let item = event.currentTarget;
         if($(item).find('.item-edit')) {
           $(item).find('.item-edit').trigger('click');
         }
@@ -20,7 +20,7 @@ export const tidy5eContextMenu = function (html) {
       case 3:
         // right click opens context menu
         event.preventDefault();
-        if(!game.settings.get("tidy5e-sheet", "disableRightClick")){
+        if(!game.settings.get("tidy5e-sheet", "disableRightClick") && $(item).hasClass('context-enabled')){
           $('.item').removeClass('context');
           $('.item .context-menu').hide();
           itemContextMenu(event);

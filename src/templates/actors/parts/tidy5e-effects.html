@@ -2,7 +2,7 @@
 
   <ul class="items-list effects-list">
     {{#each effects as |section sid|}}
-    <li class="items-header" data-effect-type="{{section.type}}">
+    <li class="items-header effects-header" data-effect-type="{{section.type}}">
       <h3 class="item-name effect-name">{{localize section.label}}</h3>
       <div class="items-header-labels">
         <div class="items-header-source" title="{{effect.sourceName}}"><span>{{localize 'DND5E.Source'}}</span></div>
@@ -26,14 +26,14 @@
         </div>
         <div class="item-controls effect-controls context-menu">
           <a class="effect-control" data-action="toggle" title="{{localize 'DND5E.EffectToggle'}}">
-              <i class="fas {{#if effect.data.disabled}}fa-check{{else}}fa-times{{/if}}"></i> {{localize 'DND5E.EffectToggle'}}
+              <i class="fas {{#if effect.data.disabled}}fa-check{{else}}fa-times{{/if}}"></i> <span class="control-label">{{localize 'DND5E.EffectToggle'}}</span>
           </a>
           <a class="effect-control effect-edit" data-action="edit" title=" {{localize 'DND5E.EffectEdit'}}">
-              <i class="fas fa-edit"></i> {{localize 'DND5E.EffectEdit'}}
+              <i class="fas fas fa-pencil-alt"></i> <span class="control-label">{{localize 'DND5E.EffectEdit'}}</span>
           </a>
           <hr class="context-divider">
           <a class="effect-control effect-delete warning" data-action="delete" title="{{localize 'DND5E.EffectDelete'}}">
-              <i class="fas fa-trash"></i> {{localize 'DND5E.EffectDelete'}}
+              <i class="fas fa-trash"></i> <span class="control-label">{{localize 'DND5E.EffectDelete'}}</span>
           </a>
         </div>
         {{/if}}

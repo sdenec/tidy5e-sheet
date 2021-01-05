@@ -106,7 +106,7 @@ export const addFavorites = async function(app, html, data, position) {
 
       // add button to toggle favorite of the item in their native tab
       if (app.options.editable) {
-        let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "far fa-bookmark"}"></i> ${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</a>`);
+        let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`);
         favBtn.click(ev => {
           app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
         });

@@ -89,6 +89,13 @@
 
 					{{!-- Hit Points --}}
 					<div class="portrait-hp" title="{{ localize 'DND5E.HitPoints' }}">
+						<div class="hp-bar" style="background: linear-gradient(
+								-90deg,
+								transparent 0%,
+								transparent calc(100% - ((100% / ({{#if (eq data.attributes.hp.max 0)}} 1 {{else}} {{data.attributes.hp.max}} {{/if}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ),
+								 	rgba(0,200,0,0.5) calc(100% - ((100% / ({{#if (eq data.attributes.hp.max 0)}} 1 {{else}} {{data.attributes.hp.max}} {{/if}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ),
+								 	rgba(0,200,0,0.5) 100%);">
+						</div>
 						<input class="hp-min" name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}"
 						data-dtype="Number" placeholder="0" maxlength="5">
 						<span class="value-seperator">/</span>

@@ -26,6 +26,11 @@
 	"TIDY5E.EnableEdit": "Enable Edit",
 	"TIDY5E.DisableEdit": "Disable Edit",
 	"TIDY5E.EditHint": "Toggles visibility of add/delete buttons and empty sections",
+
+	"TIDY5E.EmptySection": "This section is empty. Unlock the sheet to edit.",
+	"TIDY5E.GmOnlyEdit": "Only your GM can edit this section.",
+
+	"TIDY5E.AttunementWarning": "Attunement warning: You can't attune to more than {number} items!",
 	
 	"TIDY5E.GridLayout": "Grid Layout",
 	"TIDY5E.ListLayout": "List Layout",
@@ -70,6 +75,14 @@
 	"TIDY5E.Settings.DisableRightClick" : {
 		"name" : "Disable right click context menu.",
 		"hint" : "In case of module conflicts or preference you can disable the right click context menu. Items will show a menu icon instead."
+	},
+	"TIDY5E.Settings.UseClassicControls" : {
+		"name" : "Use classic item controls in list view.",
+		"hint" : "Always shows item controls and disable right click menu. Only useful for list view."
+	},
+	"TIDY5E.Settings.ContextRollButtons" : {
+		"name" : "Show midiQol/Better Rolls Item Button in Context Menu",
+		"hint" : "Per default roll buttons appear in the item's description. Enable to move them to the context menu. Useful for grid layout or if you use them frequently."
 	},
 	"TIDY5E.Settings.GmEditPermission" : {
 		"name" : "GM can always edit PC sheets.",
@@ -116,6 +129,10 @@
 		"name" : "Hide hit point overlay.",
 		"hint" : "Enable to hide the HP overlay for this actor type."
 	},
+	"TIDY5E.Settings.DisableHpBar" : {
+		"name" : "Disable health bar.",
+		"hint" : "Enable to hide the colored bar indicating the remaining HP (Health Numbers will still be visible)."
+	},
 	"TIDY5E.Settings.HideClassList" : {
 		"name" : "Hide character class list.",
 		"hint" : "Enable to hide the class list below the character's name."
@@ -159,6 +176,10 @@
 	"TIDY5E.Settings.AlwaysShowTraits" : {
 		"name" : "Always show traits.",
 		"hint" : "By default empty traits are hidden by a toggle button. Enable to never hide."
+	},
+	"TIDY5E.Settings.ShowTraitLabels" : {
+		"name" : "Show Trait Labels.",
+		"hint" : "By default only icons are shown for traits. Enable to display labels as well."
 	},
 	"TIDY5E.Settings.AlwaysShowSkills" : {
 		"name" : "Always show skills.",

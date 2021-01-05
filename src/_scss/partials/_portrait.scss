@@ -107,6 +107,10 @@
 	.profile.disable-hp-overlay .hp-overlay-wrapper {
 		display: none;
 	}
+	
+	.profile.disable-hp-bar .portrait-hp .hp-bar {
+		display: none;
+	}
 
 	.roundPortrait .death-saves,
 	.profile.roundPortrait .hp-overlay-wrapper {
@@ -387,6 +391,11 @@
 	.hp-0-0 .exhaustion-container:not(.level-6) {
 		display: none;
 	}
+	
+	.profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hp,
+	.hp-0-0 .portrait-hp {
+		border-radius: 5px;
+	}
 
 	.exhaustion-container {
 		position: absolute;
@@ -618,7 +627,7 @@
 
 	.portrait-hp {
 		position: absolute;
-    width: 100%;
+    width: 84px;
     left: 50%;
     height: 20px;
     font-size: 18px;
@@ -630,13 +639,21 @@
     align-items: center;
     background: var(--icon-background);
     box-shadow: 0 0 5px var(--icon-shadow) inset;
-    border: 1px solid var(--icon-outline);
-    border-radius: 0 0 5px 5px;
+		border: 1px solid var(--icon-outline);
+		
+		.hp-bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			background:rgba(0,200,0,.6);
+		}
 	}
 
 	.roundPortrait .portrait-hp {
-		width: 90%;
-    border-radius: 5px;
+		width: 88px;
 	}
 
 	.portrait-hp input,

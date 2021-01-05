@@ -86,7 +86,22 @@
 
       .resting {
         border-radius: 5px 0 0 5px;
+        transition: all .3s ease;
       }
+
+      .resting:not(:hover) {
+        background: transparent;
+        box-shadow: none;
+        border-color: transparent;
+      }
+    }
+
+    .profile .portrait-hp {
+      width: 136px;
+    }
+
+    .profile.roundPortrait .portrait-hp {
+      border-radius: 5px;
     }
 
     .health {
@@ -346,7 +361,27 @@
       white-space: nowrap;
     }
 
-    .items-header-comps,
+    .items-header-labels {
+      .items-header-comps {
+        width: 50px;
+      }
+
+      .items-header-charges {
+        width: 70px;
+      }
+      
+      .items-header-target,
+      .items-header-school {
+        width: 90px;
+      }
+    }
+
+    .spellbook-header {
+      .items-header-usage {
+        width: 90px;
+      }
+    }
+    
     .spell-comps {
       flex: 0 0 50px;
     }
@@ -355,18 +390,14 @@
       flex: 0 0 70px;
     }
 
-    .items-header-action,
-    .items-header-target,
-    .items-header-school
     .spell-action,
     .spell-target,
     .spell-school {
-      flex: 0 0 90px;
+      flex:0 0 90px;
     }
 
-    .items-header-action,
     .item-action {
-      flex: 0 0 120px;
+      flex:0 0 120px;
     }
 
   }//.items-list

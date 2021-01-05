@@ -3,7 +3,7 @@
 
 <div class="list-layout">
 
-  <ul class="inventory-list items-list">
+  <ul class="inventory-list spellbook-list items-list">
     {{#each spellbook as |section|}}
     <li class="items-header spellbook-header">
       <div class="spell-level-slots">
@@ -49,7 +49,7 @@
         
         {{~#if item.flags.favtab}} 
         {{~#if item.flags.favtab.isFavorite}} 
-           <div class="item-attuned" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
+           <div class="item-state-icon" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
         {{/if}}
         {{/if}}
 
@@ -81,12 +81,12 @@
         <div class="item-controls context-menu">
           <hr class="context-divider">
           {{#if section.canPrepare}}
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{item.toggleTitle}}</a>
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i>{{else}}<i class="fas fa-book inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
           {{/if}}
           <hr class="context-divider">
-          <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
+          <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize 'TIDY5E.EditSpell'}}</span></a>
           <hr class="context-divider">
-          <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i> {{localize 'TIDY5E.DeleteSpell'}}</a>
+          <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i> <span class="control-label">{{localize 'TIDY5E.DeleteSpell'}}</span></a>
         </div>
         {{/if}}
 
@@ -95,7 +95,7 @@
       {{#if section.canCreate}}
       <li class="items-footer">
         <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-          <i class="fas fa-plus-circle"></i> {{localize 'DND5E.Add'}}
+          <i class="fas fa-plus-circle"></i> </span>{{localize 'DND5E.Add'}}
         </a>
         {{else}}
         <!-- add button for all spell categories -->

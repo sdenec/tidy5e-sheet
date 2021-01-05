@@ -303,6 +303,23 @@
 				z-index: 1;
 			}
 
+			&:not(.context) .item-name.rollable:hover .item-image,
+			&:not(.context) .item-name:hover .item-image {
+				background-image: none !important;
+			}
+
+			&:not(.context) .item-name:hover .item-image i {
+				display: initial;
+			}
+
+			&:not(.context) .item-name:hover .item-image:hover {
+				background-image: none !important;
+			}
+
+			&:not(.context) .item-name:hover .item-image:hover i {
+				color: var(--primary-font);
+			}
+
 			
 		}//.item
 		

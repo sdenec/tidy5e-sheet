@@ -1,5 +1,25 @@
 export const tidy5eSettings = function () {
 	
+	// Classic Item Controls for PC Sheets
+	game.settings.register("tidy5e-sheet", "useClassicControls", {
+		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.UseClassicControls.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.UseClassicControls.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	
+	// Show Roll buttons in context Menu
+	game.settings.register("tidy5e-sheet", "contextRollButtons", {
+		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}/${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ContextRollButtons.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.ContextRollButtons.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	
 	// Color Theme
 	game.settings.register("tidy5e-sheet", "colorScheme", {
     name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")}: ${game.i18n.localize("TIDY5E.Settings.SheetTheme.name")}`,
@@ -16,6 +36,7 @@ export const tidy5eSettings = function () {
       data === 'dark' ? document.body.classList.add("tidy5eDark"):document.body.classList.remove("tidy5eDark");
      }
 	});
+	
 	
 	game.settings.register("tidy5e-sheet", "portraitStyle", {
 		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.name")}`,
@@ -103,6 +124,16 @@ export const tidy5eSettings = function () {
 		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableInspiration.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.DisableInspiration.hint"),
 		scope: "world",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	
+
+	game.settings.register("tidy5e-sheet", "disableHpBar", {
+		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}/${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.DisableHpBar.hint"),
+		scope: "user",
 		config: true,
 		default: false,
 		type: Boolean
