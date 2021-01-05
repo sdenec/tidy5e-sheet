@@ -69,10 +69,10 @@
         <div class="item-detail spell-action">{{labels.activation}}</div>
 
         {{#if ../../owner}}
-        <div class="activate-controls">
+        <div class="activate-context-menu">
           <i class="fas fa-ellipsis-v"></i>
         </div>
-        <div class="item-controls">
+        <div class="item-controls context-menu">
           <hr class="context-divider">
           {{#if section.canPrepare}}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{item.toggleTitle}}</a>

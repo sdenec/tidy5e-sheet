@@ -379,6 +379,9 @@ async function setSheetClasses(app, html, data) {
   if (game.settings.get("tidy5e-sheet", "disableNpcHpOverlay")) {
     html.find('.tidy5e-sheet.tidy5e-npc .profile').addClass('disable-hp-overlay');
   }
+	if (game.settings.get("tidy5e-sheet", "disableHpBar")) {
+		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
+	}
   if (game.settings.get("tidy5e-sheet", "npcHpOverlayBorder") > 0) {
     $('.system-dnd5e').get(0).style.setProperty('--npc-border', game.settings.get("tidy5e-sheet", "npcHpOverlayBorder")+'px');
 	}

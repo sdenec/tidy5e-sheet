@@ -46,12 +46,12 @@
         </div>
 
         {{~#if item.attunement}} 
-        <div class="item-attuned {{item.attunement.cls}}" title="{{localize item.attunement.title}}"><i class="fas fa-sun"></i></div>
+        <div class="item-state-icon {{item.attunement.cls}}" title="{{localize item.attunement.title}}"><i class="fas fa-sun"></i></div>
         {{/if}}
         
         {{~#if item.flags.favtab}} 
         {{~#if item.flags.favtab.isFavorite}} 
-           <div class="item-attuned" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
+           <div class="item-state-icon" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
         {{/if}}
         {{/if}}
 
@@ -98,31 +98,30 @@
         {{/if}}
 
         {{#if ../../owner}}
-        <div class="activate-controls">
+        <div class="activate-context-menu">
           <i class="fas fa-ellipsis-v"></i>
         </div>
-        <div class="item-controls">
+        <div class="item-controls context-menu">
           <hr class="context-divider">
           {{#unless @root.isVehicle}}
             {{#if (and (ne item.type 'tool') (ne item.type 'loot') )}}
-            <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash icon-off"></i><i class="fas fa-user-alt icon-on"></i> {{item.toggleTitle}}</a>
+            <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i>{{else}}<i class="fas fa-user-alt inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
             {{/if}}
           {{/unless}}
 
           {{#if item.attunement}}
-            <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}">
-              <span class="icon-off"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>
-              <span class="icon-on"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>
+            <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+              <i class="fas fa-sun"></i> <span class="control-label">{{localize item.attunement.title}}</span>
             </a>
           {{/if}}
 
           <hr class="context-divider">
 
           {{#unless section.editableName}}
-            <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i> {{localize "DND5E.ItemEdit"}}</a>
+            <a class="item-control item-edit" title="{{localize 'DND5E.ItemEdit'}}"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize "DND5E.ItemEdit"}}</span></a>
           {{/unless}}
           <hr class="context-divider">
-          <a class="item-control item-delete warning"><i class="fas fa-trash"></i> {{localize "DND5E.ItemDelete"}}</a>
+          <a class="item-control item-delete warning" title="{{localize 'DND5E.ItemDelete'}}"><i class="fas fa-trash"></i> <span class="control-label">{{localize "DND5E.ItemDelete"}}</span></a>
         </div>
         {{/if}}
 

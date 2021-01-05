@@ -109,6 +109,9 @@ async function setSheetClasses(app, html, data){
   }
 	if (game.settings.get("tidy5e-sheet", "disableVehicleHpOverlay")) {
 		html.find('.tidy5e-sheet.tidy5e-vehicle .profile').addClass('disable-hp-overlay');
+  }
+	if (game.settings.get("tidy5e-sheet", "disableHpBar")) {
+		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
 	}
 }
 
@@ -123,4 +126,5 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
   setSheetClasses(app,html,data);
 	editProtection(app, html, data);
   toggleTraitsList(app, html, data);
+  console.log(data);
 });

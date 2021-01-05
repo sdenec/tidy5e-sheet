@@ -13,9 +13,9 @@
 
 <div class="list-layout">
 
-  <ul class="inventory-list items-list">
+  <ul class="inventory-list features-list items-list">
     {{#each sections as |section sid|}}
-    <li class="items-header">
+    <li class="items-header features-header">
       <h3 class="item-name">{{localize section.label}}</h3>
 
       <div class="items-header-labels">
@@ -127,14 +127,14 @@
         {{/if}}
 
         {{#if ../../owner}}
-        <div class="activate-controls">
+        <div class="activate-context-menu">
           <i class="fas fa-ellipsis-v"></i>
         </div>
-        <div class="item-controls">
+        <div class="item-controls context-menu">
           <hr class="context-divider">
-          <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i> {{localize 'DND5E.ItemEdit'}}</a>
+          <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize 'DND5E.ItemEdit'}}</span></a>
           <hr class="context-divider">
-          <a class="item-control item-delete warning"><i class="fas fa-trash"></i> {{localize 'DND5E.ItemDelete'}}</a>
+          <a class="item-control item-delete warning"><i class="fas fa-trash"></i> <span class="control-label">{{localize 'DND5E.ItemDelete'}}</span></a>
         </div>
         {{/if}}
       </li>

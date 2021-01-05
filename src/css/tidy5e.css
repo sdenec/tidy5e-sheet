@@ -320,6 +320,10 @@
   display: none;
 }
 
+.tidy5e.sheet.actor .profile.disable-hp-bar .portrait-hp .hp-bar {
+  display: none;
+}
+
 .tidy5e.sheet.actor .roundPortrait .death-saves,
 .tidy5e.sheet.actor .profile.roundPortrait .hp-overlay-wrapper {
   border-radius: 50%;
@@ -592,6 +596,11 @@
   display: none;
 }
 
+.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hp,
+.tidy5e.sheet.actor .hp-0-0 .portrait-hp {
+  border-radius: 5px;
+}
+
 .tidy5e.sheet.actor .exhaustion-container {
   position: absolute;
   top: 0;
@@ -811,7 +820,7 @@
 
 .tidy5e.sheet.actor .portrait-hp {
   position: absolute;
-  width: 100%;
+  width: 84px;
   left: 50%;
   height: 20px;
   font-size: 18px;
@@ -824,12 +833,20 @@
   background: var(--icon-background);
   box-shadow: 0 0 5px var(--icon-shadow) inset;
   border: 1px solid var(--icon-outline);
-  border-radius: 0 0 5px 5px;
+}
+
+.tidy5e.sheet.actor .portrait-hp .hp-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(0, 200, 0, 0.6);
 }
 
 .tidy5e.sheet.actor .roundPortrait .portrait-hp {
-  width: 90%;
-  border-radius: 5px;
+  width: 88px;
 }
 
 .tidy5e.sheet.actor .portrait-hp input,
@@ -1392,7 +1409,7 @@
 }
 
 .tidy5e.sheet.actor .tidy5e-navigation .item {
-  padding: 5px 1rem 0 1rem;
+  padding: 5px 8px 0 8px;
   background: var(--header-background);
   border: 1px solid transparent;
   border-bottom: 1px solid var(--header-border);
@@ -1400,6 +1417,10 @@
   text-align: left;
   height: 26px;
   flex: 1 1 auto;
+}
+
+.tidy5e.sheet.actor .tidy5e-navigation .item:first-child {
+  padding-left: 16px;
 }
 
 .tidy5e.sheet.actor .tidy5e-navigation .item:hover {
@@ -1430,12 +1451,9 @@
   border-left-color: transparent;
 }
 
-.tidy5e.sheet.actor .tidy5e-navigation .item:last-child.active {
-  border-right-color: transparent;
-}
-
 .tidy5e.sheet.actor .tidy5e-navigation .toggle-allow-edit {
   display: flex;
+  order: 2;
   flex: 0;
   align-items: center;
   white-space: nowrap;
@@ -1812,7 +1830,7 @@
 
 .tidy5e.sheet.actor .traits .traits-list {
   line-height: 14px;
-  margin: 0 .5rem 0 0;
+  padding: 0 8px 0 0;
 }
 
 .tidy5e.sheet.actor .traits label {
@@ -1821,6 +1839,27 @@
   font-size: 12px;
   line-height: 14px;
   margin-right: 4px;
+}
+
+.tidy5e.sheet.actor .traits label span {
+  display: none;
+}
+
+.tidy5e.sheet.actor .traits.show-labels .form-group article {
+  flex-wrap: wrap;
+}
+
+.tidy5e.sheet.actor .traits.show-labels label span {
+  display: inline-block;
+  margin-left: 4px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.tidy5e.sheet.actor .traits.show-labels .traits-list {
+  flex: 1 0 100%;
+  line-height: 14px;
+  padding: 0 0 0 18px;
 }
 
 .tidy5e.sheet.actor .traits .multiple label {
@@ -1865,11 +1904,13 @@
   text-align: center;
   color: var(--tertiary-color);
   line-height: 14px;
+  width: 14px;
   vertical-align: bottom;
 }
 
 .tidy5e.sheet.actor .traits svg {
   height: 12px;
+  width: 14px;
 }
 
 .tidy5e.sheet.actor .traits svg path {
@@ -2226,6 +2267,11 @@
   margin: 0;
 }
 
+.tidy5e.sheet.actor .items-list .item-detail {
+  display: flex;
+  align-items: center;
+}
+
 .tidy5e.sheet.actor .items-list .items-header {
   display: flex;
   justify-content: space-between;
@@ -2250,10 +2296,11 @@
   white-space: nowrap;
 }
 
+.tidy5e.sheet.actor .items-list .items-header .inventory-plus-helper {
+  display: none;
+}
+
 .tidy5e.sheet.actor .items-list .items-header-labels {
-  display: flex;
-  justify-content: flex-end;
-  flex: 0;
   font-size: 12px;
   line-height: 12px;
   color: var(--tertiary-color);
@@ -2261,11 +2308,15 @@
   white-space: nowrap;
 }
 
+.tidy5e.sheet.actor .items-list .items-header-labels div {
+  float: left;
+}
+
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-weight,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-charge,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-uses,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-comps {
-  flex: 0 0 70px;
+  width: 70px;
 }
 
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-usage,
@@ -2275,12 +2326,16 @@
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-duration,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-feat-source,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-requirements {
-  flex: 0 0 120px;
+  width: 120px;
 }
 
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-subclass,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-source {
-  flex: 0 0 200px;
+  width: 200px;
+}
+
+.tidy5e.sheet.actor .items-list .items-header-labels:after {
+  clear: both;
 }
 
 .tidy5e.sheet.actor .items-list.alt-context .items-header-labels {
@@ -2288,6 +2343,8 @@
 }
 
 .tidy5e.sheet.actor .items-list .item {
+  display: flex;
+  align-items: center;
   background: var(--faintest-color);
 }
 
@@ -2354,25 +2411,18 @@
   font-size: 18px;
 }
 
+.tidy5e.sheet.actor .items-list .item .item-name {
+  display: flex;
+  align-items: center;
+}
+
+.tidy5e.sheet.actor .items-list .item .item-name h4 {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
 .tidy5e.sheet.actor .items-list .item.expanded .item-name .item-image {
   border-radius: 5px 0 0 0;
-}
-
-.tidy5e.sheet.actor .items-list .item:not(.context) .item-name.rollable:hover .item-image,
-.tidy5e.sheet.actor .items-list .item:not(.context) .item-name:hover .item-image {
-  background-image: none !important;
-}
-
-.tidy5e.sheet.actor .items-list .item:not(.context) .item-name:hover .item-image i {
-  display: initial;
-}
-
-.tidy5e.sheet.actor .items-list .item:not(.context) .item-name:hover .item-image:hover {
-  background-image: none !important;
-}
-
-.tidy5e.sheet.actor .items-list .item:not(.context) .item-name:hover .item-image:hover i {
-  color: var(--primary-font);
 }
 
 .tidy5e.sheet.actor .items-list .item .item-charges {
@@ -2412,7 +2462,7 @@
   margin-top: .5em;
 }
 
-.tidy5e.sheet.actor .items-list .activate-controls {
+.tidy5e.sheet.actor .items-list .item .activate-context-menu {
   display: none;
   justify-content: center;
   align-items: center;
@@ -2422,15 +2472,11 @@
   border-left: 1px solid var(--faint-color);
 }
 
-.tidy5e.sheet.actor .items-list .activate-controls:hover {
+.tidy5e.sheet.actor .items-list .item .activate-context-menu:hover {
   color: var(--primary-font);
 }
 
-.tidy5e.sheet.actor .items-list.alt-context .activate-controls {
-  display: flex;
-}
-
-.tidy5e.sheet.actor .items-list .item-controls {
+.tidy5e.sheet.actor .items-list .item .context-menu {
   display: none;
   min-width: 70px;
   max-height: 203px;
@@ -2444,7 +2490,7 @@
   box-shadow: 0 0 5px var(--context-shadow);
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a {
+.tidy5e.sheet.actor .items-list .item .context-menu a {
   display: flex;
   align-items: center;
   padding: 4px 8px 4px 6px;
@@ -2455,63 +2501,63 @@
   font-size: 12px;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a:first-child {
+.tidy5e.sheet.actor .items-list .item .context-menu a:first-child {
   border-radius: 3px 3px 0 0;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a:last-child {
+.tidy5e.sheet.actor .items-list .item .context-menu a:last-child {
   border-radius: 0 0 3px 3px;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a.active {
+.tidy5e.sheet.actor .items-list .item .context-menu a.active {
   background: var(--prepared);
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a .icon-on,
-.tidy5e.sheet.actor .items-list .item-controls a.active .icon-off {
+.tidy5e.sheet.actor .items-list .item .context-menu a .icon-on,
+.tidy5e.sheet.actor .items-list .item .context-menu a.active .icon-off {
   display: none;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a .icon-off,
-.tidy5e.sheet.actor .items-list .item-controls a.active .icon-on {
+.tidy5e.sheet.actor .items-list .item .context-menu a .icon-off,
+.tidy5e.sheet.actor .items-list .item .context-menu a.active .icon-on {
   display: inline-block;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a:hover {
+.tidy5e.sheet.actor .items-list .item .context-menu a:hover {
   box-shadow: 0 0 2px var(--tertiary-color), 0 0 0 1px var(--tertiary-color) inset;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a i {
+.tidy5e.sheet.actor .items-list .item .context-menu a i {
   margin-right: 4px;
   width: 16px;
   text-align: center;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a.warning {
+.tidy5e.sheet.actor .items-list .item .context-menu a.warning {
   background: var(--warning-accent);
   color: rgba(255, 255, 255, 0.6);
 }
 
-.tidy5e.sheet.actor .items-list .item-controls a.warning:hover {
+.tidy5e.sheet.actor .items-list .item .context-menu a.warning:hover {
   background: var(--warning-accent);
   color: rgba(255, 255, 255, 0.8);
 }
 
-.tidy5e.sheet.actor .items-list .item-controls .context-divider {
+.tidy5e.sheet.actor .items-list .item .context-menu .context-divider {
   margin: 1px 0 0 0;
   border-top: 1px solid var(--light-color);
   border-bottom: none;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls .context-divider + .context-divider {
+.tidy5e.sheet.actor .items-list .item .context-menu .context-divider + .context-divider {
   display: none;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls .context-divider:first-child, .tidy5e.sheet.actor .items-list .item-controls .context-divider:last-child {
+.tidy5e.sheet.actor .items-list .item .context-menu .context-divider:first-child, .tidy5e.sheet.actor .items-list .item .context-menu .context-divider:last-child {
   display: none;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls .item-buttons .button {
+.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons .button {
   border: none;
   border-radius: 0;
   background: var(--tertiary-color);
@@ -2526,18 +2572,22 @@
   font-size: 12px;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls .item-buttons .button:hover {
+.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons .button:hover {
   background: var(--secondary-color);
 }
 
-.tidy5e.sheet.actor .items-list .item-controls .item-buttons .button i {
+.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons .button i {
   margin-right: 4px;
   width: 16px;
   text-align: center;
 }
 
-.tidy5e.sheet.actor .items-list .item-controls .item-buttons > .button:first-child {
+.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons > .button:first-child {
   border-radius: 3px 3px 0 0;
+}
+
+.tidy5e.sheet.actor .items-list.alt-context .activate-context-menu {
+  display: flex;
 }
 
 .tidy5e.sheet.actor .items-list .spell-school,
@@ -2580,7 +2630,7 @@
   padding: .5rem;
 }
 
-.tidy5e.sheet.actor .items-list .item-attuned {
+.tidy5e.sheet.actor .items-list .item-state-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2591,7 +2641,7 @@
   color: var(--secondary-color);
 }
 
-.tidy5e.sheet.actor .items-list .item-attuned.not-attuned {
+.tidy5e.sheet.actor .items-list .item-state-icon.not-attuned {
   color: var(--attunement-required);
 }
 
@@ -2599,6 +2649,23 @@
   display: flex;
   flex: 1;
   overflow: hidden;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls .items-header {
+  padding-right: 84px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls .spellbook-header {
+  padding-right: 70px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls .features-header,
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls .effects-header {
+  padding-right: 54px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls .item-state-icon {
+  display: none;
 }
 
 .tidy5e.sheet.actor .list-layout .items-list .item {
@@ -2619,6 +2686,8 @@
 
 .tidy5e.sheet.actor .list-layout .items-list .item i {
   vertical-align: middle;
+  width: 13px;
+  text-align: center;
 }
 
 .tidy5e.sheet.actor .list-layout .items-list .item .item-name {
@@ -2643,6 +2712,63 @@
 
 .tidy5e.sheet.actor .list-layout .items-list .item .rollable h4 {
   cursor: pointer;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item:not(.context) .item-name.rollable:hover .item-image,
+.tidy5e.sheet.actor .list-layout .items-list .item:not(.context) .item-name:hover .item-image {
+  background-image: none !important;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item:not(.context) .item-name:hover .item-image i {
+  display: initial;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item:not(.context) .item-name:hover .item-image:hover {
+  background-image: none !important;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item:not(.context) .item-name:hover .item-image:hover i {
+  color: var(--primary-font);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 84px;
+  font-size: 12px;
+  padding: 0 4px;
+  border-left: 1px solid var(--faint-color);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) .control-label,
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) hr {
+  display: none;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a {
+  margin: 0 0 0 2px;
+  color: var(--secondary-color);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a.fixed {
+  display: none;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a.warning {
+  color: var(--warning-accent);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a.not-attuned {
+  color: var(--attunement-required);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a .inactive {
+  color: var(--light-color);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a .inactive:hover, .tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a:hover {
+  color: var(--primary-color);
 }
 
 .tidy5e.sheet.actor .list-layout .items-list .items-footer {
@@ -2673,6 +2799,7 @@
 .tidy5e.sheet.actor .list-layout .items-list .item-detail {
   font-size: 12px;
   display: flex;
+  height: 15px;
   justify-content: center;
   align-items: center;
   border-left: 1px solid var(--faint-color);
@@ -2685,6 +2812,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0 4px;
+}
+
+.tidy5e.sheet.actor .list-layout .spellbook-list .item .item-controls:not(.context-menu) {
+  flex: 0 0 70px;
+}
+
+.tidy5e.sheet.actor .list-layout .features-list .item .item-controls:not(.context-menu),
+.tidy5e.sheet.actor .list-layout .effects-list .item .item-controls:not(.context-menu) {
+  flex: 0 0 54px;
 }
 
 .tidy5e.sheet.actor .item-properties {
@@ -2899,12 +3035,12 @@
   display: none;
 }
 
-.tidy5e.sheet.actor .grid-layout .items-list .activate-controls {
+.tidy5e.sheet.actor .grid-layout .items-list .activate-context-menu {
   display: none;
 }
 
-.tidy5e.sheet.actor .grid-layout .items-list.alt-context .item:hover .activate-controls,
-.tidy5e.sheet.actor .grid-layout .items-list.alt-context .context .activate-controls {
+.tidy5e.sheet.actor .grid-layout .items-list.alt-context .item:hover .activate-context-menu,
+.tidy5e.sheet.actor .grid-layout .items-list.alt-context .context .activate-context-menu {
   display: flex;
 }
 
@@ -3054,7 +3190,7 @@
   border-radius: 0;
 }
 
-.tidy5e.sheet.actor .grid-layout .item-list .item .activate-controls {
+.tidy5e.sheet.actor .grid-layout .item-list .item .activate-context-menu {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -3066,6 +3202,23 @@
   border-radius: 3px 0 0 3px;
   box-shadow: -1px 0 3px var(--secondary-color);
   z-index: 1;
+}
+
+.tidy5e.sheet.actor .grid-layout .item-list .item:not(.context) .item-name.rollable:hover .item-image,
+.tidy5e.sheet.actor .grid-layout .item-list .item:not(.context) .item-name:hover .item-image {
+  background-image: none !important;
+}
+
+.tidy5e.sheet.actor .grid-layout .item-list .item:not(.context) .item-name:hover .item-image i {
+  display: initial;
+}
+
+.tidy5e.sheet.actor .grid-layout .item-list .item:not(.context) .item-name:hover .item-image:hover {
+  background-image: none !important;
+}
+
+.tidy5e.sheet.actor .grid-layout .item-list .item:not(.context) .item-name:hover .item-image:hover i {
+  color: var(--primary-font);
 }
 
 .tidy5e.sheet.actor .grid-layout .item-list .items-footer {
@@ -3310,6 +3463,21 @@
 
 .tidy5e.sheet.actor.npc .profile-wrap .profile.roundPortrait .rest-container .resting {
   border-radius: 5px 0 0 5px;
+  transition: all .3s ease;
+}
+
+.tidy5e.sheet.actor.npc .profile-wrap .profile.roundPortrait .rest-container .resting:not(:hover) {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.tidy5e.sheet.actor.npc .profile-wrap .profile .portrait-hp {
+  width: 136px;
+}
+
+.tidy5e.sheet.actor.npc .profile-wrap .profile.roundPortrait .portrait-hp {
+  border-radius: 5px;
 }
 
 .tidy5e.sheet.actor.npc .profile-wrap .health {
@@ -3547,7 +3715,23 @@
   white-space: nowrap;
 }
 
-.tidy5e.sheet.actor.npc .items-list .items-header-comps,
+.tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-comps {
+  width: 50px;
+}
+
+.tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-charges {
+  width: 70px;
+}
+
+.tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-target,
+.tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-school {
+  width: 90px;
+}
+
+.tidy5e.sheet.actor.npc .items-list .spellbook-header .items-header-usage {
+  width: 90px;
+}
+
 .tidy5e.sheet.actor.npc .items-list .spell-comps {
   flex: 0 0 50px;
 }
@@ -3556,16 +3740,12 @@
   flex: 0 0 70px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .items-header-action,
-.tidy5e.sheet.actor.npc .items-list .items-header-target,
-.tidy5e.sheet.actor.npc .items-list .items-header-school
-.spell-action,
+.tidy5e.sheet.actor.npc .items-list .spell-action,
 .tidy5e.sheet.actor.npc .items-list .spell-target,
 .tidy5e.sheet.actor.npc .items-list .spell-school {
   flex: 0 0 90px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .items-header-action,
 .tidy5e.sheet.actor.npc .items-list .item-action {
   flex: 0 0 120px;
 }
@@ -4519,6 +4699,33 @@
 #actor-flags.app.dnd5e .form-group input[type="checkbox"] {
   margin: 0;
   cursor: pointer;
+}
+
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons {
+  margin: 4px 0;
+}
+
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons .tag {
+  border: none;
+  border-radius: 0;
+  margin: 2px 4px 2px 0;
+  padding: 0;
+  background: none;
+}
+
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons .tag button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 2px 4px;
+  box-shadow: none;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 12px;
+}
+
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons .tag button:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .tidy5e.sheet.item .sheet-body .tab.item-betterRolls .item-betterRolls input[type="text"],

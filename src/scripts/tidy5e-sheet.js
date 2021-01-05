@@ -146,13 +146,14 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		html.find('.item-control.item-attunement').click( async (event) => {
 	    event.preventDefault();
  			let li = $(event.currentTarget).closest('.item'),
- 					item = actor.getOwnedItem(li.data("item-id"));
+					 item = actor.getOwnedItem(li.data("item-id")),
+					 count = actor.data.data.details.attunedItemsCount;
 
  			if(item.data.data.attunement == 2) {
  				actor.getOwnedItem(li.data("item-id")).update({'data.attunement': 1});
  			} else {
- 				if(actor.data.data.details.attunedItemsCount >= actor.data.data.details.attunedItemsMax) {
-			  	ui.notifications.warn(`Attunement warning: You can't attune to more than ${actor.data.data.details.attunedItemsCount} items!`);
+ 				if(count >= actor.data.data.details.attunedItemsMax) {
+			  	ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
 			  } else {
  					actor.getOwnedItem(li.data("item-id")).update({'data.attunement': 2});
 			  }
@@ -217,13 +218,14 @@ async function countInventoryItems(app, html, data){
 
 // count attuned items
 async function countAttunedItems(app, html, data){
-  let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+  let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
+			count = actor.data.data.details.attunedItemsCount;
   // if no items are counted set default value to 3
   if (!actor.data.data.details.attunedItemsMax) {
   	await actor.update({"data.details.attunedItemsMax": 3});
   }
 
-  if (!actor.data.data.details.attunedItemsCount) {
+  if (!count) {
   	await actor.update({"data.details.attunedItemsCount": 0});
   }
 
@@ -241,7 +243,7 @@ async function countAttunedItems(app, html, data){
   // html.find('.attuned-items-counter .attuned-items-current').text(attunedItems);
   if(actor.data.data.details.attunedItemsCount > actor.data.data.details.attunedItemsMax) {
   	html.find('.attuned-items-counter').addClass('overattuned');
-  	ui.notifications.warn(`Attunement warning: You can't attune to more than ${actor.data.data.details.attunedItemsCount} items!`);
+  	ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
   }
 }
 
@@ -280,12 +282,12 @@ async function editProtection(app, html, data) {
     let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');
     html.find('.inventory-list .items-header:not(.spellbook-header), .effects-list .items-header').each(function(){
       if($(this).next('.item-list').find('li').length <= 1){
-        $(this).next('.item-list').remove();
-        $(this).remove();
+        $(this).next('.item-list').addClass('hidden').hide();
+				$(this).addClass('hidden').hide();
       }
     });
 
-    html.find('.inventory-list .items-footer').hide();
+    html.find('.inventory-list .items-footer').addClass('hidden').hide();
 		html.find('.inventory-list .item-control.item-delete').remove();
 
 		if (game.settings.get('tidy5e-sheet', "gmOnlyEffectsEdit") && !game.user.isGM ) {
@@ -296,25 +298,24 @@ async function editProtection(app, html, data) {
 
     itemContainer.each(function(){
 
-		  if($(this).children().length < 1){
+		  if($(this).children().length < 1 || $(this).find('.hidden').length >= $(this).children().length){
 				if( $(this).hasClass('effects-list') && !game.user.isGM && game.settings.get('tidy5e-sheet', 'gmOnlyEffectsEdit')){
-					// $(this).append(`<span class="notice">This section is empty.</span>`);
-					$(this).prepend(`<span class="notice">Only your GM can edit this section.</span>`);
+					$(this).prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
 				} else {
-					$(this).append(`<span class="notice">This section is empty. Unlock the sheet to edit.</span>`);
+					$(this).append(`<span class="notice">${game.i18n.localize("TIDY5E.EmptySection")}</span>`);
 				}
 			}
     });
   } else if (!game.user.isGM && actor.getFlag('tidy5e-sheet', 'allow-edit') && game.settings.get('tidy5e-sheet', 'gmOnlyEffectsEdit')){
 			let itemContainer = html.find('.effects-list.items-list');
 
-			itemContainer.prepend(`<span class="notice">Only your GM can edit this section.</span>`);
+			itemContainer.prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
 			html.find('.effects-list .items-footer, .effects-list .effect-controls').remove();
 
 			html.find('.effects-list .items-header').each(function(){
 				if($(this).next('.item-list').find('li').length < 1){
-					$(this).next('.item-list').remove();
-					$(this).remove();
+					$(this).next('.item-list').addClass('hidden').hide();
+					$(this).addClass('hidden').hide();
 				}
 			});
 	}
@@ -344,13 +345,25 @@ async function addClassList(app, html, data) {
 async function setSheetClasses(app, html, data) {
 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 	if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
-		html.find('.tidy5e-sheet .items-list').addClass('alt-context');
+		if(game.settings.get("tidy5e-sheet", "useClassicControls")){
+			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');
+		} else {
+			html.find('.tidy5e-sheet .items-list').addClass('alt-context');
+		}
+	}
+	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
+		html.find('.tidy5e-sheet .list-layout .items-list').addClass('classic-controls');
+		html.find('.tidy5e-sheet .list-layout .item').removeClass('context-enabled').removeClass('context');
+		html.find('.tidy5e-sheet .list-layout .item-controls').removeClass('context-menu');
 	}
 	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "pc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
 		html.find('.tidy5e-sheet .profile').addClass('roundPortrait');
 	}
 	if (game.settings.get("tidy5e-sheet", "disableHpOverlay")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-overlay');
+	}
+	if (game.settings.get("tidy5e-sheet", "disableHpBar")) {
+		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
 	}
 	if (game.settings.get("tidy5e-sheet", "disableInspiration")) {
 		html.find('.tidy5e-sheet .profile .inspiration').remove();
@@ -370,9 +383,7 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
 	}
-	// if (game.settings.get("tidy5e-sheet", "restOnHover")) {
-	// 	html.find('.tidy5e-sheet .profile').addClass('restOnHover');
-	// }
+	
 	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
 	}
@@ -383,6 +394,9 @@ async function setSheetClasses(app, html, data) {
 	}
 	if (!game.settings.get("tidy5e-sheet", "pcToggleTraits")) {
 		html.find('.tidy5e-sheet .traits').addClass('always-visible');
+	}
+	if (game.settings.get("tidy5e-sheet", "showTraitLabels")) {
+		html.find('.tidy5e-sheet .traits').addClass('show-labels');
 	}
 	if(game.user.isGM){
 		html.find('.tidy5e-sheet').addClass('isGM');
@@ -395,84 +409,6 @@ async function setSheetClasses(app, html, data) {
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
 	preloadTidy5eHandlebarsTemplates();
-
-	// game.settings.register("tidy5e-sheet", "primaryAccent", {
-  //   name: game.i18n.localize("TIDY5E.Settings.PrimaryAccentColor.name"),
-  //   hint: game.i18n.localize("TIDY5E.Settings.PrimaryAccentColor.hint"),
-	// 	scope: "user",
-	// 	config: true,
-	// 	default: "",
-	// 	type: String,
-	// 	onChange: data => {
-	// 		if(data){
-	// 			document.documentElement.style.setProperty('--default-primary-accent',data);
-	// 			document.documentElement.style.setProperty('--darkmode-primary-accent',data);
-	// 		} else {
-	// 			document.documentElement.style.setProperty('--default-primary-accent',"#ff6400");
-	// 			document.documentElement.style.setProperty('--darkmode-primary-accent',"#48BB78");
-	// 		}
-  //    }
-	// });
-
-	// game.settings.register("tidy5e-sheet", "secondaryAccent", {
-  //   name: game.i18n.localize("TIDY5E.Settings.SecondaryAccentColor.name"),
-  //   hint: game.i18n.localize("TIDY5E.Settings.SecondaryAccentColor.hint"),
-	// 	scope: "user",
-	// 	config: true,
-	// 	default: "",
-	// 	type: String,
-	// 	onChange: data => {
-	// 		if(data){
-	// 			document.documentElement.style.setProperty('--default-secondary-accent',data);
-	// 			document.documentElement.style.setProperty('--darkmode-secondary-accent',data);
-	// 		} else {
-	// 			document.documentElement.style.setProperty('--default-secondary-accent',"rgba(210,0,255,.1)");
-	// 			document.documentElement.style.setProperty('--darkmode-secondary-accent',"rgba(0,150,150,.325)");
-	// 		}
-  //    }
-	// });
-
-	// game.settings.register("tidy5e-sheet", "alwaysPreparedAccent", {
-  //   name: game.i18n.localize("TIDY5E.Settings.AlwaysPreparedAccentColor.name"),
-  //   hint: game.i18n.localize("TIDY5E.Settings.AlwaysPreparedAccentColor.hint"),
-	// 	scope: "user",
-	// 	config: true,
-	// 	default: "",
-	// 	type: String,
-	// 	onChange: data => {
-	// 		if(data){
-	// 			document.documentElement.style.setProperty('--always-prepared-accent',data);
-	// 			document.documentElement.style.setProperty('--darkmode-always-prepared-accent',data);
-	// 		} else {
-	// 			document.documentElement.style.setProperty('--always-prepared-accent',"rgba(210,0,255,.1)");
-	// 			document.documentElement.style.setProperty('--darkmode-always-prepared-accent',"rgba(0,150,150,.325)");
-	// 		}
-  //   }
-	// });
-
-  // const primaryAccentColor = game.settings.get('tidy5e-sheet', "primaryAccent");
-  // if(primaryAccentColor !==  '') {
-  // 	document.documentElement.style.setProperty('--default-primary-accent',primaryAccentColor);
-  // }
-  // if(useDarkMode === true && primaryAccentColor !==  '') {
-  // 	document.documentElement.style.setProperty('--darkmode-primary-accent',primaryAccentColor);
-  // }
-
-  // const secondaryAccentColor = game.settings.get('tidy5e-sheet', "secondaryAccent");
-  // if(secondaryAccentColor !==  '') {
-  //  	document.documentElement.style.setProperty('--default-secondary-accent',secondaryAccentColor);	
-  // }
-  // if(useDarkMode === true && secondaryAccentColor !==  '') {
-  //  	document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor);	
-  // }
-  
-  // const alwaysPreparedAccent = game.settings.get('tidy5e-sheet', "alwaysPreparedAccent");
-  // if(alwaysPreparedAccent !==  '') {
-  // 	document.documentElement.style.setProperty('--always-prepared-accent',alwaysPreparedAccent);
-  // } 
-  // if(useDarkMode === true && alwaysPreparedAccent !==  '') {
-  // 	document.documentElement.style.setProperty('--darkmode-always-prepared-accent',alwaysPreparedAccent);
-  // }
 });
 
 // Register Tidy5e Sheet and make default character sheet
