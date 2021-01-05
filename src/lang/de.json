@@ -27,6 +27,11 @@
 	"TIDY5E.DisableEdit": "Editieren verbieten",
 	"TIDY5E.EditHint": "Schaltet Sichtbarkeit von Hinzufügen/Löschen Buttons und leeren Sektionen um.",
 	
+	"TIDY5E.EmptySection": "Dieser Bereich ist leer. Entsperre den Charakterbogen zum Bearbeiten.",
+	"TIDY5E.GmOnlyEdit": "Nur der Spielleiter kann diesen Bereich bearbeiten.",
+
+	"TIDY5E.AttunementWarning": "Abstimmungs-Warnung: Du kannst dich auf maximal {number} Gegenständen abstimmen!",
+	
 	"TIDY5E.GridLayout": "Raster-Ansicht",
 	"TIDY5E.ListLayout": "Listen-Ansicht",
 
@@ -70,6 +75,14 @@
 	"TIDY5E.Settings.DisableRightClick" : {
 		"name" : "Rechtsklick-Menü deaktivieren.",
 		"hint" : "Im Falle von Modulkonflikten oder persönlicher Vorliebe kann das Rechtsklickmenü deaktiviert werden. Stattdessen erscheint ein Menü-Button neben Gegenständen. Der Mittelklick bleibt."
+	},
+	"TIDY5E.Settings.UseClassicControls" : {
+		"name" : "Klassische Gegenstand-Steuerung in Listenansicht nutzen.",
+		"hint" : "Zeigt die Gegenstandsteuerung immer an ohne Rechtsklick. Trifft nur auf SC-Gegenstands/Zauber-Inventar in der Listenansicht zu."
+	},
+	"TIDY5E.Settings.ContextRollButtons" : {
+		"name" : "Zeige midiQol/Better Rolls Gegenstand-Button im Context-Menu",
+		"hint" : "Standardmäßig werden Gegenstands-Buttons in den Zusatzinfos angezeigt. Aktivieren, um sie in das Contextmenü zu verschieben. Nützlich für die Rasteransicht oder wenn sie oft benötigt werden."
 	},
 	"TIDY5E.Settings.GmEditPermission" : {
 		"name" : "SL kann immer SC-Bögen bearbeiten.",
@@ -115,6 +128,10 @@
 	"TIDY5E.Settings.DisableHpOverlay" : {
 		"name" : "Trefferpunkt-Overlay verstecken.",
 		"hint" : "Einschalten, um das Trefferpunkt-Overlay für diesen Darstellertyp zu verstecken."
+	},
+	"TIDY5E.Settings.DisableHpBar" : {
+		"name" : "Lebensbalken deaktivieren.",
+		"hint" : "Aktivieren, um den farbigen Balken zur Anzeige des Rest-Lebens unter dem Portrait zu deaktivieren (Trefferpunkte bleiben weiter sichtbar)."
 	},
 	"TIDY5E.Settings.HideClassList" : {
 		"name" : "Charakter-Klassenliste verstecken.",

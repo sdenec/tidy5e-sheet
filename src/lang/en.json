@@ -78,7 +78,7 @@
 	},
 	"TIDY5E.Settings.UseClassicControls" : {
 		"name" : "Use classic item controls in list view.",
-		"hint" : "Always shows item controls and disable right click menu. Only useful for list view."
+		"hint" : "Always shows item controls and disable right click menu. Only applies for PC item/spell inventory in list layout."
 	},
 	"TIDY5E.Settings.ContextRollButtons" : {
 		"name" : "Show midiQol/Better Rolls Item Button in Context Menu",
