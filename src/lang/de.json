@@ -9,7 +9,7 @@
 	"TIDY5E.Exhaustion5": "Geschwindigkeit auf 0 reduziert",
 	"TIDY5E.Exhaustion6": "Tod",
 
-	"TIDY5E.RestHint": "Mache eine Rast",
+	"TIDY5E.RestHint": "Rasten",
 	"TIDY5E.RestS": "Kurze Rast",
 	"TIDY5E.RestL": "Lange Rast",
 
@@ -23,28 +23,28 @@
 	"TIDY5E.JournalMisc": "Verschiedenes",
 	"TIDY5E.JournalEntries": "Tagebucheinträge",
 
-	"TIDY5E.EnableEdit": "Editieren erlauben",
-	"TIDY5E.DisableEdit": "Editieren verbieten",
+	"TIDY5E.EnableEdit": "Bearbeiten erlauben",
+	"TIDY5E.DisableEdit": "Bearbeiten verbieten",
 	"TIDY5E.EditHint": "Schaltet Sichtbarkeit von Hinzufügen/Löschen Buttons und leeren Sektionen um.",
 	
 	"TIDY5E.EmptySection": "Dieser Bereich ist leer. Entsperre den Charakterbogen zum Bearbeiten.",
 	"TIDY5E.GmOnlyEdit": "Nur der Spielleiter kann diesen Bereich bearbeiten.",
 
-	"TIDY5E.AttunementWarning": "Abstimmungs-Warnung: Du kannst dich auf maximal {number} Gegenständen abstimmen!",
+	"TIDY5E.AttunementWarning": "Einstimmungs-Warnung: Du kannst dich maximal auf {number} Gegenständen einstimmen!",
 	
 	"TIDY5E.GridLayout": "Raster-Ansicht",
 	"TIDY5E.ListLayout": "Listen-Ansicht",
 
 	"TIDY5E.Encumbrance": "Traglast",
 
-	"TIDY5E.EditSpell": "Zauber editieren",
+	"TIDY5E.EditSpell": "Zauber bearbeiten",
 	"TIDY5E.DeleteSpell": "Zauber löschen",
 	"TIDY5E.AddFav": "Favorit hinzufügen",
 	"TIDY5E.isFav": "Favorit",
 	"TIDY5E.RemoveFav": "Favorit löschen",
 
 	"TIDY5E.ToggleInfo": "Info umschalten",
-	"TIDY5E.ToggleMovement": "Wechseln zwischen moderner und veralteter Geschwindigkeitsanzeige",
+	"TIDY5E.ToggleMovement": "Wechseln zwischen moderner und alter Geschwindigkeitsanzeige",
 
 	"TIDY5E.Show" : "zeigen/bearbeiten",
 	"TIDY5E.Hide" : "verstecken",
@@ -176,6 +176,10 @@
 	"TIDY5E.Settings.AlwaysShowTraits" : {
 		"name" : "Merkmale immer anzeigen.",
 		"hint" : "Standardmäßig sind leere Merkmale per Schalter ausgeblendet. Einschalten, um immer anzuzeigen."
+	},
+	"TIDY5E.Settings.ShowTraitLabels" : {
+		"name" : "Beschriftung von Merkmalen.",
+		"hint" : "Standardmäßig werden nur Icons für Merkmale angezeigt. Einschalten, um auch Beschriftungen für Merkmale anzuzeigen."
 	},
 	"TIDY5E.Settings.AlwaysShowSkills" : {
 		"name" : "Fähigkeiten immer anzeigen.",
