@@ -26,7 +26,12 @@
 	"TIDY5E.EnableEdit": "Abilita Modifica",
 	"TIDY5E.DisableEdit": "Disabilita Modifica",
 	"TIDY5E.EditHint": "Attiva/disattiva la visibilità dei pulsanti di aggiunta/eliminazione e delle sezioni vuote",
-	
+
+	"TIDY5E.EmptySection": "Questa sezione è vuota. Sblocca il foglio per modificare.",
+	"TIDY5E.GmOnlyEdit": "Solo il tuo GM può modificare questa sezione.",
+
+	"TIDY5E.AttunementWarning": "Avviso per \"sintonizzazione\": non puoi sintonizzarti su più di {number} oggetti!",
+
 	"TIDY5E.GridLayout": "Layout a Griglia",
 	"TIDY5E.ListLayout": "Layout a Lista",
 
@@ -71,9 +76,17 @@
 		"name" : "Disabilita menu tasto destro.",
 		"hint" : "In caso di conflitti tra moduli o preferenze è possibile disabilitare il menu contestuale tasto destro. Gli elementi mostreranno al suo posto un'icona di menu."
 	},
+	"TIDY5E.Settings.UseClassicControls" : {
+		"name" : "Utilizza i controlli classici degli oggetti nella visualizzazione \"elenco\".",
+		"hint" : "Mostra sempre i controlli degli elementi e disabilita il menu di scelta rapida. Si applica solo nell'inventario di oggetti/incantesimi per i PC nella visualizzazione \"elenco\""
+	},
+	"TIDY5E.Settings.ContextRollButtons" : {
+		"name" : "Mostra i pulsanti midQoL/Better Rolls degli oggetti nel menu contestuale",
+		"hint" : "Per impostazione predefinita, i pulsanti associati ai tiri vengono visualizzati nella descrizione dell'oggetto. Seleziona questa impostazione per spostarli nel menu contestuale. Utile per la visualizzazione a griglia o se li usi frequentemente."
+	},
 	"TIDY5E.Settings.GmEditPermission" : {
-		"name" : "GM può sempre modificare i le schede dei PG.",
-		"hint" : "Seleziona per consentire alle ai GM di modificare le schede dei PG senza attivare/disattivare il blocco della scheda."
+		"name" : "Il GM può sempre modificare le schede dei PG.",
+		"hint" : "Seleziona per consentire ai GM di modificare le schede dei PG senza attivare/disattivare il blocco della scheda."
 	},
 	"TIDY5E.Settings.GmEditEffects" : {
 		"name" : "Solo il GM può modificare gli effetti attivi.",
@@ -84,13 +97,13 @@
 		"hint" : "Seleziona per non nascondere mai la quantità nell'inventario."
 	},
 	"TIDY5E.Settings.SheetTheme" : {
-		"name" : "Tidy 5e tema colore.",
-		"hint" : "Usa il tema di colore chiaro predefinito o quello alternativo scuro di Tidy 5e.",
+		"name" : "Tidy 5e colore tema.",
+		"hint" : "Seleziona il tema di colore chiaro predefinito o quello alternativo scuro.",
 		"default": "Predefinito (chiaro)",
 		"dark": "Alternativo (scuro)"
 	},
 	"TIDY5E.Settings.UseRoundPortraits" : {
-		"name" : "Stile ritratto tondo.",
+		"name" : "Stile ritratto: tondo.",
 		"hint" : "Scegli di abilitare i ritratti/icone tondi per gli attori.",
 		"all": "Tutti gli attori",
 		"pc": "Solo per i PG",
@@ -116,6 +129,10 @@
 		"name" : "Nascondi la sovrapposizione dei PF.",
 		"hint" : "Seleziona per nascondere l'overlay dei PF per questo tipo di attore."
 	},
+	"TIDY5E.Settings.DisableHpBar" : {
+		"name" : "Disabilita la barra della salute.",
+		"hint" : "Seleziona per nascondere la barra colorata che indica i PF rimanenti (i numeri relativi alla salute saranno ancora visibili)."
+	},
 	"TIDY5E.Settings.HideClassList" : {
 		"name" : "Nascondi l'elenco delle classi per i personaggi.",
 		"hint" : "Abilita per nascondere l'elenco delle classi sotto il nome del personaggio."
@@ -125,8 +142,8 @@
 		"hint" : "Seleziona per disattivare l'animazione dell'indicatore dei punti ispirazione."
 	},
 	"TIDY5E.Settings.DisableInspiration" : {
-		"name" : "Disable Inspiration Tracker.",
-		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
+		"name" : "Disattiva l'indicatore dei punti ispirazione.",
+		"hint" : "Se la tua campagna non utilizza l'ispirazione, puoi disattivare completamente l'indicatore."
 	},
 	"TIDY5E.Settings.ExhaustionEffects" : {
 		"name" : "Effetti di indebolimento (utilizza effetti attivi).",
@@ -159,6 +176,10 @@
 	"TIDY5E.Settings.AlwaysShowTraits" : {
 		"name" : "Mostra sempre i tratti.",
 		"hint" : "Per impostazione predefinita, i tratti vuoti sono nascosti da un pulsante di attivazione/disattivazione. Seleziona perché non siano mai nascosti."
+	},
+	"TIDY5E.Settings.ShowTraitLabels" : {
+		"name" : "Mostra le etichette relative ai tratti.",
+		"hint" : "Per impostazione predefinita, vengono visualizzate solo le icone relative ai tratti. Seleziona per visualizzare anche le etichette."
 	},
 	"TIDY5E.Settings.AlwaysShowSkills" : {
 		"name" : "Mostra sempre le abilità.",

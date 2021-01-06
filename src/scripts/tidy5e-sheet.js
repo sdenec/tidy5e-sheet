@@ -167,8 +167,9 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  			let li = $(event.currentTarget),
  					item = actor.getOwnedItem(li.data("item-id")),
  					itemData = item.data,
- 					itemDescription = itemData.data.description.value,
-	        chatData = item.getChatData({secrets: actor.owner}),
+ 					// itemDescription = itemData.data.description.value,
+					chatData = item.getChatData({secrets: actor.owner}),
+					itemDescription = chatData.description.value,
  					infoContainer = li.closest('.grid-layout').find('.item-info-container-content'),
  					infoCard = li.find('.info-card');
  					
@@ -292,13 +293,15 @@ async function editProtection(app, html, data) {
 
 		if (game.settings.get('tidy5e-sheet', "gmOnlyEffectsEdit") && !game.user.isGM ) {
 			html.find('.effects-list .items-footer, .effects-list .effect-controls').remove();
-		} else {
+		}	else {
 			html.find('.effects-list .items-footer, .effects-list .effect-control.effect-delete').remove();
 		}
 
     itemContainer.each(function(){
-
-		  if($(this).children().length < 1 || $(this).find('.hidden').length >= $(this).children().length){
+			let hiddenSections = $(this).find('> .hidden').length;
+			let totalSections = $(this).children().not('.notice').length;
+			// console.log('hidden: '+ hiddenSections + '/ total: '+totalSections);
+		  if(hiddenSections >= totalSections){
 				if( $(this).hasClass('effects-list') && !game.user.isGM && game.settings.get('tidy5e-sheet', 'gmOnlyEffectsEdit')){
 					$(this).prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
 				} else {
@@ -426,7 +429,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	checkDeathSaveStatus(app, html, data);
 	countInventoryItems(app,html,data);
 	countAttunedItems(app, html, data);
-	console.log(data);
+	// console.log(data);
 	// console.log("Tidy5e Sheet rendered!");
 });
 

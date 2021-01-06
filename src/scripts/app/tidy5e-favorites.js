@@ -310,7 +310,7 @@ export const addFavorites = async function(app, html, data, position) {
           favHtml.find('.item-image').click(ev => app._onItemRoll(ev));
 
           // Item Dragging
-          let handler = ev => app._onDragStart(ev);
+          let handler = async ev => app._onDragStart(ev);
           favHtml.find('.item').each((i, li) => {
             if (li.classList.contains("items-header")) return;
             li.setAttribute("draggable", true);
