@@ -10,6 +10,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.4*
+- a few more translations and german optimization (Thanks @Fallayn)
+
 *Version 0.4.3*
 - fixed "empty section" bug
 - editor colors fix for darkmode

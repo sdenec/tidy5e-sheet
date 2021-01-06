@@ -31,6 +31,8 @@
 	"TIDY5E.GmOnlyEdit": "Only your GM can edit this section.",
 
 	"TIDY5E.AttunementWarning": "Attunement warning: You can't attune to more than {number} items!",
+	"TIDY5E.AttunementItems": "Attuned Items",
+	"TIDY5E.AttunementMax": "Attunement maximum",
 	
 	"TIDY5E.GridLayout": "Grid Layout",
 	"TIDY5E.ListLayout": "List Layout",

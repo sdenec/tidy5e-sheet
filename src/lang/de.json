@@ -31,6 +31,8 @@
 	"TIDY5E.GmOnlyEdit": "Nur der Spielleiter kann diesen Bereich bearbeiten.",
 
 	"TIDY5E.AttunementWarning": "Einstimmungs-Warnung: Du kannst dich maximal auf {number} Gegenständen einstimmen!",
+	"TIDY5E.AttunementItems": "Eingestimmte Gegenstände",
+	"TIDY5E.AttunementMax": "Maximale Einstimmungen",
 	
 	"TIDY5E.GridLayout": "Raster-Ansicht",
 	"TIDY5E.ListLayout": "Listen-Ansicht",
