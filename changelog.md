@@ -12,6 +12,14 @@ Thank you very much!
 
 *Version 0.4.4*
 - a few more translations and german optimization (Thanks @Fallayn)
+- added translation strings for currency abbreviations
+- vehicle speed update for 5e 1.2.2
+- minor css fix for npc favorite icon
+- minor css fix for "recharge [X+]" label
+- npc sheets will display item quanitity for stackable item-types (everything that is sorted under "attacks" and "inventory")
+- fix: item names too long to fit are now truncated in inventory/spellbook
+- PC spellbook now lists the Spell Attack Modifier
+- PC spellbook now has a Prepared Spells tracker
 
 *Version 0.4.3*
 - fixed "empty section" bug

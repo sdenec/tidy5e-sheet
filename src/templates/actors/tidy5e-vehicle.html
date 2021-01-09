@@ -77,12 +77,30 @@
 
         {{!-- Character Movement --}}
 
-        <section class="movement">
-          <ul class="speed-form">
-          <li><h4>{{ localize 'DND5E.Speed' }}</h4></li>
-          <li class="movement-primary"><input name="data.attributes.speed" type="text" placeholder="&mdash;" value="{{data.attributes.speed}}"/></li>
-          </ul>
-        </section>
+				<section class="movement {{#if actor.flags.tidy5e-sheet.legacy-speed}} legacy-display{{/if}}">
+					<ul class="speed-form">
+						<li><h4>{{ localize 'DND5E.Speed' }}</h4></li>
+						{{#if movement.primary}}
+						<li class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</li>
+						{{/if}}
+						{{#if movement.special}}
+						<li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
+						{{/if}}
+						<li class="configure-movement"><a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
+					</ul>
+
+					<ul class="speed-form-legacy">
+						<li><h4>Legacy {{ localize 'DND5E.Speed' }}</h4></li>
+						<li class="movement-primary">
+              <input name="data.attributes.speed.value" type="text" value="{{data.attributes.speed.value}}" placeholder="0">
+						</li>
+
+						<li class="movement-special">
+              <input type="text" class="speed" name="data.attributes.speed.special" value="{{data.attributes.speed.special}}" placeholder="{{ localize 'DND5E.SpeedSpecial' }}">
+						</li>
+					</ul>
+					<span class="legacy-switch" title="{{localize 'TIDY5E.ToggleMovement'}}"><i class="fas fa-toggle-on"></i><i class="fas fa-toggle-off"></i></span>
+				</section>
 
         <section class="character-stats">
           {{!-- Header Attributes --}}

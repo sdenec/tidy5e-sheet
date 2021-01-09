@@ -2234,6 +2234,7 @@
   align-items: center;
 }
 
+.tidy5e.sheet.actor .spellcasting-ability .max-prepared-spells,
 .tidy5e.sheet.actor .spellcasting-ability .spellcasting-attribute {
   display: flex;
   align-items: center;
@@ -2246,15 +2247,21 @@
   font-family: var(--modesto);
 }
 
-.tidy5e.sheet.actor .spellcasting-ability span {
+.tidy5e.sheet.actor .spellcasting-ability p {
   font-weight: 700;
-  margin-right: 4px;
+  margin: 0 4px 0 0;
+  white-space: nowrap;
 }
 
 .tidy5e.sheet.actor .spellcasting-ability select {
   height: 19px;
   font-size: 12px;
   font-family: var(--signika);
+}
+
+.tidy5e.sheet.actor .spellcasting-ability input {
+  width: 20px;
+  height: 20px;
 }
 
 .tidy5e.sheet.actor .items-list {
@@ -2293,7 +2300,7 @@
 .tidy5e.sheet.actor .items-list .items-header h3 {
   font-size: 12px;
   line-height: 12px;
-  flex: 1 0 70px;
+  flex: 1 0 60px;
   white-space: nowrap;
 }
 
@@ -2314,10 +2321,13 @@
 }
 
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-weight,
-.tidy5e.sheet.actor .items-list .items-header-labels .items-header-charge,
-.tidy5e.sheet.actor .items-list .items-header-labels .items-header-uses,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-comps {
   width: 70px;
+}
+
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-charge,
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-uses {
+  width: 90px;
 }
 
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-usage,
@@ -2415,11 +2425,12 @@
 .tidy5e.sheet.actor .items-list .item .item-name {
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .tidy5e.sheet.actor .items-list .item .item-name h4 {
   white-space: nowrap;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .tidy5e.sheet.actor .items-list .item.expanded .item-name .item-image {
@@ -2704,8 +2715,6 @@
 }
 
 .tidy5e.sheet.actor .list-layout .items-list .item h4 {
-  display: flex;
-  align-items: center;
   flex: initial;
   text-overflow: ellipsis;
   font-weight: 400;
@@ -2864,9 +2873,12 @@
   line-height: 12px;
 }
 
-.tidy5e.sheet.actor .items-list .item-weight,
-.tidy5e.sheet.actor .items-list .item-charges {
+.tidy5e.sheet.actor .items-list .item-weight {
   flex: 0 0 70px;
+}
+
+.tidy5e.sheet.actor .items-list .item-charges {
+  flex: 0 0 90px;
 }
 
 .tidy5e.sheet.actor .items-list .item-level,
@@ -3753,10 +3765,7 @@
   width: 50px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-charges {
-  width: 70px;
-}
-
+.tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-uses,
 .tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-target,
 .tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-school {
   width: 90px;
@@ -3770,10 +3779,7 @@
   flex: 0 0 50px;
 }
 
-.tidy5e.sheet.actor.npc .items-list .item-charges {
-  flex: 0 0 70px;
-}
-
+.tidy5e.sheet.actor.npc .items-list .item-charges,
 .tidy5e.sheet.actor.npc .items-list .spell-action,
 .tidy5e.sheet.actor.npc .items-list .spell-target,
 .tidy5e.sheet.actor.npc .items-list .spell-school {

@@ -36,7 +36,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     Object.keys(data.data.abilities).forEach(id => {
     	let Id = id.charAt(0).toUpperCase() + id.slice(1);
       data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
-    });
+		});
 
     return data;
   }
@@ -344,6 +344,27 @@ async function addClassList(app, html, data) {
 	}
 }
 
+// Calculare Spell Attack modifier
+async function spellAttackMod(app,html,data){
+	let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
+			prof = actor.data.data.attributes.prof,
+			spellAbility = html.find('.spellcasting-attribute select option:selected').val(),
+			abilityMod = actor.data.data.abilities[spellAbility].mod,
+			spellAttackMod = prof + abilityMod,
+			text = spellAttackMod > 0 ? '+'+spellAttackMod : spellAttackMod;
+	// console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
+	html.find('.spell-mod .spell-attack-mod').html(text);
+}
+
+// Abbreviate Currency
+async function abbreviateCurrency(app,html,data) {
+	html.find('.currency .currency-item label').each(function(){
+		let currency = $(this).data('denom').toUpperCase();
+		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
+		$(this).html(abbr);
+	});
+}
+
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -429,6 +450,8 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	checkDeathSaveStatus(app, html, data);
 	countInventoryItems(app,html,data);
 	countAttunedItems(app, html, data);
+	abbreviateCurrency(app,html,data);
+	spellAttackMod(app,html,data);
 	// console.log(data);
 	// console.log("Tidy5e Sheet rendered!");
 });

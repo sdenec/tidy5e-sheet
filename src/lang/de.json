@@ -57,7 +57,16 @@
 
 	"TIDY5E.Environment" : "Umgebung",
 
+	"TIDY5E.CurrencyAbbrCP" : "KM",
+	"TIDY5E.CurrencyAbbrSP" : "SM",
+	"TIDY5E.CurrencyAbbrGP" : "GM",
+	"TIDY5E.CurrencyAbbrEP" : "EM",
+	"TIDY5E.CurrencyAbbrPP" : "PM",
+
 	"TIDY5E.AbbrMod" : "Mod",
+	"TIDY5E.SpellAttackMod" : "Attacke Mod",
+	"TIDY5E.PreparedSpells" : "Vorbereitete Zauber",
+	"TIDY5E.PreparedSpellsMax" : "Maximum für vorbereitete Zauber",
 
 	"TIDY5E.TokenLinked" : "Token mit Actor verknüpft",
 	"TIDY5E.TokenUnlinked" : "Token nicht mit Actor verknüpft",

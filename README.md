@@ -16,6 +16,9 @@ You can toggle item and spell inventorys into grid or list layout. List is the d
 there are plenty of settings from dark mode to round/square portraits, health visualization and user specific options.
 I tried to make each settings description as clear as possible so you should be able to carefully read an pick what you want.
 
+### Attunement Tracker
+In the PC inventory you'll find the new attunement tracker at the bottom left. By default you can attune to 3 items. DMs can change the attunement limit for each character by entering a max value in the tracker.
+
 ## Attribution
 Additional Translations generously provided by:
 Japanese: @BrotherSharp, @Asami

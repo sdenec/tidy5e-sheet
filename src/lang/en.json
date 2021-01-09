@@ -57,7 +57,16 @@
 
 	"TIDY5E.Environment" : "Environment",
 
+	"TIDY5E.CurrencyAbbrCP" : "CP",
+	"TIDY5E.CurrencyAbbrSP" : "SP",
+	"TIDY5E.CurrencyAbbrGP" : "GP",
+	"TIDY5E.CurrencyAbbrEP" : "EP",
+	"TIDY5E.CurrencyAbbrPP" : "PP",
+
 	"TIDY5E.AbbrMod" : "Mod",
+	"TIDY5E.SpellAttackMod" : "Attack Mod",
+	"TIDY5E.PreparedSpells" : "Prepared spells",
+	"TIDY5E.PreparedSpellsMax" : "Maximum for prepared spells",
 
 	"TIDY5E.TokenLinked" : "Token linked to actor",
 	"TIDY5E.TokenUnlinked" : "Token not linked to actor",
