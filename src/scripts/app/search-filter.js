@@ -34,9 +34,9 @@ export const tidy5eSearchFilter = function (html, actor) {
         value = searchField.val();
 
     if(id == "item-search"){
-      searchTarget = html.find(".inventory-list:not(.spellbook-list) .item-name");
+      searchTarget = html.find(".list-layout .inventory-list:not(.spellbook-list) .item-name, .grid-layout .inventory-list:not(.spellbook-list) .info-card-name");
     } else {
-      searchTarget = html.find(".spellbook-list .item-name");
+      searchTarget = html.find(".list-layout .spellbook-list .item-name, .grid-layout .spellbook-list .info-card-name");
     }
 
     if(value != ''){
