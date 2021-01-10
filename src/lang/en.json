@@ -1,4 +1,5 @@
 {
+	"TIDY5E.Subclass": "Subclass",
 	"TIDY5E.EditActorImage": "Edit Image",
 
 	"TIDY5E.Exhaustion0": "No negative effects",
@@ -62,11 +63,18 @@
 	"TIDY5E.CurrencyAbbrGP" : "GP",
 	"TIDY5E.CurrencyAbbrEP" : "EP",
 	"TIDY5E.CurrencyAbbrPP" : "PP",
+	
+	"TIDY5E.SearchItem" : "search item",
+	"TIDY5E.SearchSpell" : "search spell",
+	"TIDY5E.SearchClear" : "clear search",
+	"TIDY5E.SearchHint" : "Just start to type what you are searching for.",
 
 	"TIDY5E.AbbrMod" : "Mod",
 	"TIDY5E.SpellAttackMod" : "Attack Mod",
 	"TIDY5E.PreparedSpells" : "Prepared spells",
 	"TIDY5E.PreparedSpellsMax" : "Maximum for prepared spells",
+	"TIDY5E.Components" : "Comps",
+	"TIDY5E.SpellSchool" : "School",
 
 	"TIDY5E.TokenLinked" : "Token linked to actor",
 	"TIDY5E.TokenUnlinked" : "Token not linked to actor",

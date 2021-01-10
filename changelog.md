@@ -16,10 +16,15 @@ Thank you very much!
 - vehicle speed update for 5e 1.2.2
 - minor css fix for npc favorite icon
 - minor css fix for "recharge [X+]" label
-- npc sheets will display item quanitity for stackable item-types (everything that is sorted under "attacks" and "inventory")
 - fix: item names too long to fit are now truncated in inventory/spellbook
+- NPC/Vehicle sheets will display item quanitity for stackable item-types (everything that is sorted under "attacks" and "inventory")
+- NPC/Vehicle sheets now will show classic inline controls (settings option) as well
+- NPC spell preparation can be toggled from item controls
 - PC spellbook now lists the Spell Attack Modifier
 - PC spellbook now has a Prepared Spells tracker
+- PC sheets now have a searchbox to filter item/spell inventory
+- loot and tools are equippable again - like in the default sheet
+
 
 *Version 0.4.3*
 - fixed "empty section" bug

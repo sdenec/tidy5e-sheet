@@ -1,4 +1,5 @@
 {
+	"TIDY5E.Subclass": "Unterklasse",
 	"TIDY5E.EditActorImage": "Bild bearbeiten",
 
 	"TIDY5E.Exhaustion0": "Keine negativen Effekte",
@@ -63,10 +64,17 @@
 	"TIDY5E.CurrencyAbbrEP" : "EM",
 	"TIDY5E.CurrencyAbbrPP" : "PM",
 
+	"TIDY5E.SearchItem" : "Suche Gegenstand",
+	"TIDY5E.SearchSpell" : "Suche Zauber",
+	"TIDY5E.SearchClear" : "Suchfeld leeren",
+	"TIDY5E.SearchHint" : "Fange einfach an einzutippen nach was du suchst.",
+
 	"TIDY5E.AbbrMod" : "Mod",
 	"TIDY5E.SpellAttackMod" : "Attacke Mod",
 	"TIDY5E.PreparedSpells" : "Vorbereitete Zauber",
 	"TIDY5E.PreparedSpellsMax" : "Maximum für vorbereitete Zauber",
+	"TIDY5E.Components" : "Komp.",
+	"TIDY5E.SpellSchool" : "Schule",
 
 	"TIDY5E.TokenLinked" : "Token mit Actor verknüpft",
 	"TIDY5E.TokenUnlinked" : "Token nicht mit Actor verknüpft",

@@ -7,7 +7,9 @@ import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
 import { tidy5eListeners } from "./app/listeners.js";
 import { activeEffectsExhaustion } from "./app/exhaustion.js";
 import { tidy5eContextMenu } from "./app/context-menu.js";
+import { tidy5eSearchFilter } from "./app/search-filter.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
+import { tidy5eClassicControls } from "./app/classic-controls.js";
 
 let position = 0;
 
@@ -58,6 +60,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
+    tidy5eSearchFilter(html, actor);
 
 		// store Scroll Pos
 		const attributesTab = html.find('.tab.attributes');
@@ -376,9 +379,7 @@ async function setSheetClasses(app, html, data) {
 		}
 	}
 	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
-		html.find('.tidy5e-sheet .list-layout .items-list').addClass('classic-controls');
-		html.find('.tidy5e-sheet .list-layout .item').removeClass('context-enabled').removeClass('context');
-		html.find('.tidy5e-sheet .list-layout .item-controls').removeClass('context-menu');
+		tidy5eClassicControls(html);
 	}
 	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "pc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
 		html.find('.tidy5e-sheet .profile').addClass('roundPortrait');

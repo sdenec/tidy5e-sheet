@@ -104,9 +104,7 @@
         <div class="item-controls context-menu">
           <hr class="context-divider">
           {{#unless @root.isVehicle}}
-            {{#if (and (ne item.type 'tool') (ne item.type 'loot') )}}
-            <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i>{{else}}<i class="fas fa-user-alt inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
-            {{/if}}
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i>{{else}}<i class="fas fa-user-alt inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
           {{/unless}}
 
           {{#if item.attunement}}
