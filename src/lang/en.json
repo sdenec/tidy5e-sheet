@@ -1,6 +1,9 @@
 {
 	"TIDY5E.Subclass": "Subclass",
-	"TIDY5E.EditActorImage": "Edit Image",
+	"TIDY5E.EditActorImage": "left click: edit image",
+	"TIDY5E.ShowActorImage": "right click: show character art",
+	"TIDY5E.ShowPortraitArt": "show portrait",
+	"TIDY5E.ShowTokenArt": "show token",
 
 	"TIDY5E.Exhaustion0": "No negative effects",
 	"TIDY5E.Exhaustion1": "Disadvantage on Ability Checks",
@@ -70,6 +73,7 @@
 	"TIDY5E.SearchHint" : "Just start to type what you are searching for.",
 
 	"TIDY5E.AbbrMod" : "Mod",
+	"TIDY5E.AbbrSavingThrow" : "Save",
 	"TIDY5E.SpellAttackMod" : "Attack Mod",
 	"TIDY5E.PreparedSpells" : "Prepared spells",
 	"TIDY5E.PreparedSpellsMax" : "Maximum for prepared spells",

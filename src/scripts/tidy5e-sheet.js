@@ -10,6 +10,7 @@ import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eSearchFilter } from "./app/search-filter.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
+import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 
 let position = 0;
 
@@ -60,7 +61,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
-    tidy5eSearchFilter(html, actor);
+		tidy5eSearchFilter(html, actor);
+		tidy5eShowActorArt(html, actor);
 
 		// store Scroll Pos
 		const attributesTab = html.find('.tab.attributes');
@@ -453,7 +455,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	countAttunedItems(app, html, data);
 	abbreviateCurrency(app,html,data);
 	spellAttackMod(app,html,data);
-	// console.log(data);
+	console.log(data);
 	// console.log("Tidy5e Sheet rendered!");
 });
 

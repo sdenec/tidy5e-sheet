@@ -1,6 +1,9 @@
 {
 	"TIDY5E.Subclass": "Unterklasse",
-	"TIDY5E.EditActorImage": "Bild bearbeiten",
+	"TIDY5E.EditActorImage": "Linksklick: Bild bearbeiten",
+	"TIDY5E.ShowActorImage": "Rechtsklick: Charakter-Bilder zeigen",
+	"TIDY5E.ShowPortraitArt": "zeige Portrait",
+	"TIDY5E.ShowTokenArt": "zeige Token",
 
 	"TIDY5E.Exhaustion0": "Keine negativen Effekte",
 	"TIDY5E.Exhaustion1": "Nachteil auf Fähigkeits-Proben",

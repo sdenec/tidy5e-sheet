@@ -65,6 +65,7 @@
   --exhaustion-lvl1: rgba(255, 230, 0, 1);
   --exhaustion-lvl2: rgba(255, 130, 0, 1);
   --exhaustion-lvl3: rgba(255, 50, 0, 1);
+  --ability-accent: darkslategrey;
   --context-outline: rgba(0, 0, 0, .4);
   --context-shadow: rgba(0,0,0,.65);
   --check-default: url(../images/check-dark-unchecked.svg);
@@ -253,6 +254,38 @@
   position: relative;
   mix-blend-mode: multiply;
   z-index: 2;
+}
+
+.tidy5e.sheet.actor .portrait .portrait-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+
+.tidy5e.sheet.actor .portrait .portrait-menu.hidden {
+  display: none;
+}
+
+.tidy5e.sheet.actor .portrait .portrait-menu .showActorArt {
+  background: var(--background);
+  color: var(--primary-font);
+  border: none;
+  margin: 1px 0;
+  padding: 4px 6px;
+  line-height: 1;
+  font-size: 12px;
+  border: 1px solid var(--light-color);
+}
+
+.tidy5e.sheet.actor .portrait .portrait-menu .showActorArt:hover {
+  background: var(--background);
+  color: var(--primary-accent);
 }
 
 .tidy5e.sheet.actor .player-image {
@@ -1289,6 +1322,7 @@
 }
 
 .tidy5e.sheet.actor .ability-scores .ability {
+  position: relative;
   text-align: center;
   padding-bottom: 0;
   border-left: 1px solid var(--faint-color);
@@ -1355,6 +1389,43 @@
   border-radius: 5px;
 }
 
+.tidy5e.sheet.actor .ability-scores .ability .ability-modifiers:hover {
+  border-radius: 0;
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .ability-modifiers:hover ~ .mod-label {
+  display: block;
+  z-index: 1;
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .ability-modifiers:hover .ability-mod {
+  border-radius: 0;
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .mod-label {
+  position: absolute;
+  bottom: 3px;
+  display: none;
+  background: var(--note-background);
+  color: #fff;
+  font-size: 11px;
+  height: 17px;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .mod-label.ability-mod-label {
+  left: 10px;
+  transform: translate(-100%, 0);
+  border-radius: 5px 0 0 5px;
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .mod-label.save-mod-label {
+  right: 10px;
+  transform: translate(100%, 0);
+  border-radius: 0 5px 5px 0;
+}
+
 .tidy5e.sheet.actor .ability-scores .ability .ability-mod,
 .tidy5e.sheet.actor .ability-scores .ability .ability-save {
   flex: 1;
@@ -1367,6 +1438,12 @@
   text-align: right;
 }
 
+.tidy5e.sheet.actor .ability-scores .ability .ability-mod {
+  background: var(--ability-accent);
+  color: #fff;
+  border-radius: 3px 0 0 3px;
+}
+
 .tidy5e.sheet.actor .ability-scores .ability .ability-save {
   border-left: 1px solid var(--primary-color);
   text-align: left;
@@ -1374,7 +1451,8 @@
 
 .tidy5e.sheet.actor .ability-scores .ability .ability-mod:hover,
 .tidy5e.sheet.actor .ability-scores .ability .ability-save:hover {
-  color: var(--primary-accent);
+  background: var(--primary-accent);
+  color: #fff;
 }
 
 .tidy5e.sheet.actor .ability-scores .ability .proficiency-toggle {

@@ -2,6 +2,7 @@
 	<div class="tidy5e-sheet {{#if actor.flags.tidy5e-sheet.allow-edit}}allow-edit{{/if}}">
 		{{!-- Sheet Header --}}
 		<header class="tidy5e-header">
+			
 			<section class="profile-wrap">
 				<div class="profile hp-{{data.attributes.hp.value}}-{{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}} deathsuccess-{{data.attributes.death.success}} deathfailure-{{data.attributes.death.failure}}">
 
@@ -23,7 +24,11 @@
 
 					{{!-- Portrait --}}
 					<div class="portrait">
-						<img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{ localize 'TIDY5E.EditActorImage' }}" data-edit="img">
+						<img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{ localize 'TIDY5E.EditActorImage' }} / {{ localize 'TIDY5E.ShowActorImage' }}" data-edit="img">
+						<div class="portrait-menu hidden">
+							<button class="showActorArt" id="showPortrait">{{ localize 'TIDY5E.ShowPortraitArt' }}</button>
+							<button class="showActorArt" id="showToken">{{ localize 'TIDY5E.ShowTokenArt' }}</button>
+						</div>
 					</div>
 					{{!-- HP Overlay --}}
 					<div class="hp-overlay-wrapper" data-border="0px">
@@ -223,12 +228,14 @@
                 <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
               </div>
               <div class="ability-modifiers value-footer">
-                <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+								<span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
                 <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
                 <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
-                {{{ability.icon}}}</a>
-                <span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
-              </div>
+									{{{ability.icon}}}</a>
+								<span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
+							</div>
+							<span class="mod-label ability-mod-label">{{ localize 'TIDY5E.AbbrMod' }}</span>
+							<span class="mod-label save-mod-label">{{ localize 'TIDY5E.AbbrSavingThrow' }}</span>
 						</li>
 						{{/each}}
 					</ul>

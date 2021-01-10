@@ -4,6 +4,7 @@ import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-npc-templates.js"
 import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
+import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 
 
 /**
@@ -200,6 +201,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
 
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
+		tidy5eShowActorArt(html, actor);
 
     
     html.find(".rollable[data-action=rollInitiative]").click(function(){

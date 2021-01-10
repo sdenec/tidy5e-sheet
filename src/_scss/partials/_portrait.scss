@@ -37,6 +37,38 @@
 		mix-blend-mode: multiply;
 		z-index: 2;
 
+		.portrait-menu {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 12px;
+			line-height: 1;
+			white-space: nowrap;
+			display: flex;
+			flex-direction: column;
+
+			&.hidden {
+				display: none;
+			}
+
+			.showActorArt {
+				background: var(--background);
+				color: var(--primary-font);
+				border: none;
+				margin: 1px 0;
+				padding: 4px 6px;
+				line-height: 1;
+				font-size: 12px;
+				border: 1px solid var(--light-color);
+
+				&:hover {
+					background: var(--background);
+					color: var(--primary-accent);
+				}
+			}
+		}
+
 	}
 	
 	.player-image {
