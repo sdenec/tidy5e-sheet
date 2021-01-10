@@ -3,6 +3,8 @@ import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-npc-templates.js"
 
 import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eContextMenu } from "./app/context-menu.js";
+import { tidy5eClassicControls } from "./app/classic-controls.js";
+import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 
 
 /**
@@ -27,7 +29,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
       classes: ["tidy5e", "sheet", "actor", "npc"],
-      width: 690,
+      width: 740,
       height: 720
     });
   }
@@ -199,6 +201,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
 
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
+		tidy5eShowActorArt(html, actor);
 
     
     html.find(".rollable[data-action=rollInitiative]").click(function(){
@@ -367,8 +370,18 @@ async  function resetTempHp(app, html, data){
 // Set Sheet Classes
 async function setSheetClasses(app, html, data) {
   const {token} = app;
+  // if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
+	// 	html.find('.tidy5e-sheet .items-list').addClass('alt-context');
+  // }
   if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
-		html.find('.tidy5e-sheet .items-list').addClass('alt-context');
+		if(game.settings.get("tidy5e-sheet", "useClassicControls")){
+			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');
+		} else {
+			html.find('.tidy5e-sheet .items-list').addClass('alt-context');
+		}
+	}
+	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
+		tidy5eClassicControls(html);
 	}
   if (!game.settings.get("tidy5e-sheet", "showNpcResting")) {
     html.find('.tidy5e-sheet.tidy5e-npc .rest-container').remove();
@@ -471,7 +484,7 @@ async function npcFavorites (app, html, data){
     let isFav = item.flags.favtab.isFavorite;
 
     if (app.options.editable) {
-      let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" data-fav="${isFav}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}"><i class="${isFav ? "fas fa-bookmark" : "far fa-bookmark"}"></i> ${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</a>`);
+      let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`);
       favBtn.click(ev => {
         app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
       });

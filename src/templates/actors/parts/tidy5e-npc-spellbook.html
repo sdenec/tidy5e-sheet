@@ -27,7 +27,7 @@
       </div>
 
       <div class="items-header-labels">
-        <div class="items-header-comps">Comps.</div>
+        <div class="items-header-comps">{{localize 'TIDY5E.Components'}}</div>
         <!-- <div class="items-header-school">{{localize 'DND5E.SpellSchool'}}</div> -->
         <div class="items-header-target">{{localize 'DND5E.SpellTarget'}}</div>
         <div class="items-header-usage">{{localize 'DND5E.SpellUsage'}}</div>
@@ -74,13 +74,13 @@
         </div>
         <div class="item-controls context-menu">
           <hr class="context-divider">
-          {{#if section.canPrepare}}
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{item.toggleTitle}}</a>
+          {{#if data.preparation}}
+          <a class="item-control item-toggle {{item.toggleClass}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i>{{else}}<i class="fas fa-book inactive"></i>{{/if}}  <span class="control-label">{{item.toggleTitle}}</span></a>
           {{/if}}
           <hr class="context-divider">
-          <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
+          <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i>  <span class="control-label">{{localize 'TIDY5E.EditSpell'}}</span></a>
           <hr class="context-divider">
-          <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i> {{localize 'TIDY5E.DeleteSpell'}}</a>
+          <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i>  <span class="control-label">{{localize 'TIDY5E.DeleteSpell'}}</span></a>
         </div>
         {{/if}}
 

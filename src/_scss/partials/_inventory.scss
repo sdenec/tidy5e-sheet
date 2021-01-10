@@ -16,6 +16,37 @@
     color: var(--secondary-color);
 	}
 
+	.filter-search {
+		display: flex;
+		border: 1px solid var(--light-color);
+		border-bottom: none;
+		border-radius: 3px 3px 0 0;
+		margin: -2px 0 0 4px;
+		font-size: 12px;
+
+		input {
+			height: 19px;
+			padding: 0 4px 2px 4px;
+			width: 140px;
+		}
+
+		.clear-search {
+			display: flex;
+			align-items: center;
+			margin: 0 3px 0 0;
+			cursor: pointer;
+			color: var(--tertiary-color);
+
+			&:hover {
+				color: var(--secondary-color);
+			}
+
+			&.hidden {
+				display: none;
+			}
+		}
+	}
+
 	.filter-item {
 		font-size: 12px;
 	  padding: 0 .5rem;
@@ -239,6 +270,7 @@
 	border-top: 2px solid var(--light-color);
 	align-items: center;
 
+	.max-prepared-spells,
 	.spellcasting-attribute {
 		display: flex;
 		align-items: center;
@@ -251,15 +283,21 @@
     font-family: var(--modesto);
 	}
 
-	span {
+	p {
 		font-weight: 700;
-		margin-right: 4px;
+		margin: 0 4px 0 0;
+		white-space: nowrap;
 	}
 
 	select {
 		height: 19px;
 		font-size: 12px;
 		font-family: var(--signika);
+	}
+
+	input {
+		width: 20px;
+		height: 20px;
 	}
 
 } //.spellcasting-ability
@@ -301,7 +339,7 @@
 		h3 {
 			font-size: 12px;
 			line-height: 12px;
-			flex: 1 0 70px;
+			flex: 1 0 60px;
 			white-space: nowrap;
 		}
 
@@ -319,19 +357,25 @@
 		white-space: nowrap;
 		 
 		div {
-		 float: left;
+			float: left;
+		}
+
+		.items-header-school {
+			width: 50px;
 		}
 
  		.items-header-weight,
- 		.items-header-charge,
- 		.items-header-uses,
  		.items-header-comps {
- 			width: 70px;
- 		}
+			width: 70px;
+		}
+			
+		.items-header-charge,
+		.items-header-uses {
+			width: 90px;
+		}
 
  		.items-header-usage,
  		.items-header-level,
- 		.items-header-school, 
  		.items-header-target, 
  		.items-header-duration, 
  		.items-header-feat-source, 
@@ -427,9 +471,10 @@
 		.item-name {
 			display: flex;
 			align-items: center;
+			overflow: hidden;
 			h4 {
 				white-space: nowrap;
-				overflow-x: hidden;
+				overflow: hidden;
 			}
 		}
 
@@ -613,7 +658,10 @@
 		display: flex;
 	}
 
-	.spell-school,
+	.spell-school {
+		flex: 0 0 50px;
+	}
+
 	.spell-action,
 	.spell-target {
 		flex: 0 0 120px;
@@ -678,18 +726,18 @@
 	.items-list {
 
 		&.classic-controls {
-			.items-header {
-				padding-right: 84px;
-			}
+			// .items-header {
+			// 	padding-right: 84px;
+			// }
 
-			.spellbook-header {
-				padding-right: 70px;
-			}
+			// .spellbook-header {
+			// 	padding-right: 70px;
+			// }
 
-			.features-header,
-			.effects-header {
-				padding-right: 54px;
-			}
+			// .features-header,
+			// .effects-header {
+			// 	padding-right: 54px;
+			// }
 
 			.item-state-icon {
 				display: none;
@@ -731,8 +779,8 @@
 			}
 
 			h4 {
-				display: flex;
-				align-items: center;
+				// display: flex;
+				// align-items: center;
 				flex: initial;
 				text-overflow: ellipsis;
 				font-weight: 400;
@@ -760,12 +808,12 @@
 			}
 
 			.item-controls:not(.context-menu) {
-				display: flex;
-				align-items: center;
-				justify-content: flex-end;
-				flex: 0 0 84px;
+				// display: flex;
+				// align-items: center;
+				// justify-content: flex-end;
+				// flex: 0 0 84px;
 				font-size: 12px;
-				padding: 0 4px;
+				padding: 0 2px;
 				border-left: 1px solid var(--faint-color);
 
 				.control-label,
@@ -774,11 +822,15 @@
 				}
 
 				a {
+					width: 14px;
+					text-align: center;
 					margin: 0 0 0 2px;
 					color: var(--secondary-color);
+					float: left;
 
 					&.fixed {
-						display: none;
+						opacity: 0;
+						cursor: default;
 					}
 
 					&.warning {
@@ -849,18 +901,18 @@
 
 	}// .items-list
 
-	.spellbook-list .item {
-		.item-controls:not(.context-menu) {
-			flex: 0 0 70px;
-		}
-	}
+	// .spellbook-list .item {
+	// 	.item-controls:not(.context-menu) {
+	// 		flex: 0 0 70px;
+	// 	}
+	// }
 
-	.features-list .item,
-	.effects-list .item {
-		.item-controls:not(.context-menu) {
-			flex: 0 0 54px;
-		}
-	}
+	// .features-list .item,
+	// .effects-list .item {
+	// 	.item-controls:not(.context-menu) {
+	// 		flex: 0 0 54px;
+	// 	}
+	// }
 }//.list-layout 
 
 .item-properties {
@@ -905,9 +957,12 @@
 	line-height: 12px;
 }
 
-.items-list .item-weight,
-.items-list .item-charges {
+.items-list .item-weight {
 	flex: 0 0 70px;
+}
+
+.items-list .item-charges {
+	flex: 0 0 90px;
 }
 
 .items-list .item-level,

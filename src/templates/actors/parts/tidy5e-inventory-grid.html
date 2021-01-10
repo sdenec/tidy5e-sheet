@@ -78,9 +78,7 @@
         </div>
         <div class="item-controls context-menu">
           <hr class="context-divider">
-          {{#if (and (ne item.type 'tool') (ne item.type 'loot') ) }}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash icon-off"></i><i class="fas fa-user-alt icon-on"></i> {{item.toggleTitle}}</a>
-          {{/if}}
           
           {{#if item.attunement}}
           <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}">

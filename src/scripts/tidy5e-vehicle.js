@@ -3,13 +3,15 @@ import ActorSheet5eVehicle from "../../../systems/dnd5e/module/actor/sheets/vehi
 
 import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eListeners } from "./app/listeners.js";
+import { tidy5eClassicControls } from "./app/classic-controls.js";
+import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 
 export class Tidy5eVehicle extends ActorSheet5eVehicle {
 
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "vehicle"],
-			width: 690,
+			width: 740,
 			height: 720
 		});
 	}
@@ -48,6 +50,7 @@ export class Tidy5eVehicle extends ActorSheet5eVehicle {
 
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
+		tidy5eShowActorArt(html, actor);
 
 		// toggle empty traits visibility in the traits list
     html.find('.traits .toggle-traits').click( async (event) => {
@@ -96,11 +99,27 @@ async function toggleTraitsList(app, html, data){
   }
 }
 
+// Abbreviate Currency
+async function abbreviateCurrency(app,html,data) {
+	html.find('.currency .currency-item label').each(function(){
+		let currency = $(this).data('denom').toUpperCase();
+		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
+		$(this).html(abbr);
+	});
+}
+
 // add sheet classes
 async function setSheetClasses(app, html, data){
   if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
-		html.find('.tidy5e-sheet .items-list').addClass('alt-context');
-  }
+		if(game.settings.get("tidy5e-sheet", "useClassicControls")){
+			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');
+		} else {
+			html.find('.tidy5e-sheet .items-list').addClass('alt-context');
+		}
+	}
+	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
+		tidy5eClassicControls(html);
+	}
   if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
     html.find('.tidy5e-sheet.tidy5e-vehicle .profile').addClass('roundPortrait');
   }
@@ -126,5 +145,6 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
   setSheetClasses(app,html,data);
 	editProtection(app, html, data);
   toggleTraitsList(app, html, data);
+  abbreviateCurrency(app,html,data);
   // console.log(data);
 });

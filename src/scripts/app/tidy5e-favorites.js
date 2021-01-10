@@ -343,7 +343,8 @@ export const addFavorites = async function(app, html, data, position) {
             } else {
 
               if(app.actor.data.data.details.attunedItemsCount >= app.actor.data.data.details.attunedItemsMax) {
-                ui.notifications.warn(`Attunement warning: You can't attune to more than ${actor.data.data.details.attunedItemsCount} items!`);
+                let count = actor.data.data.details.attunedItemsCount;
+                ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
               } else {
                 app.actor.getOwnedItem(itemId).update({'data.attunement': 2});
               }

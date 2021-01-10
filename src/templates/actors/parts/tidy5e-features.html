@@ -27,7 +27,7 @@
           <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
           {{/if}}
         {{else if section.isClass}}
-          <div class="items-header-subclass"><!-- {{localize 'DND5E.Subclass'}} -->Subclass</div>
+          <div class="items-header-subclass">{{localize 'TIDY5E.Subclass'}}</div>
           <div class="items-header-level">{{localize 'DND5E.Level'}}</div>
         {{else}}
         {{#if ../isCharacter}}
@@ -55,11 +55,18 @@
           <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
             {{item.name}}
           </h4>
+          {{#unless ../../isCharacter}}
+          {{#if item.data.quantity}}
+          <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+            (<input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="3" >)
+          </span>
+          {{/if}}
+          {{/unless}}
         </div>
 
         {{~#if item.flags.favtab}} 
         {{~#if item.flags.favtab.isFavorite}} 
-           <div class="item-attuned" title="Favorite"><i class="fas fa-bookmark icon-fav"></i></div>
+           <div class="item-state-icon" title="Favorite"><i class="fas fa-bookmark icon-fav"></i></div>
         {{/if}}
         {{/if}}
 

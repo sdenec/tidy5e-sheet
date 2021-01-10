@@ -7,7 +7,10 @@ import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
 import { tidy5eListeners } from "./app/listeners.js";
 import { activeEffectsExhaustion } from "./app/exhaustion.js";
 import { tidy5eContextMenu } from "./app/context-menu.js";
+import { tidy5eSearchFilter } from "./app/search-filter.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
+import { tidy5eClassicControls } from "./app/classic-controls.js";
+import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 
 let position = 0;
 
@@ -36,7 +39,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     Object.keys(data.data.abilities).forEach(id => {
     	let Id = id.charAt(0).toUpperCase() + id.slice(1);
       data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
-    });
+		});
 
     return data;
   }
@@ -58,6 +61,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
+		tidy5eSearchFilter(html, actor);
+		tidy5eShowActorArt(html, actor);
 
 		// store Scroll Pos
 		const attributesTab = html.find('.tab.attributes');
@@ -344,6 +349,27 @@ async function addClassList(app, html, data) {
 	}
 }
 
+// Calculare Spell Attack modifier
+async function spellAttackMod(app,html,data){
+	let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
+			prof = actor.data.data.attributes.prof,
+			spellAbility = html.find('.spellcasting-attribute select option:selected').val(),
+			abilityMod = actor.data.data.abilities[spellAbility].mod,
+			spellAttackMod = prof + abilityMod,
+			text = spellAttackMod > 0 ? '+'+spellAttackMod : spellAttackMod;
+	// console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
+	html.find('.spell-mod .spell-attack-mod').html(text);
+}
+
+// Abbreviate Currency
+async function abbreviateCurrency(app,html,data) {
+	html.find('.currency .currency-item label').each(function(){
+		let currency = $(this).data('denom').toUpperCase();
+		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
+		$(this).html(abbr);
+	});
+}
+
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -355,9 +381,7 @@ async function setSheetClasses(app, html, data) {
 		}
 	}
 	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
-		html.find('.tidy5e-sheet .list-layout .items-list').addClass('classic-controls');
-		html.find('.tidy5e-sheet .list-layout .item').removeClass('context-enabled').removeClass('context');
-		html.find('.tidy5e-sheet .list-layout .item-controls').removeClass('context-menu');
+		tidy5eClassicControls(html);
 	}
 	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "pc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
 		html.find('.tidy5e-sheet .profile').addClass('roundPortrait');
@@ -429,7 +453,9 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	checkDeathSaveStatus(app, html, data);
 	countInventoryItems(app,html,data);
 	countAttunedItems(app, html, data);
-	// console.log(data);
+	abbreviateCurrency(app,html,data);
+	spellAttackMod(app,html,data);
+	console.log(data);
 	// console.log("Tidy5e Sheet rendered!");
 });
 

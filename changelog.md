@@ -10,6 +10,24 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.4*
+- updated translations for german (Thanks @Fallayn)
+- updated japanese translation (Thanks @BrotherSharp)
+- a few more localisations added
+- vehicle speed update for 5e 1.2.2
+- fix: npc favorite icon
+- fix: "recharge [X+]" label width
+- fix: item names too long to fit are now truncated in inventory/spellbook
+- NPC/Vehicle sheets will display item quanitity supported item-types (everything that is sorted under "attacks" and "inventory")
+- NPC/Vehicle sheets now will show classic inline controls (settings option)
+- NPC spell preparation can be toggled from the sheet
+- PC spellbook now lists the Spell Attack Modifier
+- PC spellbook now has a Prepared Spells tracker
+- PC sheets now have a searchbox to filter item/spell inventory
+- loot and tools are equippable again - like in the default sheet
+- PC/NPC/Vehicle Portraits now have a right click menu to view and share actor portrait and token art
+- Attribute section got a slight makeover to highlight the base ability modifier and on hover make it more obvious what the left and right values will roll.
+
 *Version 0.4.3*
 - fixed "empty section" bug
 - editor colors fix for darkmode

@@ -366,10 +366,7 @@
         width: 50px;
       }
 
-      .items-header-charges {
-        width: 70px;
-      }
-      
+      .items-header-uses,
       .items-header-target,
       .items-header-school {
         width: 90px;
@@ -386,10 +383,7 @@
       flex: 0 0 50px;
     }
 
-    .item-charges {
-      flex: 0 0 70px;
-    }
-
+    .item-charges,
     .spell-action,
     .spell-target,
     .spell-school {

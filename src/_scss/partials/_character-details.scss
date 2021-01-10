@@ -413,9 +413,10 @@ input.ini-mod {
 	display: flex;
 	flex: 1;
   border: none;
-  border-radius: 0;
-
+	border-radius: 0;
+	
 	.ability {
+		position: relative;
 	  text-align: center;
 	  padding-bottom: 0;
 	  border-left: 1px solid var(--faint-color);
@@ -478,7 +479,44 @@ input.ini-mod {
 			opacity: initial;
 		  font-size: 10px;
 		  border: 1px solid var(--tertiary-color);
-		  border-radius: 5px;
+			border-radius: 5px;
+
+			&:hover {
+				border-radius: 0;
+			}
+
+			&:hover ~ .mod-label {
+				display: block;
+				z-index: 1;
+			}
+
+			&:hover .ability-mod {
+				border-radius: 0;
+			}
+		}
+		
+		.mod-label {
+			position: absolute;
+			bottom: 3px;
+			display: none;
+			background: var(--note-background);
+			color: #fff;
+			font-size: 11px;
+			height: 17px;
+			padding: 2px 4px;
+			white-space: nowrap;
+			
+			&.ability-mod-label {
+				left: 10px;
+				transform: translate(-100%, 0);
+				border-radius: 5px 0 0 5px;
+			}
+
+			&.save-mod-label {
+				right: 10px;
+				transform: translate(100%, 0);
+				border-radius: 0 5px 5px 0;
+			}
 		}
 
 		.ability-mod,
@@ -493,6 +531,12 @@ input.ini-mod {
 			text-align: right;
 		}
 
+		.ability-mod {
+			background: var(--ability-accent);
+			color: #fff;
+			border-radius: 3px 0 0 3px;
+		}
+
 		.ability-save {
 			border-left: 1px solid var(--primary-color);
 			text-align: left;
@@ -500,7 +544,8 @@ input.ini-mod {
 
 		.ability-mod:hover,
 		.ability-save:hover {
-			color: var(--primary-accent);
+			background: var(--primary-accent);
+			color: #fff;
 		}
 
 		.proficiency-toggle {

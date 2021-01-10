@@ -8,6 +8,7 @@
   --light-color: rgba(255, 255, 255, .25);
   --faint-color: rgba(255, 255, 255, .1);
   --faintest-color: rgba(255, 255, 255, .05);
+  --ability-accent: darkslategrey;
   --header-background: rgba(255, 255, 255, .05);
   --header-border: rgba(255, 255, 255, .25);
   --primary-accent: rgba(255, 100, 0, 1);
