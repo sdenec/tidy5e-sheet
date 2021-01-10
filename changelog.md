@@ -10,6 +10,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.5*
+- fixed search for grid layout
+
 *Version 0.4.4*
 - updated translations for german (Thanks @Fallayn)
 - updated japanese translation (Thanks @BrotherSharp)
