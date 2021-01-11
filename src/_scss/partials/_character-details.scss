@@ -416,14 +416,20 @@ input.ini-mod {
 	border-radius: 0;
 	
 	.ability {
-		position: relative;
-	  text-align: center;
+		// position: relative;
 	  padding-bottom: 0;
 	  border-left: 1px solid var(--faint-color);
-	  display: flex;
-	  flex: 1 0 60px;
-	  flex-direction: column;
-	  padding: 0 4px;
+	  flex: 1 0 61px;
+		padding: 0 4px;
+		
+		.wrapper {
+			text-align: center;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			width: 50px;
+			margin: 0 auto;
+		}
 
 		.ability-name {
 			position: relative;
@@ -454,7 +460,7 @@ input.ini-mod {
 
 		.ability-score {
 			font-size: 24px;
-	    margin: 2px 0 2px 0;
+	    margin: 2px 0 3px 0;
 	    padding: 2px 0 0 0;
 	    text-align: center;
 	    font-family: var(--modesto);
@@ -470,7 +476,7 @@ input.ini-mod {
 		  position: relative;
 		  justify-content: space-between;
 		  align-items: center;
-		  width: 50px;
+		  width: 100%;
 		  text-align: center;
 			display: flex;
 			height: auto;
@@ -478,11 +484,12 @@ input.ini-mod {
 			padding: 0;
 			opacity: initial;
 		  font-size: 10px;
-		  border: 1px solid var(--tertiary-color);
+		  box-shadow: 0 0 0 1px var(--tertiary-color);
 			border-radius: 5px;
 
 			&:hover {
 				border-radius: 0;
+				box-shadow: 0 0 0 1px var(--note-background);
 			}
 
 			&:hover ~ .mod-label {
@@ -497,24 +504,24 @@ input.ini-mod {
 		
 		.mod-label {
 			position: absolute;
-			bottom: 3px;
+			top: 47px;
 			display: none;
 			background: var(--note-background);
 			color: #fff;
-			font-size: 11px;
+			font-size: 10px;
 			height: 17px;
-			padding: 2px 4px;
+			padding: 3px 4px 2px 4px;
 			white-space: nowrap;
 			
 			&.ability-mod-label {
-				left: 10px;
-				transform: translate(-100%, 0);
+				right: 25px;
+				transform: translateX(-26px);
 				border-radius: 5px 0 0 5px;
 			}
 
 			&.save-mod-label {
-				right: 10px;
-				transform: translate(100%, 0);
+				left: 25px;
+				transform: translateX(26px);
 				border-radius: 0 5px 5px 0;
 			}
 		}
@@ -527,19 +534,12 @@ input.ini-mod {
 			opacity: .4;
 			transition: opacity .3s ease;
 			cursor: pointer;
-			padding: 0 3px;
-			text-align: right;
 		}
 
 		.ability-mod {
 			background: var(--ability-accent);
 			color: #fff;
-			border-radius: 3px 0 0 3px;
-		}
-
-		.ability-save {
-			border-left: 1px solid var(--primary-color);
-			text-align: left;
+			border-radius: 5px 0 0 5px;
 		}
 
 		.ability-mod:hover,

@@ -223,6 +223,7 @@
 					<ul class="ability-scores">
 						{{#each data.abilities as |ability id|}}
 						<li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
+							<div class="wrapper">
 							<h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
               <div class="value">
                 <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
@@ -236,6 +237,7 @@
 							</div>
 							<span class="mod-label ability-mod-label">{{ localize 'TIDY5E.AbbrMod' }}</span>
 							<span class="mod-label save-mod-label">{{ localize 'TIDY5E.AbbrSavingThrow' }}</span>
+							</div>
 						</li>
 						{{/each}}
 					</ul>

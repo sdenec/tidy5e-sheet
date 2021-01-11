@@ -163,6 +163,12 @@
       margin-right: 4px;
       color: var(--secondary-color);
     }
+
+    .level {
+      [contenteditable] {
+        color: var(--secondary-color);
+      }
+    }
   }
 
   .origin-summary {
