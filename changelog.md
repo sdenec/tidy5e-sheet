@@ -10,6 +10,14 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.7*
+- french translation update thanks Github @Nildran
+- tried to fix strange behaviour of ability hover
+- minor css fix for NPC CR text color
+
+*Version 0.4.6*
+- fixed character art popup when pressing enter/return while editing an input field
+
 *Version 0.4.5*
 - fixed search for grid layout
 
