@@ -43,6 +43,17 @@
 
 	"TIDY5E.ConvertCurrencyHint": "convertir la monnaie en devise la plus haute",
 	"TIDY5E.ConvertCurrencyButton": "convertir",
+	
+	"TIDY5E.CurrencyAbbrCP" : "PC",
+	"TIDY5E.CurrencyAbbrSP" : "PA",
+	"TIDY5E.CurrencyAbbrGP" : "PO",
+	"TIDY5E.CurrencyAbbrEP" : "PE",
+	"TIDY5E.CurrencyAbbrPP" : "PP",
+	
+	"TIDY5E.SearchItem" : "rechercher objet",
+	"TIDY5E.SearchSpell" : "rechercher sort",
+	"TIDY5E.SearchClear" : "annuler la recherche",
+	"TIDY5E.SearchHint" : "Entrer ce que vous recherchez",
 
 	"TIDY5E.Encumbrance": "Encombrement",
 
@@ -73,6 +84,16 @@
 	"TIDY5E.Environment" : "Environnement",
 
 	"TIDY5E.AbbrMod" : "Mod",
+	"TIDY5E.AbbrSavingThrow" : "Sauvegarde",
+	"TIDY5E.SpellAttackMod" : "Bonus d'attaque",
+	"TIDY5E.PreparedSpells" : "Sorts préparés",
+	"TIDY5E.PreparedSpellsMax" : "Maximum de sorts préparés",
+	"TIDY5E.Components" : "Compo",
+	"TIDY5E.SpellSchool" : "École",
+	
+	"TIDY5E.AttunementWarning": "Attention : Vous ne pouvez pas harmoniser plus de {number} objets !",
+	"TIDY5E.AttunementItems": "Objets harmonisés",
+	"TIDY5E.AttunementMax": "Harmonisation maximum",
 
 
 	"TIDY5E.Settings.PcLabel" : "PC Sheets: ",
