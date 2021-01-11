@@ -2807,7 +2807,7 @@
 
 .tidy5e.sheet.actor .list-layout .items-list .item .item-name {
   display: flex;
-  flex: 1;
+  flex: 1 1 1px;
   cursor: default;
   flex-wrap: nowrap;
   font-size: 12px;
@@ -3962,6 +3962,23 @@
 
 .tidy5e.sheet.actor.npc .spellbook-empty .notice {
   font-size: 12px;
+}
+
+.tidy5e.sheet.actor.npc .left-notes.hidden {
+  display: none;
+}
+
+.tidy5e.sheet.actor.npc .toggle-personality-info {
+  padding: 20px 4px;
+  background: var(--faint-color);
+  border-radius: 3px;
+  margin-right: 4px;
+  color: var(--tertiary-color);
+  cursor: pointer;
+}
+
+.tidy5e.sheet.actor.npc .toggle-personality-info:hover {
+  color: var(--secondary-color);
 }
 
 .tidy5e.sheet.actor.vehicle {

@@ -481,4 +481,21 @@
     }
   }
 
+  .left-notes.hidden {
+    display: none;
+  }
+
+  .toggle-personality-info {
+    padding: 20px 4px;
+    background: var(--faint-color);
+    border-radius: 3px;
+    margin-right: 4px;
+    color: var(--tertiary-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+
 }

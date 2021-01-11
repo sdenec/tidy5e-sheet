@@ -263,7 +263,8 @@
 
       {{!-- Biography Tab --}}
       <div class="tab biography" data-group="primary" data-tab="biography">
-        <div class="left-notes note-entries">
+        <div class="toggle-personality-info" title="{{localize 'TIDY5E.TogglePersonalityInfo'}}">{{#if actor.flags.tidy5e-sheet.showNpcPersonalityInfo}}<i class="fas fa-angle-double-left"></i>{{else}}<i class="fas fa-angle-double-right"></i>{{/if}}</div>
+        <div class="left-notes note-entries hidden">
           <article>
 						<div class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</div>
 						{{editor content=data.details.trait target="data.details.trait" button=true owner=owner editable=editable}}

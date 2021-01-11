@@ -11,9 +11,11 @@ Additional Translations generously provided by:
 Thank you very much!
 
 *Version 0.4.7*
-- french translation update thanks Github @Nildran
-- tried to fix strange behaviour of ability hover
+- french translation update and localization fixes thanks Github @Nildran
+- tried to fix strange hover behaviour of ability mods
 - minor css fix for NPC CR text color
+- NPC sheets now have a toggle button for the personality infos (now hidden by default) in the biography tab
+- fix to prevent items sometimes becoming invisible when toggling the item details
 
 *Version 0.4.6*
 - fixed character art popup when pressing enter/return while editing an input field
