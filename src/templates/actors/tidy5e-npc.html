@@ -159,19 +159,21 @@
           <ul class="ability-scores">
             {{#each data.abilities as |ability id|}}
             <li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
-              <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
-              <div class="value">
-                <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
+							<div class="wrapper">
+                <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
+                <div class="value">
+                  <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
+                </div>
+                <div class="ability-modifiers value-footer">
+                  <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+                  <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
+                  <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
+                  {{{ability.icon}}}</a>
+                  <span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
+                </div>
+                <span class="mod-label ability-mod-label">{{ localize 'TIDY5E.AbbrMod' }}</span>
+                <span class="mod-label save-mod-label">{{ localize 'TIDY5E.AbbrSavingThrow' }}</span>
               </div>
-              <div class="ability-modifiers value-footer">
-                <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
-                <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
-                <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
-                {{{ability.icon}}}</a>
-                <span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
-              </div>
-							<span class="mod-label ability-mod-label">{{ localize 'TIDY5E.AbbrMod' }}</span>
-							<span class="mod-label save-mod-label">{{ localize 'TIDY5E.AbbrSavingThrow' }}</span>
             </li>
             {{/each}}
           </ul>
@@ -261,7 +263,8 @@
 
       {{!-- Biography Tab --}}
       <div class="tab biography" data-group="primary" data-tab="biography">
-        <div class="left-notes note-entries">
+        <div class="toggle-personality-info" title="{{localize 'TIDY5E.TogglePersonalityInfo'}}">{{#if actor.flags.tidy5e-sheet.showNpcPersonalityInfo}}<i class="fas fa-angle-double-left"></i>{{else}}<i class="fas fa-angle-double-right"></i>{{/if}}</div>
+        <div class="left-notes note-entries hidden">
           <article>
 						<div class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</div>
 						{{editor content=data.details.trait target="data.details.trait" button=true owner=owner editable=editable}}

@@ -204,6 +204,14 @@ export default class Tidy5eNPC extends ActorSheet5e {
 		tidy5eShowActorArt(html, actor);
 
     
+    html.find(".toggle-personality-info").click( async (event) => {
+       if(actor.getFlag('tidy5e-sheet', 'showNpcPersonalityInfo')){
+        await actor.unsetFlag('tidy5e-sheet', 'showNpcPersonalityInfo');
+      } else {
+        await actor.setFlag('tidy5e-sheet', 'showNpcPersonalityInfo', true);
+      }
+    });
+
     html.find(".rollable[data-action=rollInitiative]").click(function(){
       return actor.rollInitiative({createCombatants: true});
     });
@@ -370,9 +378,10 @@ async  function resetTempHp(app, html, data){
 // Set Sheet Classes
 async function setSheetClasses(app, html, data) {
   const {token} = app;
-  // if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
-	// 	html.find('.tidy5e-sheet .items-list').addClass('alt-context');
-  // }
+  const actor = app.actor;
+  if(actor.getFlag('tidy5e-sheet', 'showNpcPersonalityInfo')){
+    html.find('.tidy5e-sheet .left-notes').removeClass('hidden');
+  }
   if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
 		if(game.settings.get("tidy5e-sheet", "useClassicControls")){
 			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');

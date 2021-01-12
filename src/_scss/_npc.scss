@@ -163,6 +163,12 @@
       margin-right: 4px;
       color: var(--secondary-color);
     }
+
+    .level {
+      [contenteditable] {
+        color: var(--secondary-color);
+      }
+    }
   }
 
   .origin-summary {
@@ -472,6 +478,23 @@
   .spellbook-empty {
     .notice {
       font-size: 12px;
+    }
+  }
+
+  .left-notes.hidden {
+    display: none;
+  }
+
+  .toggle-personality-info {
+    padding: 20px 4px;
+    background: var(--faint-color);
+    border-radius: 3px;
+    margin-right: 4px;
+    color: var(--tertiary-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--secondary-color);
     }
   }
 

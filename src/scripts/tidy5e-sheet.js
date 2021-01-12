@@ -2,6 +2,7 @@ import { DND5E } from "../../../systems/dnd5e/module/config.js";
 import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
 import ActorSheet5eCharacter from "../../../systems/dnd5e/module/actor/sheets/character.js";
 import { tidy5eSettings } from "./app/settings.js";
+// import { Tidy5eSettings } from './app/settings.js';
 
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
 import { tidy5eListeners } from "./app/listeners.js";
@@ -370,6 +371,30 @@ async function abbreviateCurrency(app,html,data) {
 	});
 }
 
+// transform DAE formulas for maxPreparesSpells
+function tidyCustomEffect(actor, change) {
+  if (change.key !== "data.details.maxPreparedSpells") return;
+  if (change.value?.length > 0) {
+    let oldValue =  getProperty(actor.data, change.key) || 0;
+    let changeText = change.value.trim();
+    let op = "none";
+    if (["+","-","/","*","="].includes(changeText[0])) {
+      op = changeText[0];
+      changeText = changeText.slice(1);
+    }
+    const value = new Roll(changeText, actor.getRollData()).roll().total;
+    oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
+    switch (op) {
+      case "+": return setProperty(actor.data, change.key, oldValue + value);
+      case "-": return setProperty(actor.data, change.key, oldValue - value);
+      case "*": return setProperty(actor.data, change.key, oldValue * value);
+      case "/": return setProperty(actor.data, change.key, oldValue / value);
+      case "=": return setProperty(actor.data, change.key, value);
+      default:  return setProperty(actor.data, change.key, value);
+    }
+  }
+}
+
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -436,6 +461,8 @@ async function setSheetClasses(app, html, data) {
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
 	preloadTidy5eHandlebarsTemplates();
+	Hooks.on("applyActiveEffect", tidyCustomEffect);
+	// Tidy5eSettings.init();
 });
 
 // Register Tidy5e Sheet and make default character sheet
@@ -455,7 +482,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	countAttunedItems(app, html, data);
 	abbreviateCurrency(app,html,data);
 	spellAttackMod(app,html,data);
-	console.log(data);
+	// console.log(data);
 	// console.log("Tidy5e Sheet rendered!");
 });
 
