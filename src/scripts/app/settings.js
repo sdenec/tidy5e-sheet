@@ -1,16 +1,16 @@
-export class Tidy5eSettings extends FormApplication {
+export class Tidy5eUserSettings extends FormApplication {
 	static init() {
-		game.settings.registerMenu('tidy5e-sheet', 'menu', {
+		game.settings.registerMenu('tidy5e-sheet', 'userMenu', {
       name: '',
       label: 'Sheet Settings',
       icon: 'fas fa-scroll',
-      type: Tidy5eSettings,
+      type: Tidy5eUserSettings,
       restricted: false
     });
 
 // open a dialogue to reload the window when saving
-/*
-    game.settings.register('tidy5e-sheet', 'world-settings', {
+
+    game.settings.register('tidy5e-sheet', 'user-settings', {
       name: 'Settings object for world level markdown editor settings',
       type: Object,
       default: {
@@ -35,17 +35,8 @@ export class Tidy5eSettings extends FormApplication {
         }).render(true);
       }
     })
-*/
 
-    game.settings.register('tidy5e-sheet', 'vim-mode', {
-      name: 'VIM Keybindings',
-      hint: 'Enable VIM keybindings for the markdown editor. [User Setting]',
-      scope: 'client',
-      default: false,
-      type: Boolean,
-      restricted: false,
-      config: true
-    });
+
 	}
 
 	// settings template
@@ -61,7 +52,7 @@ export class Tidy5eSettings extends FormApplication {
 				{
 					navSelector: '.tabs',
 					contentSelector: 'form',
-					initial: 'Player Settings'
+					initial: 'Players'
 				} 
 			],
 			submitOnClose: true
@@ -69,12 +60,12 @@ export class Tidy5eSettings extends FormApplication {
 	}
 
   static get isRichTextActive() {
-    const settings = game.settings.get('tidy5e-sheet', 'world-settings');
+    const settings = game.settings.get('tidy5e-sheet', 'user-settings');
     return settings.richText;
   }
 
   static get isChatActive() {
-    const settings = game.settings.get('tidy5e-sheet', 'world-settings');
+    const settings = game.settings.get('tidy5e-sheet', 'user-settings');
     return settings.chat;    
   }
 
@@ -89,7 +80,7 @@ export class Tidy5eSettings extends FormApplication {
 	}
 
 	getSettingsData() {		
-		return game.settings.get('tidy5e-sheet', 'world-settings');
+		return game.settings.get('tidy5e-sheet', 'user-settings');
 	}
 
 	getData() {
@@ -104,35 +95,15 @@ export class Tidy5eSettings extends FormApplication {
 
 	_updateObject(ev, formData) {
     const data = expandObject(formData);
-    game.settings.set('tidy5e-sheet', 'world-settings', data);
+    game.settings.set('tidy5e-sheet', 'user-settings', data);
 	}
 }
 
 export const tidy5eSettings = function () {
 	
-	// Classic Item Controls for PC Sheets
-	game.settings.register("tidy5e-sheet", "useClassicControls", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.UseClassicControls.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.UseClassicControls.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-	
-	// Show Roll buttons in context Menu
-	game.settings.register("tidy5e-sheet", "contextRollButtons", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}/${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ContextRollButtons.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.ContextRollButtons.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-	
 	// Color Theme
 	game.settings.register("tidy5e-sheet", "colorScheme", {
-    name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")}: ${game.i18n.localize("TIDY5E.Settings.SheetTheme.name")}`,
+    name: `${game.i18n.localize("TIDY5E.Settings.SheetTheme.name")}`,
     hint: game.i18n.localize("TIDY5E.Settings.SheetTheme.hint"),
 		scope: "user",
 		config: true,
@@ -147,7 +118,208 @@ export const tidy5eSettings = function () {
      }
 	});
 	
+  const colorScheme = game.settings.get('tidy5e-sheet', "colorScheme");
+  if (colorScheme === 'dark') {
+    document.body.classList.add("tidy5eDark");
+  }
+
+	// Classic Item Controls for PC Sheets
+	game.settings.register("tidy5e-sheet", "useClassicControls", {
+		name: `${game.i18n.localize("TIDY5E.Settings.UseClassicControls.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.UseClassicControls.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
 	
+	// Show Roll buttons in context Menu
+	game.settings.register("tidy5e-sheet", "contextRollButtons", {
+		name: `${game.i18n.localize("TIDY5E.Settings.ContextRollButtons.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.ContextRollButtons.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	
+	game.settings.register("tidy5e-sheet", "showTraitLabels", {
+		name: `${game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+	// PC Sheet Settings
+	
+	game.settings.register("tidy5e-sheet", "hideClassList", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideClassList.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.HideClassList.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+	game.settings.register("tidy5e-sheet", "noInspirationAnimation", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableInspirationAnimation.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.DisableInspirationAnimation.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+	game.settings.register("tidy5e-sheet", "hideIfZero", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideIfZero.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.HideIfZero.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+	game.settings.register("tidy5e-sheet", "inspirationOnHover", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.InspirationOnHover.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.InspirationOnHover.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+	game.settings.register("tidy5e-sheet", "exhaustionOnHover", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	
+	game.settings.register("tidy5e-sheet", "disableHpBar", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.DisableHpBar.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	
+	game.settings.register("tidy5e-sheet", "disableHpOverlay", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+	game.settings.register("tidy5e-sheet", "pcToggleTraits", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.PcToggleTraits.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.PcToggleTraits.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+	
+  game.settings.register("tidy5e-sheet", "moveTraits", {
+		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.MoveTraits.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.MoveTraits.hint"),
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+	});
+
+	// NPC Sheet Settings
+
+	game.settings.register("tidy5e-sheet", "disableNpcHpBar", {
+		name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.DisableHpBar.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+  game.settings.register("tidy5e-sheet", "disableNpcHpOverlay", {
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+	});
+	
+  game.settings.register("tidy5e-sheet", "npcAlwaysShowTraits", {
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.AlwaysShowTraits.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.AlwaysShowTraits.hint"),
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+	});
+	
+  game.settings.register("tidy5e-sheet", "npcAlwaysShowSkills", {
+    name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.AlwaysShowSkills.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.AlwaysShowSkills.hint"),
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
+	// Vehicle Sheet Settings
+	
+	game.settings.register("tidy5e-sheet", "disableVehicleHpBar", {
+		name: `${game.i18n.localize("TIDY5E.Settings.VehicleLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.DisableHpBar.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+  game.settings.register("tidy5e-sheet", "disableVehicleHpOverlay", {
+    name: `${game.i18n.localize("TIDY5E.Settings.VehicleLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+	});
+
+	
+	//
+	// GM Options
+	//
+	
+	// Disable Right Click
+	game.settings.register("tidy5e-sheet", "disableRightClick", {
+    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableRightClick.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.DisableRightClick.hint"),
+    scope: "world",
+    config: true,
+    default: false,
+		type: Boolean
+	});
+
+  // Expanded Sheet
+  game.settings.register("tidy5e-sheet", "useExpandedSheet", {
+    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.UseExpandedSheet.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.UseExpandedSheet.hint"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+	});
+	
+  // Portrait Settings
+	// Portrait Style
 	game.settings.register("tidy5e-sheet", "portraitStyle", {
 		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.UseRoundPortraits.hint"),
@@ -163,26 +335,35 @@ export const tidy5eSettings = function () {
 		},
   	default: "all"
 	});
-
-  // Tidy5e Global Settings
-  game.settings.register("tidy5e-sheet", "useExpandedSheet", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.UseExpandedSheet.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.UseExpandedSheet.hint"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-	});
 	
-	game.settings.register("tidy5e-sheet", "disableRightClick", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableRightClick.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.DisableRightClick.hint"),
-    scope: "world",
-    config: true,
-    default: false,
-		type: Boolean
+	game.settings.register("tidy5e-sheet", "hpOverlayBorder", {
+		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.hint"),
+		scope: "world",
+		config: true,
+		default: 0,
+		type: Number
 	});
 
+  game.settings.register("tidy5e-sheet", "npcHpOverlayBorder", {
+    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.hint"),
+    scope: "world",
+    config: true,
+    default: 0,
+    type: Number
+	});
+
+  game.settings.register("tidy5e-sheet", "vehicleHpOverlayBorder", {
+    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.VehicleLabel")}: ${game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.hint"),
+    scope: "world",
+    config: true,
+    default: 0,
+    type: Number
+	});
+
+	// Sheet edit permissions
   game.settings.register("tidy5e-sheet", "gmCanAlwaysEdit", {
     name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.GmEditPermission.name")}`,
     hint: game.i18n.localize("TIDY5E.Settings.GmEditPermission.hint"),
@@ -201,6 +382,7 @@ export const tidy5eSettings = function () {
     type: Boolean
 	});
 	
+	// Item quantity
 	game.settings.register("tidy5e-sheet", "alwaysShowQuantity", {
     name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.AlwaysShowQty.name")}`,
     hint: game.i18n.localize("TIDY5E.Settings.AlwaysShowQty.hint"),
@@ -210,6 +392,7 @@ export const tidy5eSettings = function () {
     type: Boolean
   });
 
+	// Tracker Settings
 	/* currently broken
 	game.settings.register("tidy5e-sheet", "exhaustionEffects", {
 		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.name")}`,
@@ -239,100 +422,19 @@ export const tidy5eSettings = function () {
 		type: Boolean
 	});
 	
-
-	game.settings.register("tidy5e-sheet", "disableHpBar", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}/${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.DisableHpBar.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-
-	game.settings.register("tidy5e-sheet", "hpOverlayBorder", {
-		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.hint"),
-		scope: "world",
-		config: true,
-		default: 0,
-		type: Number
-	});
-	
-	game.settings.register("tidy5e-sheet", "disableHpOverlay", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-
-  game.settings.register("tidy5e-sheet", "vehicleHpOverlayBorder", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.VehicleLabel")}: ${game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.hint"),
-    scope: "world",
-    config: true,
-    default: 0,
-    type: Number
-	});
-
-  game.settings.register("tidy5e-sheet", "disableVehicleHpOverlay", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.VehicleLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-
-  // Tidy5e NPC Settings
-  game.settings.register("tidy5e-sheet", "npcHpOverlayBorder", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.HpOverlayBorder.hint"),
-    scope: "world",
-    config: true,
-    default: 0,
-    type: Number
-	});
-	
-  game.settings.register("tidy5e-sheet", "disableNpcHpOverlay", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-  
+	// NPC Resting
   game.settings.register("tidy5e-sheet", "showNpcResting", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ShowNpcRest.name")}`,
+    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.ShowNpcRest.name")}`,
     hint: game.i18n.localize("TIDY5E.Settings.ShowNpcRest.hint"),
     scope: "world",
     config: true,
     default: false,
     type: Boolean
-  });
+	});
 
-  game.settings.register("tidy5e-sheet", "npcAlwaysShowTraits", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.AlwaysShowTraits.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.AlwaysShowTraits.hint"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-
-  game.settings.register("tidy5e-sheet", "npcAlwaysShowSkills", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.AlwaysShowSkills.name")}`,
-    hint: game.i18n.localize("TIDY5E.Settings.AlwaysShowSkills.hint"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-
+	// Link Marker
   game.settings.register("tidy5e-sheet", "npcLinkMarker", {
-    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")} ${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.LinkMarker.name")}`,
+    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.LinkMarker.name")}`,
     hint: game.i18n.localize("TIDY5E.Settings.LinkMarker.hint"),
     scope: "world",
     config: true,
@@ -343,85 +445,5 @@ export const tidy5eSettings = function () {
 			"both": game.i18n.localize("TIDY5E.Settings.LinkMarker.both")
 		},
 		default: 'default'
-  });
-
-  // Tidy5e User Settings
-	
-  const colorScheme = game.settings.get('tidy5e-sheet', "colorScheme");
-  if (colorScheme === 'dark') {
-    document.body.classList.add("tidy5eDark");
-  }
-	
-	game.settings.register("tidy5e-sheet", "hideClassList", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideClassList.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.HideClassList.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
 	});
-
-	game.settings.register("tidy5e-sheet", "noInspirationAnimation", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableInspirationAnimation.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.DisableInspirationAnimation.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-	
-	game.settings.register("tidy5e-sheet", "hideIfZero", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideIfZero.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.HideIfZero.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-	
-	game.settings.register("tidy5e-sheet", "inspirationOnHover", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.InspirationOnHover.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.InspirationOnHover.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-
-	game.settings.register("tidy5e-sheet", "exhaustionOnHover", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-
-	game.settings.register("tidy5e-sheet", "pcToggleTraits", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.PcToggleTraits.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.PcToggleTraits.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-
-	game.settings.register("tidy5e-sheet", "showTraitLabels", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}/${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.hint"),
-		scope: "user",
-		config: true,
-		default: false,
-		type: Boolean
-	});
-	
-  game.settings.register("tidy5e-sheet", "moveTraits", {
-		name: `${game.i18n.localize("TIDY5E.Settings.UserLabel")} ${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.MoveTraits.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.MoveTraits.hint"),
-    scope: "user",
-    config: true,
-    default: false,
-    type: Boolean
-	});
-
 }
