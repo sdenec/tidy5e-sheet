@@ -16,6 +16,7 @@ Thank you very much!
 - minor css fix for NPC CR text color
 - NPC sheets now have a toggle button for the personality infos (now hidden by default) in the biography tab
 - fix to prevent items sometimes becoming invisible when toggling the item details
+- you now can use DAE to set a "custom" formula for data.details.maxSpellPreparation to calculate your available spell preparations thanks @tposney!
 
 *Version 0.4.6*
 - fixed character art popup when pressing enter/return while editing an input field
