@@ -2,7 +2,7 @@ import { DND5E } from "../../../systems/dnd5e/module/config.js";
 import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
 import ActorSheet5eCharacter from "../../../systems/dnd5e/module/actor/sheets/character.js";
 import { tidy5eSettings } from "./app/settings.js";
-// import { Tidy5eSettings } from './app/settings.js';
+// import { Tidy5eUserSettings } from './app/settings.js';
 
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
 import { tidy5eListeners } from "./app/listeners.js";
@@ -350,14 +350,15 @@ async function addClassList(app, html, data) {
 	}
 }
 
-// Calculare Spell Attack modifier
+// Calculate Spell Attack modifier
 async function spellAttackMod(app,html,data){
 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
 			prof = actor.data.data.attributes.prof,
 			spellAbility = html.find('.spellcasting-attribute select option:selected').val(),
-			abilityMod = actor.data.data.abilities[spellAbility].mod,
+			abilityMod = spellAbility != '' ? actor.data.data.abilities[spellAbility].mod : 0,
 			spellAttackMod = prof + abilityMod,
 			text = spellAttackMod > 0 ? '+'+spellAttackMod : spellAttackMod;
+			console.log(spellAbility);
 	// console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
 	html.find('.spell-mod .spell-attack-mod').html(text);
 }
@@ -462,7 +463,7 @@ async function setSheetClasses(app, html, data) {
 Hooks.once("init", () => {
 	preloadTidy5eHandlebarsTemplates();
 	Hooks.on("applyActiveEffect", tidyCustomEffect);
-	// Tidy5eSettings.init();
+	// Tidy5eUserSettings.init();
 });
 
 // Register Tidy5e Sheet and make default character sheet
