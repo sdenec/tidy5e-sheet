@@ -11,7 +11,7 @@ Additional Translations generously provided by:
 Thank you very much!
 
 *Version 0.4.8*
-- added settings submenu
+- fix for ability rolls
 
 *Version 0.4.7*
 - french translation update and localization fixes thanks Github @Nildran

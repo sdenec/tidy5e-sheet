@@ -2,7 +2,7 @@ import { DND5E } from "../../../systems/dnd5e/module/config.js";
 import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
 import ActorSheet5eCharacter from "../../../systems/dnd5e/module/actor/sheets/character.js";
 import { tidy5eSettings } from "./app/settings.js";
-import { Tidy5eUserSettings } from './app/settings.js';
+// import { Tidy5eUserSettings } from './app/settings.js';
 
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
 import { tidy5eListeners } from "./app/listeners.js";
@@ -463,7 +463,7 @@ async function setSheetClasses(app, html, data) {
 Hooks.once("init", () => {
 	preloadTidy5eHandlebarsTemplates();
 	Hooks.on("applyActiveEffect", tidyCustomEffect);
-	Tidy5eUserSettings.init();
+	// Tidy5eUserSettings.init();
 });
 
 // Register Tidy5e Sheet and make default character sheet

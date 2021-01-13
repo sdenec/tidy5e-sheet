@@ -2,7 +2,7 @@ export class Tidy5eUserSettings extends FormApplication {
 	static init() {
 		game.settings.registerMenu('tidy5e-sheet', 'userMenu', {
       name: '',
-      label: 'Sheet Settings',
+      label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
       icon: 'fas fa-scroll',
       type: Tidy5eUserSettings,
       restricted: false
@@ -59,15 +59,15 @@ export class Tidy5eUserSettings extends FormApplication {
 		}
 	}
 
-  static get isRichTextActive() {
-    const settings = game.settings.get('tidy5e-sheet', 'user-settings');
-    return settings.richText;
-  }
+  // static get isRichTextActive() {
+  //   const settings = game.settings.get('tidy5e-sheet', 'user-settings');
+  //   return settings.richText;
+  // }
 
-  static get isChatActive() {
-    const settings = game.settings.get('tidy5e-sheet', 'user-settings');
-    return settings.chat;    
-  }
+  // static get isChatActive() {
+  //   const settings = game.settings.get('tidy5e-sheet', 'user-settings');
+  //   return settings.chat;    
+  // }
 
 	constructor(object = {}, options) {
 		super(object, options);
@@ -75,17 +75,19 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	_getHeaderButtons() {
 		let btns = super._getHeaderButtons();
-		btns[0].label = "Save & Close";
+		btns[0].label = "Close";
 		return btns;
 	}
 
 	getSettingsData() {		
+		console.log(game.settings);
 		return game.settings.get('tidy5e-sheet', 'user-settings');
 	}
 
 	getData() {
 		let data = super.getData();
 		data.settings = this.getSettingsData();
+		console.log(data);
 		return data;
 	}
 
@@ -96,8 +98,15 @@ export class Tidy5eUserSettings extends FormApplication {
 	_updateObject(ev, formData) {
     const data = expandObject(formData);
     game.settings.set('tidy5e-sheet', 'user-settings', data);
-	}
+	}	
+	
 }
+
+Hooks.on("renderTidy5eUserSettings", () => {
+	if (!game.user.isGM) {
+		document.querySelector('.tidy5e-sheet.settings .item.gm-only').remove();
+	}
+});
 
 export const tidy5eSettings = function () {
 	
