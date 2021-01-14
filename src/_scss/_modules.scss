@@ -1,0 +1,531 @@
+// ------------------------------------
+//   Support Better Rolls / Minor QOL  
+// ------------------------------------
+
+.tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons {
+	margin: 4px 0; 
+	
+	.tag {
+		border: none;
+		border-radius: 0;
+		margin: 2px 4px 2px 0;
+		padding: 0;
+		background: none;
+
+		button {
+			border: 1px solid rgba(0,0,0,.2);
+			background: rgba(0,0,0,.4);
+			color: rgba(255,255,255,.8);
+			padding: 2px 4px;
+			box-shadow: none;
+			cursor: pointer;
+			line-height: 1;
+			font-size: 12px;
+
+			&:hover {
+				background: rgba(0,0,0,.6);
+			}
+		}
+	}
+}
+
+.tidy5e.sheet.item .sheet-body .tab.item-betterRolls {
+	.item-betterRolls input[type="text"], 
+	.item-betterRolls select {
+		height: 24px;
+		border: none;
+		background: rgba(255,255,255,.3); 
+	}
+
+	.br5e-consume-box {
+		margin-top: 4px;
+    border: none;
+    border-top: 1px solid var(--light-color);
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+	}
+
+	.br5e-consume-box span {
+		text-align: left;
+
+		label {
+			padding-left: 0;
+		}
+	}
+}
+
+// ------------------------
+//    Support Magic Items  
+// ------------------------
+
+.tidy5e.sheet.actor .magic-items-spells-content,
+.tidy5e.sheet.actor .magic-items-feats-content  {
+
+	padding: 4px 6px;
+	border: 1px solid yellow;
+	box-shadow: 0 0 10px 0 yellow inset;
+	border-radius: 5px;
+	margin: 8px 0 0 0;
+
+	.magic-items-head {
+		margin: 0;
+		padding: 0 0 2px 0;
+
+		h3 {
+			font-size: 13px;
+		}
+	}
+
+	.spellbook-header div:not(.spell-slots):not(.spell-rechargeable) {
+		color: var(--light-color);
+	}
+
+	.item-name {
+		padding: 0 8px 0 0;
+	}
+
+	.spell-slots {
+		padding: 0 8px 0 0;
+
+		input:last-child {
+			text-align: left;
+		}
+	}
+
+	.spell-level,
+	.spell-consumption,
+	.spell-upcast {
+		flex: 0 0 70px;
+		text-align: center;
+	}
+
+	.spellbook-header .spell-level {
+	  text-align: right;
+	  padding-right: 20px;
+	}
+
+	// .spellbook-header .spell-rechargeable+.spell-level {
+	// 	flex-basis: calc(100% - 140px);
+	// }
+
+	.spell-rechargeable {
+		flex: 0 0 1px;
+		white-space: nowrap;
+		padding: 0 8px 0 0;
+	}
+
+	.item-list {
+		.spell-level,
+		.spell-consumption,
+		.spell-upcast,
+		.spell-slots,
+		.spell-rechargeable {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 12px;
+			color: var(--secondary-color);
+			border-left: 1px solid var(--faint-color);
+		}
+
+		.spell-slots {
+			border: none;
+			margin-left: 8px;
+			flex: 0 0 1px;
+
+			input {
+				width: 20px;
+				height: 16px;
+				background:var(--faint-color);
+				padding: 0 2px;
+				border-radius: 3px;
+			}
+
+			input:first-child {
+				text-align: right;
+			}
+		}
+
+		.spell-rechargeable {
+			border: none;
+		}
+
+	}
+}//.tidy5e.sheet.actor .magic-items-spells-content
+
+.tidy5e.sheet.actor .grid-layout .magic-items-spells-content .item-list {
+
+	display: block;
+
+	.item {
+		width: 100%;
+		height: auto;
+		margin: 2px 0;
+		box-shadow: none;
+
+		.item-name {
+			display: flex;
+			flex: 1;
+			cursor: default;
+			flex-wrap: nowrap;
+			font-size: 12px;
+
+			&.rollable:hover {
+				color: inherit;
+			}
+
+		}
+
+		h4 {
+			display: flex;
+			align-items: center;
+			flex: initial;
+			text-overflow: ellipsis;
+			font-weight: 400;
+		}
+
+		.rollable  h4 {
+			cursor: pointer;
+		}
+
+		.item-image {
+			height: 24px;
+			margin-right: 4px;
+			box-shadow: none;
+		}
+
+	}//.item
+}//.tidy5e.sheet.actor .grid-layout .magic-items-spells-content .item-list
+
+
+// Magic Item Sheet
+.tidy5e.sheet.item .sheet-body .tab.magic-items {
+
+	input[type=checkbox] {
+		margin: 2px 2px 2px 4px !important;
+	}
+
+	input[name="flags.magicitems.equipped"] {
+		margin-right: 8px !important;
+	}
+
+	.form-group label.checkbox {
+		background: rgba(255,255,255,0.3);
+
+		&:hover {
+			background: rgba(255,255,255,0.1);
+		}
+	}
+
+	.spell-drag-content {
+		height: 70px;
+    text-align: center;
+    color: #828180;
+    line-height: 5;
+    border: 2px #828180 dashed;
+	}
+
+	.magic-item-sort .form-fields label {
+	    flex: unset;
+	    background: transparent;
+    	align-items: center;
+    	margin-left: 8px;
+    	border: none;
+    	box-shadow: none;
+
+	    input {
+	    	width: 16px;
+	    	position: relative;
+		    top: -1px;
+				margin: 0 2px 0 0;
+				
+				&::after {
+					content: none;
+				}
+	    }
+	}
+
+	.magic-items-content {
+
+		font-size: 13px;
+
+		select.magic-item-destroy-type,
+		select.magic-item-destroy-check {
+    	flex: 0.4;
+    	margin-left: 4px;
+    }
+
+    .magic-item-list {
+			clear: both;
+			padding: 0;
+
+			.item-list {
+				margin: 0;
+				padding: 0;
+			}
+
+			// .items-header {
+			// 	margin: 0 0 .25rem 0;
+			// 	padding-top: .5rem;
+			// 	line-height: 20px;
+			// 	background: transparent;
+			// 	border: none;
+			// 	border-top: 1px solid var(--faintest-color);
+			// 	font-family: var(--signika);
+			// }
+
+			.item {
+				padding: 0;
+			  line-height: 26px;
+		    height: 26px;
+			  background: var(--faintest-color);
+			  border: none;
+			  border-radius: 5px;
+			  margin: 2px 0;
+			  overflow: hidden; 
+			  align-items: center;
+
+			  .item-name {
+			  	align-items: center;
+			  }
+
+			  .item-image {
+			    flex: 0 0 24px;
+			  	height: 24px;
+			    background-size: cover;
+			    margin-right: 4px;
+			  }
+
+			  h4 {
+			  	margin: 0;
+			  	line-height: 24px;
+			  	height: 24px;
+			  }
+
+			  select,
+			  input:not([type=checkbox]) {
+			  	line-height: 20px;
+			  	height: 20px;
+					background: rgba(255,255,255,0.3);
+			  }
+
+			  .item-controls {
+			  	flex: 0 0 1px;
+			    height: 24px;
+			    line-height: 24px;
+			    display: flex;
+			    align-items: center;
+
+			    a {
+			    	padding: 0 8px;
+			    }
+			  }
+			}
+
+			.inventory-header {
+				background: var(--faint-color);
+		    box-shadow: 0 0 5px inset var(--light-color);
+		    border-bottom: 1px solid var(--light-color);
+			}
+
+	    .inventory-header h3 {
+		    margin: 0 -5px 0 0;
+		    padding-left: 5px;
+		    font-size: 13px;
+		    font-weight: bold;
+			}
+
+			.spell-level-head, 
+			.spell-upcast-head, 
+			.spell-consumption-head, 
+			.spell-cost-head, 
+			.spell-dc-head,
+			.feat-consumption-head,
+			.feat-effect-head {
+		    font-size: 12px;
+		    color: #7a7971;
+		    text-align: center;
+		    margin: 0 2px;
+		  }
+
+		  .spell-level, 
+			.spell-upcast, 
+			.spell-consumption, 
+			.spell-cost, 
+			.spell-dc,
+			.feat-consumption,
+			.feat-effect {
+		    text-align: center;
+		    margin: 0 2px;
+		  }
+
+			.spell-level-head,
+			.spell-level {
+				flex: 0 0 40px;
+			}
+
+			.spell-dc-head,
+			.spell-cost-head,
+			.spell-cost {
+				flex: 0 0 56px;
+			}
+
+			.spell-upcast-head,
+			.spell-upcast {
+				flex: 0 0 80px;
+			}
+
+			.spell-consumption-head,
+			.spell-consumption,
+			.feat-consumption-head,
+			.feat-consumption,
+			.feat-effect-head,
+			.feat-effect {
+				flex: 0 0 80px;
+			}
+
+			.spell-dc {
+				flex: 0 0 30px;
+			}
+
+			.spell-controls-head {
+				flex: 0 0 28px;
+			}
+
+		}//.magic-item-list
+	}
+}//.tidy5e.sheet.item .sheet-body .tab.magic-items
+
+// -----------------------------
+//    Support Skill Customizer  
+// -----------------------------
+
+.tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select,
+.tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
+  line-height: 14px;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  flex: 0 0 1px;
+  margin-right: 2px;
+  font-family: var(--signika);
+  height: 14px;
+  color: var(--primary-font);
+}
+
+.tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover,
+.tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus {
+  background: var(--primary-accent);
+  color: var(--primary-font);
+  box-shadow: 0 0 0 1px var(--primary-accent);
+}
+
+.tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover option,
+.tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus option {
+  background: #fff;
+  padding: 0 4px;
+}
+
+.tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select {
+  text-align-last: left;
+  -moz-text-align-last: left;
+  -ms-text-align-last: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+.tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
+	border: none;
+	box-shadow: 0 0 0 1px var(--light-color) inset;
+  margin-top: -2px;
+  padding-top: 2px;
+}
+
+.tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:hover,
+.tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:focus {
+	box-shadow: 0 0 0 1px var(--primary-accent) inset;
+}
+
+
+// --------------------
+//    Inventory Plus  
+// -------------------
+
+.tidy5e.sheet.actor {
+	.custom-category {
+		margin-right: auto;
+    font-size: 12px;
+
+    &:hover {
+    	color: var(--primary-accent);
+    }
+	}
+
+	.toggle-collapse {
+		width: 12px;
+    font-size: 18px;
+    line-height: 12px;
+    margin-right: 5px;
+    color: var(--default-light-color);
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+		&:hover {
+			color: var(--primary-font);
+		}
+
+		i {
+			position: relative;
+    	top: -1px;
+		}
+	}
+
+	.inv-plus-stuff {
+    align-items: center;
+		opacity: 0;
+		transition: opacity .3s ease;
+
+		a {
+			margin-right: 5px;
+	    color: var(--light-color);
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+
+			&:hover {
+				color: var(--primary-font);
+			}
+		}
+
+	}
+	
+	.items-header:hover .inv-plus-stuff {
+		opacity: 1;
+	}
+
+	.grid-layout .items-footer .item-control.remove-category,
+	.grid-layout .items-footer .item-control.remove-category:hover {
+		position: relative;
+		color: transparent;
+		z-index: 1;
+
+		i {
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			color: var(--faint-color);
+		}
+
+		&:hover i {
+			color: var(--tertiary-color);
+		}
+		
+	}
+}

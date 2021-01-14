@@ -1,0 +1,91 @@
+<li class="item {{#if item.owner}}context-enabled{{/if}} fav-item {{#if item.isMagic}} magic-item{{/if}} {{#if item.data.equipped}} equipped{{/if}}{{#if item.data.preparation.prepared}} prepared{{/if}}{{#if item.alwaysPrep}} alwaysPrepared{{/if}}  {{ item.attunement.cls }}" data-item-id="{{item._id}}" {{#if item.canPrep}}title="{{item.toggleTitle}}{{/if}}">
+  <div class="item-name rollable">        
+    <div class="item-image" style="background-image: url({{item.img}})">
+      <i class="fa fa-dice-d20"></i>
+    </div>
+    <h4  title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+      {{item.name}}
+    </h4>
+    {{#if item.data.quantity}}
+      <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+        (<input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="3" {{#if item.editable}}{{else}}disabled{{/if}}>)
+      </span>
+    {{/if}}
+  </div>
+
+  {{#if item.canAttune}} 
+    <div class="item-state-icon {{item.attunement.cls}}" title="{{localize item.attunement.title}}"><i class="fas fa-sun"></i></div>
+  {{/if}}
+
+  {{#if item.isItem}}
+  <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
+    {{#if item.data.uses.max}}
+      <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
+      / <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
+    {{else}}
+      {{#if item.editable}}<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
+      {{/if}}
+    {{/if}}
+  </div>
+  {{/if}}
+  {{#if item.isFeat}}
+  <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
+    {{#if item.isOnCooldown}}
+      <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-bolt"></i>{{item.labels.rechargeValue}}</a>
+      {{else if item.data.recharge.value}}
+      {{localize "DND5E.Charged"}}
+    {{else if item.data.uses.max}}
+    <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
+    / <input class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
+    {{else}}
+      {{#if item.editable}}<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>{{/if}}
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{#if item.spellComps}}
+    <div class="item-detail spell-comps" title="{{localize 'DND5E.SpellComponents'}}">
+      {{item.spellComps}}
+      {{#if item.spellCon}}<span class="spell-component C">C</span>{{/if}}
+      {{#if item.spellRit}}<span class="spell-component R">R</span>{{/if}}
+    </div>
+  {{/if}}
+
+  <div class="item-detail item-action">
+    {{#each item.favLabels as |label id|}}
+      <span title="{{localize 'DND5E.Usage'}}: {{label}}">{{label}}</span>
+    {{/each}}
+  </div>
+
+  <div class="activate-context-menu">
+    <i class="fas fa-ellipsis-v"></i>
+  </div>
+  <div class="item-controls context-menu">
+    <hr class="context-divider">
+    {{#if (and item.isItem item.notFeat)}}
+    {{#if (and (ne item.type 'tool') (ne item.type 'loot') )}}
+      <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i>{{else}}<i class="fas fa-user-alt inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
+    {{/if}}
+    {{/if}}
+    {{#if item.attunement}}
+    <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}"
+      title="{{localize item.attunement.title}}">
+      <i class="fas fa-sun"></i> <span class="control-label">{{localize item.attunement.title}}</span>
+    </a>
+    {{/if}}
+    {{#if item.canPrep}}
+    <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass
+      'active')}}<i class="fas fa-book"></i>{{else}}<i class="fas fa-book inactive"></i>{{/if}} <span
+        class="control-label">{{item.toggleTitle}}</span></a>
+    {{/if}}
+
+    <hr class="context-divider">
+    <a class="item-control item-edit" title="{{localize 'TIDY5E.Edit'}}">
+      <i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize 'TIDY5E.Edit'}}</span>
+    </a>
+    <hr class="context-divider">
+    <a class="item-control item-fav warning" title="{{localize 'TIDY5E.RemoveFav'}}">
+      <i class="fas fa-bookmark"></i> <span class="control-label">{{localize 'TIDY5E.RemoveFav'}}</span>
+    </a>
+  </div>
+</li>

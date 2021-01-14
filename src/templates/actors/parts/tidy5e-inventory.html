@@ -1,0 +1,143 @@
+{{!-- Inventory Header --}}
+{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-header.html"}}
+
+<div class="list-layout">
+    
+  <ul class="inventory-list items-list">
+    {{#each sections as |section sid|}}
+    <li class="items-header">
+      <h3 class="item-name">{{localize section.label}}</h3>
+
+      <div class="items-header-labels">
+
+        {{#if section.columns}}
+          {{#each section.columns}}
+          <div class="items-header-{{css}}">{{label}}</div>
+          {{/each}}
+        {{else}}
+          {{#if ../isCharacter}}
+          <div class="items-header-weight">{{localize 'DND5E.Weight'}}</div>
+          {{/if}}
+          <div class="items-header-charge">{{localize 'DND5E.Charges'}}</div>
+          <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
+        {{/if}}
+      </div>
+      <div class="item-control inventory-plus-helper" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}></div>
+    </li>
+
+    <ul class="item-list">
+      {{#each section.items as |item iid|}}
+      <li class="item {{section.css}} {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.data.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.data.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+        <div class="item-name rollable" >
+          {{#if section.editableName}}
+            <input type="text" value="{{item.name}}">
+          {{else}}
+
+            <div class="item-image" style="background-image: url({{item.img}})">
+              <i class="fa fa-dice-d20"></i>
+            </div>
+            <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+              {{item.name}}
+            </h4>
+            <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+              (<input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="3" >)
+            </span>
+          {{/if}}
+        </div>
+
+        {{~#if item.attunement}} 
+        <div class="item-state-icon {{item.attunement.cls}}" title="{{localize item.attunement.title}}"><i class="fas fa-sun"></i></div>
+        {{/if}}
+        
+        {{~#if item.flags.favtab}} 
+        {{~#if item.flags.favtab.isFavorite}} 
+           <div class="item-state-icon" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
+        {{/if}}
+        {{/if}}
+
+        {{#if section.columns}}
+          {{#each section.columns}}
+            <div class="item-detail {{css}}">
+              {{#with (getProperty item property)}}
+                {{#if ../editable}}
+                  <input type="text" value="{{this}}" placeholder="&mdash;"
+                                   data-dtype="{{../editable}}" data-property="{{../property}}">
+                {{else}}
+                  {{this}}
+                {{/if}}
+              {{/with}}
+            </div>
+          {{/each}}
+        {{else}}
+          {{#if ../../isCharacter}}
+          <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}">
+            {{#if item.totalWeight}}
+            <div>
+              {{ item.totalWeight }} {{localize "DND5E.AbbreviationLbs"}}
+            </div>
+            {{/if}}
+          </div>
+          {{/if}}
+
+          <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
+            {{#if item.hasUses }}
+            <input type="text" data-path="data.uses.value" value="{{item.data.uses.value}}" placeholder="0"/>
+            / <input class="uses-max" type="text" data-path="data.uses.max" value="{{item.data.uses.max}}">
+            <!-- {{item.data.uses.max}} -->
+
+            {{else}}
+            <a class="addCharges" value="Add">Add</a>
+            {{/if}}
+          </div>
+
+          <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}">
+            {{#if item.data.activation.type }}
+              {{item.labels.activation}}
+            {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if ../../owner}}
+        <div class="activate-context-menu">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="item-controls context-menu">
+          <hr class="context-divider">
+          {{#unless @root.isVehicle}}
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i>{{else}}<i class="fas fa-user-alt inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
+          {{/unless}}
+
+          {{#if item.attunement}}
+            <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+              <i class="fas fa-sun"></i> <span class="control-label">{{localize item.attunement.title}}</span>
+            </a>
+          {{/if}}
+
+          <hr class="context-divider">
+
+          {{#unless section.editableName}}
+            <a class="item-control item-edit" title="{{localize 'DND5E.ItemEdit'}}"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize "DND5E.ItemEdit"}}</span></a>
+          {{/unless}}
+          <hr class="context-divider">
+          <a class="item-control item-delete warning" title="{{localize 'DND5E.ItemDelete'}}"><i class="fas fa-trash"></i> <span class="control-label">{{localize "DND5E.ItemDelete"}}</span></a>
+        </div>
+        {{/if}}
+
+      </li>
+      {{/each}}
+
+      {{#if ../owner}}
+      <li class="items-footer">
+        <a class="item-create" title='{{localize "DND5E.ItemCreate"}}' {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
+        </a>
+      </li>
+      {{/if}}
+    </ul>
+    {{/each}}
+  </ul>
+
+</div>
+
+{{!-- Inventory Footer --}}
+{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-footer.html"}}

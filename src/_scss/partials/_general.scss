@@ -1,0 +1,105 @@
+// font settings
+
+	h1, h2, h3, h4 {
+		margin: 0;
+		font-weight: 700;
+		border: none;
+	}
+
+	.char-name,
+	.level,
+	.attribute-name,
+	.header-attribute .value,
+	.ability-name,
+	.attribute-value {
+		font-family: var(--modesto);
+	}
+
+	// general elements
+
+	.rollable {
+		cursor: pointer;
+	}
+
+	.rollable:hover {
+		text-shadow: none;
+	  color: var(--primary-accent);
+	}
+
+	[contenteditable] {
+		border: none;
+		outline: none; 
+		display: inline-block;
+		border-radius: 3px;
+		-moz-user-select: text;
+		-khtml-user-select: text;
+		-webkit-user-select: text;
+		-o-user-select: text;
+	
+		&:empty::before {
+		  content: attr(data-placeholder);
+		  pointer-events: none;
+		  display: block; // For Firefox
+		  color: var(--tertiary-color);
+		}
+	}
+
+	a:hover {
+		text-shadow: none;
+	}
+
+	img,
+	svg {
+		vertical-align: middle;
+		border: none;
+		border-radius: 0;
+	}
+
+	input {
+		display: block;
+		padding: 0;
+		width: 100%;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		background: none;
+		transition: background .3s ease, border-color .3s ease;
+	}
+
+	// pointer styles
+	input[type="checkbox"],
+	input[type="radio"],
+	button,
+	select {
+		cursor: pointer;
+		box-shadow: none;
+		color: var(--primary-font);
+	}
+	 
+	[contenteditable],
+	input[type="text"]{
+		box-shadow: 0px 0px 0 3px transparent inset;
+		transition: box-shadow .3s ease;
+		color: var(--primary-font);
+	}
+
+	[contenteditable=true]:hover,
+	[contenteditable=true]:focus,
+	input[type="text"]:hover,
+	input[type="text"]:focus {
+		box-shadow: 0px 0px 0px 1px var(--primary-accent) inset;
+	}
+
+	input[type="text"]::placeholder {
+	  color: var(--tertiary-color);
+	}
+
+	button:hover,
+	select:hover {
+		background: var(--faint-color);
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}

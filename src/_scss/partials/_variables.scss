@@ -1,0 +1,88 @@
+.system-dnd5e {
+	
+	--modesto: "Modesto Condensed", "Palatino Linotype", serif;
+	--signika: "Signika", sans-serif;
+
+	//font colors
+	--primary-font: 					rgba(0, 0, 0, .9);
+
+	--background: 						rgba(236,233,223,1);
+
+	--faintest-color: 					rgba(0,0,0,.05);
+	--faint-color: 							rgba(0,0,0,.1);
+	--light-color: 							rgba(0, 0, 0, .25);
+	--primary-color: 						rgba(0,0,0,.9);
+	--secondary-color: 					rgba(0,0,0,.65);
+	--tertiary-color: 					rgba(0,0,0,.4);
+	--primary-accent: 					rgba(255,100,0,1);
+	--white: 										rgba(255,255,255,1);
+	--faint-white: 							rgba(255,255,255,.2);
+	--linked-accent: 						rgba(0,255,0,.75);
+	--unlinked-accent: 					rgba(255,0,0,.75);
+	--linked-light: 						rgba(0,255,0,.4);
+	--unlinked-light: 					rgba(255,0,0,.4);
+	--safe-accent: 							rgba(0,150,100,.6);
+	--unsafe-accent: 						rgba(255,0,0,.6);
+
+	// sheet header
+	--header-background: 				rgba(255, 255, 255, .2);
+	--header-border: 						rgba(0, 0, 0, .25);
+
+	//items
+	--stat-font: 								rgba(236, 233, 223, 1);
+	--prepareable: 							rgba(119,136,153,1);
+	--prepared: 								rgba(50,205,50,.3);
+	--prepared-outline: 				rgba(50,205,50,1);
+	--prepared-accent: 					rgba(173,255,47,1);
+	--always-prepared: 					rgba(0,0,255,.15);
+	--always-prepared-outline: 	rgba(65,105,225,1);
+	--always-prepared-accent: 	rgba(0,191,255,1);
+
+
+	--magic-accent: 						rgba(255,255,0,1);
+	--faint-magic-accent: 			rgba(255,255,0,.6);
+	--magic-outline: 						rgba(175,255,47,1);
+	--attunement-required: 			rgba(205,92,92,1);
+	--icon-attuned:								rgba(0,0,0,.4);
+
+	--xp-bar: 									rgba(94,225,146,1);
+	--encumbrance-bar: 					rgba(108,138,165,1);
+	--encumbrance-bar-outline: rgba(205, 228, 255, 1);
+	--encumbrance-outline: 		 rgba(0, 0, 0, .9);
+
+	--warning-accent: 					rgba(255, 0, 0, .6);
+
+	//portrait icons
+	--icon-background: rgba(236, 233, 223, 1);
+	--icon-shadow: rgba(0, 0, 0, .4);
+	--icon-outline: rgba(0, 0, 0, .4);
+	--icon-font: rgba(0, 0, 0, .4);
+	--exhaustion-font: rgba(0, 0, 0, .4);
+	--icon-hover: rgba(0, 0, 0, .9);
+
+	--pc-border: 0px;
+	--npc-border: 0px;
+	--vehicle-border: 0px;
+	
+	//notes
+	--note-background: rgba(0,0,0,.9);
+
+	//exhaustion
+	--exhaustion-lvl1: rgba(255, 230, 0, 1);
+	--exhaustion-lvl2: rgba(255, 130, 0, 1);
+	--exhaustion-lvl3: rgba(255, 50, 0, 1);
+
+	--ability-accent: darkslategrey;
+	// context menu
+	--context-outline: rgba(0, 0, 0, .4);
+	--context-shadow: rgba(0,0,0,.65);
+
+	// item sheets
+	--check-default: url(../images/check-dark-unchecked.svg);
+	--check-checked: url(../images/check-dark-checked.svg);
+	--checkbox-font: rgba(0, 0, 0, .9);
+	--checkbox-outline: rgba(150, 150, 150, 1);
+	--checkbox-unchecked: #D8D7D1;
+	--checkbox-checked: rgba(0, 255, 0, 0.3);
+
+}

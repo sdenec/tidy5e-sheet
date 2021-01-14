@@ -1,0 +1,37 @@
+.window-content .tab {
+	height: 100%;
+	flex-direction: column;
+
+	&.active {
+	  display: flex;
+	}
+
+	&.attributes,
+	&.biography,
+	&.journal {
+		align-items: flex-start;
+		flex-direction: row;
+		padding-right: .75rem;
+		overflow-y: scroll;
+	}
+
+	&.biography,
+	&.journal {
+		font-size: 13px;
+	}
+
+	&.inventory {
+	  // overflow: hidden;
+	}
+
+	&.grid .toggle-grid,
+	.toggle-list {
+		display: none;
+	}
+
+	.toggle-grid,
+	&.grid .toggle-list {
+		display: inline-block;
+	}
+
+}

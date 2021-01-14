@@ -1,0 +1,271 @@
+<form class="{{classes}}" autocomplete="off">
+	<nav class="sheet-tabs tabs">
+		<a class='item' data-tab='pc-sheet'>Players</a>
+		<a class='item' data-tab='npc-sheet'>NPCs/Vehicles</a>
+		<a class='item gm-only' data-tab='gm-options'>GM Options</a>
+		<a class='item' data-tab='info'>Info</a>
+	</nav>	
+
+  <section class='tab' data-tab='pc-sheet'>
+    <h2>Player Character Sheets</h2>
+<!-- 
+    <div class='form-checkbox-group'>
+      <input type='checkbox' data-dtype='boolean' name='chat' id='meme-chat' {{checked settings.chat}}/><label for='meme-chat'>Activate markdown support for chat.</label> 
+    </div>
+    <div class='form-checkbox-group'>
+      <input type='checkbox' data-dtype='boolean' name='richText' id='meme-richText' {{checked settings.richText}}/><label for='meme-richText'>Activate markdown support for all rich text editors.</label> 
+    </div> -->
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hideClassList' id='hideClassList' {{checked settings.hideClassList}}>
+      <div class="description">
+        <label for="hideClassList">{{localize 'TIDY5E.Settings.HideClassList.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HideClassList.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableInspirationAnimation' id='disableInspirationAnimation' {{checked settings.disableInspirationAnimation}}>
+      <div class="description">
+        <label for="disableInspirationAnimation">{{localize 'TIDY5E.Settings.DisableInspirationAnimation.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableInspirationAnimation.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hideIfZero' id='hideIfZero' {{checked settings.hideIfZero}}>
+      <div class="description">
+        <label for="hideIfZero">{{localize 'TIDY5E.Settings.HideIfZero.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HideIfZero.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='inspirationOnHover' id='inspirationOnHover' {{checked settings.inspirationOnHover}}>
+      <div class="description">
+        <label for="inspirationOnHover">{{localize 'TIDY5E.Settings.InspirationOnHover.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.InspirationOnHover.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='exhaustionOnHover' id='exhaustionOnHover' {{checked settings.exhaustionOnHover}}>
+      <div class="description">
+        <label for="exhaustionOnHover">{{localize 'TIDY5E.Settings.ExhaustionOnHover.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionOnHover.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableHpBarPc' id='disableHpBarPc' {{checked settings.disableHpBarPc}}>
+      <div class="description">
+        <label for="disableHpBarPc">{{localize 'TIDY5E.Settings.DisableHpBar.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableHpBar.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableHpOverlayPc' id='disableHpOverlayPc' {{checked settings.disableHpOverlayPc}}>
+      <div class="description">
+        <label for="disableHpOverlayPc">{{localize 'TIDY5E.Settings.DisableHpOverlay.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableHpOverlay.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='toggleTraitsPc' id='toggleTraitsPc' {{checked settings.toggleTraitsPc}}>
+      <div class="description">
+        <label for="toggleTraitsPc">{{localize 'TIDY5E.Settings.PcToggleTraits.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.PcToggleTraits.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='moveTraits' id='moveTraits' {{checked settings.moveTraits}}>
+      <div class="description">
+        <label for="moveTraits">{{localize 'TIDY5E.Settings.MoveTraits.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.MoveTraits.hint'}}</p>
+      </div>
+    </article>
+	</section>
+  <section class='tab' data-tab='npc-sheet'>
+    <h2>NPC/Vehicle Sheets</h2>
+
+    <h3>NPCs</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableHpBarNpc' id='disableHpBarNpc' {{checked settings.disableHpBarNpc}}>
+      <div class="description">
+        <label for="disableHpBarNpc">{{localize 'TIDY5E.Settings.DisableHpBar.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableHpBar.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableHpOverlayNpc' id='disableHpOverlayNpc' {{checked settings.disableHpOverlayNpc}}>
+      <div class="description">
+        <label for="disableHpOverlayNpc">{{localize 'TIDY5E.Settings.DisableHpOverlay.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableHpOverlay.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='alwaysShowTraits' id='alwaysShowTraits' {{checked settings.alwaysShowTraits}}>
+      <div class="description">
+        <label for="alwaysShowTraits">{{localize 'TIDY5E.Settings.AlwaysShowTraits.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.AlwaysShowTraits.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='alwaysShowSkills' id='alwaysShowSkills' {{checked settings.alwaysShowSkills}}>
+      <div class="description">
+        <label for="alwaysShowSkills">{{localize 'TIDY5E.Settings.AlwaysShowSkills.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.AlwaysShowSkills.hint'}}</p>
+      </div>
+    </article>
+
+    <h3>Vehicles</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableHpBarVehicle' id='disableHpBarVehicle' {{checked settings.disableHpBarVehicle}}>
+      <div class="description">
+        <label for="disableHpBarVehicle">{{localize 'TIDY5E.Settings.DisableHpBar.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableHpBar.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableHpOverlayVehicle' id='disableHpOverlayVehicle' {{checked settings.disableHpOverlayVehicle}}>
+      <div class="description">
+        <label for="disableHpOverlayVehicle">{{localize 'TIDY5E.Settings.DisableHpOverlay.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableHpOverlay.hint'}}</p>
+      </div>
+    </article>
+	</section>
+  <section class='tab gm-only' data-tab='gm-options'>
+    <h2>GM Sheet Options</h2>
+    
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableRightClick' id='disableRightClick' {{checked settings.disableRightClick}}>
+      <div class="description">
+        <label for="disableRightClick">{{localize 'TIDY5E.Settings.DisableRightClick.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableRightClick.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='useExpandedSheet' id='useExpandedSheet' {{checked settings.useExpandedSheet}}>
+      <div class="description">
+        <label for="useExpandedSheet">{{localize 'TIDY5E.Settings.UseExpandedSheet.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.UseExpandedSheet.hint'}}</p>
+      </div>
+    </article>
+    <section>
+      <h3>{{localize 'TIDY5E.Settings.UseRoundPortraits.name'}}</h3>
+      <p class="notes">{{localize 'TIDY5E.Settings.UseRoundPortraits.hint'}}</p>
+      <div class="settings-group">
+        
+        <article class="setting">
+          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsPc' id='useDefaultPortraitsPc' {{checked (eq settings.useDefaultPortraitsPc false)}}>
+          <div class="description">
+            <label for="useDefaultPortraitsPc">{{localize 'TIDY5E.Settings.PcLabel'}}</label>
+          </div>
+        </article>
+        <article class="setting">
+          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsNpc' id='useDefaultPortraitsNpc' {{checked (eq settings.useDefaultPortraitsNpc false)}}>
+          <div class="description">
+            <label for="useDefaultPortraitsNpc">{{localize 'TIDY5E.Settings.NpcLabel'}}</label>
+          </div>
+        </article>
+        <article class="setting">
+          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsVehicle' id='useDefaultPortraitsVehicle' {{checked (eq settings.useDefaultPortraitsVehicle false)}}>
+          <div class="description">
+            <label for="useDefaultPortraitsVehicle">{{localize 'TIDY5E.Settings.VehicleLabel'}}</label>
+          </div>
+        </article>
+    </div>
+    </section>
+    <section>
+      <h3>{{localize 'TIDY5E.Settings.HpOverlayBorder.name'}}</h3>
+      <p class="notes">{{localize 'TIDY5E.Settings.HpOverlayBorder.hint'}}</p>
+      <div class="settings-group">
+        
+        <article class="setting">
+          <input type="text" data-dtype='string' name='hpOverlayBorderPc' id='hpOverlayBorderPc' value="{{settings.hpOverlayBorderPc}}">
+          <div class="description">
+            <label for="hpOverlayBorderPc">{{localize 'TIDY5E.Settings.PcLabel'}}</label>
+          </div>
+        </article>
+        <article class="setting">
+          <input type="text" data-dtype='string' name='hpOverlayBorderNpc' id='hpOverlayBorderNpc' value="{{settings.hpOverlayBorderNpc}}">
+          <div class="description">
+            <label for="hpOverlayBorderNpc">{{localize 'TIDY5E.Settings.NpcLabel'}}</label>
+          </div>
+        </article>
+        <article class="setting">
+          <input type="text" data-dtype='string' name='hpOverlayBorderVehicle' id='hpOverlayBorderVehicle' value="{{settings.hpOverlayBorderVehicle}}">
+          <div class="description">
+            <label for="hpOverlayBorderVehicle">{{localize 'TIDY5E.Settings.VehicleLabel'}}</label>
+          </div>
+        </article>
+      </div>
+    </section>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='gmEditPermission' id='gmEditPermission' {{checked settings.gmEditPermission}}>
+      <div class="description">
+        <label for="gmEditPermission">{{localize 'TIDY5E.Settings.GmEditPermission.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.GmEditPermission.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='gmEditEffects' id='gmEditEffects' {{checked settings.gmEditEffects}}>
+      <div class="description">
+        <label for="gmEditEffects">{{localize 'TIDY5E.Settings.GmEditEffects.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.GmEditEffects.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='alwaysShowQty' id='alwaysShowQty' {{checked settings.alwaysShowQty}}>
+      <div class="description">
+        <label for="alwaysShowQty">{{localize 'TIDY5E.Settings.AlwaysShowQty.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.AlwaysShowQty.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableInspiration' id='disableInspiration' {{checked settings.disableInspiration}}>
+      <div class="description">
+        <label for="disableInspiration">{{localize 'TIDY5E.Settings.DisableInspiration.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableInspiration.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='exhaustionEffects' id='exhaustionEffects' {{checked settings.exhaustionEffects}}>
+      <div class="description">
+        <label for="exhaustionEffects">{{localize 'TIDY5E.Settings.ExhaustionEffects.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionEffects.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='disableExhaustion' id='disableExhaustion' {{checked settings.disableExhaustion}}>
+      <div class="description">
+        <label for="disableExhaustion">{{localize 'TIDY5E.Settings.DisableExhaustion.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.DisableExhaustion.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='showNpcRest' id='showNpcRest' {{checked settings.showNpcRest}}>
+      <div class="description">
+        <label for="showNpcRest">{{localize 'TIDY5E.Settings.ShowNpcRest.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.ShowNpcRest.hint'}}</p>
+      </div>
+    </article>
+    <section>
+      <h3>{{localize 'TIDY5E.Settings.LinkMarker.name'}}</h3>
+      <p class="notes">{{localize 'TIDY5E.Settings.LinkMarker.hint'}}</p>
+      <div class="settings-group">
+        
+        <article class="setting">
+          <input type="checkbox" data-dtype='boolean' name='linkMarkerUnlinked' id='linkMarkerUnlinked' {{checked settings.linkMarkerUnlinked}}>
+          <div class="description">
+            <label for="linkMarkerUnlinked">{{localize 'TIDY5E.Settings.LinkMarker.unlinked'}}</label>
+          </div>
+        </article>
+        <article class="setting">
+          <input type="checkbox" data-dtype='boolean' name='linkMarkerLinked' id='linkMarkerLinked' {{checked settings.linkMarkerLinked}}>
+          <div class="description">
+            <label for="linkMarkerLinked">{{localize 'TIDY5E.Settings.LinkMarker.linked'}}</label>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+	</section>
+  <section class='tab' data-tab='info'>
+    <h2>Module Info</h2>
+	</section>
+</form>

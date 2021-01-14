@@ -1,0 +1,188 @@
+{
+	"TIDY5E.EditActorImage": "画像編集",
+
+	"TIDY5E.Exhaustion0": "悪影響なし",
+	"TIDY5E.Exhaustion1": "能力値判定に不利",
+	"TIDY5E.Exhaustion2": "移動速度半減",
+	"TIDY5E.Exhaustion3": "攻撃ロールとセーヴィング･スローに不利",
+	"TIDY5E.Exhaustion4": "最大ＨＰ半減",
+	"TIDY5E.Exhaustion5": "移動速度０",
+	"TIDY5E.Exhaustion6": "死亡",
+
+	"TIDY5E.RestHint": "休憩する",
+	"TIDY5E.RestS": "小休憩",
+	"TIDY5E.RestL": "大休憩",
+
+	"TIDY5E.Journal": "記録",
+
+	"TIDY5E.RestoreOnRest": "休憩時に回復",
+
+	"TIDY5E.JournalPoi": "関心のある人物",
+	"TIDY5E.JournalLoi": "関心のある場所",
+	"TIDY5E.JournalQuests": "クエスト",
+	"TIDY5E.JournalMisc": "その他",
+	"TIDY5E.JournalEntries": "資料",
+
+	"TIDY5E.EnableEdit": "編集の有効化",
+	"TIDY5E.DisableEdit": "編集の無効化",
+	"TIDY5E.EditHint": "編集ロックとロック解除の表示を切替します",
+	
+	"TIDY5E.EmptySection": "この項目は空です。シートロックを解除して編集してください。",
+	"TIDY5E.GmOnlyEdit": "この項目を編集できるのはGMだけです。",
+
+	"TIDY5E.AttunementWarning": "同調の警告：{number} を超えるアイテムに同調することはできません。",
+	
+	"TIDY5E.GridLayout": "ｸﾞﾘｯﾄﾞ･ﾚｲｱｳﾄ",
+	"TIDY5E.ListLayout": "ﾘｽﾄ･ﾚｲｱｳﾄ",
+
+	"TIDY5E.Encumbrance": "荷重",
+
+	"TIDY5E.EditSpell": "呪文編集",
+	"TIDY5E.DeleteSpell": "呪文削除",
+	"TIDY5E.AddFav": "お気に入り追加",
+	"TIDY5E.isFav": "お気に入り",
+	"TIDY5E.RemoveFav": "お気に入りから削除",
+
+	"TIDY5E.ToggleInfo": "詳細表示",
+	"TIDY5E.ToggleMovement": "最新の速度表示と従来の速度表示とを切替します",
+
+	"TIDY5E.Show" : "表示/編集",
+	"TIDY5E.Hide" : "非表示",
+	"TIDY5E.Edit" : "編集",
+	"TIDY5E.TraitsEmpty" : "未設定の特徴",
+
+	"TIDY5E.Abilities" : "能力",
+
+	"TIDY5E.Environment" : "環境",
+
+	"TIDY5E.AbbrMod" : "修正",
+
+	"TIDY5E.TokenLinked" : "アクターとリンクするトークン",
+	"TIDY5E.TokenUnlinked" : "アクターと未リンクのトークン",
+	
+	"TIDY5E.ItemDetailsHeadline" : "用途 / 来歴",
+
+	"TIDY5E.Settings.GlobalLabel" : "全体",
+	"TIDY5E.Settings.UserLabel" : "ﾕｰｻﾞｰ",
+	"TIDY5E.Settings.PcLabel" : "PC",
+	"TIDY5E.Settings.NpcLabel" : "NPC",
+	"TIDY5E.Settings.VehicleLabel" : "乗り物",
+
+	"TIDY5E.Settings.UseExpandedSheet" : {
+		"name" : "リミテッド･シートの拡大表示",
+		"hint" : "リミテッド･シートの表示について、そのアクターに対して限定的(Limited)権限を持つプレイヤーに、キャラクターシートの全て（[効果],[記録]を除く）を表示します。"
+	},
+	"TIDY5E.Settings.DisableRightClick" : {
+		"name" : "右ｸﾘｯｸﾒﾆｭｰの表示を無効化",
+		"hint" : "モジュールが競合する場合など、右クリックによるメニュー表示を無効にすることができます。項目には、代わりにメニューアイコンが表示されます。"
+	},
+	"TIDY5E.Settings.UseClassicControls" : {
+		"name" : "ﾘｽﾄﾋﾞｭｰで従来のｱｲﾃﾑｺﾝﾄﾛｰﾙを使用",
+		"hint" : "常にアイテムコントロールを表示し、右クリックメニューを無効にします。リストレイアウトのPCアイテム/呪文インベントリにのみ適用されます。"
+	},
+	"TIDY5E.Settings.ContextRollButtons" : {
+		"name" : "ｺﾝﾃｷｽﾄﾒﾆｭｰにmidiQol/BetterRollsのｱｲﾃﾑﾎﾞﾀﾝ表示",
+		"hint" : "デフォルトでは、ロールボタンはアイテムの説明に表示されます。それらをコンテキストメニューに移動できるようにします。グリッドレイアウトや頻繁に使用する場合に便利です。"
+	},
+	"TIDY5E.Settings.GmEditPermission" : {
+		"name" : "GM権限でPCｼｰﾄを編集可能",
+		"hint" : "有効にすると、シートロックを切替せずに、PCシートをGMが編集できるようになります。"
+	},
+	"TIDY5E.Settings.GmEditEffects" : {
+		"name" : "GMだけが有効化された効果を編集可能",
+		"hint" : "プレイヤーによる、自身のシート上にある有効化された効果の編集を禁止します。GM以外は適用されている効果の確認ができます。"
+	},
+	"TIDY5E.Settings.AlwaysShowQty" : {
+		"name" : "常にアイテム数量を表示する",
+		"hint" : "アイテム数量を常に表示にします。"
+	},
+	"TIDY5E.Settings.SheetTheme" : {
+		"name" : "Tidy5eカラーテーマ",
+		"hint" : "Tidy5eシートのカラーテーマを、ライトカラーまたはダークカラーに設定します。",
+		"default": "ライトカラー",
+		"dark": "ダークカラー"
+	},
+	"TIDY5E.Settings.UseRoundPortraits" : {
+		"name" : "PCシート：シートに円形画像を使用",
+		"hint" : "アクターの円形画像/アイコンを有効にする場合に選択します。",
+		"all": "全てのアクター",
+		"pc": "PCのみ",
+		"npc": "NPC/乗り物 のみ",
+		"default": "なし"
+	},
+	"TIDY5E.Settings.ShowNpcRest" : {
+		"name" : "NPCの休憩",
+		"hint" : "NPCシートのアイコン/ボタンに残り回数を表示します。"
+	},
+	"TIDY5E.Settings.LinkMarker" : {
+		"name" : "リンク済/未リンクNPCをマーキング",
+		"hint" : "リンク済/未リンクNPCシートに、色付きの境界線とアイコンを追加します。",
+		"default": "リンクマーカーなし (デフォルト)",
+		"unlinked": "未リンクトークンを強調表示する",
+		"both": "リンク済トークンと未リンクトークンを強調表示する"
+	},
+	"TIDY5E.Settings.HpOverlayBorder" : {
+		"name" : "オフセットhpｵｰﾊﾞｰﾚｲ",
+		"hint" : "オフセット値を入力して、hp減少時に赤く塗りつぶす際、画像の外側に塗りつぶし禁止範囲を設けます。"
+	},
+	"TIDY5E.Settings.DisableHpOverlay" : {
+		"name" : "hpｵｰﾊﾞｰﾚｲを非表示",
+		"hint" : "アクターのhpが減少しても、画像が赤く塗りつぶされないようになります。"
+	},
+	"TIDY5E.Settings.DisableHpBar" : {
+		"name" : "hpバーの無効化",
+		"hint" : "残りのhpを示す色付きのバーを非表示にします（hp数は引き続き表示されます）。"
+	},
+	"TIDY5E.Settings.HideClassList" : {
+		"name" : "クラス一覧を非表示",
+		"hint" : "キャラクター名の下のクラスリストを非表示にする場合に有効にします。"
+	},
+	"TIDY5E.Settings.DisableInspirationAnimation" : {
+		"name" : "ｲﾝｽﾋﾟﾚｰｼｮﾝ アニメ",
+		"hint" : "インスピレーションアイコンのアニメーションを無効化します。"
+	},
+	"TIDY5E.Settings.DisableInspiration" : {
+		"name" : "ｲﾝｽﾋﾟﾚｰｼｮﾝ表示の無効化",
+		"hint" : "キャンペーンでインスピレーションを使用しない場合､完全に無効化することができます。"
+	},
+	"TIDY5E.Settings.ExhaustionEffects" : {
+		"name" : "消耗効果の適用",
+		"hint" : "疲労レベルを設定するとき、レベルに対応した効果を適用する - midiQolが必要です！"
+	},
+	"TIDY5E.Settings.DisableExhaustion" : {
+		"name" : "消耗を無効化",
+		"hint" : "キャンペーンで消耗を使用しない場合､完全に無効化することができます。"
+	},
+	"TIDY5E.Settings.HideIfZero" : {
+		"name" : "消耗とｲﾝｽﾋﾟﾚｰｼｮﾝが0の時､表示を隠す",
+		"hint" : "0の場合、消耗とインスピレーションは表示されなくなります。マウスカーソルを合わせたときだけ表示されます。"
+	},
+	"TIDY5E.Settings.ExhaustionOnHover" : {
+		"name" : "ﾏｳｽｵｰﾊﾞｰ時に消耗表示",
+		"hint" : "画像の上にマウスカーソルを置いたときだけ、消耗を表示します。"
+	},
+	"TIDY5E.Settings.InspirationOnHover" : {
+		"name" : "ﾏｳｽｵｰﾊﾞｰ時にｲﾝｽﾋﾟ表示",
+		"hint" : "画像の上にマウスカーソルを置いたときだけ、インスピレーションを表示します。"
+	},
+	"TIDY5E.Settings.MoveTraits" : {
+		"name" : "特徴をﾘｿｰｽの下に移動",
+		"hint" : "特徴を、技能の下 (左段)から、リソース下 (右段)に移動する場合に有効にします。"
+	},
+	"TIDY5E.Settings.PcToggleTraits" : {
+		"name" : "空のｷｬﾗｸﾀｰ特徴の切替",
+		"hint" : "デフォルトでは、空の特徴は常に表示されます。"
+	},
+	"TIDY5E.Settings.AlwaysShowTraits" : {
+		"name" : "常に特徴を表示",
+		"hint" : "デフォルトでは、空の特徴はトグルボタンで非表示になります。"
+	},
+	"TIDY5E.Settings.ShowTraitLabels" : {
+		"name" : "特徴ラベルの表示",
+		"hint" : "デフォルトでは、特徴アイコンのみが表示されます。ラベルも表示できるようにします。"
+	},
+	"TIDY5E.Settings.AlwaysShowSkills" : {
+		"name" : "常に技能を表示",
+		"hint" : "デフォルトでは、技能が無効な場合はトグルボタンで表示されます。"
+	}
+}

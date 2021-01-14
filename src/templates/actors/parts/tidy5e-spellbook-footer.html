@@ -1,0 +1,23 @@
+<div class="spellcasting-ability">
+  <h3 class="spell-dc spell-mod">{{localize 'DND5E.SpellDC'}} {{data.attributes.spelldc}} / {{localize 'TIDY5E.SpellAttackMod'}}: <span class="spell-attack-mod"></span></h3>
+  <div class="max-prepared-spells">
+    <p>{{localize 'TIDY5E.PreparedSpells'}}</p> <span class="spells-prepared">{{#if preparedSpells}}{{preparedSpells}}{{else}}0{{/if}}</span>/<input class="max-preparation" type="text" name="data.details.maxPreparedSpells"
+    value="{{data.details.maxPreparedSpells}}" data-dtype="Number" placeholder="0" title="{{localize 'TIDY5E.PreparedSpellsMax'}}"/>
+  </div>
+  <div class="spellcasting-attribute">
+    <p>{{localize 'DND5E.SpellAbility'}}</p>
+    <select name="data.attributes.spellcasting" data-type="String">
+      {{#select data.attributes.spellcasting}}
+      <option value="">{{localize 'DND5E.None'}}</option>
+      {{#each data.abilities as |abl a|}}
+      <option value="{{a}}">{{abl.label}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+  {{#if isNPC}}
+  <h3>{{localize 'DND5E.SpellcasterLevel'}}</h3>
+  <input class="spellcasting-level" type="text" name="data.details.spellLevel"
+  value="{{data.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
+  {{/if}}
+</div>

@@ -1,0 +1,161 @@
+{{#unless isVehicle}}
+{{#if isCharacter}}
+<div class="inventory-filters">
+  <ul class="filter-list" data-filter="features">
+    <li class="filter-title" title="{{localize 'DND5E.Filter'}}"><i class="fas fa-filter"></i></li>
+    <li class="filter-item" data-filter="action">{{localize "DND5E.Action"}}</li>
+    <li class="filter-item" data-filter="bonus">{{localize "DND5E.BonusAction"}}</li>
+    <li class="filter-item" data-filter="reaction">{{localize "DND5E.Reaction"}}</li>
+  </ul>
+</div>
+{{/if}}
+{{/unless}}
+
+<div class="list-layout">
+
+  <ul class="inventory-list features-list items-list">
+    {{#each sections as |section sid|}}
+    <li class="items-header features-header">
+      <h3 class="item-name">{{localize section.label}}</h3>
+
+      <div class="items-header-labels">
+        {{#if section.hasActions}}
+          <div class="items-header-uses">{{localize 'DND5E.Uses'}}</div>
+          <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
+          {{#if ../isCharacter}}
+          <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
+          <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
+          {{/if}}
+        {{else if section.isClass}}
+          <div class="items-header-subclass">{{localize 'TIDY5E.Subclass'}}</div>
+          <div class="items-header-level">{{localize 'DND5E.Level'}}</div>
+        {{else}}
+        {{#if ../isCharacter}}
+        {{#unless section.columns}}
+          <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
+          <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
+        {{/unless}}
+        {{/if}}
+        {{/if}}
+        {{#if section.columns}}
+          {{#each section.columns}}
+            <div class="items-header-{{css}}">{{label}}</div>
+          {{/each}}
+        {{/if}}
+      </div>
+    </li>
+
+    <ul class="item-list">
+      {{#each section.items as |item iid|}}
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if isDepleted}}depleted{{/if}}" data-item-id="{{item._id}}">
+        <div class="item-name rollable">
+          <div class="item-image" style="background-image: url({{item.img}})">
+            <i class="fa fa-dice-d20"></i>
+          </div>
+          <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+            {{item.name}}
+          </h4>
+          {{#unless ../../isCharacter}}
+          {{#if item.data.quantity}}
+          <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+            (<input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="3" >)
+          </span>
+          {{/if}}
+          {{/unless}}
+        </div>
+
+        {{~#if item.flags.favtab}} 
+        {{~#if item.flags.favtab.isFavorite}} 
+           <div class="item-state-icon" title="Favorite"><i class="fas fa-bookmark icon-fav"></i></div>
+        {{/if}}
+        {{/if}}
+
+        {{#if section.hasActions}}
+        <div class="item-detail item-charges">
+          {{#if item.isOnCooldown}}
+          <a class="item-recharge rollable">{{item.labels.recharge}}</a>
+          {{else if item.data.recharge.value}}
+          {{localize "DND5E.Charged"}}
+
+          {{else if item.hasUses}}
+          <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
+          {{else}}
+          <a class="addCharges" value="Add">Add</a>
+          {{/if}}
+        </div>
+
+        <div class="item-detail item-action">
+          {{#if item.data.activation.type }}
+          {{item.labels.activation}}
+          {{/if}}
+        </div>
+        
+        {{#unless ../../isVehicle}}
+        {{#if ../../isCharacter}}
+        <div class="item-detail item-source">
+          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
+        </div>
+        <div class="item-detail item-requirements">
+          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
+        </div>
+        {{/if}}
+        {{/unless}}
+
+        {{else if section.isClass}}
+        <div class="item-detail player-class" title="{{item.data.subclass}}">
+          <span>{{item.data.subclass}}</span>
+        </div>
+        <div class="item-detail item-level">
+          {{item.data.levels}}
+        </div>
+
+        {{else if section.columns}}
+          {{#each section.columns}}
+            <div class="item-detail {{css}}">
+              {{#with (getProperty item property)}}
+                {{#if ../editable}}
+                  <input type="text" value="{{this}}" placeholder="&mdash;" data-dtype="{{../editable}}">
+                {{else}}
+                  {{this}}
+                {{/if}}
+              {{/with}}
+            </div>
+          {{/each}}
+
+        {{else}}
+        {{#if ../../isCharacter}}
+        <div class="item-detail item-source">
+          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
+        </div>
+        <div class="item-detail item-requirements">
+          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
+        </div>
+        {{/if}}
+        {{/if}}
+
+        {{#if ../../owner}}
+        <div class="activate-context-menu">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="item-controls context-menu">
+          <hr class="context-divider">
+          <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize 'DND5E.ItemEdit'}}</span></a>
+          <hr class="context-divider">
+          <a class="item-control item-delete warning"><i class="fas fa-trash"></i> <span class="control-label">{{localize 'DND5E.ItemDelete'}}</span></a>
+        </div>
+        {{/if}}
+      </li>
+      {{/each}}
+
+      {{#if ../owner}}
+      <li class="items-footer">
+        <a class="item-create" title="{{localize 'DND5E.FeatureAdd'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
+        </a>
+      </li>
+      {{/if}}
+
+    </ul>
+    {{/each}}
+  </ul>
+</div>

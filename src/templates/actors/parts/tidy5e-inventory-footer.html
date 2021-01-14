@@ -1,0 +1,41 @@
+
+  <div class="inventory-footer">
+    
+    {{#if isCharacter}}
+    <div class="attuned-items-counter" title="{{localize 'DND5E.Attunement'}}">
+      <i class="fas fa-sun"></i> <span class="attuned-items-current">{{data.details.attunedItemsCount}}</span>/<span class="attuned-items-max">{{data.details.attunedItemsMax}}</span>
+      <input type="text" class="attuned-items-max" name="data.details.attunedItemsMax" value="{{data.details.attunedItemsMax}}" placeholder="0" title="{{localize 'TIDY5E.AttunementMax'}}">
+    </div>
+    {{/if}}
+
+    {{#unless isNPC}}
+    <div class="inventory-currency">  
+      <ul class="currency">
+        <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
+          <i class="fas fa-coins"></i>
+        </li>
+        {{#each data.currency as |v k|}}
+        <li class="currency-item" title="{{ lookup ../config.currencies k }}">
+          <input type="text" name="data.currency.{{k}}" id="data.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
+          <label for="data.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../config.currencies k }}</label>
+        </li>
+        {{/each}}
+        <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}"><i class="fas fa-funnel-dollar"></i></a></li>
+      </ul>
+    </div>
+    {{/unless}}
+
+  </div>
+
+  {{#unless isNPC}}
+    {{#with data.attributes.encumbrance}}
+    <div class="encumbrance {{#if encumbered}}encumbered{{/if}}" title="{{localize 'TIDY5E.Encumbrance'}}">
+      <span class="encumbrance-bar" style="width:{{pct}}%"></span>
+      <span class="encumbrance-label">{{value}} / {{max}}</span>
+      <i class="encumbrance-breakpoint encumbrance-33 arrow-up"></i>
+      <i class="encumbrance-breakpoint encumbrance-33 arrow-down"></i>
+      <i class="encumbrance-breakpoint encumbrance-66 arrow-up"></i>
+      <i class="encumbrance-breakpoint encumbrance-66 arrow-down"></i>
+    </div>
+    {{/with}}
+  {{/unless}}

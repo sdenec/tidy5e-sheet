@@ -1,0 +1,142 @@
+<h2 class="spellbook-title">{{ localize "DND5E.Spellbook" }} <i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></h2>
+
+<div class="list-layout">
+
+  <ul class="inventory-list items-list spellbook-list">
+    {{#each spellbook as |section|}}
+    <li class="items-header spellbook-header">
+      <div class="spell-level-slots">
+        <h3>{{section.label}}</h3>
+
+        {{#if section.usesSlots}}
+        <div class="spell-detail spell-slots">
+          <input type="text" name="data.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
+          data-dtype="Number"/>
+          <span class="sep"> / </span>
+          <span class="spell-max" data-level="{{section.prop}}" data-slots="{{section.slots}}">
+            {{{section.slots}}}
+            {{#if ../editable}}
+            <a class="slot-max-override" title="{{localize 'DND5E.SpellProgOverride'}}">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+            {{/if}}
+          </span>
+        </div>
+        {{/if}}
+
+      </div>
+
+      <div class="items-header-labels">
+        <div class="items-header-comps">{{localize 'TIDY5E.Components'}}</div>
+        <!-- <div class="items-header-school">{{localize 'DND5E.SpellSchool'}}</div> -->
+        <div class="items-header-target">{{localize 'DND5E.SpellTarget'}}</div>
+        <div class="items-header-usage">{{localize 'DND5E.SpellUsage'}}</div>
+      </div>
+
+    </li>
+
+    <ul class="item-list">
+      {{#each section.spells as |item i|}}
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}" title="{{item.toggleTitle}}">
+        <div class="item-name rollable">
+          <div class="item-image" style="background-image: url({{item.img}})">
+            <i class="fa fa-dice-d20"></i>
+          </div>
+          <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+            {{item.name}}
+          </h4>
+
+        </div>          
+
+        {{#if item.data.uses.per }}
+        <div class="item-detail item-charges">
+          <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
+        </div>
+        {{/if}}
+        <div class="item-detail spell-comps">
+          {{#each labels.components}}
+          <span class="spell-component {{this}}">{{this}}</span>
+          {{/each}}
+        </div>
+        <!-- <div class="item-detail spell-school">{{labels.school}}</div> -->
+        <div class="item-detail spell-target" title="{{localize 'DND5E.Range'}}: {{labels.range}}">
+          {{#if labels.target}}
+          {{labels.target}}
+          {{else}}{{ localize 'DND5E.None' }}
+          {{/if}}
+        </div>
+
+        <div class="item-detail spell-action">{{labels.activation}}</div>
+
+        {{#if ../../owner}}
+        <div class="activate-context-menu">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="item-controls context-menu">
+          <hr class="context-divider">
+          {{#if data.preparation}}
+          <a class="item-control item-toggle {{item.toggleClass}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i>{{else}}<i class="fas fa-book inactive"></i>{{/if}}  <span class="control-label">{{item.toggleTitle}}</span></a>
+          {{/if}}
+          <hr class="context-divider">
+          <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i>  <span class="control-label">{{localize 'TIDY5E.EditSpell'}}</span></a>
+          <hr class="context-divider">
+          <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i>  <span class="control-label">{{localize 'TIDY5E.DeleteSpell'}}</span></a>
+        </div>
+        {{/if}}
+
+      </li>
+      {{/each}}
+      {{#if section.canCreate}}
+      <li class="items-footer">
+        <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i> {{localize 'DND5E.Add'}}
+        </a>
+        {{else}}
+        <!-- add button for all spell categories -->
+        <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i> {{localize 'DND5E.Add'}}
+        </a>
+      </li>
+      {{/if}}
+    </ul>
+    {{else}}
+    {{#if owner}}
+    {{#if filters.spellbook.size}}
+
+    <li><p>{{localize "DND5E.FilterNoSpells"}}</p></li>
+
+    {{else}}
+    <li class="spellbook-footer spellbook-empty">
+      <p class="notice">{{localize "DND5E.NoSpellLevels"}}</p>
+      <div class="items-footer">
+        <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" data-type="spell"
+        data-level="{{lvl}}"><i class="fas fa-plus-circle"></i> {{localize 'DND5E.SpellAdd'}}</a>
+      </div>
+    </li>
+    {{/if}}
+    {{/if}}
+    {{/each}}
+  </ul>
+</div>
+
+<div class="spellcasting-ability">
+  <h3 class="spell-dc">{{localize 'DND5E.SpellDC'}} {{data.attributes.spelldc}}</h3>
+  <div class="npc-spell-stats">
+    <div class="caster-level">
+      <span>{{localize 'DND5E.SpellcasterLevel'}}</span>
+      <input class="spellcasting-level" type="text" name="data.details.spellLevel"
+      value="{{data.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
+    </div>
+    <div class="spellcasting-attribute">
+      <span>{{localize 'DND5E.SpellAbility'}}</span>
+      <select name="data.attributes.spellcasting" data-type="String">
+        {{#select data.attributes.spellcasting}}
+        <option value="">{{localize 'DND5E.None'}}</option>
+        {{#each data.abilities as |abl a|}}
+        <option value="{{a}}">{{abl.label}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+  </div>
+</div>

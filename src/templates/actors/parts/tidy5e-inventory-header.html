@@ -1,0 +1,17 @@
+{{#unless isVehicle}}
+<div class="inventory-filters">
+
+  <ul class="filter-list" data-filter="inventory">
+    <li class="filter-title" title="{{localize 'DND5E.Filter'}}"><i class="fas fa-filter"></i></li>
+    <li class="filter-search" title="{{localize 'TIDY5E.SearchHint'}}"><input type="text" id="item-search" placeholder="{{localize 'TIDY5E.SearchItem'}}" value="{{actor.flags.tidy5e-sheet.item-search}}"><span class="clear-search hidden" title="{{localize 'TIDY5E.SearchClear'}}"><i class="fas fa-times-circle"></i></span></li>
+    <li class="filter-item" data-filter="action">{{localize "DND5E.Action"}}</li>
+    <li class="filter-item" data-filter="bonus">{{localize "DND5E.BonusAction"}}</li>
+    <li class="filter-item" data-filter="reaction">{{localize "DND5E.Reaction"}}</li>
+    <li class="filter-item" data-filter="equipped">{{localize "DND5E.Equipped"}}{{#if equippedItems}} ({{equippedItems}}){{/if}}</li>
+    {{#if owner}}
+    <li class="toggle-layout inventory-layout"><i class="fas fa-th-large toggle-grid" title="{{localize 'TIDY5E.GridLayout'}}"></i><i class="fas fa-th-list toggle-list" title="{{localize 'TIDY5E.ListLayout'}}"></i></li>
+    {{/if}}
+  </ul>
+  
+</div>
+{{/unless}}

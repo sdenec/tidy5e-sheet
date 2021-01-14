@@ -1,0 +1,241 @@
+@font-face {
+	font-family: 'Signika';
+	src: url('../../../fonts/signika/signika-light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Signika';
+	src: url('../../../fonts/signika/signika-semibold.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@import 'partials/_variables.scss';
+
+.tidy5e.sheet.actor {
+
+	min-width: 680px;
+	min-height: 210px;
+
+	.window-content {
+		padding: 0;
+		margin: 0;
+		color: var(--primary-font);
+		font-family: var(--signika);
+
+		form {
+			height: 100%;
+    	overflow: hidden;
+    	display: flex;
+    	flex-direction: column;
+  	  flex-wrap: nowrap;
+	  }
+	}
+
+	.tidy5e-sheet {
+		display: flex;
+		flex: 1;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+
+    .notice {
+    	display: block;
+    	background: var(--warning-accent);
+    	padding: 10px;
+    	font-size: 12px;
+    	color: var(--background);
+			border-radius: 5px;
+			margin-bottom: 8px;
+    }
+	}
+
+	@import 'partials/_general.scss';
+
+	// ### HEADER ###
+	.tidy5e-header {
+		display: flex;
+    justify-content: center;
+		padding: 10px 16px 16px 16px;
+		background: var(--header-background);
+	}
+
+	@import 'partials/_portrait.scss';
+	@import 'partials/_character-details.scss';
+	@import 'partials/_navigation.scss';
+
+	// #### SHEET BODY ####
+
+	.sheet-body {
+		padding: 1rem .25rem 1rem 1rem;
+    flex: 1;
+    overflow: hidden;
+	}
+
+	@import 'partials/_tabs.scss';
+	@import 'partials/_main-tab.scss';
+	@import 'partials/_favorites.scss';
+
+	// Inventorys
+	@import 'partials/_inventory.scss';
+	@import 'partials/_inventory-grid.scss';
+
+	// Notes in Biography and Journal
+
+	.left-notes,
+	.right-notes {
+		flex: 1;
+		height: 100%;
+    display: flex;
+    flex-direction: column;
+	}
+
+	.left-notes {
+		margin-right: 1rem;
+	}
+
+	.limited .note-entries {
+	  display: flex;
+	  height: 100%;
+		align-items: stretch;
+
+		article {
+			flex: 1;
+			margin: 0;
+			
+			&:last-child {
+	  		margin-left: 8px;
+			}
+
+		}//article
+	}
+
+	.note-entries article {
+		background: var(--faintest-color);
+		border-radius: 5px;
+		padding: 8px;
+		margin-bottom: 1rem;
+		position: relative;
+		flex:1;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&:hover .editor .editor-edit {
+			display: block;
+			padding: 0;
+			border: none;
+			box-shadow: none;
+		}
+
+		.section-titles {
+			font-weight: 700;
+			border-bottom: 1px solid var(--light-color);
+			padding-bottom: .25rem;
+			margin-bottom: .5rem;
+
+			input {
+				height: 16px;
+				width: calc(100% - 26px);
+				font-weight: 700;
+			}
+		}
+
+		.editor,
+		.editor .editor-content {
+			min-height: 50px;
+			padding: 0;
+			position: static;
+		}
+
+		.editor .tox .tox-tbtn {
+			width: 24px;
+			height: 24px;
+		}
+	
+		.editor .tox.tox-tinymce .tox-tbtn[title="Formats"] {
+			width: 90px;
+		}
+
+		.editor .tox .tox-tbtn--select {
+			width: auto;
+		}
+
+		.editor .editor-content ul {
+			list-style: disc;
+			padding-left: 20px;
+		}
+
+		.editor .editor-content,
+		.editor .tox .tox-toolbar__group {
+			padding: 0;
+		}
+
+		&.biography-notes .editor {
+			min-height: 271px;
+		}
+	
+		&.journal-notes .editor {
+			min-height: 382px;
+		}
+	}
+
+	.editor ul,
+	.editor ol {
+		list-style: outside;
+	  margin: 0.5em 0;
+	  padding: 0 0 0 1.5em;
+	}
+
+	.editor {
+    min-height: 382px;
+    display: flex;
+		flex-direction: column;
+		height: calc(100% - 21px);
+
+    .editor-edit {
+    	background: transparent;
+    }
+
+    .tox-editor-header {
+    	border-bottom: 1px solid var(--faint-color);
+    }
+
+    .tox-toolbar-overlord,
+    .tox-toolbar__primary {
+    	background: transparent;
+    	background-color: transparent;
+		}
+
+		.editor-content {
+			margin: 0;
+			padding: 0 .75rem 0 0;
+
+			p, li {
+				line-height: 1.4;
+			}
+
+			a.entity-link,
+			a.inline-roll {
+				padding: 1px 2px 0px 2px;
+				border-radius: 5px;
+				background: var(--faint-color);
+				color: var(--primary-font);
+			}
+
+		}
+
+		//.editor-content
+    
+	}
+
+	.tox.tox-tinymce {
+	    border: none;
+	    flex: 1;
+	    min-height: 100px;
+	}
+
+}

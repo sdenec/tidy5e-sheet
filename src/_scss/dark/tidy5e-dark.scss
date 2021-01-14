@@ -1,0 +1,111 @@
+.system-dnd5e.tidy5eDark {
+
+    // font color
+    --primary-font: rgba(255, 255, 255, 0.8);
+
+    --background:rgb(30, 30, 30);
+
+    --white: rgba(0, 0, 0, 1);
+    --primary-color: rgba(255, 255, 255, 0.8);
+    --secondary-color: rgba(255, 255, 255, .65);
+    --tertiary-color: rgba(255, 255, 255, .4);
+    --light-color: rgba(255, 255, 255, .25);
+    --faint-color: rgba(255, 255, 255, .1);
+    --faintest-color: rgba(255, 255, 255, .05);
+
+    --ability-accent: darkslategrey;
+
+    // sheet header
+    --header-background: rgba(255, 255, 255, .05);
+    --header-border: rgba(255, 255, 255, .25);
+
+    // icons
+    // --primary-accent: #48BB78;
+    --primary-accent: rgba(255, 100, 0, 1);
+    --prepared: rgba(0, 250, 180, .3);
+    --always-prepared: rgba(0, 100, 255, .3);
+
+    //portrait icons
+    --icon-background: rgb(30, 30, 30);
+    --icon-shadow: rgba(0, 0, 0, .4);
+    --icon-outline: rgba(0, 0, 0, .4);
+    --icon-font:rgba(255, 255, 255, .4);
+    --icon-hover: rgba(255, 255, 255, 0.8);
+
+    --warning-accent: rgba(255, 30, 0, .65);
+
+    // item sheets
+    --check-default: url(../images/check-dark-unchecked.svg);
+    --check-checked: url(../images/check-light-checked.svg);
+    --checkbox-font: rgba(255, 255, 255, .8);
+    --checkbox-outline: rgba(50, 50, 50, 1);
+    --checkbox-unchecked: rgba(75,75,75,1);
+    --checkbox-checked: rgba(0, 255, 0, 0.5);
+
+}//.tidy5eDark
+
+.tidy5eDark {
+  .tidy5e.sheet.actor {
+
+    .tidy5e-sheet {
+      background-color: var(--background);
+    }
+
+    .spellcasting-ability {
+      background: var(--background);
+    }
+
+    .environment-label span {
+      color: var(--background);
+    }
+
+    select option {
+      color: var(--background);
+    }
+
+  }
+  
+  .tidy5e.sheet.item {
+
+    .window-content {
+      color: var(--primary-font);
+
+      form {
+        background-color: var(--background);
+      }
+    }
+
+    .tox .tox-toolbar-overlord button {
+      color: #222;
+    }
+
+    .tox-sidebar-wrap {
+      padding: 8px;
+      background: var(--secondary-color);
+    }
+
+    select option {
+      color: var(--background);
+    }
+
+  }
+
+  .tidy5e.sheet.actor {
+    .tox-toolbar-overlord,
+    .tox-toolbar__primary {
+      background: #fff;
+      background-color: #fff;
+    }
+    
+    .tox .tox-toolbar-overlord button {
+      color: #222;
+    }
+
+    .tox-sidebar-wrap {
+      padding: 8px;
+      background: var(--secondary-color);
+    }
+  }
+}
+
+@import '_dark-modules.scss';

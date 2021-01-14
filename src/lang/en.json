@@ -1,0 +1,222 @@
+{
+	"TIDY5E.Subclass": "Subclass",
+	"TIDY5E.EditActorImage": "left click: edit image",
+	"TIDY5E.ShowActorImage": "right click: show character art",
+	"TIDY5E.ShowPortraitArt": "show portrait",
+	"TIDY5E.ShowTokenArt": "show token",
+
+	"TIDY5E.Exhaustion0": "No negative effects",
+	"TIDY5E.Exhaustion1": "Disadvantage on Ability Checks",
+	"TIDY5E.Exhaustion2": "Speed halved",
+	"TIDY5E.Exhaustion3": "Disadvantage on Attack rolls and Saving Throws",
+	"TIDY5E.Exhaustion4": "Hit point maximum halved",
+	"TIDY5E.Exhaustion5": "Speed reduced to 0",
+	"TIDY5E.Exhaustion6": "Death",
+
+	"TIDY5E.RestHint": "Take A Rest",
+	"TIDY5E.RestS": "Short Rest",
+	"TIDY5E.RestL": "Long Rest",
+
+	"TIDY5E.Journal": "Journal",
+
+	"TIDY5E.RestoreOnRest": "Restore on rest",
+
+	"TIDY5E.JournalPoi": "Persons of Interest",
+	"TIDY5E.JournalLoi": "Locations of Interest",
+	"TIDY5E.JournalQuests": "Quests",
+	"TIDY5E.JournalMisc": "Miscellaneous",
+	"TIDY5E.JournalEntries": "Journal Entries",
+	"TIDY5E.TogglePersonalityInfo": "Toggle Personality Info",
+
+	"TIDY5E.EnableEdit": "Enable Edit",
+	"TIDY5E.DisableEdit": "Disable Edit",
+	"TIDY5E.EditHint": "Toggles visibility of add/delete buttons and empty sections",
+
+	"TIDY5E.EmptySection": "This section is empty. Unlock the sheet to edit.",
+	"TIDY5E.GmOnlyEdit": "Only your GM can edit this section.",
+
+	"TIDY5E.AttunementWarning": "Attunement warning: You can't attune to more than {number} items!",
+	"TIDY5E.AttunementItems": "Attuned Items",
+	"TIDY5E.AttunementMax": "Attunement maximum",
+	
+	"TIDY5E.GridLayout": "Grid Layout",
+	"TIDY5E.ListLayout": "List Layout",
+
+	"TIDY5E.Encumbrance": "Encumbrance",
+
+	"TIDY5E.EditSpell": "Edit Spell",
+	"TIDY5E.DeleteSpell": "Delete Spell",
+	"TIDY5E.AddFav": "Add Favorite",
+	"TIDY5E.isFav": "Favorite",
+	"TIDY5E.RemoveFav": "Remove Favorite",
+
+	"TIDY5E.ToggleInfo": "Toggle Info",
+	"TIDY5E.ToggleMovement": "Toggle between modern and legacy speed display",
+
+	"TIDY5E.Show" : "show/edit",
+	"TIDY5E.Hide" : "hide",
+	"TIDY5E.Edit" : "edit",
+	"TIDY5E.TraitsEmpty" : "empty traits",
+
+	"TIDY5E.Abilities" : "Abilities",
+
+	"TIDY5E.Environment" : "Environment",
+
+	"TIDY5E.CurrencyAbbrCP" : "CP",
+	"TIDY5E.CurrencyAbbrSP" : "SP",
+	"TIDY5E.CurrencyAbbrGP" : "GP",
+	"TIDY5E.CurrencyAbbrEP" : "EP",
+	"TIDY5E.CurrencyAbbrPP" : "PP",
+	
+	"TIDY5E.SearchItem" : "search item",
+	"TIDY5E.SearchSpell" : "search spell",
+	"TIDY5E.SearchClear" : "clear search",
+	"TIDY5E.SearchHint" : "Just start to type what you are searching for.",
+
+	"TIDY5E.AbbrMod" : "Mod",
+	"TIDY5E.AbbrSavingThrow" : "Save",
+	"TIDY5E.SpellAttackMod" : "Attack Mod",
+	"TIDY5E.PreparedSpells" : "Prepared spells",
+	"TIDY5E.PreparedSpellsMax" : "Maximum for prepared spells",
+	"TIDY5E.Components" : "Comps",
+	"TIDY5E.SpellSchool" : "School",
+
+	"TIDY5E.TokenLinked" : "Token linked to actor",
+	"TIDY5E.TokenUnlinked" : "Token not linked to actor",
+
+	"TIDY5E.ItemDetailsHeadline" : "Mechanics/Flavor Text",
+
+	"TIDY5E.Settings.GlobalLabel" : "Global",
+	"TIDY5E.Settings.UserLabel" : "User",
+	"TIDY5E.Settings.PcLabel" : "PCs",
+	"TIDY5E.Settings.NpcLabel" : "NPCs",
+	"TIDY5E.Settings.VehicleLabel" : "Vehicles",
+
+	"TIDY5E.Settings.SheetMenu" : {
+		"label" : "Sheet Settings"
+	},
+	"TIDY5E.Settings.SheetTheme" : {
+		"name" : "Tidy5e color theme.",
+		"hint" : "Use either the default light or alternate dark color theme of Tidy5e.",
+		"default": "Default (light)",
+		"dark": "Alternate (dark)"
+	},
+	"TIDY5E.Settings.UseClassicControls" : {
+		"name" : "Use classic item controls in list view.",
+		"hint" : "Always shows item controls and disable right click menu. Only applies for PC item/spell inventory in list layout."
+	},
+	"TIDY5E.Settings.ContextRollButtons" : {
+		"name" : "Show midiQol/Better Rolls Item Button in Context Menu",
+		"hint" : "Per default roll buttons appear in the item's description. Enable to move them to the context menu. Useful for grid layout or if you use them frequently."
+	},
+	"TIDY5E.Settings.ShowTraitLabels" : {
+		"name" : "Show Trait Labels.",
+		"hint" : "By default only icons are shown for traits. Enable to display labels as well."
+	},
+
+
+	"TIDY5E.Settings.HideClassList" : {
+		"name" : "Hide character class list.",
+		"hint" : "Enable to hide the class list below the character's name."
+	},
+	"TIDY5E.Settings.DisableInspirationAnimation" : {
+		"name" : "Inanimate inspiration tracker.",
+		"hint" : "Enable to turn off inspiration tracker glow animation."
+	},
+	"TIDY5E.Settings.HideIfZero" : {
+		"name" : "Hide exhaustion and inspiration tracker on 0.",
+		"hint" : "Enable to hide exhaustion and inspiration if 0. Will show on hover."
+	},
+	"TIDY5E.Settings.InspirationOnHover" : {
+		"name" : "Show inspiration indicator only on hover.",
+		"hint" : "Enable to only show the inspiration indicator when you hover over the portrait."
+	},
+	"TIDY5E.Settings.ExhaustionOnHover" : {
+		"name" : "Show exhaustion tracker only on hover.",
+		"hint" : "Enable to only show the exhaustion tracker when you hover over the portrait."
+	},
+	"TIDY5E.Settings.DisableHpBar" : {
+		"name" : "Disable health bar.",
+		"hint" : "Enable to hide the colored bar indicating the remaining HP (Health Numbers will still be visible)."
+	},
+	"TIDY5E.Settings.DisableHpOverlay" : {
+		"name" : "Hide hit point overlay.",
+		"hint" : "Enable to hide the HP overlay for this actor type."
+	},
+	"TIDY5E.Settings.PcToggleTraits" : {
+		"name" : "Toggle empty character traits.",
+		"hint" : "By default empty traits are always visible. Enable to add a toggle button."
+	},
+	"TIDY5E.Settings.MoveTraits" : {
+		"name" : "Move traits below resources.",
+		"hint" : "Enable to move traits from the left side below resources."
+	},
+
+
+	"TIDY5E.Settings.AlwaysShowTraits" : {
+		"name" : "Always show traits.",
+		"hint" : "By default empty traits are hidden by a toggle button. Enable to never hide."
+	},
+	"TIDY5E.Settings.AlwaysShowSkills" : {
+		"name" : "Always show skills.",
+		"hint" : "By default unproficient skills are hidden by a toggle button. Enable to never hide."
+	},
+
+	
+	"TIDY5E.Settings.DisableRightClick" : {
+		"name" : "Disable right click context menu.",
+		"hint" : "In case of module conflicts or preference you can disable the right click context menu. Items will show a menu icon instead."
+	},
+	"TIDY5E.Settings.UseExpandedSheet" : {
+		"name" : "Expanded Limited view for character sheets.",
+		"hint" : "Displays the entire character sheet (minus the journal) to players with limited permission."
+	},
+	"TIDY5E.Settings.UseRoundPortraits" : {
+		"name" : "Round portrait style.",
+		"hint" : "Choose to enable round portraits/icons for actors.",
+		"all": "All actors",
+		"pc": "PCs",
+		"npc": "NPCs/Vehicles",
+		"none": "none"
+	},
+	"TIDY5E.Settings.HpOverlayBorder" : {
+		"name" : "Offset hit point overlay.",
+		"hint" : "Enter offset value to compensate for portrait frames and prevent tinting."
+	},
+	"TIDY5E.Settings.GmEditPermission" : {
+		"name" : "GM can always edit PC sheets.",
+		"hint" : "Enable to allow GMs to edit PC sheets without toggling the sheet lock."
+	},
+	"TIDY5E.Settings.GmEditEffects" : {
+		"name" : "Only GM can edit active effects.",
+		"hint" : "Enable to deny players to edit active effects on their sheets. They will still see applied effects."
+	},
+	"TIDY5E.Settings.AlwaysShowQty" : {
+		"name" : "Always show item quantity.",
+		"hint" : "Enable to never hide item quantity."
+	},
+	"TIDY5E.Settings.DisableInspiration" : {
+		"name" : "Disable inspiration tracker.",
+		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
+	},
+	"TIDY5E.Settings.ExhaustionEffects" : {
+		"name" : "Exhaustion effects (uses Active Effects).",
+		"hint" : "Apply corresponding active effects when setting exhaustion levels - requires midiQol for disadvantage rolls!"
+	},
+	"TIDY5E.Settings.DisableExhaustion" : {
+		"name" : "Disable exhaustion tracker.",
+		"hint" : "If your campaign doesn't use exhaustion you can disable the tracker completely."
+	},
+	"TIDY5E.Settings.ShowNpcRest" : {
+		"name" : "Resting for NPCs.",
+		"hint" : "Enable to shows the rest icon/buttons on NPC sheets."
+	},
+	"TIDY5E.Settings.LinkMarker" : {
+		"name" : "Mark linked/unlinked NPCs.",
+		"hint" : "Adds a colored border and icon to linked/unliked NPC sheets.",
+		"default": "No link marker (default)",
+		"unlinked": "Highlight unlinked tokens",
+		"linked": "Highlight linked tokens",
+		"both": "Highlight linked and unlinked tokens"
+	}
+}

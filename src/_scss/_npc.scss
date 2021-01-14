@@ -1,0 +1,501 @@
+.tidy5e.sheet.actor.npc {
+
+  min-width: 690px;
+
+  .linked {
+    box-shadow: 0 0 4px 2px var(--linked-accent) inset;
+  }
+
+  .unlinked {
+    box-shadow: 0 0 4px 2px var(--unlinked-accent) inset;
+  }
+
+  .link-state {
+    display: none;
+    padding: 4px 3px 3px 4px;
+    margin-top: -1px;
+    border-radius: 5px;
+  }
+
+  .linked .link-state.fa-link {
+    display: inline-block;
+    background: var(--linked-light);
+  }
+
+  .unlinked .link-state.fa-unlink {
+    display: inline-block;
+    background: var(--unlinked-light);
+  }
+
+  .profile-wrap {
+
+    .profile .rest-container {
+      display: block;
+
+      .resting {
+        width: 24px;
+        height: 20px;
+        border-radius: 0 0 0 5px;
+
+        &:hover {
+          width: 94px;
+        }
+
+        .rest {
+          flex: 0 0 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 18px;
+          border-radius: 50%;
+          cursor: pointer;
+          border: none;
+          color: var(--tertiary-color);
+          padding: 0;
+          font-size: 12px;
+          line-height: 18px;
+          font-family: var(--signika);
+          font-weight: 700;
+
+          &:hover {
+            color: var(--primary-font);
+          }
+        }
+
+        .resting-icon {
+          flex: 0 0 24px;
+          width: 24px;
+          height: 18px;
+          margin-right: 8px;
+          border-radius: 0;
+          font-size: 12px;
+          color: var(--primary-font);
+        }
+      }
+
+    }
+    
+    .profile .hp-overlay-wrapper::before {
+      border-width: var(--npc-border);
+    }
+
+    .profile.roundPortrait .rest-container {
+      left: 7px;
+      bottom: 0;
+
+      .resting {
+        border-radius: 5px 0 0 5px;
+        transition: all .3s ease;
+      }
+
+      .resting:not(:hover) {
+        background: transparent;
+        box-shadow: none;
+        border-color: transparent;
+      }
+    }
+
+    .profile .portrait-hp {
+      width: 136px;
+    }
+
+    .profile.roundPortrait .portrait-hp {
+      border-radius: 5px;
+    }
+
+    .health {
+      position: absolute;
+      z-index: 25;
+      right: 7px;
+      bottom: 14px;
+
+      .rollable {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 22px;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .formula-edit {
+        background: var(--icon-background);
+        box-shadow: 0 0 10px var(--icon-shadow) inset;
+        border: 1px solid var(--icon-outline);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        width: 136px;
+        height: 20px;
+        border-radius: 5px;
+      }
+
+      &:hover .formula-edit,
+      .formula-edit:focus-within {
+        display: flex;
+      }
+
+      input {
+        // padding-top: 2px;
+        // color: #fff;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        border-radius: 5px;
+        margin: 0;
+      }
+    }
+  }
+
+  .level-information {
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--modesto);
+    font-weight: 700;
+
+    .xp {
+      font-size: 16px;
+      margin-right: 4px;
+      color: var(--secondary-color);
+    }
+
+    .level {
+      [contenteditable] {
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+  .origin-summary {
+
+    .environment {
+      position: relative;
+      top: -1px;
+      display: flex;
+      margin: 0 4px 0 0;
+      padding: 0;
+
+      &::after {
+        content: none;
+      }
+
+      .environment-label {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        margin: 0;
+        z-index: 100;
+        border-radius: 3px;
+        padding: 1px;
+
+        span {
+          padding: 2px 4px;
+          margin: 0;
+        }
+
+        &::after {
+          position: absolute;
+          top: calc(100% + 6px);
+          left: calc(50% - 6px);
+          content: '';
+          display: block;
+          background: transparent;
+          border-radius: 0;
+          width: 0;
+          height: 0;
+          border: 6px solid transparent;
+          border-top-color: #fff;
+        }
+      }
+
+      span:focus-within,
+      &:hover .environment-label {
+        display: inline-block;
+      }
+    }//.environment
+  }//.origin-summary
+
+  // Left Pane
+  .left-pane {
+    flex: 0 0 220px;
+  }
+
+  .center-pane {
+    min-height: 100%;
+  }
+
+  .counters {
+    display: flex;
+    flex: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+    border-bottom: none;
+    border: 1px solid var(--faint-color);
+    border-radius: 5px;
+
+    .counter {
+      height: auto;
+      line-height: 16px;
+      flex: 1;
+      text-align: center;
+
+      .counter-value {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 2px;
+        margin-top: 3px;
+      }
+
+      input[type="text"]:first-of-type {
+        text-align: right;
+      }
+
+      input[type="text"]:last-of-type {
+        text-align: left;
+      }
+
+      input[type="text"] {
+        height: 14px;
+        max-width: 20px;
+      }
+
+      input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+        margin: 0;
+      }
+
+      h4 {
+        font-size: 12px;
+        line-height: 12px;
+        padding-top: 4px;
+      }
+    }//.counter
+  }//.counters
+
+  // Skills List
+
+  .skills-list {
+
+    margin-bottom: 17px;
+    position: relative;
+
+    &.always-visible {
+      margin-bottom: 0;
+    }
+
+    .skill:nth-child(even) {
+      background: none;
+    }
+
+    .skill.even {
+      background: var(--faint-color);
+    }
+
+    .toggle-proficient {
+    	position: absolute;
+      top: calc(100% + 1px);
+      left: 50%;
+      transform: translate(-50%,0);
+      font-size: 10px;
+      border: 1px solid var(--faint-color);
+      border-top: none;
+      padding: 2px 8px;
+      border-radius: 0 0 5px 5px;
+      cursor: pointer;
+      color: var(--secondary-color);
+      white-space: nowrap;
+    }
+
+    .toggle-proficient::before {
+      content: attr(data-show-skills);
+    }
+
+    .toggle-proficient:hover {
+      color: var(--primary-font);
+    }
+
+    &.expanded .toggle-proficient::before {
+      content: attr(data-hide-skills);
+    }
+
+    &.always-visible .toggle-proficient,
+    &:not(.expanded):not(.always-visible) .skill .skill-proficiency {
+    	display: none;
+    }
+  }//.skills-list
+
+  // .inventory-list .items-footer,
+  // .inventory-list .hidden {
+  //   display: none;
+  // }
+
+  .items-list {
+    padding: 0 0 8px 0;
+    overflow-y: visible;
+
+    .item {
+      .item-name {
+
+        .item-image {
+          flex: 0 0 20px;
+          height: 20px;
+
+          i {
+            font-size: 16px;
+          }
+        }
+        
+      }//.item-name
+    }//.item
+
+    // Spells
+
+    .spell-action,
+    .spell-target,
+    .spell-school,
+    .spell-comps {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .items-header-labels {
+      .items-header-comps {
+        width: 50px;
+      }
+
+      .items-header-uses,
+      .items-header-target,
+      .items-header-school {
+        width: 90px;
+      }
+    }
+
+    .spellbook-header {
+      .items-header-usage {
+        width: 90px;
+      }
+    }
+    
+    .spell-comps {
+      flex: 0 0 50px;
+    }
+
+    .item-charges,
+    .spell-action,
+    .spell-target,
+    .spell-school {
+      flex:0 0 90px;
+    }
+
+    .item-action {
+      flex:0 0 120px;
+    }
+
+  }//.items-list
+
+  .npc-spell-stats {
+    display: flex;
+    flex: 0;
+    font-size: 12px;
+  }
+
+  .spellcasting-ability {
+    margin: 0;
+    position: sticky;
+    bottom: 0;
+    background: url(../../../systems/dnd5e/ui/parchment.jpg) repeat;
+    background-attachment: fixed;
+
+    .spell-dc {
+      flex: 1;
+      font-size: 20px;
+      font-family: var(--modesto);
+    }
+
+    select {
+      flex: 0 0 90px;
+      font-family: var(--signika);
+    }
+
+    input {
+      min-width: 16px;
+      height: 16px;
+    }
+  }//.spellcasting-ability
+
+  .caster-level {
+    display: flex;
+    align-items: center;
+    flex: 0;
+    white-space: nowrap;
+    margin-right: 4px;
+  }
+
+  .spellbook-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4px 2px 0;
+    margin: 4px 0;
+    line-height: 1;
+    border: 1px solid var(--light-color);
+    border-left: none;
+    border-right: none;
+    font-family: var(--modesto);
+    font-weight: 700;
+    font-size: 18px;
+
+    &.toggle-spellbook.show .fa-caret-down,
+    i {
+      display: none;
+    }
+
+    &.toggle-spellbook .fa-caret-down,
+    &.show .fa-caret-up {
+      display: inline-block;
+    }
+
+    &.toggle-spellbook {
+      opacity: .4;
+      transition: opacity .3s ease;
+      cursor: pointer;
+    }
+
+    &:hover,
+    &.show {
+      opacity: 1;
+    }
+  }//.spellbook-title
+
+  .spellbook-empty {
+    .notice {
+      font-size: 12px;
+    }
+  }
+
+  .left-notes.hidden {
+    display: none;
+  }
+
+  .toggle-personality-info {
+    padding: 20px 4px;
+    background: var(--faint-color);
+    border-radius: 3px;
+    margin-right: 4px;
+    color: var(--tertiary-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+
+}

@@ -1,0 +1,168 @@
+{
+	"TIDY5E.EditActorImage": "이미지 수정",
+
+	"TIDY5E.Exhaustion0": "부정적 효과 없음",
+	"TIDY5E.Exhaustion1": "능력 판정에 불리함",
+	"TIDY5E.Exhaustion2": "이동 속도 절반",
+	"TIDY5E.Exhaustion3": "공격 굴림과 내성 굴림에 불리함",
+	"TIDY5E.Exhaustion4": "최대 HP 절반",
+	"TIDY5E.Exhaustion5": "이동 속도 0",
+	"TIDY5E.Exhaustion6": "사망",
+
+	"TIDY5E.RestHint": "휴식 취하기",
+	"TIDY5E.RestS": "짧은 휴식",
+	"TIDY5E.RestL": "긴 휴식",
+
+	"TIDY5E.AttrHitPoints": "HP",
+
+	"TIDY5E.HitDiceHint": "휴식 중 사용",
+
+	"TIDY5E.Journal": "저널",
+
+	"TIDY5E.SkillPassive": "상시",
+
+	"TIDY5E.RestoreOnRest": "휴식시 복원",
+
+	"TIDY5E.BioTraits": "특성",
+	"TIDY5E.BioIdeals": "이상",
+	"TIDY5E.BioBonds": "유대",
+	"TIDY5E.BioFlaws": "단점",
+	"TIDY5E.BioAppearance": "외모",
+	"TIDY5E.BioBackground": "배경/일생",
+
+	"TIDY5E.JournalPoi": "흥미로운 인물",
+	"TIDY5E.JournalLoi": "흥미로운 장소",
+	"TIDY5E.JournalQuests": "퀘스트",
+	"TIDY5E.JournalMisc": "기타사항",
+	"TIDY5E.JournalEntries": "저널 항목",
+
+	"TIDY5E.DeleteDisabled": "삭제 비허용",
+	"TIDY5E.DeleteEnabled": "삭제 허용",
+	"TIDY5E.DeleteDisabledHint": "아이템 삭제 버튼 보이기",
+	"TIDY5E.DeleteEnabledHint": "아이템 삭제 버튼 숨기기",
+
+	"TIDY5E.ConvertCurrencyHint": "화폐를 고단위 화폐로 환금",
+	"TIDY5E.ConvertCurrencyButton": "환금",
+
+	"TIDY5E.Encumbrance": "적재량",
+
+	"TIDY5E.EditSpell": "주문 수정",
+	"TIDY5E.DeleteSpell": "주문 삭제",
+	"TIDY5E.AddFav": "즐겨찾기에 추가",
+	"TIDY5E.RemoveFav": "줄겨찾기에서 삭제",
+
+	"TIDY5E.ToggleInfo": "정보 전환",
+
+	"TIDY5E.Show" : "보기/수정",
+	"TIDY5E.Hide" : "숨기기",
+	"TIDY5E.Edit" : "수정",
+	"TIDY5E.SkillsNotProficient" : "숙련되지 않은 기술",
+	"TIDY5E.TraitsEmpty" : "비어 있는 특성",
+
+	"TIDY5E.AbbrArmorClass" : "AC",
+
+	"TIDY5E.strAbility" : "근력",
+	"TIDY5E.dexAbility" : "민첩",
+	"TIDY5E.conAbility" : "건강",
+	"TIDY5E.intAbility" : "지능",
+	"TIDY5E.wisAbility" : "지혜",
+	"TIDY5E.chaAbility" : "매력",
+
+	"TIDY5E.Abilities" : "능력치",
+
+	"TIDY5E.Environment" : "환경",
+
+	"TIDY5E.AbbrMod" : "수정",
+
+	"TIDY5E.Settings.PcLabel" : "PC 시트: ",
+	"TIDY5E.Settings.NpcLabel" : "NPC 시트: ",
+
+	"TIDY5E.Settings.UseExpandedSheet" : {
+		"name" : "제한된 시트에 대한 확장된 보기",
+		"hint" : "제한된 시트의 확장된 보기는 액터에 대해 제한된 권한이 있는 플레이어에게 전체 캐릭터 시트(개인 노트 탭 제외)를 보여준다."
+	},
+	"TIDY5E.Settings.UseDarkMode" : {
+		"name" : "어두운 모드 대체 사용.",
+		"hint" : "이 옵션을 선택하면 어두운 모드 버전의 Tidy5e 시트가 활성화된다."
+	},
+	"TIDY5E.Settings.PrimaryAccentColor" : {
+		"name" : "첫번째 강조색.",
+		"hint" : "첫번째 강조색을 덮어쓴다 (기본값: #ff6400/어두움: #48BB78) e. g. 버튼, 입력 필드 테두리 또는 호버 상태. 다음과 같은 유효한 css 값을 사용한다. red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+	},
+	"TIDY5E.Settings.SecondaryAccentColor" : {
+		"name" : "두번째 강조색.",
+		"hint" : "준비 상태에 사용되는 두번째 강조색을 덮어쓴다 (기본: rgba(210,0,255,.1)/어두움: rgba(0,150,150,.325)) 다음과 같은 유효한 css 값을 사용한다. red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+	},
+	"TIDY5E.Settings.AlwaysPreparedAccentColor" : {
+		"name" : "항상 준비된 주문에 대한 강조 색.",
+		"hint" : "항상 준비된 주문에 사용되는 기본 강조색을 덮어쓴다 (기본: rgba(210,0,255,.1)/어두움: rgba(0,150,150,.325)) 다음과 같은 유효한 css 값을 사용한다. red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+	},
+	"TIDY5E.Settings.UseRoundPortraits" : {
+		"name" : "시트에 둥근 포트레이트 사용",
+		"hint" : "둥근 포트레이트를 사용하려면 체크한다. Hp 오버레이와 포트레이트 버튼을 더 멋지게 보이도록 조정된다. 커스텀 프레임 없는 사각 포트레이트도 멋지다."
+	},
+	"TIDY5E.Settings.HpOverlayBorder" : {
+		"name" : "Hp 오버레이의 외곽 폭",
+		"hint" : "포트레이트에 프레임이 있을 경우 너비를 보정하기 위해 Hp 오버레이를 조정할 수 있다. 오버레이가 테두리를 물들이지 않으면 더 멋있을 수도 있다."
+	},
+	"TIDY5E.Settings.DisableHpOverlay" : {
+		"name" : "Hp 오버레이 비활성화.",
+		"hint" : "캐릭터 포트레이트에 비디오 게임 스타일의 Hp 오버레이가 마음에 들지 않을 경우 비활성화 할 수 있다."
+	},
+	"TIDY5E.Settings.HideClassList" : {
+		"name" : "캐릭터 클래스 목록 숨김.",
+		"hint" : "이 옵션을 선택하면 레벨 레이블 옆에 있는 캐릭터 클래스 목록이 숨겨진다. 이 시트는 3개의 클래스까지 다룰 수 있으며 더 많을 경우에도 작동하지만 구려질 수도 있다."
+	},
+	"TIDY5E.Settings.DisableInspirationAnimation" : {
+		"name" : "고양감 표시 애니메이션 없음.",
+		"hint" : "산만하다고 느낄 경우와 같이 고양감의 빛나는 애니메이션을 비활성화 할 수 있다."
+	},
+	"TIDY5E.Settings.DisableInspiration" : {
+		"name" : "고양감 추적기 비활성화.",
+		"hint" : "캠페인 내에서 고양감을 사용하지 않을 경우 추적기를 비활성화할 수 있다.."
+	},
+	"TIDY5E.Settings.DisableExhaustion" : {
+		"name" : "탈진 추적기 비활성화.",
+		"hint" : "캠페인 내에서 탈진을 사용하지 않을 경우 추적기를 비활성화할 수 있다."
+	},
+	"TIDY5E.Settings.HideIfZero" : {
+		"name" : "탈진과 고양감이 (0)이 되어 사용되지 않을 경우 숨김.",
+		"hint" : "탈진과 고양감의 정도가 0일 경우 숨기려면 이 옵션을 선택한다. 호버시 표시된다."
+	},
+	"TIDY5E.Settings.ExhaustionOnHover" : {
+		"name" : "호버시 탈진 추적기 보이기.",
+		"hint" : "이 옵션을 선택하면 포트레이트 위에 마우스 호버시에만 탈진 추적기를 볼 수 있다."
+	},
+	"TIDY5E.Settings.InspirationOnHover" : {
+		"name" : "호버시 고양감 추적기 보이기.",
+		"hint" : "이 옵션을 선택하면 포트레이트 위에 마우스 호버시에만 고양감 추적기를 볼 수 있다."
+	},
+	"TIDY5E.Settings.RestOnHover" : {
+		"name" : "호버시 휴식 버튼 보이기.",
+		"hint" : "이 옵션을 선택하면 포트레이트 위에 마우스 호버시에만 휴식 버튼을 볼 수 있다."
+	},
+	"TIDY5E.Settings.MoveTraits" : {
+		"name" : "특성을 자원 아래로 이동.",
+		"hint" : "자원 아래 특성(언어, 숙련 등)을 표시하려면 이 항목을 선택한다."
+	},
+	"TIDY5E.Settings.PcToggleTraits" : {
+		"name" : "캐릭터 특성 전환 버튼 보이기.",
+		"hint" : "빈 특성을 보이는 전환 버튼을 보이려면 선택한다."
+	},
+	"TIDY5E.Settings.AlwaysShowTraits" : {
+		"name" : "항상 특성 보이기.",
+		"hint" : "빈 NPC 특성을 숨기거나 전환하지 않으려면 선택한다."
+	},
+	"TIDY5E.Settings.AlwaysShowSkills" : {
+		"name" : "항상 기술 보이기.",
+		"hint" : "숙련이 없는 NPC 기술을 숨겨 전환하지 않으려면 선택한다."
+	},
+	"TIDY5E.Settings.MarkLinked" : {
+		"name" : "액터 연결 시 시트를 강조 표시.",
+		"hint" : "잘못된 NPC 시트를 편집하는 경우 연결된 시트를 시각적으로 강조 표시한다."
+	},
+	"TIDY5E.Settings.MarkUnlinked" : {
+		"name" : "액터 비연결 시 시트를 강조 표시.",
+		"hint" : "잘못된 NPC 시트를 편집하는 경우 비연결된 시트를 시각적으로 강조 표시한다."
+	}
+}

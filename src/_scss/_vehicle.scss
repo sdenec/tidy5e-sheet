@@ -1,0 +1,145 @@
+.tidy5e.sheet.actor.vehicle {
+
+	.left-pane {
+		flex: 0 0 220px;
+	}
+
+	.counters {
+		width: 100%;
+    background: var(--faint-color);
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+
+    .counter {
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    	white-space: nowrap;
+    	border-top: 1px solid var(--light-color);
+
+    	&:first-child {
+    		border: none;
+    	}
+    }
+
+    .counter-value input[type=text] {
+    	width: 70px;
+    	height: 20px;
+    	text-align: right;
+    }
+
+    .counter-value input[type=checkbox] {
+    	width: 16px;
+    	height: 16px;
+    	margin: 2px 0;
+    }
+
+    .action-thresholds .counter-value {
+    	display: flex;
+    	align-items: center;
+
+    	input[type=text] {
+    		width: 24px;
+    		text-align: center;
+    	}
+    }
+
+	}
+
+	.attributes .items-list {
+		padding: 0 0 8px 0;
+    overflow-y: visible;
+	}
+
+	min-width: 690px;
+	min-height: 210px;
+
+	.header-attributes {
+
+		.ac-display {
+
+			.value {
+				top: 28px;
+			}
+
+			.value-footer {
+				position: absolute;
+				bottom: 6px;
+				left: 0;
+				width: 100%;
+			}
+		}//-ac-display
+	}//.header-attributes 
+
+	.ability-scores .ability .ability-mod {
+		text-align: center;
+	}
+
+	.portrait-hp input,
+	.portrait-hp span,
+	.portrait-temp input {
+		width: 60px;
+	}
+
+	.profile .hp-overlay-wrapper::before {
+		border-width: var(--vehicle-border);
+	}
+
+	.items-header {
+
+		.items-header-item-cover,
+		.items-header-item-crew {
+			width: 50px;
+		}
+
+		.items-header-item-ac,
+		.items-header-item-hp{
+			width: 40px;
+		}
+
+		.items-header-item-threshold,
+		.items-header-item-qty,
+		.items-header-item-price,
+		.items-header-item-weight  {
+			width: 70px;
+		}
+
+	}
+
+	.item {
+
+		&.cargo-row.crew input,
+		&.cargo-row.passengers input {
+			padding: 0 4px;
+		}
+
+		.item-detail {
+
+			&.item-cover,
+			&.item-crew {
+				width: 50px;
+			}
+
+			&.item-ac,
+			&.item-hp {
+				width: 40px;
+			}
+
+			&.item-threshold,
+			&.item-qty,
+			&.item-price,
+			&.item-weight {
+				width: 70px;
+			}
+
+			input {
+				text-align: center;
+			}
+		}
+	}
+
+	.note-entries article.biography-notes .editor {
+		height: 100%;
+	}
+}
