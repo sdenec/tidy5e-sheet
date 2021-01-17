@@ -1001,4 +1001,10 @@
 		background: var(--faint-color);
 		color: var(--primary-font);
 	}
+
+	ul {
+		list-style: initial;
+		padding-left: 20px;
+		margin: initial;
+	}
 }

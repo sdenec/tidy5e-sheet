@@ -452,5 +452,5 @@ export const addFavorites = async function(app, html, data, position) {
       }
     }
 
-    Hooks.callAll("renderedTidy5eSheet", app, html, data);
+    // Hooks.callAll("renderedTidy5eSheet", app, html, data);
   }

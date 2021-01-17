@@ -177,7 +177,8 @@
 		"all": "All actors",
 		"pc": "PCs",
 		"npc": "NPCs/Vehicles",
-		"none": "none"
+		"none": "none",
+		"default": "none"
 	},
 	"TIDY5E.Settings.HpOverlayBorder" : {
 		"name" : "Offset hit point overlay.",

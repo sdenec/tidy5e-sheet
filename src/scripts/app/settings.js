@@ -10,31 +10,115 @@ export class Tidy5eUserSettings extends FormApplication {
 
 // open a dialogue to reload the window when saving
 
-    game.settings.register('tidy5e-sheet', 'user-settings', {
-      name: 'Settings object for world level markdown editor settings',
-      type: Object,
-      default: {
-        chat: true,
-        richText: true
-      },
-      config: false,
-      onChange: () => {
-        new Dialog({
-          content: `<p>Some settings have changed, that require a refresh of the page to be applied.</p>`,
-          buttons: {
-            yes: {
-              icon: '<i class="fas fa-check"></i>',
-              label: 'Refresh page.',
-              callback: () => location.reload()
-            },
-            no: {
-              icon: '<i class="fas fa-times"></i>',
-              label: 'I\'ll refresh later.'
-            }
-          }
-        }).render(true);
-      }
-    })
+    // game.settings.register('tidy5e-sheet', 'user-settings', {
+    //   name: 'Settings object for world level markdown editor settings',
+    //   type: Object,
+    //   default: {
+    //     chat: true,
+    //     richText: true
+    //   },
+    //   config: false,
+    //   onChange: () => {
+    //     new Dialog({
+    //       content: `<p>Some settings have changed, that require a refresh of the page to be applied.</p>`,
+    //       buttons: {
+    //         yes: {
+    //           icon: '<i class="fas fa-check"></i>',
+    //           label: 'Refresh page.',
+    //           callback: () => location.reload()
+    //         },
+    //         no: {
+    //           icon: '<i class="fas fa-times"></i>',
+    //           label: 'I\'ll refresh later.'
+    //         }
+    //       }
+    //     }).render(true);
+    //   }
+		// })
+
+		
+		// PC Settings
+		
+		game.settings.register("tidy5e-sheet", "hideClassList", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideClassList.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.HideClassList.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "noInspirationAnimation", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableInspirationAnimation.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.DisableInspirationAnimation.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "hideIfZero", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideIfZero.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.HideIfZero.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "inspirationOnHover", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.InspirationOnHover.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.InspirationOnHover.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "exhaustionOnHover", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+		
+		game.settings.register("tidy5e-sheet", "disableHpBar", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.DisableHpBar.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+		
+		game.settings.register("tidy5e-sheet", "disableHpOverlay", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.DisableHpOverlay.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "pcToggleTraits", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.PcToggleTraits.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.PcToggleTraits.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+		
+		game.settings.register("tidy5e-sheet", "moveTraits", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.MoveTraits.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.MoveTraits.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
 
 
 	}
@@ -45,9 +129,9 @@ export class Tidy5eUserSettings extends FormApplication {
 			...super.defaultOptions,
 			template: "modules/tidy5e-sheet/templates/settings/settings.html",
 			height: "auto",
-			title: "Tidy5e Sheet - Settings",
+			title: "Tidy5e Sheet Settings",
 			width: 600,
-			classes: ["tidy5e-sheet", "settings"],
+			classes: ["tidy5e", "settings"],
 			tabs: [ 
 				{
 					navSelector: '.tabs',
@@ -67,7 +151,7 @@ export class Tidy5eUserSettings extends FormApplication {
   // static get isChatActive() {
   //   const settings = game.settings.get('tidy5e-sheet', 'user-settings');
   //   return settings.chat;    
-  // }
+	// }
 
 	constructor(object = {}, options) {
 		super(object, options);
@@ -81,7 +165,7 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	getSettingsData() {		
 		console.log(game.settings);
-		return game.settings.get('tidy5e-sheet', 'user-settings');
+		// return game.settings.get('tidy5e-sheet', 'user-settings');
 	}
 
 	getData() {
@@ -96,15 +180,21 @@ export class Tidy5eUserSettings extends FormApplication {
 	}
 
 	_updateObject(ev, formData) {
-    const data = expandObject(formData);
-    game.settings.set('tidy5e-sheet', 'user-settings', data);
+		const data = expandObject(formData);
+		console.log(formData);
+		console.log(data['alwaysShowQty']);
+		// console.log(settingOptions);
+		// for(const [key, value] of data) {
+		// 	console.log(`Key: ${key} with value: ${value}`);
+		// }
+    // game.settings.set('tidy5e-sheet', 'user-settings', data);
 	}	
 	
 }
 
 Hooks.on("renderTidy5eUserSettings", () => {
 	if (!game.user.isGM) {
-		document.querySelector('.tidy5e-sheet.settings .item.gm-only').remove();
+		document.querySelector('.tidy5e.settings .item.gm-only').remove();
 	}
 });
 
@@ -152,6 +242,7 @@ export const tidy5eSettings = function () {
 		type: Boolean
 	});
 	
+	//Show trait labels
 	game.settings.register("tidy5e-sheet", "showTraitLabels", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.ShowTraitLabels.hint"),
@@ -162,7 +253,7 @@ export const tidy5eSettings = function () {
 	});
 
 	// PC Sheet Settings
-	
+/*	
 	game.settings.register("tidy5e-sheet", "hideClassList", {
 		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideClassList.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.HideClassList.hint"),
@@ -243,6 +334,8 @@ export const tidy5eSettings = function () {
     default: false,
     type: Boolean
 	});
+*/
+
 
 	// NPC Sheet Settings
 
@@ -373,6 +466,15 @@ export const tidy5eSettings = function () {
 	});
 
 	// Sheet edit permissions
+  // game.settings.register("tidy5e-sheet", "totalEditLock", {
+  //   name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.totalEditLock.name")}`,
+  //   hint: game.i18n.localize("TIDY5E.Settings.totalEditLock.hint"),
+  //   scope: "world",
+  //   config: true,
+  //   default: false,
+  //   type: Boolean
+	// });
+
   game.settings.register("tidy5e-sheet", "gmCanAlwaysEdit", {
     name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.GmEditPermission.name")}`,
     hint: game.i18n.localize("TIDY5E.Settings.GmEditPermission.hint"),
@@ -455,4 +557,11 @@ export const tidy5eSettings = function () {
 		},
 		default: 'default'
 	});
+
+	function redrawOpenSheets() {
+		// let actors = game.actors.entities.filter(a => a.sheet.rendered);
+		// let tokens = game.tokens.filter(a => a.sheet.rendered);
+		game.actors.entities.filter(a => a.sheet.rendered).forEach(a => a.sheet.render(true)); 
+		// game.actors.tokens.id.filter(a => a.sheet.rendered).forEach(a => a.sheet.render(true)); 
+	}
 }
