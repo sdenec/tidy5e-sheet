@@ -253,7 +253,7 @@ export const tidy5eSettings = function () {
 	});
 
 	// PC Sheet Settings
-/*	
+
 	game.settings.register("tidy5e-sheet", "hideClassList", {
 		name: `${game.i18n.localize("TIDY5E.Settings.PcLabel")}: ${game.i18n.localize("TIDY5E.Settings.HideClassList.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.HideClassList.hint"),
@@ -334,7 +334,6 @@ export const tidy5eSettings = function () {
     default: false,
     type: Boolean
 	});
-*/
 
 
 	// NPC Sheet Settings
