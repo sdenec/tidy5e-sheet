@@ -363,15 +363,17 @@ async function toggleItemMode(app, html, data){
 
 // restore scroll position
 async  function resetTempHp(app, html, data){
-  let actor = app.actor,
-      temp = actor.data.data.attributes.hp.temp,
-      tempmax = actor.data.data.attributes.hp.tempmax;
+	if(data.editable){
+    let actor = app.actor,
+        temp = actor.data.data.attributes.hp.temp,
+        tempmax = actor.data.data.attributes.hp.tempmax;
 
-  if(temp == 0){
-    actor.update({ 'data.attributes.hp.temp': null });
-  }
-  if(tempmax == 0){
-    actor.update({ 'data.attributes.hp.tempmax': null });
+    if(temp == 0){
+      actor.update({ 'data.attributes.hp.temp': null });
+    }
+    if(tempmax == 0){
+      actor.update({ 'data.attributes.hp.tempmax': null });
+    }
   }
 }
 

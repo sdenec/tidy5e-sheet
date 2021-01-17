@@ -1399,11 +1399,12 @@
 .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers:hover {
   border-radius: 0;
   box-shadow: 0 0 0 1px var(--note-background);
+  z-index: 10;
 }
 
 .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers:hover ~ .mod-label {
   display: block;
-  z-index: 1;
+  z-index: 5;
 }
 
 .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers:hover .ability-mod {
@@ -3013,6 +3014,13 @@
   border-radius: 5px;
   background: var(--faint-color);
   color: var(--primary-font);
+}
+
+.tidy5e.sheet.actor .item-summary ul,
+.tidy5e.sheet.actor .item-info-container-content ul {
+  list-style: initial;
+  padding-left: 20px;
+  margin: initial;
 }
 
 .tidy5e.sheet.actor .grid-layout {

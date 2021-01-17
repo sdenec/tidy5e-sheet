@@ -1,4 +1,4 @@
-<form class="{{classes}}" autocomplete="off">
+<form onsubmit="event.preventDefault();" class="{{classes}}" autocomplete="off">
 	<nav class="sheet-tabs tabs">
 		<a class='item' data-tab='pc-sheet'>Players</a>
 		<a class='item' data-tab='npc-sheet'>NPCs/Vehicles</a>
@@ -151,19 +151,19 @@
       <div class="settings-group">
         
         <article class="setting">
-          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsPc' id='useDefaultPortraitsPc' {{checked (eq settings.useDefaultPortraitsPc false)}}>
+          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsPc' id='useDefaultPortraitsPc' {{checked settings.useDefaultPortraitsPc}}>
           <div class="description">
             <label for="useDefaultPortraitsPc">{{localize 'TIDY5E.Settings.PcLabel'}}</label>
           </div>
         </article>
         <article class="setting">
-          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsNpc' id='useDefaultPortraitsNpc' {{checked (eq settings.useDefaultPortraitsNpc false)}}>
+          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsNpc' id='useDefaultPortraitsNpc' {{checked settings.useDefaultPortraitsNpc}}>
           <div class="description">
             <label for="useDefaultPortraitsNpc">{{localize 'TIDY5E.Settings.NpcLabel'}}</label>
           </div>
         </article>
         <article class="setting">
-          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsVehicle' id='useDefaultPortraitsVehicle' {{checked (eq settings.useDefaultPortraitsVehicle false)}}>
+          <input type="checkbox" data-dtype='boolean' name='useDefaultPortraitsVehicle' id='useDefaultPortraitsVehicle' {{checked settings.useDefaultPortraitsVehicle}}>
           <div class="description">
             <label for="useDefaultPortraitsVehicle">{{localize 'TIDY5E.Settings.VehicleLabel'}}</label>
           </div>
@@ -195,6 +195,13 @@
         </article>
       </div>
     </section>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='totalEditLock' id='totalEditLock' {{checked settings.totalEditLock}}>
+      <div class="description">
+        <label for="totalEditLock">{{localize 'TIDY5E.Settings.TotalEditLock.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.TotalEditLock.hint'}}</p>
+      </div>
+    </article>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='gmEditPermission' id='gmEditPermission' {{checked settings.gmEditPermission}}>
       <div class="description">
@@ -267,5 +274,11 @@
 	</section>
   <section class='tab' data-tab='info'>
     <h2>Module Info</h2>
-	</section>
+  </section>
+  
+  <footer class="sheet-footer flexrow">
+    <button type="submit" name="submit">
+      <i class="fas fa-save"></i>Save
+    </button>
+  </footer>
 </form>

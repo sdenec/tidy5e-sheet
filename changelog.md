@@ -12,6 +12,10 @@ Thank you very much!
 
 *Version 0.4.8*
 - fix for ability rolls
+- no more flicker on ability mods
+- no more errors when opening actors from compendiums
+- limited sheet now shows correct appearance description
+- css fix for lists in item description
 
 *Version 0.4.7*
 - french translation update and localization fixes thanks Github @Nildran
