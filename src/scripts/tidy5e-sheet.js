@@ -290,11 +290,11 @@ async function editProtection(app, html, data) {
 
   } else if(!actor.getFlag('tidy5e-sheet', 'allow-edit')){
 
-		if(game.settings.get("tidy5e-sheet", "totalEditLock")){
-			console.log('Sheet is blocked from editing');
-			html.find('input, select').prop('disabled', true);
-			html.find('[contenteditable]').prop('contenteditable', false);
-		}
+		// if(game.settings.get("tidy5e-sheet", "totalEditLock")){
+		// 	console.log('Sheet is blocked from editing');
+		// 	html.find('input, select').prop('disabled', true);
+		// 	html.find('[contenteditable]').prop('contenteditable', false);
+		// }
     
     let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');
     html.find('.inventory-list .items-header:not(.spellbook-header), .effects-list .items-header').each(function(){
