@@ -86,6 +86,7 @@
 
       </li>
       {{/each}}
+      {{#if ../../owner}}
       {{#if section.canCreate}}
       <li class="items-footer">
         <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
@@ -97,6 +98,7 @@
           <i class="fas fa-plus-circle"></i> {{localize 'DND5E.Add'}}
         </a>
       </li>
+      {{/if}}
       {{/if}}
     </ul>
     {{else}}

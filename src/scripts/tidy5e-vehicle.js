@@ -71,7 +71,7 @@ async function editProtection(app, html, data) {
   if(!actor.getFlag('tidy5e-sheet', 'allow-edit')){
     let itemContainer = html.find('.inventory-list.items-list');
     html.find('.inventory-list .items-header').each(function(){
-      if($(this).next('.item-list').find('li').length <= 1){
+      if(($(this).next('.item-list').find('li').length - $(this).next('.item-list').find('li.items-footer').length) == 0){
         $(this).next('.item-list').remove();
         $(this).remove();
       }

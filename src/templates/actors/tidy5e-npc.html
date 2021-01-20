@@ -119,18 +119,6 @@
             {{/if}}
             <li class="configure-movement"><a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
           </ul>
-
-          <ul class="speed-form-legacy">
-            <li><h4>Legacy {{ localize 'DND5E.Speed' }}</h4></li>
-            <li class="movement-primary">
-              <input name="data.attributes.speed.value" type="text" value="{{data.attributes.speed.value}}" placeholder="0">
-            </li>
-
-            <li class="movement-special">
-              <input type="text" class="speed" name="data.attributes.speed.special" value="{{data.attributes.speed.special}}" placeholder="{{ localize 'DND5E.SpeedSpecial' }}">
-            </li>
-          </ul>
-          <span class="legacy-switch" title="{{localize 'TIDY5E.ToggleMovement'}}"><i class="fas fa-toggle-on"></i><i class="fas fa-toggle-off"></i></span>
         </section>
 
         <section class="character-stats">
