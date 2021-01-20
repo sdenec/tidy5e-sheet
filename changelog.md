@@ -10,8 +10,12 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
-*Version 0.4.10*
+*Version 0.4.11*
+- Removed deprecated legacy speed due to bug causing all movement to be deleted during data migration in dnd5e 1.2.x - I'm very sorry for any inconveniences caused by this
+- fixed missing items in observer view
 
+*Version 0.4.10*
+- Hot fix for module settings
 
 *Version 0.4.9*
 - no more flicker on ability mods
