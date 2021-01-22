@@ -1,0 +1,223 @@
+{
+	"TIDY5E.Subclass": "Subclase",
+	"TIDY5E.EditActorImage": "click izquierdo: editar imagen",
+	"TIDY5E.ShowActorImage": "click derecho: mostrar ilustración del pj",
+	"TIDY5E.ShowPortraitArt": "mostrar retrato",
+	"TIDY5E.ShowTokenArt": "mostrar token",
+
+	"TIDY5E.Exhaustion0": "Sin efectos perjudiciales",
+	"TIDY5E.Exhaustion1": "Desventaja en pruebas de característica",
+	"TIDY5E.Exhaustion2": "Velocidad reducida a la mitad",
+	"TIDY5E.Exhaustion3": "Desventaja en tiradas de ataque y de salvación",
+	"TIDY5E.Exhaustion4": "Puntos de golpe máximos reducidos a la mitad",
+	"TIDY5E.Exhaustion5": "Velocidad reducida a 0",
+	"TIDY5E.Exhaustion6": "Muerte",
+
+	"TIDY5E.RestHint": "Tomar un descanso",
+	"TIDY5E.RestS": "Descanso corto",
+	"TIDY5E.RestL": "Descanso largo",
+
+	"TIDY5E.Journal": "Diario",
+
+	"TIDY5E.RestoreOnRest": "Recuperar tras descanso",
+
+	"TIDY5E.JournalPoi": "Personas de interés",
+	"TIDY5E.JournalLoi": "Lugares de interés",
+	"TIDY5E.JournalQuests": "Misiones",
+	"TIDY5E.JournalMisc": "Miscelánea",
+	"TIDY5E.JournalEntries": "Entradas del diario",
+	"TIDY5E.TogglePersonalityInfo": "Alternar información de personalidad",
+
+	"TIDY5E.EnableEdit": "Habilitar edición",
+	"TIDY5E.DisableEdit": "Desactivar edición",
+	"TIDY5E.EditHint": "Alternar la visibilidad de los botones añadir/eliminar de las secciones vacías",
+
+	"TIDY5E.EmptySection": "Esta sección está vacía. Desbloquea la hoja para editarla.",
+	"TIDY5E.GmOnlyEdit": "Sólo tu DJ puede editar esta sección.",
+
+	"TIDY5E.AttunementWarning": "Aviso de sintonización: ¡No puedes sintonizar más de {número} objetos!",
+	"TIDY5E.AttunementItems": "Objetos sintonizados",
+	"TIDY5E.AttunementMax": "Máximo de sintonización",
+	
+	"TIDY5E.GridLayout": "Grid Layout",
+	"TIDY5E.ListLayout": "List Layout",
+
+	"TIDY5E.Encumbrance": "Estorbo",
+
+	"TIDY5E.EditSpell": "Editar conjuro",
+	"TIDY5E.DeleteSpell": "Eliminar conjuro",
+	"TIDY5E.AddFav": "Añadir Favorito",
+	"TIDY5E.isFav": "Favorito",
+	"TIDY5E.RemoveFav": "Eliminar Favorito",
+
+	"TIDY5E.ToggleInfo": "Alternar información",
+	"TIDY5E.ToggleMovement": "Alternar entre la visualización de la velocidad actual y la antigua",
+
+	"TIDY5E.Show" : "mostrar/editar",
+	"TIDY5E.Hide" : "ocultar",
+	"TIDY5E.Edit" : "editar",
+	"TIDY5E.TraitsEmpty" : "rasgos vacíos",
+
+	"TIDY5E.Abilities" : "Características",
+
+	"TIDY5E.Environment" : "Entorno",
+
+	"TIDY5E.CurrencyAbbrCP" : "PC",
+	"TIDY5E.CurrencyAbbrSP" : "PP",
+	"TIDY5E.CurrencyAbbrGP" : "PO",
+	"TIDY5E.CurrencyAbbrEP" : "PE",
+	"TIDY5E.CurrencyAbbrPP" : "PPT",
+	
+	"TIDY5E.SearchItem" : "buscar objeto",
+	"TIDY5E.SearchSpell" : "buscar conjuro",
+	"TIDY5E.SearchClear" : "limpiar búsqueda",
+	"TIDY5E.SearchHint" : "Comienza a escribir lo que estás buscando.",
+
+	"TIDY5E.AbbrMod" : "Mod",
+	"TIDY5E.AbbrSavingThrow" : "Salvación",
+	"TIDY5E.SpellAttackMod" : "Mod de ataque",
+	"TIDY5E.PreparedSpells" : "Conjuros preparados",
+	"TIDY5E.PreparedSpellsMax" : "Máximo de conjuros preparados",
+	"TIDY5E.Components" : "Compo",
+	"TIDY5E.SpellSchool" : "Escuela",
+
+	"TIDY5E.TokenLinked" : "Token vinculado a actor",
+	"TIDY5E.TokenUnlinked" : "Token no vinculado a actor",
+
+	"TIDY5E.ItemDetailsHeadline" : "Texto de reglas/ambientación",
+
+	"TIDY5E.Settings.GlobalLabel" : "Global",
+	"TIDY5E.Settings.UserLabel" : "Usuario",
+	"TIDY5E.Settings.PcLabel" : "PJs",
+	"TIDY5E.Settings.NpcLabel" : "PNJs",
+	"TIDY5E.Settings.VehicleLabel" : "Vehículos",
+
+	"TIDY5E.Settings.SheetMenu" : {
+		"label" : "Opciones de la hoja"
+	},
+	"TIDY5E.Settings.SheetTheme" : {
+		"name" : "Tidy5e color del tema",
+		"hint" : "Utiliza el tema por defecto de color claro u oscuro de Tidy5e.",
+		"default": "Por defecto (claro)",
+		"dark": "Alternativo (oscuro)"
+	},
+	"TIDY5E.Settings.UseClassicControls" : {
+		"name" : "Utilizar los controles clásicos de los objetos en el listado",
+		"hint" : "Muestra siempre los botones de los objetos y desactiva el menú del botón derecho. Sólo se aplica para el inventario de objetos/conjuros del PJ en el listado."
+	},
+	"TIDY5E.Settings.ContextRollButtons" : {
+		"name" : "Mostrar el botón de elementos de midiQol/Better Rolls en el menú contextual",
+		"hint" : "Por defecto, los botones de tirada aparecen en la descripción del elemento. Actívalo para moverlos al menú contextual. Útil para la rejilla o si se utilizan con frecuencia."
+	},
+	"TIDY5E.Settings.ShowTraitLabels" : {
+		"name" : "Mostrar etiquetas de los rasgos",
+		"hint" : "Por defecto sólo se muestran los iconos de los rasgos. Actívalo para mostrar también las etiquetas."
+	},
+
+
+	"TIDY5E.Settings.HideClassList" : {
+		"name" : "Ocultar la clase del personaje",
+		"hint" : "Actívalo para ocultar la clase del personaje bajo su nombre."
+	},
+	"TIDY5E.Settings.DisableInspirationAnimation" : {
+		"name" : "Indicador de inspiración sin animación",
+		"hint" : "Actívalo para quitar la animación de brillo del Indicador de inspiración."
+	},
+	"TIDY5E.Settings.HideIfZero" : {
+		"name" : "Ocultar el medidor de cansancio e inspiración con 0",
+		"hint" : "Actívalo para ocultar el medidor de cansancio e inspiración si se encuentra a 0. Se mostrará al pasar el ratón."
+	},
+	"TIDY5E.Settings.InspirationOnHover" : {
+		"name" : "Mostrar el indicador de inspiración sólo al pasar por encima",
+		"hint" : "Actívalo para mostrar el indicador de inspiración sólo al pasar el ratón por encima del retrato."
+	},
+	"TIDY5E.Settings.ExhaustionOnHover" : {
+		"name" : "Mostrar el medidor de cansancio sólo al pasar por encima",
+		"hint" : "Actívalo para mostrar el medidor de cansancio al pasar el ratón por encima del retrato."
+	},
+	"TIDY5E.Settings.DisableHpBar" : {
+		"name" : "Desactivar barra de salud",
+		"hint" : "Actívalo para ocultar la barra coloreada que indica los PG restantes (los números de la salud seguirán siendo visibles)."
+	},
+	"TIDY5E.Settings.DisableHpOverlay" : {
+		"name" : "Ocultar la superposición de puntos de golpe",
+		"hint" : "Actívalo para ocultar la superposición de PG para este tipo de actor."
+	},
+	"TIDY5E.Settings.PcToggleTraits" : {
+		"name" : "Alternar rasgos de personaje vacíos",
+		"hint" : "Por defecto los rasgos vacíos siempre están visibles. Actívalo para añadir un botón de activación."
+	},
+	"TIDY5E.Settings.MoveTraits" : {
+		"name" : "Mover los rasgos debajo de los recursos",
+		"hint" : "Permite mover los rasgos de la parte izquierda debajo de los recursos."
+	},
+
+
+	"TIDY5E.Settings.AlwaysShowTraits" : {
+		"name" : "Mostrar siempre los rasgos",
+		"hint" : "Por defecto, los rasgos vacíos se ocultan mediante un botón de activación. Actívalo para no ocultarlo nunca."
+	},
+	"TIDY5E.Settings.AlwaysShowSkills" : {
+		"name" : "Mostrar siempre las habilidades",
+		"hint" : "Por defecto, las habilidades no competentes se ocultan mediante un botón de activación. Actívalo para no ocultarlo nunca."
+	},
+
+	
+	"TIDY5E.Settings.DisableRightClick" : {
+		"name" : "Desactivar el menú contextual del botón derecho",
+		"hint" : "En caso de conflictos de módulos o de preferencias, puedes desactivar el menú contextual del botón derecho. Los elementos mostrarán un icono de menú en su lugar."
+	},
+	"TIDY5E.Settings.UseExpandedSheet" : {
+		"name" : "Ampliar la vista limitada para las hojas de personaje",
+		"hint" : "Muestra toda la hoja de personaje (menos el diario) a los jugadores con permiso limitado."
+	},
+	"TIDY5E.Settings.UseRoundPortraits" : {
+		"name" : "Estilo de retrato redondo.",
+		"hint" : "Selecciona activar los retratos/iconos redondos para los actores.",
+		"all": "Todos los actores",
+		"pc": "PJs",
+		"npc": "PNJs/Vehículos",
+		"none": "ninguno",
+		"default": "ninguno"
+	},
+	"TIDY5E.Settings.HpOverlayBorder" : {
+		"name" : "Offset hit point overlay.",
+		"hint" : "Enter offset value to compensate for portrait frames and prevent tinting."
+	},
+	"TIDY5E.Settings.GmEditPermission" : {
+		"name" : "El DJ siempre puede editar las hojas de PJ.",
+		"hint" : "Actívalo para permitir que los DJs editen las hojas de PJ sin cambiar el bloqueo de la hoja."
+	},
+	"TIDY5E.Settings.GmEditEffects" : {
+		"name" : "Sólo el DJ puede editar los efectos activos.",
+		"hint" : "Actívalo para impedir que los jugadores editen los efectos activos en sus hojas. Seguirán viendo los efectos aplicados."
+	},
+	"TIDY5E.Settings.AlwaysShowQty" : {
+		"name" : "Mostrar siempre la cantidad de objetos.",
+		"hint" : "Actívalo para no ocultar nunca la cantidad de objetos."
+	},
+	"TIDY5E.Settings.DisableInspiration" : {
+		"name" : "Desactivar el indicador de inspiración.",
+		"hint" : "Si tu campaña no utiliza la inspiración, puedes desactivar el indicador por completo."
+	},
+	"TIDY5E.Settings.ExhaustionEffects" : {
+		"name" : "Efectos de cansancio (utiliza los efectos activos).",
+		"hint" : "Aplica los efectos activos correspondientes al establecer los niveles de cansancio - ¡requiere midiQol para las tiradas con desventaja!"
+	},
+	"TIDY5E.Settings.DisableExhaustion" : {
+		"name" : "Desactivar el medidor de cansancio.",
+		"hint" : "Si tu campaña no utiliza el cansancio, puedes desactivar el medidor por completo."
+	},
+	"TIDY5E.Settings.ShowNpcRest" : {
+		"name" : "Descanso para los PNJs.",
+		"hint" : "Actívalo para mostrar los iconos/botones de descanso en las hojas de los PNJs."
+	},
+	"TIDY5E.Settings.LinkMarker" : {
+		"name" : "Indicar los PNJs vinculados/desvinculados.",
+		"hint" : "Añade un borde coloreado y un icono a las hojas de los PNJs vinculados/desvinculados.",
+		"default": "Sin marcador de vínculo (por defecto)",
+		"unlinked": "Resaltar los tokens desvinculados",
+		"linked": "Resaltar los tokens vinculados",
+		"both": "Resaltar los tokens vinculados y no vinculados"
+	}
+}
