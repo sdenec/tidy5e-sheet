@@ -78,15 +78,15 @@
         </div>
         <div class="item-controls context-menu">
           <hr class="context-divider">
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash icon-off"></i><i class="fas fa-user-alt icon-on"></i> {{item.toggleTitle}}</a>
           
           {{#if item.attunement}}
-          <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}">
-            <span class="icon-off"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>
-            <span class="icon-on"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>
-          </a>
+            <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+              <i class="fas fa-sun"></i> <span class="control-label">{{localize item.attunement.title}}</span>
+            </a>
           {{/if}}
 
+          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash icon-off"></i><i class="fas fa-user-alt icon-on"></i> {{item.toggleTitle}}</a>
+          
           <hr class="context-divider">
           <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i>{{localize "DND5E.ItemEdit"}}</a>
           <hr class="context-divider">

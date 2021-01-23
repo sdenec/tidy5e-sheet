@@ -3,7 +3,7 @@
 
 <div class="list-layout">
     
-  <ul class="inventory-list items-list">
+  <ul class="inventory-list items-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each sections as |section sid|}}
     <li class="items-header">
       <h3 class="item-name">{{localize section.label}}</h3>
@@ -16,9 +16,9 @@
           {{/each}}
         {{else}}
           {{#if ../isCharacter}}
-          <div class="items-header-weight">{{localize 'DND5E.Weight'}}</div>
+          <div class="items-header-weight" title="{{localize 'DND5E.Weight'}} ({{localize 'DND5E.AbbreviationLbs'}})"><i class="fas fa-weight-hanging"></i></div>
           {{/if}}
-          <div class="items-header-charge">{{localize 'DND5E.Charges'}}</div>
+          <div class="items-header-charge" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
           <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
         {{/if}}
       </div>
@@ -70,10 +70,10 @@
           {{/each}}
         {{else}}
           {{#if ../../isCharacter}}
-          <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}">
+          <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.totalWeight }} {{localize 'DND5E.AbbreviationLbs'}}">
             {{#if item.totalWeight}}
             <div>
-              {{ item.totalWeight }} {{localize "DND5E.AbbreviationLbs"}}
+              {{ item.totalWeight }}
             </div>
             {{/if}}
           </div>
@@ -103,15 +103,15 @@
         </div>
         <div class="item-controls context-menu">
           <hr class="context-divider">
-          {{#unless @root.isVehicle}}
-          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i>{{else}}<i class="fas fa-user-alt inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
-          {{/unless}}
 
           {{#if item.attunement}}
             <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
               <i class="fas fa-sun"></i> <span class="control-label">{{localize item.attunement.title}}</span>
             </a>
           {{/if}}
+          {{#unless @root.isVehicle}}
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i>{{else}}<i class="fas fa-user-alt inactive"></i>{{/if}} <span class="control-label">{{item.toggleTitle}}</span></a>
+          {{/unless}}
 
           <hr class="context-divider">
 

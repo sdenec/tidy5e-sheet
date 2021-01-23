@@ -355,6 +355,11 @@
  		color: var(--tertiary-color);
  		text-align: center;
 		white-space: nowrap;
+
+		i {
+			font-size: 10px;
+			color: var(--light-color);
+		}
 		 
 		div {
 			float: left;
@@ -368,10 +373,14 @@
  		.items-header-comps {
 			width: 70px;
 		}
+
+		.items-header-weight {
+			width: 40px;
+		}
 			
 		.items-header-charge,
 		.items-header-uses {
-			width: 90px;
+			width: 50px;
 		}
 
  		.items-header-usage,
@@ -491,14 +500,14 @@
 			input {
 				text-align: right;
 				width: 50%;
-				padding: 0 4px 0 0;
+				padding: 0 2px 0 0;
 				color: var(--secondary-color);
 				line-height: 1;
 				height: 100%;
 			}
 
 			.uses-max {
-				padding: 0 0 0 4px;
+				padding: 0 0 0 2px;
 			}
 		}
 
@@ -726,21 +735,69 @@
 	.items-list {
 
 		&.classic-controls {
-			// .items-header {
-			// 	padding-right: 84px;
-			// }
-
-			// .spellbook-header {
-			// 	padding-right: 70px;
-			// }
-
-			// .features-header,
-			// .effects-header {
-			// 	padding-right: 54px;
-			// }
-
 			.item-state-icon {
 				display: none;
+			}
+		}
+
+		&.classic-controls.inventory-list {
+			.items-header {
+				padding-right: 69px;
+			}
+
+			.item-controls:not(.context-menu) {
+				flex: 0 0 69px;
+			}
+
+			&.unlocked {
+				.items-header {
+					padding-right: 85px;
+				}
+
+				.item-controls:not(.context-menu) {
+					flex: 0 0 85px;
+				}
+			}
+		}
+
+		&.classic-controls.spellbook-list {
+			.items-header {
+				padding-right: 53px;
+			}
+
+			.item-controls:not(.context-menu) {
+				flex: 0 0 53px;
+			}
+
+			&.unlocked {
+				.items-header {
+					padding-right: 69px;
+				}
+
+				.item-controls:not(.context-menu) {
+					flex: 0 0 69px;
+				}
+			}
+		}
+
+		&.classic-controls.features-list,
+		&.classic-controls.effects-list {
+			.items-header {
+				padding-right: 37px;
+			}
+
+			.item-controls:not(.context-menu) {
+				flex: 0 0 37px;
+			}
+
+			&.unlocked {
+				.items-header {
+					padding-right: 53px;
+				}
+
+				.item-controls:not(.context-menu) {
+					flex: 0 0 53px;
+				}
 			}
 		}
 
@@ -808,10 +865,9 @@
 			}
 
 			.item-controls:not(.context-menu) {
-				// display: flex;
+				display: flex;
 				// align-items: center;
-				// justify-content: flex-end;
-				// flex: 0 0 84px;
+				justify-content: flex-end;
 				font-size: 12px;
 				padding: 0 2px;
 				border-left: 1px solid var(--faint-color);
@@ -958,11 +1014,11 @@
 }
 
 .items-list .item-weight {
-	flex: 0 0 70px;
+	flex: 0 0 40px;
 }
 
 .items-list .item-charges {
-	flex: 0 0 90px;
+	flex: 0 0 50px;
 }
 
 .items-list .item-level,

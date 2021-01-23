@@ -3,7 +3,7 @@
 
 <div class="list-layout">
 
-  <ul class="inventory-list spellbook-list items-list">
+  <ul class="inventory-list spellbook-list items-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each spellbook as |section|}}
     <li class="items-header spellbook-header">
       <div class="spell-level-slots">

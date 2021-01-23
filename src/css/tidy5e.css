@@ -635,6 +635,7 @@
 .tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hp,
 .tidy5e.sheet.actor .hp-0-0 .portrait-hp {
   border-radius: 5px;
+  width: 120px !important;
 }
 
 .tidy5e.sheet.actor .exhaustion-container {
@@ -2394,6 +2395,11 @@
   white-space: nowrap;
 }
 
+.tidy5e.sheet.actor .items-list .items-header-labels i {
+  font-size: 10px;
+  color: var(--light-color);
+}
+
 .tidy5e.sheet.actor .items-list .items-header-labels div {
   float: left;
 }
@@ -2407,9 +2413,13 @@
   width: 70px;
 }
 
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-weight {
+  width: 40px;
+}
+
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-charge,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-uses {
-  width: 90px;
+  width: 50px;
 }
 
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-usage,
@@ -2528,14 +2538,14 @@
 .tidy5e.sheet.actor .items-list .item .item-charges input {
   text-align: right;
   width: 50%;
-  padding: 0 4px 0 0;
+  padding: 0 2px 0 0;
   color: var(--secondary-color);
   line-height: 1;
   height: 100%;
 }
 
 .tidy5e.sheet.actor .items-list .item .item-charges .uses-max {
-  padding: 0 0 0 4px;
+  padding: 0 0 0 2px;
 }
 
 .tidy5e.sheet.actor .items-list .item .item-recharge {
@@ -2751,6 +2761,54 @@
   display: none;
 }
 
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .items-header {
+  padding-right: 69px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item-controls:not(.context-menu) {
+  flex: 0 0 69px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .items-header {
+  padding-right: 85px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .item-controls:not(.context-menu) {
+  flex: 0 0 85px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list .items-header {
+  padding-right: 53px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list .item-controls:not(.context-menu) {
+  flex: 0 0 53px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .items-header {
+  padding-right: 69px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .item-controls:not(.context-menu) {
+  flex: 0 0 69px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list .items-header {
+  padding-right: 37px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list .item-controls:not(.context-menu) {
+  flex: 0 0 37px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .items-header {
+  padding-right: 53px;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .item-controls:not(.context-menu) {
+  flex: 0 0 53px;
+}
+
 .tidy5e.sheet.actor .list-layout .items-list .item {
   display: flex;
   flex-wrap: wrap;
@@ -2813,6 +2871,8 @@
 }
 
 .tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) {
+  display: flex;
+  justify-content: flex-end;
   font-size: 12px;
   padding: 0 2px;
   border-left: 1px solid var(--faint-color);
@@ -2936,11 +2996,11 @@
 }
 
 .tidy5e.sheet.actor .items-list .item-weight {
-  flex: 0 0 70px;
+  flex: 0 0 40px;
 }
 
 .tidy5e.sheet.actor .items-list .item-charges {
-  flex: 0 0 90px;
+  flex: 0 0 50px;
 }
 
 .tidy5e.sheet.actor .items-list .item-level,
@@ -3602,7 +3662,7 @@
   bottom: 14px;
 }
 
-.tidy5e.sheet.actor.npc .profile-wrap .health .rollable {
+.tidy5e.sheet.actor.npc .profile-wrap .health span {
   display: flex;
   justify-content: center;
   align-items: center;

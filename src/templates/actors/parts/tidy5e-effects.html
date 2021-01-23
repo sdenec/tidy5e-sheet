@@ -1,6 +1,6 @@
 <div class="list-layout">
 
-  <ul class="items-list effects-list">
+  <ul class="items-list effects-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each effects as |section sid|}}
     <li class="items-header effects-header" data-effect-type="{{section.type}}">
       <h3 class="item-name effect-name">{{localize section.label}}</h3>
