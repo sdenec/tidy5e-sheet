@@ -31,9 +31,10 @@
   {{#if item.isFeat}}
   <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
     {{#if item.isOnCooldown}}
-      <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-bolt"></i>{{item.labels.rechargeValue}}</a>
-      {{else if item.data.recharge.value}}
-      {{localize "DND5E.Charged"}}
+    <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i>
+      {{item.data.recharge.value}}{{#if (ne item.data.recharge.value 6)}}+{{/if}}</a>
+    {{else if item.data.recharge.value}}
+    <i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
     {{else if item.data.uses.max}}
     <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
     / <input class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>

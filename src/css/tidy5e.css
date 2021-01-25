@@ -3648,7 +3648,7 @@
 }
 
 .tidy5e.sheet.actor.npc .profile-wrap .profile .portrait-hp {
-  width: 136px;
+  width: 136px !important;
 }
 
 .tidy5e.sheet.actor.npc .profile-wrap .profile.roundPortrait .portrait-hp {
@@ -3904,6 +3904,10 @@
   width: 90px;
 }
 
+.tidy5e.sheet.actor.npc .items-list .items-header-labels .items-header-uses {
+  width: 50px;
+}
+
 .tidy5e.sheet.actor.npc .items-list .spellbook-header .items-header-usage {
   width: 90px;
 }
@@ -3917,6 +3921,10 @@
 .tidy5e.sheet.actor.npc .items-list .spell-target,
 .tidy5e.sheet.actor.npc .items-list .spell-school {
   flex: 0 0 90px;
+}
+
+.tidy5e.sheet.actor.npc .items-list .item-charges {
+  flex: 0 0 50px;
 }
 
 .tidy5e.sheet.actor.npc .items-list .item-action {
@@ -4661,7 +4669,7 @@
 .tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group.recharge label input, .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group label.prepared input,
 .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group.recharge label input {
   width: 20px;
-  height: 20px;
+  height: 16px;
   top: initial;
   margin: 0 4px 0 0;
 }

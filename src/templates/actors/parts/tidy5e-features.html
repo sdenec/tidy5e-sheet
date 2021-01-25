@@ -73,7 +73,7 @@
         {{#if section.hasActions}}
         <div class="item-detail item-charges">
           {{#if item.isOnCooldown}}
-          <a class="item-recharge rollable">{{item.labels.recharge}}</a>
+          <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i> {{item.data.recharge.value}}{{#if (ne item.data.recharge.value 6)}}+{{/if}}</a>
           {{else if item.data.recharge.value}}
           <i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
 
