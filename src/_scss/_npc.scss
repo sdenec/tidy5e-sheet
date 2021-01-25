@@ -97,7 +97,7 @@
     }
 
     .profile .portrait-hp {
-      width: 136px;
+      width: 136px !important;
     }
 
     .profile.roundPortrait .portrait-hp {
@@ -110,7 +110,7 @@
       right: 7px;
       bottom: 14px;
 
-      .rollable {
+      span {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -377,6 +377,10 @@
       .items-header-school {
         width: 90px;
       }
+
+      .items-header-uses {
+        width: 50px;
+      }
     }
 
     .spellbook-header {
@@ -394,6 +398,10 @@
     .spell-target,
     .spell-school {
       flex:0 0 90px;
+    }
+
+    .item-charges {
+      flex: 0 0 50px;
     }
 
     .item-action {

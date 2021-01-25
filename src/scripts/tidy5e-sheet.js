@@ -296,7 +296,7 @@ async function editProtection(app, html, data) {
 		// 	html.find('[contenteditable]').prop('contenteditable', false);
 		// }
     
-    let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');
+		let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');
     html.find('.inventory-list .items-header:not(.spellbook-header), .effects-list .items-header').each(function(){
       if(($(this).next('.item-list').find('li').length - $(this).next('.item-list').find('li.items-footer').length) == 0){
         $(this).next('.item-list').addClass('hidden').hide();

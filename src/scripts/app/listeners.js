@@ -55,17 +55,6 @@ export const tidy5eListeners = function (html, actor) {
     html.find('.actor-size-select').toggleClass('active');
   });
 
-  // toggle legacy speed display
-  html.find('.legacy-switch').click(async (event) => {
-    event.preventDefault();
-
-    if(actor.getFlag('tidy5e-sheet', 'legacy-speed')){
-      await actor.unsetFlag('tidy5e-sheet', 'legacy-speed');
-    } else {
-      await actor.setFlag('tidy5e-sheet', 'legacy-speed', true);
-    }
-  });
-
   // Modificator Ability Test Throw
   html.find('.ability-mod').click( async (event) => {
     event.preventDefault();

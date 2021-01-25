@@ -13,7 +13,7 @@
 
 <div class="list-layout">
 
-  <ul class="inventory-list features-list items-list">
+  <ul class="inventory-list features-list items-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each sections as |section sid|}}
     <li class="items-header features-header">
       <h3 class="item-name">{{localize section.label}}</h3>
@@ -73,9 +73,9 @@
         {{#if section.hasActions}}
         <div class="item-detail item-charges">
           {{#if item.isOnCooldown}}
-          <a class="item-recharge rollable">{{item.labels.recharge}}</a>
+          <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i> {{item.data.recharge.value}}{{#if (ne item.data.recharge.value 6)}}+{{/if}}</a>
           {{else if item.data.recharge.value}}
-          {{localize "DND5E.Charged"}}
+          <i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
 
           {{else if item.hasUses}}
           <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">

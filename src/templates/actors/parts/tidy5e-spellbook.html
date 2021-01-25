@@ -3,7 +3,7 @@
 
 <div class="list-layout">
 
-  <ul class="inventory-list spellbook-list items-list">
+  <ul class="inventory-list spellbook-list items-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each spellbook as |section|}}
     <li class="items-header spellbook-header">
       <div class="spell-level-slots">
@@ -27,10 +27,10 @@
 
       </div>
       <div class="items-header-labels">
-        <div class="items-header-comps" title="{{localize 'DND5E.Components'}}">{{localize 'TIDY5E.Components'}}</div>
-        <div class="items-header-school" title="{{localize 'DND5E.SpellSchool'}}">{{localize 'TIDY5E.SpellSchool'}}</div>
-        <div class="items-header-target">{{localize 'DND5E.SpellTarget'}}</div>
-        <div class="items-header-usage">{{localize 'DND5E.SpellUsage'}}</div>
+        <div class="items-header-comps"  title="{{localize 'DND5E.SpellComponents'}}"><i class="fas fa-mortar-pestle"></i></div>
+        <div class="items-header-school" title="{{localize 'DND5E.SpellSchool'}}"><i class="fas fa-hat-wizard"></i></div>
+        <div class="items-header-target" title="{{localize 'DND5E.SpellTarget'}}">{{localize 'DND5E.Target'}}</div>
+        <div class="items-header-usage" title="{{localize 'DND5E.SpellUsage'}}">{{localize 'DND5E.Usage'}}</div>
       </div>
     </li>
 

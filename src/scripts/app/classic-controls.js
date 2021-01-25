@@ -7,6 +7,7 @@ export const tidy5eClassicControls = function (html) {
 	item.removeClass('context-enabled').removeClass('context');
   itemControls.removeClass('context-menu');
 
+  /*
   itemControls.each(function(){
     let controls = $(this),
     controlItems = 0,
@@ -19,4 +20,5 @@ export const tidy5eClassicControls = function (html) {
       controls.closest('.item-list').prev('.items-header').css({'padding-right': spacing+'px'});
     }, 50);
   })
+  */
 }
