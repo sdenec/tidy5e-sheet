@@ -225,9 +225,10 @@ async function countInventoryItems(app, html, data){
 
 // count attuned items
 async function countAttunedItems(app, html, data){
-	if(data.editable){
-		let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
-				count = actor.data.data.details.attunedItemsCount;
+	let actor = app.actor;
+	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
+	if(data.editable && !actor.compendium){
+		let	count = actor.data.data.details.attunedItemsCount;
 		// if no items are counted set default value to 3
 		if (!actor.data.data.details.attunedItemsMax) {
 			await actor.update({"data.details.attunedItemsMax": 3});
@@ -270,7 +271,8 @@ async function toggleTraitsList(app, html, data){
 // Check Death Save Status
 async function checkDeathSaveStatus(app, html, data){
 	if(data.editable){
-		var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+		// var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+		let actor = app.actor;
 		var data = actor.data.data;
 		var currentHealth = data.attributes.hp.value;
 		var deathSaveSuccess = data.attributes.death.success;
@@ -344,7 +346,8 @@ async function editProtection(app, html, data) {
 async function addClassList(app, html, data) {
 	if(data.editable){
 		if (!game.settings.get("tidy5e-sheet", "hideClassList")) {
-			let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+			// let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+			let actor = app.actor;
 			let classList = [];
 			let items = data.actor.items;
 			for (let item of items) {
@@ -365,7 +368,8 @@ async function addClassList(app, html, data) {
 // Calculate Spell Attack modifier
 async function spellAttackMod(app,html,data){
 	if(data.editable){
-		let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
+		// let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
+		let actor = app.actor,
 				prof = actor.data.data.attributes.prof,
 				spellAbility = html.find('.spellcasting-attribute select option:selected').val(),
 				abilityMod = spellAbility != '' ? actor.data.data.abilities[spellAbility].mod : 0,
@@ -411,7 +415,8 @@ function tidyCustomEffect(actor, change) {
 
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
-	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+	let actor = app.actor;
 	if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
 		if(game.settings.get("tidy5e-sheet", "useClassicControls")){
 			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');
@@ -491,14 +496,18 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	addClassList(app, html, data);
 	toggleTraitsList(app, html, data)
 	checkDeathSaveStatus(app, html, data);
-	countInventoryItems(app,html,data);
-	countAttunedItems(app, html, data);
 	abbreviateCurrency(app,html,data);
 	spellAttackMod(app,html,data);
 	addFavorites(app, html, data, position);
+	countAttunedItems(app, html, data);
+	countInventoryItems(app,html,data);
 	// console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });
+
+// Hooks.on("updateOwnedItem", (app, html, data) => {
+// 	console.log(data);
+// });
 
 // broken at the moment
 // Hooks.on("updateActor", (actorObject) => {
