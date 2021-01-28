@@ -351,9 +351,9 @@ async function toggleItemMode(app, html, data){
 
 // restore scroll position
 async  function resetTempHp(app, html, data){
-	if(data.editable){
-    let actor = app.actor,
-        temp = actor.data.data.attributes.hp.temp,
+  let actor = app.actor;
+	if(data.editable && !actor.compendium){
+    let temp = actor.data.data.attributes.hp.temp,
         tempmax = actor.data.data.attributes.hp.tempmax;
 
     if(temp == 0){

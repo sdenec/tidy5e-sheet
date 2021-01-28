@@ -10,6 +10,9 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.13*
+- fixed a problem with compendiums that would cause a render loop for actor sheets bogging down the game to a halt.
+
 *Version 0.4.12*
 - classic menu will no longer cause the headers to jump when rendering the sheet.
 - various minor css fixes
