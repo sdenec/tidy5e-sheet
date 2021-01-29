@@ -4611,22 +4611,22 @@
 .tidy5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[name="data.range.value"],
 .tidy5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[name="data.duration.value"],
 .tidy5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[name="data.uses.value"],
-.tidy5e.sheet.item .sheet-body .tab.item-betterRolls .form-group input[name="data.damage.parts.0.0"], .tidy5e.sheet.item .sheet-body .tab.details .form-group input[name="data.activation.cost"],
+.tidy5e.sheet.item .sheet-body .tab.item-betterRolls .form-group.damage-parts input, .tidy5e.sheet.item .sheet-body .tab.details .form-group input[name="data.activation.cost"],
 .tidy5e.sheet.item .sheet-body .tab.details .form-group input[name="data.target.value"],
 .tidy5e.sheet.item .sheet-body .tab.details .form-group input[name="data.range.value"],
 .tidy5e.sheet.item .sheet-body .tab.details .form-group input[name="data.duration.value"],
 .tidy5e.sheet.item .sheet-body .tab.details .form-group input[name="data.uses.value"],
-.tidy5e.sheet.item .sheet-body .tab.details .form-group input[name="data.damage.parts.0.0"], .tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group input[name="data.activation.cost"],
+.tidy5e.sheet.item .sheet-body .tab.details .form-group.damage-parts input, .tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group input[name="data.activation.cost"],
 .tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group input[name="data.target.value"],
 .tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group input[name="data.range.value"],
 .tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group input[name="data.duration.value"],
 .tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group input[name="data.uses.value"],
-.tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group input[name="data.damage.parts.0.0"], .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group input[name="data.activation.cost"],
+.tidy5e.sheet.item .sheet-body .tab.dynamiceffects .form-group.damage-parts input, .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group input[name="data.activation.cost"],
 .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group input[name="data.target.value"],
 .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group input[name="data.range.value"],
 .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group input[name="data.duration.value"],
 .tidy5e.sheet.item .sheet-body .tab.magic-items .form-group input[name="data.uses.value"],
-.tidy5e.sheet.item .sheet-body .tab.magic-items .form-group input[name="data.damage.parts.0.0"] {
+.tidy5e.sheet.item .sheet-body .tab.magic-items .form-group.damage-parts input {
   text-align: right;
 }
 
