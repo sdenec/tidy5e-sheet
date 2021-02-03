@@ -5319,7 +5319,6 @@
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover option,
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus option {
   background: #fff;
-  padding: 0 4px;
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select {
@@ -5328,6 +5327,10 @@
   -ms-text-align-last: left;
   appearance: none;
   border: none;
+  background: none;
+  padding: 0 2px;
+  height: 12px;
+  margin-top: -2px;
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
@@ -5335,6 +5338,7 @@
   box-shadow: 0 0 0 1px var(--light-color) inset;
   margin-top: -2px;
   padding-top: 2px;
+  text-align: center;
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:hover,
