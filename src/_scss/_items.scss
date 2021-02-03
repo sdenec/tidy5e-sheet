@@ -468,7 +468,7 @@
 					input[name="data.range.value"],
 					input[name="data.duration.value"],
 					input[name="data.uses.value"],
-					input[name="data.damage.parts.0.0"] {
+					&.damage-parts input {
 						text-align: right;
 					}
 

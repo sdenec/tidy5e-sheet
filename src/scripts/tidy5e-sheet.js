@@ -112,7 +112,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			
 			let data = actor.data.data;
 			let target = event.currentTarget;
-			let value = target.dataset.elvl;
+			let value = Number(target.dataset.elvl);
 			await actor.update({"data.attributes.exhaustion": value});
  		});
 
@@ -501,7 +501,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	addFavorites(app, html, data, position);
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
-	// console.log(data.actor);
+	console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });
 
