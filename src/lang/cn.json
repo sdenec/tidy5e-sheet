@@ -10,8 +10,8 @@
 	"TIDY5E.Exhaustion6": "死亡",
 
 	"TIDY5E.RestHint": "进行休息",
-	"TIDY5E.RestS": "短休息",
-	"TIDY5E.RestL": "长休息",
+	"TIDY5E.RestS": "短休",
+	"TIDY5E.RestL": "长休",
 
 	"TIDY5E.AttrHitPoints": "生命值",
 
@@ -25,8 +25,8 @@
 
 	"TIDY5E.BioTraits": "特点",
 	"TIDY5E.BioIdeals": "理念",
-	"TIDY5E.BioBonds": "牵绊",
-	"TIDY5E.BioFlaws": "缺点",
+	"TIDY5E.BioBonds": "羁绊",
+	"TIDY5E.BioFlaws": "缺陷",
 	"TIDY5E.BioAppearance": "外貌",
 	"TIDY5E.BioBackground": "背景/传记",
 
@@ -57,7 +57,7 @@
 	"TIDY5E.Hide" : "隐藏",
 	"TIDY5E.Edit" : "编辑",
 	"TIDY5E.SkillsNotProficient" : "非熟练项",
-	"TIDY5E.TraitsEmpty" : "空特质",
+	"TIDY5E.TraitsEmpty" : "空白特性",
 
 	"TIDY5E.AbbrArmorClass" : "AC",
 
@@ -75,95 +75,197 @@
 	"TIDY5E.AbbrMod" : "先攻加值",
 
 
-	"TIDY5E.Settings.PcLabel" : "PC Sheets: ",
-	"TIDY5E.Settings.NpcLabel" : "NPC Sheets: ",
+	"TIDY5E.Settings.PcLabel" : "PC 卡: ",
+	"TIDY5E.Settings.NpcLabel" : "NPC 卡: ",
 
 	"TIDY5E.Settings.UseExpandedSheet" : {
-		"name" : "Expanded View for the Limited Sheet.",
-		"hint" : "The expanded view for the limited sheet displays the entire character sheet (minus the Private Notes tab) to players with Limited permission for that actor."
+		"name" : "扩展显示限制权限下的角色卡。",
+		"hint" : "对该角色的权限为限制的玩家打开扩展后的角色卡时，该角色的角色卡将会完整显示（去掉个人笔记部分）。"
 	},
 	"TIDY5E.Settings.UseDarkMode" : {
-		"name" : "Use alternate dark mode.",
-		"hint" : "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet."
+		"name" : "使用可选暗黑模式。",
+		"hint" : "勾选后，Tidy 5e 卡片将会启用可选的暗黑版本的样式。"
 	},
 	"TIDY5E.Settings.PrimaryAccentColor" : {
-		"name" : "Primary accent color.",
-		"hint" : "Overwrite the default primary accent color (default: #ff6400/darkmode: #48BB78) used to highlight e. g. buttons, input field borders or hover states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "主色调。",
+		"hint" : "覆写默认的主色调 (默认: #ff6400/暗黑模式: #48BB78)，主色调用于比如按钮、输入框边缘和悬停高亮色。可以使用任意的 CSS 有效颜色值诸如 red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
 	},
 	"TIDY5E.Settings.SecondaryAccentColor" : {
-		"name" : "Secondary accent color.",
-		"hint" : "Overwrite the default secondary accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "副色调。",
+		"hint" : "覆写默认的副色调 (默认: rgba(210,0,255,.1)/暗黑模式: rgba(0,150,150,.325))，副色调用于高亮准备状态。可以使用任意的 CSS 有效颜色值诸如 red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
 	},
 	"TIDY5E.Settings.AlwaysPreparedAccentColor" : {
-		"name" : "Accent Color for Always Prepared Spells.",
-		"hint" : "Overwrite the default accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) for Always Prepared Spells. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "始终可用法术的色调。",
+		"hint" : "覆写默认色调 (默认: rgba(210,0,255,.1)/暗黑模式: rgba(0,150,150,.325))，该色调用于始终可用状态的法术。可以使用任意的 CSS 有效颜色值诸如 red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
 	},
 	"TIDY5E.Settings.UseRoundPortraits" : {
-		"name" : "Sheets use round portraits.",
-		"hint" : "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame."
+		"name" : "角色卡使用圆形立绘框。",
+		"hint" : "如果使用圆形立绘图请勾选该项。开启后，将会使 HP 叠加层和立绘框按钮看起来更好看一些。使用没有定制边框的方形立绘图上也会比较好看。"
 	},
 	"TIDY5E.Settings.HpOverlayBorder" : {
-		"name" : "Border width for the hit point overlay.",
-		"hint" : "If your portrait has a frame you can adjust the Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border."
+		"name" : "HP 叠加层的边缘宽度。",
+		"hint" : "如果你的立绘图有边框，可以调整 HP 叠加层以补偿边框宽度。如果 HP 叠加层变色时不会改变边框颜色会更好看一些。"
 	},
 	"TIDY5E.Settings.DisableHpOverlay" : {
-		"name" : "Disable the hit point overlay.",
-		"hint" : "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it."
+		"name" : "禁用 HP 叠加层。",
+		"hint" : "如果你不喜欢你角色立绘框上的电子游戏风格的 HP 叠加层，可以关闭该项。"
 	},
 	"TIDY5E.Settings.HideClassList" : {
-		"name" : "Hide character class list.",
-		"hint" : "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)"
+		"name" : "隐藏角色职业列表。",
+		"hint" : "勾选后，角色卡等级旁的职业列表将会被隐藏。该角色卡模板可以正确处理 3 个职业，超过时虽然没有问题但是看起来可能会蛋疼 ;)"
 	},
 	"TIDY5E.Settings.DisableInspirationAnimation" : {
-		"name" : "No inspiration indicator animation.",
-		"hint" : "If it's too distracting, you can disable the subtle animation of the glowing inspiration indicator."
+		"name" : "禁用激励指示动画。",
+		"hint" : "如果激励指示的小动画过于干扰使用，可以禁用该项。"
 	},
 	"TIDY5E.Settings.DisableInspiration" : {
-		"name" : "Disable Inspiration Tracker.",
-		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
+		"name" : "禁用激励追踪器。",
+		"hint" : "如果你的战役不使用激励，你可以完全禁用该追踪器。"
 	},
 	"TIDY5E.Settings.DisableExhaustion" : {
-		"name" : "Disable Exhaustion Tracker.",
-		"hint" : "If your campaign doesn't use exhaustion you can disable the tracker completely."
+		"name" : "禁用力竭追踪器。",
+		"hint" : "如果你的战役不使用力竭，你可以完全禁用该追踪器。"
 	},
 	"TIDY5E.Settings.HideIfZero" : {
-		"name" : "Hide Exhaustion and Inspiration when not available (0).",
-		"hint" : "Check this option if you want to hide Exhaustion if its level is 0 and Inspiration if you have none. Appears on hover."
+		"name" : "无效时隐藏力竭和激励 (0).",
+		"hint" : "如果想要力竭为 0 和没有激励时隐藏两项请勾选该项，将会在鼠标悬停其上时显示。"
 	},
 	"TIDY5E.Settings.ExhaustionOnHover" : {
-		"name" : "Show exhaustion tracker only on hover.",
-		"hint" : "If you check this option the exhaustion tracker will only be visible when you hover over the portrait."
+		"name" : "仅在鼠标悬停时显示力竭追踪器。",
+		"hint" : "勾选后，只会在鼠标悬停于立绘框上时才会显示力竭追踪器。"
 	},
 	"TIDY5E.Settings.InspirationOnHover" : {
-		"name" : "Show inspiration indicator only on hover.",
-		"hint" : "If you check this option the inspiration indicator will only be visible when you hover over the portrait."
+		"name" : "仅在鼠标悬停时显示激励追踪器。",
+		"hint" : "勾选后，只会在鼠标悬停于立绘框上时才会显示激励追踪器。"
 	},
 	"TIDY5E.Settings.RestOnHover" : {
-		"name" : "Show rest button on hover.",
-		"hint" : "If you check this option the rest button will only be visible when you hover over the portrait."
+		"name" : "鼠标悬停时显示休息按钮。",
+		"hint" : "勾选后，只会在鼠标悬停于立绘框上时才会显示休息按钮。"
 	},
 	"TIDY5E.Settings.MoveTraits" : {
-		"name" : "Move traits below resources.",
-		"hint" : "Check this if you want to show the traits below the resources."
+		"name" : "将特性栏移动到资源栏下。",
+		"hint" : "勾选后，特性栏将会显示在资源栏下。"
 	},
 	"TIDY5E.Settings.PcToggleTraits" : {
-		"name" : "Show Toggle button for character traits.",
-		"hint" : "Check this if you want to show a button to toggle empty traits."
+		"name" : "角色特性栏中显示切换按钮。",
+		"hint" : "勾选后，将会显示用于切换空白特性的按钮。"
 	},
 	"TIDY5E.Settings.AlwaysShowTraits" : {
-		"name" : "Always show traits.",
-		"hint" : "When you don't want to hide and toggle empty NPC traits tick this box."
+		"name" : "始终显示所有特性。",
+		"hint" : "如果不想隐藏/切换 NPC 空白特性，可以勾选该项。"
 	},
 	"TIDY5E.Settings.AlwaysShowSkills" : {
-		"name" : "Always show skills.",
-		"hint" : "When you don't want to hide and toggle not proficient NPC skills tick this box."
+		"name" : "始终显示所有技能。",
+		"hint" : "如果不想隐藏/切换 NPC 未熟练的技能，可以勾选该项。"
 	},
 	"TIDY5E.Settings.MarkLinked" : {
-		"name" : "Highlight Sheet when linked to Actor.",
-		"hint" : "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted."
+		"name" : "高亮链接到角色的卡片。",
+		"hint" : "可以高亮显示链接角色了的 NPC 卡，避免自己编辑到错误的卡片。"
 	},
 	"TIDY5E.Settings.MarkUnlinked" : {
-		"name" : "Highlight sheet when not linked to actor.",
-		"hint" : "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted."
+		"name" : "高亮未链接到角色的卡片。",
+		"hint" : "可以高亮显示未链接角色的 NPC 卡，避免自己编辑到错误的卡片。"
+	},
+	"TIDY5E.Subclass": "子职",
+	"TIDY5E.ShowActorImage": "右键单击: 显示角色立绘",
+	"TIDY5E.ShowPortraitArt": "显示立绘",
+	"TIDY5E.ShowTokenArt": "显示指示物",
+	"TIDY5E.TogglePersonalityInfo": "切换个人信息显示",
+	"TIDY5E.EnableEdit": "启用编辑",
+	"TIDY5E.DisableEdit": "禁用编辑",
+	"TIDY5E.EditHint": "切换添加/删除按钮和未空区块的显示",
+	"TIDY5E.EmptySection": "该区块没有内容。解锁该卡片以编辑。",
+	"TIDY5E.GmOnlyEdit": "仅有你的 GM 可以编辑该区块。",
+	"TIDY5E.AttunementWarning": "同调警告: 你不可以同调超过 {number} 件物品!",
+	"TIDY5E.AttunementItems": "已同调物品",
+	"TIDY5E.AttunementMax": "同调上限",
+	"TIDY5E.GridLayout": "网格布局",
+	"TIDY5E.ListLayout": "列表布局",
+	"TIDY5E.isFav": "收藏",
+	"TIDY5E.ToggleMovement": "切换新版和旧版速度显示",
+	"TIDY5E.CurrencyAbbrCP": "CP",
+	"TIDY5E.CurrencyAbbrSP": "SP",
+	"TIDY5E.CurrencyAbbrGP": "GP",
+	"TIDY5E.CurrencyAbbrEP": "EP",
+	"TIDY5E.CurrencyAbbrPP": "PP",
+	"TIDY5E.SearchItem": "搜索物品",
+	"TIDY5E.SearchSpell": "搜索法术",
+	"TIDY5E.SearchClear": "清空搜索",
+	"TIDY5E.SearchHint": "输入你想要搜索的东西就够了。",
+	"TIDY5E.AbbrSavingThrow": "豁免",
+	"TIDY5E.SpellAttackMod": "攻击加值",
+	"TIDY5E.PreparedSpells": "已准备法术",
+	"TIDY5E.PreparedSpellsMax": "准备法术上限",
+	"TIDY5E.Components": "构材",
+	"TIDY5E.SpellSchool": "学派",
+	"TIDY5E.TokenLinked": "指示物已链接到角色",
+	"TIDY5E.TokenUnlinked": "指示物未链接到角色",
+	"TIDY5E.ItemDetailsHeadline": "机制/背景叙述",
+	"TIDY5E.Settings.GlobalLabel": "全局",
+	"TIDY5E.Settings.UserLabel": "用户",
+	"TIDY5E.Settings.VehicleLabel": "载具",
+	"TIDY5E.Settings.SheetMenu": {
+		"label": "卡片设定"
+	},
+	"TIDY5E.Settings.SheetTheme": {
+		"name": "Tidy5e 色彩主题。",
+		"hint": "使用 Tidy5e 的默认的明亮或暗黑的色彩主题。",
+		"default": "默认 (明亮)",
+		"dark": "可选 (暗黑)"
+	},
+	"TIDY5E.Settings.UseClassicControls": {
+		"name": "列表视图下使用旧版物品操作按钮。",
+		"hint": "始终显示物品操作按钮并禁用右键菜单。仅适用于 PC 物品和法术的列表视图。"
+	},
+	"TIDY5E.Settings.ContextRollButtons": {
+		"name": "上下文菜单中显示 midiQol/BetterRolls 的物品按钮。",
+		"hint": "启用后，物品描述中的掷骰按钮将会显示到上下文菜单中。使用网格布局或者使用频繁时比较方便。"
+	},
+	"TIDY5E.Settings.ShowTraitLabels": {
+		"name": "显示特性标签。",
+		"hint": "默认仅显示特性图标。启用后，也会显示标签。"
+	},
+	"TIDY5E.Settings.DisableHpBar": {
+		"name": "禁用生命值条。",
+		"hint": "启用后，用于指示剩余 HP 的着色条将会被隐藏 (HP 数字仍将可见)。"
+	},
+	"TIDY5E.Settings.DisableRightClick": {
+		"name": "禁用右键上下文菜单。",
+		"hint": "你可以禁用右键上下文菜单以避免 MOD 或设置的冲突。物品条目上将会显示菜单按钮作为替代。"
+	},
+	"TIDY5E.Settings.UseRoundPortraits": {
+		"all": "所有角色",
+		"pc": "所有 PC",
+		"npc": "所有 NPC/载具",
+		"none": "无",
+		"default": "无"
+	},
+	"TIDY5E.Settings.GmEditPermission": {
+		"name": "GM 始终可以编辑 PC 角色卡。",
+		"hint": "启用后，允许 GM 在未切换卡片锁定的情况下也可以编辑 PC 角色卡。"
+	},
+	"TIDY5E.Settings.GmEditEffects": {
+		"name": "仅允许 GM 编辑主动效果。",
+		"hint": "启用后，将禁止玩家编辑自己卡片上的主动效果。玩家仍将查看到已应用的效果。"
+	},
+	"TIDY5E.Settings.AlwaysShowQty": {
+		"name": "始终显示物品数量。",
+		"hint": "启用后，将不再隐藏物品数量。。"
+	},
+	"TIDY5E.Settings.ExhaustionEffects": {
+		"name": "力竭效果 (使用主动效果)。",
+		"hint": "设定力竭等级时应用对应的主动效果 - 需要 midiQol 以设置劣势掷骰！"
+	},
+	"TIDY5E.Settings.ShowNpcRest": {
+		"name": "NPC 休息.",
+		"hint": "启用后，将在 NPC 角色卡上显示休息图标/按钮。"
+	},
+	"TIDY5E.Settings.LinkMarker": {
+		"name": "标记链接/未链接的 NPC。",
+		"hint": "在链接/未链接的 NPC 卡上添加着色边框和图标。",
+		"default": "无链接标记 (默认)",
+		"unlinked": "高亮未链接指示物的卡片",
+		"linked": "高亮已链接指示物的卡片",
+		"both": "高亮已链接和未链接的指示物的卡片"
 	}
 }
