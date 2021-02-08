@@ -65,7 +65,7 @@
           {{/each}}
         </div>
         <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}: {{labels.school}}"><span class="truncate">{{labels.school}}</span></div>
-        <div class="item-detail spell-target" title="{{localize 'DND5E.SpellTarget'}} | {{localize 'DND5E.Range'}}: {{labels.range}}">
+        <div class="item-detail spell-target" title="{{localize 'DND5E.Range'}}: {{labels.range}}&#10;{{localize 'DND5E.Target'}}: {{labels.target}}">
           {{#if labels.target}}
           {{labels.target}}
           {{else}}{{ localize 'DND5E.None' }}

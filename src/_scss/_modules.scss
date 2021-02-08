@@ -538,8 +538,18 @@
 //   Support Actions Tab  
 // ------------------------------------
 
-.tidy5e.sheet.actor .character-actions-dnd5e {
-	.list-layout .items-list .item-detail {
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list {
+	overflow-y: visible;
+	padding: 0;
+
+	.items-header .item-detail {
+		color: var(--tertiary-color);
+		line-height: 12px;
+		height: 12px;
+		border: none;
+	}
+
+	.item-detail {
 		padding: 0 4px;
 
 		&.action-range {
@@ -555,18 +565,23 @@
 		}
 	}
 
-	.list-layout .item .item-detail {
-		&.action-range {
+	.item .item-detail {
+		&.action-range,
+		&.damage-cell {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
 			height: 24px;
 			line-height: 10px;
 
 			span {
 				font-size: 10px;
-				font-weight: 700;
+				color: var(--secondary-color);
 			}
 
 			small {
 				font-size: 10px;
+				color: var(--tertiary-color);
 			}
 		}
 	}
