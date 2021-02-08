@@ -208,6 +208,22 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  		});
 
 	}
+
+	// add actions module
+	async _renderInner(...args) {
+    const html = await super._renderInner(...args);
+
+    try {
+      const actionsTab = html.find('.actions-target');
+
+      const actionsTabHtml = $(await CAL5E.renderActionsList(this.actor));
+      actionsTab.html(actionsTabHtml);
+    } catch (e) {
+      log(true, e);
+    }
+
+    return html;
+  }
 }
 
 // count inventory items

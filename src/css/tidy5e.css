@@ -5419,3 +5419,33 @@
 .tidy5e.sheet.actor .grid-layout .items-footer .item-control.remove-category:hover:hover i {
   color: var(--tertiary-color);
 }
+
+.tidy5e.sheet.actor .character-actions-dnd5e .list-layout .items-list .item-detail {
+  padding: 0 4px;
+}
+
+.tidy5e.sheet.actor .character-actions-dnd5e .list-layout .items-list .item-detail.action-range {
+  flex: 0 0 80px;
+}
+
+.tidy5e.sheet.actor .character-actions-dnd5e .list-layout .items-list .item-detail.to-hit-cell {
+  flex: 0 0 50px;
+}
+
+.tidy5e.sheet.actor .character-actions-dnd5e .list-layout .items-list .item-detail.damage-cell {
+  flex: 0 0 120px;
+}
+
+.tidy5e.sheet.actor .character-actions-dnd5e .list-layout .item .item-detail.action-range {
+  height: 24px;
+  line-height: 10px;
+}
+
+.tidy5e.sheet.actor .character-actions-dnd5e .list-layout .item .item-detail.action-range span {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tidy5e.sheet.actor .character-actions-dnd5e .list-layout .item .item-detail.action-range small {
+  font-size: 10px;
+}
