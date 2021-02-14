@@ -556,6 +556,16 @@ export const tidy5eSettings = function () {
 		},
 		default: 'default'
 	});
+	
+	// Show if item has active effects
+	game.settings.register("tidy5e-sheet", "activeEffectsMarker", {
+    name: `${game.i18n.localize("TIDY5E.Settings.DebugLabel")}: ${game.i18n.localize("TIDY5E.Settings.ActiveEffectsMarker.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.ActiveEffectsMarker.hint"),
+    scope: "world",
+    config: true,
+    default: false,
+		type: Boolean
+	});
 
 	function redrawOpenSheets() {
 		// let actors = game.actors.entities.filter(a => a.sheet.rendered);

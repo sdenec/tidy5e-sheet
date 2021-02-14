@@ -1,5 +1,16 @@
 // font settings
 
+	.ae-marker {
+		display: inline-block;
+		padding: 1px 3px 0 3px;
+		font-size: 12px;
+		line-height: 15px;
+		font-weight: 600;
+		background: var(--warning-accent);
+		color: var(--secondary-color);
+		border-radius: 3px;
+	}
+
 	h1, h2, h3, h4 {
 		margin: 0;
 		font-weight: 700;

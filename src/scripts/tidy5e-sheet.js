@@ -429,6 +429,24 @@ function tidyCustomEffect(actor, change) {
   }
 }
 
+// add active effects marker
+function markActiveEffects(app, html, data){
+	if (game.settings.get("tidy5e-sheet", "activeEffectsMarker")) {
+		let actor = app.actor;
+		let items = data.actor.items;
+		let marker = `<span class="ae-marker" title="Item has active effects">Æ</span>`;
+		for (let item of items) {
+			// console.log(item);
+			if (item.effects.length > 0) {
+				console.log(item);
+				let id = item._id;
+				console.log(id);
+				html.find(`.item[data-item-id="${id}"] .item-name h4`).append(marker);
+			}
+		}
+	}
+}
+
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
 	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -517,7 +535,8 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	addFavorites(app, html, data, position);
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
-	console.log(data.actor);
+	markActiveEffects(app,html,data);
+	// console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });
 

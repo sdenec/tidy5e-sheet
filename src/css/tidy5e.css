@@ -114,6 +114,17 @@
   margin-bottom: 8px;
 }
 
+.tidy5e.sheet.actor .ae-marker {
+  display: inline-block;
+  padding: 1px 3px 0 3px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 600;
+  background: var(--warning-accent);
+  color: var(--secondary-color);
+  border-radius: 3px;
+}
+
 .tidy5e.sheet.actor h1, .tidy5e.sheet.actor h2, .tidy5e.sheet.actor h3, .tidy5e.sheet.actor h4 {
   margin: 0;
   font-weight: 700;
