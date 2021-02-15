@@ -5442,8 +5442,8 @@
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list {
-  overflow-y: visible;
-  padding: 0;
+  padding: 0 9px 8px 0;
+  overflow-y: scroll;
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .items-header .item-detail {
@@ -5457,12 +5457,17 @@
   padding: 0 4px;
 }
 
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.item-uses {
+  flex: 0 0 80px;
+  margin-left: auto;
+}
+
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.action-range {
   flex: 0 0 80px;
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.to-hit-cell {
-  flex: 0 0 50px;
+  flex: 0 0 120px;
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.damage-cell {
@@ -5478,7 +5483,6 @@
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range span, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell span {
-  font-size: 10px;
   color: var(--secondary-color);
 }
 

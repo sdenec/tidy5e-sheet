@@ -539,8 +539,8 @@
 // ------------------------------------
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list {
-	overflow-y: visible;
-	padding: 0;
+	padding: 0 9px 8px 0;
+	overflow-y: scroll;
 
 	.items-header .item-detail {
 		color: var(--tertiary-color);
@@ -552,12 +552,17 @@
 	.item-detail {
 		padding: 0 4px;
 
+		&.item-uses {
+			flex: 0 0 80px;
+			margin-left: auto;
+		}
+
 		&.action-range {
 			flex: 0 0 80px;
 		}
 
 		&.to-hit-cell {
-			flex: 0 0 50px;
+			flex: 0 0 120px;
 		}
 
 		&.damage-cell {
@@ -575,7 +580,7 @@
 			line-height: 10px;
 
 			span {
-				font-size: 10px;
+				// font-size: 10px;
 				color: var(--secondary-color);
 			}
 
