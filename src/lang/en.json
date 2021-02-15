@@ -87,6 +87,7 @@
 	"TIDY5E.ItemDetailsHeadline" : "Mechanics/Flavor Text",
 
 	"TIDY5E.Settings.GlobalLabel" : "Global",
+	"TIDY5E.Settings.DebugLabel" : "Debug",
 	"TIDY5E.Settings.UserLabel" : "User",
 	"TIDY5E.Settings.PcLabel" : "PCs",
 	"TIDY5E.Settings.NpcLabel" : "NPCs",
@@ -163,6 +164,10 @@
 	},
 
 	
+	"TIDY5E.Settings.ActiveEffectsMarker" : {
+		"name" : "Show Active Effects Marker on items.",
+		"hint" : "Enable if you want to see if items have active effects on them (only for list view)."
+	},
 	"TIDY5E.Settings.DisableRightClick" : {
 		"name" : "Disable right click context menu.",
 		"hint" : "In case of module conflicts or preference you can disable the right click context menu. Items will show a menu icon instead."
@@ -183,6 +188,10 @@
 	"TIDY5E.Settings.HpOverlayBorder" : {
 		"name" : "Offset hit point overlay.",
 		"hint" : "Enter offset value to compensate for portrait frames and prevent tinting."
+	},
+	"TIDY5E.Settings.TotalEditLock" : {
+		"name" : "Lock down sensitive fields.",
+		"hint" : "Enable to prevent acidentially changing sensible, mostly static values."
 	},
 	"TIDY5E.Settings.GmEditPermission" : {
 		"name" : "GM can always edit PC sheets.",

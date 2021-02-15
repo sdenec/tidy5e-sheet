@@ -308,6 +308,36 @@ export default class Tidy5eNPC extends ActorSheet5e {
     return this.actor.longRest();
   }
 
+  
+	// add actions module
+  async _renderInner(...args) {
+    const html = await super._renderInner(...args);
+    
+    try {
+      
+      // Update the nav menu
+      const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
+      const tabs = html.find('.tabs[data-group="primary"]');
+      tabs.prepend(actionsTabButton);
+
+      // Create the tab
+      const sheetBody = html.find('.sheet-body');
+      const actionsTab = $(`<div class="tab actions" data-group="primary" data-tab="actions"></div>`);
+      const actionsLayout = $(`<div class="list-layout"></div>`);
+      actionsTab.append(actionsLayout);
+      sheetBody.prepend(actionsTab);
+
+      // const actionsTab = html.find('.actions-target');
+      
+      const actionsTabHtml = $(await CAL5E.renderActionsList(this.actor));
+      actionsLayout.html(actionsTabHtml);
+    } catch (e) {
+      // log(true, e);
+    }
+    
+    return html;
+  }
+
 }
 
 // restore scroll position
@@ -439,6 +469,23 @@ async function hideSpellbook(app, html, data) {
 async function editProtection(app, html, data) {
   let actor = app.actor;
   if(!actor.getFlag('tidy5e-sheet', 'allow-edit')){
+    
+		if(game.settings.get("tidy5e-sheet", "totalEditLock")){
+			html.find(".skill input").prop('disabled', true);
+			html.find(".skill .proficiency-toggle").remove();
+			html.find(".ability-score").prop('disabled', true);
+			html.find(".ac-display input").prop('disabled', true);
+			html.find(".initiative input").prop('disabled', true);
+			html.find(".hp-max").prop('disabled', true);
+			html.find(".resource-name input").prop('disabled', true);
+			html.find(".res-max").prop('disabled', true);
+			html.find(".res-options").remove();
+			html.find(".ability-modifiers .proficiency-toggle").remove();
+			html.find('[contenteditable]').prop('contenteditable', false);
+			html.find(".caster-level input").prop('disabled', true);
+			html.find(".spellcasting-attribute select").prop('disabled', true);
+		}
+
     let itemContainer = html.find('.inventory-list:not(.spellbook-list).items-list');
     html.find('.inventory-list:not(.spellbook-list) .items-header').each(function(){
       if(($(this).next('.item-list').find('li').length - $(this).next('.item-list').find('li.items-footer').length) == 0){

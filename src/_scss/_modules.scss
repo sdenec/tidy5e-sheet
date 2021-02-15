@@ -533,3 +533,63 @@
 		
 	}
 }
+
+// ------------------------------------
+//   Support Actions Tab  
+// ------------------------------------
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list {
+	padding: 0 9px 8px 0;
+	overflow-y: scroll;
+
+	.items-header .item-detail {
+		color: var(--tertiary-color);
+		line-height: 12px;
+		height: 12px;
+		border: none;
+	}
+
+	.item-detail {
+		padding: 0 4px;
+
+		&.item-uses {
+			flex: 0 0 80px;
+			margin-left: auto;
+		}
+
+		&.action-range {
+			flex: 0 0 80px;
+		}
+
+		&.to-hit-cell {
+			flex: 0 0 120px;
+		}
+
+		&.damage-cell {
+			flex: 0 0 120px;
+		}
+	}
+
+	.item .item-detail {
+		&.action-range,
+		&.damage-cell {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			height: 24px;
+			line-height: 10px;
+
+			span {
+				// font-size: 10px;
+				color: var(--secondary-color);
+			}
+
+			small {
+				font-size: 10px;
+				color: var(--tertiary-color);
+			}
+		}
+	}
+
+
+}

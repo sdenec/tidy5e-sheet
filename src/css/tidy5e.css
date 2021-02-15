@@ -114,6 +114,17 @@
   margin-bottom: 8px;
 }
 
+.tidy5e.sheet.actor .ae-marker {
+  display: inline-block;
+  padding: 1px 3px 0 3px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 600;
+  background: var(--warning-accent);
+  color: var(--secondary-color);
+  border-radius: 3px;
+}
+
 .tidy5e.sheet.actor h1, .tidy5e.sheet.actor h2, .tidy5e.sheet.actor h3, .tidy5e.sheet.actor h4 {
   margin: 0;
   font-weight: 700;
@@ -198,6 +209,16 @@
 .tidy5e.sheet.actor input[type="text"]:hover,
 .tidy5e.sheet.actor input[type="text"]:focus {
   box-shadow: 0px 0px 0px 1px var(--primary-accent) inset;
+}
+
+.tidy5e.sheet.actor input[disabled],
+.tidy5e.sheet.actor input[disabled]:hover,
+.tidy5e.sheet.actor [contenteditable="false"],
+.tidy5e.sheet.actor [contenteditable="false"]:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: default;
 }
 
 .tidy5e.sheet.actor input[type="text"]::placeholder {
@@ -2940,10 +2961,10 @@
 .tidy5e.sheet.actor .list-layout .items-list .item-detail {
   font-size: 12px;
   display: flex;
-  height: 15px;
+  height: 24px;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid var(--faint-color);
+  border-left: 1px solid var(--faintest-color);
   color: var(--secondary-color);
   overflow: hidden;
 }
@@ -5417,5 +5438,55 @@
 
 .tidy5e.sheet.actor .grid-layout .items-footer .item-control.remove-category:hover i,
 .tidy5e.sheet.actor .grid-layout .items-footer .item-control.remove-category:hover:hover i {
+  color: var(--tertiary-color);
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list {
+  padding: 0 9px 8px 0;
+  overflow-y: scroll;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .items-header .item-detail {
+  color: var(--tertiary-color);
+  line-height: 12px;
+  height: 12px;
+  border: none;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail {
+  padding: 0 4px;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.item-uses {
+  flex: 0 0 80px;
+  margin-left: auto;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.action-range {
+  flex: 0 0 80px;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.to-hit-cell {
+  flex: 0 0 120px;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.damage-cell {
+  flex: 0 0 120px;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 24px;
+  line-height: 10px;
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range span, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell span {
+  color: var(--secondary-color);
+}
+
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range small, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell small {
+  font-size: 10px;
   color: var(--tertiary-color);
 }

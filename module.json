@@ -15,6 +15,7 @@
 	],
 	"styles": [
 		"../fonts/modesto-condensed/modesto-condensed.css",
+		"./css/tidy-icons.css",
 		"./css/tidy5e.css",
 		"./css/tidy5e-dark.css"
 	],
