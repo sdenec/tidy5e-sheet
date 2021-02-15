@@ -460,9 +460,9 @@ function markActiveEffects(app, html, data){
 		for (let item of items) {
 			// console.log(item);
 			if (item.effects.length > 0) {
-				console.log(item);
+				// console.log(item);
 				let id = item._id;
-				console.log(id);
+				// console.log(id);
 				html.find(`.item[data-item-id="${id}"] .item-name h4`).append(marker);
 			}
 		}
