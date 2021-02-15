@@ -10,9 +10,13 @@ Additional Translations generously provided by:
 
 Thank you very much!
 
+*Version 0.4.15*
+- integrated character actions list into the sheet
+- fix for Portrait Popout and CUB not hiding Actor names
+- new Debug setting to show a marker for items with active effects (for @tposney)
+
 *Version 0.4.14*
 - minor css fixes
-
 
 *Version 0.4.13*
 - fixed a problem with compendiums that would cause a render loop for actor sheets bogging down the game to a halt.

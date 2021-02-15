@@ -3,6 +3,7 @@
 		<a class='item' data-tab='pc-sheet'>Players</a>
 		<a class='item' data-tab='npc-sheet'>NPCs/Vehicles</a>
 		<a class='item gm-only' data-tab='gm-options'>GM Options</a>
+		<a class='item gm-only' data-tab='debug'>Debug</a>
 		<a class='item' data-tab='info'>Info</a>
 	</nav>	
 
@@ -272,6 +273,17 @@
       </div>
     </section>
 	</section>
+  <section class='tab gm-only' data-tab='debug'>
+    <h2>Debug Options</h2>
+    
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='activeEffectsMarker' id='activeEffectsMarker' {{checked settings.activeEffectsMarker}}>
+      <div class="description">
+        <label for="activeEffectsMarker">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.hint'}}</p>
+      </div>
+    </article>
+  </section>
   <section class='tab' data-tab='info'>
     <h2>Module Info</h2>
   </section>

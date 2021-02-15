@@ -16,16 +16,19 @@ export const tidy5eShowActorArt = function (html,actor){
     portraitMenu.addClass('hidden');
     let id = $(this).attr('id'),
         portraitImg = actor.data.img,
-        tokenImg = actor.data.token.img,
-        name =  actor.data.name;
+        tokenImg = actor.data.token.img
     if (id == 'showPortrait'){
-      name = 'Portrait: '+name;
-      new ImagePopout(portraitImg, { title: name, shareable: true })
-      .render(true);
+      new ImagePopout(portraitImg, {
+				title: 'Portrait: '+actor.name,
+				shareable: true,
+				uuid: actor.uuid
+			}).render(true);
     } else {
-      name = 'Token: '+name;
-      new ImagePopout(tokenImg, { title: name, shareable: true })
-      .render(true);
+      new ImagePopout(tokenImg, {
+				title: 'Token: '+actor.name,
+				shareable: true,
+				uuid: actor.uuid
+			}).render(true);
     }
   })
 }
