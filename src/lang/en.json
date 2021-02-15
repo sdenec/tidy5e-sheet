@@ -189,6 +189,10 @@
 		"name" : "Offset hit point overlay.",
 		"hint" : "Enter offset value to compensate for portrait frames and prevent tinting."
 	},
+	"TIDY5E.Settings.TotalEditLock" : {
+		"name" : "Lock down sensitive fields.",
+		"hint" : "Enable to prevent acidentially changing sensible, mostly static values."
+	},
 	"TIDY5E.Settings.GmEditPermission" : {
 		"name" : "GM can always edit PC sheets.",
 		"hint" : "Enable to allow GMs to edit PC sheets without toggling the sheet lock."

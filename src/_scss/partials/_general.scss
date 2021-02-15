@@ -100,6 +100,16 @@
 		box-shadow: 0px 0px 0px 1px var(--primary-accent) inset;
 	}
 
+	input[disabled],
+	input[disabled]:hover,
+	[contenteditable="false"],
+	[contenteditable="false"]:hover {
+		border: none;
+		outline: none;
+		box-shadow: none;
+		cursor: default;
+	}
+
 	input[type="text"]::placeholder {
 	  color: var(--tertiary-color);
 	}

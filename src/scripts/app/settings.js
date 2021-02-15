@@ -464,15 +464,15 @@ export const tidy5eSettings = function () {
     type: Number
 	});
 
-	// Sheet edit permissions
-  // game.settings.register("tidy5e-sheet", "totalEditLock", {
-  //   name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.totalEditLock.name")}`,
-  //   hint: game.i18n.localize("TIDY5E.Settings.totalEditLock.hint"),
-  //   scope: "world",
-  //   config: true,
-  //   default: false,
-  //   type: Boolean
-	// });
+	// Total Edit Lock
+	game.settings.register("tidy5e-sheet", "totalEditLock", {
+    name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.TotalEditLock.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.TotalEditLock.hint"),
+    scope: "world",
+    config: true,
+    default: false,
+		type: Boolean
+	});
 
   game.settings.register("tidy5e-sheet", "gmCanAlwaysEdit", {
     name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.GmEditPermission.name")}`,

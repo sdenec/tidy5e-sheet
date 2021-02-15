@@ -20,7 +20,9 @@ Thank you very much!
 
 - integrated character actions list into the PC sheet
 - fix for Portrait Popout and CUB not hiding Actor names
+- new GM setting "total edit lock" to lock down sensitive fields when the edit lock is enabled
 - new Debug setting to show a marker for items with active effects (for @tposney)
+- added new tidy icons font
 
 ### Version 0.4.14 ###
 
