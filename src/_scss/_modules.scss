@@ -558,7 +558,7 @@
 		}
 
 		&.action-range {
-			flex: 0 0 80px;
+			flex: 0 0 100px;
 		}
 
 		&.to-hit-cell {
@@ -566,11 +566,12 @@
 		}
 
 		&.damage-cell {
-			flex: 0 0 120px;
+			flex: 0 0 180px;
 		}
 	}
 
 	.item .item-detail {
+		&.item-uses,
 		&.action-range,
 		&.damage-cell {
 			text-align: center;
@@ -587,6 +588,7 @@
 			small {
 				font-size: 10px;
 				color: var(--tertiary-color);
+				display: block;
 			}
 		}
 	}

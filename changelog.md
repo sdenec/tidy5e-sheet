@@ -16,6 +16,9 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.16 ###
+- fix for empty "actions" tab if character actions list is not installed/active
+
 ### Version 0.4.15 ###
 
 - integrated actor actions list module

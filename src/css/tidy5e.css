@@ -5463,7 +5463,7 @@
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.action-range {
-  flex: 0 0 80px;
+  flex: 0 0 100px;
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.to-hit-cell {
@@ -5471,10 +5471,10 @@
 }
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item-detail.damage-cell {
-  flex: 0 0 120px;
+  flex: 0 0 180px;
 }
 
-.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell {
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.item-uses, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -5482,11 +5482,12 @@
   line-height: 10px;
 }
 
-.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range span, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell span {
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.item-uses span, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range span, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell span {
   color: var(--secondary-color);
 }
 
-.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range small, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell small {
+.tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.item-uses small, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.action-range small, .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list .item .item-detail.damage-cell small {
   font-size: 10px;
   color: var(--tertiary-color);
+  display: block;
 }

@@ -314,23 +314,24 @@ export default class Tidy5eNPC extends ActorSheet5e {
     const html = await super._renderInner(...args);
     
     try {
-      
-      // Update the nav menu
-      const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
-      const tabs = html.find('.tabs[data-group="primary"]');
-      tabs.prepend(actionsTabButton);
+			if(game.modules.get('character-actions-list-5e')?.active){
+        // Update the nav menu
+        const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
+        const tabs = html.find('.tabs[data-group="primary"]');
+        tabs.prepend(actionsTabButton);
 
-      // Create the tab
-      const sheetBody = html.find('.sheet-body');
-      const actionsTab = $(`<div class="tab actions" data-group="primary" data-tab="actions"></div>`);
-      const actionsLayout = $(`<div class="list-layout"></div>`);
-      actionsTab.append(actionsLayout);
-      sheetBody.prepend(actionsTab);
+        // Create the tab
+        const sheetBody = html.find('.sheet-body');
+        const actionsTab = $(`<div class="tab actions" data-group="primary" data-tab="actions"></div>`);
+        const actionsLayout = $(`<div class="list-layout"></div>`);
+        actionsTab.append(actionsLayout);
+        sheetBody.prepend(actionsTab);
 
-      // const actionsTab = html.find('.actions-target');
-      
-      const actionsTabHtml = $(await CAL5E.renderActionsList(this.actor));
-      actionsLayout.html(actionsTabHtml);
+        // const actionsTab = html.find('.actions-target');
+        
+        const actionsTabHtml = $(await CAL5E.renderActionsList(this.actor));
+        actionsLayout.html(actionsTabHtml);
+      }
     } catch (e) {
       // log(true, e);
     }
