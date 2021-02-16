@@ -85,7 +85,8 @@
     }
 
     select option {
-      color: var(--background);
+      color: var(--primary-font);
+      background: var(--background);
     }
 
   }
