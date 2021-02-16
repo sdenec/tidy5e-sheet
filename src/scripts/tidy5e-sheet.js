@@ -210,11 +210,11 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	}
 
 	// add actions module
-		async _renderInner(...args) {
-			const html = await super._renderInner(...args);
-			
-			try {
-				
+	async _renderInner(...args) {
+		const html = await super._renderInner(...args);
+		
+		try {
+			if(game.modules.get('character-actions-list-5e')?.active){
 				// Update the nav menu
 				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
 				const tabs = html.find('.tabs[data-group="primary"]');
@@ -231,12 +231,13 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 				
 				const actionsTabHtml = $(await CAL5E.renderActionsList(this.actor));
 				actionsLayout.html(actionsTabHtml);
+			}
 			} catch (e) {
 				// log(true, e);
 			}
 			
 			return html;
-		}
+	}
 }
 
 // count inventory items
