@@ -19,9 +19,9 @@ Items.registerSheet("dnd5e", Tidy5eItemSheet, {makeDefault: true});
 Hooks.once("ready", () => {
 
 	// can be removed when 0.7.x is stable
-  if (window.BetterRolls) {
-    window.BetterRolls.hooks.addItemSheet("Tidy5eItemSheet");
-  }
+  // if (window.BetterRolls) {
+  //   window.BetterRolls.hooks.addItemSheet("Tidy5eItemSheet");
+  // }
   
 });
 

@@ -167,7 +167,7 @@
   color: var(--tertiary-color);
 }
 
-.tidy5e.sheet.actor a:hover {
+.tidy5e.sheet.actor .window-content a:hover {
   text-shadow: none;
 }
 
