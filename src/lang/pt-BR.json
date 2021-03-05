@@ -53,10 +53,10 @@
 	"TIDY5E.ToggleInfo": "Alternar Informação",
 	"TIDY5E.ToggleMovement": "Alternar entre exibição de deslocamento moderna e legado",
 
-	"TIDY5E.Show" : "exibir/editar",
-	"TIDY5E.Hide" : "esconder",
-	"TIDY5E.Edit" : "editar",
-	"TIDY5E.TraitsEmpty" : "traços vazios",
+	"TIDY5E.Show" : "Exibir/Editar",
+	"TIDY5E.Hide" : "Esconder",
+	"TIDY5E.Edit" : "Editar",
+	"TIDY5E.TraitsEmpty" : "Traços Vazios",
 
 	"TIDY5E.Abilities" : "Atributos",
 
@@ -87,6 +87,7 @@
 	"TIDY5E.ItemDetailsHeadline" : "Mecânicas/Texto Opcional",
 
 	"TIDY5E.Settings.GlobalLabel" : "Global",
+	"TIDY5E.Settings.DebugLabel" : "Depurar",
 	"TIDY5E.Settings.UserLabel" : "Usuário",
 	"TIDY5E.Settings.PcLabel" : "PJ",
 	"TIDY5E.Settings.NpcLabel" : "PNJ",
@@ -163,6 +164,10 @@
 	},
 
 	
+	"TIDY5E.Settings.ActiveEffectsMarker" : {
+		"name" : "Mostrar marcador de Efeitos Ativos em itens.",
+		"hint" : "Habilite se você deseja ver se itens possuem efeitos ativos neles (somente para lista)"
+	},
 	"TIDY5E.Settings.DisableRightClick" : {
 		"name" : "Desativar o menu de contexto do botão direito.",
 		"hint" : "No caso de conflitos de módulos ou preferência, você pode desativar o botão de contexto do botão direito do mouse. Itens mostrarão um ícone de menu no lugar."
@@ -183,6 +188,10 @@
 	"TIDY5E.Settings.HpOverlayBorder" : {
 		"name" : "Deslocamento da sobreposição de pontos de vida",
 		"hint" : "Insira o valor de deslocamento para compensar o enquadramento dos retratos e prevenir tingimento."
+	},
+	"TIDY5E.Settings.TotalEditLock" : {
+		"name" : "Travar campos delicados",
+		"hint" : "Habilite para prevenir mudanças acidentais em campos sensíveis e em sua maioria estáticos."
 	},
 	"TIDY5E.Settings.GmEditPermission" : {
 		"name" : "GM pode sempre editar as fichas de personagens.",
