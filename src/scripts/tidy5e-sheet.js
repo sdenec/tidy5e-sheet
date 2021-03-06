@@ -567,18 +567,13 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 // 	console.log(data);
 // });
 
-// broken at the moment
-// Hooks.on("updateActor", (actorObject) => {
-// 	activeEffectsExhaustion(actorObject);
-// });
-
 Hooks.once("ready", (app, html, data) => {
 	// console.log("Tidy5e Sheet is ready!");
 	
 	// can be removed when 0.7.x is stable
-	if (window.BetterRolls) {
-		window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
-	}
+	// if (window.BetterRolls) {
+	// 	window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
+	// }
 	
 	tidy5eSettings();
 

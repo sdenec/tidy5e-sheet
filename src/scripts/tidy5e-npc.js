@@ -556,9 +556,9 @@ Hooks.once("init", () => {
 Hooks.once("ready", () => {
   
   // can be removed when 0.7.x is stable
-  if (window.BetterRolls) {
-    window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
-  }
+  // if (window.BetterRolls) {
+  //   window.BetterRolls.hooks.addActorSheet("Tidy5eNPC");
+  // }
 
 });
 

@@ -62,7 +62,8 @@
 }
 
 .tidy5eDark .tidy5e.sheet.item select option {
-  color: var(--background);
+  color: var(--primary-font);
+  background: var(--background);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .tox-toolbar-overlord,

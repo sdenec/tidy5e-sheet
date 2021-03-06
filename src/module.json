@@ -11,7 +11,8 @@
 		"./scripts/tidy5e-sheet.js",
 		"./scripts/tidy5e-npc.js",
 		"./scripts/tidy5e-vehicle.js",
-		"./scripts/tidy5e-item.js"
+		"./scripts/tidy5e-item.js",
+		"./scripts/app/exhaustion.js"
 	],
 	"styles": [
 		"../fonts/modesto-condensed/modesto-condensed.css",
