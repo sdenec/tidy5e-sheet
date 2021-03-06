@@ -567,11 +567,6 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 // 	console.log(data);
 // });
 
-// broken at the moment
-// Hooks.on("updateActor", (actorObject) => {
-// 	activeEffectsExhaustion(actorObject);
-// });
-
 Hooks.once("ready", (app, html, data) => {
 	// console.log("Tidy5e Sheet is ready!");
 	

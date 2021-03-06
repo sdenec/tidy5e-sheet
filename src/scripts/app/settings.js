@@ -503,8 +503,7 @@ export const tidy5eSettings = function () {
   });
 
 	// Tracker Settings
-	/* currently broken
-	game.settings.register("tidy5e-sheet", "exhaustionEffects", {
+		game.settings.register("tidy5e-sheet", "exhaustionEffects", {
 		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.hint"),
 		scope: "world",
@@ -512,8 +511,7 @@ export const tidy5eSettings = function () {
 		default: false,
 		type: Boolean
 	});
-	*/
-	
+		
 	game.settings.register("tidy5e-sheet", "disableExhaustion", {
 		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableExhaustion.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.DisableExhaustion.hint"),
