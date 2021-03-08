@@ -662,6 +662,10 @@
 		}//.item-controls
 
 	}//.item
+	
+	.info-card {
+		display: none;
+	}
 
 	&.alt-context .activate-context-menu {
 		display: flex;

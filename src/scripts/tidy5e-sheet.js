@@ -12,6 +12,7 @@ import { tidy5eSearchFilter } from "./app/search-filter.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
+import { tidy5eItemCard } from "./app/itemcard.js";
 
 let position = 0;
 
@@ -64,6 +65,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     tidy5eContextMenu(html);
 		tidy5eSearchFilter(html, actor);
 		tidy5eShowActorArt(html, actor);
+		tidy5eItemCard(html, actor);
 
 		// store Scroll Pos
 		const attributesTab = html.find('.tab.attributes');
@@ -165,50 +167,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			  }
  			}
  		});
-
-		// show/hide grid layout item info card on mouse enter/leave
-
- 		html.find('.grid-layout .item-list .item').mouseenter( async (event) => {
-	    event.preventDefault();
- 			let li = $(event.currentTarget),
- 					item = actor.getOwnedItem(li.data("item-id")),
- 					itemData = item.data,
- 					// itemDescription = itemData.data.description.value,
-					chatData = item.getChatData({secrets: actor.owner}),
-					itemDescription = chatData.description.value,
- 					infoContainer = li.closest('.grid-layout').find('.item-info-container-content'),
- 					infoCard = li.find('.info-card');
- 					
- 			infoCard.clone().appendTo(infoContainer);
-
- 			let	infoBackground = infoContainer.find('.item-info-container-background'),
- 					infoDescription = infoContainer.find('.info-card-description'),
- 					props = $(`<div class="item-properties"></div>`);
-
- 			infoDescription.html(itemDescription);
-
-	    chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
-	    infoContainer.find('.info-card .info-card-description').after(props);
-
-			infoContainer.show();
-			infoBackground.hide();
-
- 			let innerScrollHeight = infoDescription[0].scrollHeight;
-
-			if(innerScrollHeight > infoDescription.height() ) {
-				infoDescription.addClass('overflowing');
-				infoDescription.after('<span class="truncated">&hellip;</span>');
-			}
-	    // console.log(itemData);
- 		});
-
- 		html.find('.item-list .item').mouseleave( function (event) {
-			html.find('.item-info-container-background').show();
-			html.find('.item-info-container-content .info-card').remove();
- 		});
-
 	}
-
+	
 	// add actions module
 	async _renderInner(...args) {
 		const html = await super._renderInner(...args);

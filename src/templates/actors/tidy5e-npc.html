@@ -1,5 +1,20 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
   <div class="tidy5e-sheet tidy5e-npc {{#if actor.flags.tidy5e-sheet.allow-edit}}allow-edit{{/if}}">
+    
+		{{!-- Item Info Card --}}
+		<section id="item-info-container">
+			<div class="info-wrap">
+				<article id="item-info-container-content">
+					<!-- Info Card here -->
+				</article>
+				
+				<article class="info-card-hint">
+					<p><span class="key">X</span> hold key to interact with card.</p>
+					<p><i class="fas fa-mouse"></i> middle mouse to view/edit item.</p>
+				</article>
+			</div>
+		</section>
+    
     {{!-- NPC Sheet Header --}}
     <header class="tidy5e-header">
       <section class="profile-wrap">

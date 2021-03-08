@@ -5,6 +5,7 @@ import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
+import { tidy5eItemCard } from "./app/itemcard.js";
 
 
 /**
@@ -190,6 +191,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
 		tidy5eShowActorArt(html, actor);
+		tidy5eItemCard(html, actor);
 
     
     html.find(".toggle-personality-info").click( async (event) => {
