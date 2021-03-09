@@ -3,6 +3,7 @@
 	flex: 1;
 	overflow: hidden;
 
+	/*
 	.item-info-container {
 		position: relative;
     margin: 0 8px 10px 0;
@@ -117,6 +118,7 @@
 			}
   	}
   }
+	*/
 
 	.items-list {
 
@@ -343,9 +345,9 @@
 			}
 		}//.items-footer
 
-		.info-card {
-			display: none;
-		}
+		// .info-card {
+		// 	display: none;
+		// }
 
 
 	}//.item-list

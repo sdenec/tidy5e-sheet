@@ -1,5 +1,21 @@
 <form class="{{cssClass}}" autocomplete="off">
 	<div class="tidy5e-sheet {{#if actor.flags.tidy5e-sheet.allow-edit}}allow-edit{{/if}}">
+
+		{{!-- Item Info Card --}}
+		<section id="item-info-container">
+			<i class="item-info-container-background fab fa-d-and-d"></i>
+			<div class="info-wrap">
+				<article id="item-info-container-content">
+					<!-- Info Card here -->
+				</article>
+				<!-- <article class="mod-roll-buttons"></article> -->
+				<article class="info-card-hint">
+					<p><span class="key">X</span> hold key to interact with card.</p>
+					<p><i class="fas fa-mouse"></i> middle mouse to view/edit item.</p>
+				</article>
+			</div>
+		</section>
+    
 		{{!-- Sheet Header --}}
 		<header class="tidy5e-header">
 			

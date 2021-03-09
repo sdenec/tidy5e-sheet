@@ -68,6 +68,30 @@
 
         <div class="item-detail spell-action">{{labels.activation}}</div>
 
+        <div class="info-card {{~#if item.data.preparation.prepared}} equipped {{/if}}">
+          <p class="info-card-name">{{item.name}}</p>
+          <div class="info-card-states">
+            <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
+            {{#if ../../owner}}
+            {{#if section.canPrepare}}
+              <span>{{item.toggleTitle}}</span>
+            {{/if}}
+            {{/if}}
+          </div>
+          <div class="info-card-amount">
+            {{#if item.hasUses }}
+            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
+            {{/if}}
+          </div>
+          <div class="description-wrap">
+            <div class="info-card-description">
+              <!-- item description -->
+            </div>
+          </div>
+				  <article class="mod-roll-buttons"></article>
+        </div>
+
+
         {{#if ../../owner}}
         <div class="activate-context-menu">
           <i class="fas fa-ellipsis-v"></i>

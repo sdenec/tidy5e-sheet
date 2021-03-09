@@ -5,6 +5,7 @@ import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
+import { tidy5eItemCard } from "./app/itemcard.js";
 
 export class Tidy5eVehicle extends ActorSheet5eVehicle {
 
@@ -51,6 +52,9 @@ export class Tidy5eVehicle extends ActorSheet5eVehicle {
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
 		tidy5eShowActorArt(html, actor);
+    if(game.settings.get("tidy5e-sheet", "npcItemCards")) {
+      tidy5eItemCard(html, actor);
+    }
 
 		// toggle empty traits visibility in the traits list
     html.find('.traits .toggle-traits').click( async (event) => {

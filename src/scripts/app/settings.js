@@ -164,14 +164,14 @@ export class Tidy5eUserSettings extends FormApplication {
 	}
 
 	getSettingsData() {		
-		console.log(game.settings);
+		// console.log(game.settings);
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
 	}
 
 	getData() {
 		let data = super.getData();
 		data.settings = this.getSettingsData();
-		console.log(data);
+		// console.log(data);
 		return data;
 	}
 
@@ -181,8 +181,8 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	_updateObject(ev, formData) {
 		const data = expandObject(formData);
-		console.log(formData);
-		console.log(data['alwaysShowQty']);
+		// console.log(formData);
+		// console.log(data['alwaysShowQty']);
 		// console.log(settingOptions);
 		// for(const [key, value] of data) {
 		// 	console.log(`Key: ${key} with value: ${value}`);
@@ -232,6 +232,16 @@ export const tidy5eSettings = function () {
 		type: Boolean
 	});
 	
+	// Classic Item Controls for PC Sheets
+	game.settings.register("tidy5e-sheet", "allItemCards", {
+		name: `${game.i18n.localize("TIDY5E.Settings.AllItemCards.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.AllItemCards.hint"),
+		scope: "user",
+		config: true,
+		default: true,
+		type: Boolean
+	});
+
 	// Show Roll buttons in context Menu
 	game.settings.register("tidy5e-sheet", "contextRollButtons", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ContextRollButtons.name")}`,
@@ -337,6 +347,24 @@ export const tidy5eSettings = function () {
 
 
 	// NPC Sheet Settings
+	
+	game.settings.register("tidy5e-sheet", "npcItemCards", {
+		name: `${game.i18n.localize("TIDY5E.Settings.NpcItemCards.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.NpcItemCards.hint"),
+		scope: "user",
+		config: true,
+		default: true,
+		type: Boolean
+	});
+	
+  game.settings.register("tidy5e-sheet", "moveNpcTraits", {
+		name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.MoveTraits.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.MoveTraits.hint"),
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+	});
 
 	game.settings.register("tidy5e-sheet", "disableNpcHpBar", {
 		name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,

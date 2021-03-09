@@ -2,14 +2,6 @@
 {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-header.html"}}
 
 <div class="grid-layout">
-
-  <div class="item-info-container">
-    <i class="item-info-container-background fab fa-d-and-d"></i>
-    <div class="item-info-container-content">
-      <!-- Info Card here -->
-    </div>
-  </div>
-    
   <ul class="inventory-list items-list">
     {{#each sections as |section sid|}}
     <li class="items-header">
@@ -64,12 +56,12 @@
             <!-- {{#if item.data.quantity}} {{/if}} -->
             <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}}</span>
           </div>
-          <div class="info-card-description">
-            <!-- item description -->
+          <div class="description-wrap">
+            <div class="info-card-description">
+              <!-- item description -->
+            </div>
           </div>
-          <div class="info-card-hint">
-            <span><i class="fas fa-mouse"></i> middle mouse click for full item info.</span>
-          </div>
+				  <article class="mod-roll-buttons"></article>
         </div>
 
         {{#if ../../owner}}

@@ -16,12 +16,23 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.18 ###
+
+- redesigned item info cards to free up space in grid layout and made them work in list layout and for npcs as well
+- hold down X-key to temporary fixate the card to interact with the content (eg. scroll long text or click buttons)
+- NPC traits can now be moved below resources via sheet settings
+- minor css fixes
+- midi qol item buttons will no longer appear in the context menu. Instead they can be placed directly into the info cards for easy visibility.
+- changed the wording for midi qol item buttons setting
+
 ### Version 0.4.17 ###
+
 - css fix for the window header buttons hover state
 - removed deprecated BetterRolls Hooks
 - added automatic exhaustion active effects
 
 ### Version 0.4.16 ###
+
 - fix for empty "actions" tab if character actions list is not installed/active
 
 ### Version 0.4.15 ###
