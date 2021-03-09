@@ -254,6 +254,13 @@
   width: 280px;
 }
 
+.tidy5e.sheet.actor #item-info-container a.entity-link,
+.tidy5e.sheet.actor #item-info-container a.inline-roll {
+  font-size: 13px;
+  border-radius: 5px;
+  padding: 0 4px;
+}
+
 .tidy5e.sheet.actor #item-info-container .item-info-container-background {
   font-size: 150px;
   color: var(--faintest-color);

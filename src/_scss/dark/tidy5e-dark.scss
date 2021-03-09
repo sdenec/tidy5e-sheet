@@ -63,6 +63,15 @@
       color: var(--background);
     }
 
+    #item-info-container {
+      background: var(--background);
+    }
+
+    a.entity-link,
+    a.inline-roll {
+      color: #222;
+    }
+
   }
   
   .tidy5e.sheet.item {

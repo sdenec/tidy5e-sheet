@@ -44,6 +44,15 @@
   color: var(--background);
 }
 
+.tidy5eDark .tidy5e.sheet.actor #item-info-container {
+  background: var(--background);
+}
+
+.tidy5eDark .tidy5e.sheet.actor a.entity-link,
+.tidy5eDark .tidy5e.sheet.actor a.inline-roll {
+  color: #222;
+}
+
 .tidy5eDark .tidy5e.sheet.item .window-content {
   color: var(--primary-font);
 }
