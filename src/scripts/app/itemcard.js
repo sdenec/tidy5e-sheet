@@ -18,12 +18,20 @@ export const tidy5eItemCard = function (html, actor) {
 
   let allItems = true;
 
+  let containerTrigger =  allItems ? html.find('.inventory-list:not(.character-actions-dnd5e)') : html.find('.grid-layout .inventory-list');
   let cardTrigger = allItems ? html.find('.inventory-list:not(.character-actions-dnd5e) .item-list .item') : html.find('.grid-layout .item-list .item');
 
   let infoContainer = html.find('#item-info-container'),
       infoContainerContent = html.find('#item-info-container-content');
 
       html.find('.item-image').mouseenter(function() {console.log('ENTER')});
+
+  containerTrigger.mouseenter( function(){
+    if(!fixCard){
+      // infoContainer.show();
+      infoContainer.addClass('open');
+    }
+  });
 
   cardTrigger.mouseenter(async (event) => {
     console.log(event.currentTarget);
@@ -49,7 +57,7 @@ export const tidy5eItemCard = function (html, actor) {
       chatData.properties.forEach(p => props.append(`<span class="tag">${p}</span>`));
       infoContainerContent.find('.info-card .description-wrap').after(props);
 
-      infoContainer.show();
+      // infoContainer.show();
       // infoBackground.hide();
 
       let innerScrollHeight = infoDescription[0].scrollHeight;
@@ -68,17 +76,31 @@ export const tidy5eItemCard = function (html, actor) {
     }
   });
   
+  containerTrigger.mouseleave( function (event) {
+    if(!fixCard){
+      hideContainer();
+    }
+  });
+  
   let item = html.find('.item');
   item.each(function(){
     this.addEventListener('dragstart', function() {
     removeCard();
+    hideContainer();
     });
   });
 
   function removeCard(){
     // html.find('.item-info-container-background').show();
     infoContainerContent.find('.info-card').remove();
-    infoContainer.hide();
+    // infoContainer.hide();
+  }
+  
+  function hideContainer(){
+    // html.find('.item-info-container-background').show();
+    // infoContainerContent.find('.info-card').remove();
+    // infoContainer.hide();
+    infoContainer.removeClass('open');
   }
 
 }
