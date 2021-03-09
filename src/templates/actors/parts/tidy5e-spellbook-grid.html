@@ -2,13 +2,6 @@
 {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-header.html"}}
 
 <div class="grid-layout">
-<!-- 
-  <div class="item-info-container">
-    <i class="item-info-container-background fab fa-d-and-d"></i>
-    <div class="item-info-container-content">
-    </div>
-  </div> -->
-
   <ul class="inventory-list spellbook-list items-list">
     {{#each spellbook as |section|}}
     <li class="items-header spellbook-header">
@@ -78,6 +71,7 @@
               <!-- item description -->
             </div>
           </div>
+				  <article class="mod-roll-buttons"></article>
         </div>
 
         {{#if ../../owner}}

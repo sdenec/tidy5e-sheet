@@ -2,14 +2,6 @@
 {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-header.html"}}
 
 <div class="grid-layout">
-<!-- 
-  <div class="item-info-container">
-    <i class="item-info-container-background fab fa-d-and-d"></i>
-    <div class="item-info-container-content">
-      
-    </div>
-  </div>
-     -->
   <ul class="inventory-list items-list">
     {{#each sections as |section sid|}}
     <li class="items-header">
@@ -69,6 +61,7 @@
               <!-- item description -->
             </div>
           </div>
+				  <article class="mod-roll-buttons"></article>
         </div>
 
         {{#if ../../owner}}

@@ -191,7 +191,9 @@ export default class Tidy5eNPC extends ActorSheet5e {
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
 		tidy5eShowActorArt(html, actor);
-		tidy5eItemCard(html, actor);
+    if(game.settings.get("tidy5e-sheet", "npcItemCards")) {
+      tidy5eItemCard(html, actor);
+    }
 
     
     html.find(".toggle-personality-info").click( async (event) => {
@@ -414,6 +416,11 @@ async function setSheetClasses(app, html, data) {
 	}
 	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
 		tidy5eClassicControls(html);
+	}
+  if (game.settings.get("tidy5e-sheet", "moveNpcTraits")) {
+		let altPos = html.find('.alt-trait-pos');
+		let traits = html.find('.traits');
+		altPos.append(traits);
 	}
   if (!game.settings.get("tidy5e-sheet", "showNpcResting")) {
     html.find('.tidy5e-sheet.tidy5e-npc .rest-container').remove();

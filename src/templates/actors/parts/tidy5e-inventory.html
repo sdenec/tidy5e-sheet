@@ -98,7 +98,7 @@
         {{/if}}
 
         
-        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.data.equipped}} equipped {{/if}}">
+        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
             {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
@@ -120,6 +120,7 @@
               <!-- item description -->
             </div>
           </div>
+				  <article class="mod-roll-buttons"></article>
         </div>
 
 

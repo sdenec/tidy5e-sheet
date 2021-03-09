@@ -512,7 +512,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	editProtection(app, html, data);
 	addClassList(app, html, data);
 	toggleTraitsList(app, html, data)
-	checkDeathSaveStatus(app, html, data);
+	// checkDeathSaveStatus(app, html, data);
 	abbreviateCurrency(app,html,data);
 	spellAttackMod(app,html,data);
 	addFavorites(app, html, data, position);

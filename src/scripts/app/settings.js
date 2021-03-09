@@ -232,6 +232,16 @@ export const tidy5eSettings = function () {
 		type: Boolean
 	});
 	
+	// Classic Item Controls for PC Sheets
+	game.settings.register("tidy5e-sheet", "allItemCards", {
+		name: `${game.i18n.localize("TIDY5E.Settings.AllItemCards.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.AllItemCards.hint"),
+		scope: "user",
+		config: true,
+		default: true,
+		type: Boolean
+	});
+
 	// Show Roll buttons in context Menu
 	game.settings.register("tidy5e-sheet", "contextRollButtons", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ContextRollButtons.name")}`,
@@ -337,6 +347,24 @@ export const tidy5eSettings = function () {
 
 
 	// NPC Sheet Settings
+	
+	game.settings.register("tidy5e-sheet", "npcItemCards", {
+		name: `${game.i18n.localize("TIDY5E.Settings.NpcItemCards.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.NpcItemCards.hint"),
+		scope: "user",
+		config: true,
+		default: true,
+		type: Boolean
+	});
+	
+  game.settings.register("tidy5e-sheet", "moveNpcTraits", {
+		name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.MoveTraits.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.MoveTraits.hint"),
+    scope: "user",
+    config: true,
+    default: false,
+    type: Boolean
+	});
 
 	game.settings.register("tidy5e-sheet", "disableNpcHpBar", {
 		name: `${game.i18n.localize("TIDY5E.Settings.NpcLabel")}: ${game.i18n.localize("TIDY5E.Settings.DisableHpBar.name")}`,

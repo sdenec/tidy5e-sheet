@@ -96,6 +96,14 @@
 	"TIDY5E.Settings.SheetMenu" : {
 		"label" : "Sheet Settings"
 	},
+	"TIDY5E.Settings.AllItemCards" : {
+		"name" : "Show item info cards in all layouts.",
+		"hint" : "Disable if you only want the slide out item info cards in grid layout."
+	},
+	"TIDY5E.Settings.NpcItemCards" : {
+		"name" : "Show item info cards for NPCs/vehivcles.",
+		"hint" : "Disable if you don't want the slide out item info cards for NPCs/vehicles."
+	},
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e color theme.",
 		"hint" : "Use either the default light or alternate dark color theme of Tidy5e.",
@@ -107,8 +115,8 @@
 		"hint" : "Always shows item controls and disable right click menu. Only applies for PC item/spell inventory in list layout."
 	},
 	"TIDY5E.Settings.ContextRollButtons" : {
-		"name" : "Show midiQol/Better Rolls Item Button in Context Menu",
-		"hint" : "Per default roll buttons appear in the item's description. Enable to move them to the context menu. Useful for grid layout or if you use them frequently."
+		"name" : "Show midiQol Item Buttons in item's info card",
+		"hint" : "Per default roll buttons appear in the item's description. Enable to move them to the item's info card. Works in all layout modes."
 	},
 	"TIDY5E.Settings.ShowTraitLabels" : {
 		"name" : "Show Trait Labels.",

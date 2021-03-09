@@ -104,8 +104,8 @@
 		"hint" : "Zeigt die Gegenstandsteuerung immer an ohne Rechtsklick. Trifft nur auf SC-Gegenstands/Zauber-Inventar in der Listenansicht zu."
 	},
 	"TIDY5E.Settings.ContextRollButtons" : {
-		"name" : "Zeige midiQol/Better Rolls Gegenstand-Button im Context-Menu",
-		"hint" : "Standardmäßig werden Gegenstands-Buttons in den Zusatzinfos angezeigt. Aktivieren, um sie in das Contextmenü zu verschieben. Nützlich für die Rasteransicht oder wenn sie oft benötigt werden."
+		"name" : "Zeige midiQol Gegenstand-Buttons in der Info-Karte",
+		"hint" : "Standardmäßig werden Gegenstands-Buttons in den Zusatzinfos angezeigt. Aktivieren, um sie in die Info-Karte zu verschieben. Funktioniert in allen Layout-Modi."
 	},
 	"TIDY5E.Settings.GmEditPermission" : {
 		"name" : "SL kann immer SC-Bögen bearbeiten.",

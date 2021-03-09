@@ -16,15 +16,13 @@ export const tidy5eItemCard = function (html, actor) {
     }
   });
 
-  let allItems = true;
+  let allItems = game.settings.get("tidy5e-sheet", "allItemCards");
 
   let containerTrigger =  allItems ? html.find('.inventory-list:not(.character-actions-dnd5e)') : html.find('.grid-layout .inventory-list');
   let cardTrigger = allItems ? html.find('.inventory-list:not(.character-actions-dnd5e) .item-list .item') : html.find('.grid-layout .item-list .item');
 
   let infoContainer = html.find('#item-info-container'),
       infoContainerContent = html.find('#item-info-container-content');
-
-      html.find('.item-image').mouseenter(function() {console.log('ENTER')});
 
   containerTrigger.mouseenter( function(){
     if(!fixCard){
@@ -34,7 +32,6 @@ export const tidy5eItemCard = function (html, actor) {
   });
 
   cardTrigger.mouseenter(async (event) => {
-    console.log(event.currentTarget);
     if(!fixCard){
       event.preventDefault();
       let li = $(event.currentTarget).closest('.item'),
@@ -48,8 +45,8 @@ export const tidy5eItemCard = function (html, actor) {
           
       infoCard.clone().appendTo(infoContainerContent);
 
-      // let	infoBackground = infoContainerContent.find('.item-info-container-background'),
-      let infoDescription = infoContainerContent.find('.info-card-description'),
+      let	infoBackground = infoContainer.find('.item-info-container-background'),
+          infoDescription = infoContainerContent.find('.info-card-description'),
           props = $(`<div class="item-properties"></div>`);
 
       infoDescription.html(itemDescription);
@@ -58,7 +55,7 @@ export const tidy5eItemCard = function (html, actor) {
       infoContainerContent.find('.info-card .description-wrap').after(props);
 
       // infoContainer.show();
-      // infoBackground.hide();
+      infoBackground.hide();
 
       let innerScrollHeight = infoDescription[0].scrollHeight;
 
@@ -66,7 +63,6 @@ export const tidy5eItemCard = function (html, actor) {
         infoDescription.addClass('overflowing');
         // infoDescription.after('<span class="truncated">&hellip;</span>');
       }
-      // console.log(itemData);
     }
   });
 
@@ -91,7 +87,7 @@ export const tidy5eItemCard = function (html, actor) {
   });
 
   function removeCard(){
-    // html.find('.item-info-container-background').show();
+    html.find('.item-info-container-background').show();
     infoContainerContent.find('.info-card').remove();
     // infoContainer.hide();
   }
@@ -102,5 +98,20 @@ export const tidy5eItemCard = function (html, actor) {
     // infoContainer.hide();
     infoContainer.removeClass('open');
   }
+
+  $('#item-info-container').on('click', '.button', function(e){
+    let passKey;
+    // document.addEventListener('keydown', function (e) {
+    //   if (e.key === 'x') {
+    //     passKey = e.key;
+    //   }
+    // });
+    e.preventDefault();
+    let itemId = $(this).closest('.info-card').attr('data-item-id');
+    let action = $(this).attr('data-action');
+    console.log(`item ID: ${itemId} / Action: ${action}`);
+    console.log(passKey);
+    $(`.tidy5e-sheet .item[data-item-id='${itemId}'] .item-buttons .button[data-action='${action}']`).trigger(e);
+  })
 
 }

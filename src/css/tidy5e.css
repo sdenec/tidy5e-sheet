@@ -254,6 +254,21 @@
   width: 280px;
 }
 
+.tidy5e.sheet.actor #item-info-container .item-info-container-background {
+  font-size: 150px;
+  color: var(--faintest-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 279px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
 .tidy5e.sheet.actor #item-info-container .info-wrap {
   display: flex;
   height: 100%;
@@ -369,18 +384,22 @@
   padding-right: 8px;
 }
 
-.tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ul {
+.tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ul, .tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ol {
   list-style: disc;
   margin: 8px 0;
   padding: 0 0 0 16px;
 }
 
-.tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ul li {
+.tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ul li, .tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ol li {
   margin: 4px 0 0 0;
 }
 
-.tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ul li:first-child {
+.tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ul li:first-child, .tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ol li:first-child {
   margin: 0;
+}
+
+.tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description ol {
+  list-style: decimal;
 }
 
 .tidy5e.sheet.actor #item-info-container-content .info-card .info-card-description > *:first-child {
@@ -397,6 +416,24 @@
 
 .tidy5e.sheet.actor #item-info-container-content .info-card .item-properties .tag {
   white-space: pre-wrap;
+}
+
+.tidy5e.sheet.actor #item-info-container-content .info-card .mod-roll-buttons .item-buttons {
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--light-color);
+}
+
+.tidy5e.sheet.actor #item-info-container-content .info-card .mod-roll-buttons .item-buttons .button {
+  background: var(--secondary-color);
+  font-size: 12px;
+  padding: 2px 4px 1px 4px;
+  border-radius: 3px;
+  color: var(--background);
 }
 
 .tidy5e.sheet.actor .tidy5e-header {
@@ -2221,11 +2258,6 @@
   padding-right: 0;
 }
 
-.tidy5e.sheet.actor .favorites .items-list .item .item-name .item-image {
-  flex: 0 0 20px;
-  height: 20px;
-}
-
 .tidy5e.sheet.actor .favorites .items-list .item .item-name .item-image i {
   font-size: 16px;
 }
@@ -3062,6 +3094,7 @@
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
+  line-height: 24px;
   padding: 0 2px;
   border-left: 1px solid var(--faint-color);
 }
@@ -3998,6 +4031,10 @@
   padding-top: 4px;
 }
 
+.tidy5e.sheet.actor.npc .alt-trait-pos .traits {
+  margin: 0 0 25px 0;
+}
+
 .tidy5e.sheet.actor.npc .skills-list {
   margin-bottom: 17px;
   position: relative;
@@ -4050,11 +4087,6 @@
 .tidy5e.sheet.actor.npc .items-list {
   padding: 0 0 8px 0;
   overflow-y: visible;
-}
-
-.tidy5e.sheet.actor.npc .items-list .item .item-name .item-image {
-  flex: 0 0 20px;
-  height: 20px;
 }
 
 .tidy5e.sheet.actor.npc .items-list .item .item-name .item-image i {

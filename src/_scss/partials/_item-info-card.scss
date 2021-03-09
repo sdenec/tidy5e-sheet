@@ -15,6 +15,21 @@
     width: 280px;
   }
 
+  .item-info-container-background {
+    font-size: 150px;
+    color: var(--faintest-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 279px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+
   .info-wrap {
     display: flex;
     height: 100%;
@@ -117,7 +132,7 @@
         padding-right: 8px;
       }
 
-      ul {
+      ul, ol {
         list-style: disc;
         margin: 8px 0;
         padding: 0 0 0 16px;
@@ -129,6 +144,10 @@
             margin: 0;
           }
         }
+      }
+
+      ol {
+        list-style: decimal;
       }
 
       &>*:first-child {
@@ -145,6 +164,26 @@
 
       .tag {
         white-space: pre-wrap;
+      }
+    }
+
+    .mod-roll-buttons {
+      .item-buttons {
+        display: flex;
+        white-space: nowrap;
+        flex-wrap: wrap;
+        gap: 2px;
+        margin-top: 4px;
+        padding-top: 4px;
+        border-top: 1px solid var(--light-color);
+
+        .button {
+          background: var(--secondary-color);
+          font-size: 12px;
+          padding: 2px 4px 1px 4px;
+          border-radius: 3px;
+          color: var(--background);
+        }
       }
     }
     
