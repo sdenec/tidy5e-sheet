@@ -37,7 +37,7 @@ async function updateExhaustion(actorEntity, updatedEffect, mode) {
           effectEntityPresent = effectEntity;
         } else {
           
-          console.log('Entity present');
+          // console.log('Entity present');
           // Cannot have more than one effect tier present at any one time
           await effectEntity.delete();
         }

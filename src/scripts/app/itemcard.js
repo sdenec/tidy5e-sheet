@@ -100,17 +100,9 @@ export const tidy5eItemCard = function (html, actor) {
   }
 
   $('#item-info-container').on('click', '.button', function(e){
-    let passKey;
-    // document.addEventListener('keydown', function (e) {
-    //   if (e.key === 'x') {
-    //     passKey = e.key;
-    //   }
-    // });
     e.preventDefault();
     let itemId = $(this).closest('.info-card').attr('data-item-id');
     let action = $(this).attr('data-action');
-    console.log(`item ID: ${itemId} / Action: ${action}`);
-    console.log(passKey);
     $(`.tidy5e-sheet .item[data-item-id='${itemId}'] .item-buttons .button[data-action='${action}']`).trigger(e);
   })
 

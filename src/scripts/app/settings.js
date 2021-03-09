@@ -164,14 +164,14 @@ export class Tidy5eUserSettings extends FormApplication {
 	}
 
 	getSettingsData() {		
-		console.log(game.settings);
+		// console.log(game.settings);
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
 	}
 
 	getData() {
 		let data = super.getData();
 		data.settings = this.getSettingsData();
-		console.log(data);
+		// console.log(data);
 		return data;
 	}
 
@@ -181,8 +181,8 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	_updateObject(ev, formData) {
 		const data = expandObject(formData);
-		console.log(formData);
-		console.log(data['alwaysShowQty']);
+		// console.log(formData);
+		// console.log(data['alwaysShowQty']);
 		// console.log(settingOptions);
 		// for(const [key, value] of data) {
 		// 	console.log(`Key: ${key} with value: ${value}`);
