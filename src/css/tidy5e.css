@@ -3767,6 +3767,10 @@
   min-height: 100px;
 }
 
+.minimized #item-info-container {
+  display: none;
+}
+
 .tidy5e.sheet.actor.npc {
   min-width: 690px;
 }
