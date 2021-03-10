@@ -383,7 +383,10 @@ async function spellAttackMod(app,html,data){
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
 		let currency = $(this).data('denom').toUpperCase();
-		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
+		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbri${currency}`);
+		if(abbr == `TIDY5E.CurrencyAbbr${currency}`){
+			abbr = currency;
+		}
 		$(this).html(abbr);
 	});
 }

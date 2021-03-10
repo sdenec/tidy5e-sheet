@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.19 ###
+
+- fixed a item info card display bug when using the PIN module
+- changed the translation string in case you somehow add a custom currency with unknown denomination (will use the variable name as label)
+
 ### Version 0.4.18 ###
 
 - redesigned item info cards to free up space in grid layout and made them work in list layout and for npcs as well
