@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.20 ###
+
+- currency fix
+
 ### Version 0.4.19 ###
 
 - fixed a item info card display bug when using the PIN module
