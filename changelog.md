@@ -18,7 +18,7 @@ Thank you very much!
 
 ### Version 0.4.21 ###
 
-- ccompatibility-fix for variant encumbrance and exhaustion effects
+- compatibility-fix for variant encumbrance and exhaustion effects
 
 ### Version 0.4.20 ###
 
