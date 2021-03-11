@@ -148,9 +148,11 @@ async function updateExhaustion(actorEntity) {
 // Hooks Update Actor
 
 Hooks.on('updateActor', function (actorEntity, _, __, userId) {
-  if (game.userId !== userId || actorEntity.constructor.name != "Actor5e") {
-    // Only act if we initiated the update ourselves, and the effect is a child of a character
-		return;
-	}
-	updateExhaustion(actorEntity);
+  if(game.settings.get('tidy5e-sheet', 'exhaustionEffects')) {
+    if (game.userId !== userId || actorEntity.constructor.name != "Actor5e") {
+      // Only act if we initiated the update ourselves, and the effect is a child of a character
+      return;
+    }
+    updateExhaustion(actorEntity);
+  }
 });
