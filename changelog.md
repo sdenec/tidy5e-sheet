@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.22 ###
+
+- exhaustion effects can be disabled by the settings option. Forgot to listen for it ...
+
 ### Version 0.4.21 ###
 
 - compatibility-fix for variant encumbrance and exhaustion effects
