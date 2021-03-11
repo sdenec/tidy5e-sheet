@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.21 ###
+
+- ccompatibility-fix for variant encumbrance and exhaustion effects
+
 ### Version 0.4.20 ###
 
 - currency fix
