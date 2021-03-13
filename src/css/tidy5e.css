@@ -322,6 +322,12 @@
 
 .tidy5e.sheet.actor #item-info-container-content .info-card.equipped, .tidy5e.sheet.actor #item-info-container-content .info-card.prepared {
   background: var(--prepared);
+  background: linear-gradient(180deg, var(--prepared) 0px, var(--prepared) 26px, rgba(0, 0, 0, 0) 36px);
+}
+
+.tidy5e.sheet.actor #item-info-container-content .info-card.alwaysPrepared {
+  background: var(--always-prepared);
+  background: linear-gradient(180deg, var(--always-prepared) 0px, var(--always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
 }
 
 .tidy5e.sheet.actor #item-info-container-content .info-card.magic-item {

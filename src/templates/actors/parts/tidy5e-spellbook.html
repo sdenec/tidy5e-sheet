@@ -73,7 +73,7 @@
         </div>
         <div class="item-detail spell-action" title="{{localize 'DND5E.SpellUsage'}}">{{labels.activation}}</div>
         
-        <div class="info-card {{~#if item.data.preparation.prepared}} equipped {{/if}}">
+        <div class="info-card {{~#if item.data.preparation.prepared}} equipped {{/if}}{{#if (eq data.preparation.mode 'always')}} alwaysPrepared{{/if}}">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
             <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>

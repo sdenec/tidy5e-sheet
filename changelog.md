@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.23 ###
+
+- css adjustments for item info cards (more subtle equipment highlight and always prepared highlight added)
+
 ### Version 0.4.22 ###
 
 - exhaustion effects can be disabled by the settings option. Forgot to listen for it ...

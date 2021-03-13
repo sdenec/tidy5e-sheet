@@ -82,6 +82,14 @@
     &.equipped,
     &.prepared {
       background: var(--prepared);
+      background: linear-gradient(180deg, var(--prepared) 0px, var(--prepared) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--prepared) inset;
+    }
+
+    &.alwaysPrepared {
+      background: var(--always-prepared);
+      background: linear-gradient(180deg, var(--always-prepared) 0px, var(--always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--prepared) inset;
     }
 
     &.magic-item {
