@@ -5,6 +5,7 @@ async function updateExhaustion(actorEntity) {
   }
   
   let exhaustion = actorEntity._data.data.attributes.exhaustion;
+  let icon = game.settings.get('tidy5e-sheet', 'customExhaustionIcon') || "./modules/tidy5e-sheet/images/exhaustion.svg";
   let currentExhaustion;
   let exhaustionPresent = null;
   let effectName = `${game.i18n.localize("DND5E.ConExhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${exhaustion}`;
@@ -128,7 +129,7 @@ async function updateExhaustion(actorEntity) {
       let effectChange = {
         disabled: false,
         label: effectName,
-        icon: "./modules/tidy5e-sheet/images/exhaustion.svg",
+        icon: icon,
         changes: exhaustionSet,
         flags: {
           'tidy5e-sheet': {

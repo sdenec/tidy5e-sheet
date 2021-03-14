@@ -16,6 +16,13 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.24 ###
+
+- a custom exhaustion effect icon can be set via settings
+- a custom key to fix the card can be defined via settings
+- a hover delay before showing the item info card can be defined via settings
+- Item info cards can set to float next to the cursor (best to use with delay enabled)
+
 ### Version 0.4.23 ###
 
 - css adjustments for item info cards (more subtle equipment highlight and always prepared highlight added)

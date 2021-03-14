@@ -242,6 +242,33 @@ export const tidy5eSettings = function () {
 		type: Boolean
 	});
 
+	game.settings.register("tidy5e-sheet", "floatingItemCards", {
+		name: `${game.i18n.localize("TIDY5E.Settings.FloatingItemCards.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.FloatingItemCards.hint"),
+		scope: "user",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+
+	game.settings.register("tidy5e-sheet", "itemCardsDelay", {
+		name: `${game.i18n.localize("TIDY5E.Settings.ItemCardsDelay.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.ItemCardsDelay.hint"),
+		scope: "user",
+		config: true,
+		default: 300,
+		type: Number
+	});
+
+	game.settings.register("tidy5e-sheet", "fixCardKey", {
+		name: `${game.i18n.localize("TIDY5E.Settings.FixCardKey.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.FixCardKey.hint"),
+		scope: "user",
+		config: true,
+		default: "x",
+		type: String
+	});
+
 	// Show Roll buttons in context Menu
 	game.settings.register("tidy5e-sheet", "contextRollButtons", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ContextRollButtons.name")}`,
@@ -538,6 +565,15 @@ export const tidy5eSettings = function () {
 		config: true,
 		default: false,
 		type: Boolean
+	});
+
+	game.settings.register("tidy5e-sheet", "customExhaustionIcon", {
+		name: `${game.i18n.localize("TIDY5E.Settings.GlobalLabel")}: ${game.i18n.localize("TIDY5E.Settings.CustomExhaustionIcon.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.CustomExhaustionIcon.hint"),
+		scope: "world",
+		config: true,
+		default: '',
+		type: String
 	});
 		
 	game.settings.register("tidy5e-sheet", "disableExhaustion", {

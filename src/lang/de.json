@@ -92,7 +92,7 @@
 	"TIDY5E.Settings.VehicleLabel" : "Fahrzeuge",
 
 	"TIDY5E.Settings.UseExpandedSheet" : {
-		"name" : "Erweitererte eingeschränkte Ansicht für Charakterbögen.",
+		"name" : "Erweiterte eingeschränkte Ansicht für Charakterbögen.",
 		"hint" : "Zeigt Spielern mit eingeschränkten Rechten den gesamten Charakterbogen abzüglich Tagebuch."
 	},
 	"TIDY5E.Settings.DisableRightClick" : {
@@ -171,6 +171,10 @@
 	"TIDY5E.Settings.ExhaustionEffects" : {
 		"name" : "Erschöpfunseffekte (nutzt Aktive Effekte).",
 		"hint" : "Füge die passenden Effekte bei Wechsel der Eschöpfungsstufe hinzu - erfordert midiQol für Nachteils-Würfe!"
+	},
+	"TIDY5E.Settings.CustomExhaustionIcon" : {
+		"name" : "Eigenes Icon für Erschöpfungseffekt.",
+		"hint" : "Zeige ein eigenes Erschöpfungs-Icon indem du eine URL eingibst (z. B.: systems/dnd5e/icons/skills/light_01.jpg)."
 	},
 	"TIDY5E.Settings.DisableExhaustion" : {
 		"name" : "Erschöpfungs-Tracker deaktivieren.",
