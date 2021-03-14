@@ -17,7 +17,7 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 let position = 0;
 
 export class Tidy5eSheet extends ActorSheet5eCharacter {
-	
+
 	get template() {
 		if ( !game.user.isGM && this.actor.limited && !game.settings.get("tidy5e-sheet", "useExpandedSheet") ) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
@@ -31,6 +31,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			height: 840
 		});
 	}
+
 
 	/**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
@@ -495,6 +496,7 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "alwaysShowQuantity")) {
 		html.find('.item').addClass('alwaysShowQuantity');
 	}
+	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'fixCardKey'));
 }
 
 // Preload tidy5e Handlebars Templates

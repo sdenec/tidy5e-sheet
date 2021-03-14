@@ -452,6 +452,7 @@ async function setSheetClasses(app, html, data) {
   if (!token && (game.settings.get("tidy5e-sheet", "npcLinkMarker") == "unlinked" || game.settings.get("tidy5e-sheet", "npcLinkMarker") == "both")) {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('original');
   }
+	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'fixCardKey'));
 }
 
 // Hide empty Spellbook

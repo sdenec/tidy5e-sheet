@@ -104,6 +104,18 @@
 		"name" : "Show item info cards for NPCs/vehivcles.",
 		"hint" : "Disable if you don't want the slide out item info cards for NPCs/vehicles."
 	},
+	"TIDY5E.Settings.FloatingItemCards" : {
+		"name" : "Item info cards float next to cursor.",
+		"hint" : "Enable to detach item info cards from sheet and float them next to the cursor. Best to use with delay. Also useful when sheet is popped out."
+	},
+	"TIDY5E.Settings.ItemCardsDelay" : {
+		"name" : "Delay showing info cards.",
+		"hint" : "The Item Card will show when you hover an item for the value in milliseconds (0 = no delay, 300 is default)."
+	},
+	"TIDY5E.Settings.FixCardKey" : {
+		"name" : "Key to hold for Item Card interaction.",
+		"hint" : "Enter a key (e.g.: x) to use for item card interaction. Can be any key except function keys (ctrl, alt, etc.)"
+	},
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e color theme.",
 		"hint" : "Use either the default light or alternate dark color theme of Tidy5e.",
@@ -220,6 +232,10 @@
 	"TIDY5E.Settings.ExhaustionEffects" : {
 		"name" : "Exhaustion effects (uses Active Effects).",
 		"hint" : "Apply corresponding active effects when setting exhaustion levels - requires midiQol for disadvantage rolls!"
+	},
+	"TIDY5E.Settings.CustomExhaustionIcon" : {
+		"name" : "Custom exhaustion effect icon.",
+		"hint" : "Set your custom exhaustion effect icon by providing an image url (eg.: systems/dnd5e/icons/skills/light_01.jpg)."
 	},
 	"TIDY5E.Settings.DisableExhaustion" : {
 		"name" : "Disable exhaustion tracker.",

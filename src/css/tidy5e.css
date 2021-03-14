@@ -247,11 +247,29 @@
   border-radius: 5px 0 0 5px;
   z-index: -10;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  transition: width .3s ease;
+  transition: width .2s ease;
+  overflow: hidden;
 }
 
 .tidy5e.sheet.actor #item-info-container.open {
   width: 280px;
+}
+
+.tidy5e.sheet.actor #item-info-container.floating {
+  position: fixed;
+  z-index: 100;
+  border-radius: 5px;
+  right: auto;
+  transform: translateY(0);
+  transition: none;
+}
+
+.tidy5e.sheet.actor #item-info-container.floating.open {
+  transition: width .2s ease;
+}
+
+.tidy5e.sheet.actor #item-info-container.floating .info-wrap {
+  border: none;
 }
 
 .tidy5e.sheet.actor #item-info-container a.entity-link,

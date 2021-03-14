@@ -168,6 +168,7 @@ async function setSheetClasses(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "disableHpBar")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
 	}
+	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'fixCardKey'));
 }
 
 // Register Tidy5e Vehicle Sheet and make default vehicle sheet
