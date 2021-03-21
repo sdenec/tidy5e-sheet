@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.25 ###
+
+- Translation Strings updated
+- Custom Settings Menu (finally)
+
 ### Version 0.4.24 ###
 
 - a custom exhaustion effect icon can be set via settings

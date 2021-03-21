@@ -51,43 +51,43 @@
 	"TIDY5E.SearchHint": "Začněte psát název toho, co hledáte.",
 	"TIDY5E.SearchItem": "hledat předmět",
 	"TIDY5E.SearchSpell": "hledat kouzlo",
-	"TIDY5E.Settings.AlwaysShowQty": {
+	"TIDY5E.Settings.QuantityAlwaysShown": {
 		"hint": "Povolte pokud se nemá skrývat množství předmětů.",
 		"name": "Vždy zobrazovat množství předmětů."
 	},
-	"TIDY5E.Settings.AlwaysShowSkills": {
+	"TIDY5E.Settings.SkillsAlwaysShown": {
 		"hint": "Zaškrtněte, pokud nechcete skrývat a přepínat dovednosti ve kterých není NPC zdatné.",
 		"name": "Vždy zobrazovat dovednosti."
 	},
-	"TIDY5E.Settings.AlwaysShowTraits": {
+	"TIDY5E.Settings.TraitsAlwaysShown": {
 		"hint": "Zaškrtněte, pokud nechcete skrývat a přepínat prázdné rysy NPC.",
 		"name": "Vždy zobrazovat rysy."
 	},
-	"TIDY5E.Settings.ContextRollButtons": {
+	"TIDY5E.Settings.RollButtonsToCard": {
 		"hint": "Ve výchozím nastavení se tlačítka pro hod zobrazí v popisu položky. Povolte pro jejich přesun do kontextového menu. Užitečné pro mřížkové zobrazení a nebo pokud je používáte často.",
 		"name": "Zobrazit midQol/Better Rolls tlačítko v kontextovém menu"
 	},
-	"TIDY5E.Settings.DisableExhaustion": {
+	"TIDY5E.Settings.ExhaustionDisabled": {
 		"hint": "Pokud vaše kampaň nepoužívá únavu, můžete zakázat ukazatel úplně.",
 		"name": "Zakázat sledování únavy."
 	},
-	"TIDY5E.Settings.DisableHpBar": {
+	"TIDY5E.Settings.HpBar": {
 		"hint": "Povolte pro skrytí barevného ukazatele zbývajících bodů života (čísla budou stále viditelná).",
 		"name": "Zakázat ukazatel zdraví."
 	},
-	"TIDY5E.Settings.DisableHpOverlay": {
+	"TIDY5E.Settings.HpOverlay": {
 		"hint": "Pokud se vám na portrétu vaší postavy nelíbí překrytí životů ve stylu videohry, můžete jej deaktivovat.",
 		"name": "Zakázat překrytí životů."
 	},
-	"TIDY5E.Settings.DisableInspiration": {
+	"TIDY5E.Settings.InspirationDisabled": {
 		"hint": "Pokud vaše kampaň nepoužívá inspiraci, můžete zakázat ukazatel úplně.",
 		"name": "Zakázat sledování inspirace."
 	},
-	"TIDY5E.Settings.DisableInspirationAnimation": {
+	"TIDY5E.Settings.InspirationAnimation": {
 		"hint": "Pokud je to příliš rušivé, můžete deaktivovat jemnou animaci zářícího indikátoru inspirace.",
 		"name": "Žádná animace indikátoru inspirace."
 	},
-	"TIDY5E.Settings.DisableRightClick": {
+	"TIDY5E.Settings.RightClick": {
 		"hint": "V případě konfliktu modulů a nebo preference, můžete zakázat kontextové menu. Položky namísto toho zobrazí ikonku menu.",
 		"name": "Zakázat kontextové menu."
 	},
@@ -100,15 +100,15 @@
 		"name": "Zobrazit ukazatel únavy jen při najetí myši."
 	},
 	"TIDY5E.Settings.GlobalLabel": "Globální",
-	"TIDY5E.Settings.GmEditEffects": {
+	"TIDY5E.Settings.EditEffectsGmOnly": {
 		"hint": "Povolte abyste zakázali hráčům upravovat aktivní efekty na svých listech. Pořád ale uvidí aktivní efekty.",
 		"name": "Pouze PJ může upravovat aktivní efekty."
 	},
-	"TIDY5E.Settings.GmEditPermission": {
+	"TIDY5E.Settings.EditGmAlways": {
 		"hint": "Povolit PJ upravovat listy postav bez nutnosti přepínání zámku.",
 		"name": "PJ může vždy upravovat listy hráčů."
 	},
-	"TIDY5E.Settings.HideClassList": {
+	"TIDY5E.Settings.ClassList": {
 		"hint": "Zaškrtnutím této možnosti skryjete seznam povolání postavy vedle štítku úrovně. List zvládne dobře 3 povolání. Více bude fungovat, ale bude to vypadat hloupě ;)",
 		"name": "Skrýt seznam povolání."
 	},
@@ -132,13 +132,13 @@
 		"name": "Označit propojené/nepropojené cizí postavy.",
 		"unlinked": "Zvýraznit nepropojené žetony"
 	},
-	"TIDY5E.Settings.MoveTraits": {
+	"TIDY5E.Settings.TraitsMovedBelowResource": {
 		"hint": "Zaškrtněte, pokud chcete zobrazovat rysy pod zdroji.",
 		"name": "Přesunout rysy pod zdroje."
 	},
 	"TIDY5E.Settings.NpcLabel": "Listy CP: ",
 	"TIDY5E.Settings.PcLabel": "Listy hráčů: ",
-	"TIDY5E.Settings.PcToggleTraits": {
+	"TIDY5E.Settings.TraitsTogglePc": {
 		"hint": "Zaškrtněte, pokud chcete zobrazit tlačítko pro přepnutí prázdných rysů.",
 		"name": "Zobrazit přepínací tlačítko pro rysy postavy."
 	},
@@ -151,23 +151,23 @@
 		"hint": "Použije buď výchozí světlé nebo alternativní tmavé barevné schéma pro Tidy5e.",
 		"name": "Barevné schéma pro Tidy5e."
 	},
-	"TIDY5E.Settings.ShowNpcRest": {
+	"TIDY5E.Settings.RestingForNpcs": {
 		"hint": "Povolí zobrazení ikony/tlačítek pro odpočinek na listech cizích postav.",
 		"name": "Odpočinek pro cizí postavy."
 	},
-	"TIDY5E.Settings.ShowTraitLabels": {
+	"TIDY5E.Settings.TraitLabels": {
 		"hint": "Ve výchozím nastavení se zobrazují pouze ikony rysů. Povolte pro zobrazení popisků.",
 		"name": "Zobrazit popisky rysů."
 	},
-	"TIDY5E.Settings.UseClassicControls": {
+	"TIDY5E.Settings.ClassicControls": {
 		"hint": "Vždy zobrazit ovládací prvky předmětů a zakázat kontextové menu. Platí pouze pro inventář předmětů/kouzel hráčů v seznamovém rozvržení.",
 		"name": "Použít klasické ovládání předmětů v seznamu."
 	},
-	"TIDY5E.Settings.UseExpandedSheet": {
+	"TIDY5E.Settings.ExpandedSheet": {
 		"hint": "Rozšířené zobrazení omezeného listu zobrazí celý list postavy (bez karty soukromých poznámek) hráčům s omezeným oprávněním pro daného herce.",
 		"name": "Rozšířené zobrazení pro omezený list."
 	},
-	"TIDY5E.Settings.UseRoundPortraits": {
+	"TIDY5E.Settings.PortraitStyle": {
 		"all": "Všichni herci",
 		"hint": "Toto byste měli zatrhnout, pokud používáte kulaté portréty. Přizpůsobí tlačítka překrytí BŽ a portrétu, aby vypadal hezčí. Pěkně také vypadá na hranatých portrétech bez vlastního rámečku.",
 		"name": "Listy používají kulaté portréty.",

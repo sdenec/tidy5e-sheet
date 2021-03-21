@@ -91,31 +91,31 @@
 	"TIDY5E.Settings.NpcLabel" : "NSCs",
 	"TIDY5E.Settings.VehicleLabel" : "Fahrzeuge",
 
-	"TIDY5E.Settings.UseExpandedSheet" : {
+	"TIDY5E.Settings.ExpandedSheet" : {
 		"name" : "Erweiterte eingeschränkte Ansicht für Charakterbögen.",
 		"hint" : "Zeigt Spielern mit eingeschränkten Rechten den gesamten Charakterbogen abzüglich Tagebuch."
 	},
-	"TIDY5E.Settings.DisableRightClick" : {
+	"TIDY5E.Settings.RightClick" : {
 		"name" : "Rechtsklick-Menü deaktivieren.",
 		"hint" : "Im Falle von Modulkonflikten oder persönlicher Vorliebe kann das Rechtsklickmenü deaktiviert werden. Stattdessen erscheint ein Menü-Button neben Gegenständen. Der Mittelklick bleibt."
 	},
-	"TIDY5E.Settings.UseClassicControls" : {
+	"TIDY5E.Settings.ClassicControls" : {
 		"name" : "Klassische Gegenstand-Steuerung in Listenansicht nutzen.",
 		"hint" : "Zeigt die Gegenstandsteuerung immer an ohne Rechtsklick. Trifft nur auf SC-Gegenstands/Zauber-Inventar in der Listenansicht zu."
 	},
-	"TIDY5E.Settings.ContextRollButtons" : {
+	"TIDY5E.Settings.RollButtonsToCard" : {
 		"name" : "Zeige midiQol Gegenstand-Buttons in der Info-Karte",
 		"hint" : "Standardmäßig werden Gegenstands-Buttons in den Zusatzinfos angezeigt. Aktivieren, um sie in die Info-Karte zu verschieben. Funktioniert in allen Layout-Modi."
 	},
-	"TIDY5E.Settings.GmEditPermission" : {
+	"TIDY5E.Settings.EditGmAlways" : {
 		"name" : "SL kann immer SC-Bögen bearbeiten.",
 		"hint" : "Einschalten, um SLs immer das Bearbeiten von Spielerbögen zu erlauben ohne das Schloss zu ändern."
 	},
-	"TIDY5E.Settings.GmEditEffects" : {
+	"TIDY5E.Settings.EditEffectsGmOnly" : {
 		"name" : "Nur SL darf Effekte bearbeiten.",
 		"hint" : "Einschalten, um nur SLs zu erlauben Aktive Effekte für SCs zu bearbeiten. Spieler sehen weiterhin die angewandten Effekte."
 	},
-	"TIDY5E.Settings.AlwaysShowQty" : {
+	"TIDY5E.Settings.QuantityAlwaysShown" : {
 		"name" : "Immer Gegenstandsmenge anzeigen.",
 		"hint" : "Einschalten um Gegestandsanzahl niemals auszublenden."
 	},
@@ -125,7 +125,7 @@
 		"default": "Standard (hell)",
 		"dark": "Alternativ (dunkel)"
 	},
-	"TIDY5E.Settings.UseRoundPortraits" : {
+	"TIDY5E.Settings.PortraitStyle" : {
 		"name" : "Runde Portraits.",
 		"hint" : "Wähle runde Portraits/Icons für Darsteller.",
 		"all": "Alle Darsteller",
@@ -133,7 +133,7 @@
 		"npc": "Nur für NSCs/Fahrzeuge",
 		"default": "Keine"
 	},
-	"TIDY5E.Settings.ShowNpcRest" : {
+	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "Rast für NSCs.",
 		"hint" : "Einschalten, um den Rast-Button auch für NSCs anzuzeigen."
 	},
@@ -148,23 +148,23 @@
 		"name" : "Trefferpunkt-Overlay verschieben.",
 		"hint" : "Trage einen Wert ein, um Portraitrahmen zu kompensieren und eine Einfärbung zu verhindern."
 	},
-	"TIDY5E.Settings.DisableHpOverlay" : {
+	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "Trefferpunkt-Overlay verstecken.",
 		"hint" : "Einschalten, um das Trefferpunkt-Overlay für diesen Darstellertyp zu verstecken."
 	},
-	"TIDY5E.Settings.DisableHpBar" : {
+	"TIDY5E.Settings.HpBar" : {
 		"name" : "Lebensbalken deaktivieren.",
 		"hint" : "Aktivieren, um den farbigen Balken zur Anzeige des Rest-Lebens unter dem Portrait zu deaktivieren (Trefferpunkte bleiben weiter sichtbar)."
 	},
-	"TIDY5E.Settings.HideClassList" : {
+	"TIDY5E.Settings.ClassList" : {
 		"name" : "Charakter-Klassenliste verstecken.",
 		"hint" : "Einschalten, um die Klassenliste unter dem Namen eines Charakters zu verstecken."
 	},
-	"TIDY5E.Settings.DisableInspirationAnimation" : {
+	"TIDY5E.Settings.InspirationAnimation" : {
 		"name" : "Unbewegter Inspirations-Tracker.",
 		"hint" : "Einschalten, um die Animation des Inspirations-Trackers zu deaktivieren."
 	},
-	"TIDY5E.Settings.DisableInspiration" : {
+	"TIDY5E.Settings.InspirationDisabled" : {
 		"name" : "Inspirations-Tracker deaktivieren.",
 		"hint" : "Wenn deine Kampagne keine Inspiration nutzt, kannst du den Tracker komplett ausblenden."
 	},
@@ -176,7 +176,7 @@
 		"name" : "Eigenes Icon für Erschöpfungseffekt.",
 		"hint" : "Zeige ein eigenes Erschöpfungs-Icon indem du eine URL eingibst (z. B.: systems/dnd5e/icons/skills/light_01.jpg)."
 	},
-	"TIDY5E.Settings.DisableExhaustion" : {
+	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "Erschöpfungs-Tracker deaktivieren.",
 		"hint" : "Wenn deine Kampagne keine Erschöpfungsregeln nutzt, kannst du den Tracker komplett ausblenden."
 	},
@@ -192,23 +192,23 @@
 		"name" : "Zeige Inspirations-Tracker bei Hover.",
 		"hint" : "Einschalten, um den Inspirations-Tracker grundsätzlich nur bei Maushover zu zeigen."
 	},
-	"TIDY5E.Settings.MoveTraits" : {
+	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "Verschiebe Merkmale unter Ressourcen.",
 		"hint" : "Einschalten, um Merkmalliste von der linken Seite unter die Ressourcen zu verschieben."
 	},
-	"TIDY5E.Settings.PcToggleTraits" : {
+	"TIDY5E.Settings.TraitsTogglePc" : {
 		"name" : "Leere Charakter-Merkmale umschalten.",
 		"hint" : "Standardmäßig sind leere Merkmale immer sichtbar. Einschalten, um per Schalter zu wechseln."
 	},
-	"TIDY5E.Settings.AlwaysShowTraits" : {
+	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "Merkmale immer anzeigen.",
 		"hint" : "Standardmäßig sind leere Merkmale per Schalter ausgeblendet. Einschalten, um immer anzuzeigen."
 	},
-	"TIDY5E.Settings.ShowTraitLabels" : {
+	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "Beschriftung von Merkmalen.",
 		"hint" : "Standardmäßig werden nur Icons für Merkmale angezeigt. Einschalten, um auch Beschriftungen für Merkmale anzuzeigen."
 	},
-	"TIDY5E.Settings.AlwaysShowSkills" : {
+	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "Fähigkeiten immer anzeigen.",
 		"hint" : "Standardmäßig sind ungeübte Fähigkeiten per Schalter ausgeblendet. Einschalten, um immer anzuzeigen."
 	}

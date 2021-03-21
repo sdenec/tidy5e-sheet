@@ -52,7 +52,7 @@ export class Tidy5eVehicle extends ActorSheet5eVehicle {
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
 		tidy5eShowActorArt(html, actor);
-    if(game.settings.get("tidy5e-sheet", "npcItemCards")) {
+    if(game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
       tidy5eItemCard(html, actor);
     }
 
@@ -146,26 +146,29 @@ async function abbreviateCurrency(app,html,data) {
 
 // add sheet classes
 async function setSheetClasses(app, html, data){
-  if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
-		if(game.settings.get("tidy5e-sheet", "useClassicControls")){
+  if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
+		if(game.settings.get("tidy5e-sheet", "classicControlsEnabled")){
 			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');
 		} else {
 			html.find('.tidy5e-sheet .items-list').addClass('alt-context');
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
+	if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
 		tidy5eClassicControls(html);
 	}
   if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
     html.find('.tidy5e-sheet.tidy5e-vehicle .profile').addClass('roundPortrait');
   }
-	if (game.settings.get("tidy5e-sheet", "vehicleHpOverlayBorder") > 0) {
-		$('.system-dnd5e').get(0).style.setProperty('--vehicle-border', game.settings.get("tidy5e-sheet", "vehicleHpOverlayBorder")+'px');
+	if (game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") > 0) {
+		$('.system-dnd5e').get(0).style.setProperty('--vehicle-border', game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle")+'px');
+  } else {
+    
+		$('.system-dnd5e').get(0).style.setProperty('--vehicle-border');
   }
-	if (game.settings.get("tidy5e-sheet", "disableVehicleHpOverlay")) {
+	if (game.settings.get("tidy5e-sheet", "hpOverlayDisabledVehicle")) {
 		html.find('.tidy5e-sheet.tidy5e-vehicle .profile').addClass('disable-hp-overlay');
   }
-	if (game.settings.get("tidy5e-sheet", "disableHpBar")) {
+	if (game.settings.get("tidy5e-sheet", "hpBarDisabled")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
 	}
 	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'fixCardKey'));

@@ -1,27 +1,27 @@
 export const tidy5eItemCard = function (html, actor) {
 // show/hide grid layout item info card on mouse enter/leave
 
-  let allItems = game.settings.get("tidy5e-sheet", "allItemCards");
+  let itemCardsForAllItems = game.settings.get("tidy5e-sheet", "itemCardsForAllItems");
 
-  let containerTrigger =  allItems ? html.find('.inventory-list:not(.character-actions-dnd5e)') : html.find('.grid-layout .inventory-list');
-  let cardTrigger = allItems ? html.find('.inventory-list:not(.character-actions-dnd5e) .item-list .item') : html.find('.grid-layout .item-list .item');
+  let containerTrigger =  itemCardsForAllItems ? html.find('.inventory-list:not(.character-actions-dnd5e)') : html.find('.grid-layout .inventory-list');
+  let cardTrigger = itemCardsForAllItems ? html.find('.inventory-list:not(.character-actions-dnd5e) .item-list .item') : html.find('.grid-layout .item-list .item');
 
   let infoContainer = html.find('#item-info-container'),
       infoContainerContent = html.find('#item-info-container-content');
 
   let timer;
-  let delay = game.settings.get('tidy5e-sheet', 'itemCardsDelay');
-  if(!delay || delay == 0) delay = false;
+  let itemCardDelay = game.settings.get('tidy5e-sheet', 'itemCardsDelay');
+  if(!itemCardDelay || itemCardDelay == 0) itemCardDelay = false;
 
-  let onItem = false;
-  let fixCard = false;
-  let fixCardKey =  game.settings.get('tidy5e-sheet', 'fixCardKey') || "x";
+  let mouseOverItem = false;
+  let itemCardIsFixed = false;
+  let itemCardFixKey =  game.settings.get('tidy5e-sheet', 'itemCardsFixKey') || "x";
 
-  let floatingCard = game.settings.get('tidy5e-sheet', 'floatingItemCards');
+  let itemCardsAreFloating = game.settings.get('tidy5e-sheet', 'itemCardsAreFloating');
 
   let sheet, sheetWidth, sheetHeight, sheetBorderRight, sheetBorderBottom;
 
-  if(floatingCard) {
+  if(itemCardsAreFloating) {
     infoContainer.addClass('floating');
 
     setTimeout(function(){ 
@@ -53,7 +53,7 @@ export const tidy5eItemCard = function (html, actor) {
 
 
   function setCardPosition(ev) {
-    if(!fixCard && onItem) {
+    if(!itemCardIsFixed && mouseOverItem) {
       let card = html.find('#item-info-container.floating');
       if (card.length == 0) return;
       let mousePos = { x: ev.clientX, y: ev.clientY };
@@ -80,59 +80,59 @@ export const tidy5eItemCard = function (html, actor) {
   }
 
   $(document).on('keydown', function (e) {
-    if (e.key === fixCardKey) {
-      fixCard = true;
+    if (e.key === itemCardFixKey) {
+      itemCardIsFixed = true;
     }
   });
 
   $(document).on('keyup', function (e) {
-    if (e.key === fixCardKey) {
-      fixCard = false;
-      if(!delay) removeCard();
+    if (e.key === itemCardFixKey) {
+      itemCardIsFixed = false;
+      if(!itemCardDelay) removeCard();
       infoContainer.removeClass('open');
     }
   });
 
-  let delayCard = (event) => {
-    // console.log(`delaying card: ${delay} ms`);
+  let itemCardDelayCard = (event) => {
+    // console.log(`itemCardDelaying card: ${itemCardDelay} ms`);
     timer = setTimeout(function(){ 
-      if(!fixCard) {
+      if(!itemCardIsFixed) {
         removeCard();
         showCard(event);
         infoContainer.addClass('open'); 
       }
-    }, delay);
+    }, itemCardDelay);
   };
 
   let resetDelay = () => {
     clearTimeout(timer);
-    if(!fixCard) infoContainer.removeClass('open');
+    if(!itemCardIsFixed) infoContainer.removeClass('open');
   };
 
   containerTrigger.mouseenter( function(event){
-    if(!fixCard){
-      if(!delay) infoContainer.addClass('open');
+    if(!itemCardIsFixed){
+      if(!itemCardDelay) infoContainer.addClass('open');
     }
   });
 
   containerTrigger.mouseleave( function (event) {
-    if(!fixCard){
-      if(!delay) hideContainer();
+    if(!itemCardIsFixed){
+      if(!itemCardDelay) hideContainer();
     }
   });
 
   cardTrigger.mouseenter(async (event) => {
-    onItem = true;
-    if(!fixCard){
-      if(delay) delayCard(event);
+    mouseOverItem = true;
+    if(!itemCardIsFixed){
+      if(itemCardDelay) itemCardDelayCard(event);
       else showCard(event);
     }
   });
 
   cardTrigger.mouseleave( function (event) {
-    onItem = false;
-    if(!fixCard){
-      if(!delay) removeCard();
+    mouseOverItem = false;
+    if(!itemCardIsFixed){
+      if(!itemCardDelay) removeCard();
       else resetDelay();
     }
   });
@@ -145,7 +145,7 @@ export const tidy5eItemCard = function (html, actor) {
       case 3:
         // right click opens context menu
         event.preventDefault();
-          onItem = false;
+          mouseOverItem = false;
           hideContainer();
         break;
       }
@@ -153,7 +153,7 @@ export const tidy5eItemCard = function (html, actor) {
 
     this.addEventListener('dragstart', function() {
     // removeCard();
-      onItem = false;
+      mouseOverItem = false;
       hideContainer();
     });
   });

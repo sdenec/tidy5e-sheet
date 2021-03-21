@@ -68,31 +68,31 @@
 	"TIDY5E.Settings.NpcLabel" : "NPC",
 	"TIDY5E.Settings.VehicleLabel" : "乗り物",
 
-	"TIDY5E.Settings.UseExpandedSheet" : {
+	"TIDY5E.Settings.ExpandedSheet" : {
 		"name" : "リミテッド･シートの拡大表示",
 		"hint" : "リミテッド･シートの表示について、そのアクターに対して限定的(Limited)権限を持つプレイヤーに、キャラクターシートの全て（[効果],[記録]を除く）を表示します。"
 	},
-	"TIDY5E.Settings.DisableRightClick" : {
+	"TIDY5E.Settings.RightClick" : {
 		"name" : "右ｸﾘｯｸﾒﾆｭｰの表示を無効化",
 		"hint" : "モジュールが競合する場合など、右クリックによるメニュー表示を無効にすることができます。項目には、代わりにメニューアイコンが表示されます。"
 	},
-	"TIDY5E.Settings.UseClassicControls" : {
+	"TIDY5E.Settings.ClassicControls" : {
 		"name" : "ﾘｽﾄﾋﾞｭｰで従来のｱｲﾃﾑｺﾝﾄﾛｰﾙを使用",
 		"hint" : "常にアイテムコントロールを表示し、右クリックメニューを無効にします。リストレイアウトのPCアイテム/呪文インベントリにのみ適用されます。"
 	},
-	"TIDY5E.Settings.ContextRollButtons" : {
+	"TIDY5E.Settings.RollButtonsToCard" : {
 		"name" : "ｺﾝﾃｷｽﾄﾒﾆｭｰにmidiQol/BetterRollsのｱｲﾃﾑﾎﾞﾀﾝ表示",
 		"hint" : "デフォルトでは、ロールボタンはアイテムの説明に表示されます。それらをコンテキストメニューに移動できるようにします。グリッドレイアウトや頻繁に使用する場合に便利です。"
 	},
-	"TIDY5E.Settings.GmEditPermission" : {
+	"TIDY5E.Settings.EditGmAlways" : {
 		"name" : "GM権限でPCｼｰﾄを編集可能",
 		"hint" : "有効にすると、シートロックを切替せずに、PCシートをGMが編集できるようになります。"
 	},
-	"TIDY5E.Settings.GmEditEffects" : {
+	"TIDY5E.Settings.EditEffectsGmOnly" : {
 		"name" : "GMだけが有効化された効果を編集可能",
 		"hint" : "プレイヤーによる、自身のシート上にある有効化された効果の編集を禁止します。GM以外は適用されている効果の確認ができます。"
 	},
-	"TIDY5E.Settings.AlwaysShowQty" : {
+	"TIDY5E.Settings.QuantityAlwaysShown" : {
 		"name" : "常にアイテム数量を表示する",
 		"hint" : "アイテム数量を常に表示にします。"
 	},
@@ -102,7 +102,7 @@
 		"default": "ライトカラー",
 		"dark": "ダークカラー"
 	},
-	"TIDY5E.Settings.UseRoundPortraits" : {
+	"TIDY5E.Settings.PortraitStyle" : {
 		"name" : "PCシート：シートに円形画像を使用",
 		"hint" : "アクターの円形画像/アイコンを有効にする場合に選択します。",
 		"all": "全てのアクター",
@@ -110,7 +110,7 @@
 		"npc": "NPC/乗り物 のみ",
 		"default": "なし"
 	},
-	"TIDY5E.Settings.ShowNpcRest" : {
+	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "NPCの休憩",
 		"hint" : "NPCシートのアイコン/ボタンに残り回数を表示します。"
 	},
@@ -125,23 +125,23 @@
 		"name" : "オフセットhpｵｰﾊﾞｰﾚｲ",
 		"hint" : "オフセット値を入力して、hp減少時に赤く塗りつぶす際、画像の外側に塗りつぶし禁止範囲を設けます。"
 	},
-	"TIDY5E.Settings.DisableHpOverlay" : {
+	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "hpｵｰﾊﾞｰﾚｲを非表示",
 		"hint" : "アクターのhpが減少しても、画像が赤く塗りつぶされないようになります。"
 	},
-	"TIDY5E.Settings.DisableHpBar" : {
+	"TIDY5E.Settings.HpBar" : {
 		"name" : "hpバーの無効化",
 		"hint" : "残りのhpを示す色付きのバーを非表示にします（hp数は引き続き表示されます）。"
 	},
-	"TIDY5E.Settings.HideClassList" : {
+	"TIDY5E.Settings.ClassList" : {
 		"name" : "クラス一覧を非表示",
 		"hint" : "キャラクター名の下のクラスリストを非表示にする場合に有効にします。"
 	},
-	"TIDY5E.Settings.DisableInspirationAnimation" : {
+	"TIDY5E.Settings.InspirationAnimation" : {
 		"name" : "ｲﾝｽﾋﾟﾚｰｼｮﾝ アニメ",
 		"hint" : "インスピレーションアイコンのアニメーションを無効化します。"
 	},
-	"TIDY5E.Settings.DisableInspiration" : {
+	"TIDY5E.Settings.InspirationDisabled" : {
 		"name" : "ｲﾝｽﾋﾟﾚｰｼｮﾝ表示の無効化",
 		"hint" : "キャンペーンでインスピレーションを使用しない場合､完全に無効化することができます。"
 	},
@@ -149,7 +149,7 @@
 		"name" : "消耗効果の適用",
 		"hint" : "疲労レベルを設定するとき、レベルに対応した効果を適用する - midiQolが必要です！"
 	},
-	"TIDY5E.Settings.DisableExhaustion" : {
+	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "消耗を無効化",
 		"hint" : "キャンペーンで消耗を使用しない場合､完全に無効化することができます。"
 	},
@@ -165,23 +165,23 @@
 		"name" : "ﾏｳｽｵｰﾊﾞｰ時にｲﾝｽﾋﾟ表示",
 		"hint" : "画像の上にマウスカーソルを置いたときだけ、インスピレーションを表示します。"
 	},
-	"TIDY5E.Settings.MoveTraits" : {
+	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "特徴をﾘｿｰｽの下に移動",
 		"hint" : "特徴を、技能の下 (左段)から、リソース下 (右段)に移動する場合に有効にします。"
 	},
-	"TIDY5E.Settings.PcToggleTraits" : {
+	"TIDY5E.Settings.TraitsTogglePc" : {
 		"name" : "空のｷｬﾗｸﾀｰ特徴の切替",
 		"hint" : "デフォルトでは、空の特徴は常に表示されます。"
 	},
-	"TIDY5E.Settings.AlwaysShowTraits" : {
+	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "常に特徴を表示",
 		"hint" : "デフォルトでは、空の特徴はトグルボタンで非表示になります。"
 	},
-	"TIDY5E.Settings.ShowTraitLabels" : {
+	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "特徴ラベルの表示",
 		"hint" : "デフォルトでは、特徴アイコンのみが表示されます。ラベルも表示できるようにします。"
 	},
-	"TIDY5E.Settings.AlwaysShowSkills" : {
+	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "常に技能を表示",
 		"hint" : "デフォルトでは、技能が無効な場合はトグルボタンで表示されます。"
 	}

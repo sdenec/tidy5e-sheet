@@ -443,7 +443,7 @@
 			}
 		}//.item-quantity
 
-		&:not(:hover):not(.alwaysShowQuantity) .item-quantity:not(.isStack):not(:hover):not(:focus-within) {
+		&:not(:hover):not(.quantityAlwaysShownEnabled) .item-quantity:not(.isStack):not(:hover):not(:focus-within) {
 	   	opacity: 0;
 	  }
 
