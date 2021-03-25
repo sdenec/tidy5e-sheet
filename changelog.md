@@ -18,6 +18,7 @@ Thank you very much!
 
 ### Version 0.4.25 ###
 
+- added search filter to features
 - Translation Strings updated
 - Custom Settings Menu (finally)
 

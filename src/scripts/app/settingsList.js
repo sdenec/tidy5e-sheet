@@ -42,7 +42,6 @@ export function settingsList(){
 			type: Boolean
 		});
 		
-		
 		game.settings.register("tidy5e-sheet", "itemCardsForNpcs", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ItemCardsForNpcs.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.ItemCardsForNpcs.hint"),

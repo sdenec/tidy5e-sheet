@@ -18,11 +18,20 @@ export const tidy5eSearchFilter = function (html, actor) {
   searchInput.on('blur', async function(){
     let id = $(this).attr('id'),
         value = $(this).val();
-    if(id == "item-search"){
-      await actor.setFlag('tidy5e-sheet', 'item-search', value);
-    } else {
-      await actor.setFlag('tidy5e-sheet', 'spell-search', value);
-    }
+      switch (id) {
+        case "item-search" :
+          await actor.setFlag('tidy5e-sheet', 'item-search', value);
+        break;
+        case "spell-search" :
+        await actor.setFlag('tidy5e-sheet', 'spell-search', value);
+        break;
+        case "feat-search" :
+        await actor.setFlag('tidy5e-sheet', 'feat-search', value);
+        break;
+      }
+    // if(id == "item-search"){
+    // } else {
+    // }
           
   });
 
@@ -33,11 +42,23 @@ export const tidy5eSearchFilter = function (html, actor) {
         searchTarget,
         value = searchField.val();
 
-    if(id == "item-search"){
-      searchTarget = html.find(".list-layout .inventory-list:not(.spellbook-list) .item-name, .grid-layout .inventory-list:not(.spellbook-list) .info-card-name");
-    } else {
-      searchTarget = html.find(".list-layout .spellbook-list .item-name, .grid-layout .spellbook-list .info-card-name");
-    }
+        switch (id) {
+        case "item-search" :
+          searchTarget = html.find(".list-layout .inventory-list:not(.spellbook-list):not(.features-list) .item-name, .grid-layout .inventory-list:not(.spellbook-list):not(.features-list) .info-card-name");
+        break;
+        case "spell-search" :
+          searchTarget = html.find(".list-layout .spellbook-list .item-name, .grid-layout .spellbook-list .info-card-name");
+        break;
+        case "feat-search" :
+          searchTarget = html.find(".list-layout .features-list .item-name");
+        break;
+      }
+
+    // if(id == "item-search"){
+    //   searchTarget = html.find(".list-layout .inventory-list:not(.spellbook-list) .item-name, .grid-layout .inventory-list:not(.spellbook-list) .info-card-name");
+    // } else {
+    //   searchTarget = html.find(".list-layout .spellbook-list .item-name, .grid-layout .spellbook-list .info-card-name");
+    // }
 
     if(value != ''){
       clearSearch.removeClass('hidden');
@@ -71,11 +92,22 @@ export const tidy5eSearchFilter = function (html, actor) {
       $(this).toggleClass('hidden');
       searchInput.val('');
       filterInventoryList(searchField);
-      if(id == "item-search"){
+      switch (id) {
+        case "item-search" :
         await actor.setFlag('tidy5e-sheet', 'item-search', '');
-      } else {
+        break;
+        case "spell-search" :
         await actor.setFlag('tidy5e-sheet', 'spell-search', '');
+        break;
+        case "feat-search" :
+        await actor.setFlag('tidy5e-sheet', 'feat-search', '');
+        break;
       }
+      // if(id == "item-search"){
+      //   await actor.setFlag('tidy5e-sheet', 'item-search', '');
+      // } else {
+      //   await actor.setFlag('tidy5e-sheet', 'spell-search', '');
+      // }
     });
   }
 

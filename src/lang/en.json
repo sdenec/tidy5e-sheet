@@ -70,6 +70,7 @@
 	
 	"TIDY5E.SearchItem" : "search item",
 	"TIDY5E.SearchSpell" : "search spell",
+	"TIDY5E.SearchFeat" : "search feature",
 	"TIDY5E.SearchClear" : "clear search",
 	"TIDY5E.SearchHint" : "Just start to type what you are searching for.",
 
