@@ -21,6 +21,8 @@ Thank you very much!
 - added search filter to features
 - Translation Strings updated
 - Custom Settings Menu (finally)
+- Chat Card for NPC rest can be disabled (leveraging the default function that deactivates the chat output for GM and Players)
+- added item value to item info card (next to quantity)
 
 ### Version 0.4.24 ###
 

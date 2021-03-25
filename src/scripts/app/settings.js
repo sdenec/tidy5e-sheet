@@ -46,6 +46,7 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	getSettingsData() {		
 		
+		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
 			'itemCardsForAllItems',
 			'itemCardsAreFloating',
@@ -80,6 +81,8 @@ export class Tidy5eUserSettings extends FormApplication {
 			'inspirationDisabled',
 			
 			'exhaustionEffectsEnabled',
+			'exhaustionEffectIcon',
+			'exhaustionEffectCustom',
 			'exhaustionOnHover',
 			
 			'editEffectsGmOnlyEnabled',
@@ -89,6 +92,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'hideIfZero',
 			'linkMarkerNpc',
 			'restingForNpcsEnabled',
+			'restingForNpcsChatDisabled',
 			'editTotalLockEnabled',
 			'portraitStyle',
 			'expandedSheetEnabled'
@@ -97,7 +101,8 @@ export class Tidy5eUserSettings extends FormApplication {
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
 		let data = {};
 		settings.forEach (setting => {
-			data[setting] = game.settings.get('tidy5e-sheet', setting);
+			data[setting] = {'value' : game.settings.get('tidy5e-sheet', setting)};
+			console.log(data[setting]);
 		})
 		return data;
 	}
@@ -110,6 +115,44 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	activateListeners(html) {
 		super.activateListeners(html);
+		console.log('Listeners Active!')
+		console.log(html)
+		
+		let exhaustionEffectSelect = html.find('select#exhaustionEffectsEnabled');
+		let exhaustionSelected = $(exhaustionEffectSelect).val();
+		console.log(exhaustionSelected)
+		switch (exhaustionSelected) {
+			case 'default':
+				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
+				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
+			break;
+			case 'tidy5e' :
+				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
+			break;
+			case 'custom' :
+				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
+			break;
+		}
+		
+		exhaustionEffectSelect.on('change', function(e){			
+			html.find('input#exhaustionEffectIcon').closest('.setting').hide();
+			html.find('input#exhaustionEffectCustom').closest('.setting').hide();
+
+			let value = e.target.value;
+			if (value == 'tidy5e'){
+				html.find('input#exhaustionEffectIcon').closest('.setting').show();
+			} else if (value == 'custom'){
+				html.find('input#exhaustionEffectCustom').closest('.setting').show();
+			}
+		})
+
+		html.find('input#exhaustionEffectIcon').on('change', function(e){
+			console.log(e.target.value)
+			if(e.target.value == '' || e.target.value == null){
+				e.target.value="modules/tidy5e-sheet/images/exhaustion.svg";
+			}
+		})
+
 	}
 
 	redrawOpenSheets() {

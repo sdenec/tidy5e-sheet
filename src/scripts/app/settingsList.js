@@ -283,7 +283,6 @@ export function settingsList(){
 			hint: game.i18n.localize("TIDY5E.Settings.PortraitStyle.hint"),
 			scope: "world",
 			config: false,
-			default: false,
 			type: String,
 			choices: {
 				"default": game.i18n.localize("TIDY5E.Settings.PortraitStyle.default"),
@@ -291,7 +290,23 @@ export function settingsList(){
 				"npc": game.i18n.localize("TIDY5E.Settings.PortraitStyle.npc"),
 				"all": game.i18n.localize("TIDY5E.Settings.PortraitStyle.all")
 			},
-			default: "all"
+			default: "all",
+			onChange : data => {
+				if (data == "npc" || data == "all") {
+					$('.tidy5e-sheet.tidy5e-npc .profile').addClass('roundPortrait');
+					$('.tidy5e-sheet.tidy5e-vehicle .profile').addClass('roundPortrait');
+				}
+				if (data == "pc" || data == "all") {
+					$('.tidy5e-sheet .profile').addClass('roundPortrait');
+					$('.tidy5e-sheet.tidy5e-npc .profile').removeClass('roundPortrait');
+					$('.tidy5e-sheet.tidy5e-vehicle .profile').removeClass('roundPortrait');
+				}
+				if(data == "default") {
+					$('.tidy5e-sheet .profile').removeClass('roundPortrait');
+					$('.tidy5e-sheet.tidy5e-npc .profile').removeClass('roundPortrait');
+					$('.tidy5e-sheet.tidy5e-vehicle .profile').removeClass('roundPortrait');
+				}
+			}
 		});
 		
 		game.settings.register("tidy5e-sheet", "hpOverlayBorder", {
@@ -300,7 +315,10 @@ export function settingsList(){
 			scope: "world",
 			config: false,
 			default: 0,
-			type: Number
+			type: Number,
+			onChange: data => {
+				$('.system-dnd5e').get(0).style.setProperty('--pc-border', game.settings.get("tidy5e-sheet", "hpOverlayBorder")+'px');
+			}
 		});
 	
 		game.settings.register("tidy5e-sheet", "hpOverlayBorderNpc", {
@@ -309,7 +327,10 @@ export function settingsList(){
 			scope: "world",
 			config: false,
 			default: 0,
-			type: Number
+			type: Number,
+			onChange: data => {
+				$('.system-dnd5e').get(0).style.setProperty('--npc-border', game.settings.get("tidy5e-sheet", "hpOverlayBorderNpc")+'px');
+			}
 		});
 	
 		game.settings.register("tidy5e-sheet", "hpOverlayBorderVehicle", {
@@ -318,7 +339,10 @@ export function settingsList(){
 			scope: "world",
 			config: false,
 			default: 0,
-			type: Number
+			type: Number,
+			onChange: data => {
+				$('.system-dnd5e').get(0).style.setProperty('--vehicle-border', game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle")+'px');
+			}
 		});
 	
 		// Total Edit Lock
@@ -365,16 +389,30 @@ export function settingsList(){
 			hint: game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.hint"),
 			scope: "world",
 			config: false,
-			default: false,
-			type: Boolean
+			choices : {
+				'default' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default"),
+				'tidy5e' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default"),
+				'custom' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default")
+			},
+			type: String,
+			default: 'default'
 		});
 	
-		game.settings.register("tidy5e-sheet", "customExhaustionIcon", {
+		game.settings.register("tidy5e-sheet", "exhaustionEffectIcon", {
 			name: `${game.i18n.localize("TIDY5E.Settings.CustomExhaustionIcon.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.CustomExhaustionIcon.hint"),
 			scope: "world",
 			config: false,
-			default: '',
+			type: String,
+			default: "modules/tidy5e-sheet/images/exhaustion.svg"
+		});
+		
+		game.settings.register("tidy5e-sheet", "exhaustionEffectCustom", {
+			name: `${game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.hint"),
+			scope: "world",
+			config: false,
+			default: 'Exhaustion',
 			type: String
 		});
 			
@@ -400,6 +438,15 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "restingForNpcsEnabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.RestingForNpcs.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.RestingForNpcs.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "restingForNpcsChatDisabled", {
+			name: `${game.i18n.localize("TIDY5E.Settings.RestingForNpcsChat.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.RestingForNpcsChat.hint"),
 			scope: "world",
 			config: false,
 			default: false,

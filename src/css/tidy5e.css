@@ -5781,6 +5781,10 @@
   padding-left: 24px;
 }
 
+.app.window-app.tidy5e.settings .setting section {
+  width: 100%;
+}
+
 .app.window-app.tidy5e.settings .setting input[type=checkbox] {
   margin: 0;
 }

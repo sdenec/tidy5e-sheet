@@ -296,11 +296,15 @@ export default class Tidy5eNPC extends ActorSheet5e {
   async _onShortRest(event) {
     event.preventDefault();
     await this._onSubmit(event);
-    let obj = {
-      dialog : true,
-      chat : false
+    if(game.settings.get('tidy5e-sheet','restingForNpcsChatDisabled')){
+
+      let obj = {
+        dialog : true,
+        chat : false
+      }
+      return this.actor.longRest(obj);
     }
-    return this.actor.shortRest(obj);
+    return this.actor.longRest();
   }
 
   /* -------------------------------------------- */
@@ -313,11 +317,15 @@ export default class Tidy5eNPC extends ActorSheet5e {
   async _onLongRest(event) {
     event.preventDefault();
     await this._onSubmit(event);
-    let obj = {
-      dialog : true,
-      chat : false
+    if(game.settings.get('tidy5e-sheet','restingForNpcsChatDisabled')){
+
+      let obj = {
+        dialog : true,
+        chat : false
+      }
+      return this.actor.longRest(obj);
     }
-    return this.actor.longRest(obj);
+    return this.actor.longRest();
   }
 
   

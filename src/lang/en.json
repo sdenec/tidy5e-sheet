@@ -231,12 +231,19 @@
 		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
 	},
 	"TIDY5E.Settings.ExhaustionEffects" : {
-		"name" : "Exhaustion effects (uses Active Effects).",
-		"hint" : "Apply corresponding active effects when setting exhaustion levels - requires midiQol for disadvantage rolls!"
+		"name" : "Auto Exhaustion effects.",
+		"hint" : "Choose how to apply exhaustion effects corresponding to tiers (requires midiQol for disadvantage rolls)",
+		"default" : "No automatic exhaustion effects",
+		"tidy5e" : "Tidy5e - Apply effects that come with the sheet (uses Active Effects)",
+		"custom" : "Custom - Create your own effects (requires CUB)"
 	},
 	"TIDY5E.Settings.CustomExhaustionIcon" : {
 		"name" : "Custom exhaustion effect icon.",
-		"hint" : "Set your custom exhaustion effect icon by providing an image url (eg.: systems/dnd5e/icons/skills/light_01.jpg)."
+		"hint" : "Set your custom exhaustion effect icon by providing an image url. Only available when Exhaustion Effect is set to \"tidy 5e\" (eg.: modules/tidy5e-sheet/images/exhaustion.svg)."
+	},
+	"TIDY5E.Settings.CustomExhaustionEffect" : {
+		"name" : "Custom CUB exhaustion effect name.",
+		"hint" : "Set the name for your custom Exhaustion Effect - must be the same as defined in CUB minus tier number. (e. g. \"Exhaustion\")"
 	},
 	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "Disable exhaustion tracker.",
@@ -245,6 +252,10 @@
 	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "Resting for NPCs.",
 		"hint" : "Enable to shows the rest icon/buttons on NPC sheets."
+	},
+	"TIDY5E.Settings.RestingForNpcsChat" : {
+		"name" : "Hide chat card for NPC rest.",
+		"hint" : "Enable to hide the Chat Card for NPC rest (will be hidden for GM and Players)."
 	},
 	"TIDY5E.Settings.LinkMarker" : {
 		"name" : "Mark linked/unlinked NPCs.",

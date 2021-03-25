@@ -111,11 +111,19 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		// set exhaustion level with portrait icon
 		html.find('.exhaust-level li').click(async (event) => {
 			event.preventDefault();
-			
-			let data = actor.data.data;
-			let target = event.currentTarget;
-			let value = Number(target.dataset.elvl);
-			await actor.update({"data.attributes.exhaustion": value});
+
+			if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') != 'custom'){	
+				let data = actor.data.data;
+				let target = event.currentTarget;
+				let value = Number(target.dataset.elvl);
+				await actor.update({"data.attributes.exhaustion": value});
+			} else {
+				// get Custom Effect Name + Tier
+				// get Token
+				game.cub.addCondition('Exhaustion 1', [tokens])
+				// apply active effect to token
+				// rerender sheet?
+			}
  		});
 
  		// changing item qty and charges values (removing if both value and max are 0)
@@ -527,7 +535,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
 	markActiveEffects(app,html,data);
-	// console.log(data.actor);
+	console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });
 
