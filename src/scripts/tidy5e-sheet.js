@@ -111,18 +111,36 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		// set exhaustion level with portrait icon
 		html.find('.exhaust-level li').click(async (event) => {
 			event.preventDefault();
+			let target = event.currentTarget;
+			let value = Number(target.dataset.elvl);
+			let effectName = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustom');
 
 			if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') != 'custom'){	
 				let data = actor.data.data;
-				let target = event.currentTarget;
-				let value = Number(target.dataset.elvl);
 				await actor.update({"data.attributes.exhaustion": value});
 			} else {
-				// get Custom Effect Name + Tier
-				// get Token
-				game.cub.addCondition('Exhaustion 1', [tokens])
-				// apply active effect to token
-				// rerender sheet?
+				if(value != 0){
+					let effect = `${effectName} ${value}`;
+					let id = actor._id;
+					let tokens = canvas.tokens.placeables;
+					let index = tokens.findIndex(x => x.data.actorId === id);
+					console.log(index);
+					if(index == -1){
+						ui.notifications.warn(`${game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.warning")}`);
+						return;
+					}
+					let token = tokens[index];
+					game.cub.addCondition(effect, [token])
+				} else {
+					const levels = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustomTiers');
+					for(let i = 1; i<=levels; i++){
+						let tier = `${effectName} ${i}`;
+						if (game.cub.hasCondition(tier)){
+							console.log(tier)
+							await game.cub.removeCondition(tier)
+						}
+					}
+				}
 			}
  		});
 

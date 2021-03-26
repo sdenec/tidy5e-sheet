@@ -415,6 +415,15 @@ export function settingsList(){
 			default: 'Exhaustion',
 			type: String
 		});
+		
+		game.settings.register("tidy5e-sheet", "exhaustionEffectCustomTiers", {
+			name: `${game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.tiers")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.hint"),
+			scope: "world",
+			config: false,
+			default: 5,
+			type: Number
+		});
 			
 		game.settings.register("tidy5e-sheet", "exhaustionDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ExhaustionDisabled.name")}`,

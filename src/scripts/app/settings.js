@@ -83,6 +83,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'exhaustionEffectsEnabled',
 			'exhaustionEffectIcon',
 			'exhaustionEffectCustom',
+			'exhaustionEffectCustomTiers',
 			'exhaustionOnHover',
 			
 			'editEffectsGmOnlyEnabled',

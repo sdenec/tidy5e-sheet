@@ -243,7 +243,9 @@
 	},
 	"TIDY5E.Settings.CustomExhaustionEffect" : {
 		"name" : "Custom CUB exhaustion effect name.",
-		"hint" : "Set the name for your custom Exhaustion Effect - must be the same as defined in CUB minus tier number. (e. g. \"Exhaustion\")"
+		"hint" : "Set the name for your custom Exhaustion Effect - must be the same as defined in CUB minus tier number. (e. g. \"Exhaustion\")",
+		"tiers": "Number of exhaustion tiers. CUB default = 5",
+		"warning": "Can't find actor token to apply exhaustion effect!"
 	},
 	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "Disable exhaustion tracker.",
