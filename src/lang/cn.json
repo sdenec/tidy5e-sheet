@@ -78,7 +78,7 @@
 	"TIDY5E.Settings.PcLabel" : "PC 卡: ",
 	"TIDY5E.Settings.NpcLabel" : "NPC 卡: ",
 
-	"TIDY5E.Settings.UseExpandedSheet" : {
+	"TIDY5E.Settings.ExpandedSheet" : {
 		"name" : "扩展显示限制权限下的角色卡。",
 		"hint" : "对该角色的权限为限制的玩家打开扩展后的角色卡时，该角色的角色卡将会完整显示（去掉个人笔记部分）。"
 	},
@@ -98,7 +98,7 @@
 		"name" : "始终可用法术的色调。",
 		"hint" : "覆写默认色调 (默认: rgba(210,0,255,.1)/暗黑模式: rgba(0,150,150,.325))，该色调用于始终可用状态的法术。可以使用任意的 CSS 有效颜色值诸如 red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
 	},
-	"TIDY5E.Settings.UseRoundPortraits" : {
+	"TIDY5E.Settings.PortraitStyle" : {
 		"name" : "角色卡使用圆形立绘框。",
 		"hint" : "如果使用圆形立绘图请勾选该项。开启后，将会使 HP 叠加层和立绘框按钮看起来更好看一些。使用没有定制边框的方形立绘图上也会比较好看。"
 	},
@@ -106,23 +106,23 @@
 		"name" : "HP 叠加层的边缘宽度。",
 		"hint" : "如果你的立绘图有边框，可以调整 HP 叠加层以补偿边框宽度。如果 HP 叠加层变色时不会改变边框颜色会更好看一些。"
 	},
-	"TIDY5E.Settings.DisableHpOverlay" : {
+	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "禁用 HP 叠加层。",
 		"hint" : "如果你不喜欢你角色立绘框上的电子游戏风格的 HP 叠加层，可以关闭该项。"
 	},
-	"TIDY5E.Settings.HideClassList" : {
+	"TIDY5E.Settings.ClassList" : {
 		"name" : "隐藏角色职业列表。",
 		"hint" : "勾选后，角色卡等级旁的职业列表将会被隐藏。该角色卡模板可以正确处理 3 个职业，超过时虽然没有问题但是看起来可能会蛋疼 ;)"
 	},
-	"TIDY5E.Settings.DisableInspirationAnimation" : {
+	"TIDY5E.Settings.InspirationAnimation" : {
 		"name" : "禁用激励指示动画。",
 		"hint" : "如果激励指示的小动画过于干扰使用，可以禁用该项。"
 	},
-	"TIDY5E.Settings.DisableInspiration" : {
+	"TIDY5E.Settings.InspirationDisabled" : {
 		"name" : "禁用激励追踪器。",
 		"hint" : "如果你的战役不使用激励，你可以完全禁用该追踪器。"
 	},
-	"TIDY5E.Settings.DisableExhaustion" : {
+	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "禁用力竭追踪器。",
 		"hint" : "如果你的战役不使用力竭，你可以完全禁用该追踪器。"
 	},
@@ -142,19 +142,19 @@
 		"name" : "鼠标悬停时显示休息按钮。",
 		"hint" : "勾选后，只会在鼠标悬停于立绘框上时才会显示休息按钮。"
 	},
-	"TIDY5E.Settings.MoveTraits" : {
+	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "将特性栏移动到资源栏下。",
 		"hint" : "勾选后，特性栏将会显示在资源栏下。"
 	},
-	"TIDY5E.Settings.PcToggleTraits" : {
+	"TIDY5E.Settings.TraitsTogglePc" : {
 		"name" : "角色特性栏中显示切换按钮。",
 		"hint" : "勾选后，将会显示用于切换空白特性的按钮。"
 	},
-	"TIDY5E.Settings.AlwaysShowTraits" : {
+	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "始终显示所有特性。",
 		"hint" : "如果不想隐藏/切换 NPC 空白特性，可以勾选该项。"
 	},
-	"TIDY5E.Settings.AlwaysShowSkills" : {
+	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "始终显示所有技能。",
 		"hint" : "如果不想隐藏/切换 NPC 未熟练的技能，可以勾选该项。"
 	},
@@ -213,42 +213,42 @@
 		"default": "默认 (明亮)",
 		"dark": "可选 (暗黑)"
 	},
-	"TIDY5E.Settings.UseClassicControls": {
+	"TIDY5E.Settings.ClassicControls": {
 		"name": "列表视图下使用旧版物品操作按钮。",
 		"hint": "始终显示物品操作按钮并禁用右键菜单。仅适用于 PC 物品和法术的列表视图。"
 	},
-	"TIDY5E.Settings.ContextRollButtons": {
+	"TIDY5E.Settings.RollButtonsToCard": {
 		"name": "上下文菜单中显示 midiQol/BetterRolls 的物品按钮。",
 		"hint": "启用后，物品描述中的掷骰按钮将会显示到上下文菜单中。使用网格布局或者使用频繁时比较方便。"
 	},
-	"TIDY5E.Settings.ShowTraitLabels": {
+	"TIDY5E.Settings.TraitLabels": {
 		"name": "显示特性标签。",
 		"hint": "默认仅显示特性图标。启用后，也会显示标签。"
 	},
-	"TIDY5E.Settings.DisableHpBar": {
+	"TIDY5E.Settings.HpBar": {
 		"name": "禁用生命值条。",
 		"hint": "启用后，用于指示剩余 HP 的着色条将会被隐藏 (HP 数字仍将可见)。"
 	},
-	"TIDY5E.Settings.DisableRightClick": {
+	"TIDY5E.Settings.RightClick": {
 		"name": "禁用右键上下文菜单。",
 		"hint": "你可以禁用右键上下文菜单以避免 MOD 或设置的冲突。物品条目上将会显示菜单按钮作为替代。"
 	},
-	"TIDY5E.Settings.UseRoundPortraits": {
+	"TIDY5E.Settings.PortraitStyle": {
 		"all": "所有角色",
 		"pc": "所有 PC",
 		"npc": "所有 NPC/载具",
 		"none": "无",
 		"default": "无"
 	},
-	"TIDY5E.Settings.GmEditPermission": {
+	"TIDY5E.Settings.EditGmAlways": {
 		"name": "GM 始终可以编辑 PC 角色卡。",
 		"hint": "启用后，允许 GM 在未切换卡片锁定的情况下也可以编辑 PC 角色卡。"
 	},
-	"TIDY5E.Settings.GmEditEffects": {
+	"TIDY5E.Settings.EditEffectsGmOnly": {
 		"name": "仅允许 GM 编辑主动效果。",
 		"hint": "启用后，将禁止玩家编辑自己卡片上的主动效果。玩家仍将查看到已应用的效果。"
 	},
-	"TIDY5E.Settings.AlwaysShowQty": {
+	"TIDY5E.Settings.QuantityAlwaysShown": {
 		"name": "始终显示物品数量。",
 		"hint": "启用后，将不再隐藏物品数量。。"
 	},
@@ -256,7 +256,7 @@
 		"name": "力竭效果 (使用主动效果)。",
 		"hint": "设定力竭等级时应用对应的主动效果 - 需要 midiQol 以设置劣势掷骰！"
 	},
-	"TIDY5E.Settings.ShowNpcRest": {
+	"TIDY5E.Settings.RestingForNpcs": {
 		"name": "NPC 休息.",
 		"hint": "启用后，将在 NPC 角色卡上显示休息图标/按钮。"
 	},

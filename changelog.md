@@ -16,6 +16,16 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.25 ###
+
+- Custom Settings Menu (finally)
+- Large translation string overhaul/update
+- Chat Card for NPC rest can be disabled (leveraging the default function that deactivates the chat output for GM and Players)
+- Exhaustion effects can now use build in or custom CUB effects
+- added search filter to features
+- added item value to item info card (next to quantity)
+- changed equip/attune/prepare menu options to imperatives and adjusted color to make intentions clearer
+
 ### Version 0.4.24 ###
 
 - a custom exhaustion effect icon can be set via settings

@@ -5,7 +5,7 @@ async function updateExhaustion(actorEntity) {
   }
   
   let exhaustion = actorEntity._data.data.attributes.exhaustion;
-  let icon = game.settings.get('tidy5e-sheet', 'customExhaustionIcon') || "./modules/tidy5e-sheet/images/exhaustion.svg";
+  let icon = game.settings.get('tidy5e-sheet', 'exhaustionEffectIcon');
   let currentExhaustion;
   let exhaustionPresent = null;
   let effectName = `${game.i18n.localize("DND5E.ConExhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${exhaustion}`;
@@ -149,7 +149,7 @@ async function updateExhaustion(actorEntity) {
 // Hooks Update Actor
 
 Hooks.on('updateActor', function (actorEntity, _, __, userId) {
-  if(game.settings.get('tidy5e-sheet', 'exhaustionEffects')) {
+  if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') == 'tidy5e') {
     if (game.userId !== userId || actorEntity.constructor.name != "Actor5e") {
       // Only act if we initiated the update ourselves, and the effect is a child of a character
       return;

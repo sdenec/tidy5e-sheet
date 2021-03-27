@@ -191,7 +191,7 @@ export default class Tidy5eNPC extends ActorSheet5e {
     tidy5eListeners(html, actor);
     tidy5eContextMenu(html);
 		tidy5eShowActorArt(html, actor);
-    if(game.settings.get("tidy5e-sheet", "npcItemCards")) {
+    if(game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
       tidy5eItemCard(html, actor);
     }
 
@@ -296,7 +296,15 @@ export default class Tidy5eNPC extends ActorSheet5e {
   async _onShortRest(event) {
     event.preventDefault();
     await this._onSubmit(event);
-    return this.actor.shortRest();
+    if(game.settings.get('tidy5e-sheet','restingForNpcsChatDisabled')){
+
+      let obj = {
+        dialog : true,
+        chat : false
+      }
+      return this.actor.longRest(obj);
+    }
+    return this.actor.longRest();
   }
 
   /* -------------------------------------------- */
@@ -309,6 +317,14 @@ export default class Tidy5eNPC extends ActorSheet5e {
   async _onLongRest(event) {
     event.preventDefault();
     await this._onSubmit(event);
+    if(game.settings.get('tidy5e-sheet','restingForNpcsChatDisabled')){
+
+      let obj = {
+        dialog : true,
+        chat : false
+      }
+      return this.actor.longRest(obj);
+    }
     return this.actor.longRest();
   }
 
@@ -407,52 +423,54 @@ async function setSheetClasses(app, html, data) {
   if(actor.getFlag('tidy5e-sheet', 'showNpcPersonalityInfo')){
     html.find('.tidy5e-sheet .left-notes').removeClass('hidden');
   }
-  if (game.settings.get("tidy5e-sheet", "disableRightClick")) {
-		if(game.settings.get("tidy5e-sheet", "useClassicControls")){
+  if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
+		if(game.settings.get("tidy5e-sheet", "classicControlsEnabled")){
 			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');
 		} else {
 			html.find('.tidy5e-sheet .items-list').addClass('alt-context');
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "useClassicControls")) {
+	if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
 		tidy5eClassicControls(html);
 	}
-  if (game.settings.get("tidy5e-sheet", "moveNpcTraits")) {
+  if (game.settings.get("tidy5e-sheet", "traitsMovedBelowResourceNpc")) {
 		let altPos = html.find('.alt-trait-pos');
 		let traits = html.find('.traits');
 		altPos.append(traits);
 	}
-  if (!game.settings.get("tidy5e-sheet", "showNpcResting")) {
+  if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
     html.find('.tidy5e-sheet.tidy5e-npc .rest-container').remove();
   }
   if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
     html.find('.tidy5e-sheet.tidy5e-npc .profile').addClass('roundPortrait');
   }
-  if (game.settings.get("tidy5e-sheet", "disableNpcHpOverlay")) {
+  if (game.settings.get("tidy5e-sheet", "hpOverlayDisabledNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .profile').addClass('disable-hp-overlay');
   }
-	if (game.settings.get("tidy5e-sheet", "disableHpBar")) {
+	if (game.settings.get("tidy5e-sheet", "hpBarDisabled")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
 	}
-  if (game.settings.get("tidy5e-sheet", "npcHpOverlayBorder") > 0) {
-    $('.system-dnd5e').get(0).style.setProperty('--npc-border', game.settings.get("tidy5e-sheet", "npcHpOverlayBorder")+'px');
-	}
-  if (game.settings.get("tidy5e-sheet", "npcAlwaysShowTraits")) {
+  if (game.settings.get("tidy5e-sheet", "hpOverlayBorderNpc") > 0) {
+    $('.system-dnd5e').get(0).style.setProperty('--npc-border', game.settings.get("tidy5e-sheet", "hpOverlayBorderNpc")+'px');
+	} else {
+     $('.system-dnd5e').get(0).style.removeProperty('--npc-border');
+  }
+  if (game.settings.get("tidy5e-sheet", "traitsAlwaysShownNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .traits').addClass('always-visible');
   }
-  if (game.settings.get("tidy5e-sheet", "npcAlwaysShowSkills")) {
+  if (game.settings.get("tidy5e-sheet", "skillsAlwaysShownNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
   }
-  if (token && token.data.actorLink && game.settings.get("tidy5e-sheet", "npcLinkMarker") == 'both') {
+  if (token && token.data.actorLink && game.settings.get("tidy5e-sheet", "linkMarkerNpc") == 'both') {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('linked');
   }
-  if (token && !token.data.actorLink && ( game.settings.get("tidy5e-sheet", "npcLinkMarker") == "unlinked" || game.settings.get("tidy5e-sheet", "npcLinkMarker") == "both")) {
+  if (token && !token.data.actorLink && ( game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('unlinked');
   }
-  if (!token && (game.settings.get("tidy5e-sheet", "npcLinkMarker") == "unlinked" || game.settings.get("tidy5e-sheet", "npcLinkMarker") == "both")) {
+  if (!token && (game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('original');
   }
-	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'fixCardKey'));
+	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'itemCardsFixKey'));
 }
 
 // Hide empty Spellbook
@@ -481,7 +499,7 @@ async function editProtection(app, html, data) {
   let actor = app.actor;
   if(!actor.getFlag('tidy5e-sheet', 'allow-edit')){
     
-		if(game.settings.get("tidy5e-sheet", "totalEditLock")){
+		if(game.settings.get("tidy5e-sheet", "editTotalLockEnabled")){
 			html.find(".skill input").prop('disabled', true);
 			html.find(".skill .proficiency-toggle").remove();
 			html.find(".ability-score").prop('disabled', true);

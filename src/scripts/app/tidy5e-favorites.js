@@ -447,7 +447,7 @@ export const addFavorites = async function(app, html, data, position) {
       favContent.append(favHtml);
       // attributesTab.prepend(favMarker);
       html.find('.tab.attributes').scrollTop(position.top);
-      if(game.settings.get("tidy5e-sheet", "disableRightClick")){
+      if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
         favContent.find('.items-list').addClass('alt-context');
       }
     }

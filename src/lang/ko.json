@@ -102,25 +102,25 @@
 		"default": "기본 (밝음)",
 		"dark": "대체 (어두움)"
 	},
-	"TIDY5E.Settings.UseClassicControls" : {
+	"TIDY5E.Settings.ClassicControls" : {
 		"name" : "목록 보기에서 고전적 아이템 제어 사용",
 		"hint" : "항상 아이템 컨트롤을 표시하고 오른쪽 클릭 메뉴를 비활성화한다. 목록 레이아웃의 PC 아이템/주문 인벤토리에만 적용된다."
 	},
-	"TIDY5E.Settings.ContextRollButtons" : {
+	"TIDY5E.Settings.RollButtonsToCard" : {
 		"name" : "설명에 midiQol/Better Rolls 아이템 버튼 표시",
 		"hint" : "아이템 설명에 기본적으로 굴림 버튼이 나타난다. 활성화 시 해당 아이템을 상황에 맞는 메뉴를 선택할 수 있다. 격자 레이아웃에 유용하다. "
 	},
-	"TIDY5E.Settings.ShowTraitLabels" : {
+	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "특성 레이블 표시",
 		"hint" : "기본적으로 특성에 대한 아이콘만 표시된다. 활성화 시 레이블도 표시된다."
 	},
 
 
-	"TIDY5E.Settings.HideClassList" : {
+	"TIDY5E.Settings.ClassList" : {
 		"name" : "캐릭터 클래스 목록 숨김.",
 		"hint" : "활성화 시 캐릭터 이름 하단에 있는 클래스 목록이 숨겨진다."
 	},
-	"TIDY5E.Settings.DisableInspirationAnimation" : {
+	"TIDY5E.Settings.InspirationAnimation" : {
 		"name" : "고양감 표시 애니메이션 없음.",
 		"hint" : "고양감을 표시하는 애니메이션을 비활성화 한다."
 	},
@@ -136,29 +136,29 @@
 		"name" : "호버시 탈진 추적기 보이기.",
 		"hint" : "활성화 시 포트레이트 위에 마우스 호버시에만 탈진 추적기를 볼 수 있다."
 	},
-	"TIDY5E.Settings.DisableHpBar" : {
+	"TIDY5E.Settings.HpBar" : {
 		"name" : "체력바 비활성화.",
 		"hint" : "활성화 시 나머지 Hp를 나타내는 색상 막대를 숨긴다. (체력량은 계속 표시된다)"
 	},
-	"TIDY5E.Settings.DisableHpOverlay" : {
+	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "Hp 오버레이 비활성화.",
 		"hint" : "활성화 시 이 액터 유형의 Hp 오버레이를 숨길 수 있다."
 	},
-	"TIDY5E.Settings.PcToggleTraits" : {
+	"TIDY5E.Settings.TraitsTogglePc" : {
 		"name" : "캐릭터 특성 전환 버튼 보이기.",
 		"hint" : "기본적으로 빈 특성이 항상 표시되며, 전환 버튼을 추가할 수 있다."
 	},
-	"TIDY5E.Settings.MoveTraits" : {
+	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "특성을 자원 아래로 이동.",
 		"hint" : "좌단의 자원 아래 특성(언어, 숙련 등)을 표시하려면 이 항목을 선택한다."
 	},
 
 
-	"TIDY5E.Settings.AlwaysShowTraits" : {
+	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "항상 특성 보이기.",
 		"hint" : "기본적으로 빈 특성은 전환 버튼에 의해 숨겨진다. 숨기지 않으려면 선택한다."
 	},
-	"TIDY5E.Settings.AlwaysShowSkills" : {
+	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "항상 기술 보이기.",
 		"hint" : "기본적으로 비숙련 기술은 전환 버튼에 의해 숨겨진다. 숨기지 않으려면 선택한다."
 	},
@@ -168,15 +168,15 @@
 		"name" : "아이템에 활성화 효과 마커 보이기.",
 		"hint" : "아이템에 활성화 효과가 있는지 확인하려면 활성화 한다. (목록 보기 한정)"
 	},
-	"TIDY5E.Settings.DisableRightClick" : {
+	"TIDY5E.Settings.RightClick" : {
 		"name" : "우클릭 메뉴 비활성화",
 		"hint" : "모듈이 충돌하거나 기본 설정이 필요한 경우 우클릭 메뉴를 비활성화 할 수 있다. 대신 아이템에 메뉴 아이콘이 표시된다."
 	},
-	"TIDY5E.Settings.UseExpandedSheet" : {
+	"TIDY5E.Settings.ExpandedSheet" : {
 		"name" : "제한된 시트에 대한 확장된 보기",
 		"hint" : "제한된 시트의 확장된 보기는 액터에 대해 제한된 권한이 있는 플레이어에게 전체 캐릭터 시트(개인 노트 탭 제외)를 보여준다."
 	},
-	"TIDY5E.Settings.UseRoundPortraits" : {
+	"TIDY5E.Settings.PortraitStyle" : {
 		"name" : "둥근 포트레이트 스타일",
 		"hint" : "액터에 둥근 포트레이트를 사용하려면 체크한다.",
 		"all": "모든 액터",
@@ -189,23 +189,23 @@
 		"name" : "Hp 오버레이 오프셋",
 		"hint" : "포트레이트 프레임을 보정하고 색조를 막기 위한 오프셋 값을 입력한다"
 	},
-	"TIDY5E.Settings.TotalEditLock" : {
+	"TIDY5E.Settings.EditTotalLock" : {
 		"name" : "중요 영역 잠금",
 		"hint" : "대부분의 정적 값을 우발적으로 변경하는 것을 방지하려면 이 옵션을 활성화한다."
 	},
-	"TIDY5E.Settings.GmEditPermission" : {
+	"TIDY5E.Settings.EditGmAlways" : {
 		"name" : "GM이 항상 PC 시트를 편집할 수 있음",
 		"hint" : "GM이 시트 잠금을 전환하지 않고 PC를 편집할 수 있도록 하려면 활성화한다."
 	},
-	"TIDY5E.Settings.GmEditEffects" : {
+	"TIDY5E.Settings.EditEffectsGmOnly" : {
 		"name" : "GM만이 활성화 효과를 편집 가능",
 		"hint" : "플레이어의 시트 활성화 효과 편집을 거부한다. 적용된 활성화 효과는 볼 수 있다."
 	},
-	"TIDY5E.Settings.AlwaysShowQty" : {
+	"TIDY5E.Settings.QuantityAlwaysShown" : {
 		"name" : "항상 아이템 수량 표시",
 		"hint" : "활성화시 아이템 수량을 숨기지 않는다."
 	},
-	"TIDY5E.Settings.DisableInspiration" : {
+	"TIDY5E.Settings.InspirationDisabled" : {
 		"name" : "고양감 추적기 비활성화.",
 		"hint" : "캠페인 내에서 고양감을 사용하지 않을 경우 추적기를 비활성화할 수 있다."
 	},
@@ -213,11 +213,11 @@
 		"name" : "탈진 효과 (활성화 효과 사용)",
 		"hint" : "탈진 단계를 설정할 때 해당하는 활성화 효과 적용 - (midi-Qol의 불리함 굴림 필요)"
 	},
-	"TIDY5E.Settings.DisableExhaustion" : {
+	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "탈진 추적기 비활성화.",
 		"hint" : "캠페인 내에서 탈진을 사용하지 않을 경우 추적기를 비활성화할 수 있다."
 	},
-	"TIDY5E.Settings.ShowNpcRest" : {
+	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "NPC 휴식",
 		"hint" : "NPC 시트에 휴식 아이콘/버튼을 표시한다."
 	},

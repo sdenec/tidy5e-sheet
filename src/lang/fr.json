@@ -100,7 +100,7 @@
 	"TIDY5E.Settings.PcLabel" : "PC Sheets: ",
 	"TIDY5E.Settings.NpcLabel" : "NPC Sheets: ",
 
-	"TIDY5E.Settings.UseExpandedSheet" : {
+	"TIDY5E.Settings.ExpandedSheet" : {
 		"name" : "Expanded View for the Limited Sheet.",
 		"hint" : "The expanded view for the limited sheet displays the entire character sheet (minus the Private Notes tab) to players with Limited permission for that actor."
 	},
@@ -120,7 +120,7 @@
 		"name" : "Accent Color for Always Prepared Spells.",
 		"hint" : "Overwrite the default accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) for Always Prepared Spells. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
 	},
-	"TIDY5E.Settings.UseRoundPortraits" : {
+	"TIDY5E.Settings.PortraitStyle" : {
 		"name" : "Sheets use round portraits.",
 		"hint" : "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame."
 	},
@@ -128,23 +128,23 @@
 		"name" : "Border width for the hit point overlay.",
 		"hint" : "If your portrait has a frame you can adjust the Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border."
 	},
-	"TIDY5E.Settings.DisableHpOverlay" : {
+	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "Disable the hit point overlay.",
 		"hint" : "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it."
 	},
-	"TIDY5E.Settings.HideClassList" : {
+	"TIDY5E.Settings.ClassList" : {
 		"name" : "Hide character class list.",
 		"hint" : "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)"
 	},
-	"TIDY5E.Settings.DisableInspirationAnimation" : {
+	"TIDY5E.Settings.InspirationAnimation" : {
 		"name" : "No inspiration indicator animation.",
 		"hint" : "If it's too distracting, you can disable the subtle animation of the glowing inspiration indicator."
 	},
-	"TIDY5E.Settings.DisableInspiration" : {
+	"TIDY5E.Settings.InspirationDisabled" : {
 		"name" : "Disable Inspiration Tracker.",
 		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
 	},
-	"TIDY5E.Settings.DisableExhaustion" : {
+	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "Disable Exhaustion Tracker.",
 		"hint" : "If your campaign doesn't use exhaustion you can disable the tracker completely."
 	},
@@ -164,19 +164,19 @@
 		"name" : "Show rest button on hover.",
 		"hint" : "If you check this option the rest button will only be visible when you hover over the portrait."
 	},
-	"TIDY5E.Settings.MoveTraits" : {
+	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "Move traits below resources.",
 		"hint" : "Check this if you want to show the traits below the resources."
 	},
-	"TIDY5E.Settings.PcToggleTraits" : {
+	"TIDY5E.Settings.TraitsTogglePc" : {
 		"name" : "Show Toggle button for character traits.",
 		"hint" : "Check this if you want to show a button to toggle empty traits."
 	},
-	"TIDY5E.Settings.AlwaysShowTraits" : {
+	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "Always show traits.",
 		"hint" : "When you don't want to hide and toggle empty NPC traits tick this box."
 	},
-	"TIDY5E.Settings.AlwaysShowSkills" : {
+	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "Always show skills.",
 		"hint" : "When you don't want to hide and toggle not proficient NPC skills tick this box."
 	},

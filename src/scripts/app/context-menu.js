@@ -20,7 +20,7 @@ export const tidy5eContextMenu = function (html) {
       case 3:
         // right click opens context menu
         event.preventDefault();
-        if(!game.settings.get("tidy5e-sheet", "disableRightClick") && $(item).hasClass('context-enabled')){
+        if(!game.settings.get("tidy5e-sheet", "rightClickDisabled") && $(item).hasClass('context-enabled')){
           $('.item').removeClass('context');
           $('.item .context-menu').hide();
           itemContextMenu(event);
@@ -30,7 +30,7 @@ export const tidy5eContextMenu = function (html) {
   });
 
   html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
-    if(game.settings.get("tidy5e-sheet", "disableRightClick")){
+    if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
       switch (event.which) {
         case 1:
           event.preventDefault();

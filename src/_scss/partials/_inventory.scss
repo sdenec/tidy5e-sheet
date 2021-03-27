@@ -443,7 +443,7 @@
 			}
 		}//.item-quantity
 
-		&:not(:hover):not(.alwaysShowQuantity) .item-quantity:not(.isStack):not(:hover):not(:focus-within) {
+		&:not(:hover):not(.quantityAlwaysShownEnabled) .item-quantity:not(.isStack):not(:hover):not(:focus-within) {
 	   	opacity: 0;
 	  }
 
@@ -576,7 +576,14 @@
 				}
 
 				&.active {
-					background: var(--prepared);
+					// background: var(--warning-accent);
+					// color: rgba(255, 255, 255, .6);
+					color: var(--attunement-required);
+
+					&:hover {
+						background: var(--warning-accent);
+						color: rgba(255, 255, 255, .8);
+					}
 				}
 
 				.icon-on,

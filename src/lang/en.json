@@ -32,6 +32,13 @@
 	"TIDY5E.DisableEdit": "Disable Edit",
 	"TIDY5E.EditHint": "Toggles visibility of add/delete buttons and empty sections",
 
+	"TIDY5E.Equip": "Equip Item",
+	"TIDY5E.Unequip": "Unequip Item",
+	"TIDY5E.Attune": "Attune to Item",
+	"TIDY5E.Deattune": "Break Attunement",
+	"TIDY5E.Prepare": "Prepare Spell",
+	"TIDY5E.Unprepare": "Remove Preparation",
+
 	"TIDY5E.EmptySection": "This section is empty. Unlock the sheet to edit.",
 	"TIDY5E.GmOnlyEdit": "Only your GM can edit this section.",
 
@@ -51,7 +58,6 @@
 	"TIDY5E.RemoveFav": "Remove Favorite",
 
 	"TIDY5E.ToggleInfo": "Toggle Info",
-	"TIDY5E.ToggleMovement": "Toggle between modern and legacy speed display",
 
 	"TIDY5E.Show" : "show/edit",
 	"TIDY5E.Hide" : "hide",
@@ -70,6 +76,7 @@
 	
 	"TIDY5E.SearchItem" : "search item",
 	"TIDY5E.SearchSpell" : "search spell",
+	"TIDY5E.SearchFeat" : "search feature",
 	"TIDY5E.SearchClear" : "clear search",
 	"TIDY5E.SearchHint" : "Just start to type what you are searching for.",
 
@@ -96,15 +103,16 @@
 	"TIDY5E.Settings.SheetMenu" : {
 		"label" : "Sheet Settings"
 	},
-	"TIDY5E.Settings.AllItemCards" : {
+
+	"TIDY5E.Settings.ItemCardsForAllItems" : {
 		"name" : "Show item info cards in all layouts.",
 		"hint" : "Disable if you only want the slide out item info cards in grid layout."
 	},
-	"TIDY5E.Settings.NpcItemCards" : {
-		"name" : "Show item info cards for NPCs/vehivcles.",
+	"TIDY5E.Settings.ItemCardsForNpcs" : {
+		"name" : "Show item info cards for NPCs/vehicles.",
 		"hint" : "Disable if you don't want the slide out item info cards for NPCs/vehicles."
 	},
-	"TIDY5E.Settings.FloatingItemCards" : {
+	"TIDY5E.Settings.ItemCardsAreFloating" : {
 		"name" : "Item info cards float next to cursor.",
 		"hint" : "Enable to detach item info cards from sheet and float them next to the cursor. Best to use with delay. Also useful when sheet is popped out."
 	},
@@ -112,35 +120,37 @@
 		"name" : "Delay showing info cards.",
 		"hint" : "The Item Card will show when you hover an item for the value in milliseconds (0 = no delay, 300 is default)."
 	},
-	"TIDY5E.Settings.FixCardKey" : {
+	"TIDY5E.Settings.ItemCardsFixKey" : {
 		"name" : "Key to hold for Item Card interaction.",
 		"hint" : "Enter a key (e.g.: x) to use for item card interaction. Can be any key except function keys (ctrl, alt, etc.)"
 	},
+
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e color theme.",
 		"hint" : "Use either the default light or alternate dark color theme of Tidy5e.",
 		"default": "Default (light)",
 		"dark": "Alternate (dark)"
 	},
-	"TIDY5E.Settings.UseClassicControls" : {
+
+	"TIDY5E.Settings.ClassicControls" : {
 		"name" : "Use classic item controls in list view.",
 		"hint" : "Always shows item controls and disable right click menu. Only applies for PC item/spell inventory in list layout."
 	},
-	"TIDY5E.Settings.ContextRollButtons" : {
+	"TIDY5E.Settings.RollButtonsToCard" : {
 		"name" : "Show midiQol Item Buttons in item's info card",
 		"hint" : "Per default roll buttons appear in the item's description. Enable to move them to the item's info card. Works in all layout modes."
 	},
-	"TIDY5E.Settings.ShowTraitLabels" : {
+	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "Show Trait Labels.",
 		"hint" : "By default only icons are shown for traits. Enable to display labels as well."
 	},
 
 
-	"TIDY5E.Settings.HideClassList" : {
+	"TIDY5E.Settings.ClassList" : {
 		"name" : "Hide character class list.",
 		"hint" : "Enable to hide the class list below the character's name."
 	},
-	"TIDY5E.Settings.DisableInspirationAnimation" : {
+	"TIDY5E.Settings.InspirationAnimation" : {
 		"name" : "Inanimate inspiration tracker.",
 		"hint" : "Enable to turn off inspiration tracker glow animation."
 	},
@@ -156,29 +166,29 @@
 		"name" : "Show exhaustion tracker only on hover.",
 		"hint" : "Enable to only show the exhaustion tracker when you hover over the portrait."
 	},
-	"TIDY5E.Settings.DisableHpBar" : {
+	"TIDY5E.Settings.HpBar" : {
 		"name" : "Disable health bar.",
 		"hint" : "Enable to hide the colored bar indicating the remaining HP (Health Numbers will still be visible)."
 	},
-	"TIDY5E.Settings.DisableHpOverlay" : {
+	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "Hide hit point overlay.",
 		"hint" : "Enable to hide the HP overlay for this actor type."
 	},
-	"TIDY5E.Settings.PcToggleTraits" : {
+	"TIDY5E.Settings.TraitsTogglePc" : {
 		"name" : "Toggle empty character traits.",
 		"hint" : "By default empty traits are always visible. Enable to add a toggle button."
 	},
-	"TIDY5E.Settings.MoveTraits" : {
+	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "Move traits below resources.",
 		"hint" : "Enable to move traits from the left side below resources."
 	},
 
 
-	"TIDY5E.Settings.AlwaysShowTraits" : {
+	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "Always show traits.",
 		"hint" : "By default empty traits are hidden by a toggle button. Enable to never hide."
 	},
-	"TIDY5E.Settings.AlwaysShowSkills" : {
+	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "Always show skills.",
 		"hint" : "By default unproficient skills are hidden by a toggle button. Enable to never hide."
 	},
@@ -188,15 +198,15 @@
 		"name" : "Show Active Effects Marker on items.",
 		"hint" : "Enable if you want to see if items have active effects on them (only for list view)."
 	},
-	"TIDY5E.Settings.DisableRightClick" : {
+	"TIDY5E.Settings.RightClick" : {
 		"name" : "Disable right click context menu.",
 		"hint" : "In case of module conflicts or preference you can disable the right click context menu. Items will show a menu icon instead."
 	},
-	"TIDY5E.Settings.UseExpandedSheet" : {
+	"TIDY5E.Settings.ExpandedSheet" : {
 		"name" : "Expanded Limited view for character sheets.",
 		"hint" : "Displays the entire character sheet (minus the journal) to players with limited permission."
 	},
-	"TIDY5E.Settings.UseRoundPortraits" : {
+	"TIDY5E.Settings.PortraitStyle" : {
 		"name" : "Round portrait style.",
 		"hint" : "Choose to enable round portraits/icons for actors.",
 		"all": "All actors",
@@ -209,41 +219,54 @@
 		"name" : "Offset hit point overlay.",
 		"hint" : "Enter offset value to compensate for portrait frames and prevent tinting."
 	},
-	"TIDY5E.Settings.TotalEditLock" : {
+	"TIDY5E.Settings.EditTotalLock" : {
 		"name" : "Lock down sensitive fields.",
 		"hint" : "Enable to prevent acidentially changing sensible, mostly static values."
 	},
-	"TIDY5E.Settings.GmEditPermission" : {
+	"TIDY5E.Settings.EditGmAlways" : {
 		"name" : "GM can always edit PC sheets.",
 		"hint" : "Enable to allow GMs to edit PC sheets without toggling the sheet lock."
 	},
-	"TIDY5E.Settings.GmEditEffects" : {
+	"TIDY5E.Settings.EditEffectsGmOnly" : {
 		"name" : "Only GM can edit active effects.",
 		"hint" : "Enable to deny players to edit active effects on their sheets. They will still see applied effects."
 	},
-	"TIDY5E.Settings.AlwaysShowQty" : {
+	"TIDY5E.Settings.QuantityAlwaysShown" : {
 		"name" : "Always show item quantity.",
 		"hint" : "Enable to never hide item quantity."
 	},
-	"TIDY5E.Settings.DisableInspiration" : {
+	"TIDY5E.Settings.InspirationDisabled" : {
 		"name" : "Disable inspiration tracker.",
 		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
 	},
 	"TIDY5E.Settings.ExhaustionEffects" : {
-		"name" : "Exhaustion effects (uses Active Effects).",
-		"hint" : "Apply corresponding active effects when setting exhaustion levels - requires midiQol for disadvantage rolls!"
+		"name" : "Auto Exhaustion effects.",
+		"hint" : "Choose how to apply exhaustion effects corresponding to tiers (requires midiQol for disadvantage rolls)",
+		"default" : "No automatic exhaustion effects",
+		"tidy5e" : "Tidy5e - Apply integrated effects (uses Active Effects)",
+		"custom" : "Custom - Use your own effects (requires CUB)"
 	},
 	"TIDY5E.Settings.CustomExhaustionIcon" : {
 		"name" : "Custom exhaustion effect icon.",
-		"hint" : "Set your custom exhaustion effect icon by providing an image url (eg.: systems/dnd5e/icons/skills/light_01.jpg)."
+		"hint" : "Set your custom exhaustion effect icon by providing an image url. Only available when Exhaustion Effect is set to \"tidy 5e\" (e. g.: modules/tidy5e-sheet/images/exhaustion.svg)."
 	},
-	"TIDY5E.Settings.DisableExhaustion" : {
+	"TIDY5E.Settings.CustomExhaustionEffect" : {
+		"name" : "Custom CUB exhaustion effect name.",
+		"hint" : "Set the name for your custom Exhaustion Effect - must be the same as defined in CUB but WITHOUT tier number. (e. g. \"Exhaustion\")",
+		"tiers": "Number of custom CUB exhaustion tiers. Default = 5",
+		"warning": "Can't find actor token to apply exhaustion effect to!"
+	},
+	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "Disable exhaustion tracker.",
 		"hint" : "If your campaign doesn't use exhaustion you can disable the tracker completely."
 	},
-	"TIDY5E.Settings.ShowNpcRest" : {
+	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "Resting for NPCs.",
 		"hint" : "Enable to shows the rest icon/buttons on NPC sheets."
+	},
+	"TIDY5E.Settings.RestingForNpcsChat" : {
+		"name" : "Hide chat card for NPC rest.",
+		"hint" : "Enable to hide the Chat Card for NPC rest (applies to GM and Players)."
 	},
 	"TIDY5E.Settings.LinkMarker" : {
 		"name" : "Mark linked/unlinked NPCs.",
