@@ -2860,7 +2860,12 @@
 }
 
 .tidy5e.sheet.actor .items-list .item .context-menu a.active {
-  background: var(--prepared);
+  color: var(--attunement-required);
+}
+
+.tidy5e.sheet.actor .items-list .item .context-menu a.active:hover {
+  background: var(--warning-accent);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .tidy5e.sheet.actor .items-list .item .context-menu a .icon-on,

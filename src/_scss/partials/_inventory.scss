@@ -576,7 +576,14 @@
 				}
 
 				&.active {
-					background: var(--prepared);
+					// background: var(--warning-accent);
+					// color: rgba(255, 255, 255, .6);
+					color: var(--attunement-required);
+
+					&:hover {
+						background: var(--warning-accent);
+						color: rgba(255, 255, 255, .8);
+					}
 				}
 
 				.icon-on,

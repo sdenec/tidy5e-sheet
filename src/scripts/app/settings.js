@@ -58,6 +58,7 @@ export class Tidy5eUserSettings extends FormApplication {
 
 			'traitLabelsEnabled',
 			'traitsMovedBelowResource',
+			'traitsMovedBelowResourceNpc',
 			'traitsTogglePc',
 			'traitsAlwaysShownNpc',
 			

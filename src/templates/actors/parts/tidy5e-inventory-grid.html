@@ -73,11 +73,11 @@
           
           {{#if item.attunement}}
             <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-              <i class="fas fa-sun"></i> <span class="control-label">{{localize item.attunement.title}}</span>
+              <i class="fas fa-sun"></i> <span class="control-label">{{#if (eq item.data.attunement 2) }}{{localize "TIDY5E.Deattune"}}{{else}}{{localize "TIDY5E.Attune"}}{{/if}}</span>
             </a>
           {{/if}}
 
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-user-alt-slash icon-off"></i><i class="fas fa-user-alt icon-on"></i> {{item.toggleTitle}}</a>
+          <a class="item-control item-toggle {{item.toggleClass}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
           
           <hr class="context-divider">
           <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i>{{localize "DND5E.ItemEdit"}}</a>
