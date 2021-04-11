@@ -1,4 +1,11 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
+	"TIDY5E.Age" : "Age",
+	"TIDY5E.Weight" : "Weight",
+	"TIDY5E.Height" : "Height",
+	"TIDY5E.Eyes" : "Eyes",
+	"TIDY5E.Skin" : "Skin",
+	"TIDY5E.Hair" : "Hair",
 	"TIDY5E.Subclass": "Subclass",
 	"TIDY5E.EditActorImage": "left click: edit image",
 	"TIDY5E.ShowActorImage": "right click: show character art",
@@ -79,6 +86,9 @@
 	"TIDY5E.SearchFeat" : "search feature",
 	"TIDY5E.SearchClear" : "clear search",
 	"TIDY5E.SearchHint" : "Just start to type what you are searching for.",
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.AbbrMod" : "Mod",
 	"TIDY5E.AbbrSavingThrow" : "Save",
@@ -125,6 +135,7 @@
 		"hint" : "Enter a key (e.g.: x) to use for item card interaction. Can be any key except function keys (ctrl, alt, etc.)"
 	},
 
+
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e color theme.",
 		"hint" : "Use either the default light or alternate dark color theme of Tidy5e.",
@@ -146,6 +157,10 @@
 	},
 
 
+	"TIDY5E.Settings.PlayerName" : {
+		"name" : "Show player name.",
+		"hint" : "Enable to show a field for the player name below the character's name."
+	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "Hide character class list.",
 		"hint" : "Enable to hide the class list below the character's name."

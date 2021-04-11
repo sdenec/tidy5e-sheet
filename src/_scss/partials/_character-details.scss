@@ -78,10 +78,49 @@
 	transition: width .3s ease;
 }
 
+.bonus-information {
+	display: flex;
+}
+// Player Name
+
+#playerName {
+	flex: 0 0 1px;
+	font-size: 12px;
+	line-height: 1;
+	padding-top: 3px;
+}
+
+#playerName+.class-list{
+	padding-left: 3px;
+}
+
+#playerName + .class-list::before {
+	content: '';
+	display: block;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	background: var(--primary-color);
+	position: absolute;
+	top: calc(50% + 1px);
+	left: -4px;
+	transform: translateY(-50%);
+}
+
+.playerName {
+	display: inline-block;
+	min-width: 50px;
+	font-weight: 600;
+	padding: 0px 4px;
+	white-space: nowrap;
+}
+
 // Class List
 
 .class-list {
+	position: relative;
 	display: flex;
+	flex: 1;
 	margin: 0;
 	padding: 3px 0 0 0;
 	color: var(--secondary-color);

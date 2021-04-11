@@ -1,4 +1,11 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
+	"TIDY5E.Age" : "Alter",
+	"TIDY5E.Weight" : "Gewicht",
+	"TIDY5E.Height" : "Größe",
+	"TIDY5E.Eyes" : "Augen",
+	"TIDY5E.Skin" : "Haut",
+	"TIDY5E.Hair" : "Haare",
 	"TIDY5E.Subclass": "Unterklasse",
 	"TIDY5E.EditActorImage": "Linksklick: Bild bearbeiten",
 	"TIDY5E.ShowActorImage": "Rechtsklick: Charakter-Bilder zeigen",
@@ -79,6 +86,9 @@
 	"TIDY5E.SearchFeat" : "Suche Feature",
 	"TIDY5E.SearchClear" : "Suchfeld leeren",
 	"TIDY5E.SearchHint" : "Fange einfach an einzutippen nach was du suchst.",
+	
+	"TIDY5E.ItemCardsKeyHint" : "Taste halten zum Interagieren.",
+	"TIDY5E.ItemCardsMouseHint" : "Mittlere Maustaste zum ansehen/bearbeiten.",
 
 	"TIDY5E.AbbrMod" : "Mod",
 	"TIDY5E.AbbrSavingThrow" : "Rettung",

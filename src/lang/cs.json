@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
 	"TIDY5E.AbbrMod": "Mod",
 	"TIDY5E.AbbrSavingThrow": "Uložit",
 	"TIDY5E.Abilities": "Vlastnosti",
@@ -50,7 +51,9 @@
 	"TIDY5E.SearchClear": "vymazat hledání",
 	"TIDY5E.SearchHint": "Začněte psát název toho, co hledáte.",
 	"TIDY5E.SearchItem": "hledat předmět",
-	"TIDY5E.SearchSpell": "hledat kouzlo",
+	"TIDY5E.SearchSpell": "hledat kouzlo",	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 	"TIDY5E.Settings.QuantityAlwaysShown": {
 		"hint": "Povolte pokud se nemá skrývat množství předmětů.",
 		"name": "Vždy zobrazovat množství předmětů."

@@ -85,6 +85,35 @@
 
 	// Notes in Biography and Journal
 
+	.top-notes {
+		flex: 0 0 100%;
+		margin-bottom: 1rem;
+
+		.character-details {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			gap: 4px;
+			flex-wrap: wrap;
+		}
+
+		li {
+			display: flex;
+			flex: 0 0 calc(100% / 3 - 4px);
+
+			span {
+				flex: 1;
+				margin: 0 8px 0 4px;
+			}
+
+			span:first-child {
+				flex: 0 0 1px;
+				font-weight: 600;
+				margin: 0;
+			}
+		}
+	}
+
 	.left-notes,
 	.right-notes {
 		flex: 1;

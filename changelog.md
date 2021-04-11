@@ -16,6 +16,14 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.26 ###
+
+- updated japanese translation
+- updated spanish translation
+- Added translation strings for Info Card hint section
+- New setting to show field for player name below character name
+- New fields for character appearance in the background tab
+
 ### Version 0.4.25 ###
 
 - Custom Settings Menu (finally)

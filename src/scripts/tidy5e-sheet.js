@@ -384,8 +384,8 @@ async function addClassList(app, html, data) {
 			}
 			classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
 			mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
-			let classListTarget = html.find('.general-information');
-			classListTarget.after(classList);
+			let classListTarget = html.find('.bonus-information');
+			classListTarget.append(classList);
 		}
 	}
 }
@@ -463,6 +463,9 @@ function markActiveEffects(app, html, data){
 async function setSheetClasses(app, html, data) {
 	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 	let actor = app.actor;
+	if (!game.settings.get("tidy5e-sheet", "playerNameEnabled")) {
+		html.find('.tidy5e-sheet #playerName').remove();
+	}
 	if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
 		if(game.settings.get("tidy5e-sheet", "classicControlsEnabled")){
 			html.find('.tidy5e-sheet .grid-layout .items-list').addClass('alt-context');

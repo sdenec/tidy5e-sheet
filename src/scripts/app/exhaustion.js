@@ -19,7 +19,7 @@ async function updateExhaustion(actorEntity) {
         key: "flags.midi-qol.disadvantage.ability.check.all",
         value: true,
         mode: ACTIVE_EFFECT_MODES.OVERRIDE,
-        priority: 1000
+        priority: 20
       };
       exhaustionSet.push(effect);
     }
@@ -41,7 +41,9 @@ async function updateExhaustion(actorEntity) {
           key: changeKey,
           value: 0.5,
           mode: 1,
-          priority: 1000
+          priority: 20,
+          duration: 0,
+          origin: effectName
         };
         exhaustionSet.push(effect);
       });
@@ -51,7 +53,7 @@ async function updateExhaustion(actorEntity) {
         key: "flags.midi-qol.disadvantage.ability.save.all",
         value: true,
         mode: ACTIVE_EFFECT_MODES.OVERRIDE,
-        priority: 1000
+        priority: 20
       };
       exhaustionSet.push(effect);   
 
@@ -59,7 +61,7 @@ async function updateExhaustion(actorEntity) {
         key: "flags.midi-qol.disadvantage.attack.all",
         value: true,
         mode: ACTIVE_EFFECT_MODES.OVERRIDE,
-        priority: 1000
+        priority: 20
       };
       exhaustionSet.push(effect);   
     }
@@ -68,7 +70,7 @@ async function updateExhaustion(actorEntity) {
         key: "data.attributes.hp.max",
         value: 0.5,
         mode: 1,
-        priority: 1000
+        priority: 20
       };
       exhaustionSet.push(effect);
     }
@@ -90,7 +92,9 @@ async function updateExhaustion(actorEntity) {
           key: changeKey,
           value: 0,
           mode: 1,
-          priority: 1000
+          priority: 20,
+          duration: 0,
+          origin: effectName
         };
         exhaustionSet.push(effect);
       });    
@@ -100,7 +104,7 @@ async function updateExhaustion(actorEntity) {
         key: "data.attributes.hp.value",
         value: 0,
         mode: ACTIVE_EFFECT_MODES.OVERRIDE,
-        priority: 1000
+        priority: 20
       };
       exhaustionSet.push(effect);      
     }

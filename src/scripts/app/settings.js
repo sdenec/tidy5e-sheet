@@ -90,6 +90,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'editEffectsGmOnlyEnabled',
 			'editGmAlwaysEnabled',
 			
+			'playerNameEnabled',
 			'classListDisabled',
 			'hideIfZero',
 			'linkMarkerNpc',
@@ -104,7 +105,7 @@ export class Tidy5eUserSettings extends FormApplication {
 		let data = {};
 		settings.forEach (setting => {
 			data[setting] = {'value' : game.settings.get('tidy5e-sheet', setting)};
-			console.log(data[setting]);
+			// console.log(data[setting]);
 		})
 		return data;
 	}
@@ -117,12 +118,12 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	activateListeners(html) {
 		super.activateListeners(html);
-		console.log('Listeners Active!')
-		console.log(html)
+		// console.log('Listeners Active!')
+		// console.log(html)
 		
 		let exhaustionEffectSelect = html.find('select#exhaustionEffectsEnabled');
 		let exhaustionSelected = $(exhaustionEffectSelect).val();
-		console.log(exhaustionSelected)
+		// console.log(exhaustionSelected)
 		switch (exhaustionSelected) {
 			case 'default':
 				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
@@ -149,7 +150,7 @@ export class Tidy5eUserSettings extends FormApplication {
 		})
 
 		html.find('input#exhaustionEffectIcon').on('change', function(e){
-			console.log(e.target.value)
+			// console.log(e.target.value)
 			if(e.target.value == '' || e.target.value == null){
 				e.target.value="modules/tidy5e-sheet/images/exhaustion.svg";
 			}
