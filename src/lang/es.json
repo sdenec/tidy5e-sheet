@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
 	"TIDY5E.Subclass": "Subclase",
 	"TIDY5E.EditActorImage": "click izquierdo: editar imagen",
 	"TIDY5E.ShowActorImage": "click derecho: mostrar ilustración del pj",
@@ -56,6 +57,9 @@
 	"TIDY5E.AddFav": "Añadir Favorito",
 	"TIDY5E.isFav": "Favorito",
 	"TIDY5E.RemoveFav": "Eliminar Favorito",
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "Alternar información",
 

@@ -178,6 +178,13 @@
     <h2>GM Sheet Options</h2>
     
     <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
+      <div class="description">
+        <label for="playerNameEnabled">{{localize 'TIDY5E.Settings.PlayerName.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.PlayerName.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='rightClickDisabled' id='rightClickDisabled' {{checked settings.rightClickDisabled.value}}>
       <div class="description">
         <label for="rightClickDisabled">{{localize 'TIDY5E.Settings.RightClick.name'}}</label>

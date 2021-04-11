@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
 	"TIDY5E.Subclass": "Sottoclasse",
 	"TIDY5E.EditActorImage": "tasto sinistro: modifica immagine",
 	"TIDY5E.ShowActorImage": "tasto destro: mostra ritratto PG",
@@ -49,6 +50,9 @@
 	"TIDY5E.AddFav": "Aggiungi ai Preferiti",
 	"TIDY5E.isFav": "Preferito",
 	"TIDY5E.RemoveFav": "Rimuovi dai Preferiti",
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "Attiva/disattiva Info",
 	"TIDY5E.ToggleMovement": "Passa dalla visualizzazione della velocità attuale a quella precedente",

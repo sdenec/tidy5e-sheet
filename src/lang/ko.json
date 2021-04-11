@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
 	"TIDY5E.Subclass": "서브클래스",
 	"TIDY5E.EditActorImage": "이미지 수정",
 	"TIDY5E.ShowActorImage": "우클릭: 캐릭터 이미지 보기",
@@ -49,6 +50,9 @@
 	"TIDY5E.AddFav": "즐겨찾기에 추가",
 	"TIDY5E.isFav": "즐겨찾기",
 	"TIDY5E.RemoveFav": "줄겨찾기에서 삭제",
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "정보 전환",
 	"TIDY5E.ToggleMovement": "현재, 원래 속도 표시간 전환",

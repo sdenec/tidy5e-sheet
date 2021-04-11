@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
     "TIDY5E.EditActorImage": "編輯圖片",
 
     "TIDY5E.Exhaustion0": "無負面效應",
@@ -50,6 +51,9 @@
     "TIDY5E.DeleteSpell": "刪除法術",
     "TIDY5E.AddFav": "添加到收藏",
     "TIDY5E.RemoveFav": "從收藏中移除",
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
     "TIDY5E.ToggleInfo": "切換顯示信息",
 

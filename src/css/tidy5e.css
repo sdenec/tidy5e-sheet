@@ -1255,8 +1255,46 @@
   transition: width .3s ease;
 }
 
-.tidy5e.sheet.actor .class-list {
+.tidy5e.sheet.actor .bonus-information {
   display: flex;
+}
+
+.tidy5e.sheet.actor #playerName {
+  flex: 0 0 1px;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 3px;
+}
+
+.tidy5e.sheet.actor #playerName + .class-list {
+  padding-left: 3px;
+}
+
+.tidy5e.sheet.actor #playerName + .class-list::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  position: absolute;
+  top: calc(50% + 1px);
+  left: -4px;
+  transform: translateY(-50%);
+}
+
+.tidy5e.sheet.actor .playerName {
+  display: inline-block;
+  min-width: 50px;
+  font-weight: 600;
+  padding: 0px 4px;
+  white-space: nowrap;
+}
+
+.tidy5e.sheet.actor .class-list {
+  position: relative;
+  display: flex;
+  flex: 1;
   margin: 0;
   padding: 3px 0 0 0;
   color: var(--secondary-color);
@@ -1824,6 +1862,10 @@
 
 .tidy5e.sheet.actor .window-content .tab.biography, .tidy5e.sheet.actor .window-content .tab.journal {
   font-size: 13px;
+}
+
+.tidy5e.sheet.actor .window-content .tab.biography {
+  flex-wrap: wrap;
 }
 
 .tidy5e.sheet.actor .window-content .tab.grid .toggle-grid,
@@ -3645,6 +3687,35 @@
 
 .tidy5e.sheet.actor .grid-layout .item-list .items-footer a:hover {
   color: var(--tertiary-color);
+}
+
+.tidy5e.sheet.actor .top-notes {
+  flex: 0 0 100%;
+  margin-bottom: 1rem;
+}
+
+.tidy5e.sheet.actor .top-notes .character-details {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tidy5e.sheet.actor .top-notes li {
+  display: flex;
+  flex: 0 0 calc(100% / 3 - 4px);
+}
+
+.tidy5e.sheet.actor .top-notes li span {
+  flex: 1;
+  margin: 0 8px 0 4px;
+}
+
+.tidy5e.sheet.actor .top-notes li span:first-child {
+  flex: 0 0 1px;
+  font-weight: 600;
+  margin: 0;
 }
 
 .tidy5e.sheet.actor .left-notes,

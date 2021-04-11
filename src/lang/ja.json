@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
 	"TIDY5E.Subclass": "サブクラス",
 	"TIDY5E.EditActorImage": "左クリック: 画像変更",
 	"TIDY5E.ShowActorImage": "右クリック: 画像表示",
@@ -56,6 +57,9 @@
 	"TIDY5E.AddFav": "お気に入り追加",
 	"TIDY5E.isFav": "お気に入り",
 	"TIDY5E.RemoveFav": "お気に入りから削除",
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "詳細表示",
 

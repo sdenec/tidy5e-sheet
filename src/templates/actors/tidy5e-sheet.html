@@ -10,8 +10,8 @@
 				</article>
 				<!-- <article class="mod-roll-buttons"></article> -->
 				<article class="info-card-hint">
-					<p><span class="key"></span> hold key to interact with card.</p>
-					<p><i class="fas fa-mouse"></i> middle mouse to view/edit item.</p>
+					<p><span class="key">X</span> {{localize "TIDY5E.ItemCardsKeyHint"}}</p>
+					<p><i class="fas fa-mouse"></i> {{localize "TIDY5E.ItemCardsMouseHint"}}</p>
 				</article>
 			</div>
 		</section>
@@ -156,10 +156,15 @@
 						</div>
 						{{/unless}}
 					</div>
+				</section>
+				<section class="bonus-information">
+					{{!-- Player Name --}}
+					<div id="playerName">
+						<input data-input="{{actor._id}}-playerName" name="data.details.playerName" type="hidden" value="{{data.details.playerName}}" placeholder="{{ localize 'TIDY5E.PlayerName' }}" maxlength="40">
+						<span class="playerName" {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-playerName" data-placeholder="{{ localize 'TIDY5E.PlayerName' }}" data-maxlength="40">{{data.details.playerName}}</span>
+					</div>
 					{{!-- Character Class List --}}
 				</section>
-
-				{{!-- Character Class List --}}
 
 				{{!-- Character Summary --}}
 
@@ -364,6 +369,18 @@
 
 			{{!-- Biography Tab --}}
 			<div class="tab biography" data-group="primary" data-tab="biography">
+				<div class="top-notes note-entries">
+					<article>
+						<ul class="character-details">
+							<li><span>Age:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-age" data-maxlength="5">{{data.details.age}}</span><input data-input="{{actor._id}}-age" type="hidden" name="data.details.age" value="{{data.details.age}}"></li>
+							<li><span>Height:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-height" data-maxlength="10">{{data.details.height}}</span><input data-input="{{actor._id}}-height" type="hidden" name="data.details.height" value="{{data.details.height}}"></li>
+							<li><span>Weight:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-weight" data-maxlength="10">{{data.details.weight}}</span><input data-input="{{actor._id}}-weight" type="hidden" name="data.details.weight" value="{{data.details.weight}}"></li>
+							<li><span>Eyes:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-eyes" data-maxlength="20">{{data.details.eyes}}</span><input data-input="{{actor._id}}-eyes" type="hidden" name="data.details.eyes" value="{{data.details.eyes}}"></li>
+							<li><span>Skin:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-skin" data-maxlength="20">{{data.details.skin}}</span><input data-input="{{actor._id}}-skin" type="hidden" name="data.details.skin" value="{{data.details.skin}}"></li>
+							<li><span>Hair:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-hair" data-maxlength="20">{{data.details.hair}}</span><input data-input="{{actor._id}}-hair" type="hidden" name="data.details.hair" value="{{data.details.hair}}"></li>
+						</ul>
+					</article>
+				</div>
 				<div class="left-notes note-entries">
 					<article>
 						<div class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</div>

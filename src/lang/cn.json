@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
 	"TIDY5E.EditActorImage": "编辑图像",
 
 	"TIDY5E.Exhaustion0": "无负面效应",
@@ -58,6 +59,10 @@
 	"TIDY5E.Edit" : "编辑",
 	"TIDY5E.SkillsNotProficient" : "非熟练项",
 	"TIDY5E.TraitsEmpty" : "空白特性",
+	
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.AbbrArmorClass" : "AC",
 

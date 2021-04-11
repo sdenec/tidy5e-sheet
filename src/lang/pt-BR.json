@@ -1,4 +1,5 @@
 {
+	"TIDY5E.PlayerName": "Player Name",
 	"TIDY5E.Subclass": "Subclasse",
 	"TIDY5E.EditActorImage": "Clique Esq.: Editar Imagem",
 	"TIDY5E.ShowActorImage": "Clique Dir.: Mostrar Arte do Personagem",
@@ -49,6 +50,9 @@
 	"TIDY5E.AddFav": "Adicionar aos Favoritos",
 	"TIDY5E.isFav": "Favorito",
 	"TIDY5E.RemoveFav": "Remover dos Favoritos",
+	
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "Alternar Informação",
 	"TIDY5E.ToggleMovement": "Alternar entre exibição de deslocamento moderna e legado",

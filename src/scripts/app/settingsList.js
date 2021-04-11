@@ -255,6 +255,15 @@ export function settingsList(){
 		//
 		// GM Options
 		//
+		// Show Player Name
+		game.settings.register("tidy5e-sheet", "playerNameEnabled", {
+			name: `${game.i18n.localize("TIDY5E.Settings.PlayerName.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.PlayerName.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
 		
 		// Disable Right Click
 		game.settings.register("tidy5e-sheet", "rightClickDisabled", {
