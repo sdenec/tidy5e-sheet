@@ -221,7 +221,7 @@
 	},
 	"TIDY5E.Settings.EditTotalLock" : {
 		"name" : "Lock down sensitive fields.",
-		"hint" : "Enable to prevent acidentially changing sensible, mostly static values."
+		"hint" : "Enable to prevent accidentally changing sensible, mostly static values."
 	},
 	"TIDY5E.Settings.EditGmAlways" : {
 		"name" : "GM can always edit PC sheets.",

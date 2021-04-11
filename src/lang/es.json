@@ -32,15 +32,22 @@
 	"TIDY5E.DisableEdit": "Desactivar edición",
 	"TIDY5E.EditHint": "Alternar la visibilidad de los botones añadir/eliminar de las secciones vacías",
 
+	"TIDY5E.Equip": "Equipar Objeto",
+	"TIDY5E.Unequip": "Desequipar Objeto",
+	"TIDY5E.Attune": "Sintonizarse al Objeto",
+	"TIDY5E.Deattune": "Romper Sintonización",
+	"TIDY5E.Prepare": "Preparar Conjuro",
+	"TIDY5E.Unprepare": "Eliminar Preparación",
+
 	"TIDY5E.EmptySection": "Esta sección está vacía. Desbloquea la hoja para editarla.",
-	"TIDY5E.GmOnlyEdit": "Sólo tu DJ puede editar esta sección.",
+	"TIDY5E.GmOnlyEdit": "Solo tu DJ puede editar esta sección.",
 
 	"TIDY5E.AttunementWarning": "Aviso de sintonización: ¡No puedes sintonizar más de {número} objetos!",
 	"TIDY5E.AttunementItems": "Objetos sintonizados",
 	"TIDY5E.AttunementMax": "Máximo de sintonización",
 	
-	"TIDY5E.GridLayout": "Grid Layout",
-	"TIDY5E.ListLayout": "List Layout",
+	"TIDY5E.GridLayout": "Diseño de cuadrícula",
+	"TIDY5E.ListLayout": "Diseño de lista",
 
 	"TIDY5E.Encumbrance": "Estorbo",
 
@@ -51,7 +58,6 @@
 	"TIDY5E.RemoveFav": "Eliminar Favorito",
 
 	"TIDY5E.ToggleInfo": "Alternar información",
-	"TIDY5E.ToggleMovement": "Alternar entre la visualización de la velocidad actual y la antigua",
 
 	"TIDY5E.Show" : "mostrar/editar",
 	"TIDY5E.Hide" : "ocultar",
@@ -95,6 +101,28 @@
 	"TIDY5E.Settings.SheetMenu" : {
 		"label" : "Opciones de la hoja"
 	},
+
+	"TIDY5E.Settings.ItemCardsForAllItems": {
+		"name": "Mostrar las tarjetas de informacíon del objeto de los objetos en todos los disenõs.",
+		"hint": "Desactívalo si quieres que las tarjetas de información del objeto solo salgan en el diseño de cuadrícula."
+	},
+	"TIDY5E.Settings.ItemCardsForNpcs": {
+		"name": "Mostrar las tarjetas de información del objeto en PNJs/vehículos.",
+		"hint": "Desactívalo si no quieres que las tarjetas de información del objeto salgan en las fichas de PNJs/vehículos."
+	},
+	"TIDY5E.Settings.ItemCardsAreFloating": {
+		"name": "Las tarjetas de información del objeto flotan junto al cursor.",
+		"hint": "Actívalo para separar las tarjetas de información del objeto de la ficha y hacer que floten al lado del cursor. Es mejor utilizarlo con retardo. Útil cuando la ficha está en una nueva pestaña."
+	},
+	"TIDY5E.Settings.ItemCardsDelay": {
+		"name": "Retardo en mostrar las tarjetas de información del objeto",
+		"hint": "La Tarjeta de Información se mostrará al mantener el ratón sobre un objeto durante el valor en milisegundos (0 = no hay retardo, 300 es el valor por defecto)"
+	},
+	"TIDY5E.Settings.ItemCardsFixKey": {
+		"name": "Tecla a mantener para la interacción con la Tarjeta de Información.",
+		"hint": "Introduce una tecla (p. ej: x) para interactuar con la tarjeta de información del objeto. Puede tratarse de cualquier tecla excepto las teclas de función (ctrl, alt, etc.)"
+	},
+
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e color del tema",
 		"hint" : "Utiliza el tema por defecto de color claro u oscuro de Tidy5e.",
@@ -102,12 +130,12 @@
 		"dark": "Alternativo (oscuro)"
 	},
 	"TIDY5E.Settings.ClassicControls" : {
-		"name" : "Utilizar los controles clásicos de los objetos en el listado",
+		"name" : "Utilizar los controles clásicos de los objetos en el diseño de lista",
 		"hint" : "Muestra siempre los botones de los objetos y desactiva el menú del botón derecho. Sólo se aplica para el inventario de objetos/conjuros del PJ en el listado."
 	},
 	"TIDY5E.Settings.RollButtonsToCard" : {
-		"name" : "Mostrar el botón de elementos de midiQol/Better Rolls en el menú contextual",
-		"hint" : "Por defecto, los botones de tirada aparecen en la descripción del elemento. Actívalo para moverlos al menú contextual. Útil para la rejilla o si se utilizan con frecuencia."
+		"name" : "Mostrar el botón de elementos de midiQol en la Tarjeta de Información del Objeto",
+		"hint" : "Por defecto, los botones de tirada aparecen en la descripción del objeto. Actívalo para moverlos a la tarjeta de información del objeto. Funciona en todos los modos de diseño."
 	},
 	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "Mostrar etiquetas de los rasgos",
@@ -155,14 +183,18 @@
 
 	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "Mostrar siempre los rasgos",
-		"hint" : "Por defecto, los rasgos vacíos se ocultan mediante un botón de activación. Actívalo para no ocultarlo nunca."
+		"hint" : "Por defecto, los rasgos vacíos se ocultan mediante un botón de activación. Actívalo para no ocultarlos nunca."
 	},
 	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "Mostrar siempre las habilidades",
 		"hint" : "Por defecto, las habilidades no competentes se ocultan mediante un botón de activación. Actívalo para no ocultarlo nunca."
 	},
 
-	
+
+	"TIDY5E.Settings.ActiveEffectsMarker": {
+		"name": "Mostrar un marcador de Efectos Activos en los objetos.",
+		"hint": "Actívalo si quieres ver si los objetos tienen efectos activos en ellos (solo en diseño de lista)."
+	},
 	"TIDY5E.Settings.RightClick" : {
 		"name" : "Desactivar el menú contextual del botón derecho",
 		"hint" : "En caso de conflictos de módulos o de preferencias, puedes desactivar el menú contextual del botón derecho. Los elementos mostrarán un icono de menú en su lugar."
@@ -181,8 +213,12 @@
 		"default": "ninguno"
 	},
 	"TIDY5E.Settings.HpOverlayBorder" : {
-		"name" : "Offset hit point overlay.",
-		"hint" : "Enter offset value to compensate for portrait frames and prevent tinting."
+		"name" : "Desplazar la superposición de puntos de golpe.",
+		"hint" : "Introduce un valor de desplazamiento para compensar los bordes del retrato y evitar el tintado."
+	},
+	"TIDY5E.Settings.EditTotalLock": {
+		"name": "Bloquar los campos sensibles.",
+		"hint": "Actívalo para evitar cambiar accidentalmente valores sensibles, en su mayoría estáticos."
 	},
 	"TIDY5E.Settings.EditGmAlways" : {
 		"name" : "El DJ siempre puede editar las hojas de PJ.",
@@ -202,7 +238,20 @@
 	},
 	"TIDY5E.Settings.ExhaustionEffects" : {
 		"name" : "Efectos de cansancio (utiliza los efectos activos).",
-		"hint" : "Aplica los efectos activos correspondientes al establecer los niveles de cansancio - ¡requiere midiQol para las tiradas con desventaja!"
+		"hint" : "Aplica los efectos activos correspondientes al establecer los niveles de cansancio (requiere midiQol para las tiradas con desventaja)",
+		"default": "Sin efectos de cansancio automáticos",
+		"tidy5e": "Tidy5e - Aplica los efectos integrados (utiliza Efectos Activos)",
+		"custom": "Custom - Utiliza tus propios efectos (requiere CUB)"
+	},
+	"TIDY5E.Settings.CustomExhaustionIcon": {
+		"name": "Icono de efecto de cansancio personalizado.",
+		"hint": "Establece tu propio icono de efecto de cansancio proporcionando una URL a la imagen. Solo disponible si el Efecto de Cansancio está configurado como \"tidy 5e\" (p. ej.: modules/tidy5e-sheet/images/exhaustion.svg)."
+	},
+	"TIDY5E.Settings.CustomExhaustionEffect": {
+		"name": "Nombre de efecto de cansandcio de CUB personalizado.",
+		"hint": "Establece el nombre de tu Efecto de Cansancio personalizado - debe ser igual que el definido en CUB pero SIN el número de grado. (p. ej. \"Exhaustion\")",
+		"tiers": "Número de grados de cansancio de CUB personalizados. Por defecto = 5",
+		"warning": "No encuentro un token de actor al que aplicar el efecto de cansancio!"
 	},
 	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "Desactivar el medidor de cansancio.",
@@ -211,6 +260,10 @@
 	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "Descanso para los PNJs.",
 		"hint" : "Actívalo para mostrar los iconos/botones de descanso en las hojas de los PNJs."
+	},
+	"TIDY5E.Settings.RestingForNpcsChat": {
+		"name": "Oculta la tarjeta en el chat del descanso de los PNJs.",
+		"hint": "Actívalo para ocultar la Tarjeta de Chat del descanso de los PNJs (se aplica al DJ y a los jugadores)."
 	},
 	"TIDY5E.Settings.LinkMarker" : {
 		"name" : "Indicar los PNJs vinculados/desvinculados.",
