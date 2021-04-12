@@ -1,6 +1,16 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
-	"TIDY5E.EditActorImage": "Modifier l'image",
+	"TIDY5E.PlayerName": "Nom du joueur",
+	"TIDY5E.Age" : "Age",
+	"TIDY5E.Weight" : "Poids",
+	"TIDY5E.Height" : "Taille",
+	"TIDY5E.Eyes" : "Yeux",
+	"TIDY5E.Skin" : "Peau",
+	"TIDY5E.Hair" : "Cheveux",
+	"TIDY5E.Subclass": "Sous-classe",
+	"TIDY5E.EditActorImage": "Clic gauche : éditer l'image",
+	"TIDY5E.ShowActorImage": "Clic droit : voir l'image du personnage",
+	"TIDY5E.ShowPortraitArt": "Voir le portrait",
+	"TIDY5E.ShowTokenArt": "Voir le token",
 
 	"TIDY5E.Exhaustion0": "Pas d'effets négatifs",
 	"TIDY5E.Exhaustion1": "Désavantage aux tests de caractéristiques",
@@ -32,19 +42,19 @@
 	"TIDY5E.BioBackground": "Background/Biographie",
 	"TIDY5E.TogglePersonalityInfo": "Informations de personnalité",
 
-	"TIDY5E.JournalPoi": "Personnages Importants",
-	"TIDY5E.JournalLoi": "Lieux Importants",
+	"TIDY5E.JournalPoi": "Personnages importants",
+	"TIDY5E.JournalLoi": "Lieux importants",
 	"TIDY5E.JournalQuests": "Quêtes",
 	"TIDY5E.JournalMisc": "Divers",
-	"TIDY5E.JournalEntries": "Journal de Bord",
+	"TIDY5E.JournalEntries": "Journal de bord",
 
 	"TIDY5E.DeleteDisabled": "Ne pas afficher Suppression",
 	"TIDY5E.DeleteEnabled": "Afficher Suppression",
 	"TIDY5E.DeleteDisabledHint": "Montrer le bouton Suppression",
 	"TIDY5E.DeleteEnabledHint": "Cacher le bouton Suppression",
 
-	"TIDY5E.ConvertCurrencyHint": "convertir la monnaie en devise la plus haute",
-	"TIDY5E.ConvertCurrencyButton": "convertir",
+	"TIDY5E.ConvertCurrencyHint": "Convertir la monnaie en devise la plus haute",
+	"TIDY5E.ConvertCurrencyButton": "Convertir",
 	
 	"TIDY5E.CurrencyAbbrCP" : "PC",
 	"TIDY5E.CurrencyAbbrSP" : "PA",
@@ -52,13 +62,13 @@
 	"TIDY5E.CurrencyAbbrEP" : "PE",
 	"TIDY5E.CurrencyAbbrPP" : "PP",
 	
-	"TIDY5E.SearchItem" : "rechercher objet",
-	"TIDY5E.SearchSpell" : "rechercher sort",
-	"TIDY5E.SearchClear" : "annuler la recherche",
-	"TIDY5E.SearchHint" : "Entrer ce que vous recherchez",
+	"TIDY5E.SearchItem" : "Rechercher objet",
+	"TIDY5E.SearchSpell" : "Rechercher sort",
+	"TIDY5E.SearchClear" : "Annuler la recherche",
+	"TIDY5E.SearchHint" : "Entrer votre recherche",
 	
-	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
+	"TIDY5E.ItemCardsKeyHint" : "Maintenir la touche pour interagir avec la carte",
+	"TIDY5E.ItemCardsMouseHint" : "Clic central de la souris pour voir / éditer.",
 
 	"TIDY5E.Encumbrance": "Encombrement",
 
@@ -69,11 +79,11 @@
 
 	"TIDY5E.ToggleInfo": "Afficher les informations",
 
-	"TIDY5E.Show" : "montrer/éditer",
-	"TIDY5E.Hide" : "cacher",
-	"TIDY5E.Edit": "Editer",
-	"TIDY5E.SkillsNotProficient" : "pas compétent",
-	"TIDY5E.TraitsEmpty" : "trait vide",
+	"TIDY5E.Show" : "Voir / éditer",
+	"TIDY5E.Hide" : "Cacher",
+	"TIDY5E.Edit": "Éditer",
+	"TIDY5E.SkillsNotProficient" : "Non compétent",
+	"TIDY5E.TraitsEmpty" : "Trait vide",
 
 	"TIDY5E.AbbrArmorClass" : "CA",
 
@@ -101,95 +111,95 @@
 	"TIDY5E.AttunementMax": "Harmonisation maximum",
 
 
-	"TIDY5E.Settings.PcLabel" : "PC Sheets: ",
-	"TIDY5E.Settings.NpcLabel" : "NPC Sheets: ",
+	"TIDY5E.Settings.PcLabel" : "Feuiles PJ : ",
+	"TIDY5E.Settings.NpcLabel" : "Feuilles PNJ : ",
 
 	"TIDY5E.Settings.ExpandedSheet" : {
-		"name" : "Expanded View for the Limited Sheet.",
-		"hint" : "The expanded view for the limited sheet displays the entire character sheet (minus the Private Notes tab) to players with Limited permission for that actor."
+		"name" : "Vue élargie pour la feuille limitée.",
+		"hint" : "La vue étendue de la feuille limitée affiche l'intégralité de la feuille de personnage (sans l'onglet Notes Privées) pour les joueurs ayant l'autorisation limitée pour cet acteur."
 	},
 	"TIDY5E.Settings.UseDarkMode" : {
-		"name" : "Use alternate dark mode.",
-		"hint" : "Checking this option will enable an alternate Dark Mode version of the Tidy5e Sheet."
+		"name" : "Utilisez le mode sombre alternatif.",
+		"hint" : "En cochant cette option, vous activerez le mode sombre pour Tidy5e Sheet."
 	},
 	"TIDY5E.Settings.PrimaryAccentColor" : {
-		"name" : "Primary accent color.",
-		"hint" : "Overwrite the default primary accent color (default: #ff6400/darkmode: #48BB78) used to highlight e. g. buttons, input field borders or hover states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "Couleur d'accentuation primaire.",
+		"hint" : "Écrase la couleur d'accentuation primaire par défaut (#ff6400 / mode sombre : #48BB78) utilisée pour mettre en évidence, par exemple, les boutons, les bordures des champs de saisie ou les éléments survolés. Utilisez des valeur CSS valides (comme red / #ff0000 / rgba(255,0,0) / rgba(255,0,0,1) etc.)."
 	},
 	"TIDY5E.Settings.SecondaryAccentColor" : {
-		"name" : "Secondary accent color.",
-		"hint" : "Overwrite the default secondary accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) used to highlight preparation states. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "Couleur d'accentuation secondaire.",
+		"hint" : "Écrase la couleur d'accentuation secondaire par défaut (rgba(210,0,255,.1) / mode sombre : rgba(0,150,150,.325)) utilisé pour mettre en évidence les états préparés "
 	},
 	"TIDY5E.Settings.AlwaysPreparedAccentColor" : {
-		"name" : "Accent Color for Always Prepared Spells.",
-		"hint" : "Overwrite the default accent color (default: rgba(210,0,255,.1)/darkmode: rgba(0,150,150,.325)) for Always Prepared Spells. Use any valid css value like red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)."
+		"name" : "Couleur d'accentuation pour les sorts toujours prêts.",
+		"hint" : "Écrase la couleur d'accentuation par défaut (rgba(210,0,255,.1) / mode sombre : rgba(0,150,150,.325)) utilisée pour mettre en évidence les sorts toujours prêts."
 	},
 	"TIDY5E.Settings.PortraitStyle" : {
-		"name" : "Sheets use round portraits.",
-		"hint" : "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame."
+		"name" : "Utiliser des portraits ronds.",
+		"hint" : "Cocher ceci pour utiliser des portraits ronds. Cela adaptera la barre de vie et les boutons présents sur le portrait. Visuellement optimum pour les portraits carrés sans bordure."
 	},
 	"TIDY5E.Settings.HpOverlayBorder" : {
-		"name" : "Border width for the hit point overlay.",
-		"hint" : "If your portrait has a frame you can adjust the Hit Point overlay to compensate the frame width. It might look nicer if the overlay doesn't tint the border."
+		"name" : "Largeur de la bordure de la barre de vie.",
+		"hint" : "Si votre portrait possède une bordure, vous pouvez ajuster la largeur de la barre de vie pour compenser celle du cadre."
 	},
 	"TIDY5E.Settings.HpOverlay" : {
-		"name" : "Disable the hit point overlay.",
-		"hint" : "If you don't like the video game style Hit Point overlay on your character's portrait you can disable it."
+		"name" : "Supprimer la barre de vie",
+		"hint" : "Si vous n'aimez pas la superposition de la barre de vie sur le portrait de votre personnage, vous pouvez la désactiver."
 	},
 	"TIDY5E.Settings.ClassList" : {
-		"name" : "Hide character class list.",
-		"hint" : "Checking this option will hide the character's class list next to the level label. The sheet can handle 3 classes well, more than that will work but things get shifty ;)"
+		"name" : "Masquer la liste des classes du personnage",
+		"hint" : "En cochant cette option, la liste des classes du personnage sera cachée à côté de l'affichage du niveau. La feuille peut gérer 3 classes : plus cela devient compliqué ;)"
 	},
 	"TIDY5E.Settings.InspirationAnimation" : {
-		"name" : "No inspiration indicator animation.",
-		"hint" : "If it's too distracting, you can disable the subtle animation of the glowing inspiration indicator."
+		"name" : "Pas d'animation de l'indicateur d'inspiration.",
+		"hint" : "Si elle est trop gênante, vous pouvez désactiver l'animation lumineuse de l'indicateur d'inspiration."
 	},
 	"TIDY5E.Settings.InspirationDisabled" : {
-		"name" : "Disable Inspiration Tracker.",
-		"hint" : "If your campaign doesn't use inspiration you can disable the tracker completely."
+		"name" : "Désactiver l'indicateur d'inspiration.",
+		"hint" : "Si votre campagne n'utilise pas l'inspiration, vous pouvez désactiver complètement l'indicateur."
 	},
 	"TIDY5E.Settings.ExhaustionDisabled" : {
-		"name" : "Disable Exhaustion Tracker.",
-		"hint" : "If your campaign doesn't use exhaustion you can disable the tracker completely."
+		"name" : "Désactiver l'indicateur d'épuisement.",
+		"hint" : "Si votre campagne n'utilise pas l'épuisement, vous pouvez désactiver complètement l'indicateur."
 	},
 	"TIDY5E.Settings.HideIfZero" : {
-		"name" : "Hide Exhaustion and Inspiration when not available (0).",
-		"hint" : "Check this option if you want to hide Exhaustion if its level is 0 and Inspiration if you have none. Appears on hover."
+		"name" : "Cacher l'épuisement et l'inspiration lorsqu'ils ne sont pas affectés (0).",
+		"hint" : "Cochez cette option si vous voulez masquer l'épuisment si son niveau est de 0 et l'inspiration si vous n'en avez pas. Apparaît au survol."
 	},
 	"TIDY5E.Settings.ExhaustionOnHover" : {
-		"name" : "Show exhaustion tracker only on hover.",
-		"hint" : "If you check this option the exhaustion tracker will only be visible when you hover over the portrait."
+		"name" : "Afficher l'indicateur d'épuisement uniquement au survol.",
+		"hint" : "Si vous cochez cette option, l'indicateur d'épuisement ne sera visible que lorsque vous survolerez le portrait avec la souris."
 	},
 	"TIDY5E.Settings.InspirationOnHover" : {
-		"name" : "Show inspiration indicator only on hover.",
-		"hint" : "If you check this option the inspiration indicator will only be visible when you hover over the portrait."
+		"name" : "Afficher l'indicateur d'inspiration uniquement au survol.",
+		"hint" : "Si vous cochez cette option, l'indicateur d'inspiration ne sera visible que lorsque vous survolerez le portrait avec la souris."
 	},
 	"TIDY5E.Settings.RestOnHover" : {
-		"name" : "Show rest button on hover.",
-		"hint" : "If you check this option the rest button will only be visible when you hover over the portrait."
+		"name" : "Afficher le bouton de repos uniquement au survol.",
+		"hint" : "Si vous cochez cette option, le bouton de repos ne sera visible que lorsque vous survolerez le portrait avec la souris."
 	},
 	"TIDY5E.Settings.TraitsMovedBelowResource" : {
-		"name" : "Move traits below resources.",
-		"hint" : "Check this if you want to show the traits below the resources."
+		"name" : "Déplacez les traits sous les ressources.",
+		"hint" : "Cochez cette case si vous souhaitez afficher les traits sous les ressources."
 	},
 	"TIDY5E.Settings.TraitsTogglePc" : {
-		"name" : "Show Toggle button for character traits.",
-		"hint" : "Check this if you want to show a button to toggle empty traits."
+		"name" : "Afficher un bouton de bascule de l'affichage des traits.",
+		"hint" : "Cochez cette case si vous souhaitez afficher un bouton de bascule de l'affichage des traits."
 	},
 	"TIDY5E.Settings.TraitsAlwaysShown" : {
-		"name" : "Always show traits.",
-		"hint" : "When you don't want to hide and toggle empty NPC traits tick this box."
+		"name" : "Toujours montrer les traits.",
+		"hint" : "Cochez cette case si vous ne souhaitez pas masquer les traits vides des PNJs."
 	},
 	"TIDY5E.Settings.SkillsAlwaysShown" : {
-		"name" : "Always show skills.",
-		"hint" : "When you don't want to hide and toggle not proficient NPC skills tick this box."
+		"name" : "Toujours montrer les caractéristiques.",
+		"hint" : "Cochez cette case si vous ne souhaitez pas masquer les caractéristiques des PNJs pour lesquelles ils ne sont pas compétents."
 	},
 	"TIDY5E.Settings.MarkLinked" : {
-		"name" : "Highlight Sheet when linked to Actor.",
-		"hint" : "When you find yourself editing the wrong NPC Sheet you can have linked sheets visually highlighted."
+		"name" : "Mettre en évidence la feuille lorsqu'elle est liée à l'acteur.",
+		"hint" : "Lorsque vous vous retrouvez à éditer la mauvaise feuille de PNJ, vous pouvez faire en sorte que les feuilles liées soient visuellement mises en évidence."
 	},
 	"TIDY5E.Settings.MarkUnlinked" : {
-		"name" : "Highlight sheet when not linked to actor.",
-		"hint" : "When you find yourself editing the wrong NPC Sheet you can have unlinked sheets visually highlighted."
+		"name" : "Mise en évidence de la feuille lorsqu'elle n'est pas liée à l'acteur.",
+		"hint" : "Lorsque vous vous retrouvez à éditer la mauvaise feuille de PNJ, vous pouvez faire en sorte que les feuilles non liées soient visuellement mises en évidence."
 	}
 }
