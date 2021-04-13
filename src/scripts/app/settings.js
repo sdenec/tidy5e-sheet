@@ -20,7 +20,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			...super.defaultOptions,
 			template: "modules/tidy5e-sheet/templates/settings.html",
 			height: 500,
-			title: "Tidy5e Sheet Settings",
+			title: game.i18n.localize("TIDY5E.Settings.SheetMenu.title"),
 			width: 600,
 			classes: ["tidy5e", "settings"],
 			tabs: [ 

@@ -141,7 +141,7 @@
 					<input data-input="{{actor._id}}-name" name="name" type="hidden" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
           <h1 class="char-name" {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-name" data-placeholder="{{ localize 'DND5E.Name' }}" data-maxlength="40">{{actor.name}}</h1>
 					<div class="level-information {{#if disableExperience}}noxp{{/if}}">
-						<h2 class="level">LVL {{data.details.level}}</h2>
+						<h2 class="level">{{ localize 'DND5E.AbbreviationLevel' }} {{data.details.level}}</h2>
 						{{#unless disableExperience}}
 						<div class="xp-tracker">
 							<div class="experience">
@@ -372,12 +372,12 @@
 				<div class="top-notes note-entries">
 					<article>
 						<ul class="character-details">
-							<li><span>Age:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-age" data-maxlength="5">{{data.details.age}}</span><input data-input="{{actor._id}}-age" type="hidden" name="data.details.age" value="{{data.details.age}}"></li>
-							<li><span>Height:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-height" data-maxlength="10">{{data.details.height}}</span><input data-input="{{actor._id}}-height" type="hidden" name="data.details.height" value="{{data.details.height}}"></li>
-							<li><span>Weight:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-weight" data-maxlength="10">{{data.details.weight}}</span><input data-input="{{actor._id}}-weight" type="hidden" name="data.details.weight" value="{{data.details.weight}}"></li>
-							<li><span>Eyes:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-eyes" data-maxlength="20">{{data.details.eyes}}</span><input data-input="{{actor._id}}-eyes" type="hidden" name="data.details.eyes" value="{{data.details.eyes}}"></li>
-							<li><span>Skin:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-skin" data-maxlength="20">{{data.details.skin}}</span><input data-input="{{actor._id}}-skin" type="hidden" name="data.details.skin" value="{{data.details.skin}}"></li>
-							<li><span>Hair:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-hair" data-maxlength="20">{{data.details.hair}}</span><input data-input="{{actor._id}}-hair" type="hidden" name="data.details.hair" value="{{data.details.hair}}"></li>
+							<li><span>{{ localize "TIDY5E.Age" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-age" data-maxlength="5">{{data.details.age}}</span><input data-input="{{actor._id}}-age" type="hidden" name="data.details.age" value="{{data.details.age}}"></li>
+							<li><span>{{ localize "TIDY5E.Height" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-height" data-maxlength="10">{{data.details.height}}</span><input data-input="{{actor._id}}-height" type="hidden" name="data.details.height" value="{{data.details.height}}"></li>
+							<li><span>{{ localize "TIDY5E.Weight" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-weight" data-maxlength="10">{{data.details.weight}}</span><input data-input="{{actor._id}}-weight" type="hidden" name="data.details.weight" value="{{data.details.weight}}"></li>
+							<li><span>{{ localize "TIDY5E.Eyes" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-eyes" data-maxlength="20">{{data.details.eyes}}</span><input data-input="{{actor._id}}-eyes" type="hidden" name="data.details.eyes" value="{{data.details.eyes}}"></li>
+							<li><span>{{ localize "TIDY5E.Skin" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-skin" data-maxlength="20">{{data.details.skin}}</span><input data-input="{{actor._id}}-skin" type="hidden" name="data.details.skin" value="{{data.details.skin}}"></li>
+							<li><span>{{ localize "TIDY5E.Hair" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-hair" data-maxlength="20">{{data.details.hair}}</span><input data-input="{{actor._id}}-hair" type="hidden" name="data.details.hair" value="{{data.details.hair}}"></li>
 						</ul>
 					</article>
 				</div>
