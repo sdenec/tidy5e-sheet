@@ -7,14 +7,19 @@ Additional Translations generously provided by:
 - Japanese: @BrotherSharp, @Asami
 - Italian: @Simone [UTC +2]
 - Korean: @KLO
-- Brazilian Portuguese: @rinnocenti, brnmuller
-- French: @temvaryen
+- Brazilian Portuguese: @rinnocenti, @brnmuller
+- French: @temvaryen, @Aymeeeric
 - Chinese: @EternalRider
-- Czech: @vitpetricak
+- Czech: @vitpetricak, @KarelZavicak
 
 Thank you very much!
 
 ## Version History ##
+
+### Version 0.4.27 ###
+
+- updated french translation
+- updated Czech Translation and some minor translations fixes. Big thanks @KarelZavicak
 
 ### Version 0.4.26 ###
 
