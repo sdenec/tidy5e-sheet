@@ -1,10 +1,10 @@
 <form onsubmit="event.preventDefault();" class="{{classes}}" autocomplete="off">
 	<nav class="sheet-tabs tabs">
-		<a class='item' data-tab='pc-sheet'>Players</a>
-		<a class='item' data-tab='npc-sheet'>NPCs/Vehicles</a>
-		<a class='item gm-only' data-tab='gm-options'>GM Options</a>
-		<a class='item gm-only' data-tab='modules'>Modules</a>
-		<a class='item' data-tab='info'>Info</a>
+		<a class='item' data-tab='pc-sheet'>{{localize 'TIDY5E.Settings.TabPlayers.tabLabel'}}</a>
+		<a class='item' data-tab='npc-sheet'>{{localize 'TIDY5E.Settings.TabNPCsVehicles.tabLabel'}}</a>
+		<a class='item gm-only' data-tab='gm-options'>{{localize 'TIDY5E.Settings.TabGM.tabLabel'}}</a>
+		<a class='item gm-only' data-tab='modules'>{{localize 'TIDY5E.Settings.TabModules.tabLabel'}}</a>
+		<a class='item' data-tab='info'>{{localize 'TIDY5E.Settings.TabInfo.tabLabel'}}</a>
 	</nav>	
 
 
@@ -12,7 +12,7 @@
   
 
   <section class='tab' data-tab='pc-sheet'>
-    <h2>Player Character Sheets</h2>
+    <h2>{{localize 'TIDY5E.Settings.TabPlayers.header'}}</h2>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='classListDisabled' id='classListDisabled' {{checked settings.classListDisabled.value}}>
       <div class="description">
@@ -83,9 +83,9 @@
   
 
   <section class='tab' data-tab='npc-sheet'>
-    <h2>NPC/Vehicle Sheets</h2>
+    <h2>{{localize 'TIDY5E.Settings.TabNPCsVehicles.header'}}</h2>
 
-    <h3>NPCs</h3>
+    <h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelNPCs'}}</h3>
     <article class="setting gm-only">
       <input type="checkbox" data-dtype='boolean' name='restingForNpcsEnabled' id='restingForNpcsEnabled' {{checked settings.restingForNpcsEnabled.value}}>
       <div class="description">
@@ -153,7 +153,7 @@
       </div>
     </article>
 
-    <h3>Vehicles</h3>
+    <h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelVehicles'}}</h3>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='hpBarDisabledVehicle' id='hpBarDisabledVehicle' {{checked settings.hpBarDisabledVehicle.value}}>
       <div class="description">
@@ -175,7 +175,7 @@
 
   
   <section class='tab gm-only' data-tab='gm-options'>
-    <h2>GM Sheet Options</h2>
+    <h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
     
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
@@ -346,11 +346,11 @@
   {{!-- MODULE OPTIONS --}}
 
   <section class='tab gm-only' data-tab='modules'>
-    <h2>Module Options</h2>
+    <h2>{{localize 'TIDY5E.Settings.TabModules.header'}}</h2>
     
-    <h3>Actor Actions/Favorites</h3>
+    <h3>{{localize 'TIDY5E.Settings.TabModules.labelActionsFavorites'}}</h3>
 
-    <h3>Midi Qol</h3>
+    <h3>{{localize 'TIDY5E.Settings.TabModules.labelMidiQoL'}}</h3>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='contextRollButtons' id='contextRollButtons' {{checked settings.contextRollButtons.value}}>
       <div class="description">
@@ -370,12 +370,12 @@
   {{!-- INFO --}}
 
   <section class='tab' data-tab='info'>
-    <h2>Info</h2>
+    <h2>{{localize 'TIDY5E.Settings.TabInfo.header'}}</h2>
   </section>
   
   <footer class="sheet-footer flexrow">
     <button type="submit" name="submit">
-      <i class="fas fa-save"></i>Save
+      <i class="fas fa-save"></i>{{localize 'Save Changes'}}
     </button>
   </footer>
 </form>
