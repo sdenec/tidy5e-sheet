@@ -111,9 +111,33 @@
 	"TIDY5E.Settings.VehicleLabel" : "Vehicles",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "Sheet Settings"
+		"label" : "Sheet Settings",
+		"title" : "Tidy5e Sheet Settings"
 	},
-
+	"TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "Players",
+		"header" : "Player Character Sheets"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "NPCs/Vehicles",
+		"header" : "NPC/Vehicle Sheets",
+		"labelNPCs" : "NPCs",
+		"labelVehicles" : "Vehicles"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "GM Options",
+		"header" : "GM Sheet Options"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "Modules",
+		"header" : "Module Options",
+		"labelActionsFavorites" : "Actor Actions/Favorites",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "Info",
+		"header" : "Info"
+	},
 	"TIDY5E.Settings.ItemCardsForAllItems" : {
 		"name" : "Show item info cards in all layouts.",
 		"hint" : "Disable if you only want the slide out item info cards in grid layout."
