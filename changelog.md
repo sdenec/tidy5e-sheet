@@ -20,6 +20,7 @@ Thank you very much!
 
 - updated french translation
 - updated Czech Translation and some minor translations fixes. Big thanks @KarelZavicak
+- bug fix for midiQol buttons on NPC item cards
 
 ### Version 0.4.26 ###
 
