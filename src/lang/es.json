@@ -1,5 +1,11 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
+	"TIDY5E.PlayerName": "Nombre del jugador",
+	"TIDY5E.Age" : "Edad",
+	"TIDY5E.Weight" : "Peso",
+	"TIDY5E.Height" : "Altura",
+	"TIDY5E.Eyes" : "Ojos",
+	"TIDY5E.Skin" : "Piel",
+	"TIDY5E.Hair" : "Pelo",
 	"TIDY5E.Subclass": "Subclase",
 	"TIDY5E.EditActorImage": "click izquierdo: editar imagen",
 	"TIDY5E.ShowActorImage": "click derecho: mostrar ilustración del pj",
@@ -58,9 +64,6 @@
 	"TIDY5E.isFav": "Favorito",
 	"TIDY5E.RemoveFav": "Eliminar Favorito",
 	
-	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
-
 	"TIDY5E.ToggleInfo": "Alternar información",
 
 	"TIDY5E.Show" : "mostrar/editar",
@@ -80,8 +83,12 @@
 	
 	"TIDY5E.SearchItem" : "buscar objeto",
 	"TIDY5E.SearchSpell" : "buscar conjuro",
+	"TIDY5E.SearchFeat" : "buscar rasgo",
 	"TIDY5E.SearchClear" : "limpiar búsqueda",
 	"TIDY5E.SearchHint" : "Comienza a escribir lo que estás buscando.",
+
+	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.AbbrMod" : "Mod",
 	"TIDY5E.AbbrSavingThrow" : "Salvación",
@@ -97,15 +104,40 @@
 	"TIDY5E.ItemDetailsHeadline" : "Texto de reglas/ambientación",
 
 	"TIDY5E.Settings.GlobalLabel" : "Global",
+	"TIDY5E.Settings.DebugLabel" : "Debug",
 	"TIDY5E.Settings.UserLabel" : "Usuario",
 	"TIDY5E.Settings.PcLabel" : "PJs",
 	"TIDY5E.Settings.NpcLabel" : "PNJs",
 	"TIDY5E.Settings.VehicleLabel" : "Vehículos",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "Opciones de la hoja"
+		"label" : "Opciones de la hoja",
+		"title" : "Opciones de la hoja de Tidy5e"
 	},
-
+	"TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "Jugadores",
+		"header" : "Hojas de los Personajes jugadores"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "PNJs/Vehículos",
+		"header" : "Hohas de PNJ/Vehículo",
+		"labelNPCs" : "PNJs",
+		"labelVehicles" : "Vehículos"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "Opciones del GM",
+		"header" : "Opciones de la hoha de GM"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "Módulos",
+		"header" : "opciones de los módulos",
+		"labelActionsFavorites" : "Acciones/Favoritos del Actor",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "Info",
+		"header" : "Info"
+	},
 	"TIDY5E.Settings.ItemCardsForAllItems": {
 		"name": "Mostrar las tarjetas de informacíon del objeto de los objetos en todos los disenõs.",
 		"hint": "Desactívalo si quieres que las tarjetas de información del objeto solo salgan en el diseño de cuadrícula."
@@ -127,12 +159,14 @@
 		"hint": "Introduce una tecla (p. ej: x) para interactuar con la tarjeta de información del objeto. Puede tratarse de cualquier tecla excepto las teclas de función (ctrl, alt, etc.)"
 	},
 
+
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e color del tema",
 		"hint" : "Utiliza el tema por defecto de color claro u oscuro de Tidy5e.",
 		"default": "Por defecto (claro)",
 		"dark": "Alternativo (oscuro)"
 	},
+
 	"TIDY5E.Settings.ClassicControls" : {
 		"name" : "Utilizar los controles clásicos de los objetos en el diseño de lista",
 		"hint" : "Muestra siempre los botones de los objetos y desactiva el menú del botón derecho. Sólo se aplica para el inventario de objetos/conjuros del PJ en el listado."
@@ -147,6 +181,10 @@
 	},
 
 
+	"TIDY5E.Settings.PlayerName" : {
+		"name" : "Mostrar nombre del Jugador.",
+		"hint" : "Permite mostrar un campo para el nombre del jugador debajo del nombre del personaje."
+	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "Ocultar la clase del personaje",
 		"hint" : "Actívalo para ocultar la clase del personaje bajo su nombre."
@@ -241,10 +279,10 @@
 		"hint" : "Si tu campaña no utiliza la inspiración, puedes desactivar el indicador por completo."
 	},
 	"TIDY5E.Settings.ExhaustionEffects" : {
-		"name" : "Efectos de cansancio (utiliza los efectos activos).",
+		"name" : "Efectos de cansancio automáticos.",
 		"hint" : "Aplica los efectos activos correspondientes al establecer los niveles de cansancio (requiere midiQol para las tiradas con desventaja)",
 		"default": "Sin efectos de cansancio automáticos",
-		"tidy5e": "Tidy5e - Aplica los efectos integrados (utiliza Efectos Activos)",
+		"tidy5e": "Tidy5e - Aplica los efectos integrados (utiliza Active Effects)",
 		"custom": "Custom - Utiliza tus propios efectos (requiere CUB)"
 	},
 	"TIDY5E.Settings.CustomExhaustionIcon": {
