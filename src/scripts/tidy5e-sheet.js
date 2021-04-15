@@ -124,7 +124,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 					let id = actor._id;
 					let tokens = canvas.tokens.placeables;
 					let index = tokens.findIndex(x => x.data.actorId === id);
-					console.log(index);
+					// console.log(index);
 					if(index == -1){
 						ui.notifications.warn(`${game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.warning")}`);
 						return;
@@ -136,7 +136,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 					for(let i = 1; i<=levels; i++){
 						let tier = `${effectName} ${i}`;
 						if (game.cub.hasCondition(tier)){
-							console.log(tier)
+							// console.log(tier)
 							await game.cub.removeCondition(tier)
 						}
 					}
@@ -549,20 +549,16 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	editProtection(app, html, data);
 	addClassList(app, html, data);
 	toggleTraitsList(app, html, data)
-	// checkDeathSaveStatus(app, html, data);
+	checkDeathSaveStatus(app, html, data);
 	abbreviateCurrency(app,html,data);
 	spellAttackMod(app,html,data);
 	addFavorites(app, html, data, position);
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
 	markActiveEffects(app,html,data);
-	console.log(data.actor);
+	// console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });
-
-// Hooks.on("updateOwnedItem", (app, html, data) => {
-// 	console.log(data);
-// });
 
 Hooks.once("ready", (app, html, data) => {
 	// console.log("Tidy5e Sheet is ready!");

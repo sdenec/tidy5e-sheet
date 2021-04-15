@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.28 ###
+
+- fix for death saves not resetting when healing through token
+
 ### Version 0.4.27 ###
 
 - updated french translation
