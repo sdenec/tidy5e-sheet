@@ -234,6 +234,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  scrollbar-width: thin;
 }
 
 .tidy5e.sheet.actor #item-info-container {
@@ -1847,6 +1848,8 @@
 .tidy5e.sheet.actor .window-content .tab {
   height: 100%;
   flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #782e22 #0000;
 }
 
 .tidy5e.sheet.actor .window-content .tab.active {
