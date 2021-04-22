@@ -1,6 +1,8 @@
 .window-content .tab {
 	height: 100%;
 	flex-direction: column;
+	scrollbar-width: thin;
+  	scrollbar-color: #782e22 #0000;
 
 	&.active {
 	  display: flex;
