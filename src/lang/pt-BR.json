@@ -1,5 +1,12 @@
 {
 	"TIDY5E.PlayerName": "Player Name",
+	"TIDY5E.Gender" : "Gender",
+	"TIDY5E.Age" : "Age",
+	"TIDY5E.Weight" : "Weight",
+	"TIDY5E.Height" : "Height",
+	"TIDY5E.Eyes" : "Eyes",
+	"TIDY5E.Skin" : "Skin",
+	"TIDY5E.Hair" : "Hair",
 	"TIDY5E.Subclass": "Subclasse",
 	"TIDY5E.EditActorImage": "Clique Esq.: Editar Imagem",
 	"TIDY5E.ShowActorImage": "Clique Dir.: Mostrar Arte do Personagem",

@@ -1,5 +1,6 @@
 {
 	"TIDY5E.PlayerName": "Nombre del jugador",
+	"TIDY5E.Gender" : "Gender",
 	"TIDY5E.Age" : "Edad",
 	"TIDY5E.Weight" : "Peso",
 	"TIDY5E.Height" : "Altura",

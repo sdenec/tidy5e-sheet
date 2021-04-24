@@ -1,4 +1,5 @@
 import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
+import ActorSheet5eNPC from "../../../systems/dnd5e/module/actor/sheets/npc.js";
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-npc-templates.js";
 
 import { tidy5eListeners } from "./app/listeners.js";
@@ -11,7 +12,7 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
  * Extends the base ActorSheet5e class.
- * @type {ActorSheet5e}
+ * @type {ActorSheet5eNPC}
  */
 
 let npcScrollPos = 0;
@@ -21,7 +22,7 @@ Handlebars.registerHelper('check', function(value, comparator) {
   return (value === comparator) ? 'No content' : value;
 });
 
-export default class Tidy5eNPC extends ActorSheet5e {
+export default class Tidy5eNPC extends ActorSheet5eNPC {
 
   /**
    * Define default rendering options for the NPC sheet
@@ -531,7 +532,7 @@ async function editProtection(app, html, data) {
         legRes = actor.data.data.resources.legres.max,
         lair = actor.data.data.resources.lair.value;
 
-    if(!lair && legAct <= 1 && legRes <= 1) {
+    if(!lair && legAct < 1 && legRes < 1) {
       html.find('.counters').addClass('hidden').hide();
     }
 

@@ -30,6 +30,7 @@
         <div class="items-header-comps"  title="{{localize 'DND5E.SpellComponents'}}"><i class="fas fa-mortar-pestle"></i></div>
         <div class="items-header-school" title="{{localize 'DND5E.SpellSchool'}}"><i class="fas fa-hat-wizard"></i></div>
         <div class="items-header-target" title="{{localize 'DND5E.SpellTarget'}}">{{localize 'DND5E.Target'}}</div>
+        <div class="items-header-range" title="{{localize 'DND5E.SpellRange'}}">{{localize 'DND5E.Range'}}</div>
         <div class="items-header-usage" title="{{localize 'DND5E.SpellUsage'}}">{{localize 'DND5E.Usage'}}</div>
       </div>
     </li>
@@ -65,11 +66,14 @@
           {{/each}}
         </div>
         <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}: {{labels.school}}"><span class="truncate">{{labels.school}}</span></div>
-        <div class="item-detail spell-target" title="{{localize 'DND5E.Range'}}: {{labels.range}}&#10;{{localize 'DND5E.Target'}}: {{labels.target}}">
+        <div class="item-detail spell-target" title="{{localize 'DND5E.Target'}}: {{labels.target}}">
           {{#if labels.target}}
           {{labels.target}}
           {{else}}{{ localize 'DND5E.None' }}
           {{/if}}
+        </div>
+        <div class="item-detail spell-range" title="{{localize 'DND5E.Range'}}: {{labels.range}}">
+          {{labels.range}}
         </div>
         <div class="item-detail spell-action" title="{{localize 'DND5E.SpellUsage'}}">{{labels.activation}}</div>
         

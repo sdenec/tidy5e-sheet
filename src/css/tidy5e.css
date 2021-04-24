@@ -2701,7 +2701,8 @@
 }
 
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-weight,
-.tidy5e.sheet.actor .items-list .items-header-labels .items-header-comps {
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-comps,
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-range {
   width: 70px;
 }
 
@@ -2996,6 +2997,10 @@
 
 .tidy5e.sheet.actor .items-list .spell-school {
   flex: 0 0 50px;
+}
+
+.tidy5e.sheet.actor .items-list .spell-range {
+  flex: 0 0 70px;
 }
 
 .tidy5e.sheet.actor .items-list .spell-action,
