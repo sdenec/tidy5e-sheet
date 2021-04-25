@@ -370,7 +370,8 @@
 		}
 
  		.items-header-weight,
- 		.items-header-comps {
+ 		.items-header-comps,
+ 		.items-header-range {
 			width: 70px;
 		}
 
@@ -385,7 +386,7 @@
 
  		.items-header-usage,
  		.items-header-level,
- 		.items-header-target, 
+ 		.items-header-target,
  		.items-header-duration, 
  		.items-header-feat-source, 
  		.items-header-requirements {
@@ -680,6 +681,10 @@
 
 	.spell-school {
 		flex: 0 0 50px;
+	}
+	
+	.spell-range {
+		flex: 0 0 70px;
 	}
 
 	.spell-action,

@@ -1,5 +1,6 @@
 {
 	"TIDY5E.PlayerName": "Jméno Hráče",
+	"TIDY5E.Gender" : "Gender",
 	"TIDY5E.Age" : "Věk",
 	"TIDY5E.Weight" : "Váha",
 	"TIDY5E.Height" : "Výška",

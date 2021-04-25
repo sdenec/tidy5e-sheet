@@ -1,5 +1,12 @@
 {
 	"TIDY5E.PlayerName": "Player Name",
+	"TIDY5E.Gender" : "Gender",
+	"TIDY5E.Age" : "Age",
+	"TIDY5E.Weight" : "Weight",
+	"TIDY5E.Height" : "Height",
+	"TIDY5E.Eyes" : "Eyes",
+	"TIDY5E.Skin" : "Skin",
+	"TIDY5E.Hair" : "Hair",
 	"TIDY5E.Subclass": "서브클래스",
 	"TIDY5E.EditActorImage": "이미지 수정",
 	"TIDY5E.ShowActorImage": "우클릭: 캐릭터 이미지 보기",

@@ -162,8 +162,7 @@ async function setSheetClasses(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") > 0) {
 		$('.system-dnd5e').get(0).style.setProperty('--vehicle-border', game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle")+'px');
   } else {
-    
-		$('.system-dnd5e').get(0).style.setProperty('--vehicle-border');
+		$('.system-dnd5e').get(0).style.removeProperty('--vehicle-border');
   }
 	if (game.settings.get("tidy5e-sheet", "hpOverlayDisabledVehicle")) {
 		html.find('.tidy5e-sheet.tidy5e-vehicle .profile').addClass('disable-hp-overlay');
@@ -171,7 +170,7 @@ async function setSheetClasses(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "hpBarDisabled")) {
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
 	}
-	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'fixCardKey'));
+	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'itemCardsFixKey'));
 }
 
 // Register Tidy5e Vehicle Sheet and make default vehicle sheet

@@ -15,7 +15,7 @@
           <i class="fas fa-coins"></i>
         </li>
         {{#each data.currency as |v k|}}
-        <li class="currency-item" title="{{ lookup ../config.currencies k }}">
+        <li class="currency-item {{k}}" title="{{ lookup ../config.currencies k }}">
           <input type="text" name="data.currency.{{k}}" id="data.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
           <label for="data.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../config.currencies k }}</label>
         </li>

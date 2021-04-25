@@ -16,6 +16,16 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.4.29 ###
+
+- fix for magic items on NPCs
+- fix for hidden NPC resources if actions/resistance values are 1
+- added "gender" to bio info and extended character count for info fields
+- added bio info to NPCs, too
+- fixed errors on vehicle sheets
+- added missing PC-setting to show trait labels (got lost during menu rebuild)
+- added range column to PC spellbook
+
 ### Version 0.4.28 ###
 
 - fix for death saves not resetting when healing through token
