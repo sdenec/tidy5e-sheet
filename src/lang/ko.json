@@ -1,12 +1,12 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
-	"TIDY5E.Gender" : "Gender",
-	"TIDY5E.Age" : "Age",
-	"TIDY5E.Weight" : "Weight",
-	"TIDY5E.Height" : "Height",
-	"TIDY5E.Eyes" : "Eyes",
-	"TIDY5E.Skin" : "Skin",
-	"TIDY5E.Hair" : "Hair",
+	"TIDY5E.PlayerName": "플레이어 이름",
+	"TIDY5E.Gender" : "성별",
+	"TIDY5E.Age" : "나이",
+	"TIDY5E.Weight" : "체중",
+	"TIDY5E.Height" : "신장",
+	"TIDY5E.Eyes" : "눈동자",
+	"TIDY5E.Skin" : "피부",
+	"TIDY5E.Hair" : "모발",
 	"TIDY5E.Subclass": "서브클래스",
 	"TIDY5E.EditActorImage": "이미지 수정",
 	"TIDY5E.ShowActorImage": "우클릭: 캐릭터 이미지 보기",
@@ -40,6 +40,13 @@
 	"TIDY5E.DisableEdit": "수정 비활성화",
 	"TIDY5E.EditHint": "추가/삭제 버튼과 빈 섹션의 표시 여부를 전환한다.",
 
+	"TIDY5E.Equip": "아이템 착용",
+	"TIDY5E.Unequip": "아이템 해제",
+	"TIDY5E.Attune": "아이템 조율",
+	"TIDY5E.Deattune": "조율 파기",
+	"TIDY5E.Prepare": "주문 준비",
+	"TIDY5E.Unprepare": "준비 취소",
+
 	"TIDY5E.EmptySection": "이 섹션은 비어 있습니다. 편집할 시트의 잠금을 해제합니다.",
 	"TIDY5E.GmOnlyEdit": "GM만이 이 섹션을 편집할 수 있습니다.",
 	
@@ -58,11 +65,7 @@
 	"TIDY5E.isFav": "즐겨찾기",
 	"TIDY5E.RemoveFav": "줄겨찾기에서 삭제",
 	
-	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
-
 	"TIDY5E.ToggleInfo": "정보 전환",
-	"TIDY5E.ToggleMovement": "현재, 원래 속도 표시간 전환",
 
 	"TIDY5E.Show" : "보기/수정",
 	"TIDY5E.Hide" : "숨기기",
@@ -81,8 +84,12 @@
 	
 	"TIDY5E.SearchItem" : "아이템 검색",
 	"TIDY5E.SearchSpell" : "주문 검색",
+	"TIDY5E.SearchFeat" : "특성 검색",
 	"TIDY5E.SearchClear" : "검색 삭제",
 	"TIDY5E.SearchHint" : "찾고자 하는 것을 입력합니다.",
+
+	"TIDY5E.ItemCardsKeyHint" : "키를 눌러 카드와 상호작용",
+	"TIDY5E.ItemCardsMouseHint" : "마우스 휠 클릭을 통해 아이템 보기/편집",
 
 	"TIDY5E.AbbrMod" : "수정치",
 	"TIDY5E.AbbrSavingThrow" : "내성굴림",
@@ -105,14 +112,62 @@
 	"TIDY5E.Settings.VehicleLabel" : "탑승물",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "시트 설정"
+		"label" : "시트 설정",
+		"title" : "Tidy5e 시트 설정"
 	},
+	"TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "플레이어",
+		"header" : "플레이어 캐릭터 시트"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "NPC/탑승물",
+		"header" : "NPC/탑승물 시트",
+		"labelNPCs" : "NPC",
+		"labelVehicles" : "탑승물"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "GM 옵션",
+		"header" : "GM 시트 옵션"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "모듈",
+		"header" : "모듈 옵션",
+		"labelActionsFavorites" : "액터 액션/즐겨찾기",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "정보",
+		"header" : "정보"
+	},
+	"TIDY5E.Settings.ItemCardsForAllItems" : {
+		"name" : "모든 레이아웃에 아이템 정보 카드 표시",
+		"hint" : "슬라이드 아웃 정보 카드만을 원할 경우 활성화 할 것. 비활성화시 격자 레이아웃 정보 카드가 나온다."
+	},
+	"TIDY5E.Settings.ItemCardsForNpcs" : {
+		"name" : "NPC/탑승물용 정보 카드를 표시한다.",
+		"hint" : "NPC/탑승물용 슬라이드 아웃 정보 카드를 원치 않는다면 비활성화 할 것."
+	},
+	"TIDY5E.Settings.ItemCardsAreFloating" : {
+		"name" : "커서 옆에 아이템 정보 카드 띄우기",
+		"hint" : "아이템 정보 카드를 시트에서 분리하여 커서 옆에 띄울 수 있다. 아래 지연 옵션과 함께 사용하는 것을 추천. 시트를 팝아웃 시켰을 때에도 유용하다."
+	},
+	"TIDY5E.Settings.ItemCardsDelay" : {
+		"name" : "정보 카드 표시 지연",
+		"hint" : "밀리초(0=지연 없음, 기본값 300)로 값을 지정한만큼 아이템 카드가 지연되어 표시된다."
+	},
+	"TIDY5E.Settings.ItemCardsFixKey" : {
+		"name" : "아이템 카드 상호 작용 키",
+		"hint" : "키(e.g.: x)를 눌러 아이템 카드와 상호작용한다. 기능 키(Ctrl, alt, etc..)를 제외한 모든 키가 될 수 있다."
+	},
+
+
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e 색상 테마.",
 		"hint" : "Tidy5e의 기본 밝은/어두운 색상 테마를 사용한다.",
 		"default": "기본 (밝음)",
 		"dark": "대체 (어두움)"
 	},
+
 	"TIDY5E.Settings.ClassicControls" : {
 		"name" : "목록 보기에서 고전적 아이템 제어 사용",
 		"hint" : "항상 아이템 컨트롤을 표시하고 오른쪽 클릭 메뉴를 비활성화한다. 목록 레이아웃의 PC 아이템/주문 인벤토리에만 적용된다."
@@ -127,6 +182,10 @@
 	},
 
 
+	"TIDY5E.Settings.PlayerName" : {
+		"name" : "플레이어 이름 표시",
+		"hint" : "캐릭터 이름 아래에 플레이어 이름을 표시한다."
+	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "캐릭터 클래스 목록 숨김.",
 		"hint" : "활성화 시 캐릭터 이름 하단에 있는 클래스 목록이 숨겨진다."
@@ -222,7 +281,20 @@
 	},
 	"TIDY5E.Settings.ExhaustionEffects" : {
 		"name" : "탈진 효과 (활성화 효과 사용)",
-		"hint" : "탈진 단계를 설정할 때 해당하는 활성화 효과 적용 - (midi-Qol의 불리함 굴림 필요)"
+		"hint" : "탈진 단계를 설정할 때 해당하는 활성화 효과 적용 - (midi-Qol의 불리함 굴림 필요)",
+		"default" : "자동 탈진 효과 없음",
+		"tidy5e" : "Tidy5e - 통합 효과 적용(활성화 효과 사용)",
+		"custom" : "Custom - 사용자 지정 효과 사용(CUB 필요)"
+	},
+	"TIDY5E.Settings.CustomExhaustionIcon" : {
+		"name" : "사용자 지정 탈진 효과 아이콘.",
+		"hint" : "이미지 URL을 사용해 사용자 지정 탈진 효과 아이콘을 설정한다. 탈진 효과가 \"tidy 5e\"로 설정된 경우에만 사용할 수 있다. (e. g.: modules/tidy5e-sheet/images/exhaustion.svg)."
+	},
+	"TIDY5E.Settings.CustomExhaustionEffect" : {
+		"name" : "사용자 지정 CUB 탈진 효과 이름",
+		"hint" : "사용자 지정 탈진 효과의 이름 설정. CUb에 정의된 것과 동일해야 하지만 단계 숫자가 없어야 한다. (e. g. \"Exhaustion\")",
+		"tiers": "사용자 지정 CUB 탈진 단계 수이다. 기본값 = 5",
+		"warning": "탈진 효과를 적용할 액터 토큰을 찾을 수 없습니다!"
 	},
 	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "탈진 추적기 비활성화.",
@@ -231,6 +303,10 @@
 	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "NPC 휴식",
 		"hint" : "NPC 시트에 휴식 아이콘/버튼을 표시한다."
+	},
+	"TIDY5E.Settings.RestingForNpcsChat" : {
+		"name" : "NPC 휴식 채팅 카드 숨김",
+		"hint" : "NPC 휴식을 위한 채팅 카드를 숨기려면 활성화 한다. GM과 플레이어에게 적용된다."
 	},
 	"TIDY5E.Settings.LinkMarker" : {
 		"name" : "연결/비연결 NPC 표시",
