@@ -1,12 +1,12 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
-	"TIDY5E.Gender" : "Gender",
-	"TIDY5E.Age" : "Age",
-	"TIDY5E.Weight" : "Weight",
-	"TIDY5E.Height" : "Height",
-	"TIDY5E.Eyes" : "Eyes",
-	"TIDY5E.Skin" : "Skin",
-	"TIDY5E.Hair" : "Hair",
+	"TIDY5E.PlayerName": "プレイヤー名",
+	"TIDY5E.Gender" : "性別",
+	"TIDY5E.Age" : "年齢",
+	"TIDY5E.Weight" : "体重",
+	"TIDY5E.Height" : "身長",
+	"TIDY5E.Eyes" : "眼",
+	"TIDY5E.Skin" : "肌",
+	"TIDY5E.Hair" : "髪",
 	"TIDY5E.Subclass": "サブクラス",
 	"TIDY5E.EditActorImage": "左クリック: 画像変更",
 	"TIDY5E.ShowActorImage": "右クリック: 画像表示",
@@ -64,9 +64,6 @@
 	"TIDY5E.AddFav": "お気に入り追加",
 	"TIDY5E.isFav": "お気に入り",
 	"TIDY5E.RemoveFav": "お気に入りから削除",
-	
-	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "詳細表示",
 
@@ -91,6 +88,9 @@
 	"TIDY5E.SearchClear" : "検索クリア",
 	"TIDY5E.SearchHint" : "検索したい文字を入力してください。",
 
+	"TIDY5E.ItemCardsKeyHint" : "キーを押したままカードを操作",
+	"TIDY5E.ItemCardsMouseHint" : "中央ボタンで、アイテムを表示/編集",
+
 	"TIDY5E.AbbrMod" : "修正",
 	"TIDY5E.AbbrSavingThrow" : "セーヴ",
 	"TIDY5E.SpellAttackMod" : "攻撃修正",
@@ -112,11 +112,35 @@
 	"TIDY5E.Settings.VehicleLabel" : "乗り物",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "シート設定"
+		"label" : "シート設定",
+		"title" : "Tidy5eシート設定"
 	},
-
+	"TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "プレイヤー",
+		"header" : "プレイヤーキャラクターシート"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "NPC/乗物",
+		"header" : "NPC/乗物シート",
+		"labelNPCs" : "NPC",
+		"labelVehicles" : "乗物"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "GMオプション",
+		"header" : "GMｼｰﾄ･ｵﾌﾟｼｮﾝ"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "モジュール",
+		"header" : "モジュール･オプション",
+		"labelActionsFavorites" : "アクター･アクション/お気に入り",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "情報",
+		"header" : "情報"
+	},
 	"TIDY5E.Settings.ItemCardsForAllItems" : {
-		"name" : "すべてのｼｰﾄで、ｱｲﾃﾑ情報ｶｰﾄﾞ表示機能を使用",
+		"name" : "すべてのｼｰﾄでｱｲﾃﾑ情報ｶｰﾄﾞ表示機能を使用",
 		"hint" : "すべてのシートでアイテム情報カードの表示が必要ない場合は無効にします。(再読み込みが必要)"
 	},
 	"TIDY5E.Settings.ItemCardsForNpcs" : {
@@ -135,6 +159,7 @@
 		"name" : "ｱｲﾃﾑ情報ｶｰﾄﾞ操作キーを指定",
 		"hint" : "アイテムカードの操作に使用するキー（例：x）を入力します。ファンクションキー（Ctrl、Altなど）以外の任意のキーにすることができます。(再読み込みが必要)"
 	},
+
 
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5eカラーテーマ",
@@ -157,6 +182,10 @@
 	},
 
 
+	"TIDY5E.Settings.PlayerName" : {
+		"name" : "プレイヤー名の表示",
+		"hint" : "キャラクターの名前の下に、プレイヤー名を表示します。"
+	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "クラス一覧を非表示",
 		"hint" : "キャラクター名の下のクラスリストを非表示にする場合に有効にします。"
@@ -286,5 +315,7 @@
 		"unlinked": "関連付けされてないシートを強調表示",
 		"linked": "関連付けされたトークンを強調表示",
 		"both": "トークンを全て強調表示"
-	}
+	},
+
+	"Save Changes" : "保存"
 }
