@@ -173,6 +173,10 @@
 
   .origin-summary {
 
+    .creature-type .config-button:hover {
+      color: var(--primary-accent);
+    }
+
     .environment {
       position: relative;
       top: -1px;

@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.0 ###
+
+- updated sheet for foundry 0.8.x and dnd5e 1.3.0 (required)
+- updated korean and japanese translation
+
 ### Version 0.4.29 ###
 
 - fix for magic items on NPCs

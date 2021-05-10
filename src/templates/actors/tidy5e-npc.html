@@ -108,11 +108,12 @@
                 </ul>
               </li>
             </ul>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-type" data-placeholder="{{ localize 'DND5E.Type' }}">{{data.details.type}}</span>
+            <span class="creature-type" title="{{labels.type}}">
+              <a class="config-button" data-action="type" title="{{localize 'DND5E.CreatureTypeConfig'}}">{{labels.type}}</a>
+            </span>
             <span class="environment" title="{{ localize 'TIDY5E.Environment' }}"><i class="fas fa-tree"></i><span class="environment-label"><span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}" data-maxlength="80">{{data.details.environment}}</span></span></span>
             <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{data.details.alignment}}</span>
             <span class="source-info" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{ localize 'DND5E.Source' }}" class="source">{{data.details.source}}</span>
-            <input type="hidden" data-input="{{actor._id}}-type" name="data.details.type" value="{{data.details.type}}" placeholder="{{ localize 'DND5E.Type' }}">
             <input type="hidden" data-input="{{actor._id}}-environment" name="data.details.environment" value="{{data.details.environment}}" placeholder="{{ localize 'TIDY5E.Environment' }}">
             <input type="hidden" data-input="{{actor._id}}-alignment" name="data.details.alignment" value="{{data.details.alignment}}" placeholder="{{ localize 'DND5E.Alignment' }}">
             <input data-input="{{actor._id}}-source" name="data.details.source" type="hidden" value="{{data.details.source}}" placeholder="{{ localize 'DND5E.Source' }}">

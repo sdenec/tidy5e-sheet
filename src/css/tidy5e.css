@@ -4044,6 +4044,10 @@
   color: var(--secondary-color);
 }
 
+.tidy5e.sheet.actor.npc .origin-summary .creature-type .config-button:hover {
+  color: var(--primary-accent);
+}
+
 .tidy5e.sheet.actor.npc .origin-summary .environment {
   position: relative;
   top: -1px;
