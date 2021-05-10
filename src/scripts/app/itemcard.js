@@ -162,9 +162,9 @@ export const tidy5eItemCard = function (html, actor) {
     getBounds();
     event.preventDefault();
     let li = $(event.currentTarget).closest('.item'),
-        item = actor.getOwnedItem(li.data("item-id")),
+        item = actor.items.get(li.data("item-id")),
         itemData = item.data,
-        chatData = item.getChatData({secrets: actor.owner}),
+        chatData = item.getChatData({secrets: actor.isOwner}),
         itemDescription = chatData.description.value,
         
         infoCard = li.find('.info-card');

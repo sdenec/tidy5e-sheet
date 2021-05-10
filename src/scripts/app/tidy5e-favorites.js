@@ -86,7 +86,7 @@ export const addFavorites = async function(app, html, data, position) {
   // processing all items and put them in their respective lists if they're favorited
   for (let item of items) {
 
-      item.owner = app.actor.owner;
+      item.owner = app.actor.isOwner;
       
       // do not add the fav button for class items
       if (item.type == "class") continue;
