@@ -4,7 +4,7 @@
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
 	"version": "0.5.0",
 	"author": "sdenec#3813",
-	"minimumCoreVersion": "0.8.2",
+	"minimumCoreVersion": "0.8.3",
 	"compatibleCoreVersion": "0.8.3",
 	"system": ["dnd5e"],
 	"esmodules": [
