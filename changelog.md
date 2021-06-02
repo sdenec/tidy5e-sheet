@@ -16,6 +16,14 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.2 ###
+
+- Fix for some NPC sheets not opening due to DEFAULT_TOKEN error
+
+### Version 0.5.1 ###
+
+- Fixing version number issue
+
 ### Version 0.5.0 ###
 
 - updated sheet for foundry 0.8.x and dnd5e 1.3.0 (required)
