@@ -242,6 +242,7 @@ async function countInventoryItems(app, html, data){
 // count attuned items
 async function countAttunedItems(app, html, data){
 	let actor = app.actor;
+	console.log(actor)
 	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
 	if(data.editable && !actor.compendium){
 		let	count = actor.data.data.details.attunedItemsCount;
@@ -255,13 +256,7 @@ async function countAttunedItems(app, html, data){
 		}
 
 		let items = actor.data.items;
-		let attunedItems = 0;
-
-		for (var i = 0; i < items.length; i++){
-			if (items[i].data.attunement == 2){
-				attunedItems++;
-			}
-		}
+		let attunedItems = items.filter(item => item.data.data.attunement === 2).length;
 
 		await actor.update({"data.details.attunedItemsCount": attunedItems});
 
@@ -310,7 +305,8 @@ async function editProtection(app, html, data) {
 		
 		if(game.settings.get("tidy5e-sheet", "editTotalLockEnabled")){
 			html.find(".skill input").prop('disabled', true);
-			html.find(".skill .proficiency-toggle").remove();
+			// html.find(".skill .proficiency-toggle").remove();
+			html.find(".skill .proficiency-toggle").removeClass('proficiency-toggle');
 			html.find(".ability-score").prop('disabled', true);
 			html.find(".ac-display input").prop('disabled', true);
 			html.find(".initiative input").prop('disabled', true);

@@ -57,6 +57,13 @@
 				i {
 					vertical-align: baseline;
 				}
+
+				&:not(.proficiency-toggle) {
+					cursor: default;
+					&:hover {
+						color: var(--tertiary-color);
+					}
+				}
 			}
 
 			.skill-mod,
