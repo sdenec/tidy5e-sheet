@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.4 ###
+
+- added the new hit dice configurator that I was unaware of!
+
 ### Version 0.5.3 ###
 
 - fixed alphabetical skill sorting for translations

@@ -103,9 +103,9 @@
 						</div>
 					</div>
 					{{!-- Hit Dice --}}
-					<div class="portrait-hd has-note" title="{{ localize 'DND5E.HitDice' }}: {{data.attributes.hd}}/{{data.details.level}}">
+					<div class="portrait-hd has-note" title="{{ localize 'DND5E.HitDice' }}: {{data.attributes.hd}}/{{data.details.level}}&#10;{{localize 'DND5E.HitDiceConfig'}}">
 						<div class="note">{{ localize 'DND5E.HitDice' }}: {{data.attributes.hd}}/{{data.details.level}}</div>
-						<div class="current-hd">{{data.attributes.hd}}<!-- <span>/</span>{{data.details.level}} --></div>
+						<a class="current-hd config-button" data-action="hit-dice" >{{data.attributes.hd}}</a>
 					</div>
 
 					{{!-- Hit Points --}}
