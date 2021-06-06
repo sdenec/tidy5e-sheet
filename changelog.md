@@ -16,6 +16,15 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.3 ###
+
+- fixed alphabetical skill sorting for translations
+- fixed attunement tracker
+- fixed type selection for NPCs with empty type attribute
+- fixed ability rolls for observer (PC/NPC)
+
+- in sensitive data mode the skill list will keep proficiency marks while sheet is locked but prevent toggling them
+
 ### Version 0.5.2 ###
 
 - Fix for some NPC sheets not opening due to DEFAULT_TOKEN error

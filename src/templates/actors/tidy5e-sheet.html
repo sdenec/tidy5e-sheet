@@ -238,11 +238,11 @@
 									<input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
 								</div>
 								<div class="ability-modifiers value-footer">
-									<span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+									<span class="ability-mod rollable" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
 									<input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
 									<a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
 										{{{ability.icon}}}</a>
-									<span class="ability-save" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
+									<span class="ability-save rollable" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
 								</div>
 								<span class="mod-label ability-mod-label">{{ localize 'TIDY5E.AbbrMod' }}</span>
 								<span class="mod-label save-mod-label">{{ localize 'TIDY5E.AbbrSavingThrow' }}</span>
@@ -279,15 +279,17 @@
 
 					{{!-- Skills --}}
 					<ul class="skills-list">
-						{{#each data.skills as |skill s|}}
+            {{#each config.skills as |label s|}}
+            {{#with (lookup ../data.skills s) as |skill|}}
 						<li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
 							<input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
 							<a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
-							<h4 class="skill-name rollable">{{skill.label}}</h4>
+							<h4 class="skill-name rollable">{{label}}</h4>
 							<span class="skill-ability">{{skill.ability}}</span>
 							<span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
-							<span class="skill-passive" title="{{skill.label}} ({{ localize 'DND5E.Passive' }})">({{skill.passive}})</span>
+							<span class="skill-passive" title="{{label}} ({{ localize 'DND5E.Passive' }})">({{skill.passive}})</span>
 						</li>
+						{{/with}}
 						{{/each}}
 					</ul>
 

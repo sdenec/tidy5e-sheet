@@ -1940,6 +1940,14 @@
   vertical-align: baseline;
 }
 
+.tidy5e.sheet.actor .skills-list .skill .skill-proficiency:not(.proficiency-toggle) {
+  cursor: default;
+}
+
+.tidy5e.sheet.actor .skills-list .skill .skill-proficiency:not(.proficiency-toggle):hover {
+  color: var(--tertiary-color);
+}
+
 .tidy5e.sheet.actor .skills-list .skill .skill-mod,
 .tidy5e.sheet.actor .skills-list .skill .skill-passive {
   text-align: right;

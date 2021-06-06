@@ -56,14 +56,14 @@ export const tidy5eListeners = function (html, actor) {
   });
 
   // Modificator Ability Test Throw
-  html.find('.ability-mod').click( async (event) => {
+  html.find('.ability-mod.rollable').click( async (event) => {
     event.preventDefault();
     let ability = event.currentTarget.parentElement.parentElement.dataset.ability;
     actor.rollAbilityTest(ability, {event: event});
   });
 
   // Modificator Ability Saving Throw
-  html.find('.ability-save').click( async (event) => {
+  html.find('.ability-save.rollable').click( async (event) => {
     event.preventDefault();
     let ability = event.currentTarget.parentElement.parentElement.dataset.ability;
     actor.rollAbilitySave(ability, {event: event});
