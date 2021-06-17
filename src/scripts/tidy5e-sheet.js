@@ -203,8 +203,9 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	// add actions module
 	async _renderInner(...args) {
 		const html = await super._renderInner(...args);
-		const actionsListApi = game.modules.get('character-actions-list-5e').api;
-		const injectCharacterSheet = game.settings.get('character-actions-list-5e', 'inject-characters');
+		const actionsListApi = game.modules.get('character-actions-list-5e')?.api;
+		let injectCharacterSheet;
+		if(game.modules.get('character-actions-list-5e')?.active) injectCharacterSheet = game.settings.get('character-actions-list-5e', 'inject-characters');
 		
 		try {
 			if(game.modules.get('character-actions-list-5e')?.active && injectCharacterSheet){
