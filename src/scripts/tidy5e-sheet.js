@@ -48,6 +48,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
 		});
 
+		data.appId = this.appId;
+
     return data;
   }
 	

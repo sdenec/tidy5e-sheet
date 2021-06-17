@@ -16,8 +16,8 @@
         </li>
         {{#each data.currency as |v k|}}
         <li class="currency-item {{k}}" title="{{ lookup ../config.currencies k }}">
-          <input type="text" name="data.currency.{{k}}" id="data.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
-          <label for="data.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../config.currencies k }}</label>
+          <input type="text" name="data.currency.{{k}}" id="{{@root/appId}}-data.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
+          <label for="{{@root/appId}}-data.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../config.currencies k }}</label>
         </li>
         {{/each}}
         <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}"><i class="fas fa-funnel-dollar"></i></a></li>
