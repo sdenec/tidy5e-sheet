@@ -75,7 +75,7 @@ export class Tidy5eVehicle extends ActorSheet5eVehicle {
 	// add actions module
   async _renderInner(...args) {
     const html = await super._renderInner(...args);
-		const actionsListApi = game.modules.get('character-actions-list-5e').api;
+		const actionsListApi = game.modules.get('character-actions-list-5e')?.api;
     let injectCharacterSheet;
 		if(game.modules.get('character-actions-list-5e')?.active) injectCharacterSheet = game.settings.get('character-actions-list-5e', 'inject-vehicles');
     

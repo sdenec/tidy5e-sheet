@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.7 ###
+
+- jet again: fixed a bug related to Character Actions List
+
 ### Version 0.5.6 ###
 
 - fixed a bug related to Character Actions List
