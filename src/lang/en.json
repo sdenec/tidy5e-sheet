@@ -186,6 +186,10 @@
 		"name" : "Show player name.",
 		"hint" : "Enable to show a field for the player name below the character's name."
 	},
+	"TIDY5E.Settings.JournalTab" : {
+		"name" : "Hide character journal.",
+		"hint" : "Enable to hide the journal tab."
+	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "Hide character class list.",
 		"hint" : "Enable to hide the class list below the character's name."
@@ -315,5 +319,11 @@
 		"unlinked": "Highlight unlinked tokens",
 		"linked": "Highlight linked tokens",
 		"both": "Highlight linked and unlinked tokens"
+	},
+	"TIDY5E.Settings.DefaultActionsTab" : {
+		"name" : "Default Tab when opening a sheet for the first time.",
+		"hint" : "Chose between 'Actions' and 'Attributes'.",
+		"default": "Actions",
+		"attributes": "Attributes"
 	}
 }

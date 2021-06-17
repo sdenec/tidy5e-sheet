@@ -157,6 +157,11 @@
 		"hint" : "Standardmäßig werden nur Icons für Merkmale angezeigt. Einschalten, um auch Beschriftungen für Merkmale anzuzeigen."
 	},
 	
+	"TIDY5E.Settings.JournalTab" : {
+		"name" : "Charakter-Tagebuch verstecken.",
+		"hint" : "Aktivieren, um den Tagebuch-Reiter zu verstecken."
+	},
+
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "Charakter-Klassenliste verstecken.",
 		"hint" : "Einschalten, um die Klassenliste unter dem Namen eines Charakters zu verstecken."
@@ -281,5 +286,11 @@
 		"default": "Kein Verknüpfungsmarker (standard)",
 		"unlinked": "Unverknüpfte Token hervorheben",
 		"both": "Verknüpfte und unverknüpfte Token hervorheben"
+	},
+	"TIDY5E.Settings.DefaultActionsTab" : {
+		"name" : "Standard-Reiter beim ersten Öffnen eines Charakter Bogens.",
+		"hint" : "Auswahl zwischen 'Aktionen' und 'Attributen'.",
+		"default": "Aktionen",
+		"attributes": "Attribute"
 	}
 }

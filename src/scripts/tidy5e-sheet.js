@@ -15,19 +15,24 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 
 let position = 0;
 
-export class Tidy5eSheet extends ActorSheet5eCharacter {
 
+export class Tidy5eSheet extends ActorSheet5eCharacter {
+	
 	get template() {
 		if ( !game.user.isGM && this.actor.limited && !game.settings.get("tidy5e-sheet", "expandedSheetEnabled") ) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
 	}
 	
 	static get defaultOptions() {
+		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' ? 'attributes' : 'actions';
+		if (!game.modules.get('character-actions-list-5e')?.active) defaultTab = 'description';
+
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "character"],
 			blockFavTab: true,
 			width: 740,
-			height: 840
+			height: 840,
+			tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab}]
 		});
 	}
 
@@ -198,9 +203,11 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	// add actions module
 	async _renderInner(...args) {
 		const html = await super._renderInner(...args);
+		const actionsListApi = game.modules.get('character-actions-list-5e').api;
+		const injectCharacterSheet = game.settings.get('character-actions-list-5e', 'inject-characters');
 		
 		try {
-			if(game.modules.get('character-actions-list-5e')?.active){
+			if(game.modules.get('character-actions-list-5e')?.active && injectCharacterSheet){
 				// Update the nav menu
 				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
 				const tabs = html.find('.tabs[data-group="primary"]');
@@ -215,7 +222,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 				// const actionsTab = html.find('.actions-target');
 				
-				const actionsTabHtml = $(await CAL5E.renderActionsList(this.actor));
+				const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
 				actionsLayout.html(actionsTabHtml);
 			}
 			} catch (e) {
@@ -461,6 +468,9 @@ async function setSheetClasses(app, html, data) {
 	let actor = app.actor;
 	if (!game.settings.get("tidy5e-sheet", "playerNameEnabled")) {
 		html.find('.tidy5e-sheet #playerName').remove();
+	}
+	if (game.settings.get("tidy5e-sheet", "journalTabDisabled")) {
+		html.find('.tidy5e-sheet .tidy5e-navigation a[data-tab="journal"]').remove();
 	}
 	if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
 		if(game.settings.get("tidy5e-sheet", "classicControlsEnabled")){

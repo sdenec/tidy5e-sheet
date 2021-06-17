@@ -109,13 +109,13 @@ export const tidy5eItemCard = function (html, actor) {
     if(!itemCardIsFixed) infoContainer.removeClass('open');
   };
 
-  containerTrigger.mouseenter( function(event){
+  cardTrigger.mouseenter( function(event){
     if(!itemCardIsFixed){
       if(!itemCardDelay) infoContainer.addClass('open');
     }
   });
 
-  containerTrigger.mouseleave( function (event) {
+  cardTrigger.mouseleave( function (event) {
     if(!itemCardIsFixed){
       if(!itemCardDelay) hideContainer();
     }

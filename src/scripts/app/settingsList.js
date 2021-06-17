@@ -101,6 +101,14 @@ export function settingsList(){
 		// Settings Menu
 	
 		// PC Sheet Settings
+		game.settings.register("tidy5e-sheet", "journalTabDisabled", {
+			name: `${game.i18n.localize("TIDY5E.Settings.JournalTab.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.JournalTab.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
 	
 		game.settings.register("tidy5e-sheet", "classListDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ClassList.name")}`,
@@ -494,5 +502,20 @@ export function settingsList(){
 			config: false,
 			default: false,
 			type: Boolean
+		});
+
+		// Set default Tab for character actions list
+		
+		game.settings.register("tidy5e-sheet", "defaultActionsTab", {
+			name: `${game.i18n.localize("TIDY5E.Settings.defaultActionsTab.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.hint"),
+			scope: "world",
+			config: false,
+			type: String,
+			choices: {
+				"default": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.default"),
+				"attributes": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.attributes"),
+			},
+			default: 'default'
 		});
 }
