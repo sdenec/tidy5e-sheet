@@ -16,6 +16,13 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.5 ###
+
+- updated character actions list integration
+- fixed display error for item info cards with 0 delay
+- new per player setting to hide the journal tab
+- new setting for Charakter Actions list module: Choose default tab for first time opening a sheet (actions or attributes)
+
 ### Version 0.5.4 ###
 
 - added the new hit dice configurator that I was unaware of!
