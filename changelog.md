@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.8 ###
+
+- actually respect the npc/vehicle injection rules for Character Actions List
+
 ### Version 0.5.7 ###
 
 - jet again: fixed a bug related to Character Actions List

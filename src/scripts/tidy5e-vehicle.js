@@ -76,11 +76,11 @@ export class Tidy5eVehicle extends ActorSheet5eVehicle {
   async _renderInner(...args) {
     const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get('character-actions-list-5e')?.api;
-    let injectCharacterSheet;
-		if(game.modules.get('character-actions-list-5e')?.active) injectCharacterSheet = game.settings.get('character-actions-list-5e', 'inject-vehicles');
+    let injectVehicleSheet;
+		if(game.modules.get('character-actions-list-5e')?.active) injectVehicleSheet = game.settings.get('character-actions-list-5e', 'inject-vehicles');
     
     try {
-			if(game.modules.get('character-actions-list-5e')?.active){
+			if(game.modules.get('character-actions-list-5e')?.active && injectVehicleSheet){
         // Update the nav menu
         const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
         const tabs = html.find('.tabs[data-group="primary"]');
