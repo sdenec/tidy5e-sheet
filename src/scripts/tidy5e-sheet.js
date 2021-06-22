@@ -250,7 +250,7 @@ async function countInventoryItems(app, html, data){
 // count attuned items
 async function countAttunedItems(app, html, data){
 	let actor = app.actor;
-	console.log(actor)
+	// console.log(actor)
 	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
 	if(data.editable && !actor.compendium){
 		let	count = actor.data.data.details.attunedItemsCount;

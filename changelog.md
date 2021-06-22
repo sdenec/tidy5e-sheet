@@ -19,6 +19,7 @@ Thank you very much!
 ### Version 0.5.8 ###
 
 - actually respect the npc/vehicle injection rules for Character Actions List
+- fixed exhaustion effects
 
 ### Version 0.5.7 ###
 
