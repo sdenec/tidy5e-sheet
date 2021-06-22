@@ -190,6 +190,15 @@ export function settingsList(){
 			default: false,
 			type: Boolean
 		});
+
+		game.settings.register("tidy5e-sheet", "ammoEquippedOnly", {
+			name: `${game.i18n.localize("TIDY5E.Settings.AmmoEquippedOnly.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.AmmoEquippedOnly.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
 	
 	
 		// NPC Sheet Settings

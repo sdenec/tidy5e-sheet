@@ -90,6 +90,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'editEffectsGmOnlyEnabled',
 			'editGmAlwaysEnabled',
 			
+			'ammoEquippedOnly',
 			'journalTabDisabled',
 			'playerNameEnabled',
 			'classListDisabled',
