@@ -226,6 +226,10 @@
 		"name" : "Move traits below resources.",
 		"hint" : "Enable to move traits from the left side below resources."
 	},
+	"TIDY5E.Settings.AmmoEquippedOnly" : {
+		"name" : "Only show equipped ammunition.",
+		"hint" : "Enable to only show currently equipped ammunition in Weapon ammo selector."
+	},
 
 
 	"TIDY5E.Settings.TraitsAlwaysShown" : {

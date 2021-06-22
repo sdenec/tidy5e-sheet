@@ -16,6 +16,14 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.8 ###
+
+- actually respect the npc/vehicle injection rules for Character Actions List
+- fixed exhaustion effects
+- added ranged ammo selection in inventory (thanks for the contribution @flamewave000)
+- ensured important input field identifiers are unique (thanks @calego)
+- updated japanese translation
+
 ### Version 0.5.7 ###
 
 - jet again: fixed a bug related to Character Actions List

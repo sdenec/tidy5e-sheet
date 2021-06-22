@@ -12,6 +12,7 @@ import { addFavorites } from "./app/tidy5e-favorites.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
+import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 
 let position = 0;
 
@@ -48,6 +49,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
 		});
 
+		data.appId = this.appId;
+
     return data;
   }
 	
@@ -66,11 +69,12 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		
 		let actor = this.actor;
 
-    tidy5eListeners(html, actor);
-    tidy5eContextMenu(html);
+		tidy5eListeners(html, actor);
+		tidy5eContextMenu(html);
 		tidy5eSearchFilter(html, actor);
 		tidy5eShowActorArt(html, actor);
 		tidy5eItemCard(html, actor);
+		tidy5eAmmoSwitch(html, actor);
 
 		// store Scroll Pos
 		const attributesTab = html.find('.tab.attributes');
@@ -250,7 +254,7 @@ async function countInventoryItems(app, html, data){
 // count attuned items
 async function countAttunedItems(app, html, data){
 	let actor = app.actor;
-	console.log(actor)
+	// console.log(actor)
 	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
 	if(data.editable && !actor.compendium){
 		let	count = actor.data.data.details.attunedItemsCount;

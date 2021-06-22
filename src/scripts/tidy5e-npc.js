@@ -146,6 +146,8 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       let Id = id.charAt(0).toUpperCase() + id.slice(1);
       data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
     });
+    
+		data.appId = this.appId;
 
     return data;
   }
@@ -308,11 +310,11 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
   async _renderInner(...args) {
     const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get('character-actions-list-5e')?.api;
-		let injectCharacterSheet;
-    if(game.modules.get('character-actions-list-5e')?.active) injectCharacterSheet = game.settings.get('character-actions-list-5e', 'inject-npcs');
+		let injectNPCSheet;
+    if(game.modules.get('character-actions-list-5e')?.active) injectNPCSheet = game.settings.get('character-actions-list-5e', 'inject-npcs');
     
     try {
-			if(game.modules.get('character-actions-list-5e')?.active){
+			if(game.modules.get('character-actions-list-5e')?.active && injectNPCSheet){
         // Update the nav menu
         const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
         const tabs = html.find('.tabs[data-group="primary"]');

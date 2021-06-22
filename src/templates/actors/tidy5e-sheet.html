@@ -86,8 +86,8 @@
 
 					{{!-- Inspiration --}}
 					<div class="inspiration has-note {{#if actor.data.attributes.inspiration}}inspiration-1{{else}}inspiration-0{{/if}}">
-						<input id="{{actor._id}}-inspiration" type="checkbox" name="data.attributes.inspiration" data-dtype="Boolean" {{checked data.attributes.inspiration}}>
-						<label for="{{actor._id}}-inspiration">
+						<input id="{{@root/appId}}-inspiration" type="checkbox" name="data.attributes.inspiration" data-dtype="Boolean" {{checked data.attributes.inspiration}}>
+						<label for="{{@root/appId}}-inspiration">
 							<i class="inspiration-icon fas fa-dice-d20"></i>
 						</label>
 						<div class="note">{{ localize 'DND5E.Inspiration' }}</div>
@@ -222,8 +222,8 @@
 								<span>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</span>
 							</div>
 							<footer class="value-footer">
-								<label for="{{actor._id}}-ini-mod">{{ localize 'TIDY5E.AbbrMod' }}</label>
-								<input id="{{actor._id}}-ini-mod" class="ini-mod" name="data.attributes.init.value" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}" maxlength="2">
+								<label for="{{@root/appId}}-ini-mod">{{ localize 'TIDY5E.AbbrMod' }}</label>
+								<input id="{{@root/appId}}-ini-mod" class="ini-mod" name="data.attributes.init.value" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}" maxlength="2">
 						</footer>
 						</li>
 					</ul>
@@ -307,12 +307,12 @@
 								<span class="res-options"><i class="fas fa-cog"></i></span>
 								<div class="res-rest">
 									<h4>{{ localize "TIDY5E.RestoreOnRest" }}</h4>
-									<input id="{{../actor._id}}-{{res.name}}.sr" name="data.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}>
-									<label for="{{../actor._id}}-{{res.name}}.sr" class="checkbox" title="{{ localize 'TIDY5E.RestS' }}">
+									<input id="{{@root/appId}}-{{res.name}}.sr" name="data.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}>
+									<label for="{{@root/appId}}-{{res.name}}.sr" class="checkbox" title="{{ localize 'TIDY5E.RestS' }}">
 										{{ localize "DND5E.RestS" }} 
 									</label>
-									<input id="{{../actor._id}}-{{res.name}}.lr" name="data.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}>
-									<label for="{{../actor._id}}-{{res.name}}.lr" class="checkbox" title="{{ localize 'TIDY5E.RestL' }}">
+									<input id="{{@root/appId}}-{{res.name}}.lr" name="data.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}>
+									<label for="{{@root/appId}}-{{res.name}}.lr" class="checkbox" title="{{ localize 'TIDY5E.RestL' }}">
 										{{ localize "DND5E.RestL" }} 
 									</label>
 								</div>
