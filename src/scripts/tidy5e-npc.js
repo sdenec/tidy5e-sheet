@@ -146,6 +146,8 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       let Id = id.charAt(0).toUpperCase() + id.slice(1);
       data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
     });
+    
+		data.appId = this.appId;
 
     return data;
   }

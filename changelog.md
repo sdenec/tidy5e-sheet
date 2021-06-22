@@ -20,6 +20,9 @@ Thank you very much!
 
 - actually respect the npc/vehicle injection rules for Character Actions List
 - fixed exhaustion effects
+- added ranged ammo selection in inventory (thanks for the contribution @flamewave000)
+- ensured important input field identifiers are unique (thanks @calego)
+- updated japanese translation
 
 ### Version 0.5.7 ###
 

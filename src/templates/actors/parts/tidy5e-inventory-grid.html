@@ -41,6 +41,9 @@
 
         <div class="info-card {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
           <p class="info-card-name">{{item.name}}</p>
+          {{#if item.data.properties.amm}}
+            <span class="ammo" data-id="{{item._id}}"></span>
+          {{/if}}
           <div class="info-card-states">
             {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
             {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
