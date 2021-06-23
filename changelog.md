@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.9 ###
+
+- fixed type selection for newly created NPCs
+
 ### Version 0.5.8 ###
 
 - actually respect the npc/vehicle injection rules for Character Actions List

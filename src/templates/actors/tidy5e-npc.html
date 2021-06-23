@@ -109,7 +109,7 @@
               </li>
             </ul>
             <span class="creature-type" title="{{labels.type}}">
-              <a class="config-button" data-action="type" title="{{localize 'DND5E.CreatureTypeConfig'}}">{{#if (eq labels.type '')}} {{localize 'DND5E.CreatureType'}} {{else}} {{labels.type}} {{/if}}</a>
+              <a class="config-button" data-action="type" title="{{localize 'DND5E.CreatureTypeConfig'}}">{{#if (or (eq labels.type '') (ne labels.type))}} {{localize 'DND5E.CreatureType'}} {{else}} {{labels.type}} {{/if}}</a>
             </span>
             <span class="environment" title="{{ localize 'TIDY5E.Environment' }}"><i class="fas fa-tree"></i><span class="environment-label"><span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}" data-maxlength="80">{{data.details.environment}}</span></span></span>
             <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{data.details.alignment}}</span>
