@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.10 ###
+
+- definately fixed type selection for newly created NPCs (maybe)
+
 ### Version 0.5.9 ###
 
 - fixed type selection for newly created NPCs
