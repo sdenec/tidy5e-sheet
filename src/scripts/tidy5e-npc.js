@@ -67,7 +67,7 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       passive: { label: game.i18n.localize("DND5E.Features"), items: [], dataset: {type: "feat"} },
       weapons: { label: game.i18n.localize("DND5E.AttackPl"), items: [] , hasActions: true, dataset: {type: "weapon", "weapon-type": "natural"} },
       actions: { label: game.i18n.localize("DND5E.ActionPl"), items: [] , hasActions: true, dataset: {type: "feat", "activation.type": "action"} },
-      equipment: { label: game.i18n.localize("DND5E.Inventory"), items: [], dataset: {type: "loot"}}
+      equipment: { label: game.i18n.localize("DND5E.Inventory"), items: [], hasActions: true, dataset: {type: "loot"}}
     };
 
     // Start by classifying items into groups for rendering
@@ -104,6 +104,24 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       else features.equipment.items.push(item);
     }
 
+    // Sort others equipements type
+    const sortingOrder = {
+      'equipment': 1,
+      'consumable': 2
+    };
+
+    features.equipment.items.sort((a, b) => {
+      if (!a.hasOwnProperty('type') || !b.hasOwnProperty('type')) return 0;
+
+      const first = (a['type'].toLowerCase() in sortingOrder) ? sortingOrder[a['type']] : Number.MAX_SAFE_INTEGER;
+      const second = (b['type'].toLowerCase() in sortingOrder) ? sortingOrder[b['type']] : Number.MAX_SAFE_INTEGER;
+
+      let result = 0;
+      if (first < second) result = -1;
+      else if (first > second) result = 1;
+
+      return result
+    });
 
     // Assign and return
     data.features = Object.values(features);
