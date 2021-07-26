@@ -7,6 +7,7 @@ import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
+import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 
 
 /**
@@ -171,6 +172,7 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
     if(game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
       tidy5eItemCard(html, actor);
     }
+    tidy5eAmmoSwitch(html, actor);
 
     
     html.find(".toggle-personality-info").click( async (event) => {
