@@ -3,8 +3,8 @@ export const tidy5eAmmoSwitch = function (html, actor) {
   html.find('.ammo').each(function () {
     const element = $(this);
     const itemId = element.attr('data-id');
-    const token = actor.token || null
-    if (token) actor = actor.getActiveTokens(false, true).find(t => t.data._id === token.id).actor // get synthetic actor
+    const token = actor.token || null;
+    if (token) actor = actor.getActiveTokens(false, true).find(t => t.data._id === token.id).actor; // get synthetic actor
     const item = actor.items.get(itemId);
     const equippedOnly = game.settings.get('tidy5e-sheet', 'ammoEquippedOnly');
     const ammoItems = actor.items.filter(x => x.data.data.consumableType === "ammo" && (!equippedOnly || x.data.data.equipped));
@@ -20,7 +20,8 @@ export const tidy5eAmmoSwitch = function (html, actor) {
       const element = $(this);
       const val = element.val();
       let actor = game.actors.get(selector.attr('data-actor'));
-      if (token) actor = actor.getActiveTokens(false, true).find(t => t.data._id === selector.attr('data-token')).actor // get synthetic actor
+      const token = selector.attr('data-token');
+      if (token) actor = actor.getActiveTokens(false, true).find(t => t.data._id === token).actor; // get synthetic actor
       const item = actor.items.get(selector.attr('data-item'));
       const ammo = actor.items.get(val);
       item.update({
