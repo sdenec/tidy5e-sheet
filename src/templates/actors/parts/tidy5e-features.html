@@ -56,6 +56,9 @@
           <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
             {{item.name}}
           </h4>
+          {{#if item.data.properties.amm}}
+          <span class="ammo" data-id="{{item._id}}"></span>
+          {{/if}}
           {{#unless ../../isCharacter}}
           {{#if item.data.quantity}}
           <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
@@ -72,7 +75,7 @@
         {{/if}}
 
         {{#if section.hasActions}}
-        <div class="item-detail item-charges">
+        <div class="item-detail item-charges {{#if ../../isNPC}}{{#unless item.hasUses}} no-border{{/unless}}{{/if}}">
           {{#if item.isOnCooldown}}
           <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i> {{item.data.recharge.value}}{{#if (ne item.data.recharge.value 6)}}+{{/if}}</a>
           {{else if item.data.recharge.value}}
@@ -80,12 +83,12 @@
 
           {{else if item.hasUses}}
           <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
-          {{else}}
+          {{else unless ../../isNPC}}
           <a class="addCharges" value="Add">Add</a>
           {{/if}}
         </div>
 
-        <div class="item-detail item-action">
+        <div class="item-detail item-action {{#if ../../isNPC}}{{#unless item.data.activation.type}} no-border{{/unless}}{{/if}}">
           {{#if item.data.activation.type }}
           {{item.labels.activation}}
           {{/if}}

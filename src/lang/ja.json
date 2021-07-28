@@ -226,6 +226,10 @@
 		"name" : "特徴をﾘｿｰｽの下に移動",
 		"hint" : "特徴を、技能の下 (左段)から、リソース下 (右段)に移動する場合に有効にします。"
 	},
+	"TIDY5E.Settings.AmmoEquippedOnly" : {
+		"name" : "装備済の矢弾のみ表示",
+		"hint" : "武器ごとに現在装備されている矢弾のみ表示するようにします。"
+	},
 
 
 	"TIDY5E.Settings.TraitsAlwaysShown" : {

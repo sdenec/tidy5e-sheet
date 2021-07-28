@@ -70,13 +70,6 @@
       </div>
     </article>
     <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='traitLabelsEnabled' id='traitLabelsEnabled' {{checked settings.traitLabelsEnabled.value}}>
-      <div class="description">
-        <label for="traitLabelsEnabled">{{localize 'TIDY5E.Settings.TraitLabels.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='traitsTogglePc' id='traitsTogglePc' {{checked settings.traitsTogglePc.value}}>
       <div class="description">
         <label for="traitsTogglePc">{{localize 'TIDY5E.Settings.TraitsTogglePc.name'}}</label>
@@ -197,7 +190,13 @@
   
   <section class='tab gm-only' data-tab='gm-options'>
     <h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
-    
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hiddenDeathSavesEnabled' id='hiddenDeathSavesEnabled' {{checked settings.hiddenDeathSavesEnabled.value}}>
+      <div class="description">
+        <label for="hiddenDeathSavesEnabled">{{localize 'TIDY5E.Settings.HiddenDeathSaves.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HiddenDeathSaves.hint'}}</p>
+      </div>
+    </article>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
       <div class="description">
@@ -360,6 +359,13 @@
       <div class="description">
         <label for="exhaustionDisabled">{{localize 'TIDY5E.Settings.ExhaustionDisabled.name'}}</label>
         <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionDisabled.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='traitLabelsEnabled' id='traitLabelsEnabled' {{checked settings.traitLabelsEnabled.value}}>
+      <div class="description">
+        <label for="traitLabelsEnabled">{{localize 'TIDY5E.Settings.TraitLabels.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
       </div>
     </article>
 	</section>
