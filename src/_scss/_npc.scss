@@ -234,6 +234,22 @@
 
   .center-pane {
     min-height: 100%;
+
+    .features {
+      flex: 0;
+      border-bottom: 1px solid var(--light-color);
+      margin-bottom: 4px;
+    }
+
+    .inventory-currency {
+      padding: 4px 0 4px 10px;
+
+      .currency-item {
+        height: 22px;
+        font-size: 12px;
+      }
+    }
+
   }
 
   .counters {

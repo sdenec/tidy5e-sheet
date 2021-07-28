@@ -92,9 +92,9 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "traitLabelsEnabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.TraitLabels.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.TraitLabels.hint"),
-			scope: "user",
+			scope: "world",
 			config: false,
-			default: false,
+			default: true,
 			type: Boolean
 		});
 
@@ -393,6 +393,16 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "editEffectsGmOnlyEnabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.EditEffectsGmOnly.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.EditEffectsGmOnly.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+		
+		// Hidden Death Saves
+		game.settings.register("tidy5e-sheet", "hiddenDeathSavesEnabled", {
+			name: `${game.i18n.localize("TIDY5E.Settings.HiddenDeathSaves.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.HiddenDeathSaves.hint"),
 			scope: "world",
 			config: false,
 			default: false,

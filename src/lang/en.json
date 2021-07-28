@@ -178,7 +178,7 @@
 	},
 	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "Show Trait Labels.",
-		"hint" : "By default only icons are shown for traits. Enable to display labels as well."
+		"hint" : "Disable to only show icons for PC/NPC traits."
 	},
 
 
@@ -329,5 +329,9 @@
 		"hint" : "Chose between 'Actions' and 'Attributes'.",
 		"default": "Actions",
 		"attributes": "Attributes"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves" : {
+		"name" : "Hide Death Saves from Players.",
+		"hint" : "Enable to make Death Saves and Death Save Results only visible to the GM"
 	}
 }

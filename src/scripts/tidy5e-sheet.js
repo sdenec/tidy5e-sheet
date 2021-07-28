@@ -534,6 +534,9 @@ async function setSheetClasses(app, html, data) {
 	if(game.user.isGM){
 		html.find('.tidy5e-sheet').addClass('isGM');
 	}
+	if (game.settings.get("tidy5e-sheet", "hiddenDeathSavesEnabled") && !game.user.isGM) {
+		html.find('.tidy5e-sheet .death-saves').addClass('gmOnly');
+	}
 	if (game.settings.get("tidy5e-sheet", "quantityAlwaysShownEnabled")) {
 		html.find('.item').addClass('quantityAlwaysShownEnabled');
 	}

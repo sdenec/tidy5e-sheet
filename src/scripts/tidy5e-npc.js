@@ -458,6 +458,9 @@ async function setSheetClasses(app, html, data) {
   if (game.settings.get("tidy5e-sheet", "traitsAlwaysShownNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .traits').addClass('always-visible');
   }
+  if (game.settings.get("tidy5e-sheet", "traitLabelsEnabled")) {
+		html.find('.tidy5e-sheet.tidy5e-npc .traits').addClass('show-labels');
+	}
   if (game.settings.get("tidy5e-sheet", "skillsAlwaysShownNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
   }
@@ -471,6 +474,18 @@ async function setSheetClasses(app, html, data) {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('original');
   }
 	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'itemCardsFixKey'));
+}
+
+// Abbreviate Currency
+async function abbreviateCurrency(app,html,data) {
+	html.find('.currency .currency-item label').each(function(){
+		let currency = $(this).data('denom').toUpperCase();
+		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
+		if(abbr == `TIDY5E.CurrencyAbbr${currency}`){
+			abbr = currency;
+		}
+		$(this).html(abbr);
+	});
 }
 
 // Hide empty Spellbook
@@ -596,6 +611,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   toggleTraitsList(app, html, data);
   toggleItemMode(app, html, data);
   restoreScrollPosition(app, html, data);
+	abbreviateCurrency(app,html,data);
   hideSpellbook(app, html, data);
   resetTempHp(app, html, data);
   editProtection(app, html, data);

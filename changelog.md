@@ -16,6 +16,18 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.11 ###
+
+- armor configuration added
+- updated JP translation
+- Added Ammunition selector to NPCs | thanks to @DarKDinDoN
+- Added uses and actions to NPC inventory items | thanks to @DarKDinDoN
+- Fixed editor button issue (still a core bug)
+- new GM option to hide Death Saves and Results from Players
+- restricted size of secondary fields in biography and journal tab
+- added Currency section to NPC inventory
+- trait labels can now be disabled for pc/npc/vehicles as a gm only setting (visible by default)
+
 ### Version 0.5.10 ###
 
 - definately fixed type selection for newly created NPCs (maybe)

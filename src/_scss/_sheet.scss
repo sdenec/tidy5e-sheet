@@ -85,6 +85,16 @@
 
 	// Notes in Biography and Journal
 
+	.notes-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.main-notes {
+		display: flex;
+		flex: 1;
+	}
+
 	.top-notes {
 		flex: 0 0 100%;
 		margin-bottom: 1rem;
@@ -124,6 +134,7 @@
 
 	.left-notes {
 		margin-right: 1rem;
+		max-width: 350px;
 	}
 
 	.limited .note-entries {
@@ -148,7 +159,7 @@
 		padding: 8px;
 		margin-bottom: 1rem;
 		position: relative;
-		flex:1;
+		flex: 0 0 1px;
 		
 		&:last-child {
 			margin-bottom: 0;
@@ -159,6 +170,11 @@
 			padding: 0;
 			border: none;
 			box-shadow: none;
+		}
+
+		.editor .editor-edit,
+		&:hover .editor .tox-tinymce~.editor-edit {
+			display: none;
 		}
 
 		.section-titles {
@@ -256,9 +272,7 @@
 				color: var(--primary-font);
 			}
 
-		}
-
-		//.editor-content
+		}//.editor-content
     
 	}
 

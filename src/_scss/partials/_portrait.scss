@@ -159,11 +159,15 @@
 		text-shadow: 0 0 5px 1px #222;
 	}
 
-	.profile.hp-0-0 .death-saves,
-	.profile:not(.deathfailure-0):not(.deathfailure-) .death-saves, 
-	.profile:not(.deathsuccess-0):not(.deathsuccess-) .death-saves {
+	.profile.hp-0-0 .death-saves:not(.gmOnly),
+	.profile:not(.deathfailure-0):not(.deathfailure-) .death-saves:not(.gmOnly),
+	.profile:not(.deathsuccess-0):not(.deathsuccess-) .death-saves:not(.gmOnly) {
 		display: flex;
 	}
+
+	// .profile .death-saves.gmOnly {
+	// 	display: none;
+	// }
 
 	.profile.disable-hp-overlay .counter-value,
 	.profile:not(.deathfailure-0):not(.hp-0-0) .counter-value, 
