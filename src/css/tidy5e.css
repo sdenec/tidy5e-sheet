@@ -3278,6 +3278,10 @@
   overflow: hidden;
 }
 
+.tidy5e.sheet.actor .list-layout .items-list .item-detail.no-border {
+  border-left-color: transparent;
+}
+
 .tidy5e.sheet.actor .list-layout .items-list .item-detail span.truncate {
   white-space: nowrap;
   overflow: hidden;
