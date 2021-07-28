@@ -56,6 +56,9 @@
           <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
             {{item.name}}
           </h4>
+          {{#if item.data.properties.amm}}
+          <span class="ammo" data-id="{{item._id}}"></span>
+          {{/if}}
           {{#unless ../../isCharacter}}
           {{#if item.data.quantity}}
           <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
