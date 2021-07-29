@@ -367,7 +367,8 @@
 		} //.tag
 
 		.trait-selector,
-		.proficiency-selector {
+		.proficiency-selector,
+		.config-button {
 		  flex: 0 0 10px;
 		  color: #999;
 		  margin-left: 4px;
@@ -377,12 +378,14 @@
 		}
 
 		&:not(.expanded):not(.always-visible) .trait-selector,
-		&:not(.expanded):not(.always-visible) .proficiency-selector {
+		&:not(.expanded):not(.always-visible) .proficiency-selector,
+		&:not(.expanded):not(.always-visible) .config-button {
 			display: none;
 		}
 
 		.trait-selector:hover i.fas,
-		.proficiency-selector:hover i.fas {
+		.proficiency-selector:hover i.fas,
+		.config-button:hover i.fas {
 			color: var(--secondary-color);
 			text-shadow: none;
 		}

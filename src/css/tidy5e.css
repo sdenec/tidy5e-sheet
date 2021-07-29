@@ -1573,7 +1573,7 @@
   font-weight: 700;
   margin: 0 auto;
   width: 44px;
-  z-index: 1;
+  z-index: 40;
 }
 
 .tidy5e.sheet.actor .header-attributes .ac-display .attribute-value .property-attribution {
@@ -2266,7 +2266,8 @@
 }
 
 .tidy5e.sheet.actor .traits .trait-selector,
-.tidy5e.sheet.actor .traits .proficiency-selector {
+.tidy5e.sheet.actor .traits .proficiency-selector,
+.tidy5e.sheet.actor .traits .config-button {
   flex: 0 0 10px;
   color: #999;
   margin-left: 4px;
@@ -2276,12 +2277,14 @@
 }
 
 .tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .trait-selector,
-.tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .proficiency-selector {
+.tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .proficiency-selector,
+.tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .config-button {
   display: none;
 }
 
 .tidy5e.sheet.actor .traits .trait-selector:hover i.fas,
-.tidy5e.sheet.actor .traits .proficiency-selector:hover i.fas {
+.tidy5e.sheet.actor .traits .proficiency-selector:hover i.fas,
+.tidy5e.sheet.actor .traits .config-button:hover i.fas {
   color: var(--secondary-color);
   text-shadow: none;
 }

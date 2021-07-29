@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.13 ###
+
+- ac tooltip css fix
+- senses error fix
+
 ### Version 0.5.12 ###
 
 - added proficiency options in actor traits
