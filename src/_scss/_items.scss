@@ -141,6 +141,12 @@
 					font-weight: 400;
 				}
 
+				select {
+					width: 100%;
+					height: 20px;
+					text-transform: capitalize;
+				}
+
 				&:first-child {
 					border: none;
 					padding-left: 0;
