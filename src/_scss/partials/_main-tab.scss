@@ -366,7 +366,8 @@
 			}
 		} //.tag
 
-		.trait-selector {
+		.trait-selector,
+		.proficiency-selector {
 		  flex: 0 0 10px;
 		  color: #999;
 		  margin-left: 4px;
@@ -375,11 +376,13 @@
 			padding: 2px 0 0 0;
 		}
 
-		&:not(.expanded):not(.always-visible) .trait-selector {
+		&:not(.expanded):not(.always-visible) .trait-selector,
+		&:not(.expanded):not(.always-visible) .proficiency-selector {
 			display: none;
 		}
 
-		.trait-selector:hover i.fas {
+		.trait-selector:hover i.fas,
+		.proficiency-selector:hover i.fas {
 			color: var(--secondary-color);
 			text-shadow: none;
 		}

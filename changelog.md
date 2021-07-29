@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.12 ###
+
+- added proficiency options in actor traits
+- item sheet css fix for rarity dropdown
+
 ### Version 0.5.11 ###
 
 - armor configuration added
