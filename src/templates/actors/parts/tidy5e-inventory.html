@@ -16,7 +16,7 @@
           {{/each}}
         {{else}}
           {{#if ../isCharacter}}
-          <div class="items-header-weight" title="{{localize 'DND5E.Weight'}} ({{localize 'DND5E.AbbreviationLbs'}})"><i class="fas fa-weight-hanging"></i></div>
+          <div class="items-header-weight" title="{{localize 'DND5E.Weight'}} ({{ @root.weightUnit }})"><i class="fas fa-weight-hanging"></i></div>
           {{/if}}
           <div class="items-header-charge" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
           <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
@@ -73,7 +73,7 @@
           {{/each}}
         {{else}}
           {{#if ../../isCharacter}}
-          <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.totalWeight }} {{localize 'DND5E.AbbreviationLbs'}}">
+          <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.totalWeight }} {{ @root.weightUnit }}">
             {{#if item.totalWeight}}
             <div>
               {{ item.totalWeight }}
@@ -114,7 +114,7 @@
            {{/if}}
           <div class="info-card-amount">
             <!-- {{#if item.totalWeight}} {{/if}} -->
-            <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{localize "DND5E.AbbreviationLbs"}}</span>
+            <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
             <!-- {{#if item.data.quantity}} {{/if}} -->
             <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}} &times; {{item.data.price}} {{localize 'TIDY5E.CurrencyAbbrGP'}}</span>
           </div>

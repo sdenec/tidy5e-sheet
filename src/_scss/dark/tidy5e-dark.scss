@@ -69,7 +69,8 @@
 
     a.entity-link,
     a.inline-roll {
-      color: #222;
+      color: var(--primary-font);
+      background: var(--faint-color);
     }
 
   }

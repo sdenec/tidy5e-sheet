@@ -4,7 +4,7 @@ async function updateExhaustion(actorEntity) {
     return;
   }
   
-  let exhaustion = actorEntity._data.data.attributes.exhaustion;
+  let exhaustion = actorEntity.data._source.data.attributes.exhaustion;
   let icon = game.settings.get('tidy5e-sheet', 'exhaustionEffectIcon');
   let currentExhaustion;
   let exhaustionPresent = null;
@@ -24,9 +24,9 @@ async function updateExhaustion(actorEntity) {
       exhaustionSet.push(effect);
     }
     if(exhaustion > 1 && exhaustion < 5 ){
-      if (actorEntity._data?.data?.attributes?.movement) {
+      if (actorEntity.data?._source?.data?.attributes?.movement) {
         movementSet = [];
-        Object.entries(actorEntity._data?.data?.attributes?.movement).forEach(speed => {
+        Object.entries(actorEntity.data?._source?.data?.attributes?.movement).forEach(speed => {
           if (speed[0] == "hover" || speed[0] == "units") {
             return;
           }
@@ -39,11 +39,9 @@ async function updateExhaustion(actorEntity) {
         const changeKey = "data.attributes.movement." + el;
         let effect = {
           key: changeKey,
-          value: 0.5,
-          mode: 1,
-          priority: 20,
-          duration: 0,
-          origin: effectName
+          value: "0.5",
+          mode: CONST.ACTIVE_EFFECT_MODES.MULTIPLY,
+          priority: 20
         };
         exhaustionSet.push(effect);
       });
@@ -68,16 +66,16 @@ async function updateExhaustion(actorEntity) {
     if(exhaustion > 3 ){
       let effect =  {
         key: "data.attributes.hp.max",
-        value: 0.5,
+        value: "0.5",
         mode: 1,
         priority: 20
       };
       exhaustionSet.push(effect);
     }
     if(exhaustion > 4 ){
-      if (actorEntity._data?.data?.attributes?.movement) {
+      if (actorEntity.data?._source?.data?.attributes?.movement) {
         movementSet = [];
-        Object.entries(actorEntity._data?.data?.attributes?.movement).forEach(speed => {
+        Object.entries(actorEntity.data?._source?.data?.attributes?.movement).forEach(speed => {
           if (speed[0] == "hover" || speed[0] == "units") {
             return;
           }
@@ -90,11 +88,9 @@ async function updateExhaustion(actorEntity) {
         const changeKey = "data.attributes.movement." + el;
         let effect = {
           key: changeKey,
-          value: 0,
-          mode: 1,
-          priority: 20,
-          duration: 0,
-          origin: effectName
+          value: "0",
+          mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
+          priority: 20
         };
         exhaustionSet.push(effect);
       });    
@@ -102,7 +98,7 @@ async function updateExhaustion(actorEntity) {
     if(exhaustion > 5 ){
       let effect =  {
         key: "data.attributes.hp.value",
-        value: 0,
+        value: "0",
         mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
         priority: 20
       };
@@ -135,6 +131,7 @@ async function updateExhaustion(actorEntity) {
         label: effectName,
         icon: icon,
         changes: exhaustionSet,
+        duration: {},
         flags: {
           'tidy5e-sheet': {
             'exhaustion': exhaustion

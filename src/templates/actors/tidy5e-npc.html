@@ -173,7 +173,7 @@
                 </div>
                 <div class="ability-modifiers value-footer">
                   <span class="ability-mod rollable" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
-                  <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number">
+                  <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.baseProf}}" data-dtype="Number">
                   <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
                   {{{ability.icon}}}</a>
                   <span class="ability-save rollable" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
@@ -209,7 +209,7 @@
           <ul class="skills-list {{#if actor.flags.tidy5e-sheet.npcSkillsExpanded}}expanded{{/if}} {{#if actor.flags.tidy5e-sheet.npcSkillsAlwaysVisible}}.always-visible{{/if}}">
             {{#each data.skills as |skill s|}}
             <li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
-              <input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
+              <input type="hidden" name="data.skills.{{s}}.value" value="{{skill.baseValue}}" data-dtype="Number">
               <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
               <h4 class="skill-name rollable">{{skill.label}}</h4>
               <span class="skill-ability">{{skill.ability}}</span>

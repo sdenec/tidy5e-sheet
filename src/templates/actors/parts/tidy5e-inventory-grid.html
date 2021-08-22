@@ -55,7 +55,7 @@
            {{/if}}
           <div class="info-card-amount">
             <!-- {{#if item.totalWeight}} {{/if}} -->
-            <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{localize "DND5E.AbbreviationLbs"}}</span>
+            <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
             <!-- {{#if item.data.quantity}} {{/if}} -->
             <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}}</span>
           </div>
