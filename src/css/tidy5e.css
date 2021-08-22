@@ -1598,6 +1598,11 @@
   display: block;
 }
 
+.tidy5e.sheet.actor .header-attributes .ac-display .config-button {
+  display: block;
+  height: 100%;
+}
+
 .tidy5e.sheet.actor .header-attributes .initiative {
   width: 60px;
 }
@@ -4499,6 +4504,10 @@
 
 .tidy5e.sheet.actor.vehicle .header-attributes .ac-display .value {
   top: 28px;
+  font-size: 40px;
+  height: 38px;
+  font-weight: 600;
+  margin: 0;
 }
 
 .tidy5e.sheet.actor.vehicle .header-attributes .ac-display .value-footer {

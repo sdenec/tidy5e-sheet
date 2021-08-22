@@ -50,7 +50,8 @@
 
 .tidy5eDark .tidy5e.sheet.actor a.entity-link,
 .tidy5eDark .tidy5e.sheet.actor a.inline-roll {
-  color: #222;
+  color: var(--primary-font);
+  background: var(--faint-color);
 }
 
 .tidy5eDark .tidy5e.sheet.item .window-content {

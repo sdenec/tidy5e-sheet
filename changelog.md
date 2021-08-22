@@ -16,6 +16,14 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.14 ###
+
+- general naming updates for 1.4.2 compatibility
+- fixed empty AC field not clickable to access options
+- fixed Vehicle AC field
+- dark mode font color for rollable links adjusted
+- fixed exhaustion not setting speed to 0
+
 ### Version 0.5.13 ###
 
 - ac tooltip css fix

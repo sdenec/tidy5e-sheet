@@ -428,18 +428,10 @@
 	}
 }
 
-// .header-attributes .ac-display .config-button {
-// 	position: absolute;
-// 	bottom: -4px;
-// 	left: 50%;
-// 	transform: translate(-50%,-50%);
-// 	color: var(--tertiary-color);
-// 	transition: color .3s ease;
-
-// 	&:hover {
-// 		color: var(--primary-color);
-// 	}
-// }
+.header-attributes .ac-display .config-button {
+	display: block;
+	height: 100%;
+}
 
 .header-attributes .initiative {
 	width: 60px;
