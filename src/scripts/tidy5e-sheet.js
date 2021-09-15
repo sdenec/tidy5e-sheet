@@ -300,6 +300,11 @@ async function checkDeathSaveStatus(app, html, data){
 		var currentHealth = data.attributes.hp.value;
 		var deathSaveSuccess = data.attributes.death.success;
 		var deathSaveFailure = data.attributes.death.failure;
+		
+  	console.log(`current HP: ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
+		if (currentHealth <=0){
+			$('.tidy5e-sheet .profile').addClass('dead');
+		}
 
 		if(currentHealth > 0 && deathSaveSuccess != 0 || currentHealth > 0 && deathSaveFailure != 0){
 				await actor.update({"data.attributes.death.success": 0});

@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.15 ###
+
+- biography won't expand its size is fixed
+- fixed death save display for hp values below 0
+
 ### Version 0.5.14 ###
 
 - general naming updates for 1.4.2 compatibility
