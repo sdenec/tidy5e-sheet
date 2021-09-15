@@ -634,24 +634,15 @@
   text-shadow: 0 0 5px 1px #222;
 }
 
-.tidy5e.sheet.actor .profile.hp-0-0 .death-saves:not(.gmOnly),
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .death-saves:not(.gmOnly),
-.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .death-saves:not(.gmOnly) {
+.tidy5e.sheet.actor .profile.dead .death-saves:not(.gmOnly) {
   display: flex;
 }
 
 .tidy5e.sheet.actor .profile.disable-hp-overlay .counter-value,
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.hp-0-0) .counter-value,
-.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.hp-0-0) .counter-value {
-  background: rgba(255, 0, 0, 0.3);
+.tidy5e.sheet.actor .profile.disable-hp-overlay.dead .counter-value {
+  background: rgba(255, 0, 0, 0.5);
   padding: 0 .5rem;
   border-radius: 5px;
-}
-
-.tidy5e.sheet.actor .profile.disable-hp-overlay .counter-value,
-.tidy5e.sheet.actor .profile.disable-hp-overlay:not(.deathfailure-0):not(.hp-0-0) .counter-value,
-.tidy5e.sheet.actor .profile.disable-hp-overlay:not(.deathsuccess-0):not(.hp-0-0) .counter-value {
-  background: rgba(255, 0, 0, 0.5);
 }
 
 .tidy5e.sheet.actor .death-saves .counter-value {
@@ -689,15 +680,9 @@
 }
 
 .tidy5e.sheet.actor .profile .inspiration.disabled,
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .inspiration,
-.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .rest-container,
-.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container,
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hd,
-.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .portrait-hd,
-.tidy5e.sheet.actor .hp-0-0 .inspiration,
-.tidy5e.sheet.actor .hp-0-0 .rest-container,
-.tidy5e.sheet.actor .hp-0-0 .portrait-hd {
+.tidy5e.sheet.actor .profile.dead .inspiration,
+.tidy5e.sheet.actor .profile.dead .rest-container,
+.tidy5e.sheet.actor .profile.dead .portrait-hd {
   display: none;
 }
 
@@ -887,14 +872,12 @@
 }
 
 .tidy5e.sheet.actor .profile .exhaustion-container.disabled,
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container:not(.level-6),
-.tidy5e.sheet.actor .profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container:not(.level-6),
-.tidy5e.sheet.actor .hp-0-0 .exhaustion-container:not(.level-6) {
+.tidy5e.sheet.actor .profile.dead .exhaustion-container:not(.level-6),
+.tidy5e.sheet.actor .dead .exhaustion-container:not(.level-6) {
   display: none;
 }
 
-.tidy5e.sheet.actor .profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hp,
-.tidy5e.sheet.actor .hp-0-0 .portrait-hp {
+.tidy5e.sheet.actor .profile:not(.dead) .portrait-hp {
   border-radius: 5px;
   width: 120px !important;
 }
@@ -3760,6 +3743,7 @@
 
 .tidy5e.sheet.actor .notes-container {
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 

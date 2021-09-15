@@ -16,6 +16,14 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.15 ###
+
+- fixed biography not expanding in width
+- fixed death save display for hp values below 0
+- long rest now reduces exhaustion by 1
+- CUB exhaustion automatically sets correct exhaustion value for the portrait indicator and will remove inactive levels (eg. only one CUB exhaustion level will be applied)
+- CUB exhaustion works from Sheet and Token (though token has to be present on canvas for CUB to work!)
+
 ### Version 0.5.14 ###
 
 - general naming updates for 1.4.2 compatibility

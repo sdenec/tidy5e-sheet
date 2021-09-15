@@ -159,9 +159,7 @@
 		text-shadow: 0 0 5px 1px #222;
 	}
 
-	.profile.hp-0-0 .death-saves:not(.gmOnly),
-	.profile:not(.deathfailure-0):not(.deathfailure-) .death-saves:not(.gmOnly),
-	.profile:not(.deathsuccess-0):not(.deathsuccess-) .death-saves:not(.gmOnly) {
+	.profile.dead .death-saves:not(.gmOnly) {
 		display: flex;
 	}
 
@@ -170,17 +168,10 @@
 	// }
 
 	.profile.disable-hp-overlay .counter-value,
-	.profile:not(.deathfailure-0):not(.hp-0-0) .counter-value, 
-	.profile:not(.deathsuccess-0):not(.hp-0-0) .counter-value {
-		background: rgba(255,0,0,.3);
+	.profile.disable-hp-overlay.dead .counter-value {
+		background: rgba(255,0,0,.5);
 		padding: 0 .5rem;
 		border-radius: 5px;
-	}
-
-	.profile.disable-hp-overlay .counter-value,
-	.profile.disable-hp-overlay:not(.deathfailure-0):not(.hp-0-0) .counter-value, 
-	.profile.disable-hp-overlay:not(.deathsuccess-0):not(.hp-0-0) .counter-value {
-		background: rgba(255,0,0,.5);
 	}
 
 	.death-saves .counter-value {
@@ -219,15 +210,9 @@
 
 // ## DEATH SAVES ##
 	.profile .inspiration.disabled,
-	.profile:not(.deathfailure-0):not(.deathfailure-) .inspiration, 
-	.profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
-	.profile:not(.deathfailure-0):not(.deathfailure-) .rest-container, 
-	.profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container, 
-	.profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hd, 
-	.profile:not(.deathsuccess-0):not(.deathsuccess-) .portrait-hd,
-	.hp-0-0 .inspiration,
-	.hp-0-0 .rest-container,
-	.hp-0-0 .portrait-hd {
+	.profile.dead .inspiration,
+	.profile.dead .rest-container,
+	.profile.dead .portrait-hd {
 		display: none;
 	}
 
@@ -424,14 +409,12 @@
 // ## EXHAUSTION ##
 
 	.profile .exhaustion-container.disabled,
-	.profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container:not(.level-6), 
-	.profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container:not(.level-6),
-	.hp-0-0 .exhaustion-container:not(.level-6) {
+	.profile.dead .exhaustion-container:not(.level-6),
+	.dead .exhaustion-container:not(.level-6) {
 		display: none;
 	}
 	
-	.profile:not(.deathfailure-0):not(.deathfailure-) .portrait-hp,
-	.hp-0-0 .portrait-hp {
+	.profile:not(.dead) .portrait-hp {
 		border-radius: 5px;
 		width: 120px !important;
 	}

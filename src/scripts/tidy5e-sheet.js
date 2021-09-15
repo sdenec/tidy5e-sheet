@@ -122,35 +122,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			event.preventDefault();
 			let target = event.currentTarget;
 			let value = Number(target.dataset.elvl);
-			let effectName = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustom');
-
-			if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') != 'custom'){	
-				let data = actor.data.data;
-				await actor.update({"data.attributes.exhaustion": value});
-			} else {
-				if(value != 0){
-					let effect = `${effectName} ${value}`;
-					let id = actor._id;
-					let tokens = canvas.tokens.placeables;
-					let index = tokens.findIndex(x => x.data.actorId === id);
-					// console.log(index);
-					if(index == -1){
-						ui.notifications.warn(`${game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.warning")}`);
-						return;
-					}
-					let token = tokens[index];
-					game.cub.addCondition(effect, [token])
-				} else {
-					const levels = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustomTiers');
-					for(let i = 1; i<=levels; i++){
-						let tier = `${effectName} ${i}`;
-						if (game.cub.hasCondition(tier)){
-							// console.log(tier)
-							await game.cub.removeCondition(tier)
-						}
-					}
-				}
-			}
+			let data = actor.data.data;
+			await actor.update({"data.attributes.exhaustion": value});
  		});
 
  		// changing item qty and charges values (removing if both value and max are 0)
@@ -300,6 +273,11 @@ async function checkDeathSaveStatus(app, html, data){
 		var currentHealth = data.attributes.hp.value;
 		var deathSaveSuccess = data.attributes.death.success;
 		var deathSaveFailure = data.attributes.death.failure;
+		
+  	// console.log(`current HP: ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
+		if (currentHealth <=0){
+			$('.tidy5e-sheet .profile').addClass('dead');
+		}
 
 		if(currentHealth > 0 && deathSaveSuccess != 0 || currentHealth > 0 && deathSaveFailure != 0){
 				await actor.update({"data.attributes.death.success": 0});
@@ -570,7 +548,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
 	markActiveEffects(app,html,data);
-	// console.log(data.actor);
+	console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });
 
