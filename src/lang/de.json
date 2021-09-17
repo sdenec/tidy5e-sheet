@@ -112,9 +112,33 @@
 	"TIDY5E.Settings.VehicleLabel" : "Fahrzeuge",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "Einstellungen für Charakterbögen"
+		"label" : "Einstellungen für Charakterbögen",
+		"title" : "Tidy5e Charakterbogeneinstellungen"
 	},
-	
+	"TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "Spieler",
+		"header" : "Spieler Charakterbögen"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "NSCs/Fahrzeuge",
+		"header" : "NSC/Fahrzeugbögen",
+		"labelNPCs" : "NSCs",
+		"labelVehicles" : "Fahrzeuge"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "SL Optionen",
+		"header" : "SL Bogene Optionen"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "Module",
+		"header" : "Modul Optionen",
+		"labelActionsFavorites" : "Akteur Aktionen/Favoriten",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "Info",
+		"header" : "Info"
+	},	
 	"TIDY5E.Settings.ItemCardsForAllItems" : {
 		"name" : "Zeigen Gegenstand-Infokarten in allen Ansichten.",
 		"hint" : "Deaktivieren wenn Infokarten nur in der Rasteransicht gezeigt werden sollen."
@@ -136,6 +160,7 @@
 		"hint" : "Gib eine Taste (z. B.: x) für die Infokarten-Interaktion ein. Alle Tasten außer Funktionstasten (ctrl, alt, etc.) möglich"
 	},
 	
+
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e Farbschema.",
 		"hint" : "Nutze das helle Standarschema oder das dunkle Alternativschema von Tidy5e.",
@@ -150,18 +175,21 @@
 	"TIDY5E.Settings.RollButtonsToCard" : {
 		"name" : "Zeige midiQol Gegenstand-Buttons in der Info-Karte",
 		"hint" : "Standardmäßig werden Gegenstands-Buttons in den Zusatzinfos angezeigt. Aktivieren, um sie in die Info-Karte zu verschieben. Funktioniert in allen Layout-Modi."
-	},
-	
+	},	
 	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "Beschriftung von Merkmalen.",
 		"hint" : "Standardmäßig werden nur Icons für Merkmale angezeigt. Einschalten, um auch Beschriftungen für Merkmale anzuzeigen."
 	},
 	
+	
+	"TIDY5E.Settings.PlayerName" : {
+		"name" : "Zeige Spielername.",
+		"hint" : "Aktiviere, um ein Feld für den Namen des Spielers unterhalb des Charakternamens anzuzeigen."
+	},
 	"TIDY5E.Settings.JournalTab" : {
 		"name" : "Charakter-Tagebuch verstecken.",
 		"hint" : "Aktivieren, um den Tagebuch-Reiter zu verstecken."
 	},
-
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "Charakter-Klassenliste verstecken.",
 		"hint" : "Einschalten, um die Klassenliste unter dem Namen eines Charakters zu verstecken."
@@ -184,7 +212,7 @@
 	},
 	"TIDY5E.Settings.HpBar" : {
 		"name" : "Lebensbalken deaktivieren.",
-		"hint" : "Aktivieren, um den farbigen Balken zur Anzeige des Rest-Lebens unter dem Portrait zu deaktivieren (Trefferpunkte bleiben weiter sichtbar)."
+		"hint" : "Einschalten, um den farbigen Balken zur Anzeige des Rest-Lebens unter dem Portrait zu deaktivieren (Trefferpunkte bleiben weiter sichtbar)."
 	},
 	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "Trefferpunkt-Overlay verstecken.",
@@ -198,6 +226,12 @@
 		"name" : "Verschiebe Merkmale unter Ressourcen.",
 		"hint" : "Einschalten, um Merkmalliste von der linken Seite unter die Ressourcen zu verschieben."
 	},
+	"TIDY5E.Settings.AmmoEquippedOnly" : {
+		"name" : "Zeige nur ausgerüstete Munition.",
+		"hint" : "Einschalten, um nur die aktuell ausgerüstete Munition in der Waffen-Munitionsauswahl anzuzeigen."
+	},
+
+
 	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "Merkmale immer anzeigen.",
 		"hint" : "Standardmäßig sind leere Merkmale per Schalter ausgeblendet. Einschalten, um immer anzuzeigen."
@@ -206,6 +240,7 @@
 		"name" : "Fähigkeiten immer anzeigen.",
 		"hint" : "Standardmäßig sind ungeübte Fähigkeiten per Schalter ausgeblendet. Einschalten, um immer anzuzeigen."
 	},
+
 
 	"TIDY5E.Settings.ActiveEffectsMarker" : {
 		"name" : "Zeige Marker für Gegenstände mit Aktiven Effekten.",
@@ -225,6 +260,7 @@
 		"all": "Alle Darsteller",
 		"pc": "Nur für SCs",
 		"npc": "Nur für NSCs/Fahrzeuge",
+		"none": "Keine",
 		"default": "Keine"
 	},
 	"TIDY5E.Settings.HpOverlayBorder" : {
@@ -285,6 +321,7 @@
 		"hint" : "Fügt farbige Rahmen und Icons zu verknüpften/unverknüpften NSC-Bögen hinzu.",
 		"default": "Kein Verknüpfungsmarker (standard)",
 		"unlinked": "Unverknüpfte Token hervorheben",
+		"linked": "Verknüpfte Token hervorheben",
 		"both": "Verknüpfte und unverknüpfte Token hervorheben"
 	},
 	"TIDY5E.Settings.DefaultActionsTab" : {
@@ -292,5 +329,9 @@
 		"hint" : "Auswahl zwischen 'Aktionen' und 'Attributen'.",
 		"default": "Aktionen",
 		"attributes": "Attribute"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves" : {
+		"name" : "Verstecke Todesrettungswürfe vor Spielern.",
+		"hint" : "Einschalten, um Todesrettungswürfe und ihre Ergebnise nur für den SL Sichtbar zu machen."
 	}
 }
