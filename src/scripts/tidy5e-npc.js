@@ -35,7 +35,7 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
 
 	  return mergeObject(super.defaultOptions, {
       classes: ["tidy5e", "sheet", "actor", "npc"],
-      width: 740,
+      width: game.settings.get("tidy5e-sheet", "npsSheetWidth") ?? 740,
       height: 720,
 			tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab}]
     });
