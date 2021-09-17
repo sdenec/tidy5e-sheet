@@ -537,4 +537,34 @@ export function settingsList(){
 			},
 			default: 'default'
 		});
+
+		// Default width for player sheet
+		
+		game.settings.register("tidy5e-sheet", "playerSheetWidth", {
+			name: `${game.i18n.localize("TIDY5E.Settings.playerSheetWidth")}`,
+			scope: "user",
+			config: false,
+			type: Number,
+			default: 740
+		});
+
+		// Default width for NPC sheet
+		
+		game.settings.register("tidy5e-sheet", "npsSheetWidth", {
+			name: `${game.i18n.localize("TIDY5E.Settings.npsSheetWidth")}`,
+			scope: "user",
+			config: false,
+			type: Number,
+			default: 740
+		});
+
+		// Default width for vehicle sheet
+		
+		game.settings.register("tidy5e-sheet", "vehicleSheetWidth", {
+			name: `${game.i18n.localize("TIDY5E.Settings.vehicleSheetWidth")}`,
+			scope: "user",
+			config: false,
+			type: Number,
+			default: 740
+		});
 }
