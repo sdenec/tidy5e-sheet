@@ -24,6 +24,7 @@
 	"TIDY5E.RestHint": "Take A Rest",
 	"TIDY5E.RestS": "Short Rest",
 	"TIDY5E.RestL": "Long Rest",
+	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
 
 	"TIDY5E.Journal": "Journal",
 
@@ -333,5 +334,17 @@
 	"TIDY5E.Settings.HiddenDeathSaves" : {
 		"name" : "Hide Death Saves from Players.",
 		"hint" : "Enable to make Death Saves and Death Save Results only visible to the GM"
+	},
+	"TIDY5E.Settings.npsSheetWidth" : {
+		"name" : "Default NPC sheet width.",
+		"hint" : "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."
+	},
+	"TIDY5E.Settings.playerSheetWidth" : {
+		"name" : "Default player sheet width.",
+		"hint" : "The width of the player sheet in pixels, requires a refresh to take effect (default 740)."
+	},
+	"TIDY5E.Settings.vehicleSheetWidth" : {
+		"name" : "Default vehicle sheet width.",
+		"hint" : "The width of the vehicle sheet in pixels, requires a refresh to take effect (default 740)."
 	}
 }

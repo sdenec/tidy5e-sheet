@@ -15,7 +15,7 @@ export class Tidy5eVehicle extends ActorSheet5eVehicle {
 
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "vehicle"],
-			width: 740,
+			width: game.settings.get("tidy5e-sheet", "vehicleSheetWidth") ?? 740,
 			height: 720,
 			tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab}]
 		});

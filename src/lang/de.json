@@ -24,6 +24,7 @@
 	"TIDY5E.RestHint": "Rasten",
 	"TIDY5E.RestS": "Kurze Rast",
 	"TIDY5E.RestL": "Lange Rast",
+	"TIDY5E.HitDiceRollAverage": "Rechtsklick: Durchschnitt",
 
 	"TIDY5E.Journal": "Tagebuch",
 
@@ -292,5 +293,17 @@
 		"hint" : "Auswahl zwischen 'Aktionen' und 'Attributen'.",
 		"default": "Aktionen",
 		"attributes": "Attribute"
+	},
+	"TIDY5E.Settings.npsSheetWidth" : {
+		"name" : "Standard Breite des NSC Bogens.",
+		"hint" : "Die Breite des NSC Bogens in Pixeln, benötigt ein Neuladen der Seite (standard 740)."
+	},
+	"TIDY5E.Settings.playerSheetWidth" : {
+		"name" : "Standard Breite des Spieler Bogens.",
+		"hint" : "Die Breite des Spieler Bogens in Pixeln, benötigt ein Neuladen der Seite (standard 740)."
+	},
+	"TIDY5E.Settings.vehicleSheetWidth" : {
+		"name" : "Standard Breite des Fahrzeug Bogens.",
+		"hint" : "Die Breite des Fahrzeug Bogens in Pixeln, benötigt ein Neuladen der Seite (standard 740)."
 	}
 }

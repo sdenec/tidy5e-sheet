@@ -35,7 +35,7 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
 
 	  return mergeObject(super.defaultOptions, {
       classes: ["tidy5e", "sheet", "actor", "npc"],
-      width: 740,
+      width: game.settings.get("tidy5e-sheet", "npsSheetWidth") ?? 740,
       height: 720,
 			tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab}]
     });
@@ -191,6 +191,48 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       tidy5eItemCard(html, actor);
     }
     tidy5eAmmoSwitch(html, actor);
+
+    // calculate average hp on right clicking roll hit dice icon
+    html.find(".portrait-hp-formula span.rollable").mousedown( async (event) => {
+      switch (event.which) {
+      case 3:
+        let formula = actor.data.data.attributes.hp.formula;
+        // console.log(formula);
+        let r = new Roll(formula);
+        let term = r.terms;
+        // console.log(term);
+        let averageString = "";
+        for (let i = 0; i < term.length; i++){
+          let type = term[i].constructor.name;
+          switch (type){
+            case "Die":
+              averageString += Math.floor(((term[i].faces * term[i].number)+term[i].number)/2);
+              break;
+            case "OperatorTerm":
+              averageString += term[i].operator;
+              break;
+            case "NumericTerm":
+              averageString += term[i].number;
+              break;
+            default:
+              break;
+          }
+        }
+        // console.log(averageString);
+
+        let average = 0;
+        averageString = averageString.replace(/\s/g, '').match(/[+\-]?([0-9\.\s]+)/g) || [];
+        while(averageString.length) average += parseFloat(averageString.shift());
+
+        // console.log(average);
+        let data = {};
+        data['data.attributes.hp.value'] = average;
+        data['data.attributes.hp.max'] = average;
+        actor.update(data);
+
+      break;
+      }
+    });
 
     
     html.find(".toggle-personality-info").click( async (event) => {

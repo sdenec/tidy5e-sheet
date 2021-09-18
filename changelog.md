@@ -16,6 +16,12 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.16 ###
+
+- configurable sheet width (submission by @CarnVanBeck)
+- fixed long rest causing negative exhaustion
+- right clicking "roll hit dice" icon on NPCs will calculate average hp
+
 ### Version 0.5.15 ###
 
 - fixed biography not expanding in width

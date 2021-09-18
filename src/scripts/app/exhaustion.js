@@ -190,13 +190,13 @@ Hooks.on('updateActor', function (actorEntity, _, __, userId) {
 
 // Rest reduces by 1
 Hooks.on(`restCompleted`, (actorEntity, data) => { 
-  if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') != 'default') {
+  // if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') != 'default') {
     let actor = game.actors.get(actorEntity.data._id);
     if(data.longRest){
       let exhaustion = actorEntity.data._source.data.attributes.exhaustion;
-      actor.update({"data.attributes.exhaustion": exhaustion-1});
+      if (exhaustion > 0) actor.update({"data.attributes.exhaustion": exhaustion-1});
     }
-  }
+  // }
 });
 
 // set exhaustion value to cub effect level
