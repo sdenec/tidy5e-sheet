@@ -19,7 +19,8 @@ Thank you very much!
 ### Version 0.5.16 ###
 
 - configurable sheet width (submission by @CarnVanBeck)
-- long rest exhaustion fix
+- fixed long rest causing negative exhaustion
+- right clicking "roll hit dice" icon on NPCs will calculate average hp
 
 ### Version 0.5.15 ###
 
