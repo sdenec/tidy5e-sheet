@@ -31,7 +31,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "character"],
 			blockFavTab: true,
-			width: 740,
+			width: game.settings.get("tidy5e-sheet", "playerSheetWidth") ?? 740,
 			height: 840,
 			tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab}]
 		});

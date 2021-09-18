@@ -92,6 +92,10 @@ export class Tidy5eUserSettings extends FormApplication {
 			'rightClickDisabled',
 			'skillsAlwaysShownNpc',
 
+			'playerSheetWidth',
+			'npsSheetWidth',
+			'vehicleSheetWidth',
+
 			'traitLabelsEnabled',
 			'traitsAlwaysShownNpc',
 			'traitsMovedBelowResource',
