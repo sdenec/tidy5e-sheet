@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.16 ###
+
+- configurable sheet width (submission by @CarnVanBeck)
+- long rest exhaustion fix
+
 ### Version 0.5.15 ###
 
 - fixed biography not expanding in width

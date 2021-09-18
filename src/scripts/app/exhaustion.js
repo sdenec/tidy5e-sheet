@@ -194,7 +194,7 @@ Hooks.on(`restCompleted`, (actorEntity, data) => {
     let actor = game.actors.get(actorEntity.data._id);
     if(data.longRest){
       let exhaustion = actorEntity.data._source.data.attributes.exhaustion;
-      actor.update({"data.attributes.exhaustion": exhaustion-1});
+      if (exhaustion > 0) actor.update({"data.attributes.exhaustion": exhaustion-1});
     }
   }
 });
