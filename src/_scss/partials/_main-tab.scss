@@ -42,6 +42,15 @@
 		    font-weight: 400;
 			}
 
+			.config-button {
+				font-size: 10px;
+				margin-right: 4px;
+				color: var(--tertiary-color);
+				&:hover {
+					color: var(--primary-color);
+				}
+			}
+
 			&.proficient .skill-name {
 		    font-weight: 700;
 			}

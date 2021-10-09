@@ -351,10 +351,14 @@
       content: attr(data-hide-skills);
     }
 
-    &.always-visible .toggle-proficient,
-    &:not(.expanded):not(.always-visible) .skill .skill-proficiency {
+    &.always-visible .toggle-proficient {
     	display: none;
     }
+    
+    // &.always-visible .toggle-proficient,
+    // &:not(.expanded):not(.always-visible) .skill .skill-proficiency {
+    //   display: none;
+    // }
   }//.skills-list
 
   // .inventory-list .items-footer,

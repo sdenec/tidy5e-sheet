@@ -558,6 +558,7 @@ async function editProtection(app, html, data) {
     
 		if(game.settings.get("tidy5e-sheet", "editTotalLockEnabled")){
 			html.find(".skill input").prop('disabled', true);
+			html.find(".skill .config-button").remove();
 			html.find(".skill .proficiency-toggle").remove();
 			html.find(".ability-score").prop('disabled', true);
 			html.find(".ac-display input").prop('disabled', true);
@@ -567,6 +568,8 @@ async function editProtection(app, html, data) {
 			html.find(".res-max").prop('disabled', true);
 			html.find(".res-options").remove();
 			html.find(".ability-modifiers .proficiency-toggle").remove();
+			html.find(".ability .config-button").remove();
+			html.find(".traits .config-button,.traits .trait-selector,.traits .proficiency-selector").remove();
 			html.find('[contenteditable]').prop('contenteditable', false);
 			html.find(".caster-level input").prop('disabled', true);
 			html.find(".spellcasting-attribute select").prop('disabled', true);

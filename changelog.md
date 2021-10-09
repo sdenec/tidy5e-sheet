@@ -16,6 +16,13 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.17 ###
+
+- fixed size dropdown display bug and dark mode colors
+- ability config button added (will be hidden with active sheet lock)
+- skill config button added (will be hidden with active sheet lock)
+- sheet lock will now also disable trait settings and max spell overrides
+
 ### Version 0.5.16 ###
 
 - configurable sheet width (submission by @CarnVanBeck)

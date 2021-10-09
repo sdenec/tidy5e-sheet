@@ -24,7 +24,7 @@
 	"TIDY5E.RestHint": "휴식 취하기",
 	"TIDY5E.RestS": "짧은 휴식",
 	"TIDY5E.RestL": "긴 휴식",
-	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
+	"TIDY5E.HitDiceRollAverage": "우클릭: 평균",
 
 	"TIDY5E.Journal": "저널",
 
@@ -35,7 +35,7 @@
 	"TIDY5E.JournalQuests": "퀘스트",
 	"TIDY5E.JournalMisc": "기타사항",
 	"TIDY5E.JournalEntries": "저널 항목",
-	"TIDY5E.TogglePersonalityInfo": "개인정보 전환",
+	"TIDY5E.TogglePersonalityInfo": "개인적 정보 전환",
 
 	"TIDY5E.EnableEdit": "수정 활성화",
 	"TIDY5E.DisableEdit": "수정 비활성화",
@@ -187,6 +187,10 @@
 		"name" : "플레이어 이름 표시",
 		"hint" : "캐릭터 이름 아래에 플레이어 이름을 표시한다."
 	},
+	"TIDY5E.Settings.JournalTab" : {
+		"name" : "캐릭터 저널 숨김",
+		"hint" : "활성화 시 저널 탭을 숨긴다."
+	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "캐릭터 클래스 목록 숨김.",
 		"hint" : "활성화 시 캐릭터 이름 하단에 있는 클래스 목록이 숨겨진다."
@@ -222,6 +226,10 @@
 	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "특성을 자원 아래로 이동.",
 		"hint" : "좌단의 자원 아래 특성(언어, 숙련 등)을 표시하려면 이 항목을 선택한다."
+	},
+	"TIDY5E.Settings.AmmoEquippedOnly" : {
+		"name" : "장비된 탄약만 표시.",
+		"hint" : "활성화 시 무기 탄약 선택기에서 현재 장비된 탄약만이 표시된다."
 	},
 
 
@@ -316,5 +324,27 @@
 		"unlinked": "비연결 토큰 강조 표시",
 		"linked": "연결 토큰 강조 표시",
 		"both": "연결/비연결 토큰 강조 표시"
+	},
+	"TIDY5E.Settings.DefaultActionsTab" : {
+		"name" : "시트를 처음 열었을 때의 기본 탭",
+		"hint" : "'행동'과 '특성' 사이에서 선택한다.",
+		"default": "행동",
+		"attributes": "특성"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves" : {
+		"name" : "죽음 내성 굴림을 플레이어로부터 숨김",
+		"hint" : "활성화시 GM에게만 죽음 내성 굴림과 그 결과가 표시된다."
+	},
+	"TIDY5E.Settings.npsSheetWidth" : {
+		"name" : "기본 NPC 시트 너비",
+		"hint" : "NPC 시트 너비를 픽셀 단위로 조정한다. 새로 고침이 필요하다.(기본값 740)."
+	},
+	"TIDY5E.Settings.playerSheetWidth" : {
+		"name" : "기본 플레이어 시트 너비",
+		"hint" : "플레이어 시트 너비를 픽셀 단위로 조정한다. 새로 고침이 필요하다.(기본값 740)."
+	},
+	"TIDY5E.Settings.vehicleSheetWidth" : {
+		"name" : "기본 탑승물 시트 너비",
+		"hint" : "탑승물 시트 너비를 픽셀 단위로 조정한다. 새로 고침이 필요하다.(기본값 740)."
 	}
 }
