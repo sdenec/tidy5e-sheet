@@ -295,6 +295,7 @@ async function editProtection(app, html, data) {
 		
 		if(game.settings.get("tidy5e-sheet", "editTotalLockEnabled")){
 			html.find(".skill input").prop('disabled', true);
+			html.find(".skill .config-button").remove();
 			// html.find(".skill .proficiency-toggle").remove();
 			html.find(".skill .proficiency-toggle").removeClass('proficiency-toggle');
 			html.find(".ability-score").prop('disabled', true);
@@ -305,8 +306,13 @@ async function editProtection(app, html, data) {
 			html.find(".res-max").prop('disabled', true);
 			html.find(".res-options").remove();
 			html.find(".ability-modifiers .proficiency-toggle").remove();
+			html.find(".ability .config-button").remove();
+			html.find(".traits .config-button,.traits .trait-selector,.traits .proficiency-selector").remove();
 			html.find('[contenteditable]').prop('contenteditable', false);
+			html.find(".spellbook .slot-max-override").remove();
 			html.find(".spellcasting-attribute select").prop('disabled', true);
+			const spellbook = html.find(".spellbook .inventory-list .item-list").length;
+			if (spellbook == 0) html.find(".item[data-tab='spellbook']").remove();
 		}
     
 		let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');

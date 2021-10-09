@@ -157,6 +157,8 @@
 	padding: 3px 0 2px 0;
 	margin-top: 2px;
 	white-space: nowrap;
+	position: relative;
+	z-index: 100;
 
 	li {
 		flex: 1;
@@ -226,7 +228,7 @@
 
 .actor-size-select .size-list {
 	background: var(--secondary-color);
-	color: #efefef;
+	color: var(--background);
 	border-radius: 3px;
 	overflow: hidden;
 }
@@ -455,6 +457,7 @@ input.ini-mod {
 	  border-left: 1px solid var(--faint-color);
 	  flex: 1 0 61px;
 		padding: 0 4px;
+		position: relative;
 		
 		.wrapper {
 			text-align: center;
@@ -588,9 +591,9 @@ input.ini-mod {
 	    font-size: 10px;
 	    opacity: .4;
 	    transition: opacity .3s ease;
-	    left: 50%;
+	    left: calc(50% - 12px);
 	    bottom: -14px;
-	    transform: translateX(-50%);
+	    // transform: translateX(-50%);
 		}
 
 		.ability-modifiers .ability-proficiency {
@@ -605,6 +608,18 @@ input.ini-mod {
 
 		&:hover .proficiency-toggle {
 			opacity: 1;
+		}
+
+		.config-button {
+			position: absolute;
+			bottom: -11px;
+			right: calc(50% - 12px);
+			font-size: 10px;
+			color: var(--tertiary-color);
+
+			&:hover {
+				color: var(--primary-color);
+			}
 		}
 
 	} // .ability

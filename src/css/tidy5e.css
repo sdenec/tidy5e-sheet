@@ -1319,6 +1319,8 @@
   padding: 3px 0 2px 0;
   margin-top: 2px;
   white-space: nowrap;
+  position: relative;
+  z-index: 100;
 }
 
 .tidy5e.sheet.actor .origin-summary li {
@@ -1384,7 +1386,7 @@
 
 .tidy5e.sheet.actor .actor-size-select .size-list {
   background: var(--secondary-color);
-  color: #efefef;
+  color: var(--background);
   border-radius: 3px;
   overflow: hidden;
 }
@@ -1606,6 +1608,7 @@
   border-left: 1px solid var(--faint-color);
   flex: 1 0 61px;
   padding: 0 4px;
+  position: relative;
 }
 
 .tidy5e.sheet.actor .ability-scores .ability .wrapper {
@@ -1740,9 +1743,8 @@
   font-size: 10px;
   opacity: .4;
   transition: opacity .3s ease;
-  left: 50%;
+  left: calc(50% - 12px);
   bottom: -14px;
-  transform: translateX(-50%);
 }
 
 .tidy5e.sheet.actor .ability-scores .ability .ability-modifiers .ability-proficiency {
@@ -1757,6 +1759,18 @@
 
 .tidy5e.sheet.actor .ability-scores .ability:hover .proficiency-toggle {
   opacity: 1;
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .config-button {
+  position: absolute;
+  bottom: -11px;
+  right: calc(50% - 12px);
+  font-size: 10px;
+  color: var(--tertiary-color);
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .config-button:hover {
+  color: var(--primary-color);
 }
 
 .tidy5e.sheet.actor .tidy5e-navigation {
@@ -1940,6 +1954,16 @@
   flex: 1;
   margin: 0 4px;
   font-weight: 400;
+}
+
+.tidy5e.sheet.actor .skills-list .skill .config-button {
+  font-size: 10px;
+  margin-right: 4px;
+  color: var(--tertiary-color);
+}
+
+.tidy5e.sheet.actor .skills-list .skill .config-button:hover {
+  color: var(--primary-color);
 }
 
 .tidy5e.sheet.actor .skills-list .skill.proficient .skill-name {
@@ -4278,8 +4302,7 @@
   content: attr(data-hide-skills);
 }
 
-.tidy5e.sheet.actor.npc .skills-list.always-visible .toggle-proficient,
-.tidy5e.sheet.actor.npc .skills-list:not(.expanded):not(.always-visible) .skill .skill-proficiency {
+.tidy5e.sheet.actor.npc .skills-list.always-visible .toggle-proficient {
   display: none;
 }
 
