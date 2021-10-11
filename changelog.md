@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.18 ###
+
+- proficiency dice variant will now show the correct die value on the sheet
+
 ### Version 0.5.17 ###
 
 - fixed size dropdown display bug and dark mode colors
