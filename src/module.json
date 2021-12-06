@@ -42,10 +42,10 @@
 			"path": "lang/it.json"
 		},
 		{
-      "lang": "ja",
-      "name": "日本語 (Japanese)",
-      "path": "lang/ja.json"
-    },
+			"lang": "ja",
+			"name": "日本語 (Japanese)",
+			"path": "lang/ja.json"
+		},
 		{
 			"lang": "ko",
 			"name": "한국어 (Korean)",
@@ -60,11 +60,6 @@
 			"lang": "fr",
 			"name": "Francais",
 			"path": "lang/fr.json"
-		},
-		{
-			"lang": "cn",
-			"name": "Chinese",
-			"path": "lang/cn.json"
 		},
 		{
 			"lang": "zh-tw",
