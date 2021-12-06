@@ -6,12 +6,13 @@
 	"author": "sdenec#3813",
 	"minimumCoreVersion": "0.8.3",
 	"compatibleCoreVersion": "0.8.9",
-	"system": ["dnd5e"],
+	"system": "dnd5e",
 	"esmodules": [
 		"./scripts/tidy5e-sheet.js",
 		"./scripts/tidy5e-npc.js",
 		"./scripts/tidy5e-vehicle.js",
-		"./scripts/tidy5e-item.js"
+		"./scripts/tidy5e-item.js",
+		"./scripts/app/exhaustion.js"
 	],
 	"styles": [
 		"../fonts/modesto-condensed/modesto-condensed.css",
@@ -24,6 +25,11 @@
 			"lang": "en",
 			"name": "English",
 			"path": "lang/en.json"
+		},
+		{
+			"lang": "es",
+			"name": "Español",
+			"path": "lang/es.json"
 		},
 		{
 			"lang": "de",
@@ -56,9 +62,9 @@
 			"path": "lang/fr.json"
 		},
 		{
-			"lang": "cn",
-			"name": "Chinese",
-			"path": "lang/cn.json"
+			"lang": "zh-tw",
+			"name": "正體中文",
+			"path": "lang/zh-tw.json"
 		},
 		{
 			"lang": "cs",
