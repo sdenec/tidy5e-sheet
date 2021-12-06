@@ -146,7 +146,7 @@ async function toggleTraitsList(app, html, data){
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
 		let currency = $(this).data('denom').toUpperCase();
-		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
+		let abbr = game.i18n.localize(`DND5E.CurrencyAbbr${currency}`);
 		$(this).html(abbr);
 	});
 }

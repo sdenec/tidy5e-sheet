@@ -21,6 +21,8 @@
 	"TIDY5E.Exhaustion5": "Velocidad reducida a 0",
 	"TIDY5E.Exhaustion6": "Muerte",
 
+	"TIDY5E.AbbrInitiative": "Ini",
+
 	"TIDY5E.RestHint": "Tomar un descanso",
 	"TIDY5E.RestS": "Descanso corto",
 	"TIDY5E.RestL": "Descanso largo",
@@ -76,12 +78,6 @@
 	"TIDY5E.Abilities" : "Características",
 
 	"TIDY5E.Environment" : "Entorno",
-
-	"TIDY5E.CurrencyAbbrCP" : "PC",
-	"TIDY5E.CurrencyAbbrSP" : "PP",
-	"TIDY5E.CurrencyAbbrGP" : "PO",
-	"TIDY5E.CurrencyAbbrEP" : "PE",
-	"TIDY5E.CurrencyAbbrPP" : "PPT",
 	
 	"TIDY5E.SearchItem" : "buscar objeto",
 	"TIDY5E.SearchSpell" : "buscar conjuro",

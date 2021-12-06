@@ -18,7 +18,11 @@ Thank you very much!
 
 ### Version 0.5.18 ###
 
-- proficiency dice variant will now show the correct die value on the sheet
+- proficiency dice variant will now show the correct die value on the sheet.
+- replaced depricated .getOwnedItem with .items.get
+- Currency Abbreviations are now based on the DND5e Translation strings and custom module translation for currency is removed
+- Abbreviation for "Initiative" now has its own translation string - apparently "Ini" is somewhat weird in certain languages.
+- resources will be hidden in locked mode when neither resource names nor quantities are assigned.
 
 ### Version 0.5.17 ###
 

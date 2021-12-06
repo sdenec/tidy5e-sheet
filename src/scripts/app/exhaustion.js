@@ -126,7 +126,7 @@ async function updateExhaustion(actorEntity) {
     
     async function createExhaustionEffect(){
       if (exhaustion > 0){
-        console.log('create Effect!');
+        // console.log('create Effect!');
     
         let effectChange = {
           disabled: false,
@@ -160,7 +160,7 @@ async function updateExhaustion(actorEntity) {
     for(let i = 1; i<=levels; i++){
       let tier = `${effectName} ${i}`;
       if (game.cub.hasCondition(tier, [token]) && tier != `${effectName} ${exhaustion}`){
-        console.log(tier);
+        // console.log(tier);
         await game.cub.removeCondition(tier, [token]);
       }
     }
@@ -185,7 +185,7 @@ Hooks.on('updateActor', function (actorEntity, _, __, userId) {
     }
     updateExhaustion(actorEntity);
   }
-  console.log('actor updated!')
+  // console.log('actor updated!')
 });
 
 // Rest reduces by 1
@@ -206,9 +206,9 @@ Hooks.on(`createActiveEffect`, (effect, data, id) => {
     let actor = game.actors.get(effect.parent.data._id);
     let effectName = effect.data.label;
     if (effectName.includes(game.settings.get('tidy5e-sheet', 'exhaustionEffectCustom'))) {
-      console.log(effectName);
+      // console.log(effectName);
       let exhaustion = effectName.slice(-1);
-      console.log(exhaustion);
+      // console.log(exhaustion);
       actor.update({"data.attributes.exhaustion": exhaustion});
     }
   }

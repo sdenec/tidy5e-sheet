@@ -39,10 +39,10 @@
       {{#each section.spells as |item i|}}
       <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
-          <div class="item-image" style="background-image: url({{item.img}})">
+          <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>
           </div>
-          <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+          <h4>
             {{item.name}}
           </h4>
 

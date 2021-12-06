@@ -1,9 +1,9 @@
 <li class="item {{#if item.owner}}context-enabled{{/if}} fav-item {{#if item.isMagic}} magic-item{{/if}} {{#if item.data.equipped}} equipped{{/if}}{{#if item.data.preparation.prepared}} prepared{{/if}}{{#if item.alwaysPrep}} alwaysPrepared{{/if}}  {{ item.attunement.cls }}" data-item-id="{{item._id}}" {{#if item.canPrep}}title="{{item.toggleTitle}}{{/if}}">
   <div class="item-name rollable">        
-    <div class="item-image" style="background-image: url({{item.img}})">
+    <div class="item-image" style="background-image: url('{{item.img}}')">
       <i class="fa fa-dice-d20"></i>
     </div>
-    <h4  title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+    <h4>
       {{item.name}}
     </h4>
     {{#if item.data.quantity}}

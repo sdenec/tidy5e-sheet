@@ -33,10 +33,10 @@
             <input type="text" value="{{item.name}}">
           {{else}}
 
-            <div class="item-image" style="background-image: url({{item.img}})">
+            <div class="item-image" style="background-image: url('{{item.img}}')">
               <i class="fa fa-dice-d20"></i>
             </div>
-            <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+            <h4>
               {{item.name}}
             </h4>
             {{#if item.data.properties.amm}}
@@ -116,7 +116,7 @@
             <!-- {{#if item.totalWeight}} {{/if}} -->
             <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
             <!-- {{#if item.data.quantity}} {{/if}} -->
-            <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}} &times; {{item.data.price}} {{localize 'TIDY5E.CurrencyAbbrGP'}}</span>
+            <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}} &times; {{item.data.price}} {{localize 'DND5E.CurrencyAbbrGP'}}</span>
           </div>
           <div class="description-wrap">
             <div class="info-card-description">

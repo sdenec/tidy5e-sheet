@@ -16,6 +16,8 @@
     "TIDY5E.Exhaustion4": "生命值上限減半",
     "TIDY5E.Exhaustion5": "速度降為 0",
     "TIDY5E.Exhaustion6": "死亡",
+    
+	"TIDY5E.AbbrInitiative": "Ini",
 
     "TIDY5E.RestHint": "進行休息",
     "TIDY5E.RestS": "短休",
@@ -195,11 +197,6 @@
     "TIDY5E.ListLayout": "列表佈局",
     "TIDY5E.isFav": "收藏",
     "TIDY5E.ToggleMovement": "切換新版和舊版速度顯示",
-    "TIDY5E.CurrencyAbbrCP": "CP",
-    "TIDY5E.CurrencyAbbrSP": "SP",
-    "TIDY5E.CurrencyAbbrGP": "GP",
-    "TIDY5E.CurrencyAbbrEP": "EP",
-    "TIDY5E.CurrencyAbbrPP": "PP",
     "TIDY5E.SearchItem": "搜索物品",
     "TIDY5E.SearchSpell": "搜索法術",
     "TIDY5E.SearchClear": "清空搜索",

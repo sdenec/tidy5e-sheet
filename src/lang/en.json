@@ -20,6 +20,8 @@
 	"TIDY5E.Exhaustion4": "Hit point maximum halved",
 	"TIDY5E.Exhaustion5": "Speed reduced to 0",
 	"TIDY5E.Exhaustion6": "Death",
+	
+	"TIDY5E.AbbrInitiative": "Ini",
 
 	"TIDY5E.RestHint": "Take A Rest",
 	"TIDY5E.RestS": "Short Rest",
@@ -76,12 +78,6 @@
 	"TIDY5E.Abilities" : "Abilities",
 
 	"TIDY5E.Environment" : "Environment",
-
-	"TIDY5E.CurrencyAbbrCP" : "CP",
-	"TIDY5E.CurrencyAbbrSP" : "SP",
-	"TIDY5E.CurrencyAbbrGP" : "GP",
-	"TIDY5E.CurrencyAbbrEP" : "EP",
-	"TIDY5E.CurrencyAbbrPP" : "PP",
 	
 	"TIDY5E.SearchItem" : "search item",
 	"TIDY5E.SearchSpell" : "search spell",

@@ -286,20 +286,20 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       let path = event.target.dataset.path;
       let data = {};
       data[path] = Number(event.target.value);
-      actor.getOwnedItem(itemId).update(data);
+     actor.items.get(itemId).update(data);
     });
 
     // creating charges for the item
     html.find('.inventory-list .item .addCharges').click(event => {
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
-      let item = actor.getOwnedItem(itemId);
+      let item =actor.items.get(itemId);
 
       item.data.uses = { value: 1, max: 1 };
       let data = {};
       data['data.uses.value'] = 1;
       data['data.uses.max'] = 1;
 
-      actor.getOwnedItem(itemId).update(data);
+     actor.items.get(itemId).update(data);
     });
 
     // Short and Long Rest
@@ -436,7 +436,7 @@ async function toggleItemMode(app, html, data){
   html.find('.item-toggle').click(ev => {
     ev.preventDefault();
     let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-    let item = app.actor.getOwnedItem(itemId);
+    let item = app.items.get(itemId);
     let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
     return item.update({ [attr]: !getProperty(item.data, attr) });
   });
@@ -522,8 +522,8 @@ async function setSheetClasses(app, html, data) {
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
 		let currency = $(this).data('denom').toUpperCase();
-		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
-		if(abbr == `TIDY5E.CurrencyAbbr${currency}`){
+		let abbr = game.i18n.localize(`DND5E.CurrencyAbbr${currency}`);
+		if(abbr == `DND5E.CurrencyAbbr${currency}`){
 			abbr = currency;
 		}
 		$(this).html(abbr);
@@ -621,7 +621,7 @@ async function npcFavorites (app, html, data){
     if (app.options.editable) {
       let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`);
       favBtn.click(ev => {
-        app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+        app.items.get(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
       });
       html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls .item-edit').before(favBtn);
       if(item.flags.favtab.isFavorite){
