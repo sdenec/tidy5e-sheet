@@ -36,10 +36,10 @@
 			"path": "lang/it.json"
 		},
 		{
-      "lang": "ja",
-      "name": "日本語 (Japanese)",
-      "path": "lang/ja.json"
-    },
+			"lang": "ja",
+			"name": "日本語 (Japanese)",
+			"path": "lang/ja.json"
+		},
 		{
 			"lang": "ko",
 			"name": "한국어 (Korean)",
