@@ -20,6 +20,8 @@
 	"TIDY5E.Exhaustion4": "최대 HP 절반",
 	"TIDY5E.Exhaustion5": "이동 속도 0",
 	"TIDY5E.Exhaustion6": "사망",
+	
+	"TIDY5E.AbbrInitiative": "Ini",
 
 	"TIDY5E.RestHint": "휴식 취하기",
 	"TIDY5E.RestS": "짧은 휴식",
@@ -76,12 +78,6 @@
 	"TIDY5E.Abilities" : "능력치",
 
 	"TIDY5E.Environment" : "환경",
-
-	"TIDY5E.CurrencyAbbrCP" : "CP",
-	"TIDY5E.CurrencyAbbrSP" : "SP",
-	"TIDY5E.CurrencyAbbrGP" : "GP",
-	"TIDY5E.CurrencyAbbrEP" : "EP",
-	"TIDY5E.CurrencyAbbrPP" : "PP",
 	
 	"TIDY5E.SearchItem" : "아이템 검색",
 	"TIDY5E.SearchSpell" : "주문 검색",

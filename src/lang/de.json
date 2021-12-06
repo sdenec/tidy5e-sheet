@@ -21,6 +21,8 @@
 	"TIDY5E.Exhaustion5": "Geschwindigkeit auf 0 reduziert",
 	"TIDY5E.Exhaustion6": "Tod",
 
+	"TIDY5E.AbbrInitiative": "Ini",
+
 	"TIDY5E.RestHint": "Rasten",
 	"TIDY5E.RestS": "Kurze Rast",
 	"TIDY5E.RestL": "Lange Rast",
@@ -76,12 +78,6 @@
 	"TIDY5E.Abilities" : "Fähigkeiten",
 
 	"TIDY5E.Environment" : "Umgebung",
-
-	"TIDY5E.CurrencyAbbrCP" : "KM",
-	"TIDY5E.CurrencyAbbrSP" : "SM",
-	"TIDY5E.CurrencyAbbrGP" : "GM",
-	"TIDY5E.CurrencyAbbrEP" : "EM",
-	"TIDY5E.CurrencyAbbrPP" : "PM",
 
 	"TIDY5E.SearchItem" : "Suche Gegenstand",
 	"TIDY5E.SearchSpell" : "Suche Zauber",

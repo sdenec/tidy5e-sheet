@@ -20,6 +20,8 @@
 	"TIDY5E.Exhaustion4": "Punti ferita massimi dimezzati",
 	"TIDY5E.Exhaustion5": "Velocità ridotta a 0",
 	"TIDY5E.Exhaustion6": "Morte",
+	
+	"TIDY5E.AbbrInitiative": "Ini",
 
 	"TIDY5E.RestHint": "Riposati",
 	"TIDY5E.RestS": "Riposo Breve",
@@ -73,12 +75,6 @@
 	"TIDY5E.Abilities" : "Caratteristiche",
 
 	"TIDY5E.Environment" : "Ambiente",
-
-	"TIDY5E.CurrencyAbbrCP" : "MR",
-	"TIDY5E.CurrencyAbbrSP" : "MA",
-	"TIDY5E.CurrencyAbbrGP" : "MO",
-	"TIDY5E.CurrencyAbbrEP" : "ME",
-	"TIDY5E.CurrencyAbbrPP" : "MP",
 
 	"TIDY5E.SearchItem" : "cerca oggetto",
 	"TIDY5E.SearchSpell" : "cerca incantesimo",

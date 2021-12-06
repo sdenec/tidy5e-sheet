@@ -20,8 +20,8 @@
   --icon-font:rgba(255, 255, 255, .4);
   --icon-hover: rgba(255, 255, 255, 0.8);
   --warning-accent: rgba(255, 30, 0, .65);
-  --check-default: url(../images/check-dark-unchecked.svg);
-  --check-checked: url(../images/check-light-checked.svg);
+  --check-default: url('../images/check-dark-unchecked.svg');
+  --check-checked: url('../images/check-light-checked.svg');
   --checkbox-font: rgba(255, 255, 255, .8);
   --checkbox-outline: rgba(50, 50, 50, 1);
   --checkbox-unchecked: rgba(75,75,75,1);
@@ -179,12 +179,12 @@
 
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image,
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image {
-  background-image: url(../../images/d20-444.svg) !important;
+  background-image: url("../../images/d20-444.svg") !important;
 }
 
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image:hover,
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image:hover {
-  background-image: url(../../images/d20-highlight-green.svg) !important;
+  background-image: url("../../images/d20-highlight-green.svg") !important;
 }
 
 .disable .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items label {
@@ -203,7 +203,8 @@
 .disable .tidy5eDark .dnd5e.sheet.item .magic-items-content select:hover,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-items-content select:focus {
   border: none !important;
-  box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+  -webkit-box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+          box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
 }
 
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.items-header) {
@@ -246,7 +247,8 @@
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus {
   background: var(--darkmode-primary-accent);
   color: var(--darkmode-primary-color);
-  box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+  -webkit-box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+          box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
 }
 
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover option,
@@ -256,10 +258,12 @@
 }
 
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
-  box-shadow: 0 0 0 1px var(--darkmode-tertiary-color) inset;
+  -webkit-box-shadow: 0 0 0 1px var(--darkmode-tertiary-color) inset;
+          box-shadow: 0 0 0 1px var(--darkmode-tertiary-color) inset;
 }
 
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:hover,
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:focus {
-  box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
+  -webkit-box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
+          box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
 }

@@ -133,20 +133,20 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       let path = event.target.dataset.path;
       let data = {};
       data[path] = Number(event.target.value);
-      actor.getOwnedItem(itemId).update(data);
+      actor.items.get(itemId).update(data);
     });
 
     // creating charges for the item
     html.find('.inventory-list .item .addCharges').click(event => {
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
-      let item = actor.getOwnedItem(itemId);
+      let item = actor.items.get(itemId);
 
       item.data.uses = { value: 1, max: 1 };
       let data = {};
       data['data.uses.value'] = 1;
       data['data.uses.max'] = 1;
 
-      actor.getOwnedItem(itemId).update(data);
+      actor.items.get(itemId).update(data);
     });
 
     // toggle empty traits visibility in the traits list
@@ -162,16 +162,16 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		html.find('.item-control.item-attunement').click( async (event) => {
 	    event.preventDefault();
  			let li = $(event.currentTarget).closest('.item'),
-					 item = actor.getOwnedItem(li.data("item-id")),
+					 item =actor.items.get(li.data("item-id")),
 					 count = actor.data.data.details.attunedItemsCount;
 
  			if(item.data.data.attunement == 2) {
- 				actor.getOwnedItem(li.data("item-id")).update({'data.attunement': 1});
+ 				actor.items.get(li.data("item-id")).update({'data.attunement': 1});
  			} else {
  				if(count >= actor.data.data.details.attunedItemsMax) {
 			  	ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
 			  } else {
- 					actor.getOwnedItem(li.data("item-id")).update({'data.attunement': 2});
+ 					actor.items.get(li.data("item-id")).update({'data.attunement': 2});
 			  }
  			}
  		});
@@ -314,6 +314,14 @@ async function editProtection(app, html, data) {
 			const spellbook = html.find(".spellbook .inventory-list .item-list").length;
 			if (spellbook == 0) html.find(".item[data-tab='spellbook']").remove();
 		}
+
+		let resourcesUsed = 0;
+		html.find('.resources input[type="text"]').each( function(){
+			if( $(this).val() != ''){
+				resourcesUsed++
+			}
+		});
+		if (resourcesUsed == 0) html.find('.resources').hide();
     
 		let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');
     html.find('.inventory-list .items-header:not(.spellbook-header), .effects-list .items-header').each(function(){
@@ -401,8 +409,8 @@ async function spellAttackMod(app,html,data){
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
 		let currency = $(this).data('denom').toUpperCase();
-		let abbr = game.i18n.localize(`TIDY5E.CurrencyAbbr${currency}`);
-		if(abbr == `TIDY5E.CurrencyAbbr${currency}`){
+		let abbr = game.i18n.localize(`DND5E.CurrencyAbbr${currency}`);
+		if(abbr == `DND5E.CurrencyAbbr${currency}`){
 			abbr = currency;
 		}
 		$(this).html(abbr);
@@ -554,7 +562,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
 	markActiveEffects(app,html,data);
-	console.log(data.actor);
+	// console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });
 

@@ -1,12 +1,12 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
-	"TIDY5E.Gender" : "Gender",
-	"TIDY5E.Age" : "Age",
-	"TIDY5E.Weight" : "Weight",
-	"TIDY5E.Height" : "Height",
-	"TIDY5E.Eyes" : "Eyes",
-	"TIDY5E.Skin" : "Skin",
-	"TIDY5E.Hair" : "Hair",
+	"TIDY5E.PlayerName": "Nome do Jogador",
+	"TIDY5E.Gender" : "Gênero",
+	"TIDY5E.Age" : "Idade",
+	"TIDY5E.Weight" : "Peso",
+	"TIDY5E.Height" : "Altura",
+	"TIDY5E.Eyes" : "Olhos",
+	"TIDY5E.Skin" : "Pele",
+	"TIDY5E.Hair" : "Cabelo",
 	"TIDY5E.Subclass": "Subclasse",
 	"TIDY5E.EditActorImage": "Clique Esq.: Editar Imagem",
 	"TIDY5E.ShowActorImage": "Clique Dir.: Mostrar Arte do Personagem",
@@ -20,6 +20,8 @@
 	"TIDY5E.Exhaustion4": "Redução de pontos de vida máximos à metade",
 	"TIDY5E.Exhaustion5": "Deslocamento reduzido a 0",
 	"TIDY5E.Exhaustion6": "Morte",
+	
+	"TIDY5E.AbbrInitiative": "Ini",
 
 	"TIDY5E.RestHint": "Fazer um Descanso",
 	"TIDY5E.RestS": "D. Curto",
@@ -73,12 +75,6 @@
 	"TIDY5E.Abilities" : "Atributos",
 
 	"TIDY5E.Environment" : "Ambiente",
-
-	"TIDY5E.CurrencyAbbrCP" : "PC",
-	"TIDY5E.CurrencyAbbrSP" : "PP",
-	"TIDY5E.CurrencyAbbrGP" : "PO",
-	"TIDY5E.CurrencyAbbrEP" : "PE",
-	"TIDY5E.CurrencyAbbrPP" : "PL",
 	
 	"TIDY5E.SearchItem" : "Buscar item...",
 	"TIDY5E.SearchSpell" : "Buscar magia...",

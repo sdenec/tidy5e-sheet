@@ -50,10 +50,10 @@
       {{#each section.items as |item iid|}}
       <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if isDepleted}}depleted{{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
-          <div class="item-image" style="background-image: url({{item.img}})">
+          <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>
           </div>
-          <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+          <h4>
             {{item.name}}
           </h4>
           {{#if item.data.properties.amm}}

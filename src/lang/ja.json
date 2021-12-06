@@ -20,6 +20,8 @@
 	"TIDY5E.Exhaustion4": "最大ＨＰ半減",
 	"TIDY5E.Exhaustion5": "移動速度０",
 	"TIDY5E.Exhaustion6": "死亡",
+	
+	"TIDY5E.AbbrInitiative": "Ini",
 
 	"TIDY5E.RestHint": "休憩する",
 	"TIDY5E.RestS": "小休憩",
@@ -76,12 +78,6 @@
 	"TIDY5E.Abilities" : "能力",
 
 	"TIDY5E.Environment" : "環境",
-
-	"TIDY5E.CurrencyAbbrCP" : "CP",
-	"TIDY5E.CurrencyAbbrSP" : "SP",
-	"TIDY5E.CurrencyAbbrGP" : "GP",
-	"TIDY5E.CurrencyAbbrEP" : "EP",
-	"TIDY5E.CurrencyAbbrPP" : "PP",
 
 	"TIDY5E.SearchItem" : "アイテム検索",
 	"TIDY5E.SearchSpell" : "呪文検索",

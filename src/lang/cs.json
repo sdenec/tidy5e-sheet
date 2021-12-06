@@ -21,6 +21,8 @@
 	"TIDY5E.Exhaustion5": "Rychlost zredukována na 0",
 	"TIDY5E.Exhaustion6": "Smrt",
 
+	"TIDY5E.AbbrInitiative": "Ini",
+
 	"TIDY5E.RestHint": "Odpočívat",
 	"TIDY5E.RestS": "Krátký odpočinek",
 	"TIDY5E.RestL": "Důkladný odpočinek",
@@ -76,12 +78,6 @@
 	"TIDY5E.Abilities": "Vlastnosti",
 
 	"TIDY5E.Environment": "Prostředí",
-
-	"TIDY5E.CurrencyAbbrCP": "MD",
-	"TIDY5E.CurrencyAbbrSP": "ST",
-	"TIDY5E.CurrencyAbbrGP": "ZL",
-	"TIDY5E.CurrencyAbbrEP": "EL",
-	"TIDY5E.CurrencyAbbrPP": "PL",
 
 	"TIDY5E.SearchItem": "hledat předmět",
 	"TIDY5E.SearchSpell": "hledat kouzlo",
