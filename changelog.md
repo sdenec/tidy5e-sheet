@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.19 ###
+
+- favorites fix
+
 ### Version 0.5.18 ###
 
 - proficiency dice variant will now show the correct die value on the sheet.
