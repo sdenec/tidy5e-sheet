@@ -108,7 +108,7 @@ export const addFavorites = async function(app, html, data, position) {
       if (app.options.editable) {
         let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`);
         favBtn.click(ev => {
-          app.items.get(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+          app.actor.items.get(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
         });
         html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls .item-edit').before(favBtn);
         if(item.flags.favtab.isFavorite){
@@ -320,14 +320,14 @@ export const addFavorites = async function(app, html, data, position) {
           // editing the item
           favHtml.find('.item-control.item-edit').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            app.items.get(itemId).sheet.render(true);
+            app.actor.items.get(itemId).sheet.render(true);
           });
 
           // toggle item icon
           favHtml.find('.item-control.item-toggle').click(ev => {
             ev.preventDefault();
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-            let item = app.items.get(itemId);
+            let item = app.actor.items.get(itemId);
             let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
             return item.update({ [attr]: !getProperty(item.data, attr) });
           });
@@ -336,17 +336,17 @@ export const addFavorites = async function(app, html, data, position) {
           favHtml.find('.item-control.item-attunement').click( async (ev) => {
             event.preventDefault();
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-            let item = app.items.get(itemId);
+            let item = app.actor.items.get(itemId);
 
             if(item.data.data.attunement == 2) {
-              app.items.get(itemId).update({'data.attunement': 1});
+              app.actor.items.get(itemId).update({'data.attunement': 1});
             } else {
 
               if(app.actor.data.data.details.attunedItemsCount >= app.actor.data.data.details.attunedItemsMax) {
                 let count = actor.data.data.details.attunedItemsCount;
                 ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
               } else {
-                app.items.get(itemId).update({'data.attunement': 2});
+                app.actor.items.get(itemId).update({'data.attunement': 2});
               }
             }
           });
@@ -354,8 +354,8 @@ export const addFavorites = async function(app, html, data, position) {
           // removing item from favorite list
           favHtml.find('.item-fav').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            let val = !app.items.get(itemId).data.flags.favtab.isFavorite
-            app.items.get(itemId).update({ "flags.favtab.isFavorite": val });
+            let val = !app.actor.items.get(itemId).data.flags.favtab.isFavorite
+            app.actor.items.get(itemId).update({ "flags.favtab.isFavorite": val });
           });
 
           // changing the charges values (removing if both value and max are 0)
@@ -364,7 +364,7 @@ export const addFavorites = async function(app, html, data, position) {
             let path = ev.target.dataset.path;
             let data = {};
             data[path] = Number(ev.target.value);
-            app.items.get(itemId).update(data);
+            app.actor.items.get(itemId).update(data);
             // app.activateFavs = true;
           });
 
@@ -378,21 +378,21 @@ export const addFavorites = async function(app, html, data, position) {
           // creating charges for the item
           favHtml.find('.addCharges').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            let item = app.items.get(itemId);
+            let item = app.actor.items.get(itemId);
 
             item.data.uses = { value: 1, max: 1 };
             let data = {};
             data['data.uses.value'] = 1;
             data['data.uses.max'] = 1;
 
-            app.items.get(itemId).update(data);
+            app.actor.items.get(itemId).update(data);
           });
 
           // charging features
           favHtml.find('.item-recharge').click(ev => {
             ev.preventDefault();
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            let item = app.items.get(itemId);
+            let item = app.actor.items.get(itemId);
             return item.rollRecharge();
           });
 
