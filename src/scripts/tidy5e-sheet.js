@@ -428,7 +428,11 @@ function tidyCustomEffect(actor, change) {
       op = changeText[0];
       changeText = changeText.slice(1);
     }
-    const value = new Roll(changeText, actor.getRollData()).roll().total;
+		const rollData = actor.getRollData();
+		Object.keys(rollData.abilities).forEach(abl => {
+			rollData.abilities[abl].mod = Math.floor((rollData.abilities[abl].value - 10) /2);
+		});
+		const value = new Roll(changeText, rollData).roll().total;
     oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
     switch (op) {
       case "+": return setProperty(actor.data, change.key, oldValue + value);

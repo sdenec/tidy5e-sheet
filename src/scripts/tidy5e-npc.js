@@ -436,7 +436,7 @@ async function toggleItemMode(app, html, data){
   html.find('.item-toggle').click(ev => {
     ev.preventDefault();
     let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-    let item = app.items.get(itemId);
+    let item = app.actor.items.get(itemId);
     let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
     return item.update({ [attr]: !getProperty(item.data, attr) });
   });
@@ -621,7 +621,7 @@ async function npcFavorites (app, html, data){
     if (app.options.editable) {
       let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`);
       favBtn.click(ev => {
-        app.items.get(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+        app.actor.items.get(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
       });
       html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls .item-edit').before(favBtn);
       if(item.flags.favtab.isFavorite){
