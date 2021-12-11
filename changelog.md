@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.20 ###
+
+- npc spell preparation fix
+- max spell slot active effects formula fix (thanks @tposney)
+
 ### Version 0.5.19 ###
 
 - favorites fix
