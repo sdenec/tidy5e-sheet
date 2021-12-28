@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.21 ###
+
+- manifest update for 0.9.9
+
 ### Version 0.5.20 ###
 
 - npc spell preparation fix
