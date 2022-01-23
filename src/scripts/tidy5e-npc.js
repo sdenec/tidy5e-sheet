@@ -316,11 +316,13 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
    * @param {Event} event     The original click event
    * @private
    */
-  _onRollHealthFormula(event) {
+  async _onRollHealthFormula(event) {
     event.preventDefault();
     const formula = this.actor.data.data.attributes.hp.formula;
     if ( !formula ) return;
-    const hp = new Roll(formula).roll().total;
+    // const hp = new Roll(formula).roll().total;  
+		const roll_hp = await new Roll(formula).roll();
+    const hp = roll_hp.total;
     AudioHelper.play({src: CONFIG.sounds.dice});
     this.actor.update({"data.attributes.hp.value": hp, "data.attributes.hp.max": hp});
   }
