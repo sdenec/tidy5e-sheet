@@ -433,7 +433,7 @@ async function tidyCustomEffect(actor, change) {
 			rollData.abilities[abl].mod = Math.floor((rollData.abilities[abl].value - 10) /2);
 		});
 		// const value = new Roll(changeText, rollData).roll().total;
-		const roll_value = await new Roll(rollData).roll();
+		const roll_value = await new Roll(changeText, rollData).roll();
 		const value = roll_value.total;
     oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
     switch (op) {
