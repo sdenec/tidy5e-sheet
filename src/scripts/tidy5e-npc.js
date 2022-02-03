@@ -162,7 +162,7 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
     const data = super.getData(options);
     
     Object.keys(data.data.abilities).forEach(id => {
-      let Id = id.charAt(0).toUpperCase() + id.slice(1);
+      let Id = id.charAt(0).toLowerCase() + id.slice(1);
       data.data.abilities[id].abbr = game.i18n.localize(`CONFIG.DND5E.abilityAbbreviations[${Id}]`);
     });
     
@@ -523,7 +523,7 @@ async function setSheetClasses(app, html, data) {
 // Abbreviate Currency
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
-		let currency = $(this).data('denom').toUpperCase();
+		let currency = $(this).data('denom').toLowerCase();
 		let abbr = game.i18n.localize(`CONFIG.DND5E.currencies[${currency}]["abbreviation"]`);
 		if(abbr == `CONFIG.DND5E.currencies[${currency}]["abbreviation"]`){
 			abbr = currency;
