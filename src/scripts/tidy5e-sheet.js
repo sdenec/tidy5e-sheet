@@ -46,7 +46,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
     Object.keys(data.data.abilities).forEach(id => {
     	let Id = id.charAt(0).toLowerCase() + id.slice(1);
-      data.data.abilities[id].abbr = game.i18n.localize(`CONFIG.DND5E.abilityAbbreviations["${Id}"]`);
+      data.data.abilities[id].abbr = game.i18n.localize(`CONFIG.DND5E.abilityAbbreviations.${Id}.`);
 		});
 
 		data.appId = this.appId;
@@ -409,8 +409,8 @@ async function spellAttackMod(app,html,data){
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
 		let currency = $(this).data('denom').toLowerCase();
-		let abbr = game.i18n.localize(`CONFIG.DND5E.currencies["${currency}"]["abbreviation"]`);
-		if(abbr == `CONFIG.DND5E.currencies["${currency}"]["abbreviation"]`){
+		let abbr = game.i18n.localize(`CONFIG.DND5E.currencies.${currency}.abbreviation`);
+		if(abbr == `CONFIG.DND5E.currencies.${currency}.abbreviation`){
 			abbr = currency;
 		}
 		$(this).html(abbr);
