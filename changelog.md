@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.23 ###
+
+- fix for maxSpellPrepared calculation
+- ability and currency Abbreviation point to CONFIG.DND5E
+
 ### Version 0.5.22 ###
 
 - version changed to simply "9"

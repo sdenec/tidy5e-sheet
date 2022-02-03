@@ -46,7 +46,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
     Object.keys(data.data.abilities).forEach(id => {
     	let Id = id.charAt(0).toUpperCase() + id.slice(1);
-      data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
+      data.data.abilities[id].abbr = game.i18n.localize(`CONFIG.DND5E.abilityAbbreviations[${Id}]`);
 		});
 
 		data.appId = this.appId;
@@ -409,8 +409,8 @@ async function spellAttackMod(app,html,data){
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
 		let currency = $(this).data('denom').toUpperCase();
-		let abbr = game.i18n.localize(`DND5E.CurrencyAbbr${currency}`);
-		if(abbr == `DND5E.CurrencyAbbr${currency}`){
+		let abbr = game.i18n.localize(`CONFIG.DND5E.currencies[${currency}]["abbreviation"]`);
+		if(abbr == `CONFIG.DND5E.currencies[${currency}]["abbreviation"]`){
 			abbr = currency;
 		}
 		$(this).html(abbr);
@@ -433,7 +433,7 @@ async function tidyCustomEffect(actor, change) {
 			rollData.abilities[abl].mod = Math.floor((rollData.abilities[abl].value - 10) /2);
 		});
 		// const value = new Roll(changeText, rollData).roll().total;
-		const roll_value = await new Roll(rollData).roll();
+		const roll_value = await new Roll(changeText, rollData).roll();
 		const value = roll_value.total;
     oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
     switch (op) {
