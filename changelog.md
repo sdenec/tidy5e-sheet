@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.24 ###
+
+- rerelease because of some git hickups
+
 ### Version 0.5.23 ###
 
 - fix for maxSpellPrepared calculation
