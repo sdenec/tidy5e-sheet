@@ -43,6 +43,13 @@
 	"TIDY5E.DisableEdit": "Desabilitar Edição",
 	"TIDY5E.EditHint": "Alternar visibilidade dos botões de adicionar/apagar e seções vazias",
 
+    "TIDY5E.Equip": "Equipar Item",
+	"TIDY5E.Unequip": "Desequipar Item",
+	"TIDY5E.Attune": "Sintonizar ao Item",
+	"TIDY5E.Deattune": "Quebrar Sintonização",
+	"TIDY5E.Prepare": "Preparar Magia",
+	"TIDY5E.Unprepare": "Remover Preparação",
+
 	"TIDY5E.EmptySection": "Essa sessão está vazia. Desbloqueie a ficha para editar.",
 	"TIDY5E.GmOnlyEdit": "Só seu Mestre consegue editar esta sessão.",
 
@@ -60,9 +67,6 @@
 	"TIDY5E.AddFav": "Adicionar aos Favoritos",
 	"TIDY5E.isFav": "Favorito",
 	"TIDY5E.RemoveFav": "Remover dos Favoritos",
-	
-	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "Alternar Informação",
 	"TIDY5E.ToggleMovement": "Alternar entre exibição de deslocamento moderna e legado",
@@ -78,8 +82,12 @@
 	
 	"TIDY5E.SearchItem" : "Buscar item...",
 	"TIDY5E.SearchSpell" : "Buscar magia...",
+    "TIDY5E.SearchFeat" : "Buscar característica...",
 	"TIDY5E.SearchClear" : "Limpar Busca",
 	"TIDY5E.SearchHint" : "Comece digitando o que você gostaria de buscar.",
+
+    "TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.AbbrMod" : "Mod",
 	"TIDY5E.AbbrSavingThrow" : "Salva",
@@ -102,8 +110,55 @@
 	"TIDY5E.Settings.VehicleLabel" : "Veículos",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "Configurações da Ficha"
+		"label" : "Configurações da Ficha",
+        "title" : "Configurações da Ficha do Tidy5e"
 	},
+    "TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "Players",
+		"header" : "Player Character Sheets"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "NPCs/Vehicles",
+		"header" : "NPC/Vehicle Sheets",
+		"labelNPCs" : "NPCs",
+		"labelVehicles" : "Vehicles"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "GM Options",
+		"header" : "GM Sheet Options"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "Modules",
+		"header" : "Module Options",
+		"labelActionsFavorites" : "Actor Actions/Favorites",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "Info",
+		"header" : "Info"
+	},
+	"TIDY5E.Settings.ItemCardsForAllItems" : {
+		"name" : "Show item info cards in all layouts.",
+		"hint" : "Disable if you only want the slide out item info cards in grid layout."
+	},
+	"TIDY5E.Settings.ItemCardsForNpcs" : {
+		"name" : "Show item info cards for NPCs/vehicles.",
+		"hint" : "Disable if you don't want the slide out item info cards for NPCs/vehicles."
+	},
+	"TIDY5E.Settings.ItemCardsAreFloating" : {
+		"name" : "Item info cards float next to cursor.",
+		"hint" : "Enable to detach item info cards from sheet and float them next to the cursor. Best to use with delay. Also useful when sheet is popped out."
+	},
+	"TIDY5E.Settings.ItemCardsDelay" : {
+		"name" : "Delay showing info cards.",
+		"hint" : "The Item Card will show when you hover an item for the value in milliseconds (0 = no delay, 300 is default)."
+	},
+	"TIDY5E.Settings.ItemCardsFixKey" : {
+		"name" : "Key to hold for Item Card interaction.",
+		"hint" : "Enter a key (e.g.: x) to use for item card interaction. Can be any key except function keys (ctrl, alt, etc.)"
+	},
+
+    
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tema de Cor de Tidy5e",
 		"hint" : "Use o tema claro padrão ou tema escuro alternativo para Tidy5e",
