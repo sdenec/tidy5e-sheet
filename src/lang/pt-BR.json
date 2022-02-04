@@ -26,7 +26,7 @@
 	"TIDY5E.RestHint": "Fazer um Descanso",
 	"TIDY5E.RestS": "D. Curto",
 	"TIDY5E.RestL": "D. Longo",
-	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
+	"TIDY5E.HitDiceRollAverage": "Botão Direito: Média",
 
 	"TIDY5E.Journal": "Diário",
 
@@ -86,8 +86,8 @@
 	"TIDY5E.SearchClear" : "Limpar Busca",
 	"TIDY5E.SearchHint" : "Comece digitando o que você gostaria de buscar.",
 
-    "TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
+    "TIDY5E.ItemCardsKeyHint" : "segure a tecla para interagir com o cartão.",
+	"TIDY5E.ItemCardsMouseHint" : "botão do meio do mouse para ver/editar item.",
 
 	"TIDY5E.AbbrMod" : "Mod",
 	"TIDY5E.AbbrSavingThrow" : "Salva",
