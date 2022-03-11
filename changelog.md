@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.25 ###
+
+- tried to fix !PopOut issues with context menu
+- warnings are now displayed (e. g. two equipped suits of armor)
+
 ### Version 0.5.24 ###
 
 - rerelease because of some git hickups
