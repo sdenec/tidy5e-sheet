@@ -1,0 +1,342 @@
+{
+	"TIDY5E.PlayerName": "Játékosnév",
+	"TIDY5E.Gender": "Nem",
+	"TIDY5E.Age": "Kor",
+	"TIDY5E.Weight": "Súly",
+	"TIDY5E.Height": "Magasság",
+	"TIDY5E.Eyes": "Szemszín",
+	"TIDY5E.Skin": "Bőrszín",
+	"TIDY5E.Hair": "Hajszín",
+	"TIDY5E.Subclass": "Alkaszt",
+	"TIDY5E.EditActorImage": "bal klikk: kép szerkesztés",
+	"TIDY5E.ShowActorImage": "jobb klikk: karakterkép mutatás",
+	"TIDY5E.ShowPortraitArt": "portré mutatás",
+	"TIDY5E.ShowTokenArt": "token mutatás",
+
+	"TIDY5E.Exhaustion0": "Nincs negatív hatás",
+	"TIDY5E.Exhaustion1": "Hátrány a Tulajdonságpróbákra",
+	"TIDY5E.Exhaustion2": "Sebesség felezve",
+	"TIDY5E.Exhaustion3": "Hátrány a Támadó- és Mentődobásokra",
+	"TIDY5E.Exhaustion4": "Max HP felezve",
+	"TIDY5E.Exhaustion5": "Sebesség 0-ra csökkentve",
+	"TIDY5E.Exhaustion6": "Halál",
+
+	"TIDY5E.AbbrInitiative": "Kez",
+
+	"TIDY5E.RestHint": "Pihenő",
+	"TIDY5E.RestS": "Rövid Pihenő",
+	"TIDY5E.RestL": "Hosszú Pihenő",
+	"TIDY5E.HitDiceRollAverage": "Jobb Klikk: Átlag",
+
+	"TIDY5E.Journal": "Napló",
+
+	"TIDY5E.RestoreOnRest": "Pihenéskor visszaáll",
+
+	"TIDY5E.JournalPoi": "Fontos Személyek",
+	"TIDY5E.JournalLoi": "Fontos Helyszínek",
+	"TIDY5E.JournalQuests": "Küldetések",
+	"TIDY5E.JournalMisc": "Egyéb",
+	"TIDY5E.JournalEntries": "Napló Bejegyzések",
+	"TIDY5E.TogglePersonalityInfo": "Személyiség Info Ki/Be",
+
+	"TIDY5E.EnableEdit": "Szerkesztés Be",
+	"TIDY5E.DisableEdit": "Szerkesztés Ki",
+	"TIDY5E.EditHint": "A hozzáadás/törlés gombok és üres szekciók láthatóságát kapcsolja ki/be",
+
+	"TIDY5E.Equip": "Tárgy Felszerelése",
+	"TIDY5E.Unequip": "Tárgy Leszerelése",
+	"TIDY5E.Attune": "Összehangolódás",
+	"TIDY5E.Deattune": "Összehangolódás Megtörése",
+	"TIDY5E.Prepare": "Varázslat Előkészítése",
+	"TIDY5E.Unprepare": "Előkészítés Törlése",
+
+	"TIDY5E.EmptySection": "Ez a szekció üres. Tedd a karakterlapot szerkeszthetővé.",
+	"TIDY5E.GmOnlyEdit": "Csak a JM szerkesztheti ezt a szekciót.",
+
+	"TIDY5E.AttunementWarning": "Összehangolódás figyelmeztetés: Nem tudsz több, mint {number} tárggyal összehangolódni!",
+	"TIDY5E.AttunementItems": "Összehangolt Tárgyak",
+	"TIDY5E.AttunementMax": "Összehangolódás Maximum",
+
+	"TIDY5E.GridLayout": "Rács Elrendezés",
+	"TIDY5E.ListLayout": "Lista Elrendezés",
+
+	"TIDY5E.Encumbrance": "Terheltség",
+
+	"TIDY5E.EditSpell": "Varázslat Szerkesztése",
+	"TIDY5E.DeleteSpell": "Varázslat Törlése",
+	"TIDY5E.AddFav": "Hozzáadás a Kedvencekhez",
+	"TIDY5E.isFav": "Kedvenc",
+	"TIDY5E.RemoveFav": "Törlés a Kedvencek közül",
+
+	"TIDY5E.ToggleInfo": "Info Ki/Be",
+
+	"TIDY5E.Show": "mutat/szerkeszt",
+	"TIDY5E.Hide": "elrejt",
+	"TIDY5E.Edit": "szerkeszt",
+	"TIDY5E.TraitsEmpty": "üres jellemzők",
+
+	"TIDY5E.Abilities": "Tulajdonságok",
+
+	"TIDY5E.Environment": "Környezet",
+
+	"TIDY5E.SearchItem": "tárgy keresés",
+	"TIDY5E.SearchSpell": "varázslat keresés",
+	"TIDY5E.SearchFeat": "képesség keresés",
+	"TIDY5E.SearchClear": "keresés törlés",
+	"TIDY5E.SearchHint": "Kezdd el írni, amit keresel.",
+
+	"TIDY5E.ItemCardsKeyHint": "tartsd lenyomva, hogy interakcióba lépj.",
+	"TIDY5E.ItemCardsMouseHint": "középső egérgomb, hogy megnézed/szerkeszd.",
+
+	"TIDY5E.AbbrMod": "Mód.",
+	"TIDY5E.AbbrSavingThrow": "Mentő",
+	"TIDY5E.SpellAttackMod": "Támadás Mód.",
+	"TIDY5E.PreparedSpells": "Előkészített varázslatok",
+	"TIDY5E.PreparedSpellsMax": "Maximum előkészíthető varázslatok száma",
+	"TIDY5E.Components": "Komponensek",
+	"TIDY5E.SpellSchool": "Iskola",
+
+	"TIDY5E.TokenLinked": "Aktorhoz linkelt token",
+	"TIDY5E.TokenUnlinked": "Token nincs aktorhoz linkelve",
+
+	"TIDY5E.ItemDetailsHeadline": "Mechanikák/Flavor Text",
+
+	"TIDY5E.Settings.GlobalLabel": "Globális",
+	"TIDY5E.Settings.DebugLabel": "Debug",
+	"TIDY5E.Settings.UserLabel": "Felhasználó",
+	"TIDY5E.Settings.PcLabel": "JK-k",
+	"TIDY5E.Settings.NpcLabel": "NJK-k",
+	"TIDY5E.Settings.VehicleLabel": "Járművek",
+
+	"TIDY5E.Settings.SheetMenu": {
+		"label": "Lap Beállítások",
+		"title": "Tidy5e Lap Beállítások"
+	},
+	"TIDY5E.Settings.TabPlayers": {
+		"tabLabel": "Játékosok",
+		"header": "Játékos Karakterlapok"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles": {
+		"tabLabel": "NJK-k/Járművek",
+		"header": "NJK/Jármű Lapok",
+		"labelNPCs": "NJK-k",
+		"labelVehicles": "Járművek"
+	},
+	"TIDY5E.Settings.TabGM": {
+		"tabLabel": "JM Opciók",
+		"header": "JM Lap Opciók"
+	},
+	"TIDY5E.Settings.TabModules": {
+		"tabLabel": "Modulok",
+		"header": "Modul Opciók",
+		"labelActionsFavorites": "Aktor Akciók/Kedvencek",
+		"labelMidiQoL": "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo": {
+		"tabLabel": "Info",
+		"header": "Info"
+	},
+	"TIDY5E.Settings.ItemCardsForAllItems": {
+		"name": "Minden elrendezésben mutassa az info kártyákat.",
+		"hint": "Kapcsold ki, ha rács elrendezésben is szeretnéd látni az info kártyákat."
+	},
+	"TIDY5E.Settings.ItemCardsForNpcs": {
+		"name": "NJK-k/járművek esetében mutassa az info kártyákat.",
+		"hint": "Kapcsold ki, ha NJK-k/járművek esetében is szeretnéd látni az info kátyákat."
+	},
+	"TIDY5E.Settings.ItemCardsAreFloating": {
+		"name": "Info kártyák a kurzor mellett lebegnek.",
+		"hint": "Kapcsold be, hogy leválaszd a lapról és a kurzor mellett lebegjenek az info kártyák. Késleltetéssel ajánlott használni. Hasznos, ha lap nincs rögzítve."
+	},
+	"TIDY5E.Settings.ItemCardsDelay": {
+		"name": "Info kártyák mutatása késleltetéssel.",
+		"hint": "A kurzort a kártya fölött kell tartanod bizonyos ideig, hogy előjöjjön (0 = nincs késleltetés, 300 az alapértelmezett (milliszekundum))."
+	},
+	"TIDY5E.Settings.ItemCardsFixKey": {
+		"name": "Billentyű a kártya interakcióhoz.",
+		"hint": "Üss be egy billentyűt (pl. x) a kártya interakcióhoz. Bármilyen billentyű lehet, kivéve a vezérlőbillentyűk(ctrl, alt, stb.)"
+	},
+
+	"TIDY5E.Settings.SheetTheme": {
+		"name": "Tidy5e színtéma.",
+		"hint": "Alapértelmezetten világos vagy alternatívaként sötét téma érhető el a Tidy5e-hez.",
+		"default": "Alapértelmezett (világos)",
+		"dark": "Alternatív (sötét)"
+	},
+
+	"TIDY5E.Settings.ClassicControls": {
+		"name": "Klasszikus vezérlőelemek lista nézetben.",
+		"hint": "Mindig mutassa a tételek vezérlését és kikapcsolja a jobb klikk menüt. Csak JK tárgy/varázslat készletre vonatkozik lista nézetben."
+	},
+	"TIDY5E.Settings.RollButtonsToCard": {
+		"name": "midiQol tétel gombok mutatása az info kártyán.",
+		"hint": "Alapértelmezetten a dobás gombok a tárgy leírásában jelennek meg. Kapcsold be, hogy ehelyett az info kártyáko jelenjenek meg. Minden elrendezésben működik."
+	},
+	"TIDY5E.Settings.TraitLabels": {
+		"name": "Jellemző Címkék Mutatása.",
+		"hint": "Kapcsold ki, hogy csak JK/NJK jellemzőkhöz mutasson ikonokat."
+	},
+
+	"TIDY5E.Settings.PlayerName": {
+		"name": "Játékosnév mutatása.",
+		"hint": "Kapcsold be, hogy mutasson egy mezőt a játékosnévnek a karakternév alatt."
+	},
+	"TIDY5E.Settings.JournalTab": {
+		"name": "Karakternapló elrejtése.",
+		"hint": "Kapcsold be, hogy elrejtsd a karakternapló fület."
+	},
+	"TIDY5E.Settings.ClassList": {
+		"name": "Karakter kaszt lista elrejtése.",
+		"hint": "Kapcsold be, hogy elrejtsd a kaszt listát a karakternv alól."
+	},
+	"TIDY5E.Settings.InspirationAnimation": {
+		"name": "Statikus inspiráció követő.",
+		"hint": "Kapcsold be, hogy leállítsd az inspiráció követő fénylő animációját."
+	},
+	"TIDY5E.Settings.HideIfZero": {
+		"name": "Kimerültség és inspiráció követő elrejtése 0-n.",
+		"hint": "Kapcsold be, hogy elrejtsd a kimerültség és inspiráció követőt, ha 0-n állnak. Ha ráviszed az egeret, látszódni fog."
+	},
+	"TIDY5E.Settings.InspirationOnHover": {
+		"name": "Inspiráció követő mutatása csak egérmutatóval.",
+		"hint": "Kapcsold be, hogy csak akkor mutassa az inspiráció követőt, ha ráviszed az egeret a portréra."
+	},
+	"TIDY5E.Settings.ExhaustionOnHover": {
+		"name": "Kimerültség követő mutatása csak egérmutatóval.",
+		"hint": "Kapcsold be, hogy csak akkor mutassa a kimerültség követőt, ha ráviszed az egeret a portréra."
+	},
+	"TIDY5E.Settings.HpBar": {
+		"name": "HP sáv kikapcsolása.",
+		"hint": "Kapcsold be, hogy elrejtsd a megmaradt HP-t mutató színes sávot (A HP számok továbbra is látszódni fognak)."
+	},
+	"TIDY5E.Settings.HpOverlay": {
+		"name": "HP átfedés elrejtése.",
+		"hint": "Kapcsold be, hogy elrejtsd a HP átfedés ehhez az aktor típushoz."
+	},
+	"TIDY5E.Settings.TraitsTogglePc": {
+		"name": "Üres karakterjellemzők ki/be.",
+		"hint": "Alapértelmezetten az üres jellemzők láthatók. Kapcsold be, hogy egy ki/be gomb megjelenjen."
+	},
+	"TIDY5E.Settings.TraitsMovedBelowResource": {
+		"name": "Jellemzők az erőforrások alá.",
+		"hint": "Kapcsold be, hogy a jellemzőket a bal oldalról átmozgasd az erőforrások alá."
+	},
+	"TIDY5E.Settings.AmmoEquippedOnly": {
+		"name": "Csak felszerelt lőszer mutatása.",
+		"hint": "Kapcsold be, hogy csak a felszerelt lőszert mutassa a fegyver lőszer választóban."
+	},
+
+	"TIDY5E.Settings.TraitsAlwaysShown": {
+		"name": "Mindig mutassa a jellemzőket.",
+		"hint": "Alapértelmezetten az üres jellemzőket elrejti egy ki/be gomb. Kapcsold be, hogy sose legyenek elrejtve."
+	},
+	"TIDY5E.Settings.SkillsAlwaysShown": {
+		"name": "Mindig mutassa a képzettségeket.",
+		"hint": "Alapértelmezetten egy ki/be gomb elrejti azokat a képzettségekben, amikben nincs jártasság. Kapcsold be, hogy sose legyenek elrejtve."
+	},
+
+	"TIDY5E.Settings.ActiveEffectsMarker": {
+		"name": "Aktív Hatások Jelölő mutatása a tételeken.",
+		"hint": "Kapcsold be, hogy lásd a tételeken lévő aktív hatásokat (csak lista nézetben)."
+	},
+	"TIDY5E.Settings.RightClick": {
+		"name": "Jobb klikk menü elrejtése.",
+		"hint": "Modul összeakadás vagy csak tetszés miatt kikapcsolhatod a jobb klikk menüt. Helyette a tételeken egy menü ikon lesz."
+	},
+	"TIDY5E.Settings.ExpandedSheet": {
+		"name": "Kiterjesztett Korlátozott nézet a karakterlapokra.",
+		"hint": "A naplón kívül az egész karakterlapot mutass a korlátozott jogosultsággal rendelkező játékosoknak."
+	},
+	"TIDY5E.Settings.PortraitStyle": {
+		"name": "Kerek portré stílus.",
+		"hint": "Válaszd ki, hogy milyen aktorokhoz kapcsold be a kerek portrékat/ikonokat.",
+		"all": "Minden aktor",
+		"pc": "JK-k",
+		"npc": "NJK-k/Járművek",
+		"none": "egyikhez sem",
+		"default": "egyikhez sem"
+	},
+	"TIDY5E.Settings.HpOverlayBorder": {
+		"name": "HP átfedés eltolása.",
+		"hint": "Üss be egy eltolási értéket, amivel a portrékeretet kompenzálod és a színkeveredést meggátolod."
+	},
+	"TIDY5E.Settings.EditTotalLock": {
+		"name": "Érzékeny mezők lezárása.",
+		"hint": "Kapcsold be, hogy véletlenül ne lehessen megváltoztatni érzékny, főleg statikus értékeket."
+	},
+	"TIDY5E.Settings.EditGmAlways": {
+		"name": "JM mindig szerkesztheti a JK lapokat.",
+		"hint": "Kapcsold be, hogy a JM-ek a lapzár kikapcsolása nélkül is szerkeszthessék a JK lapokat."
+	},
+	"TIDY5E.Settings.EditEffectsGmOnly": {
+		"name": "Csak JM szerkesztheti az aktív hatásokat.",
+		"hint": "Kapcsold be, hogy elutasítsa a játékosok aktív hatás szerkesztési szándékait a lapjaikon. Ettől még látni fogják az aktív hatásokat."
+	},
+	"TIDY5E.Settings.QuantityAlwaysShown": {
+		"name": "Mindig mutassa a tételek mennyiségét.",
+		"hint": "Kapcsold be, hogy sose rejtse el a tételek mennyiségét."
+	},
+	"TIDY5E.Settings.InspirationDisabled": {
+		"name": "Inspiráció követő kikapcsolása.",
+		"hint": "Ha a kampányod nem használ inspirációt, ezzel kikapcsolhatod a követőt teljesen."
+	},
+	"TIDY5E.Settings.ExhaustionEffects": {
+		"name": "Automatikus Kimerültség Hatások.",
+		"hint": "Válaszd ki, hogyan alkalmazod a kimerültség hatásokat a különböző szinteken (midiQol szükséges a hátránydobásokhoz).",
+		"default": "Nincs automatikusan kimerültség hatás",
+		"tidy5e": "Tidy5e - Integrált hatások alkalmazása (Active Effects szükséges)",
+		"custom": "Egyéni - A saját hatásaid alkalmazása (CUB szükséges)"
+	},
+	"TIDY5E.Settings.CustomExhaustionIcon": {
+		"name": "Egyéni kimerültség hatás ikon.",
+		"hint": "Beállíthatod a saját kimerültség ikonodat az alábbi kép URL-lel. Csak akkor elérhető, ha a Kimerültség Hatás \"tidy 5e\"-re vannak állítva (pl.: modules/tidy5e-sheet/images/exhaustion.svg)."
+	},
+	"TIDY5E.Settings.CustomExhaustionEffect": {
+		"name": "Egyéni CUB kimerültség hatás név.",
+		"hint": "Állítsd be a saját Kimerültség Hatás nevét - ugyanannak kell lennie, mint a CUB-ban, de a szint NÉLKÜL. (pl. \"Kimerültség\")",
+		"tiers": "Egyéni CUB kimerültség szintek száma. Alapértelmezett = 5",
+		"warning": "Nem található aktor token, amire alkalmazható lenne a kimerültség hatás!"
+	},
+	"TIDY5E.Settings.ExhaustionDisabled": {
+		"name": "Kimerültség követő kikapcsolása.",
+		"hint": "Ha a kampányod nem használ kimerültséget, ezzel kikapcsolhatod a követőt teljesen."
+	},
+	"TIDY5E.Settings.RestingForNpcs": {
+		"name": "Pihenés az NJK-knak.",
+		"hint": "Kapcsold be, hogy mutasson pihenés ikont/gombokat az NJK lapokon."
+	},
+	"TIDY5E.Settings.RestingForNpcsChat": {
+		"name": "NJK pihenés chat kártya elrejtése.",
+		"hint": "Kapcsold be, hogy elrejtsd az NJK pihenéshez a chat kártyát (játékosokra és JM-re is vonatkozik)."
+	},
+	"TIDY5E.Settings.LinkMarker": {
+		"name": "Linkelt/nem linkelt NJK-k jelölése.",
+		"hint": "Színes szegélyt és ikont ad a linkelt/nem linkelt NJK lapokhoz.",
+		"default": "Nincs link jelölő (alapértelmezett)",
+		"unlinked": "Nem linkelt tokenek kiemelése",
+		"linked": "Linkelt tokenek kiemelése",
+		"both": "Linkelt és nem linkelt tokenek kiemelése"
+	},
+	"TIDY5E.Settings.DefaultActionsTab": {
+		"name": "Alapértelmezett fül a lap első nyitásakor.",
+		"hint": "Válassz az 'Akciók' és a 'Tulajdonságok' közül.",
+		"default": "Akciók",
+		"attributes": "Tulajdonságok"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves": {
+		"name": "Halál elleni mentők elrejtése a Játékosok elől.",
+		"hint": "Kapcsold be, hogy a halál elleni mentőket csak a JM láthassa."
+	},
+	"TIDY5E.Settings.npsSheetWidth": {
+		"name": "Alapértelmezett NJK lap szélesség.",
+		"hint": "Az NJK lap szélessége pixelekben, újratöltés szükséges (alapértelmezett 740)."
+	},
+	"TIDY5E.Settings.playerSheetWidth": {
+		"name": "Alapértelmezett JK lap szélesség.",
+		"hint": "Az JK lap szélessége pixelekben, újratöltés szükséges (alapértelmezett 740)."
+	},
+	"TIDY5E.Settings.vehicleSheetWidth": {
+		"name": "Alapértelmezett jármű lap szélesség.",
+		"hint": "A jármű lap szélessége pixelekben, újratöltés szükséges (alapértelmezett 740)."
+	}
+}

@@ -70,6 +70,11 @@
 			"lang": "cs",
 			"name": "Čeština",
 			"path": "lang/cs.json"
+		},
+		{
+			"lang": "hu",
+			"name": "Magyar",
+			"path": "lang/hu.json"
 		}
 	],
   "url": "https://github.com/sdenec/tidy5e-sheet",
