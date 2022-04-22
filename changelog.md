@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.26 ###
+
+- hungarian translation added
+- attack mod field updated
+
 ### Version 0.5.25 ###
 
 - tried to fix !PopOut issues with context menu
