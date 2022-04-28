@@ -401,7 +401,8 @@ async function spellAttackMod(app,html,data){
 				prof = actor.data.data.attributes.prof,
 				spellAbility = html.find('.spellcasting-attribute select option:selected').val(),
 				abilityMod = spellAbility != '' ? actor.data.data.abilities[spellAbility].mod : 0,
-				spellAttackMod = prof + abilityMod,
+				spellBonus = parseInt(actor.data.data.bonuses.rsak.attack || 0),
+				spellAttackMod = prof + abilityMod + spellBonus,
 				text = spellAttackMod > 0 ? '+'+spellAttackMod : spellAttackMod;
 		// console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
 		html.find('.spell-mod .spell-attack-mod').html(text);

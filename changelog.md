@@ -26,7 +26,8 @@ Thank you very much!
 
 ### Version 0.5.26 ###
 
-- pull requests integrated
+- hungarian translation added
+- attack mod field updated
 
 ### Version 0.5.25 ###
 
