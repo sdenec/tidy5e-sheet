@@ -169,7 +169,7 @@
 	li span {
 		position: relative;
 		margin-left: 4px;
-    padding: 0 4px;
+    padding: 0 4px 0 8px;
 	}
 
 
@@ -182,7 +182,7 @@
 		background: var(--primary-color);
 		position: absolute;
 		top: 50%;
-		left: -4px;
+		left: 0px;
 		transform: translateY(-50%);
 	}
 

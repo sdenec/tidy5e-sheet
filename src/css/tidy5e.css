@@ -1572,7 +1572,7 @@
 .tidy5e.sheet.actor .origin-summary li span {
   position: relative;
   margin-left: 4px;
-  padding: 0 4px;
+  padding: 0 4px 0 8px;
 }
 
 .tidy5e.sheet.actor .origin-summary li span::after {
@@ -1584,7 +1584,7 @@
   background: var(--primary-color);
   position: absolute;
   top: 50%;
-  left: -4px;
+  left: 0px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -4953,6 +4953,12 @@
 .tidy5e.sheet.actor.npc .origin-summary .environment span:focus-within,
 .tidy5e.sheet.actor.npc .origin-summary .environment:hover .environment-label {
   display: inline-block;
+}
+
+.tidy5e.sheet.actor.npc .origin-summary .source-info {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tidy5e.sheet.actor.npc .left-pane {

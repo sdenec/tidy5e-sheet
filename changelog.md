@@ -16,6 +16,14 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.27 ###
+
+- max attunement adapted to system variable
+- reverted translation strings for attributes and currency
+- NPC source field will get cut off with ellipsis if text is too long in order to keep the layout intact (full description is visible on hover)
+- fixed spell components
+- fixed level dropdown
+
 ### Version 0.5.26 ###
 
 - hungarian translation added
