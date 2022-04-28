@@ -225,6 +225,13 @@
         display: inline-block;
       }
     }//.environment
+
+    .source-info {
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
   }//.origin-summary
 
   // Left Pane

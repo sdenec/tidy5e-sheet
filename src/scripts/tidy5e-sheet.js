@@ -45,8 +45,11 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     const data = super.getData();
 
     Object.keys(data.data.abilities).forEach(id => {
-    	let Id = id.charAt(0).toLowerCase() + id.slice(1);
-      data.data.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[Id];
+    	// let Id = id.charAt(0).toLowerCase() + id.slice(1);
+    	let Id = id.charAt(0).toUpperCase() + id.slice(1);
+      //data.data.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[Id];
+			data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
+
 		});
 
 		data.appId = this.appId;
@@ -168,7 +171,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
  			if(item.data.data.attunement == 2) {
  				actor.items.get(li.data("item-id")).update({'data.attunement': 1});
  			} else {
- 				if(count >= actor.data.data.details.attunedItemsMax) {
+ 				if(count >= actor.data.attributes.attunement.max) {
 			  	ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
 			  } else {
  					actor.items.get(li.data("item-id")).update({'data.attunement': 2});
@@ -409,10 +412,16 @@ async function spellAttackMod(app,html,data){
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
 		let currency = $(this).data('denom').toLowerCase();
-		let abbr = CONFIG.DND5E.currencies[currency].abbreviation;
-		if(abbr == CONFIG.DND5E.currencies[currency].abbreviation){
+		// console.log('Currency Abbr: '+CONFIG.DND5E.currencies[currency].abbreviation);
+		// let abbr = CONFIG.DND5E.currencies[currency].abbreviation;
+		// if(abbr == CONFIG.DND5E.currencies[currency].abbreviation){
+		// 	abbr = currency;
+		// }
+		let abbr = game.i18n.localize(`DND5E.CurrencyAbbr${currency}`);
+		if(abbr == `DND5E.CurrencyAbbr${currency}`){
 			abbr = currency;
 		}
+
 		$(this).html(abbr);
 	});
 }
