@@ -62,7 +62,7 @@
         {{/if}}
         <div class="item-detail spell-comps">
           {{#each labels.components.all}}
-          <span class="spell-component{{#if tag}} tag{{/if}}">{{abbr}}</span>
+          <span class="spell-component{{#if tag}} {{abbr}}{{/if}}">{{abbr}}</span>
           {{/each}}
         </div>
         <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}: {{labels.school}}"><span class="truncate">{{labels.school}}</span></div>
