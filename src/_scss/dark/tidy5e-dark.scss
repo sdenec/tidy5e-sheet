@@ -83,6 +83,10 @@
       form {
         background-color: var(--background);
       }
+
+      form .hint {
+        color: var(--tertiary-color);
+      }
     }
 
     .tox .tox-toolbar-overlord button {
@@ -97,6 +101,23 @@
     select option {
       color: var(--primary-font);
       background: var(--background);
+    }
+    
+    a.content-link {
+      color: var(--primary-font);
+      background: var(--faint-color);
+    }
+
+    .tab.advancement .items-list {
+      .items-header div.item-checkmark {
+        flex: 0 0 44px;
+        color: var(--prepared);
+      }
+      .item .item-name {
+        .item-image {
+          filter: invert(1);
+        }
+      }
     }
 
   }

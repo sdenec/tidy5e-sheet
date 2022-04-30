@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.28 ###
+
+- fixed subclass name in sheet header
+- fixed layout and dark mode colors for advancement tab for class/subclass item sheet
+
 ### Version 0.5.27 ###
 
 - max attunement adapted to system variable

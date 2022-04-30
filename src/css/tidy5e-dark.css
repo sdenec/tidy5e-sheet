@@ -62,6 +62,10 @@
   background-color: var(--background);
 }
 
+.tidy5eDark .tidy5e.sheet.item .window-content form .hint {
+  color: var(--tertiary-color);
+}
+
 .tidy5eDark .tidy5e.sheet.item .tox .tox-toolbar-overlord button {
   color: #222;
 }
@@ -74,6 +78,23 @@
 .tidy5eDark .tidy5e.sheet.item select option {
   color: var(--primary-font);
   background: var(--background);
+}
+
+.tidy5eDark .tidy5e.sheet.item a.content-link {
+  color: var(--primary-font);
+  background: var(--faint-color);
+}
+
+.tidy5eDark .tidy5e.sheet.item .tab.advancement .items-list .items-header div.item-checkmark {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 44px;
+          flex: 0 0 44px;
+  color: var(--prepared);
+}
+
+.tidy5eDark .tidy5e.sheet.item .tab.advancement .items-list .item .item-name .item-image {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .tox-toolbar-overlord,
