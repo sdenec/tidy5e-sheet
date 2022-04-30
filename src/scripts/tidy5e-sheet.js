@@ -381,8 +381,10 @@ async function addClassList(app, html, data) {
 			for (let item of items) {
 				if (item.type === "class") {
 					let levels = (item.data.levels) ? `<span class="levels-info">${item.data.levels}</span>` : ``;
-					let subclass = (item.data.subclass) ? `<span class="subclass-info">(${item.data.subclass})</span>` : ``;
-					classList.push(item.name + levels + subclass);
+					classList.push(item.name + levels);
+				} 
+				if (item.type === "subclass") {
+					classList.push(item.name);
 				}
 			}
 			classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
