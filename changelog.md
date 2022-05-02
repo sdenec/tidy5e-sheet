@@ -16,6 +16,12 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.29 ###
+
+- fixed attunement error in item context menu
+- fixed build in exhaustion effects - now with icon on actor token
+- fixed missing component highlight for concentration/ritual (thanks @PizzaMarinara )
+
 ### Version 0.5.28 ###
 
 - fixed subclass name in sheet header

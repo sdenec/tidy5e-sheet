@@ -334,7 +334,7 @@ export const addFavorites = async function(app, html, data, position) {
 
           // update item attunement
           favHtml.find('.item-control.item-attunement').click( async (ev) => {
-            event.preventDefault();
+            ev.preventDefault();
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
             let item = app.actor.items.get(itemId);
 

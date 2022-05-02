@@ -133,7 +133,7 @@ async function updateExhaustion(actorEntity) {
           label: effectName,
           icon: icon,
           changes: exhaustionSet,
-          duration: {},
+          duration: {'seconds': 31536000},
           flags: {
             'tidy5e-sheet': {
               'exhaustion': exhaustion
@@ -142,7 +142,7 @@ async function updateExhaustion(actorEntity) {
           origin: `Actor.${actorEntity.data._id}`
         };
         
-        await actorEntity.createEmbeddedEntity("ActiveEffect", effectChange);
+        await actorEntity.createEmbeddedDocuments("ActiveEffect", [effectChange]);
         await actorEntity.applyActiveEffects();  
       }
     }
