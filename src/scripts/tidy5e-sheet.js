@@ -165,13 +165,13 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		html.find('.item-control.item-attunement').click( async (event) => {
 	    event.preventDefault();
  			let li = $(event.currentTarget).closest('.item'),
-					 item =actor.items.get(li.data("item-id")),
+					 item = actor.items.get(li.data("item-id")),
 					 count = actor.data.data.details.attunedItemsCount;
 
  			if(item.data.data.attunement == 2) {
  				actor.items.get(li.data("item-id")).update({'data.attunement': 1});
  			} else {
- 				if(count >= actor.data.attributes.attunement.max) {
+ 				if(count >= actor.data.data.attributes.attunement.max) {
 			  	ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
 			  } else {
  					actor.items.get(li.data("item-id")).update({'data.attunement': 2});
