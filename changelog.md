@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.30 ###
+
+- currency translation fix
+
 ### Version 0.5.29 ###
 
 - fixed attunement error in item context menu

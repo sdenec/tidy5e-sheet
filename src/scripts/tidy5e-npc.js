@@ -525,7 +525,7 @@ async function setSheetClasses(app, html, data) {
 // Abbreviate Currency
 async function abbreviateCurrency(app,html,data) {
 	html.find('.currency .currency-item label').each(function(){
-		let currency = $(this).data('denom').toLowerCase();
+		let currency = $(this).data('denom').toUpperCase();
 		// let abbr = CONFIG.DND5E.currencies[currency].abbreviation;
 		// if(abbr == CONFIG.DND5E.currencies[currency].abbreviation){
 		// 	abbr = currency;
