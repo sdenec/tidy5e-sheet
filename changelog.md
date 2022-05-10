@@ -16,6 +16,12 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.31 ###
+
+- fixed favorites custom drag and drop sorting
+- dropping actor onto favorites area doesn't block polymorph
+- fixed item attunement (max values and error notification on overattunement should work again)
+
 ### Version 0.5.30 ###
 
 - currency translation fix

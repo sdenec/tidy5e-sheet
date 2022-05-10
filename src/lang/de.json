@@ -11,7 +11,7 @@
 	"TIDY5E.EditActorImage": "Linksklick: Bild bearbeiten",
 	"TIDY5E.ShowActorImage": "Rechtsklick: Charakter-Bilder zeigen",
 	"TIDY5E.ShowPortraitArt": "zeige Portrait",
-	"TIDY5E.ShowTokenArt": "zeige Token",
+	"TIDY5E.ShowTokenArt": "zeige Figur",
 
 	"TIDY5E.Exhaustion0": "Keine negativen Effekte",
 	"TIDY5E.Exhaustion1": "Nachteil auf Fähigkeits-Proben",
@@ -96,8 +96,8 @@
 	"TIDY5E.Components" : "Komp.",
 	"TIDY5E.SpellSchool" : "Schule",
 
-	"TIDY5E.TokenLinked" : "Token mit Actor verknüpft",
-	"TIDY5E.TokenUnlinked" : "Token nicht mit Actor verknüpft",
+	"TIDY5E.TokenLinked" : "Figur mit Akteur verknüpft",
+	"TIDY5E.TokenUnlinked" : "Figur nicht mit Akteur verknüpft",
 
 	"TIDY5E.ItemDetailsHeadline" : "Mechaniken/Flavor-Text",
 
@@ -109,20 +109,44 @@
 	"TIDY5E.Settings.VehicleLabel" : "Fahrzeuge",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "Einstellungen für Charakterbögen"
+		"label" : "Einstellungen für Charakterbögen",
+		"title" : "Tidy5e Einstellungen für Charakterbögen"
 	},
-	
+	"TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "Spieler",
+		"header" : "Spieler Charakterbögen"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "NSCs/Fahrzeuge",
+		"header" : "NSC-/Fahrzeugbögen",
+		"labelNPCs" : "NSCs",
+		"labelVehicles" : "Fahrzeuge"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "SL Einstellungen",
+		"header" : "SL Bogeneinstellungen"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "Module",
+		"header" : "Moduleinstellungen",
+		"labelActionsFavorites" : "Akteur Aktionen/Favoriten",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "Info",
+		"header" : "Info"
+	},	
 	"TIDY5E.Settings.ItemCardsForAllItems" : {
 		"name" : "Zeigen Gegenstand-Infokarten in allen Ansichten.",
-		"hint" : "Deaktivieren wenn Infokarten nur in der Rasteransicht gezeigt werden sollen."
+		"hint" : "Deaktivieren, um die Infokarten nur in der Rasteransicht anzuzeigen."
 	},
 	"TIDY5E.Settings.ItemCardsForNpcs" : {
 		"name" : "Zeigen Gegenstand-Infokarten für NSCs/Fahrzeuge.",
-		"hint" : "Deaktivieren wenn Infokarten nicht für NSCs/Fahrzeuge angezeigt werden sollen."
+		"hint" : "Aktivieren, um die Infokarten nicht für NSCs/Fahrzeuge anzuzeigen."
 	},
 	"TIDY5E.Settings.ItemCardsAreFloating" : {
 		"name" : "Gegenstandskarten schweben neben dem Cursor.",
-		"hint" : "Aktivieren, um Infokarten nicht auszufahren sondern neben dem Cursor anzuzeigen. Nützlich für Characterbögen im eigenen Fenster."
+		"hint" : "Aktivieren, um Infokarten nicht auszufahren sondern neben dem Cursor anzuzeigen. Nützlich für Charakterbögen im eigenen Fenster."
 	},
 	"TIDY5E.Settings.ItemCardsDelay" : {
 		"name" : "Verzögerung zum Anzeigen der Gegenstand- Infokarten.",
@@ -133,6 +157,7 @@
 		"hint" : "Gib eine Taste (z. B.: x) für die Infokarten-Interaktion ein. Alle Tasten außer Funktionstasten (ctrl, alt, etc.) möglich"
 	},
 	
+
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5e Farbschema.",
 		"hint" : "Nutze das helle Standarschema oder das dunkle Alternativschema von Tidy5e.",
@@ -147,37 +172,40 @@
 	"TIDY5E.Settings.RollButtonsToCard" : {
 		"name" : "Zeige midiQol Gegenstand-Buttons in der Info-Karte",
 		"hint" : "Standardmäßig werden Gegenstands-Buttons in den Zusatzinfos angezeigt. Aktivieren, um sie in die Info-Karte zu verschieben. Funktioniert in allen Layout-Modi."
-	},
-	
+	},	
 	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "Beschriftung von Merkmalen.",
-		"hint" : "Standardmäßig werden nur Icons für Merkmale angezeigt. Einschalten, um auch Beschriftungen für Merkmale anzuzeigen."
+		"hint" : "Standardmäßig werden nur Icons für Merkmale angezeigt. Aktivieren, um auch Beschriftungen für Merkmale anzuzeigen."
 	},
 	
+	
+	"TIDY5E.Settings.PlayerName" : {
+		"name" : "Zeige Spielername.",
+		"hint" : "Aktivieren, um ein Feld für den Namen des Spielers unterhalb des Charakternamens anzuzeigen."
+	},
 	"TIDY5E.Settings.JournalTab" : {
 		"name" : "Charakter-Tagebuch verstecken.",
 		"hint" : "Aktivieren, um den Tagebuch-Reiter zu verstecken."
 	},
-
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "Charakter-Klassenliste verstecken.",
-		"hint" : "Einschalten, um die Klassenliste unter dem Namen eines Charakters zu verstecken."
+		"hint" : "Aktivieren, um die Klassenliste unter dem Namen eines Charakters zu verstecken."
 	},
 	"TIDY5E.Settings.InspirationAnimation" : {
 		"name" : "Unbewegter Inspirations-Tracker.",
-		"hint" : "Einschalten, um die Animation des Inspirations-Trackers zu deaktivieren."
+		"hint" : "Aktivieren, um die Animation des Inspirations-Trackers zu deaktivieren."
 	},
 	"TIDY5E.Settings.HideIfZero" : {
 		"name" : "Verstecke Erschöpfungs- und Inspirations-Tracker bei 0.",
-		"hint" : "Einschalten, um Erschöpfungs- und Inspirations-Tracker bei 0 zu verstecken. Erscheint bei Maushover."
+		"hint" : "Aktivieren, um Erschöpfungs- und Inspirations-Tracker bei 0 zu verstecken. Erscheint bei Maushover."
 	},
 	"TIDY5E.Settings.InspirationOnHover" : {
 		"name" : "Zeige Inspirations-Tracker bei Hover.",
-		"hint" : "Einschalten, um den Inspirations-Tracker grundsätzlich nur bei Maushover zu zeigen."
+		"hint" : "Aktivieren, um den Inspirations-Tracker grundsätzlich nur bei Maushover zu zeigen."
 	},
 	"TIDY5E.Settings.ExhaustionOnHover" : {
 		"name" : "Zeige Erschöpfungs-Tracker bei Hover.",
-		"hint" : "Einschalten, um den Erschöpfungs-Tracker grundsätzlich nur bei Maushover zu zeigen."
+		"hint" : "Aktivieren, um den Erschöpfungs-Tracker grundsätzlich nur bei Maushover zu zeigen."
 	},
 	"TIDY5E.Settings.HpBar" : {
 		"name" : "Lebensbalken deaktivieren.",
@@ -185,24 +213,31 @@
 	},
 	"TIDY5E.Settings.HpOverlay" : {
 		"name" : "Trefferpunkt-Overlay verstecken.",
-		"hint" : "Einschalten, um das Trefferpunkt-Overlay für diesen Darstellertyp zu verstecken."
+		"hint" : "Aktivieren, um das Trefferpunkt-Overlay für diesen Darstellertyp zu verstecken."
 	},
 	"TIDY5E.Settings.TraitsTogglePc" : {
 		"name" : "Leere Charakter-Merkmale umschalten.",
-		"hint" : "Standardmäßig sind leere Merkmale immer sichtbar. Einschalten, um per Schalter zu wechseln."
+		"hint" : "Standardmäßig sind leere Merkmale immer sichtbar. Aktivieren, um per Schalter zu wechseln."
 	},
 	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "Verschiebe Merkmale unter Ressourcen.",
-		"hint" : "Einschalten, um Merkmalliste von der linken Seite unter die Ressourcen zu verschieben."
+		"hint" : "Aktivieren, um Merkmalliste von der linken Seite unter die Ressourcen zu verschieben."
 	},
+	"TIDY5E.Settings.AmmoEquippedOnly" : {
+		"name" : "Zeige nur ausgerüstete Munition.",
+		"hint" : "Aktivieren, um nur ausgerüstete Munition in der Munitionsauswahl von Waffen anzuzeigen."
+	},
+
+
 	"TIDY5E.Settings.TraitsAlwaysShown" : {
 		"name" : "Merkmale immer anzeigen.",
-		"hint" : "Standardmäßig sind leere Merkmale per Schalter ausgeblendet. Einschalten, um immer anzuzeigen."
+		"hint" : "Standardmäßig sind leere Merkmale per Schalter ausgeblendet. Aktivieren, um immer anzuzeigen."
 	},
 	"TIDY5E.Settings.SkillsAlwaysShown" : {
 		"name" : "Fähigkeiten immer anzeigen.",
-		"hint" : "Standardmäßig sind ungeübte Fähigkeiten per Schalter ausgeblendet. Einschalten, um immer anzuzeigen."
+		"hint" : "Standardmäßig sind ungeübte Fähigkeiten per Schalter ausgeblendet. Aktivieren, um immer anzuzeigen."
 	},
+
 
 	"TIDY5E.Settings.ActiveEffectsMarker" : {
 		"name" : "Zeige Marker für Gegenstände mit Aktiven Effekten.",
@@ -222,6 +257,7 @@
 		"all": "Alle Darsteller",
 		"pc": "Nur für SCs",
 		"npc": "Nur für NSCs/Fahrzeuge",
+		"none": "Keine",
 		"default": "Keine"
 	},
 	"TIDY5E.Settings.HpOverlayBorder" : {
@@ -230,19 +266,19 @@
 	},
 	"TIDY5E.Settings.EditTotalLock" : {
 		"name" : "Empfindliche Felder sperren.",
-		"hint" : "Aktivieren, um versehendliches Editieren empfindlicher (meist statischer) Felder zu minimieren."
+		"hint" : "Aktivieren, um versehentliches Editieren empfindlicher (meist statischer) Felder zu minimieren."
 	},
 	"TIDY5E.Settings.EditGmAlways" : {
 		"name" : "SL kann immer SC-Bögen bearbeiten.",
-		"hint" : "Einschalten, um SLs immer das Bearbeiten von Spielerbögen zu erlauben ohne das Schloss zu ändern."
+		"hint" : "Aktivieren, um SLs immer das Bearbeiten von Spielerbögen zu erlauben ohne das Schloss zu ändern."
 	},
 	"TIDY5E.Settings.EditEffectsGmOnly" : {
 		"name" : "Nur SL darf Effekte bearbeiten.",
-		"hint" : "Einschalten, um nur SLs zu erlauben Aktive Effekte für SCs zu bearbeiten. Spieler sehen weiterhin die angewandten Effekte."
+		"hint" : "Aktivieren, um nur SLs zu erlauben Aktive Effekte für SCs zu bearbeiten. Spieler sehen weiterhin die angewandten Effekte."
 	},
 	"TIDY5E.Settings.QuantityAlwaysShown" : {
 		"name" : "Immer Gegenstandsmenge anzeigen.",
-		"hint" : "Einschalten um Gegestandsanzahl niemals auszublenden."
+		"hint" : "Aktivieren, um Gegestandsanzahl niemals auszublenden."
 	},
 	"TIDY5E.Settings.InspirationDisabled" : {
 		"name" : "Inspirations-Tracker deaktivieren.",
@@ -257,13 +293,13 @@
 	},
 	"TIDY5E.Settings.CustomExhaustionIcon" : {
 		"name" : "Eigenes Icon für Erschöpfungseffekt.",
-		"hint" : "Wähle dein eigenes Icon durch Setzen eines Bildpfades. Nur für \"Tidy 5e\" Option (z. B.: modules/tidy5e-sheet/images/exhaustion.svg)."
+		"hint" : "Wähle dein eigenes Icon durch Setzen eines Bildpfades. Nur für \"Tidy 5e\"-Einstellung (z. B.: modules/tidy5e-sheet/images/exhaustion.svg)."
 	},
 	"TIDY5E.Settings.CustomExhaustionEffect" : {
 		"name" : "Name des CUB Erschöpfungseffekts.",
 		"hint" : "Stelle den Namen deines eigenen Effekts ein. Muss exakt so lauten wie in CUB jedoch OHNE Zahl. (z. B. \"Exhaustion\")",
 		"tiers": "Zahl der CUB-Erschöpfungslevel. Standard = 5",
-		"warning": "Keine Charakter-Token gefunden, um den Effekt anzuwenden!"
+		"warning": "Keine Charakter-Figur gefunden, um den Effekt anzuwenden!"
 	},
 	"TIDY5E.Settings.ExhaustionDisabled" : {
 		"name" : "Erschöpfungs-Tracker deaktivieren.",
@@ -271,7 +307,7 @@
 	},
 	"TIDY5E.Settings.RestingForNpcs" : {
 		"name" : "Rast für NSCs.",
-		"hint" : "Einschalten, um den Rast-Button auch für NSCs anzuzeigen."
+		"hint" : "Aktivieren, um den Rast-Button auch für NSCs anzuzeigen."
 	},
 	"TIDY5E.Settings.RestingForNpcsChat" : {
 		"name" : "Verstecke Chat-Karte für NSC-Rast.",
@@ -281,14 +317,19 @@
 		"name" : "Verknüpfte/unverknüpfte NSCs markieren.",
 		"hint" : "Fügt farbige Rahmen und Icons zu verknüpften/unverknüpften NSC-Bögen hinzu.",
 		"default": "Kein Verknüpfungsmarker (standard)",
-		"unlinked": "Unverknüpfte Token hervorheben",
-		"both": "Verknüpfte und unverknüpfte Token hervorheben"
+		"unlinked": "Unverknüpfte Figuren hervorheben",
+		"linked": "Verknüpfte Figuren hervorheben",
+		"both": "Verknüpfte und unverknüpfte Figuren hervorheben"
 	},
 	"TIDY5E.Settings.DefaultActionsTab" : {
 		"name" : "Standard-Reiter beim ersten Öffnen eines Charakter Bogens.",
 		"hint" : "Auswahl zwischen 'Aktionen' und 'Attributen'.",
 		"default": "Aktionen",
 		"attributes": "Attribute"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves" : {
+		"name" : "Verstecke Todesrettungswürfe vor Spielern.",
+		"hint" : "Aktivieren, damit Todesrettungswürfe und deren Ergebnisse nur vom SL gesehen werden können."
 	},
 	"TIDY5E.Settings.npsSheetWidth" : {
 		"name" : "Standard Breite des NSC Bogens.",

@@ -669,4 +669,5 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   resetTempHp(app, html, data);
   editProtection(app, html, data);
   npcFavorites (app, html, data);
+	// console.log(data.actor);
 });
