@@ -162,11 +162,12 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     });
 
 		// update item attunement
+		
 		html.find('.item-control.item-attunement').click( async (event) => {
 	    event.preventDefault();
  			let li = $(event.currentTarget).closest('.item'),
 					 item = actor.items.get(li.data("item-id")),
-					 count = actor.data.data.details.attunedItemsCount;
+					 count = actor.data.data.attributes.attunement.value;
 
  			if(item.data.data.attunement == 2) {
  				actor.items.get(li.data("item-id")).update({'data.attunement': 1});
@@ -178,6 +179,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			  }
  			}
  		});
+		
 	}
 	
 	// add actions module
@@ -229,30 +231,11 @@ async function countInventoryItems(app, html, data){
 
 // count attuned items
 async function countAttunedItems(app, html, data){
-	let actor = app.actor;
-	// console.log(actor)
-	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
-	if(data.editable && !actor.compendium){
-		let	count = actor.data.data.details.attunedItemsCount;
-		// if no items are counted set default value to 3
-		if (!actor.data.data.details.attunedItemsMax) {
-			await actor.update({"data.details.attunedItemsMax": 3});
-		}
-
-		if (!count) {
-			await actor.update({"data.details.attunedItemsCount": 0});
-		}
-
-		let items = actor.data.items;
-		let attunedItems = items.filter(item => item.data.data.attunement === 2).length;
-
-		await actor.update({"data.details.attunedItemsCount": attunedItems});
-
-		// html.find('.attuned-items-counter .attuned-items-current').text(attunedItems);
-		if(actor.data.data.details.attunedItemsCount > actor.data.data.details.attunedItemsMax) {
-			html.find('.attuned-items-counter').addClass('overattuned');
-			ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
-		}
+	const actor = app.actor;
+	const	count = actor.data.data.attributes.attunement.value;
+	if(actor.data.data.attributes.attunement.value > actor.data.data.attributes.attunement.max) {
+		html.find('.attuned-items-counter').addClass('overattuned');
+		ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
 	}
 }
 
@@ -586,13 +569,4 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 
 Hooks.once("ready", (app, html, data) => {
 	// console.log("Tidy5e Sheet is ready!");
-	
-	// can be removed when 0.7.x is stable
-	// if (window.BetterRolls) {
-	// 	window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
-	// }
-	
-	// load settings
-	// tidy5eSettings();
-
 });
