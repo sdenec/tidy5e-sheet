@@ -415,24 +415,12 @@ async  function restoreScrollPosition(app, html, data){
 
 // handle skills list display
 async function toggleSkillList(app, html, data){
-  html.find('.skills-list:not(.always-visible):not(.expanded) .skill:not(.proficient)').addClass('skill-hidden').hide();
-  let visibleSkills = html.find('.skills-list .skill:not(.skill-hidden)');
-  for (let i = 0; i < visibleSkills.length; i++) {
-    if(i % 2 != 0){
-      visibleSkills[i].classList.add('even');
-    }
-  }
+  html.find('.skills-list:not(.always-visible):not(.expanded) .skill:not(.proficient)').remove();
 }
 
 // handle traits list display
 async function toggleTraitsList(app, html, data){
-  html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
-  let visibleTraits = html.find('.traits .form-group:not(.trait-hidden)');
-  for (let i = 0; i < visibleTraits.length; i++) {
-    if(i % 2 != 0){
-      visibleTraits[i].classList.add('even');
-    }
-  }
+  html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').remove();
 }
 
 // toggle item icon

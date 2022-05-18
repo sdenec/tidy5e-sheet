@@ -16,6 +16,13 @@ Thank you very much!
 
 ## Version History ##
 
+### Version 0.5.32 ###
+
+- fixed exaustion reduction on long rest while exhaustion automation is off
+- fixed missing midiqol action times in favorites tab
+- fixed classic controls width when gm ignores sheet lock
+- fixed line highlights for skills and traits
+
 ### Version 0.5.31 ###
 
 - fixed favorites custom drag and drop sorting

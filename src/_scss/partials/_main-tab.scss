@@ -297,12 +297,8 @@
 			background: none;
 		}
 
-		.form-group.even {
+		.form-group:nth-child(even) {
 			background: var(--faint-color);
-		}
-
-		&:not(.expanded):not(.always-visible) .form-group.trait-hidden {
-			display: none;
 		}
 
 		.form-group:last-child {

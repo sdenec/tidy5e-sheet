@@ -124,6 +124,7 @@ export const addFavorites = async function(app, html, data, position) {
           let translation = {
               none : game.i18n.localize("DND5E.None"),
               action : game.i18n.localize("DND5E.Action"),
+              crew : game.i18n.localize("DND5E.VehicleCrewAction"),
               bonus : game.i18n.localize("DND5E.BonusAction"),
               reaction : game.i18n.localize("DND5E.Reaction"),
               legendary : game.i18n.localize("DND5E.LegAct"),
@@ -131,7 +132,9 @@ export const addFavorites = async function(app, html, data, position) {
               special : game.i18n.localize("DND5E.Special"),
               day : game.i18n.localize("DND5E.TimeDay"),
               hour : game.i18n.localize("DND5E.TimeHour"),
-              minute : game.i18n.localize("DND5E.TimeMinute")
+              minute : game.i18n.localize("DND5E.TimeMinute"),
+              reactiondamage : game.i18n.localize("midi-qol.reactionDamaged"),
+              reactionmanual : game.i18n.localize("midi-qol.reactionManual")
           }
 
           function translateLabels (key){
