@@ -323,14 +323,6 @@
       margin-bottom: 0;
     }
 
-    .skill:nth-child(even) {
-      background: none;
-    }
-
-    .skill.even {
-      background: var(--faint-color);
-    }
-
     .toggle-proficient {
     	position: absolute;
       top: calc(100% + 1px);
@@ -362,16 +354,7 @@
     	display: none;
     }
     
-    // &.always-visible .toggle-proficient,
-    // &:not(.expanded):not(.always-visible) .skill .skill-proficiency {
-    //   display: none;
-    // }
   }//.skills-list
-
-  // .inventory-list .items-footer,
-  // .inventory-list .hidden {
-  //   display: none;
-  // }
 
   .items-list {
     padding: 0 0 8px 0;
@@ -381,8 +364,6 @@
       .item-name {
 
         .item-image {
-          // flex: 0 0 20px;
-          // height: 20px;
 
           i {
             font-size: 16px;

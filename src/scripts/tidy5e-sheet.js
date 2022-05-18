@@ -241,13 +241,7 @@ async function countAttunedItems(app, html, data){
 
 // handle traits list display
 async function toggleTraitsList(app, html, data){
-  html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
-  let visibleTraits = html.find('.traits .form-group:not(.trait-hidden)');
-  for (let i = 0; i < visibleTraits.length; i++) {
-    if(i % 2 != 0){
-      visibleTraits[i].classList.add('even');
-    }
-  }
+  html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').remove();
 }
 
 // Check Death Save Status
@@ -276,7 +270,7 @@ async function checkDeathSaveStatus(app, html, data){
 async function editProtection(app, html, data) {
   let actor = app.actor;
   if(game.user.isGM && game.settings.get("tidy5e-sheet", "editGmAlwaysEnabled")) {
-
+		html.find(".classic-controls").addClass('gmEdit');
   } else if(!actor.getFlag('tidy5e-sheet', 'allow-edit')){
 		
 		if(game.settings.get("tidy5e-sheet", "editTotalLockEnabled")){

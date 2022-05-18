@@ -2615,12 +2615,8 @@
   background: none;
 }
 
-.tidy5e.sheet.actor .traits .form-group.even {
+.tidy5e.sheet.actor .traits .form-group:nth-child(even) {
   background: var(--faint-color);
-}
-
-.tidy5e.sheet.actor .traits:not(.expanded):not(.always-visible) .form-group.trait-hidden {
-  display: none;
 }
 
 .tidy5e.sheet.actor .traits .form-group:last-child {
@@ -3724,11 +3720,11 @@
           flex: 0 0 69px;
 }
 
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .items-header {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.gmEdit .items-header {
   padding-right: 85px;
 }
 
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.gmEdit .item-controls:not(.context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 85px;
           flex: 0 0 85px;
@@ -3744,11 +3740,11 @@
           flex: 0 0 53px;
 }
 
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .items-header {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.gmEdit .items-header {
   padding-right: 69px;
 }
 
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.gmEdit .item-controls:not(.context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 69px;
           flex: 0 0 69px;
@@ -3764,11 +3760,11 @@
           flex: 0 0 37px;
 }
 
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .items-header {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.gmEdit .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.gmEdit .items-header {
   padding-right: 53px;
 }
 
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.gmEdit .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.gmEdit .item-controls:not(.context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 53px;
           flex: 0 0 53px;
@@ -4081,122 +4077,6 @@
       -ms-flex: 1;
           flex: 1;
   overflow: hidden;
-  /*
-	.item-info-container {
-		position: relative;
-    margin: 0 8px 10px 0;
-    width: 246px;
-    border: 1px solid var(--faint-color);
-    border-radius: 5px;
-    z-index: 1;
-
-		.item-info-container-background {
-			font-size: 150px;
-			color: var(--faintest-color);
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%,-50%);
-			z-index: -1;
-		}
-	}
-  
-  .item-info-container-content {
-		height: 100%;
-
-  	.info-card {
-			padding: 6px 8px 2px 8px;
-			border-radius: 5px;
-			overflow: hidden;
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-
-			&.equipped,
-			&.prepared {
-				background: var(--prepared);
-			}
-
-			&.magic-item {
-				box-shadow: 0 0 6px 2px var(--magic-accent) inset;
-			}
-
-			.info-card-name {
-				font-family: var(--modesto);
-				font-size: 24px;
-				margin: 0 0 4px 0;
-				line-height: 1;
-			}
-
-			.info-card-image {
-				filter: grayscale(100%);
-				mix-blend-mode: screen;
-			}
-
-			.info-card-states,
-			.info-card-trade,
-			.info-card-amount,
-			.info-card-properties {
-				font-size: 12px;
-				display: flex;
-				justify-content: space-between;
-				border-top: 1px solid var(--faint-color);
-
-				span {
-					padding: 4px 0;
-				}
-
-				i {
-					width: 13px;
-					text-align: center;
-					margin-right: 4px;
-					vertical-align: middle;
-				}
-
-				.info-attuned,
-				.info-quantity {
-					margin-left: auto;
-				}
-
-			}
-
-			.info-card-hint {
-				font-size: 12px;
-		    border-top: 1px solid var(--faint-color);
-		    padding: 4px;
-		    margin-top: 2px;
-		    font-style: italic;
-			}
-
-			.info-card-description {
-				flex: 1;
-				overflow: hidden;
-		    border-top: 2px solid var(--light-color);
-		    border-bottom: 2px solid var(--light-color);
-
-		    &.overflowing {
-		    	-webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
-		    }
-			}
-
-			.truncated {
-				text-align: center;
-		    padding: 0 0 20px 0;
-		    font-size: 18px;
-		    height: 3px;
-		    line-height: 3px;
-			}
-
-			.item-properties {
-		    margin: 8px 0 0 0;
-
-				.tag {
-					white-space: pre-wrap;
-				}
-			}
-  	}
-  }
-	*/
 }
 
 .tidy5e.sheet.actor .grid-layout .items-list {
@@ -5058,14 +4938,6 @@
 
 .tidy5e.sheet.actor.npc .skills-list.always-visible {
   margin-bottom: 0;
-}
-
-.tidy5e.sheet.actor.npc .skills-list .skill:nth-child(even) {
-  background: none;
-}
-
-.tidy5e.sheet.actor.npc .skills-list .skill.even {
-  background: var(--faint-color);
 }
 
 .tidy5e.sheet.actor.npc .skills-list .toggle-proficient {

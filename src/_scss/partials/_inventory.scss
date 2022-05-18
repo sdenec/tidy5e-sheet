@@ -772,7 +772,8 @@
 				flex: 0 0 69px;
 			}
 
-			&.unlocked {
+			&.unlocked,
+			&.gmEdit {
 				.items-header {
 					padding-right: 85px;
 				}
@@ -781,6 +782,7 @@
 					flex: 0 0 85px;
 				}
 			}
+
 		}
 
 		&.classic-controls.spellbook-list {
@@ -792,7 +794,8 @@
 				flex: 0 0 53px;
 			}
 
-			&.unlocked {
+			&.unlocked,
+			&.gmEdit {
 				.items-header {
 					padding-right: 69px;
 				}
@@ -813,7 +816,8 @@
 				flex: 0 0 37px;
 			}
 
-			&.unlocked {
+			&.unlocked,
+			&.gmEdit {
 				.items-header {
 					padding-right: 53px;
 				}
@@ -984,18 +988,6 @@
 
 	}// .items-list
 
-	// .spellbook-list .item {
-	// 	.item-controls:not(.context-menu) {
-	// 		flex: 0 0 70px;
-	// 	}
-	// }
-
-	// .features-list .item,
-	// .effects-list .item {
-	// 	.item-controls:not(.context-menu) {
-	// 		flex: 0 0 54px;
-	// 	}
-	// }
 }//.list-layout 
 
 .item-properties {
