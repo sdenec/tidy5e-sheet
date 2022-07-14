@@ -182,7 +182,7 @@
               </li>
             </ul>
 						<span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-race" data-placeholder="{{ localize 'DND5E.Race' }}">{{data.details.race}}</span>
-						<span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-background" data-placeholder="{{ localize 'DND5E.Background' }}">{{data.details.background}}</span>
+						<span {{#if (and owner (not labels.background))}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-background" data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{data.details.background}}{{/if}}</span>
 						<span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{data.details.alignment}}</span>
 						<input type="hidden" data-input="{{actor._id}}-race" name="data.details.race" value="{{data.details.race}}" placeholder="{{ localize 'DND5E.Race' }}">
 						<input type="hidden" data-input="{{actor._id}}-background" name="data.details.background" value="{{data.details.background}}" placeholder="{{ localize 'DND5E.Background' }}">
