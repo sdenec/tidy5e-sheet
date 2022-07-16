@@ -361,7 +361,7 @@ async function addClassList(app, html, data) {
 				}
 			}
 			classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
-			mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
+			mergeObject(actor, {"flags.tidy5e-sheet.classlist": classList});
 			let classListTarget = html.find('.bonus-information');
 			classListTarget.append(classList);
 		}
