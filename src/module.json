@@ -1,83 +1,100 @@
 {
-	"name": "tidy5e-sheet",
-	"title": "Tidy5e Sheet",
-	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.5.21",
-	"author": "sdenec#3813",
-	"minimumCoreVersion": "0.8.3",
-	"compatibleCoreVersion": "9",
-	"system": "dnd5e",
-	"esmodules": [
-		"./scripts/tidy5e-sheet.js",
-		"./scripts/tidy5e-npc.js",
-		"./scripts/tidy5e-vehicle.js",
-		"./scripts/tidy5e-item.js",
-		"./scripts/app/exhaustion.js"
-	],
-	"styles": [
-		"../fonts/modesto-condensed/modesto-condensed.css",
-		"./css/tidy-icons.css",
-		"./css/tidy5e.css",
-		"./css/tidy5e-dark.css"
-	],
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "lang/en.json"
-		},
-		{
-			"lang": "es",
-			"name": "Español",
-			"path": "lang/es.json"
-		},
-		{
-			"lang": "de",
-			"name": "Deutsch",
-			"path": "lang/de.json"
-		},
-		{
-			"lang": "it",
-			"name": "Italian",
-			"path": "lang/it.json"
-		},
-		{
-			"lang": "ja",
-			"name": "日本語 (Japanese)",
-			"path": "lang/ja.json"
-		},
-		{
-			"lang": "ko",
-			"name": "한국어 (Korean)",
-			"path": "lang/ko.json"
-		},
-		{
-			"lang": "pt-BR",
-			"name": "Português (Brasil)",
-			"path": "lang/pt-BR.json"
-		},
-		{
-			"lang": "fr",
-			"name": "Francais",
-			"path": "lang/fr.json"
-		},
-		{
-			"lang": "zh-tw",
-			"name": "正體中文",
-			"path": "lang/zh-tw.json"
-		},
-		{
-			"lang": "cs",
-			"name": "Čeština",
-			"path": "lang/cs.json"
-		},
-		{
-			"lang": "hu",
-			"name": "Magyar",
-			"path": "lang/hu.json"
-		}
-	],
-  "url": "https://github.com/sdenec/tidy5e-sheet",
-  "manifest": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.json",
-  "download": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.zip"
+    "id": "tidy5e-sheet",
+    "title": "Tidy5e Sheet",
+    "description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
+    "version": "0.5.21",
+    "authors": [
+        {
+            "name": "sdenec#3813"
+        }
+    ],
+    "compatibility": {
+        "minimum": "10",
+        "verified": "10"
+    },
+    "esmodules": [
+        "scripts/tidy5e-sheet.js",
+        "scripts/tidy5e-npc.js",
+        "scripts/tidy5e-vehicle.js",
+        "scripts/tidy5e-item.js",
+        "scripts/app/exhaustion.js"
+    ],
+    "styles": [
+        "css/tidy-icons.css",
+        "css/tidy5e.css",
+        "css/tidy5e-dark.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "lang/de.json"
+        },
+        {
+            "lang": "it",
+            "name": "Italian",
+            "path": "lang/it.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語 (Japanese)",
+            "path": "lang/ja.json"
+        },
+        {
+            "lang": "ko",
+            "name": "한국어 (Korean)",
+            "path": "lang/ko.json"
+        },
+        {
+            "lang": "pt-BR",
+            "name": "Português (Brasil)",
+            "path": "lang/pt-BR.json"
+        },
+        {
+            "lang": "fr",
+            "name": "Francais",
+            "path": "lang/fr.json"
+        },
+        {
+            "lang": "zh-tw",
+            "name": "正體中文",
+            "path": "lang/zh-tw.json"
+        },
+        {
+            "lang": "cs",
+            "name": "Čeština",
+            "path": "lang/cs.json"
+        },
+        {
+            "lang": "hu",
+            "name": "Magyar",
+            "path": "lang/hu.json"
+        }
+    ],
+    "relationships": {
+        "systems": [
+            {
+                "id": "dnd5e",
+                "type": "system",
+                "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/v10-dev/system.json",
+                "compatibility": {
+                    "minimum": "2.0.0-alpha1",
+                    "verified": "2.0.0"
+                }
+            }
+        ]
+    },
+    "url": "https://github.com/sdenec/tidy5e-sheet",
+    "manifest": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.json",
+    "download": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.zip"
 }
