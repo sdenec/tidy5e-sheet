@@ -37,8 +37,8 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 	/**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
    */
-  getData() {
-    const data = super.getData();
+  async getData() {
+    const data = await super.getData();
 
     Object.keys(data.data.abilities).forEach(id => {
     	// let Id = id.charAt(0).toLowerCase() + id.slice(1);

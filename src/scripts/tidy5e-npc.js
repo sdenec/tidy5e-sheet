@@ -156,8 +156,8 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
   /**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
    */
-  getData(options) {
-    const data = super.getData(options);
+  async getData(options) {
+    const data = await super.getData(options);
     
     Object.keys(data.data.abilities).forEach(id => {
       // let Id = id.charAt(0).toLowerCase() + id.slice(1);
