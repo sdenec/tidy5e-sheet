@@ -161,7 +161,7 @@ export class Tidy5eUserSettings extends FormApplication {
 	}
 
 	redrawOpenSheets() {
-		game.actors.entities.filter(a => a.sheet.rendered).forEach(a => a.sheet.render(true));
+		game.actors.filter(a => a.sheet.rendered).forEach(a => a.sheet.render(true));
 	}
 
 	_updateObject(ev, formData) {
