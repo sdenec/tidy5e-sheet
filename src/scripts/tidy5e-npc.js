@@ -1,5 +1,3 @@
-import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
-import ActorSheet5eNPC from "../../../systems/dnd5e/module/actor/sheets/npc.js";
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-npc-templates.js";
 
 import { tidy5eListeners } from "./app/listeners.js";
@@ -23,7 +21,7 @@ Handlebars.registerHelper('check', function(value, comparator) {
   return (value === comparator) ? 'No content' : value;
 });
 
-export default class Tidy5eNPC extends ActorSheet5eNPC {
+export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC {
 
   /**
    * Define default rendering options for the NPC sheet
@@ -158,8 +156,8 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
   /**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
    */
-  getData(options) {
-    const data = super.getData(options);
+  async getData(options) {
+    const data = await super.getData(options);
     
     Object.keys(data.data.abilities).forEach(id => {
       // let Id = id.charAt(0).toLowerCase() + id.slice(1);

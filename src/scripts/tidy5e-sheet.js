@@ -1,7 +1,3 @@
-import { DND5E } from "../../../systems/dnd5e/module/config.js";
-import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
-import ActorSheet5eCharacter from "../../../systems/dnd5e/module/actor/sheets/character.js";
-// import { tidy5eSettings } from "./app/settings.js";
 import { Tidy5eUserSettings } from './app/settings.js';
 
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
@@ -17,7 +13,7 @@ import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 let position = 0;
 
 
-export class Tidy5eSheet extends ActorSheet5eCharacter {
+export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter {
 	
 	get template() {
 		if ( !game.user.isGM && this.actor.limited && !game.settings.get("tidy5e-sheet", "expandedSheetEnabled") ) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
@@ -41,8 +37,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 	/**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
    */
-  getData() {
-    const data = super.getData();
+  async getData() {
+    const data = await super.getData();
 
     Object.keys(data.data.abilities).forEach(id => {
     	// let Id = id.charAt(0).toLowerCase() + id.slice(1);
@@ -365,7 +361,7 @@ async function addClassList(app, html, data) {
 				}
 			}
 			classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
-			mergeObject(actor, {"data.flags.tidy5e-sheet.classlist": classList});
+			mergeObject(actor, {"flags.tidy5e-sheet.classlist": classList});
 			let classListTarget = html.find('.bonus-information');
 			classListTarget.append(classList);
 		}
