@@ -18,12 +18,12 @@ let position = 0;
 
 
 export class Tidy5eSheet extends ActorSheet5eCharacter {
-	
+
 	get template() {
 		if ( !game.user.isGM && this.actor.limited && !game.settings.get("tidy5e-sheet", "expandedSheetEnabled") ) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
 	}
-	
+
 	static get defaultOptions() {
 		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' ? 'attributes' : 'actions';
 		if (!game.modules.get('character-actions-list-5e')?.active) defaultTab = 'description';
@@ -56,7 +56,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
     return data;
   }
-	
+
 	_createEditor(target, editorOptions, initialContent) {
 		editorOptions.min_height = 200;
 		super._createEditor(target, editorOptions, initialContent);
@@ -69,7 +69,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 
 	activateListeners(html) {
 		super.activateListeners(html);
-		
+
 		let actor = this.actor;
 
 		tidy5eListeners(html, actor);
@@ -93,7 +93,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		// toggle inventory layout
 		html.find('.toggle-layout.inventory-layout').click(async (event) => {
 			event.preventDefault();
-			
+
 			if( $(event.currentTarget).hasClass('spellbook-layout')){
 				if(actor.getFlag('tidy5e-sheet', 'spellbook-grid')){
 					await actor.unsetFlag('tidy5e-sheet', 'spellbook-grid');
@@ -112,7 +112,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 		// toggle traits
  		html.find('.traits-toggle').click(async (event) => {
 			event.preventDefault();
-			
+
 			if(actor.getFlag('tidy5e-sheet', 'traits-compressed')){
 				await actor.unsetFlag('tidy5e-sheet', 'traits-compressed');
 			} else {
@@ -162,7 +162,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
     });
 
 		// update item attunement
-		
+
 		html.find('.item-control.item-attunement').click( async (event) => {
 	    event.preventDefault();
  			let li = $(event.currentTarget).closest('.item'),
@@ -179,16 +179,16 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			  }
  			}
  		});
-		
+
 	}
-	
+
 	// add actions module
 	async _renderInner(...args) {
 		const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get('character-actions-list-5e')?.api;
 		let injectCharacterSheet;
 		if(game.modules.get('character-actions-list-5e')?.active) injectCharacterSheet = game.settings.get('character-actions-list-5e', 'inject-characters');
-		
+
 		try {
 			if(game.modules.get('character-actions-list-5e')?.active && injectCharacterSheet){
 				// Update the nav menu
@@ -204,14 +204,14 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 				sheetBody.prepend(actionsTab);
 
 				// const actionsTab = html.find('.actions-target');
-				
+
 				const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
 				actionsLayout.html(actionsTabHtml);
 			}
 			} catch (e) {
 				// log(true, e);
 			}
-			
+
 			return html;
 	}
 }
@@ -253,7 +253,7 @@ async function checkDeathSaveStatus(app, html, data){
 		var currentHealth = data.attributes.hp.value;
 		var deathSaveSuccess = data.attributes.death.success;
 		var deathSaveFailure = data.attributes.death.failure;
-		
+
   	// console.log(`current HP: ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
 		if (currentHealth <=0){
 			$('.tidy5e-sheet .profile').addClass('dead');
@@ -272,7 +272,7 @@ async function editProtection(app, html, data) {
   if(game.user.isGM && game.settings.get("tidy5e-sheet", "editGmAlwaysEnabled")) {
 		html.find(".classic-controls").addClass('gmEdit');
   } else if(!actor.getFlag('tidy5e-sheet', 'allow-edit')){
-		
+
 		if(game.settings.get("tidy5e-sheet", "editTotalLockEnabled")){
 			html.find(".skill input").prop('disabled', true);
 			html.find(".skill .config-button").remove();
@@ -302,7 +302,7 @@ async function editProtection(app, html, data) {
 			}
 		});
 		if (resourcesUsed == 0) html.find('.resources').hide();
-    
+
 		let itemContainer = html.find('.inventory-list.items-list, .effects-list.items-list');
     html.find('.inventory-list .items-header:not(.spellbook-header), .effects-list .items-header').each(function(){
       if(($(this).next('.item-list').find('li').length - $(this).next('.item-list').find('li.items-footer').length) == 0){
@@ -359,7 +359,7 @@ async function addClassList(app, html, data) {
 				if (item.type === "class") {
 					let levels = (item.data.levels) ? `<span class="levels-info">${item.data.levels}</span>` : ``;
 					classList.push(item.name + levels);
-				} 
+				}
 				if (item.type === "subclass") {
 					classList.push(item.name);
 				}
@@ -454,6 +454,84 @@ function markActiveEffects(app, html, data){
 	}
 }
 
+function spellSlotsAndAttunedTweak(app, html, data){
+	//if (game.settings.get("tidy5e-sheet", "spellSlotsAndAttunedTweak")) {
+		let actor = app.actor;
+    let items = data.actor.items;
+    let options = ["pact", "spell1", "spell2", "spell3", "spell4", "spell5", "spell6", "spell7", "spell8", "spell9",]
+    for (let o of options) {
+        let max = html.find(`.spell-max[data-level=${o}]`);
+        let name = max.closest(".spell-slots");
+        let data = actor.data.data.spells[o];
+        if (data.max === 0) {
+          continue;
+        }
+        let contents = ``
+        for (let i = data.max; i > 0; i--) {
+            if (i <= data.value) {
+              contents += `<span class="dot"></span>`;
+            }
+            else {
+              contents += `<span class="dot empty"></span>`;
+            }
+        }
+        name.before(contents)
+    }
+    let itemUses = items.filter(i => i.hasLimitedUses)
+    for (let o of itemUses) {
+        let itemHTML = html.find(`.item[data-item-id=${o.id}]`)
+        let name = itemHTML.find(".item-name")
+        let data = o.data.data.uses
+        if (data.max === 0) {
+          continue;
+        }
+        let contents = ``
+        //let contents = `<div>`
+        for (let i = data.max; i > 0; i--) {
+            if (i <= data.value) {
+              contents += `<span class="dot"></span>`;
+            }
+            else {
+              contents += `<span class="dot empty"></span>`;
+            }
+        }
+        if (o.type === "spell") {
+            name = name.find(".item-detail.spell-uses");
+            name.before(contents);
+        }
+        //contents += "</div>"
+        else {
+          name.after(contents);
+        }
+    }
+    html.find('.dot')
+      .click(async ev => {
+        const li = $(ev.currentTarget).parents(".item");
+        const item = items.get(li.data("itemId"));
+        let spellLevel
+        if (!item) {
+            spellLevel = ev.currentTarget.parentElement.outerHTML.match(/data-level="(.*?)"/)[1]
+        }
+        if (!item && spellLevel) {
+            let path = `data.spells.${spellLevel}.value`
+            if (ev.currentTarget.classList.contains("empty")) {
+                await actor.update({ [path]: actor.data.data.spells[spellLevel].value + 1 })
+            }
+            else {
+                await actor.update({ [path]: actor.data.data.spells[spellLevel].value - 1 })
+            }
+
+        }
+        else if (ev.currentTarget.classList.contains("empty")) {
+            await item.update({ "data.uses.value": item.data.data.uses.value + 1 })
+        }
+        else {
+            await item.update({ "data.uses.value": item.data.data.uses.value - 1 })
+        }
+    });
+	//}
+}
+
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
 	// let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -503,7 +581,7 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('exhaustionOnHover');
 	}
-	
+
 	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
 	}
@@ -557,6 +635,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
 	markActiveEffects(app,html,data);
+  spellSlotsAndAttunedTweak(app,html,data);
 	// console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });

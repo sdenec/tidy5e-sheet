@@ -74,6 +74,10 @@
   --checkbox-outline: rgba(150, 150, 150, 1);
   --checkbox-unchecked: #D8D7D1;
   --checkbox-checked: rgba(0, 255, 0, 0.3);
+  --spell-slots-full-color: rgba(179, 55, 55, 1);
+  --spell-attuned-color: rgba(122, 121, 113, 1);
+  --spell-not-attuned-color: rgba(68, 25, 26, 1);
+  --spell-slots-dot-empty-color: rgba(169, 162, 162, 1);
 }
 
 .tidy5e.sheet.actor {
@@ -6964,4 +6968,36 @@
   font-size: 12px;
   font-weight: 600;
   padding: 0 4px 8px 4px;
+}
+
+/* core5e-sheet-tweaks for spell points and attuned */
+
+.tidy5e.sheet.actor .items-list .dot {
+  height: 15px;
+  width: 15px;
+  max-height: 15px;
+  max-width: 15px;
+  background-color: var(--spell-slots-full-color);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tidy5e.sheet.actor .items-list .dot.empty {
+  height: 15px;
+  width: 15px;
+  max-height: 15px;
+  max-width: 15px;
+  background-color: var(--spell-slots-dot-empty-color);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item .item-name i.attuned {
+  color: var(--spell-attuned-color) !important;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item .item-name i.not-attuned {
+  color: var(--spell-not-attuned-color) !important;
+  filter: drop-shadow(0px 0px 1px black);
 }
