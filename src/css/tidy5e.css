@@ -75,8 +75,6 @@
   --checkbox-unchecked: #D8D7D1;
   --checkbox-checked: rgba(0, 255, 0, 0.3);
   --spell-slots-full-color: rgba(179, 55, 55, 1);
-  --spell-attuned-color: rgba(122, 121, 113, 1);
-  --spell-not-attuned-color: rgba(68, 25, 26, 1);
   --spell-slots-dot-empty-color: rgba(169, 162, 162, 1);
 }
 
@@ -6991,14 +6989,3 @@
   border-radius: 50%;
   display: inline-block;
 }
-/*
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item .item-name i.attuned {
-  color: var(--spell-attuned-color) !important;
-  filter: drop-shadow(0px 0px 1px black);
-}
-
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item .item-name i.not-attuned {
-  color: var(--spell-not-attuned-color) !important;
-  filter: drop-shadow(0px 0px 1px black);
-}
-*/
