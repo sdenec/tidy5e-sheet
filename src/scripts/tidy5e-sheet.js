@@ -454,8 +454,8 @@ function markActiveEffects(app, html, data){
 	}
 }
 
-function spellSlotsAndAttunedTweak(app, html, data){
-	//if (game.settings.get("tidy5e-sheet", "spellSlotsAndAttunedTweak")) {
+function spellSlotsTweak(app, html, data){
+	//if (game.settings.get("tidy5e-sheet", "spellSlotsTweak")) {
 		let actor = app.actor;
     let items = data.actor.items;
     let options = ["pact", "spell1", "spell2", "spell3", "spell4", "spell5", "spell6", "spell7", "spell8", "spell9",]
@@ -635,7 +635,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	countAttunedItems(app, html, data);
 	countInventoryItems(app,html,data);
 	markActiveEffects(app,html,data);
-  spellSlotsAndAttunedTweak(app,html,data);
+    spellSlotsTweak(app,html,data);
 	// console.log(data.actor);
 	// console.log("Tidy5e Sheet rendered!");
 });

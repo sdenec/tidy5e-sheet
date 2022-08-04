@@ -6973,7 +6973,7 @@
 /* core5e-sheet-tweaks for spell points and attuned */
 
 .tidy5e.sheet.actor .items-list .dot {
-  height: 15px;
+  height: inherit;
   width: 15px;
   max-height: 15px;
   max-width: 15px;
@@ -6983,7 +6983,7 @@
 }
 
 .tidy5e.sheet.actor .items-list .dot.empty {
-  height: 15px;
+  height: inherit;
   width: 15px;
   max-height: 15px;
   max-width: 15px;
@@ -6991,7 +6991,7 @@
   border-radius: 50%;
   display: inline-block;
 }
-
+/*
 .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item .item-name i.attuned {
   color: var(--spell-attuned-color) !important;
   filter: drop-shadow(0px 0px 1px black);
@@ -7001,3 +7001,4 @@
   color: var(--spell-not-attuned-color) !important;
   filter: drop-shadow(0px 0px 1px black);
 }
+*/
