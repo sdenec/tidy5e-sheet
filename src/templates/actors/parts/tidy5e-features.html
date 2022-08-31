@@ -56,15 +56,15 @@
           <h4>
             {{#if (eq item.type "subclass")}}&rdsh;{{/if}}
               {{item.name}}
-            {{#if item.data.isOriginalClass}} <i class="original-class fas fa-sun" title="{{localize 'DND5E.ClassOriginal'}}"></i>{{/if}}
+            {{#if item.system.isOriginalClass}} <i class="original-class fas fa-sun" title="{{localize 'DND5E.ClassOriginal'}}"></i>{{/if}}
           </h4>
-          {{#if item.data.properties.amm}}
+          {{#if item.system.properties.amm}}
           <span class="ammo" data-id="{{item._id}}"></span>
           {{/if}}
           {{#unless ../../isCharacter}}
-          {{#if item.data.quantity}}
+          {{#if item.system.quantity}}
           <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
-            (<input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="3" >)
+            (<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" >)
           </span>
           {{/if}}
           {{/unless}}
@@ -79,19 +79,19 @@
         {{#if section.hasActions}}
         <div class="item-detail item-charges {{#if ../../isNPC}}{{#unless item.hasUses}} no-border{{/unless}}{{/if}}">
           {{#if item.isOnCooldown}}
-          <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i> {{item.data.recharge.value}}{{#if (ne item.data.recharge.value 6)}}+{{/if}}</a>
-          {{else if item.data.recharge.value}}
+          <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i> {{item.system.recharge.value}}{{#if (ne item.system.recharge.value 6)}}+{{/if}}</a>
+          {{else if item.system.recharge.value}}
           <i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
 
           {{else if item.hasUses}}
-          <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
+          <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}">/ <input  class="uses-max" data-path="system.uses.max" type="text" value="{{item.system.uses.max}}">
           {{else unless ../../isNPC}}
           <a class="addCharges" value="Add">Add</a>
           {{/if}}
         </div>
 
-        <div class="item-detail item-action {{#if ../../isNPC}}{{#unless item.data.activation.type}} no-border{{/unless}}{{/if}}">
-          {{#if item.data.activation.type }}
+        <div class="item-detail item-action {{#if ../../isNPC}}{{#unless item.system.activation.type}} no-border{{/unless}}{{/if}}">
+          {{#if item.system.activation.type }}
           {{item.labels.activation}}
           {{/if}}
         </div>
@@ -99,20 +99,20 @@
         {{#unless ../../isVehicle}}
         {{#if ../../isCharacter}}
         <div class="item-detail item-source">
-          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
+          <span class="truncate" title="{{item.system.source}}">{{item.system.source}}</span>
         </div>
         <div class="item-detail item-requirements">
-          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
+          <span class="truncate" title="{{item.system.requirements}}">{{item.system.requirements}}</span>
         </div>
         {{/if}}
         {{/unless}}
 
         {{else if (eq item.type "class")}}
-        <!-- <div class="item-detail player-class" title="{{item.data.subclass}}">
-          <span>{{item.data.subclass}}</span>
+        <!-- <div class="item-detail player-class" title="{{item.system.subclass}}">
+          <span>{{item.system.subclass}}</span>
         </div>
         <div class="item-detail item-level">
-          {{item.data.levels}}
+          {{item.system.levels}}
         </div> -->
 
 
@@ -145,20 +145,20 @@
         {{else}}
         {{#if ../../isCharacter}}
         <div class="item-detail item-source">
-          <span class="truncate" title="{{item.data.source}}">{{item.data.source}}</span>
+          <span class="truncate" title="{{item.system.source}}">{{item.system.source}}</span>
         </div>
         <div class="item-detail item-requirements">
-          <span class="truncate" title="{{item.data.requirements}}">{{item.data.requirements}}</span>
+          <span class="truncate" title="{{item.system.requirements}}">{{item.system.requirements}}</span>
         </div>
         {{/if}}
         {{/if}}
 
         
-        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
           <p class="info-card-name">{{item.name}}</p>
           {{#if item.hasUses }}
           <div class="info-card-amount">
-            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
+            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
           </div>
            {{/if}}
           <div class="description-wrap">

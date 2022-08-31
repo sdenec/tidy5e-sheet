@@ -15,12 +15,12 @@
 			</div>
 		</section>
     
-		{{> "systems/dnd5e/templates/actors/parts/actor-warnings.html"}}
+		{{> "dnd5e.actor-warnings"}}
     
     <header class="tidy5e-header">
 
       <section class="profile-wrap">
-        <div class="profile hp-{{data.attributes.hp.value}}-{{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}}">
+        <div class="profile hp-{{system.attributes.hp.value}}-{{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}}">
 
           {{!-- Portrait --}}
           <div class="portrait">
@@ -32,14 +32,14 @@
           </div>
           {{!-- HP Overlay --}}
           <div class="hp-overlay-wrapper">
-            <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) calc(100% - ((100% / ({{data.attributes.hp.max}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) 100%);">
+            <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) 100%);">
             </div>
           </div>
 
           {{!-- Hit Dice --}}
-          <div class="portrait-hd has-note" title="{{ localize 'DND5E.HitDice' }}: {{data.attributes.hd}}/{{data.details.level}}">
-            <div class="note">{{ localize 'DND5E.HitDice' }}: {{data.attributes.hd}}/{{data.details.level}}</div>
-            <div class="current-hd">{{data.attributes.hd}}<!-- <span>/</span>{{data.details.level}} --></div>
+          <div class="portrait-hd has-note" title="{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}">
+            <div class="note">{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}</div>
+            <div class="current-hd">{{system.attributes.hd}}<!-- <span>/</span>{{system.details.level}} --></div>
           </div>
 
           {{!-- Hit Points --}}
@@ -47,24 +47,24 @@
             <div class="hp-bar" style="background: linear-gradient(
 								-90deg,
 								transparent 0%,
-								transparent calc(100% - ((100% / ({{#if (eq data.attributes.hp.max 0)}} 1 {{else}} {{data.attributes.hp.max}} {{/if}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ),
-								 	rgba(0,200,0,0.5) calc(100% - ((100% / ({{#if (eq data.attributes.hp.max 0)}} 1 {{else}} {{data.attributes.hp.max}} {{/if}} + {{#if data.attributes.hp.tempmax}}{{data.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{data.attributes.hp.value}} + {{#if data.attributes.hp.temp}}{{data.attributes.hp.temp}}{{else}}0{{/if}})) ),
+								transparent calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
+								 	rgba(0,200,0,0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0,200,0,0.5) 100%);">
 						</div>
-            <input class="hp-min" name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}"
+            <input class="hp-min" name="system.attributes.hp.value" type="text" value="{{system.attributes.hp.value}}"
             data-dtype="Number" placeholder="0" maxlength="5">
             <span class="value-seperator">/</span>
-            <input class="hp-max" name="data.attributes.hp.max" type="text" value="{{data.attributes.hp.max}}"
+            <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{system.attributes.hp.max}}"
             data-dtype="Number" placeholder="0" maxlength="5">
           </div>
         </div>
 
         {{!-- Hit Points --}}
         <div class="portrait-temp">
-          <input name="data.attributes.hp.dt" type="text" class="temphp" placeholder="{{localize 'DND5E.Threshold'}}" title="{{localize 'DND5E.Threshold'}}"
-          value="{{data.attributes.hp.dt}}" data-dtype="Number" maxlength="3">
-          <input name="data.attributes.hp.mt" type="text" class="max-temphp" placeholder="{{localize 'DND5E.VehicleMishap'}}" title="{{localize 'DND5E.VehicleMishap'}}"
-          value="{{data.attributes.hp.mt}}" data-dtype="Number" maxlength="3">
+          <input name="system.attributes.hp.dt" type="text" class="temphp" placeholder="{{localize 'DND5E.Threshold'}}" title="{{localize 'DND5E.Threshold'}}"
+          value="{{system.attributes.hp.dt}}" data-dtype="Number" maxlength="3">
+          <input name="system.attributes.hp.mt" type="text" class="max-temphp" placeholder="{{localize 'DND5E.VehicleMishap'}}" title="{{localize 'DND5E.VehicleMishap'}}"
+          value="{{system.attributes.hp.mt}}" data-dtype="Number" maxlength="3">
         </div>
 
       </section>
@@ -80,8 +80,8 @@
         <ul class="origin-summary">
           <li>
             <ul class="actor-size-select">
-              <li><span class="size-label" data-size="{{data.traits.size}}">{{lookup config.actorSizes data.traits.size}}</span>
-                <ul class="size-list" data-target="data.traits.size">
+              <li><span class="size-label" data-size="{{system.traits.size}}">{{lookup config.actorSizes system.traits.size}}</span>
+                <ul class="size-list" data-target="system.traits.size">
                   {{#each config.actorSizes as |label size|}}
                     <li data-size="{{size}}">{{label}}</li>
                   {{/each}}
@@ -89,10 +89,10 @@
               </li>
             </ul>
             <span>{{localize 'DND5E.Vehicle'}}</span>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-dimensions" data-placeholder="{{localize 'DND5E.Dimensions'}}">{{data.traits.dimensions}}</span>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{localize 'DND5E.Source'}}">{{data.details.source}}</span>
-            <input type="hidden" data-input="{{actor._id}}-dimensions" name="data.traits.dimensions" value="{{data.traits.dimensions}}" placeholder="{{localize 'DND5E.Dimensions'}}">
-            <input type="hidden" data-input="{{actor._id}}-source" name="data.details.source" value="{{data.details.source}}" placeholder="{{localize 'DND5E.Source'}}">
+            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-dimensions" data-placeholder="{{localize 'DND5E.Dimensions'}}">{{system.traits.dimensions}}</span>
+            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{localize 'DND5E.Source'}}">{{system.details.source}}</span>
+            <input type="hidden" data-input="{{actor._id}}-dimensions" name="system.traits.dimensions" value="{{system.traits.dimensions}}" placeholder="{{localize 'DND5E.Dimensions'}}">
+            <input type="hidden" data-input="{{actor._id}}-source" name="system.details.source" value="{{system.details.source}}" placeholder="{{localize 'DND5E.Source'}}">
           </li>
         </ul>
 
@@ -120,22 +120,22 @@
                 c2.6,0.5,4.4,2.4,4.4,4.6C90,12.6,92.6,79.3,45,100L45,100z"/>
               </svg>
               <div class="attribute-value">
-                <input class="value" name="data.attributes.ac.flat" type="text" value="{{data.attributes.ac.flat}}" data-dtype="Number" placeholder="0" maxlength="2">
+                <input class="value" name="system.attributes.ac.flat" type="text" value="{{system.attributes.ac.flat}}" data-dtype="Number" placeholder="0" maxlength="2">
               </div>
               <footer class="value-footer">
-                <input type="text" name="data.attributes.ac.motionless" placeholder="&mdash;" value="{{data.attributes.ac.motionless}}">
+                <input type="text" name="system.attributes.ac.motionless" placeholder="&mdash;" value="{{system.attributes.ac.motionless}}">
               </footer>
             </li>
           </ul>
 
           {{!-- Ability Scores --}}
           <ul class="ability-scores">
-            {{#each data.abilities as |ability id|}}
+            {{#each system.abilities as |ability id|}}
             <li class="ability" data-ability="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
                 <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
                 <div class="value">
-                  <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
+                  <input class="ability-score" name="system.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
                 </div>
                 <div class="ability-modifiers value-footer">
                   <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
@@ -167,30 +167,30 @@
               <h4>{{localize 'DND5E.VehicleCreatureCapacity'}}</h4>
               <div class="counter-value">
                 <input type="text" placeholder="&mdash;"
-                name="data.attributes.capacity.creature"
-                value="{{data.attributes.capacity.creature}}">
+                name="system.attributes.capacity.creature"
+                value="{{system.attributes.capacity.creature}}">
               </div>
             </div>
             <div class="counter cargo-cap">
               <h4>{{localize 'DND5E.VehicleCargoCapacity'}}</h4>
               <div class="counter-value">
-                <input type="text" name="data.attributes.capacity.cargo" placeholder="0"
-                data-dtype="Number" value="{{data.attributes.capacity.cargo}}">
+                <input type="text" name="system.attributes.capacity.cargo" placeholder="0"
+                data-dtype="Number" value="{{system.attributes.capacity.cargo}}">
               </div>
             </div>
             <div class="counter stations">
               <h4>{{localize 'DND5E.VehicleActionStations'}}</h4>
               <div class="counter-value">
-                <input name="data.attributes.actions.stations" type="checkbox"
-                data-dtype="Boolean" value="{{data.attributes.actions.stations}}"
-                {{checked data.attributes.actions.stations}}>
+                <input name="system.attributes.actions.stations" type="checkbox"
+                data-dtype="Boolean" value="{{system.attributes.actions.stations}}"
+                {{checked system.attributes.actions.stations}}>
               </div>
             </div>
             <div class="counter actions">
               <h4>{{localize 'DND5E.ActionPl'}}</h4>
               <div class="counter-value">
-                <input type="text" name="data.attributes.actions.value" placeholder="0"
-                data-dtype="Number" value="{{data.attributes.actions.value}}">
+                <input type="text" name="system.attributes.actions.value" placeholder="0"
+                data-dtype="Number" value="{{system.attributes.actions.value}}">
               </div>
             </div>
             <div class="counter action-thresholds">
@@ -198,16 +198,16 @@
               <div class="counter-value">
                 <span class="sep">&lt;</span>
                 <input type="text" placeholder="&mdash;" data-dtype="Number"
-                value="{{data.attributes.actions.thresholds.[2]}}"
-                name="data.attributes.actions.thresholds.2">
+                value="{{system.attributes.actions.thresholds.[2]}}"
+                name="system.attributes.actions.thresholds.2">
                 <span class="sep">&lt;</span>
                 <input type="text" placeholder="&mdash;" data-dtype="Number"
-                value="{{data.attributes.actions.thresholds.[1]}}"
-                name="data.attributes.actions.thresholds.1">
+                value="{{system.attributes.actions.thresholds.[1]}}"
+                name="system.attributes.actions.thresholds.1">
                 <span class="sep">&lt;</span>
                 <input type="text" placeholder="&mdash;" data-dtype="Number"
-                value="{{data.attributes.actions.thresholds.[0]}}"
-                name="data.attributes.actions.thresholds.0">
+                value="{{system.attributes.actions.thresholds.[0]}}"
+                name="system.attributes.actions.thresholds.0">
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@
       <div class="tab biography" data-group="primary" data-tab="biography">
         <div class="right-notes note-entries">
           <article class="biography-notes">
-          {{editor content=data.details.biography.value target='data.details.biography.value'
+          {{editor system.details.biography.value target='system.details.biography.value'
           button=true owner=owner editable=editable}}
           </article>
         </div>

@@ -3,8 +3,8 @@
     
     {{#if isCharacter}}
     <div class="attuned-items-counter" title="{{localize 'DND5E.Attunement'}}">
-      <i class="fas fa-sun"></i> <span class="attuned-items-current">{{data.attributes.attunement.value}}</span>/<span class="attuned-items-max">{{data.attributes.attunement.max}}</span>
-      <input type="text" data-dtype="Number" class="attuned-items-max" name="data.attributes.attunement.max" value="{{data.attributes.attunement.max}}" placeholder="0" title="{{localize 'TIDY5E.AttunementMax'}}">
+      <i class="fas fa-sun"></i> <span class="attuned-items-current">{{system.attributes.attunement.value}}</span>/<span class="attuned-items-max">{{system.attributes.attunement.max}}</span>
+      <input type="text" data-dtype="Number" class="attuned-items-max" name="system.attributes.attunement.max" value="{{system.attributes.attunement.max}}" placeholder="0" title="{{localize 'TIDY5E.AttunementMax'}}">
     </div>
     {{/if}}
 
@@ -14,10 +14,10 @@
         <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
           <i class="fas fa-coins"></i>
         </li>
-        {{#each data.currency as |v k|}}
+        {{#each system.currency as |v k|}}
         <li class="currency-item {{k}}" title="{{ lookup ../labels.currencies k }}">
-          <input type="text" name="data.currency.{{k}}" id="{{@root/appId}}-data.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
-          <label for="{{@root/appId}}-data.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../label.currencies k }}</label>
+          <input type="text" name="system.currency.{{k}}" id="{{@root/appId}}-system.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
+          <label for="{{@root/appId}}-system.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../label.currencies k }}</label>
         </li>
         {{/each}}
         <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}"><i class="fas fa-funnel-dollar"></i></a></li>
@@ -28,7 +28,7 @@
   </div>
 
   {{#unless isNPC}}
-    {{#with data.attributes.encumbrance}}
+    {{#with system.attributes.encumbrance}}
     <div class="encumbrance {{#if encumbered}}encumbered{{/if}}" title="{{localize 'TIDY5E.Encumbrance'}}">
       <span class="encumbrance-bar" style="width:{{pct}}%"></span>
       <span class="encumbrance-label">{{value}} / {{max}}</span>

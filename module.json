@@ -1,12 +1,31 @@
 {
+	"id": "tidy5e-sheet",
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
 	"version": "0.5.21",
 	"author": "sdenec#3813",
+	"authors": [
+		{
+			"name": "sednec#3813"
+		}
+	],
 	"minimumCoreVersion": "0.8.3",
-	"compatibleCoreVersion": "9",
+	"compatibleCoreVersion": "10",
+	"compatibility": {
+		"minimum": "0.8.3",
+		"verified": "10"
+	},
 	"system": "dnd5e",
+	"relationships": {
+		"systems": [{
+			"id": "dnd5e",
+			"manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+			"compatibility": {
+				"verified": "2.0.0"
+			}
+		}]
+	},
 	"esmodules": [
 		"./scripts/tidy5e-sheet.js",
 		"./scripts/tidy5e-npc.js",
@@ -15,7 +34,6 @@
 		"./scripts/app/exhaustion.js"
 	],
 	"styles": [
-		"../fonts/modesto-condensed/modesto-condensed.css",
 		"./css/tidy-icons.css",
 		"./css/tidy5e.css",
 		"./css/tidy5e-dark.css"

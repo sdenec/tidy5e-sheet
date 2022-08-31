@@ -1,13 +1,10 @@
-import ActorSheet5e from "../../../systems/dnd5e/module/actor/sheets/base.js";
-import ActorSheet5eVehicle from "../../../systems/dnd5e/module/actor/sheets/vehicle.js";
-
 import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 
-export class Tidy5eVehicle extends ActorSheet5eVehicle {
+export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 
 	static get defaultOptions() {
     let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' ? 'attributes' : 'actions';
@@ -37,15 +34,14 @@ export class Tidy5eVehicle extends ActorSheet5eVehicle {
 	/**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
    */
-  getData() {
-    const data = super.getData();
+  async getData() {
+    const context = await super.getData();
 
-    Object.keys(data.data.abilities).forEach(id => {
-    	let Id = id.charAt(0).toUpperCase() + id.slice(1);
-      data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
+    Object.keys(context.system.abilities).forEach(id => {
+      context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
-    return data;
+    return context;
   }
 
 	activateListeners(html) {
