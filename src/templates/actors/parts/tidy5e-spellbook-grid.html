@@ -10,7 +10,7 @@
 
         {{#if section.usesSlots}}
         <div class="spell-detail spell-slots">
-          <input type="text" name="data.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
+          <input type="text" name="system.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
           data-dtype="Number"/>
           <span class="sep"> / </span>
           <span class="spell-max" data-level="{{section.prop}}" data-slots="{{section.slots}}">
@@ -29,7 +29,7 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if section.canPrepare}} preparable{{/if}} {{~#if data.preparation.prepared}} prepared{{/if}}{{#if (eq data.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if section.canPrepare}} preparable{{/if}} {{~#if system.preparation.prepared}} prepared{{/if}}{{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
         {{~#if item.flags.favtab}} 
         {{~#if item.flags.favtab.isFavorite}} 
           <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
@@ -41,17 +41,17 @@
           </div>
         </div>
 
-        {{#if item.data.uses.per }}
+        {{#if item.system.uses.per }}
         <div class="item-stats">
-          <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.data.uses.value}}/{{item.data.uses.max}} ">
+          <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
             {{#if item.hasUses }}
-            <i class="fas fa-bolt"></i><input type="text" data-path="data.uses.value" value="{{item.data.uses.value}}" placeholder="0" maxlength="2" >
+            <i class="fas fa-bolt"></i><input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
             {{/if}}
           </div>
         </div>
         {{/if}}
 
-        <div class="info-card {{~#if item.data.preparation.prepared}} equipped {{/if}}{{#if (eq data.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
+        <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}{{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
             <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
@@ -63,7 +63,7 @@
           </div>
           <div class="info-card-amount">
             {{#if item.hasUses }}
-            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
+            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
             {{/if}}
           </div>
           <div class="description-wrap">
@@ -80,7 +80,7 @@
         </div>
         <div class="item-controls context-menu">
           <hr class="context-divider">
-          {{#if (and section.canPrepare (ne data.preparation.mode 'always')) }}
+          {{#if (and section.canPrepare (ne system.preparation.mode 'always')) }}
           <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq item.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
           {{/if}}
           <hr class="context-divider">
