@@ -27,7 +27,7 @@
 
     <ul class="item-list">
       {{#each section.items as |item iid|}}
-      <li class="item {{section.css}} {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.data.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.data.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+      <li class="item {{section.css}} {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
         <div class="item-name rollable" >
           {{#if section.editableName}}
             <input type="text" value="{{item.name}}">
@@ -39,11 +39,11 @@
             <h4>
               {{item.name}}
             </h4>
-            {{#if item.data.properties.amm}}
+            {{#if item.system.properties.amm}}
             <span class="ammo" data-id="{{item._id}}"></span>
             {{/if}}
             <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
-              (<input class="item-count" data-path="data.quantity" type="text" value="{{item.data.quantity}}" maxlength="3" >)
+              (<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" >)
             </span>
           {{/if}}
         </div>
@@ -84,9 +84,9 @@
 
           <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
             {{#if item.hasUses }}
-            <input type="text" data-path="data.uses.value" value="{{item.data.uses.value}}" placeholder="0"/>
-            / <input class="uses-max" type="text" data-path="data.uses.max" value="{{item.data.uses.max}}">
-            <!-- {{item.data.uses.max}} -->
+            <input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0"/>
+            / <input class="uses-max" type="text" data-path="system.uses.max" value="{{item.system.uses.max}}">
+            <!-- {{item.system.uses.max}} -->
 
             {{else}}
             <a class="addCharges" value="Add">Add</a>
@@ -94,29 +94,29 @@
           </div>
 
           <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}">
-            {{#if item.data.activation.type }}
+            {{#if item.system.activation.type }}
               {{item.labels.activation}}
             {{/if}}
           </div>
         {{/if}}
 
         
-        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.data.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
-            {{~#if (or item.flags.magicitems.enabled item.data.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
+            {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
             {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
           </div>
           {{#if item.hasUses }}
           <div class="info-card-amount">
-            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
+            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
           </div>
            {{/if}}
           <div class="info-card-amount">
             <!-- {{#if item.totalWeight}} {{/if}} -->
             <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
-            <!-- {{#if item.data.quantity}} {{/if}} -->
-            <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.data.quantity}} &times; {{item.data.price}} {{localize 'DND5E.CurrencyAbbrGP'}}</span>
+            <!-- {{#if item.system.quantity}} {{/if}} -->
+            <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.system.quantity}} &times; {{item.system.price}} {{localize 'DND5E.CurrencyAbbrGP'}}</span>
           </div>
           <div class="description-wrap">
             <div class="info-card-description">
@@ -135,8 +135,8 @@
           <hr class="context-divider">
 
           {{#if item.attunement}}
-            <a class="item-control item-attunement {{#if (eq item.data.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-              <i class="fas fa-sun"></i> <span class="control-label">{{#if (eq item.data.attunement 2) }}{{localize "TIDY5E.Deattune"}}{{else}}{{localize "TIDY5E.Attune"}}{{/if}}</span>
+            <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+              <i class="fas fa-sun"></i> <span class="control-label">{{#if (eq item.system.attunement 2) }}{{localize "TIDY5E.Deattune"}}{{else}}{{localize "TIDY5E.Attune"}}{{/if}}</span>
             </a>
           {{/if}}
           {{#unless @root.isVehicle}}

@@ -29,8 +29,8 @@ export const addFavorites = async function(app, html, data, position) {
     }, 'pact': {
       isPact: true,
       spells: [],
-      value: data.actor.data.spells.pact.value,
-      max: data.actor.data.spells.pact.max
+      value: data.actor.system.spells.pact.value,
+      max: data.actor.system.spells.pact.max
     }
   };
   let favSpells = { 
@@ -39,40 +39,40 @@ export const addFavorites = async function(app, html, data, position) {
       spells: []
     }, 1: {
       spells: [],
-      value: data.actor.data.spells.spell1.value,
-      max: data.actor.data.spells.spell1.max
+      value: data.actor.system.spells.spell1.value,
+      max: data.actor.system.spells.spell1.max
     }, 2: {
       spells: [],
-      value: data.actor.data.spells.spell2.value,
-      max: data.actor.data.spells.spell2.max
+      value: data.actor.system.spells.spell2.value,
+      max: data.actor.system.spells.spell2.max
     }, 3: {
       spells: [],
-      value: data.actor.data.spells.spell3.value,
-      max: data.actor.data.spells.spell3.max
+      value: data.actor.system.spells.spell3.value,
+      max: data.actor.system.spells.spell3.max
     }, 4: {
       spells: [],
-      value: data.actor.data.spells.spell4.value,
-      max: data.actor.data.spells.spell4.max
+      value: data.actor.system.spells.spell4.value,
+      max: data.actor.system.spells.spell4.max
     }, 5: {
       spells: [],
-      value: data.actor.data.spells.spell5.value,
-      max: data.actor.data.spells.spell5.max
+      value: data.actor.system.spells.spell5.value,
+      max: data.actor.system.spells.spell5.max
     }, 6: {
       spells: [],
-      value: data.actor.data.spells.spell6.value,
-      max: data.actor.data.spells.spell6.max
+      value: data.actor.system.spells.spell6.value,
+      max: data.actor.system.spells.spell6.max
     }, 7: {
       spells: [],
-      value: data.actor.data.spells.spell7.value,
-      max: data.actor.data.spells.spell7.max
+      value: data.actor.system.spells.spell7.value,
+      max: data.actor.system.spells.spell7.max
     }, 8: {
       spells: [],
-      value: data.actor.data.spells.spell8.value,
-      max: data.actor.data.spells.spell8.max
+      value: data.actor.system.spells.spell8.value,
+      max: data.actor.system.spells.spell8.max
     }, 9: {
       spells: [],
-      value: data.actor.data.spells.spell9.value,
-      max: data.actor.data.spells.spell9.max
+      value: data.actor.system.spells.spell9.value,
+      max: data.actor.system.spells.spell9.max
     }
   }
   
@@ -141,45 +141,45 @@ export const addFavorites = async function(app, html, data, position) {
             let string = String(key);
             return translation[string];
           }
-          if (item.data.activation && item.data.activation.type) {
-            let key = item.data.activation.type;
-            // item.data.activation.type.capitalize()
-            labels.activation = `${item.data.activation.cost ? item.data.activation.cost+' ':''}${translateLabels(key)}`;
+          if (item.system.activation && item.system.activation.type) {
+            let key = item.system.activation.type;
+            // item.system.activation.type.capitalize()
+            labels.activation = `${item.system.activation.cost ? item.system.activation.cost+' ':''}${translateLabels(key)}`;
           }
 
           // adding info that damage and attacks are possible
-          if (['mwak', 'rwak', 'msak', 'rsak'].indexOf(item.data.actionType) !== -1) {
+          if (['mwak', 'rwak', 'msak', 'rsak'].indexOf(item.system.actionType) !== -1) {
             item.hasAttack = true;
           }
-          if (item.data.damage && item.data.damage.parts.length > 0) {
+          if (item.system.damage && item.system.damage.parts.length > 0) {
             item.hasDamage = true;
           }
 
           // is item chargeable and on Cooldown
           item.isOnCooldown = false;
-          if( item.data.recharge && item.data.recharge.value && item.data.recharge.charged === false){
+          if( item.system.recharge && item.system.recharge.value && item.system.recharge.charged === false){
             item.isOnCooldown = true;
-            item.labels = {recharge : game.i18n.localize("DND5E.FeatureRechargeOn")+" ["+item.data.recharge.value+"+]", rechargeValue : "["+item.data.recharge.value+"+]"};
+            item.labels = {recharge : game.i18n.localize("DND5E.FeatureRechargeOn")+" ["+item.system.recharge.value+"+]", rechargeValue : "["+item.system.recharge.value+"+]"};
           }
 
           // adding info if item has quantity more than one
           item.isStack = false;
-          if (item.data.quantity && item.data.quantity > 1) {
+          if (item.system.quantity && item.system.quantity > 1) {
             item.isStack = true;
           }
 
           // adding attunement info
           item.canAttune = false;
 
-          if (item.data.attunement) {
-            if( item.data.attunement == 1 || item.data.attunement == 2) {
+          if (item.system.attunement) {
+            if( item.system.attunement == 1 || item.system.attunement == 2) {
               item.canAttune = true;
             }
           }
 
           // check magic item
           item.isMagic = false;
-          if (item.flags.magicitems && item.flags.magicitems.enabled || item.data.properties  && item.data.properties.mgc){
+          if (item.flags.magicitems && item.flags.magicitems.enabled || item.system.properties  && item.system.properties.mgc){
             item.isMagic = true;
           }
 
@@ -187,7 +187,7 @@ export const addFavorites = async function(app, html, data, position) {
           let isActive = getProperty(item.data, attr);
           item.toggleClass = isActive ? "active" : "";
           if (item.type === "spell") {
-            if(item.data.preparation.mode == 'always'){
+            if(item.system.preparation.mode == 'always'){
               item.toggleTitle = game.i18n.localize("DND5E.SpellPrepAlways");
             } else {
               item.toggleTitle = game.i18n.localize(isActive ? "DND5E.SpellPrepared" : "DND5E.SpellUnprepared");
@@ -197,8 +197,8 @@ export const addFavorites = async function(app, html, data, position) {
           }
 
           item.spellComps = "";
-          if (item.type === "spell" && item.data.components) {
-            let comps = item.data.components;
+          if (item.type === "spell" && item.system.components) {
+            let comps = item.system.components;
             let v = (comps.vocal) ? "V" : "";
             let s = (comps.somatic) ? "S" : "";
             let m = (comps.material) ? "M" : "";
@@ -221,26 +221,26 @@ export const addFavorites = async function(app, html, data, position) {
             favFeats.push(item);
             break;
             case 'spell':
-            if (item.data.preparation.mode && item.data.preparation.mode !== 'prepared') {
+            if (item.system.preparation.mode && item.system.preparation.mode !== 'prepared') {
 
-              if(item.data.preparation.mode == 'always') {
+              if(item.system.preparation.mode == 'always') {
                 // favSpellsPrepMode['always'].spells.push(item);
                 item.canPrep = true;
                 item.alwaysPrep = true;
               } else 
-              if(item.data.preparation.mode == 'atwill') {
+              if(item.system.preparation.mode == 'atwill') {
                 favSpellsPrepMode['atwill'].spells.push(item);
-              } else if(item.data.preparation.mode == 'innate') {
+              } else if(item.system.preparation.mode == 'innate') {
                 favSpellsPrepMode['innate'].spells.push(item);
-              } else if(item.data.preparation.mode == 'pact'){
+              } else if(item.system.preparation.mode == 'pact'){
                 favSpellsPrepMode['pact'].spells.push(item);
               }
               spellPrepModeCount++;
             } else {
               item.canPrep = true;
             }
-            if (item.canPrep && item.data.level) {
-              favSpells[item.data.level].spells.push(item);
+            if (item.canPrep && item.system.level) {
+              favSpells[item.system.level].spells.push(item);
             } else if (item.canPrep) {
               favSpells[0].spells.push(item);
             }
@@ -335,7 +335,7 @@ export const addFavorites = async function(app, html, data, position) {
             ev.preventDefault();
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
             let item = app.actor.items.get(itemId);
-            let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
+            let attr = item.type === "spell" ? "system.preparation.prepared" : "system.equipped";
             return item.update({ [attr]: !getProperty(item.data, attr) });
           });
 
@@ -345,15 +345,15 @@ export const addFavorites = async function(app, html, data, position) {
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
             let item = app.actor.items.get(itemId);
 
-            if(item.data.data.attunement == 2) {
-              app.actor.items.get(itemId).update({'data.attunement': 1});
+            if(item.system.attunement == 2) {
+              app.actor.items.get(itemId).update({'system.attunement': 1});
             } else {
 
-              if(app.actor.data.data.details.attunedItemsCount >= app.actor.data.data.details.attunedItemsMax) {
-                let count = actor.data.data.details.attunedItemsCount;
+              if(app.actor.system.details.attunedItemsCount >= app.actor.system.details.attunedItemsMax) {
+                let count = actor.system.details.attunedItemsCount;
                 ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
               } else {
-                app.actor.items.get(itemId).update({'data.attunement': 2});
+                app.actor.items.get(itemId).update({'system.attunement': 2});
               }
             }
           });
@@ -361,7 +361,7 @@ export const addFavorites = async function(app, html, data, position) {
           // removing item from favorite list
           favHtml.find('.item-fav').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            let val = !app.actor.items.get(itemId).data.flags.favtab.isFavorite
+            let val = !app.actor.items.get(itemId).flags.favtab.isFavorite
             app.actor.items.get(itemId).update({ "flags.favtab.isFavorite": val });
           });
 
@@ -387,10 +387,10 @@ export const addFavorites = async function(app, html, data, position) {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
             let item = app.actor.items.get(itemId);
 
-            item.data.uses = { value: 1, max: 1 };
+            item.system.uses = { value: 1, max: 1 };
             let data = {};
-            data['data.uses.value'] = 1;
-            data['data.uses.max'] = 1;
+            data['system.uses.value'] = 1;
+            data['system.uses.max'] = 1;
 
             app.actor.items.get(itemId).update(data);
           });
@@ -419,7 +419,7 @@ export const addFavorites = async function(app, html, data, position) {
                 if (dropData.data.type === 'feat') {
                   list = favFeats;
                 } else if(dropData.data.type === 'spell') {
-                  list = favSpells[dropData.data.data.level].spells;
+                  list = favSpells[dropData.system.level].spells;
                 } else {
                   list = favItems;
                 }

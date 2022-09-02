@@ -10,7 +10,7 @@
 
         {{#if section.usesSlots}}
         <div class="spell-detail spell-slots">
-          <input type="text" name="data.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
+          <input type="text" name="system.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
           data-dtype="Number"/>
           <span class="sep"> / </span>
           <span class="spell-max" data-level="{{section.prop}}" data-slots="{{section.slots}}">
@@ -37,7 +37,7 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if data.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}">
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if system.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>
@@ -48,9 +48,9 @@
 
         </div>          
 
-        {{#if item.data.uses.per }}
+        {{#if item.system.uses.per }}
         <div class="item-detail item-charges">
-          <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
+          <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}">/ <input  class="uses-max" data-path="system.uses.max" type="text" value="{{item.system.uses.max}}">
         </div>
         {{/if}}
         <div class="item-detail spell-comps">
@@ -68,7 +68,7 @@
 
         <div class="item-detail spell-action">{{labels.activation}}</div>
 
-        <div class="info-card {{~#if item.data.preparation.prepared}} equipped {{/if}}{{#if (eq data.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
+        <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}{{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
             <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
@@ -80,7 +80,7 @@
           </div>
           <div class="info-card-amount">
             {{#if item.hasUses }}
-            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.data.uses.value}}/{{item.data.uses.max}}</span>
+            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
             {{/if}}
           </div>
           <div class="description-wrap">
@@ -98,7 +98,7 @@
         </div>
         <div class="item-controls context-menu">
           <hr class="context-divider">
-          {{#if data.preparation}}
+          {{#if system.preparation}}
           <a class="item-control item-toggle {{item.toggleClass}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i> <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>{{else}}<i class="fas fa-book inactive"></i> <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>{{/if}}</a>
           {{/if}}
           <hr class="context-divider">
@@ -146,19 +146,19 @@
 </div>
 
 <div class="spellcasting-ability">
-  <h3 class="spell-dc">{{localize 'DND5E.SpellDC'}} {{data.attributes.spelldc}}</h3>
+  <h3 class="spell-dc">{{localize 'DND5E.SpellDC'}} {{system.attributes.spelldc}}</h3>
   <div class="npc-spell-stats">
     <div class="caster-level">
       <p>{{localize 'DND5E.SpellcasterLevel'}}</p>
-      <input class="spellcasting-level" type="text" name="data.details.spellLevel"
-      value="{{data.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
+      <input class="spellcasting-level" type="text" name="system.details.spellLevel"
+      value="{{system.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
     </div>
     <div class="spellcasting-attribute">
       <p>{{localize 'DND5E.SpellAbility'}}</p>
-      <select name="data.attributes.spellcasting" data-type="String">
-        {{#select data.attributes.spellcasting}}
+      <select name="system.attributes.spellcasting" data-type="String">
+        {{#select system.attributes.spellcasting}}
         <option value="">{{localize 'DND5E.None'}}</option>
-        {{#each data.abilities as |abl a|}}
+        {{#each system.abilities as |abl a|}}
         <option value="{{a}}">{{abl.label}}</option>
         {{/each}}
         {{/select}}
