@@ -184,7 +184,7 @@ export const addFavorites = async function(app, html, data, position) {
           }
 
           let attr = item.type === "spell" ? "preparation.prepared" : "equipped";
-          let isActive = getProperty(item.data, attr);
+          let isActive = getProperty(item.system, attr);
           item.toggleClass = isActive ? "active" : "";
           if (item.type === "spell") {
             if(item.system.preparation.mode == 'always'){
@@ -336,7 +336,7 @@ export const addFavorites = async function(app, html, data, position) {
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
             let item = app.actor.items.get(itemId);
             let attr = item.type === "spell" ? "system.preparation.prepared" : "system.equipped";
-            return item.update({ [attr]: !getProperty(item.data, attr) });
+            return item.update({ [attr]: !getProperty(item.system, attr) });
           });
 
           // update item attunement
@@ -416,16 +416,16 @@ export const addFavorites = async function(app, html, data, position) {
                 }
 
                 let list = null;
-                if (dropData.data.type === 'feat') {
+                if (dropData.type === 'feat') {
                   list = favFeats;
-                } else if(dropData.data.type === 'spell') {
+                } else if(dropData.type === 'spell') {
                   list = favSpells[dropData.system.level].spells;
                 } else {
                   list = favItems;
                 }
 
-                let dragSource = list.find(i => i._id === dropData.data._id);
-                let siblings = list.filter(i=> i._id !== dropData.data._id);
+                let dragSource = list.find(i => i._id === dropData._id);
+                let siblings = list.filter(i=> i._id !== dropData._id);
                 let targetId = ev.target.closest('.item').dataset.itemId;
                 let dragTarget = siblings.find(s => s._id === targetId);
 

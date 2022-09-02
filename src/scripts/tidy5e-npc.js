@@ -136,8 +136,8 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
    */
   _prepareItemToggleState(item) {
     if (item.type === "spell") {
-      const isAlways = getProperty(item.data, "preparation.mode") === "always";
-      const isPrepared =  getProperty(item.data, "preparation.prepared");
+      const isAlways = getProperty(item.system, "preparation.mode") === "always";
+      const isPrepared =  getProperty(item.system, "preparation.prepared");
       item.toggleClass = isPrepared ? "active" : "";
       if ( isAlways ) item.toggleClass = "fixed";
       if ( isAlways ) item.toggleTitle = CONFIG.DND5E.spellPreparationModes.always;
@@ -145,7 +145,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
       else item.toggleTitle = game.i18n.localize("DND5E.SpellUnprepared");
     }
     else {
-      const isActive = getProperty(item.data, "equipped");
+      const isActive = getProperty(item.system, "equipped");
       item.toggleClass = isActive ? "active" : "";
       item.toggleTitle = game.i18n.localize(isActive ? "DND5E.Equipped" : "DND5E.Unequipped");
     }
@@ -425,7 +425,7 @@ async function toggleItemMode(app, html, data){
     let itemId = ev.currentTarget.closest(".item").dataset.itemId;
     let item = app.actor.items.get(itemId);
     let attr = item.type === "spell" ? "system.preparation.prepared" : "system.equipped";
-    return item.update({ [attr]: !getProperty(item.data, attr) });
+    return item.update({ [attr]: !getProperty(item.system, attr) });
   });
 }
 
@@ -493,10 +493,10 @@ async function setSheetClasses(app, html, data) {
   if (game.settings.get("tidy5e-sheet", "skillsAlwaysShownNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
   }
-  if (token && token.data.actorLink && game.settings.get("tidy5e-sheet", "linkMarkerNpc") == 'both') {
+  if (token && token.actor.prototypeToken.actorLink && game.settings.get("tidy5e-sheet", "linkMarkerNpc") == 'both') {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('linked');
   }
-  if (token && !token.data.actorLink && ( game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
+  if (token && !token.actor.prototypeToken.actorLink && ( game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('unlinked');
   }
   if (!token && (game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {

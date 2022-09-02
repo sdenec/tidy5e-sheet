@@ -401,7 +401,7 @@ async function abbreviateCurrency(app,html,data) {
 async function tidyCustomEffect(actor, change) {
   if (change.key !== "system.details.maxPreparedSpells") return;
   if (change.value?.length > 0) {
-    let oldValue =  getProperty(actor.data, change.key) || 0;
+    let oldValue =  getProperty(actor.system, change.key) || 0;
     let changeText = change.value.trim();
     let op = "none";
     if (["+","-","/","*","="].includes(changeText[0])) {
@@ -417,12 +417,12 @@ async function tidyCustomEffect(actor, change) {
 		const value = roll_value.total;
     oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
     switch (op) {
-      case "+": return setProperty(actor.data, change.key, oldValue + value);
-      case "-": return setProperty(actor.data, change.key, oldValue - value);
-      case "*": return setProperty(actor.data, change.key, oldValue * value);
-      case "/": return setProperty(actor.data, change.key, oldValue / value);
-      case "=": return setProperty(actor.data, change.key, value);
-      default:  return setProperty(actor.data, change.key, value);
+      case "+": return setProperty(actor.system, change.key, oldValue + value);
+      case "-": return setProperty(actor.system, change.key, oldValue - value);
+      case "*": return setProperty(actor.system, change.key, oldValue * value);
+      case "/": return setProperty(actor.system, change.key, oldValue / value);
+      case "=": return setProperty(actor.system, change.key, value);
+      default:  return setProperty(actor.system, change.key, value);
     }
   }
 }
