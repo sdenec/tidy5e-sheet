@@ -20,8 +20,8 @@
   --icon-font:rgba(255, 255, 255, .4);
   --icon-hover: rgba(255, 255, 255, 0.8);
   --warning-accent: rgba(255, 30, 0, .65);
-  --check-default: url('../images/check-dark-unchecked.svg');
-  --check-checked: url('../images/check-light-checked.svg');
+  --check-default: url("../images/check-dark-unchecked.svg");
+  --check-checked: url("../images/check-light-checked.svg");
   --checkbox-font: rgba(255, 255, 255, .8);
   --checkbox-outline: rgba(50, 50, 50, 1);
   --checkbox-unchecked: rgba(75,75,75,1);
@@ -31,82 +31,65 @@
 .tidy5eDark .tidy5e.sheet.actor .tidy5e-sheet {
   background-color: var(--background);
 }
-
 .tidy5eDark .tidy5e.sheet.actor .spellcasting-ability {
   background: var(--background);
 }
-
 .tidy5eDark .tidy5e.sheet.actor .environment-label span {
   color: var(--background);
 }
-
 .tidy5eDark .tidy5e.sheet.actor select option {
   color: var(--background);
 }
-
 .tidy5eDark .tidy5e.sheet.actor #item-info-container {
   background: var(--background);
 }
-
 .tidy5eDark .tidy5e.sheet.actor a.entity-link,
 .tidy5eDark .tidy5e.sheet.actor a.inline-roll {
   color: var(--primary-font);
   background: var(--faint-color);
 }
-
 .tidy5eDark .tidy5e.sheet.item .window-content {
   color: var(--primary-font);
 }
-
 .tidy5eDark .tidy5e.sheet.item .window-content form {
   background-color: var(--background);
 }
-
 .tidy5eDark .tidy5e.sheet.item .window-content form .hint {
   color: var(--tertiary-color);
 }
-
 .tidy5eDark .tidy5e.sheet.item .tox .tox-toolbar-overlord button {
   color: #222;
 }
-
 .tidy5eDark .tidy5e.sheet.item .tox-sidebar-wrap {
   padding: 8px;
   background: var(--secondary-color);
 }
-
 .tidy5eDark .tidy5e.sheet.item select option {
   color: var(--primary-font);
   background: var(--background);
 }
-
 .tidy5eDark .tidy5e.sheet.item a.content-link {
   color: var(--primary-font);
   background: var(--faint-color);
 }
-
 .tidy5eDark .tidy5e.sheet.item .tab.advancement .items-list .items-header div.item-checkmark {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 44px;
           flex: 0 0 44px;
   color: var(--prepared);
 }
-
 .tidy5eDark .tidy5e.sheet.item .tab.advancement .items-list .item .item-name .item-image {
   -webkit-filter: invert(1);
           filter: invert(1);
 }
-
 .tidy5eDark .tidy5e.sheet.actor .tox-toolbar-overlord,
 .tidy5eDark .tidy5e.sheet.actor .tox-toolbar__primary {
   background: #fff;
   background-color: #fff;
 }
-
 .tidy5eDark .tidy5e.sheet.actor .tox .tox-toolbar-overlord button {
   color: #222;
 }
-
 .tidy5eDark .tidy5e.sheet.actor .tox-sidebar-wrap {
   padding: 8px;
   background: var(--secondary-color);
@@ -127,11 +110,9 @@
   /*    Support Skill Customizer   */
   /* ----------------------------- */
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button:hover {
   background: var(--darkmode-primary-accent);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .effect-header:first-child,
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-name,
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-mode,
@@ -140,51 +121,40 @@
   color: var(--darkmode-primary-color);
   font-weight: 400;
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header,
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-name,
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
   color: var(--darkmode-tertiary-color);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect {
   background: var(--darkmode-faint-color);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect .effect-name {
   cursor: default;
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create {
   background: var(--darkmode-light-color);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create:hover {
   background: var(--darkmode-primary-accent);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-edit:hover {
   color: var(--darkmode-primary-accent);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete {
   color: var(--danger-500);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete:hover {
   color: var(--danger-700);
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .spellbook-filters.magic-items-head,
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head {
   border-color: var(--darkmode-light-color);
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
   border-color: var(--darkmode-faint-color);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.actor .spell-rechargeable,
 .disable .tidy5eDark .dnd5e.sheet.actor .spell-level,
 .disable .tidy5eDark .dnd5e.sheet.actor .spell-consumption,
@@ -192,54 +162,45 @@
   color: var(--darkmode-primary-color);
   font-weight: 300;
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-mode,
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-value {
   color: var(--darkmode-primary-color);
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image,
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image {
   background-image: url("../../images/d20-444.svg") !important;
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image:hover,
 .disable .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image:hover {
   background-image: url("../../images/d20-highlight-green.svg") !important;
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items label {
   color: var(--darkmode-primary-color);
   font-weight: 300;
 }
-
-.disable .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"],
+.disable .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type=text],
 .disable .tidy5eDark .dnd5e.sheet.item .magic-items-content select {
   border: none !important;
   background: var(--darkmode-faint-color);
   color: var(--darkmode-primary-color);
 }
-
-.disable .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"]:hover,
+.disable .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type=text]:hover,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-items-content select:hover,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-items-content select:focus {
   border: none !important;
   -webkit-box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
           box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.items-header) {
   background: var(--darkmode-faint-color);
   color: var(--darkmode-primary-color);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-level,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-consumption,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-upcast,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-cost {
   color: var(--darkmode-primary-color);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header:first-child,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .item-name,
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-level-head,
@@ -250,20 +211,16 @@
   color: var(--darkmode-tertiary-color);
   font-weight: 400;
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a {
   color: var(--danger-500);
 }
-
 .disable .tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a:hover {
   color: var(--danger-700);
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select,
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
   color: var(--darkmode-primary-color);
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover,
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus {
   background: var(--darkmode-primary-accent);
@@ -271,18 +228,15 @@
   -webkit-box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
           box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover option,
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus option {
   background: #fff;
   color: #121212;
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
   -webkit-box-shadow: 0 0 0 1px var(--darkmode-tertiary-color) inset;
           box-shadow: 0 0 0 1px var(--darkmode-tertiary-color) inset;
 }
-
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:hover,
 .disable .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:focus {
   -webkit-box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;

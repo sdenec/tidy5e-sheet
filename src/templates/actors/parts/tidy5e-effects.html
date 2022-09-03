@@ -14,8 +14,8 @@
       {{#each section.effects as |effect|}}
       <li class="item effect {{#if ../../owner}}context-enabled{{/if}}" data-effect-id="{{effect.id}}">
         <div class="item-name effect-name">
-          <img class="item-image" src="{{effect.data.icon}}"/>
-          <h4>{{effect.data.label}}</h4>
+          <img class="item-image" src="{{effect.icon}}"/>
+          <h4>{{effect.label}}</h4>
         </div>
         <div class="item-detail effect-source" title="{{effect.sourceName}}"><span>{{effect.sourceName}}</span></div>
         <div class="item-detail effect-duration">{{effect.duration.label}}</div>
@@ -26,7 +26,7 @@
         </div>
         <div class="item-controls effect-controls context-menu">
           <a class="effect-control" data-action="toggle" title="{{localize 'DND5E.EffectToggle'}}">
-              <i class="fas {{#if effect.data.disabled}}fa-check{{else}}fa-times{{/if}}"></i> <span class="control-label">{{localize 'DND5E.EffectToggle'}}</span>
+              <i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i> <span class="control-label">{{localize 'DND5E.EffectToggle'}}</span>
           </a>
           <a class="effect-control effect-edit" data-action="edit" title=" {{localize 'DND5E.EffectEdit'}}">
               <i class="fas fas fa-pencil-alt"></i> <span class="control-label">{{localize 'DND5E.EffectEdit'}}</span>

@@ -1,10 +1,10 @@
 async function updateExhaustion(actorEntity) {
   
-  if (game.actors.get(actorEntity.data._id).data.type !== "character") {
+  if (game.actors.get(actorEntity._id).type !== "character") {
     return;
   }
   
-  let exhaustion = actorEntity.data._source.data.attributes.exhaustion;
+  let exhaustion = actorEntity.system.attributes.exhaustion;
 
   if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') == 'tidy5e') {
     let icon = game.settings.get('tidy5e-sheet', 'exhaustionEffectIcon');
@@ -26,9 +26,9 @@ async function updateExhaustion(actorEntity) {
         exhaustionSet.push(effect);
       }
       if(exhaustion > 1 && exhaustion < 5 ){
-        if (actorEntity.data?._source?.data?.attributes?.movement) {
+        if (actorEntity.system?.attributes?.movement) {
           movementSet = [];
-          Object.entries(actorEntity.data?._source?.data?.attributes?.movement).forEach(speed => {
+          Object.entries(actorEntity.system.attributes.movement).forEach(speed => {
             if (speed[0] == "hover" || speed[0] == "units") {
               return;
             }
@@ -75,9 +75,9 @@ async function updateExhaustion(actorEntity) {
         exhaustionSet.push(effect);
       }
       if(exhaustion > 4 ){
-        if (actorEntity.data?._source?.data?.attributes?.movement) {
+        if (actorEntity.system?.attributes?.movement) {
           movementSet = [];
-          Object.entries(actorEntity.data?._source?.data?.attributes?.movement).forEach(speed => {
+          Object.entries(actorEntity.system.attributes.movement).forEach(speed => {
             if (speed[0] == "hover" || speed[0] == "units") {
               return;
             }
@@ -139,7 +139,7 @@ async function updateExhaustion(actorEntity) {
               'exhaustion': exhaustion
             }
           },
-          origin: `Actor.${actorEntity.data._id}`
+          origin: `Actor.${actorEntity._id}`
         };
         
         await actorEntity.createEmbeddedDocuments("ActiveEffect", [effectChange]);
@@ -152,9 +152,9 @@ async function updateExhaustion(actorEntity) {
     const levels = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustomTiers');
     const effectName = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustom');
 
-    const id = actorEntity.data._id;
+    const id = actorEntity._id;
     const tokens = canvas.tokens.placeables;
-    const index = tokens.findIndex(x => x.data.actorId === id);
+    const index = tokens.findIndex(x => x.actor._id === id);
     const token = tokens[index];
     
     for(let i = 1; i<=levels; i++){
@@ -193,9 +193,9 @@ Hooks.on(`restCompleted`, (actorEntity, data) => {
   if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') == 'default') {
     return
   }
-  let actor = game.actors.get(actorEntity.data._id);
+  let actor = game.actors.get(actorEntity._id);
   if(data.longRest){
-    let exhaustion = actorEntity.data._source.data.attributes.exhaustion;
+    let exhaustion = actorEntity.system.attributes.exhaustion;
     if (exhaustion > 0) actor.update({"data.attributes.exhaustion": exhaustion-1});
   }
 });
@@ -204,13 +204,13 @@ Hooks.on(`restCompleted`, (actorEntity, data) => {
 Hooks.on(`createActiveEffect`, (effect, data, id) => { 
   if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') == 'custom') {
 
-    let actor = game.actors.get(effect.parent.data._id);
-    let effectName = effect.data.label;
+    let actor = game.actors.get(effect.parent._id);
+    let effectName = effect.label;
     if (effectName.includes(game.settings.get('tidy5e-sheet', 'exhaustionEffectCustom'))) {
       // console.log(effectName);
       let exhaustion = effectName.slice(-1);
       // console.log(exhaustion);
-      actor.update({"data.attributes.exhaustion": exhaustion});
+      actor.update({"system.attributes.exhaustion": exhaustion});
     }
   }
 });
@@ -218,14 +218,14 @@ Hooks.on(`createActiveEffect`, (effect, data, id) => {
 // reset exhaustion value when cub effect is removed
 Hooks.on(`deleteActiveEffect`, (effect, data, id) => { 
   if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') == 'custom') {
-    const actor = game.actors.get(effect.parent.data._id);
+    const actor = game.actors.get(effect.parent._id);
     const effectName = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustom');
     const levels = game.settings.get('tidy5e-sheet', 'exhaustionEffectCustomTiers');
-    const effectLabel = effect.data.label;
+    const effectLabel = effect.label;
     if (effectLabel.includes(effectName)) {
 
     const tokens = canvas.tokens.placeables;
-    const index = tokens.findIndex(x => x.data.actorId === effect.parent.data._id);
+    const index = tokens.findIndex(x => x.actor._id === effect.parent._id);
     const token = tokens[index];
 
       for(let i = 1; i<=levels; i++){
@@ -235,7 +235,7 @@ Hooks.on(`deleteActiveEffect`, (effect, data, id) => {
         }
       }
 
-      actor.update({"data.attributes.exhaustion": 0});
+      actor.update({"system.attributes.exhaustion": 0});
     }
   }
 });

@@ -16,6 +16,11 @@ Thank you very much!
 
 ## Version History
 
+### Version 0.6.2
+
+- just more v10 fixes
+- fixed an npc issue that prevents scrolling in effects tab
+
 ### Version 0.6.1
 
 - v10 update

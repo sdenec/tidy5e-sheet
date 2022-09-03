@@ -15,8 +15,8 @@ export const tidy5eShowActorArt = function (html,actor){
     e.preventDefault();
     portraitMenu.addClass('hidden');
     let id = $(this).attr('id'),
-        portraitImg = actor.data.img,
-        tokenImg = actor.data.token.img
+        portraitImg = actor.img,
+        tokenImg = actor.prototypeToken.texture.src
     if (id == 'showPortrait'){
       new ImagePopout(portraitImg, {
 				title: 'Portrait: '+actor.name,
