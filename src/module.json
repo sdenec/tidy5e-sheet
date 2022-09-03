@@ -9,7 +9,8 @@
       "name": "sednec#3813"
     }
   ],
-  "compatibleCoreVersion": 10,
+  "minimumCoreVersion": "10",
+  "compatibleCoreVersion": "10",
   "compatibility": {
     "minimum": "10.283",
     "verified": "10"
