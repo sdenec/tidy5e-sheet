@@ -1,5 +1,4 @@
 .tidy5e.sheet.actor.npc {
-
   min-width: 690px;
 
   .linked {
@@ -28,7 +27,6 @@
   }
 
   .profile-wrap {
-
     .profile .rest-container {
       display: block;
 
@@ -73,9 +71,8 @@
           color: var(--primary-font);
         }
       }
-
     }
-    
+
     .profile .hp-overlay-wrapper::before {
       border-width: var(--npc-border);
     }
@@ -86,7 +83,7 @@
 
       .resting {
         border-radius: 5px 0 0 5px;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
 
       .resting:not(:hover) {
@@ -172,7 +169,6 @@
   }
 
   .origin-summary {
-
     .creature-type .config-button:hover {
       color: var(--primary-accent);
     }
@@ -209,7 +205,7 @@
           position: absolute;
           top: calc(100% + 6px);
           left: calc(50% - 6px);
-          content: '';
+          content: "";
           display: block;
           background: transparent;
           border-radius: 0;
@@ -224,15 +220,14 @@
       &:hover .environment-label {
         display: inline-block;
       }
-    }//.environment
+    } //.environment
 
     .source-info {
       max-width: 140px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    
-  }//.origin-summary
+  } //.origin-summary
 
   // Left Pane
   .left-pane {
@@ -256,7 +251,6 @@
         font-size: 12px;
       }
     }
-
   }
 
   .counters {
@@ -305,8 +299,8 @@
         line-height: 12px;
         padding-top: 4px;
       }
-    }//.counter
-  }//.counters
+    } //.counter
+  } //.counters
 
   .alt-trait-pos .traits {
     margin: 0 0 25px 0;
@@ -315,7 +309,6 @@
   // Skills List
 
   .skills-list {
-
     margin-bottom: 17px;
     position: relative;
 
@@ -324,10 +317,10 @@
     }
 
     .toggle-proficient {
-    	position: absolute;
+      position: absolute;
       top: calc(100% + 1px);
       left: 50%;
-      transform: translate(-50%,0);
+      transform: translate(-50%, 0);
       font-size: 10px;
       border: 1px solid var(--faint-color);
       border-top: none;
@@ -351,27 +344,28 @@
     }
 
     &.always-visible .toggle-proficient {
-    	display: none;
+      display: none;
     }
-    
-  }//.skills-list
+  } //.skills-list
 
   .items-list {
     padding: 0 0 8px 0;
     overflow-y: visible;
 
+    &.effects-list {
+      overflow-y: scroll;
+      padding-right: 12px;
+    }
+
     .item {
       .item-name {
-
         .item-image {
-
           i {
             font-size: 16px;
           }
         }
-        
-      }//.item-name
-    }//.item
+      } //.item-name
+    } //.item
 
     // Spells
 
@@ -404,7 +398,7 @@
         width: 90px;
       }
     }
-    
+
     .spell-comps {
       flex: 0 0 50px;
     }
@@ -413,7 +407,7 @@
     .spell-action,
     .spell-target,
     .spell-school {
-      flex:0 0 90px;
+      flex: 0 0 90px;
     }
 
     .item-charges {
@@ -421,10 +415,9 @@
     }
 
     .item-action {
-      flex:0 0 120px;
+      flex: 0 0 120px;
     }
-
-  }//.items-list
+  } //.items-list
 
   .npc-spell-stats {
     display: flex;
@@ -436,7 +429,7 @@
     margin: 0;
     position: sticky;
     bottom: 0;
-    background: url('../../../systems/dnd5e/ui/parchment.jpg') repeat;
+    background: url("../../../systems/dnd5e/ui/parchment.jpg") repeat;
     background-attachment: fixed;
 
     .spell-dc {
@@ -454,7 +447,7 @@
       min-width: 16px;
       height: 16px;
     }
-  }//.spellcasting-ability
+  } //.spellcasting-ability
 
   .caster-level {
     display: flex;
@@ -488,8 +481,8 @@
     }
 
     &.toggle-spellbook {
-      opacity: .4;
-      transition: opacity .3s ease;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
       cursor: pointer;
     }
 
@@ -497,7 +490,7 @@
     &.show {
       opacity: 1;
     }
-  }//.spellbook-title
+  } //.spellbook-title
 
   .spellbook-empty {
     .notice {
@@ -521,5 +514,4 @@
       color: var(--secondary-color);
     }
   }
-
 }
