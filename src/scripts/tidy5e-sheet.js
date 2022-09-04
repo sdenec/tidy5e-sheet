@@ -553,6 +553,91 @@ function markActiveEffects(app, html, data) {
   }
 }
 
+// Add Spell Slot Marker
+function spellSlotMarker(app, html, data) {
+  let actor = app.actor;
+  let items = data.actor.items;
+  let options = [
+    "pact",
+    "spell1",
+    "spell2",
+    "spell3",
+    "spell4",
+    "spell5",
+    "spell6",
+    "spell7",
+    "spell8",
+    "spell9",
+  ];
+  for (let o of options) {
+    let max = html.find(`.spell-max[data-level=${o}]`);
+    let name = max.closest(".spell-slots");
+    let spellData = actor.system.spells[o];
+    if (spellData.max === 0) {
+      continue;
+    }
+    let contents = ``;
+    for (let i = 1; i <= spellData.max; i++) {
+      if (i <= spellData.value) {
+        contents += `<span class="dot"></span>`;
+      } else {
+        contents += `<span class="dot empty"></span>`;
+      }
+    }
+    name.before(`<div class="spellSlotMarker">${contents}</div>`);
+  }
+
+  html.find(".spellSlotMarker .dot").mouseenter((ev) => {
+    const parentEl = ev.currentTarget.parentElement;
+    const index = [...parentEl.children].indexOf(ev.currentTarget);
+    const dots = parentEl.querySelectorAll(".dot");
+
+    if (ev.currentTarget.classList.contains("empty")) {
+      for (let i = 0; i < dots.length; i++) {
+        if (i <= index) {
+          dots[i].classList.contains("empty")
+            ? dots[i].classList.add("change")
+            : "";
+        }
+      }
+    } else {
+      for (let i = 0; i < dots.length; i++) {
+        if (i >= index) {
+          dots[i].classList.contains("empty")
+            ? ""
+            : dots[i].classList.add("change");
+        }
+      }
+    }
+  });
+
+  html.find(".spellSlotMarker .dot").mouseleave((ev) => {
+    const parentEl = ev.currentTarget.parentElement;
+    $(parentEl).find(".dot").removeClass("change");
+  });
+
+  html.find(".spellSlotMarker .dot").click(async (ev) => {
+    const index = [...ev.currentTarget.parentElement.children].indexOf(
+      ev.currentTarget
+    );
+    const slots = $(ev.currentTarget).parents(".spell-level-slots");
+    const spellLevel = slots.find(".spell-max").data("level");
+    console.log(spellLevel, index);
+    if (spellLevel) {
+      let path = `data.spells.${spellLevel}.value`;
+      if (ev.currentTarget.classList.contains("empty")) {
+        await actor.update({
+          [path]: index + 1,
+        });
+      } else {
+        await actor.update({
+          [path]: index,
+        });
+      }
+    }
+  });
+}
+
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
   // let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -675,6 +760,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
   countAttunedItems(app, html, data);
   countInventoryItems(app, html, data);
   markActiveEffects(app, html, data);
+  spellSlotMarker(app, html, data);
   // console.log(data.actor);
   // console.log("Tidy5e Sheet rendered!");
 });

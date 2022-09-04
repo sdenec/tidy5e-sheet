@@ -19,6 +19,7 @@ Thank you very much!
 ### Version 0.6.4
 
 - dark mode input color fix
+- added spell slot marker fpr pcs and npcs to quickly visualize and change available spell slots.
 
 ### Version 0.6.3
 
