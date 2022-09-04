@@ -16,6 +16,14 @@ Thank you very much!
 
 ## Version History
 
+### Version 0.6.4
+
+- dark mode input color fix
+
+### Version 0.6.3
+
+- preventing v9 to pull the update
+
 ### Version 0.6.2
 
 - just more v10 fixes
