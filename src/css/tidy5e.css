@@ -2684,7 +2684,7 @@
 .tidy5e.sheet.actor .encumbrance .encumbrance-bar {
   position: absolute;
   top: 1px;
-  --count-font: rgba(0, 0, 0, .9);
+  --count-font: rgba(0, 0, 0, 0.9);
   left: 1px;
   bottom: 1px;
   max-width: calc(100% - 2px);
@@ -2698,7 +2698,7 @@
   width: 100%;
   text-align: center;
   font-weight: 700;
-  color: #EEE;
+  color: #eee;
   text-shadow: 0 0 2px #000;
 }
 .tidy5e.sheet.actor .encumbrance .encumbrance-breakpoint {
@@ -2814,6 +2814,35 @@
       -ms-flex: 1 0 60px;
           flex: 1 0 60px;
   white-space: nowrap;
+}
+.tidy5e.sheet.actor .items-list .items-header .spellSlotMarker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -2px;
+}
+.tidy5e.sheet.actor .items-list .items-header .spellSlotMarker .dot {
+  position: relative;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--primary-accent);
+  border: 1px solid var(--primary-font);
+}
+.tidy5e.sheet.actor .items-list .items-header .spellSlotMarker .dot:hover, .tidy5e.sheet.actor .items-list .items-header .spellSlotMarker .dot.change {
+  background-color: var(--warning-accent);
+}
+.tidy5e.sheet.actor .items-list .items-header .spellSlotMarker .dot.empty {
+  background-color: transparent;
+}
+.tidy5e.sheet.actor .items-list .items-header .spellSlotMarker .dot.empty:hover, .tidy5e.sheet.actor .items-list .items-header .spellSlotMarker .dot.empty.change {
+  background-color: var(--prepared);
 }
 .tidy5e.sheet.actor .items-list .items-header .inventory-plus-helper {
   display: none;
@@ -3507,7 +3536,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.tidy5e.sheet.actor .item-summary p, .tidy5e.sheet.actor .item-summary li,
+.tidy5e.sheet.actor .item-summary p,
+.tidy5e.sheet.actor .item-summary li,
 .tidy5e.sheet.actor .item-info-container-content p,
 .tidy5e.sheet.actor .item-info-container-content li {
   line-height: 1.4;
