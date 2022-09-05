@@ -462,21 +462,44 @@ async function addClassList(app, html, data) {
 // Calculate Spell Attack modifier
 
 async function spellAttackMod(app, html, data) {
-  if (data.editable) {
-    // let actor = game.actors.entities.find(a => a.data._id === data.actor._id),
-    let actor = app.actor,
-      prof = actor.system.attributes.prof,
-      spellAbility = html
-        .find(".spellcasting-attribute select option:selected")
-        .val(),
-      abilityMod =
-        spellAbility != "" ? actor.system.abilities[spellAbility].mod : 0,
-      spellBonus = Roll.safeEval(actor.system.bonuses.rsak.attack || 0),
-      spellAttackMod = prof + abilityMod + spellBonus,
-      text = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
-    // console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
-    html.find(".spell-mod .spell-attack-mod").html(text);
+  let actor = app.actor,
+    prof = actor.system.attributes.prof,
+    spellAbility = html
+      .find(".spellcasting-attribute select option:selected")
+      .val(),
+    abilityMod =
+      spellAbility != "" ? actor.system.abilities[spellAbility].mod : 0,
+    spellBonus = 0;
+  // console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
+
+  const rollData = actor.getRollData();
+  let formula = Roll.replaceFormulaData(
+    actor.system.bonuses.rsak.attack,
+    rollData,
+    { missing: 0, warn: false }
+  );
+  try {
+    // Roll parser no longer accepts some expressions it used to so we will try and avoid using it
+    spellBonus = Roll.safeEval(formula);
+  } catch (err) {
+    // safeEval failed try a roll
+    try {
+      spellBonus = new Roll(formula).evaluate({ async: false }).total;
+    } catch (err) {
+      console.warn("spell bonus calculation failed");
+      console.warn(err);
+    }
   }
+
+  let spellAttackMod = prof + abilityMod + spellBonus,
+    text = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
+  html.find(".spell-mod .spell-attack-mod").html(text);
+  html
+    .find(".spell-mod .spell-attack-mod")
+    .attr(
+      "title",
+      `${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`
+    );
 }
 
 // Abbreviate Currency
@@ -622,7 +645,7 @@ function spellSlotMarker(app, html, data) {
     );
     const slots = $(ev.currentTarget).parents(".spell-level-slots");
     const spellLevel = slots.find(".spell-max").data("level");
-    console.log(spellLevel, index);
+    // console.log(spellLevel, index);
     if (spellLevel) {
       let path = `data.spells.${spellLevel}.value`;
       if (ev.currentTarget.classList.contains("empty")) {

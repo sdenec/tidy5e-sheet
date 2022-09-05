@@ -16,10 +16,16 @@ Thank you very much!
 
 ## Version History
 
+### Version 0.6.5
+
+- spell attack mod fix
+- new background editor
+- ammo tracker quantity
+
 ### Version 0.6.4
 
 - dark mode input color fix
-- added spell slot marker fpr pcs and npcs to quickly visualize and change available spell slots.
+- added spell slot marker for pcs and npcs to quickly visualize and change available spell slots.
 
 ### Version 0.6.3
 

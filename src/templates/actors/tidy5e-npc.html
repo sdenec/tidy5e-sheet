@@ -312,26 +312,26 @@
         <div class="left-notes note-entries hidden">
           <article>
 						<div class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</div>
-						{{editor system.details.trait target="system.details.trait" button=true owner=owner editable=editable}}
+						{{editor system.details.trait target="system.details.trait" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
 					<article>
 						<div class="section-titles biopage">{{ localize "DND5E.Ideals" }}</div>
-						{{editor system.details.ideal target="system.details.ideal" button=true owner=owner editable=editable}}
+						{{editor system.details.ideal target="system.details.ideal" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
 					<article>
 						<div class="section-titles biopage">{{ localize "DND5E.Bonds" }}</div>
-						{{editor system.details.bond target="system.details.bond" button=true owner=owner editable=editable}}
+						{{editor system.details.bond target="system.details.bond" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
 					<article>
 						<div class="section-titles biopage">{{ localize "DND5E.Flaws" }}</div>
-						{{editor system.details.flaw target="system.details.flaw" button=true owner=owner editable=editable}}
+						{{editor system.details.flaw target="system.details.flaw" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
         </div>
 
         <div class="right-notes note-entries">
           <article class="biography-notes">
             <div class="section-titles">{{ localize "DND5E.Background" }}/{{ localize "DND5E.Biography" }}</div>
-            {{editor system.details.biography.value target="system.details.biography.value" button=true owner=owner editable=editable}}
+            {{editor biographyHTML target="system.details.biography.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
         </div>
       </div>
@@ -343,31 +343,31 @@
             <div class="section-titles">
               <input type="text" name="system.details.notes1name" value="{{system.details.notes1name}}" placeholder="{{ localize 'TIDY5E.JournalPoi' }}"/>
             </div>
-            {{editor system.details.notes1.value target="system.details.notes1.value" button=true owner=owner editable=editable}}
+            {{editor system.details.notes1.value target="system.details.notes1.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
           <article>
             <div class="section-titles">
               <input type="text" name="system.details.notes2name" value="{{system.details.notes2name}}" placeholder="{{ localize 'TIDY5E.JournalLoi' }}"/>
             </div>
-            {{editor system.details.notes2.value target="system.details.notes2.value" button=true owner=owner editable=editable}}
+            {{editor system.details.notes2.value target="system.details.notes2.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
           <article>
             <div class="section-titles">
               <input type="text" name="system.details.notes3name" value="{{system.details.notes3name}}" placeholder="{{ localize 'TIDY5E.JournalQuests' }}"/>
             </div>
-            {{editor system.details.notes3.value target="system.details.notes3.value" button=true owner=owner editable=editable}}
+            {{editor system.details.notes3.value target="system.details.notes3.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
           <article>
             <div class="section-titles">
               <input type="text" name="system.details.notes4name" value="{{system.details.notes4name}}" placeholder="{{ localize 'TIDY5E.JournalMisc' }}"/>
             </div>
-            {{editor system.details.notes4.value target="system.details.notes4.value" button=true owner=owner editable=editable}}
+            {{editor system.details.notes4.value target="system.details.notes4.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
         </div>
         <div class="right-notes note-entries">
           <article class="journal-notes">
             <div class="section-titles">{{ localize 'TIDY5E.JournalEntries' }}</div>
-            {{editor system.details.notes.value target="system.details.notes.value" button=true owner=owner editable=editable}}
+            {{editor system.details.notes.value target="system.details.notes.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
         </div>
       </div>
