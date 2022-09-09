@@ -48,7 +48,7 @@
 
     <ul class="item-list">
       {{#each section.items as |item iid|}}
-      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if isDepleted}}depleted{{/if}}" data-item-id="{{item._id}}">
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if isDepleted}}depleted{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>
@@ -174,6 +174,18 @@
           <i class="fas fa-ellipsis-v"></i>
         </div>
         <div class="item-controls context-menu">
+          
+          <hr class="context-divider">
+          {{#if item.attunement}}
+            <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+              <i class="fas fa-sun"></i> <span class="control-label">{{#if (eq item.system.attunement 2) }}{{localize "TIDY5E.Deattune"}}{{else}}{{localize "TIDY5E.Attune"}}{{/if}}</span>
+            </a>
+          {{/if}}
+          {{#unless @root.isVehicle}}
+          {{#unless (eq item.type "feat")}}
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
+          {{/unless}}
+          {{/unless}}
           <hr class="context-divider">
           <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize 'DND5E.ItemEdit'}}</span></a>
           <hr class="context-divider">

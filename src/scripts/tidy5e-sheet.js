@@ -478,6 +478,7 @@ async function spellAttackMod(app, html, data) {
     rollData,
     { missing: 0, warn: false }
   );
+  if (formula === "") formula = "0";
   try {
     // Roll parser no longer accepts some expressions it used to so we will try and avoid using it
     spellBonus = Roll.safeEval(formula);

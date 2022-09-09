@@ -1,348 +1,346 @@
 {
   "Localization Provided By": "Brother Sharp",
-	"TIDY5E.PlayerName": "プレイヤー名",
-	"TIDY5E.Gender" : "性別",
-	"TIDY5E.Age" : "年齢",
-	"TIDY5E.Weight" : "体重",
-	"TIDY5E.Height" : "身長",
-	"TIDY5E.Eyes" : "眼",
-	"TIDY5E.Skin" : "肌",
-	"TIDY5E.Hair" : "髪",
-	"TIDY5E.Subclass": "サブクラス",
-	"TIDY5E.EditActorImage": "左クリック: 画像変更",
-	"TIDY5E.ShowActorImage": "右クリック: 画像表示",
-	"TIDY5E.ShowPortraitArt": "画像表示",
-	"TIDY5E.ShowTokenArt": "トークン表示",
+  "TIDY5E.PlayerName": "プレイヤー名",
+  "TIDY5E.Gender": "性別",
+  "TIDY5E.Age": "年齢",
+  "TIDY5E.Weight": "体重",
+  "TIDY5E.Height": "身長",
+  "TIDY5E.Eyes": "眼",
+  "TIDY5E.Skin": "肌",
+  "TIDY5E.Hair": "髪",
+  "TIDY5E.Subclass": "サブクラス",
+  "TIDY5E.EditActorImage": "左クリック: 画像変更",
+  "TIDY5E.ShowActorImage": "右クリック: 画像表示",
+  "TIDY5E.ShowPortraitArt": "画像表示",
+  "TIDY5E.ShowTokenArt": "トークン表示",
+  "TIDY5E.ShowItemImage": "right click: show item art",
+  "TIDY5E.ShowItemArt": "show image",
 
-	"TIDY5E.Exhaustion0": "悪影響なし",
-	"TIDY5E.Exhaustion1": "能力値判定に不利",
-	"TIDY5E.Exhaustion2": "移動速度半減",
-	"TIDY5E.Exhaustion3": "攻撃ロールとセーヴィング･スローに不利",
-	"TIDY5E.Exhaustion4": "最大ＨＰ半減",
-	"TIDY5E.Exhaustion5": "移動速度０",
-	"TIDY5E.Exhaustion6": "死亡",
-	
-	"TIDY5E.AbbrInitiative": "ｲﾆｼ",
+  "TIDY5E.Exhaustion0": "悪影響なし",
+  "TIDY5E.Exhaustion1": "能力値判定に不利",
+  "TIDY5E.Exhaustion2": "移動速度半減",
+  "TIDY5E.Exhaustion3": "攻撃ロールとセーヴィング･スローに不利",
+  "TIDY5E.Exhaustion4": "最大ＨＰ半減",
+  "TIDY5E.Exhaustion5": "移動速度０",
+  "TIDY5E.Exhaustion6": "死亡",
 
-	"TIDY5E.RestHint": "休憩",
-	"TIDY5E.RestS": "小休憩",
-	"TIDY5E.RestL": "大休憩",
-	"TIDY5E.HitDiceRollAverage": "右クリック：平均",
+  "TIDY5E.AbbrInitiative": "ｲﾆｼ",
 
-	"TIDY5E.Journal": "記録",
+  "TIDY5E.RestHint": "休憩",
+  "TIDY5E.RestS": "小休憩",
+  "TIDY5E.RestL": "大休憩",
+  "TIDY5E.HitDiceRollAverage": "右クリック：平均",
 
-	"TIDY5E.RestoreOnRest": "休憩時に回復",
+  "TIDY5E.Journal": "記録",
 
-	"TIDY5E.JournalPoi": "関心のある人物",
-	"TIDY5E.JournalLoi": "関心のある場所",
-	"TIDY5E.JournalQuests": "クエスト",
-	"TIDY5E.JournalMisc": "その他",
-	"TIDY5E.JournalEntries": "資料",
-	"TIDY5E.TogglePersonalityInfo": "情報表示の切替",
+  "TIDY5E.RestoreOnRest": "休憩時に回復",
 
-	"TIDY5E.EnableEdit": "編集の有効化",
-	"TIDY5E.DisableEdit": "編集の無効化",
-	"TIDY5E.EditHint": "編集ロックとロック解除の表示を切替します",
-	
-	"TIDY5E.Equip": "装備",
-	"TIDY5E.Unequip": "装備解除",
-	"TIDY5E.Attune": "同調",
-	"TIDY5E.Deattune": "同調解除",
-	"TIDY5E.Prepare": "呪文準備",
-	"TIDY5E.Unprepare": "準備解除",
+  "TIDY5E.JournalPoi": "関心のある人物",
+  "TIDY5E.JournalLoi": "関心のある場所",
+  "TIDY5E.JournalQuests": "クエスト",
+  "TIDY5E.JournalMisc": "その他",
+  "TIDY5E.JournalEntries": "資料",
+  "TIDY5E.TogglePersonalityInfo": "情報表示の切替",
 
-	"TIDY5E.EmptySection": "シートがロックされているため新規作成ができません。シートロックを解除して編集してください。",
-	"TIDY5E.GmOnlyEdit": "この項目を編集できるのはGMだけです。",
+  "TIDY5E.EnableEdit": "編集の有効化",
+  "TIDY5E.DisableEdit": "編集の無効化",
+  "TIDY5E.EditHint": "編集ロックとロック解除の表示を切替します",
 
-	"TIDY5E.AttunementWarning": "警告：同調が最大数である{number}に達しています。",
-	"TIDY5E.AttunementItems": "同調アイテム",
-	"TIDY5E.AttunementMax": "同調上限",
+  "TIDY5E.Equip": "装備",
+  "TIDY5E.Unequip": "装備解除",
+  "TIDY5E.Attune": "同調",
+  "TIDY5E.Deattune": "同調解除",
+  "TIDY5E.Prepare": "呪文準備",
+  "TIDY5E.Unprepare": "準備解除",
 
-	"TIDY5E.GridLayout": "グリッド",
-	"TIDY5E.ListLayout": "リスト",
+  "TIDY5E.EmptySection": "シートがロックされているため新規作成ができません。シートロックを解除して編集してください。",
+  "TIDY5E.GmOnlyEdit": "この項目を編集できるのはGMだけです。",
 
-	"TIDY5E.Encumbrance": "荷重",
+  "TIDY5E.AttunementWarning": "警告：同調が最大数である{number}に達しています。",
+  "TIDY5E.AttunementItems": "同調アイテム",
+  "TIDY5E.AttunementMax": "同調上限",
 
-	"TIDY5E.EditSpell": "呪文編集",
-	"TIDY5E.DeleteSpell": "呪文削除",
-	"TIDY5E.AddFav": "お気に入り追加",
-	"TIDY5E.isFav": "お気に入り",
-	"TIDY5E.RemoveFav": "お気に入りから削除",
+  "TIDY5E.GridLayout": "グリッド",
+  "TIDY5E.ListLayout": "リスト",
 
-	"TIDY5E.ToggleInfo": "詳細表示",
+  "TIDY5E.Encumbrance": "荷重",
 
-	"TIDY5E.Show" : "表示/編集",
-	"TIDY5E.Hide" : "非表示",
-	"TIDY5E.Edit" : "編集",
-	"TIDY5E.TraitsEmpty" : "未設定の特徴",
+  "TIDY5E.EditSpell": "呪文編集",
+  "TIDY5E.DeleteSpell": "呪文削除",
+  "TIDY5E.AddFav": "お気に入り追加",
+  "TIDY5E.isFav": "お気に入り",
+  "TIDY5E.RemoveFav": "お気に入りから削除",
 
-	"TIDY5E.Abilities" : "能力",
+  "TIDY5E.ToggleInfo": "詳細表示",
 
-	"TIDY5E.Environment" : "環境",
+  "TIDY5E.Show": "表示/編集",
+  "TIDY5E.Hide": "非表示",
+  "TIDY5E.Edit": "編集",
+  "TIDY5E.TraitsEmpty": "未設定の特徴",
 
-	"TIDY5E.SearchItem" : "アイテム検索",
-	"TIDY5E.SearchSpell" : "呪文検索",
-	"TIDY5E.SearchFeat" : "特徴検索",
-	"TIDY5E.SearchClear" : "検索クリア",
-	"TIDY5E.SearchHint" : "検索……",
+  "TIDY5E.Abilities": "能力",
 
-	"TIDY5E.ItemCardsKeyHint" : "キーを押したままカードを操作",
-	"TIDY5E.ItemCardsMouseHint" : "マウスホイールボタン（中央）で、アイテムを表示/編集",
+  "TIDY5E.Environment": "環境",
 
-	"TIDY5E.AbbrMod" : "修正",
-	"TIDY5E.AbbrSavingThrow" : "セーヴ",
-	"TIDY5E.SpellAttackMod" : "攻撃修正",
-	"TIDY5E.PreparedSpells" : "準備済み呪文",
-	"TIDY5E.PreparedSpellsMax" : "準備済み呪文上限",
-	"TIDY5E.Components" : "構成要素",
-	"TIDY5E.SpellSchool" : "呪文の系統",
+  "TIDY5E.SearchItem": "アイテム検索",
+  "TIDY5E.SearchSpell": "呪文検索",
+  "TIDY5E.SearchFeat": "特徴検索",
+  "TIDY5E.SearchClear": "検索クリア",
+  "TIDY5E.SearchHint": "検索……",
 
-	"TIDY5E.TokenLinked" : "リンク中のトークン",
-	"TIDY5E.TokenUnlinked" : "未リンクのトークン",
-	
-	"TIDY5E.ItemDetailsHeadline" : "解説・背景",
+  "TIDY5E.ItemCardsKeyHint": "キーを押したままカードを操作",
+  "TIDY5E.ItemCardsMouseHint": "マウスホイールボタン（中央）で、アイテムを表示/編集",
 
-	"TIDY5E.Settings.GlobalLabel" : "全体",
-	"TIDY5E.Settings.DebugLabel" : "デバッグ",
-	"TIDY5E.Settings.UserLabel" : "ユーザー",
-	"TIDY5E.Settings.PcLabel" : "PC",
-	"TIDY5E.Settings.NpcLabel" : "NPC",
-	"TIDY5E.Settings.VehicleLabel" : "乗り物",
+  "TIDY5E.AbbrMod": "修正",
+  "TIDY5E.AbbrSavingThrow": "セーヴ",
+  "TIDY5E.SpellAttackMod": "攻撃修正",
+  "TIDY5E.PreparedSpells": "準備済み呪文",
+  "TIDY5E.PreparedSpellsMax": "準備済み呪文上限",
+  "TIDY5E.Components": "構成要素",
+  "TIDY5E.SpellSchool": "呪文の系統",
 
-	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "シート設定",
-		"title" : "Tidy5eシート設定"
-	},
-	"TIDY5E.Settings.TabPlayers" : {
-		"tabLabel" : "プレイヤー",
-		"header" : "プレイヤーキャラクターシート"
-	},
-	"TIDY5E.Settings.TabNPCsVehicles" : {
-		"tabLabel" : "NPC/乗物",
-		"header" : "NPC/乗物シート",
-		"labelNPCs" : "NPC",
-		"labelVehicles" : "乗物"
-	},
-	"TIDY5E.Settings.TabGM" : {
-		"tabLabel" : "GMオプション",
-		"header" : "GMｼｰﾄ･ｵﾌﾟｼｮﾝ"
-	},
-	"TIDY5E.Settings.TabModules" : {
-		"tabLabel" : "モジュール",
-		"header" : "モジュール･オプション",
-		"labelActionsFavorites" : "アクター･アクション/お気に入り",
-		"labelMidiQoL" : "Midi Qol"
-	},
-	"TIDY5E.Settings.TabInfo" : {
-		"tabLabel" : "情報",
-		"header" : "情報"
-	},
-	"TIDY5E.Settings.ItemCardsForAllItems" : {
-		"name" : "アイテム情報のカードをすべてのシートで表示するすべてのｼｰﾄでアイテム情報カード表示機能を使用",
-		"hint" : "アイテム情報をすべてのシートで表示する必要が無い場合は無効にしくてださい。(再読み込みが発生します)"
-	},
-	"TIDY5E.Settings.ItemCardsForNpcs" : {
-		"name" : "NPC/乗物のアイテム情報カードを表示",
-		"hint" : "NPC/乗物用のシートでアイテム情報カードが表示する必要が無い場合は無効にしてください。(再読み込みが発生します)"
-	},
-	"TIDY5E.Settings.ItemCardsAreFloating" : {
-		"name" : "アイテム情報カードをカーソル横に表示",
-		"hint" : "アイテム情報カードがカーソルの横に出現します。シートをオップアウト時に使用するのをお勧めします。遅延を設定しておくと便利です。(再読み込みが発生します)"
-	},
-	"TIDY5E.Settings.ItemCardsDelay" : {
-		"name" : "アイテム情報カードの表示遅延",
-		"hint" : "ミリ秒単位で指定した時間後にアイテムにカーソルを合わせたところに情報が出現します。（0:遅延なし、300:デフォルト）(再読み込みが発生します)"
-	},
-	"TIDY5E.Settings.ItemCardsFixKey" : {
-		"name" : "アイテム情報カード操作キー",
-		"hint" : "アイテムカードの操作に使用するキー（例：x）を入力します。ファンクションキー（Ctrl、Altなど）以外の任意のキーにすることができます。(再読み込みが発生します)"
-	},
+  "TIDY5E.TokenLinked": "リンク中のトークン",
+  "TIDY5E.TokenUnlinked": "未リンクのトークン",
 
+  "TIDY5E.ItemDetailsHeadline": "解説・背景",
 
-	"TIDY5E.Settings.SheetTheme" : {
-		"name" : "Tidy5eカラーテーマ",
-		"hint" : "Tidy5eシートのカラーテーマを、ライトカラーまたはダークカラーに設定します。",
-		"default": "ライトカラー",
-		"dark": "ダークカラー"
-	},
+  "TIDY5E.Settings.GlobalLabel": "全体",
+  "TIDY5E.Settings.DebugLabel": "デバッグ",
+  "TIDY5E.Settings.UserLabel": "ユーザー",
+  "TIDY5E.Settings.PcLabel": "PC",
+  "TIDY5E.Settings.NpcLabel": "NPC",
+  "TIDY5E.Settings.VehicleLabel": "乗り物",
 
-	"TIDY5E.Settings.ClassicControls" : {
-		"name" : "一覧表示で従来のアイテム操作を使用",
-		"hint" : "常にアイテム操作を表示し、右クリックメニューを無効にします。一覧表示でPCのアイテム/呪文インベントリにのみ適用されます。"
-	},
-	"TIDY5E.Settings.RollButtonsToCard" : {
-		"name" : "アイテム情報カードに、midiQolのアイテムボタンを表示",
-		"hint" : "デフォルトでは、ロールボタンにはアイテムの説明が表示されます。それらをアイテムを情報カードに移動できるようにします。すべてのレイアウトモードで動作します。"
-	},
-	"TIDY5E.Settings.TraitLabels" : {
-		"name" : "特徴ラベルの表示",
-		"hint" : "デフォルトでは、特徴アイコンのみが表示されます。ラベルも表示できるようにします。"
-	},
+  "TIDY5E.Settings.SheetMenu": {
+    "label": "シート設定",
+    "title": "Tidy5eシート設定"
+  },
+  "TIDY5E.Settings.TabPlayers": {
+    "tabLabel": "プレイヤー",
+    "header": "プレイヤーキャラクターシート"
+  },
+  "TIDY5E.Settings.TabNPCsVehicles": {
+    "tabLabel": "NPC/乗物",
+    "header": "NPC/乗物シート",
+    "labelNPCs": "NPC",
+    "labelVehicles": "乗物"
+  },
+  "TIDY5E.Settings.TabGM": {
+    "tabLabel": "GMオプション",
+    "header": "GMｼｰﾄ･ｵﾌﾟｼｮﾝ"
+  },
+  "TIDY5E.Settings.TabModules": {
+    "tabLabel": "モジュール",
+    "header": "モジュール･オプション",
+    "labelActionsFavorites": "アクター･アクション/お気に入り",
+    "labelMidiQoL": "Midi Qol"
+  },
+  "TIDY5E.Settings.TabInfo": {
+    "tabLabel": "情報",
+    "header": "情報"
+  },
+  "TIDY5E.Settings.ItemCardsForAllItems": {
+    "name": "アイテム情報のカードをすべてのシートで表示するすべてのｼｰﾄでアイテム情報カード表示機能を使用",
+    "hint": "アイテム情報をすべてのシートで表示する必要が無い場合は無効にしくてださい。(再読み込みが発生します)"
+  },
+  "TIDY5E.Settings.ItemCardsForNpcs": {
+    "name": "NPC/乗物のアイテム情報カードを表示",
+    "hint": "NPC/乗物用のシートでアイテム情報カードが表示する必要が無い場合は無効にしてください。(再読み込みが発生します)"
+  },
+  "TIDY5E.Settings.ItemCardsAreFloating": {
+    "name": "アイテム情報カードをカーソル横に表示",
+    "hint": "アイテム情報カードがカーソルの横に出現します。シートをオップアウト時に使用するのをお勧めします。遅延を設定しておくと便利です。(再読み込みが発生します)"
+  },
+  "TIDY5E.Settings.ItemCardsDelay": {
+    "name": "アイテム情報カードの表示遅延",
+    "hint": "ミリ秒単位で指定した時間後にアイテムにカーソルを合わせたところに情報が出現します。（0:遅延なし、300:デフォルト）(再読み込みが発生します)"
+  },
+  "TIDY5E.Settings.ItemCardsFixKey": {
+    "name": "アイテム情報カード操作キー",
+    "hint": "アイテムカードの操作に使用するキー（例：x）を入力します。ファンクションキー（Ctrl、Altなど）以外の任意のキーにすることができます。(再読み込みが発生します)"
+  },
 
+  "TIDY5E.Settings.SheetTheme": {
+    "name": "Tidy5eカラーテーマ",
+    "hint": "Tidy5eシートのカラーテーマを、ライトカラーまたはダークカラーに設定します。",
+    "default": "ライトカラー",
+    "dark": "ダークカラー"
+  },
 
-	"TIDY5E.Settings.PlayerName" : {
-		"name" : "プレイヤー名の表示",
-		"hint" : "キャラクターの名前の下に、プレイヤー名を表示します。"
-	},
-	"TIDY5E.Settings.JournalTab" : {
-		"name" : "シートの記録タブを非表示",
-		"hint" : "シート上の記録タブを非表示にする場合に有効にします。"
-	},
-	"TIDY5E.Settings.ClassList" : {
-		"name" : "クラス一覧を非表示",
-		"hint" : "キャラクター名の下のクラスリストを非表示にする場合に有効にします。"
-	},
-	"TIDY5E.Settings.InspirationAnimation" : {
-		"name" : "インスピレーションアニメ",
-		"hint" : "インスピレーションアイコンのアニメーションを無効化します。"
-	},
-	"TIDY5E.Settings.HideIfZero" : {
-		"name" : "消耗とインスピレーションが0の時､表示を隠す",
-		"hint" : "0の場合、消耗とインスピレーションは表示されなくなります。マウスカーソルを合わせたときだけ表示されます。"
-	},
-	"TIDY5E.Settings.InspirationOnHover" : {
-		"name" : "ﾏｳｽｵｰﾊﾞｰ時にｲﾝｽﾋﾟ表示",
-		"hint" : "画像の上にマウスカーソルを置いたときだけ、インスピレーションを表示します。"
-	},
-	"TIDY5E.Settings.ExhaustionOnHover" : {
-		"name" : "ﾏｳｽｵｰﾊﾞｰ時に消耗表示",
-		"hint" : "画像の上にマウスカーソルを置いたときだけ、消耗を表示します。"
-	},
-	"TIDY5E.Settings.HpBar" : {
-		"name" : "hpバーの無効化",
-		"hint" : "残りのhpを示す色付きのバーを非表示にします（hp数は引き続き表示されます）。"
-	},
-	"TIDY5E.Settings.HpOverlay" : {
-		"name" : "hpｵｰﾊﾞｰﾚｲを非表示",
-		"hint" : "アクターのhpが減少しても、画像が赤く塗りつぶされないようになります。"
-	},
-	"TIDY5E.Settings.TraitsTogglePc" : {
-		"name" : "空のｷｬﾗｸﾀｰ特徴の切替",
-		"hint" : "デフォルトでは、空の特徴は常に表示されます。"
-	},
-	"TIDY5E.Settings.TraitsMovedBelowResource" : {
-		"name" : "特徴をﾘｿｰｽの下に移動",
-		"hint" : "特徴を、技能の下 (左段)から、リソース下 (右段)に移動する場合に有効にします。"
-	},
-	"TIDY5E.Settings.AmmoEquippedOnly" : {
-		"name" : "装備済の矢弾のみ表示",
-		"hint" : "武器ごとに現在装備されている矢弾のみ表示するようにします。"
-	},
+  "TIDY5E.Settings.ClassicControls": {
+    "name": "一覧表示で従来のアイテム操作を使用",
+    "hint": "常にアイテム操作を表示し、右クリックメニューを無効にします。一覧表示でPCのアイテム/呪文インベントリにのみ適用されます。"
+  },
+  "TIDY5E.Settings.RollButtonsToCard": {
+    "name": "アイテム情報カードに、midiQolのアイテムボタンを表示",
+    "hint": "デフォルトでは、ロールボタンにはアイテムの説明が表示されます。それらをアイテムを情報カードに移動できるようにします。すべてのレイアウトモードで動作します。"
+  },
+  "TIDY5E.Settings.TraitLabels": {
+    "name": "特徴ラベルの表示",
+    "hint": "デフォルトでは、特徴アイコンのみが表示されます。ラベルも表示できるようにします。"
+  },
 
+  "TIDY5E.Settings.PlayerName": {
+    "name": "プレイヤー名の表示",
+    "hint": "キャラクターの名前の下に、プレイヤー名を表示します。"
+  },
+  "TIDY5E.Settings.JournalTab": {
+    "name": "シートの記録タブを非表示",
+    "hint": "シート上の記録タブを非表示にする場合に有効にします。"
+  },
+  "TIDY5E.Settings.ClassList": {
+    "name": "クラス一覧を非表示",
+    "hint": "キャラクター名の下のクラスリストを非表示にする場合に有効にします。"
+  },
+  "TIDY5E.Settings.InspirationAnimation": {
+    "name": "インスピレーションアニメ",
+    "hint": "インスピレーションアイコンのアニメーションを無効化します。"
+  },
+  "TIDY5E.Settings.HideIfZero": {
+    "name": "消耗とインスピレーションが0の時､表示を隠す",
+    "hint": "0の場合、消耗とインスピレーションは表示されなくなります。マウスカーソルを合わせたときだけ表示されます。"
+  },
+  "TIDY5E.Settings.InspirationOnHover": {
+    "name": "ﾏｳｽｵｰﾊﾞｰ時にｲﾝｽﾋﾟ表示",
+    "hint": "画像の上にマウスカーソルを置いたときだけ、インスピレーションを表示します。"
+  },
+  "TIDY5E.Settings.ExhaustionOnHover": {
+    "name": "ﾏｳｽｵｰﾊﾞｰ時に消耗表示",
+    "hint": "画像の上にマウスカーソルを置いたときだけ、消耗を表示します。"
+  },
+  "TIDY5E.Settings.HpBar": {
+    "name": "hpバーの無効化",
+    "hint": "残りのhpを示す色付きのバーを非表示にします（hp数は引き続き表示されます）。"
+  },
+  "TIDY5E.Settings.HpOverlay": {
+    "name": "hpｵｰﾊﾞｰﾚｲを非表示",
+    "hint": "アクターのhpが減少しても、画像が赤く塗りつぶされないようになります。"
+  },
+  "TIDY5E.Settings.TraitsTogglePc": {
+    "name": "空のｷｬﾗｸﾀｰ特徴の切替",
+    "hint": "デフォルトでは、空の特徴は常に表示されます。"
+  },
+  "TIDY5E.Settings.TraitsMovedBelowResource": {
+    "name": "特徴をﾘｿｰｽの下に移動",
+    "hint": "特徴を、技能の下 (左段)から、リソース下 (右段)に移動する場合に有効にします。"
+  },
+  "TIDY5E.Settings.AmmoEquippedOnly": {
+    "name": "装備済の矢弾のみ表示",
+    "hint": "武器ごとに現在装備されている矢弾のみ表示するようにします。"
+  },
 
-	"TIDY5E.Settings.TraitsAlwaysShown" : {
-		"name" : "常に特徴を表示",
-		"hint" : "デフォルトでは、空の特徴はトグルボタンで非表示になります。"
-	},
-	"TIDY5E.Settings.SkillsAlwaysShown" : {
-		"name" : "常に技能を表示",
-		"hint" : "デフォルトでは、技能が無効な場合はトグルボタンで表示されます。"
-	},
+  "TIDY5E.Settings.TraitsAlwaysShown": {
+    "name": "常に特徴を表示",
+    "hint": "デフォルトでは、空の特徴はトグルボタンで非表示になります。"
+  },
+  "TIDY5E.Settings.SkillsAlwaysShown": {
+    "name": "常に技能を表示",
+    "hint": "デフォルトでは、技能が無効な場合はトグルボタンで表示されます。"
+  },
 
-	
-	"TIDY5E.Settings.ActiveEffectsMarker" : {
-		"name" : "アイテムに有効な効果を示すマーカーを表示",
-		"hint" : "有効な効果を持っているアイテムにマーカーを付けて、判別できるようにする場合は有効にします（リスト表示の場合のみ）。"
-	},
-	"TIDY5E.Settings.RightClick" : {
-		"name" : "右ｸﾘｯｸﾒﾆｭｰの表示を無効化",
-		"hint" : "モジュールが競合する場合など、右クリックによるメニュー表示を無効にすることができます。項目には、代わりにメニューアイコンが表示されます。"
-	},
-	"TIDY5E.Settings.ExpandedSheet" : {
-		"name" : "リミテッド･シートの拡大表示",
-		"hint" : "リミテッド･シートの表示について、そのアクターに対して限定的(Limited)権限を持つプレイヤーに、キャラクターシートの全て（[効果],[記録]を除く）を表示します。"
-	},
-	"TIDY5E.Settings.PortraitStyle" : {
-		"name" : "PCシート：シートに円形画像を使用",
-		"hint" : "アクターの円形画像/アイコンを有効にする場合に選択します。",
-		"all": "全てのアクター",
-		"pc": "PCのみ",
-		"npc": "NPC/乗り物 のみ",
-		"none": "－",
-		"default": "なし"
-	},
-	"TIDY5E.Settings.HpOverlayBorder" : {
-		"name" : "オフセットhpｵｰﾊﾞｰﾚｲ",
-		"hint" : "オフセット値を入力して、hp減少時に赤く塗りつぶす際、画像の外側に塗りつぶし禁止範囲を設けます。"
-	},
-	"TIDY5E.Settings.EditTotalLock" : {
-		"name" : "誤操作による変更をロック",
-		"hint" : "表記上ほとんど変わることがない値を、誤操作で変更されるのを防ぐことができます。"
-	},
-	"TIDY5E.Settings.EditGmAlways" : {
-		"name" : "GM権限でPCｼｰﾄを編集可能",
-		"hint" : "有効にすると、シートロックを切替せずに、PCシートをGMが編集できるようになります。"
-	},
-	"TIDY5E.Settings.EditEffectsGmOnly" : {
-		"name" : "GMだけが有効化された効果を編集可能",
-		"hint" : "プレイヤーによる、自身のシート上にある有効化された効果の編集を禁止します。GM以外は適用されている効果の確認ができます。"
-	},
-	"TIDY5E.Settings.QuantityAlwaysShown" : {
-		"name" : "常にアイテム数量を表示する",
-		"hint" : "アイテム数量を常に表示にします。"
-	},
-	"TIDY5E.Settings.InspirationDisabled" : {
-		"name" : "インスピレーション表示の無効化",
-		"hint" : "キャンペーンでインスピレーションを使用しない場合､完全に無効化することができます。"
-	},
-	"TIDY5E.Settings.ExhaustionEffects" : {
-		"name" : "自動消耗効果",
-		"hint" : "消耗レベルに対応した消耗効果を適用する方法を選択します（不利ロールのため要midiQol）",
-		"default" : "自動消耗効果なし",
-		"tidy5e" : "tidy 5e  - DnD5e標準の効果を適用（有効な効果を使用）",
-		"custom" : "カスタム - あなた自身で効果を適用（要CUB）"
-	},
-	"TIDY5E.Settings.CustomExhaustionIcon" : {
-		"name" : "カスタム消耗効果アイコン",
-		"hint" : "画像のURL（例：modules/tidy5e-sheet/images/exhaustion.svg）を指定して、カスタムされた消耗効果アイコンを設定します。枯渇効果が \"tidy 5e\" に設定されている場合にのみ利用可能です。"
-	},
-	"TIDY5E.Settings.CustomExhaustionEffect" : {
-		"name" : "カスタムCUB消耗効果名",
-		"hint" : "カスタムされた消耗効果の名前を設定します - CUBで定義されている、消耗レベル表記を抜いた名前と同一でなければなりません。 (例：\"Exhaustion\")",
-		"tiers": "カスタムCUBの消耗レベル数。デフォルトは 5",
-		"warning": "消耗効果を適用するためのアクタートークンが見つかりません！"
-	},
-	"TIDY5E.Settings.ExhaustionDisabled" : {
-		"name" : "消耗を無効化",
-		"hint" : "キャンペーンで消耗を使用しない場合､完全に無効化することができます。"
-	},
-	"TIDY5E.Settings.RestingForNpcs" : {
-		"name" : "NPCの休憩",
-		"hint" : "NPCシートのアイコン/ボタンに残り回数を表示します。"
-	},
-	"TIDY5E.Settings.RestingForNpcsChat" : {
-		"name" : "NPCの休憩チャットカードを隠す",
-		"hint" : "NPCの休憩チャットカードを非表示にする（GMとプレイヤーに適用されます）。"
-	},
-	"TIDY5E.Settings.LinkMarker" : {
-		"name" : "関連付けされたNPCをﾏｰｷﾝｸﾞ",
-		"hint" : "関連付けされた、または、されてないNPCシートに、色付きの境界線とアイコンを追加します。",
-		"default": "関連付けマーカーなし (デフォルト)",
-		"unlinked": "関連付けされてないシートを強調表示",
-		"linked": "関連付けされたトークンを強調表示",
-		"both": "トークンを全て強調表示"
-	},
-	"TIDY5E.Settings.DefaultActionsTab" : {
-		"name" : "初めてシートを開くときのデフォルトタブ",
-		"hint" : "「アクション」または「能力値」を選択します。",
-		"default": "アクション",
-		"attributes": "能力値"
-	},
-	"TIDY5E.Settings.HiddenDeathSaves" : {
-		"name" : "PLから死亡セーヴを隠す",
-		"hint" : "有効化することで死亡セーヴの結果をGMのみ表示します。"
-	},
-	"TIDY5E.Settings.npsSheetWidth" : {
-		"name" : "デフォルトNPCシート幅",
-		"hint" : "NPCシートの長さ（ピクセル単位）。再起動が必要です。"
-	},
-	"TIDY5E.Settings.playerSheetWidth" : {
-		"name" : "デフォルトPCシート幅",
-		"hint" : "PCシートの長さ（ピクセル単位）。再起動が必要です。"
-	},
-	"TIDY5E.Settings.vehicleSheetWidth" : {
-		"name" : "乗り物シート幅",
-		"hint" : "乗り物シートの長さ（ピクセル単位）。再起動が必要です。"
-	},
-	"Save Changes" : "保存"
+  "TIDY5E.Settings.ActiveEffectsMarker": {
+    "name": "アイテムに有効な効果を示すマーカーを表示",
+    "hint": "有効な効果を持っているアイテムにマーカーを付けて、判別できるようにする場合は有効にします（リスト表示の場合のみ）。"
+  },
+  "TIDY5E.Settings.RightClick": {
+    "name": "右ｸﾘｯｸﾒﾆｭｰの表示を無効化",
+    "hint": "モジュールが競合する場合など、右クリックによるメニュー表示を無効にすることができます。項目には、代わりにメニューアイコンが表示されます。"
+  },
+  "TIDY5E.Settings.ExpandedSheet": {
+    "name": "リミテッド･シートの拡大表示",
+    "hint": "リミテッド･シートの表示について、そのアクターに対して限定的(Limited)権限を持つプレイヤーに、キャラクターシートの全て（[効果],[記録]を除く）を表示します。"
+  },
+  "TIDY5E.Settings.PortraitStyle": {
+    "name": "PCシート：シートに円形画像を使用",
+    "hint": "アクターの円形画像/アイコンを有効にする場合に選択します。",
+    "all": "全てのアクター",
+    "pc": "PCのみ",
+    "npc": "NPC/乗り物 のみ",
+    "none": "－",
+    "default": "なし"
+  },
+  "TIDY5E.Settings.HpOverlayBorder": {
+    "name": "オフセットhpｵｰﾊﾞｰﾚｲ",
+    "hint": "オフセット値を入力して、hp減少時に赤く塗りつぶす際、画像の外側に塗りつぶし禁止範囲を設けます。"
+  },
+  "TIDY5E.Settings.EditTotalLock": {
+    "name": "誤操作による変更をロック",
+    "hint": "表記上ほとんど変わることがない値を、誤操作で変更されるのを防ぐことができます。"
+  },
+  "TIDY5E.Settings.EditGmAlways": {
+    "name": "GM権限でPCｼｰﾄを編集可能",
+    "hint": "有効にすると、シートロックを切替せずに、PCシートをGMが編集できるようになります。"
+  },
+  "TIDY5E.Settings.EditEffectsGmOnly": {
+    "name": "GMだけが有効化された効果を編集可能",
+    "hint": "プレイヤーによる、自身のシート上にある有効化された効果の編集を禁止します。GM以外は適用されている効果の確認ができます。"
+  },
+  "TIDY5E.Settings.QuantityAlwaysShown": {
+    "name": "常にアイテム数量を表示する",
+    "hint": "アイテム数量を常に表示にします。"
+  },
+  "TIDY5E.Settings.InspirationDisabled": {
+    "name": "インスピレーション表示の無効化",
+    "hint": "キャンペーンでインスピレーションを使用しない場合､完全に無効化することができます。"
+  },
+  "TIDY5E.Settings.ExhaustionEffects": {
+    "name": "自動消耗効果",
+    "hint": "消耗レベルに対応した消耗効果を適用する方法を選択します（不利ロールのため要midiQol）",
+    "default": "自動消耗効果なし",
+    "tidy5e": "tidy 5e  - DnD5e標準の効果を適用（有効な効果を使用）",
+    "custom": "カスタム - あなた自身で効果を適用（要CUB）"
+  },
+  "TIDY5E.Settings.CustomExhaustionIcon": {
+    "name": "カスタム消耗効果アイコン",
+    "hint": "画像のURL（例：modules/tidy5e-sheet/images/exhaustion.svg）を指定して、カスタムされた消耗効果アイコンを設定します。枯渇効果が \"tidy 5e\" に設定されている場合にのみ利用可能です。"
+  },
+  "TIDY5E.Settings.CustomExhaustionEffect": {
+    "name": "カスタムCUB消耗効果名",
+    "hint": "カスタムされた消耗効果の名前を設定します - CUBで定義されている、消耗レベル表記を抜いた名前と同一でなければなりません。 (例：\"Exhaustion\")",
+    "tiers": "カスタムCUBの消耗レベル数。デフォルトは 5",
+    "warning": "消耗効果を適用するためのアクタートークンが見つかりません！"
+  },
+  "TIDY5E.Settings.ExhaustionDisabled": {
+    "name": "消耗を無効化",
+    "hint": "キャンペーンで消耗を使用しない場合､完全に無効化することができます。"
+  },
+  "TIDY5E.Settings.RestingForNpcs": {
+    "name": "NPCの休憩",
+    "hint": "NPCシートのアイコン/ボタンに残り回数を表示します。"
+  },
+  "TIDY5E.Settings.RestingForNpcsChat": {
+    "name": "NPCの休憩チャットカードを隠す",
+    "hint": "NPCの休憩チャットカードを非表示にする（GMとプレイヤーに適用されます）。"
+  },
+  "TIDY5E.Settings.LinkMarker": {
+    "name": "関連付けされたNPCをﾏｰｷﾝｸﾞ",
+    "hint": "関連付けされた、または、されてないNPCシートに、色付きの境界線とアイコンを追加します。",
+    "default": "関連付けマーカーなし (デフォルト)",
+    "unlinked": "関連付けされてないシートを強調表示",
+    "linked": "関連付けされたトークンを強調表示",
+    "both": "トークンを全て強調表示"
+  },
+  "TIDY5E.Settings.DefaultActionsTab": {
+    "name": "初めてシートを開くときのデフォルトタブ",
+    "hint": "「アクション」または「能力値」を選択します。",
+    "default": "アクション",
+    "attributes": "能力値"
+  },
+  "TIDY5E.Settings.HiddenDeathSaves": {
+    "name": "PLから死亡セーヴを隠す",
+    "hint": "有効化することで死亡セーヴの結果をGMのみ表示します。"
+  },
+  "TIDY5E.Settings.npsSheetWidth": {
+    "name": "デフォルトNPCシート幅",
+    "hint": "NPCシートの長さ（ピクセル単位）。再起動が必要です。"
+  },
+  "TIDY5E.Settings.playerSheetWidth": {
+    "name": "デフォルトPCシート幅",
+    "hint": "PCシートの長さ（ピクセル単位）。再起動が必要です。"
+  },
+  "TIDY5E.Settings.vehicleSheetWidth": {
+    "name": "乗り物シート幅",
+    "hint": "乗り物シートの長さ（ピクセル単位）。再起動が必要です。"
+  },
+  "Save Changes": "保存"
 }

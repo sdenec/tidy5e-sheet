@@ -26,6 +26,11 @@
   --checkbox-outline: rgba(50, 50, 50, 1);
   --checkbox-unchecked: rgba(75, 75, 75, 1);
   --checkbox-checked: rgba(0, 255, 0, 0.5);
+  --color-bg-option: rgb(100 100 100);
+}
+.system-dnd5e.tidy5eDark .prosemirror {
+  --color-control-bg: rgb(50 50 50);
+  --color-hover-bg: rgb(20 20 20);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .tidy5e-sheet {
@@ -44,6 +49,7 @@
   background: var(--background);
 }
 .tidy5eDark .tidy5e.sheet.actor a.entity-link,
+.tidy5eDark .tidy5e.sheet.actor a.content-link,
 .tidy5eDark .tidy5e.sheet.actor a.inline-roll {
   color: var(--primary-font);
   background: var(--faint-color);
@@ -81,6 +87,9 @@
 .tidy5eDark .tidy5e.sheet.item .tab.advancement .items-list .item .item-name .item-image {
   -webkit-filter: invert(1);
           filter: invert(1);
+}
+.tidy5eDark .tidy5e.sheet.item .tab.effects h3 {
+  border: none;
 }
 .tidy5eDark .tidy5e.sheet.item input {
   color: var(--primary-font);
