@@ -492,9 +492,12 @@ async function toggleItemMode(app, html, data) {
     ev.preventDefault();
     let itemId = ev.currentTarget.closest(".item").dataset.itemId;
     let item = app.actor.items.get(itemId);
+    console.log(item.type);
     let attr =
       item.type === "spell" ? "system.preparation.prepared" : "system.equipped";
-    return item.update({ [attr]: !getProperty(item.system, attr) });
+    if (item.type !== "feat") {
+      return item.update({ [attr]: !foundry.utils.getProperty(item, attr) });
+    }
   });
 }
 

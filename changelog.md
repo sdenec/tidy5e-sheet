@@ -16,6 +16,13 @@ Thank you very much!
 
 ## Version History
 
+### Version 0.6.6
+
+- attack mod calculation fix
+- item sheet images can be shared to players
+- dark mode color fixes
+- nps can now toggle equip/unequip via right click
+
 ### Version 0.6.5
 
 - spell attack mod fix

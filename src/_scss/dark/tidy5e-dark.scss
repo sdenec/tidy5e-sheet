@@ -40,6 +40,12 @@
   --checkbox-outline: rgba(50, 50, 50, 1);
   --checkbox-unchecked: rgba(75, 75, 75, 1);
   --checkbox-checked: rgba(0, 255, 0, 0.5);
+
+  --color-bg-option: rgb(100 100 100);
+  .prosemirror {
+    --color-control-bg: rgb(50 50 50);
+    --color-hover-bg: rgb(20 20 20);
+  }
 } //.tidy5eDark
 
 .tidy5eDark {
@@ -65,6 +71,7 @@
     }
 
     a.entity-link,
+    a.content-link,
     a.inline-roll {
       color: var(--primary-font);
       background: var(--faint-color);
@@ -112,6 +119,12 @@
         .item-image {
           filter: invert(1);
         }
+      }
+    }
+
+    .tab.effects {
+      h3 {
+        border: none;
       }
     }
 
