@@ -42,7 +42,7 @@
 
   .item-info-container-background {
     font-size: 150px;
-    color: var(--faintest-color);
+    color: var(--t5s-faintest-color);
     position: absolute;
     top: 0;
     left: 0;
@@ -59,20 +59,20 @@
     display: flex;
     height: 100%;
     flex-direction: column;
-    border-right: 1px solid var(--light-color);
+    border-right: 1px solid var(--t5s-light-color);
   }
 
   .info-card-hint {
     width: 279px;
     font-size: 12px;
-    border-top: 1px solid var(--faint-color);
+    border-top: 1px solid var(--t5s-faint-color);
     padding: 4px 8px 0 8px;
     font-style: italic;
 
     .key {
       display: inline-block;
-      background: var(--primary-font);
-      color: var(--background);
+      background: var(--t5s-primary-font);
+      color: var(--t5s-background);
       border-radius: 3px;
       font-style: normal;
       padding: 0 4px;
@@ -99,23 +99,23 @@
 
     &.equipped,
     &.prepared {
-      background: var(--prepared);
-      background: linear-gradient(180deg, var(--prepared) 0px, var(--prepared) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--prepared) inset;
+      background: var(--t5s-prepared);
+      background: linear-gradient(180deg, var(--t5s-prepared) 0px, var(--t5s-prepared) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5s-prepared) inset;
     }
 
     &.alwaysPrepared {
-      background: var(--always-prepared);
-      background: linear-gradient(180deg, var(--always-prepared) 0px, var(--always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--prepared) inset;
+      background: var(--t5s-always-prepared);
+      background: linear-gradient(180deg, var(--t5s-always-prepared) 0px, var(--t5s-always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5s-prepared) inset;
     }
 
     &.magic-item {
-      box-shadow: 0 0 6px 2px var(--magic-accent) inset;
+      box-shadow: 0 0 6px 2px var(--t5s-magic-accent) inset;
     }
 
     .info-card-name {
-      font-family: var(--modesto);
+      font-family: var(--t5s-modesto);
       font-size: 24px;
       margin: 0 0 4px 0;
       line-height: 1;
@@ -136,7 +136,7 @@
       font-size: 12px;
       display: flex;
       justify-content: space-between;
-      border-top: 1px solid var(--faint-color);
+      border-top: 1px solid var(--t5s-faint-color);
 
       span {
         padding: 4px 0;
@@ -160,8 +160,8 @@
       flex: 1;
       overflow: hidden;
       padding: 6px 0;
-      border-top: 2px solid var(--light-color);
-      border-bottom: 2px solid var(--light-color);
+      border-top: 2px solid var(--t5s-light-color);
+      border-bottom: 2px solid var(--t5s-light-color);
     }
 
     .info-card-description {
@@ -216,14 +216,14 @@
         gap: 2px;
         margin-top: 4px;
         padding-top: 4px;
-        border-top: 1px solid var(--light-color);
+        border-top: 1px solid var(--t5s-light-color);
 
         .button {
-          background: var(--secondary-color);
+          background: var(--t5s-secondary-color);
           font-size: 12px;
           padding: 2px 4px 1px 4px;
           border-radius: 3px;
-          color: var(--background);
+          color: var(--t5s-background);
         }
       }
     }

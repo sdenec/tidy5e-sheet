@@ -2,11 +2,11 @@
   min-width: 690px;
 
   .linked {
-    box-shadow: 0 0 4px 2px var(--linked-accent) inset;
+    box-shadow: 0 0 4px 2px var(--t5s-linked-accent) inset;
   }
 
   .unlinked {
-    box-shadow: 0 0 4px 2px var(--unlinked-accent) inset;
+    box-shadow: 0 0 4px 2px var(--t5s-unlinked-accent) inset;
   }
 
   .link-state {
@@ -18,12 +18,12 @@
 
   .linked .link-state.fa-link {
     display: inline-block;
-    background: var(--linked-light);
+    background: var(--t5s-linked-light);
   }
 
   .unlinked .link-state.fa-unlink {
     display: inline-block;
-    background: var(--unlinked-light);
+    background: var(--t5s-unlinked-light);
   }
 
   .profile-wrap {
@@ -49,15 +49,15 @@
           border-radius: 50%;
           cursor: pointer;
           border: none;
-          color: var(--tertiary-color);
+          color: var(--t5s-tertiary-color);
           padding: 0;
           font-size: 12px;
           line-height: 18px;
-          font-family: var(--signika);
+          font-family: var(--t5s-signika);
           font-weight: 700;
 
           &:hover {
-            color: var(--primary-font);
+            color: var(--t5s-primary-font);
           }
         }
 
@@ -68,13 +68,13 @@
           margin-right: 8px;
           border-radius: 0;
           font-size: 12px;
-          color: var(--primary-font);
+          color: var(--t5s-primary-font);
         }
       }
     }
 
     .profile .hp-overlay-wrapper::before {
-      border-width: var(--npc-border);
+      border-width: var(--t5s-npc-border);
     }
 
     .profile.roundPortrait .rest-container {
@@ -117,9 +117,9 @@
       }
 
       .formula-edit {
-        background: var(--icon-background);
-        box-shadow: 0 0 10px var(--icon-shadow) inset;
-        border: 1px solid var(--icon-outline);
+        background: var(--t5s-icon-background);
+        box-shadow: 0 0 10px var(--t5s-icon-shadow) inset;
+        border: 1px solid var(--t5s-icon-outline);
         display: none;
         justify-content: center;
         align-items: center;
@@ -152,25 +152,25 @@
   .level-information {
     flex-direction: row;
     align-items: center;
-    font-family: var(--modesto);
+    font-family: var(--t5s-modesto);
     font-weight: 700;
 
     .xp {
       font-size: 16px;
       margin-right: 4px;
-      color: var(--secondary-color);
+      color: var(--t5s-secondary-color);
     }
 
     .level {
       [contenteditable] {
-        color: var(--secondary-color);
+        color: var(--t5s-secondary-color);
       }
     }
   }
 
   .origin-summary {
     .creature-type .config-button:hover {
-      color: var(--primary-accent);
+      color: var(--t5s-primary-accent);
     }
 
     .environment {
@@ -239,7 +239,7 @@
 
     .features {
       flex: 0;
-      border-bottom: 1px solid var(--light-color);
+      border-bottom: 1px solid var(--t5s-light-color);
       margin-bottom: 4px;
     }
 
@@ -259,7 +259,7 @@
     padding: 0;
     margin: 0 0 8px 0;
     border-bottom: none;
-    border: 1px solid var(--faint-color);
+    border: 1px solid var(--t5s-faint-color);
     border-radius: 5px;
 
     .counter {
@@ -322,12 +322,12 @@
       left: 50%;
       transform: translate(-50%, 0);
       font-size: 10px;
-      border: 1px solid var(--faint-color);
+      border: 1px solid var(--t5s-faint-color);
       border-top: none;
       padding: 2px 8px;
       border-radius: 0 0 5px 5px;
       cursor: pointer;
-      color: var(--secondary-color);
+      color: var(--t5s-secondary-color);
       white-space: nowrap;
     }
 
@@ -336,7 +336,7 @@
     }
 
     .toggle-proficient:hover {
-      color: var(--primary-font);
+      color: var(--t5s-primary-font);
     }
 
     &.expanded .toggle-proficient::before {
@@ -435,12 +435,12 @@
     .spell-dc {
       flex: 1;
       font-size: 20px;
-      font-family: var(--modesto);
+      font-family: var(--t5s-modesto);
     }
 
     select {
       flex: 0 0 90px;
-      font-family: var(--signika);
+      font-family: var(--t5s-signika);
     }
 
     input {
@@ -463,10 +463,10 @@
     padding: 0 4px 2px 0;
     margin: 4px 0;
     line-height: 1;
-    border: 1px solid var(--light-color);
+    border: 1px solid var(--t5s-light-color);
     border-left: none;
     border-right: none;
-    font-family: var(--modesto);
+    font-family: var(--t5s-modesto);
     font-weight: 700;
     font-size: 18px;
 
@@ -504,14 +504,14 @@
 
   .toggle-personality-info {
     padding: 20px 4px;
-    background: var(--faint-color);
+    background: var(--t5s-faint-color);
     border-radius: 3px;
     margin-right: 4px;
-    color: var(--tertiary-color);
+    color: var(--t5s-tertiary-color);
     cursor: pointer;
 
     &:hover {
-      color: var(--secondary-color);
+      color: var(--t5s-secondary-color);
     }
   }
 }

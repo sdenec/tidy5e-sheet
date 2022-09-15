@@ -6,8 +6,8 @@
 		font-size: 12px;
 		line-height: 15px;
 		font-weight: 600;
-		background: var(--warning-accent);
-		color: var(--secondary-color);
+		background: var(--t5s-warning-accent);
+		color: var(--t5s-secondary-color);
 		border-radius: 3px;
 	}
 
@@ -23,7 +23,7 @@
 	.header-attribute .value,
 	.ability-name,
 	.attribute-value {
-		font-family: var(--modesto);
+		font-family: var(--t5s-modesto);
 	}
 
 	// general elements
@@ -34,7 +34,7 @@
 
 	.rollable:hover {
 		text-shadow: none;
-	  color: var(--primary-accent);
+	  color: var(--t5s-primary-accent);
 	}
 
 	[contenteditable] {
@@ -51,7 +51,7 @@
 		  content: attr(data-placeholder);
 		  pointer-events: none;
 		  display: block; // For Firefox
-		  color: var(--tertiary-color);
+		  color: var(--t5s-tertiary-color);
 		}
 	}
 
@@ -83,21 +83,21 @@
 	select {
 		cursor: pointer;
 		box-shadow: none;
-		color: var(--primary-font);
+		color: var(--t5s-primary-font);
 	}
 	 
 	[contenteditable],
 	input[type="text"]{
 		box-shadow: 0px 0px 0 3px transparent inset;
 		transition: box-shadow .3s ease;
-		color: var(--primary-font);
+		color: var(--t5s-primary-font);
 	}
 
 	[contenteditable=true]:hover,
 	[contenteditable=true]:focus,
 	input[type="text"]:hover,
 	input[type="text"]:focus {
-		box-shadow: 0px 0px 0px 1px var(--primary-accent) inset;
+		box-shadow: 0px 0px 0px 1px var(--t5s-primary-accent) inset;
 	}
 
 	input[disabled],
@@ -111,12 +111,12 @@
 	}
 
 	input[type="text"]::placeholder {
-	  color: var(--tertiary-color);
+	  color: var(--t5s-tertiary-color);
 	}
 
 	button:hover,
 	select:hover {
-		background: var(--faint-color);
+		background: var(--t5s-faint-color);
 	}
 
 	ul {

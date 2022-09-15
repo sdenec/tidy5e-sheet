@@ -35,11 +35,11 @@
 			height: 50px;
 			position: relative;
 			margin: 3px;
-    	box-shadow: 0 0 1px 1px var(--light-color);
+    	box-shadow: 0 0 1px 1px var(--t5s-light-color);
 			border-radius: 5px;
 
 			&.context {
-				border: 1px solid var(--primary-accent);
+				border: 1px solid var(--t5s-primary-accent);
 			}
 
 			.icon-attuned {
@@ -48,19 +48,19 @@
 		    display: flex;
 		    justify-content: center;
 		    align-items: center;
-		    color: var(--icon-attuned);
+		    color: var(--t5s-icon-attuned);
 		    width: 13px;
 		    height: 13px;
-		    background: var(--magic-accent);
+		    background: var(--t5s-magic-accent);
 		    position: absolute;
 		    top: -1px;
 		    right: -1px;
 		    border-radius: 50%;
-		    box-shadow: 0 0 3px 1px var(--magic-accent);
+		    box-shadow: 0 0 3px 1px var(--t5s-magic-accent);
 
 		    &.not-attuned {
-		    	background: var(--attunement-required);
-		    	box-shadow: 0 0 3px 1px var(--attunement-required);
+		    	background: var(--t5s-attunement-required);
+		    	box-shadow: 0 0 3px 1px var(--t5s-attunement-required);
 		    }
 			}//.icon-attuned
 
@@ -69,43 +69,43 @@
 		    top: -2px;
 		    left: 4px;
 		    color: rgba(0,200,100,1);
-		    text-shadow: 0 0px 2px var(--primary-color);
+		    text-shadow: 0 0px 2px var(--t5s-primary-color);
 		    font-size: 10px;
 			}
 
 			&.preparable .item-image {
-				box-shadow: 0 0 0 2px inset var(--prepareable);
+				box-shadow: 0 0 0 2px inset var(--t5s-prepareable);
     		border-radius: 5px;
 			}
 
 			&.equipped,
 			&.prepared {
-				box-shadow: 0 0 0 2px var(--prepared-outline);
+				box-shadow: 0 0 0 2px var(--t5s-prepared-outline);
 			}
 
 			&.prepared.alwaysPrepared {
-				box-shadow: 0 0 0 2px var(--always-prepared-outline);
+				box-shadow: 0 0 0 2px var(--t5s-always-prepared-outline);
 			}
 
 			&.equipped .item-image,
 			&.prepared .item-image {
-    		box-shadow: 0 0 1px 1px inset var(--prepared-accent);
+    		box-shadow: 0 0 1px 1px inset var(--t5s-prepared-accent);
 				border-radius: 5px;
 			}
 
 			&.prepared.alwaysPrepared .item-image {
-    		box-shadow: 0 0 1px 1px inset var(--always-prepared-accent);
+    		box-shadow: 0 0 1px 1px inset var(--t5s-always-prepared-accent);
 			}
 
 			&.magic-item {
 				.item-image {
-					box-shadow: 0 0 0 1px var(--magic-accent) inset, 0 0 3px 2px var(--magic-accent) inset;
+					box-shadow: 0 0 0 1px var(--t5s-magic-accent) inset, 0 0 3px 2px var(--t5s-magic-accent) inset;
     			border-radius: 5px;
 				}
 
 				&.equipped .item-image {
 					background-image: url('systems/dnd5e/icons/items/inventory/pearl.jpg');
-			    box-shadow: 0 0 0px 1px var(--magic-outline) inset, 0 0 0 1px var(--magic-accent) inset, 0 0 3px 2px var(--magic-accent) inset;
+			    box-shadow: 0 0 0px 1px var(--t5s-magic-outline) inset, 0 0 0 1px var(--t5s-magic-accent) inset, 0 0 3px 2px var(--t5s-magic-accent) inset;
 			    border: none;
 				}
 			}//.magic-items
@@ -131,13 +131,13 @@
 				.item-charges {
 			    border: none;
 			    font-size: 12px;
-			    color: var(--stat-font);
+			    color: var(--t5s-stat-font);
 			    float: right;
 
 					input {
 						height: 14px;
 				    text-shadow: 0 0 5px rgba(0,0,0,1);
-				    color: var(--stat-font);
+				    color: var(--t5s-stat-font);
 				    text-align: right;
 				    min-width: 0;
 				    width: 16px;
@@ -179,12 +179,12 @@
 				top: 0%;
 				left: 50%;
 				transform: translate(-50%, -5px) rotate(-90deg);
-				background: var(--background);
-				border-right: 1px solid var(--light-color);
+				background: var(--t5s-background);
+				border-right: 1px solid var(--t5s-light-color);
 				width: 14px;
 				height: 20px;
 				border-radius: 3px 0 0 3px;
-				box-shadow: -1px 0 3px var(--secondary-color);
+				box-shadow: -1px 0 3px var(--t5s-secondary-color);
 				z-index: 1;
 			}
 
@@ -202,7 +202,7 @@
 			}
 
 			&:not(.context) .item-name:hover .item-image:hover i {
-				color: var(--primary-font);
+				color: var(--t5s-primary-font);
 			}
 
 			
@@ -220,10 +220,10 @@
 				white-space: nowrap;
 				height: 100%;
 				font-size: 24px;
-				color: var(--faint-color);
+				color: var(--t5s-faint-color);
 
 				&:hover {
-					color: var(--tertiary-color);
+					color: var(--t5s-tertiary-color);
 				}
 			}
 		}//.items-footer

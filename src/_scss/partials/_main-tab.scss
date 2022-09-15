@@ -9,7 +9,7 @@
 	// Skill List
 
 	.skills-list {
-	  border: 1px solid var(--faint-color);
+	  border: 1px solid var(--t5s-faint-color);
 	  border-radius: 5px;
 	  overflow: visible;
 	  padding: 0;
@@ -29,7 +29,7 @@
 		  flex-wrap: nowrap;
 
 			&:nth-child(even) {
-				background: var(--faint-color);
+				background: var(--t5s-faint-color);
 			}
 
 			.skill-name {
@@ -45,9 +45,9 @@
 			.config-button {
 				font-size: 10px;
 				margin-right: 4px;
-				color: var(--tertiary-color);
+				color: var(--t5s-tertiary-color);
 				&:hover {
-					color: var(--primary-color);
+					color: var(--t5s-primary-color);
 				}
 			}
 
@@ -57,10 +57,10 @@
 
 			.skill-proficiency {
 				font-size: 10px;
-				color: var(--tertiary-color);
+				color: var(--t5s-tertiary-color);
 
 				&:hover {
-					color: var(--primary-font);
+					color: var(--t5s-primary-font);
 				}
 
 				i {
@@ -70,7 +70,7 @@
 				&:not(.proficiency-toggle) {
 					cursor: default;
 					&:hover {
-						color: var(--tertiary-color);
+						color: var(--t5s-tertiary-color);
 					}
 				}
 			}
@@ -82,7 +82,7 @@
 			}
 
 			.skill-passive {
-				color: var(--tertiary-color);
+				color: var(--t5s-tertiary-color);
 			}
 
 			.skill-ability {
@@ -108,7 +108,7 @@
 
 	.center-pane .resources {
 		margin: 0;
-		border: 1px solid var(--faint-color);
+		border: 1px solid var(--t5s-faint-color);
 		border-radius: 5px;
 		display: flex;
 		flex-wrap: wrap;
@@ -121,8 +121,8 @@
 		position: relative;
 		border: none;
 		border-radius: 0;
-		border-left: 1px solid var(--faint-color);
-		border-top: 1px solid var(--faint-color);
+		border-left: 1px solid var(--t5s-faint-color);
+		border-top: 1px solid var(--t5s-faint-color);
 		flex: 1 0 33%;
 	}
 
@@ -153,7 +153,7 @@
 	  right: 2px;
 	  bottom: 0;
 	  font-size: 12px;
-	  color: var(--tertiary-color);
+	  color: var(--t5s-tertiary-color);
 	  transition: color .3s ease;
 	}
 
@@ -192,7 +192,7 @@
 	}
 
 	.resources .resource .resource-header label.checkbox {
-		border: 1px solid var(--light-color);
+		border: 1px solid var(--t5s-light-color);
     padding: 3px;
     margin: 0 2px;
     border-radius: 5px;
@@ -205,16 +205,16 @@
 	}
 
 	.resources .resource .resource-header label.checkbox:hover {
-		background: var(--light-color);
+		background: var(--t5s-light-color);
 	}
 
 	.resources .resource .resource-header input:checked + label.checkbox {
-		background: var(--tertiary-color);
-		color: var(--background);
+		background: var(--t5s-tertiary-color);
+		color: var(--t5s-background);
 	}
 
 	.resources .resource .resource-header:hover .res-options {
-		color: var(--secondary-color);
+		color: var(--t5s-secondary-color);
 	}
 
 	.resources .resource .resource-header input {
@@ -223,7 +223,7 @@
 
 	// Resource Managment
 	.resources .resource .resource-name input {
-    font-family: var(--modesto);
+    font-family: var(--t5s-modesto);
     font-weight: 700;
     font-size: 16px;
 		text-align: center;
@@ -236,7 +236,7 @@
 		align-items: center;
 		height: 22px;
 		line-height: 25px;
-    font-family: var(--modesto);
+    font-family: var(--t5s-modesto);
 	}
 
 	.resources .resource .attribute-name input[type="text"] {
@@ -267,7 +267,7 @@
 
 	// Character Traits
 	.traits {
-		border: 1px solid var(--faint-color);
+		border: 1px solid var(--t5s-faint-color);
 		border-radius: 5px 5px 0 0;
 		overflow: visible;
 		margin: 8px 0 17px 0;
@@ -298,7 +298,7 @@
 		}
 
 		.form-group:nth-child(even) {
-			background: var(--faint-color);
+			background: var(--t5s-faint-color);
 		}
 
 		.form-group:last-child {
@@ -342,7 +342,7 @@
 					display: inline-block;
 					margin-left: 4px;
 					font-weight: 700;
-					color: var(--secondary-color);
+					color: var(--t5s-secondary-color);
 				}
 			}
 
@@ -391,7 +391,7 @@
 		.trait-selector:hover i.fas,
 		.proficiency-selector:hover i.fas,
 		.config-button:hover i.fas {
-			color: var(--secondary-color);
+			color: var(--t5s-secondary-color);
 			text-shadow: none;
 		}
 
@@ -399,7 +399,7 @@
 		  float: none;
 		  margin-right: 0;
 		  text-align: center;
-		  color: var(--tertiary-color);
+		  color: var(--t5s-tertiary-color);
 			line-height: 14px;
 			width: 14px;
 		  vertical-align: bottom;
@@ -410,7 +410,7 @@
 			width: 14px;
 
 			path {
-				fill: var(--tertiary-color);
+				fill: var(--t5s-tertiary-color);
 			}
 		}
 
@@ -419,13 +419,13 @@
 			display: inline-block;
 			top: calc(100% + 1px);
 			left: -1px;
-			border: 1px solid var(--faint-color);
+			border: 1px solid var(--t5s-faint-color);
 			border-top: 0;
 			border-radius: 0 0 3px 3px;
 			padding: 2px 4px;
 			width: auto;
 			font-size: 10px;
-		  color: var(--secondary-color);
+		  color: var(--t5s-secondary-color);
 		  cursor: pointer;
 		}
 
@@ -442,7 +442,7 @@
 		}
 
 		.toggle-traits:hover {
-			color: var(--primary-font);
+			color: var(--t5s-primary-font);
 		}
 
 		.configure-flags {
@@ -451,23 +451,23 @@
 			display: inline-block;
 			top: calc(100% + 1px);
 			right: -1px;
-			border: 1px solid var(--faint-color);
+			border: 1px solid var(--t5s-faint-color);
 			border-top: 0;
 			border-radius: 0 0 3px 3px;
 			padding: 2px 4px;
 			width: auto;
 			font-size: 10px;
-		  color: var(--secondary-color);
+		  color: var(--t5s-secondary-color);
 		}
 
 		.configure-flags i.fas {
 			line-height: 10px;
 		  vertical-align: baseline;
-		  color: var(--tertiary-color);
+		  color: var(--t5s-tertiary-color);
 		}
 
 		.configure-flags:hover,
 		.configure-flags:hover i.fas {
-			color: var(--primary-font);
+			color: var(--t5s-primary-font);
 		}
 	} //.traits
