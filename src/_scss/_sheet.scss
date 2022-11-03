@@ -312,6 +312,74 @@
     flex: 1;
     min-height: 100px;
   }
+
+  form  .form-group.spell-lvl-btn {
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    label {
+        text-align: center;
+    }
+
+    .form-fields {
+        margin: auto;
+
+        .spell-lvl-btn__label {
+            padding: 0;
+            margin-right: 10px;
+            position: relative;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .spell-lvl-btn__btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                background: rgba(0, 0, 0, 0.05);
+                border: 2px groove #c9c7b8;
+                border-radius: 3px;
+                font-size: 16px;
+                font-weight: 900;
+                user-select: none;
+
+                &:hover, &:focus {
+                    cursor: pointer;
+                    outline: none;
+                    box-shadow: 0 0 5px red;
+                }
+            }
+
+            input {
+                display: none;
+
+                &:checked + .spell-lvl-btn__btn {
+                    box-shadow: 0 0 5px red;
+                }
+            }
+
+            .available-slots {
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 15px;
+                height: 15px;
+                font-size: 11px;
+                line-height: 1;
+                border-radius: 50%;
+                background: #ff6400;
+                color: rgba(255, 255, 255, .8);
+            }
+        }
+    }
+  }
 }
 
 .minimized #item-info-container {
