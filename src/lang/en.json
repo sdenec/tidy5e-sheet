@@ -329,6 +329,10 @@
     "name": "Hide Death Saves from Players.",
     "hint": "Enable to make Death Saves and Death Save Results only visible to the GM"
   },
+  "TIDY5E.Settings.HideSpellSlotMarker": {
+    "name": "Hide Spell Slot Marker on sheet.",
+    "hint": "Enable to hide the colored spell slot marker, this is usually useful when the spell points variant rule is use."
+  },
   "TIDY5E.Settings.npsSheetWidth": {
     "name": "Default NPC sheet width.",
     "hint": "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."

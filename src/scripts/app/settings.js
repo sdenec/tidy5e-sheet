@@ -65,6 +65,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'expandedSheetEnabled',
 			'hideIfZero',
 			'hiddenDeathSavesEnabled',
+			'hideSpellSlotMarker',
 			'hpBarDisabled',
 			'hpBarDisabledNpc',
 			'hpBarDisabledVehicle',
@@ -100,7 +101,9 @@ export class Tidy5eUserSettings extends FormApplication {
 			'traitsAlwaysShownNpc',
 			'traitsMovedBelowResource',
 			'traitsMovedBelowResourceNpc',
-			'traitsTogglePc'
+			'traitsTogglePc',
+
+			
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

@@ -757,6 +757,9 @@ async function npcFavorites(app, html, data) {
 
 // Add Spell Slot Marker
 function spellSlotMarker(app, html, data) {
+  if(game.settings.get("tidy5e-sheet", "hideSpellSlotMarker")){
+    return;
+  }
   let actor = app.actor;
   let items = data.actor.items;
   let options = [

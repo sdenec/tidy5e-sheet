@@ -237,6 +237,13 @@
       </div>
     </article>
     <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hideSpellSlotMarker' id='hideSpellSlotMarker' {{checked settings.hideSpellSlotMarker.value}}>
+      <div class="description">
+        <label for="hideSpellSlotMarker">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
       <div class="description">
         <label for="playerNameEnabled">{{localize 'TIDY5E.Settings.PlayerName.name'}}</label>

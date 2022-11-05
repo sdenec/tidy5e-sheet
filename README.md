@@ -1,4 +1,7 @@
 # Tidy5e Sheet
+
+[![Translation status](https://weblate.foundryvtt-hub.com/widgets/tidy5e-sheet/-/287x66-black.png)](https://weblate.foundryvtt-hub.com/engage/tidy5e-sheet/)
+
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI.
 
 ## Most Important Changes

@@ -408,6 +408,16 @@ export function settingsList(){
 			default: false,
 			type: Boolean
 		});
+
+		// Hide marker spell slot
+		game.settings.register("tidy5e-sheet", "hideSpellSlotMarker", {
+			name: `${game.i18n.localize("TIDY5E.Settings.HideSpellSlotMarker.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.HideSpellSlotMarker.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
 		
 		// Item quantity
 		game.settings.register("tidy5e-sheet", "quantityAlwaysShownEnabled", {
