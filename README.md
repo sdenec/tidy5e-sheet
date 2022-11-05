@@ -12,6 +12,10 @@ The lock button in the "locked" position also hides any section that has no cont
 ### grid/list view
 You can toggle item and spell inventorys into grid or list layout. List is the default view. Grid offers a more condensed overview of your icons and spell with focus on icon art. Youll still able to see the main infos like quantity, charges, equipment/preparation/attunement and if an item is magical. Every other info will show in the info box to the left when you hover over an item.
 
+### Better Spell Level Buttons for DnD 5e
+
+This is an embedded version of Rayuaz's module [Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e), replaces the spell level select dropdown menu with buttons.
+
 ### settings
 there are plenty of settings from dark mode to round/square portraits, health visualization and user specific options.
 I tried to make each settings description as clear as possible so you should be able to carefully read an pick what you want.

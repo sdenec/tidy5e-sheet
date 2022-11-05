@@ -37,6 +37,15 @@
   --prepared:	rgba(50,205,50,.3);
   --prepared-outline:	rgba(50,205,50,1);
   --prepared-accent:	rgba(173,255,47,1);
+  --pact:					    rgba(250, 0, 180, .3);
+	--pact-outline: 		rgba(250, 50, 213, 1);
+  --pact-accent: 			rgba(198, 119, 193, 1);
+	--atwill: 					rgba(226, 246, 4, .3);
+	--atwill-outline: 	rgba(163, 165, 50, 1);
+	--atwill-accent: 	  rgba(255, 242, 0, 1);
+	--innate: 				  rgba(255, 0, 0, .3);
+	--innate-outline:   rgba(231, 23, 23, 1);
+	--innate-accent:    rgba(195, 69, 69, 1);
   --always-prepared:	rgba(0,0,255,.15);
   --always-prepared-outline:	rgba(65,105,225,1);
   --always-prepared-accent:	rgba(0,191,255,1);
@@ -373,6 +382,18 @@
 .tidy5e.sheet.actor #item-info-container-content .info-card.equipped, .tidy5e.sheet.actor #item-info-container-content .info-card.prepared {
   background: var(--prepared);
   background: linear-gradient(180deg, var(--prepared) 0px, var(--prepared) 26px, rgba(0, 0, 0, 0) 36px);
+}
+.tidy5e.sheet.actor #item-info-container-content .info-card.equipped, .tidy5e.sheet.actor #item-info-container-content .info-card.pact {
+  background: var(--pact);
+  background: linear-gradient(180deg, var(--pact) 0px, var(--pact) 26px, rgba(0, 0, 0, 0) 36px);
+}
+.tidy5e.sheet.actor #item-info-container-content .info-card.equipped, .tidy5e.sheet.actor #item-info-container-content .info-card.atwill {
+  background: var(--atwill);
+  background: linear-gradient(180deg, var(--atwill) 0px, var(--atwill) 26px, rgba(0, 0, 0, 0) 36px);
+}
+.tidy5e.sheet.actor #item-info-container-content .info-card.equipped, .tidy5e.sheet.actor #item-info-container-content .info-card.innate {
+  background: var(--innate);
+  background: linear-gradient(180deg, var(--innate) 0px, var(--innate) 26px, rgba(0, 0, 0, 0) 36px);
 }
 .tidy5e.sheet.actor #item-info-container-content .info-card.alwaysPrepared {
   background: var(--always-prepared);
@@ -2941,6 +2962,15 @@
 .tidy5e.sheet.actor .items-list .item.equipped, .tidy5e.sheet.actor .items-list .item.prepared {
   background: var(--prepared);
 }
+.tidy5e.sheet.actor .items-list .item.equipped, .tidy5e.sheet.actor .items-list .item.pact {
+  background: var(--pact);
+}
+.tidy5e.sheet.actor .items-list .item.equipped, .tidy5e.sheet.actor .items-list .item.atwill {
+  background: var(--atwill);
+}
+.tidy5e.sheet.actor .items-list .item.equipped, .tidy5e.sheet.actor .items-list .item.innate {
+  background: var(--innate);
+}
 .tidy5e.sheet.actor .items-list .item.alwaysPrepared {
   background: var(--always-prepared);
 }
@@ -3648,6 +3678,18 @@
   -webkit-box-shadow: 0 0 0 2px var(--prepared-outline);
           box-shadow: 0 0 0 2px var(--prepared-outline);
 }
+.tidy5e.sheet.actor .grid-layout .item-list .item.equipped, .tidy5e.sheet.actor .grid-layout .item-list .item.pact {
+  -webkit-box-shadow: 0 0 0 2px var(--pact-outline);
+          box-shadow: 0 0 0 2px var(--pact-outline);
+}
+.tidy5e.sheet.actor .grid-layout .item-list .item.equipped, .tidy5e.sheet.actor .grid-layout .item-list .item.atwill {
+  -webkit-box-shadow: 0 0 0 2px var(--atwill-outline);
+          box-shadow: 0 0 0 2px var(--atwill-outline);
+}
+.tidy5e.sheet.actor .grid-layout .item-list .item.equipped, .tidy5e.sheet.actor .grid-layout .item-list .item.innate {
+  -webkit-box-shadow: 0 0 0 2px var(--innate-outline);
+          box-shadow: 0 0 0 2px var(--innate-outline);
+}
 .tidy5e.sheet.actor .grid-layout .item-list .item.prepared.alwaysPrepared {
   -webkit-box-shadow: 0 0 0 2px var(--always-prepared-outline);
           box-shadow: 0 0 0 2px var(--always-prepared-outline);
@@ -3655,6 +3697,21 @@
 .tidy5e.sheet.actor .grid-layout .item-list .item.equipped .item-image, .tidy5e.sheet.actor .grid-layout .item-list .item.prepared .item-image {
   -webkit-box-shadow: 0 0 1px 1px inset var(--prepared-accent);
           box-shadow: 0 0 1px 1px inset var(--prepared-accent);
+  border-radius: 5px;
+}
+.tidy5e.sheet.actor .grid-layout .item-list .item.equipped .item-image, .tidy5e.sheet.actor .grid-layout .item-list .item.pact .item-image {
+  -webkit-box-shadow: 0 0 1px 1px inset var(--pact-accent);
+          box-shadow: 0 0 1px 1px inset var(--pact-accent);
+  border-radius: 5px;
+}
+.tidy5e.sheet.actor .grid-layout .item-list .item.equipped .item-image, .tidy5e.sheet.actor .grid-layout .item-list .item.atwill .item-image {
+  -webkit-box-shadow: 0 0 1px 1px inset var(--atwill-accent);
+          box-shadow: 0 0 1px 1px inset var(--atwill-accent);
+  border-radius: 5px;
+}
+.tidy5e.sheet.actor .grid-layout .item-list .item.equipped .item-image, .tidy5e.sheet.actor .grid-layout .item-list .item.innate .item-image {
+  -webkit-box-shadow: 0 0 1px 1px inset var(--innate-accent);
+          box-shadow: 0 0 1px 1px inset var(--innate-accent);
   border-radius: 5px;
 }
 .tidy5e.sheet.actor .grid-layout .item-list .item.prepared.alwaysPrepared .item-image {

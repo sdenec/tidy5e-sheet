@@ -484,6 +484,18 @@
       background: var(--prepared);
     }
 
+    &.pact {
+      background: var(--pact);
+    }
+
+    &.atwill {
+      background: var(--atwill);
+    }
+
+    &.innate {
+      background: var(--innate);
+    }
+
     &.alwaysPrepared {
       background: var(--always-prepared);
     }

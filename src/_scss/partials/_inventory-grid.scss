@@ -83,13 +83,40 @@
 				box-shadow: 0 0 0 2px var(--prepared-outline);
 			}
 
+			&.pact {
+				box-shadow: 0 0 0 2px var(--pact-outline);
+			}
+
+			&.atwill {
+				box-shadow: 0 0 0 2px var(--atwill-outline);
+			}
+
+			&.innate {
+				box-shadow: 0 0 0 2px var(--innate-outline);
+			}
+
 			&.prepared.alwaysPrepared {
 				box-shadow: 0 0 0 2px var(--always-prepared-outline);
 			}
 
 			&.equipped .item-image,
 			&.prepared .item-image {
-    		box-shadow: 0 0 1px 1px inset var(--prepared-accent);
+    			box-shadow: 0 0 1px 1px inset var(--prepared-accent);
+				border-radius: 5px;
+			}
+
+			&.pact .item-image {
+    			box-shadow: 0 0 1px 1px inset var(--pact-accent);
+				border-radius: 5px;
+			}
+
+			&.atwill .item-image {
+    			box-shadow: 0 0 1px 1px inset var(--atwill-accent);
+				border-radius: 5px;
+			}
+
+			&.innate .item-image {
+    			box-shadow: 0 0 1px 1px inset var(--innate-accent);
 				border-radius: 5px;
 			}
 

@@ -13,6 +13,9 @@
   --header-border: rgba(255, 255, 255, 0.25);
   --primary-accent: rgba(255, 100, 0, 1);
   --prepared: rgba(0, 250, 180, 0.3);
+  --pact: rgba(250, 0, 180, 0.3);
+  --atwill: rgba(226, 246, 4, 0.3);
+  --innate: rgba(255, 0, 0, 0.3);
   --always-prepared: rgba(0, 100, 255, 0.3);
   --icon-background: rgb(30, 30, 30);
   --icon-shadow: rgba(0, 0, 0, 0.4);

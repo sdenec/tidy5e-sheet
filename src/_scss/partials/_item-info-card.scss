@@ -104,6 +104,24 @@
       // box-shadow: 0 0 10px var(--prepared) inset;
     }
 
+    &.pact {
+      background: var(--pact);
+      background: linear-gradient(180deg, var(--pact) 0px, var(--pact) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--pact) inset;
+    }
+
+    &.atwill {
+      background: var(--atwill);
+      background: linear-gradient(180deg, var(--atwill) 0px, var(--atwill) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--atwill) inset;
+    }
+
+    &.innate {
+      background: var(--innate);
+      background: linear-gradient(180deg, var(--innate) 0px, var(--innate) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--innate) inset;
+    }
+
     &.alwaysPrepared {
       background: var(--always-prepared);
       background: linear-gradient(180deg, var(--always-prepared) 0px, var(--always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
