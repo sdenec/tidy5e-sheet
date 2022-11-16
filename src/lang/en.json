@@ -333,6 +333,10 @@
     "name": "Hide Spell Slot Marker on sheet.",
     "hint": "Enable to hide the colored spell slot marker, this is usually useful when the spell points variant rule is use."
   },
+  "TIDY5E.Settings.EnableSpellLevelButtons": {
+    "name": "Enable Spell Level Buttons.",
+    "hint": "Enable to replaces the spell level select dropdown menu with buttons."
+  },
   "TIDY5E.Settings.npsSheetWidth": {
     "name": "Default NPC sheet width.",
     "hint": "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."

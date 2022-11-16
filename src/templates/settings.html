@@ -5,11 +5,11 @@
 		<a class='item gm-only' data-tab='gm-options'>{{localize 'TIDY5E.Settings.TabGM.tabLabel'}}</a>
 		<a class='item gm-only' data-tab='modules'>{{localize 'TIDY5E.Settings.TabModules.tabLabel'}}</a>
 		<a class='item' data-tab='info'>{{localize 'TIDY5E.Settings.TabInfo.tabLabel'}}</a>
-	</nav>	
+	</nav>
 
 
   {{!-- PC OPTIONS --}}
-  
+
 
   <section class='tab' data-tab='pc-sheet'>
     <h2>{{localize 'TIDY5E.Settings.TabPlayers.header'}}</h2>
@@ -105,9 +105,9 @@
     </article>
 	</section>
 
-  
+
   {{!-- NPC/VEHICLE OPTIONS --}}
-  
+
 
   <section class='tab' data-tab='npc-sheet'>
     <h2>{{localize 'TIDY5E.Settings.TabNPCsVehicles.header'}}</h2>
@@ -134,7 +134,7 @@
           <p class="notes">{{localize 'TIDY5E.Settings.LinkMarker.hint'}}</p>
         </div>
         <div class="settings-group">
-          <select name="linkMarkerNpc" id="linkMarkerNpc">  
+          <select name="linkMarkerNpc" id="linkMarkerNpc">
             {{#select settings.linkMarkerNpc.value}}
             <option value="default">{{localize "TIDY5E.Settings.LinkMarker.default"}}</option>
             <option value="unlinked">{{localize "TIDY5E.Settings.LinkMarker.unlinked"}}</option>
@@ -222,11 +222,11 @@
       </div>
     </article>
 	</section>
-  
+
 
   {{!-- GM OPTIONS --}}
 
-  
+
   <section class='tab gm-only' data-tab='gm-options'>
     <h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
     <article class="setting">
@@ -243,6 +243,13 @@
         <p class="notes">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.hint'}}</p>
       </div>
     </article>
+    <article class="setting">
+        <input type="checkbox" data-dtype='boolean' name='enableSpellLevelButtons' id='enableSpellLevelButtons' {{checked settings.enableSpellLevelButtons.value}}>
+        <div class="description">
+          <label for="enableSpellLevelButtons">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.name'}}</label>
+          <p class="notes">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.hint'}}</p>
+        </div>
+      </article>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
       <div class="description">
@@ -284,7 +291,7 @@
           <p class="notes">{{localize 'TIDY5E.Settings.PortraitStyle.hint'}}</p>
         </div>
         <div class="settings-group">
-          <select name="portraitStyle" id="portraitStyle">  
+          <select name="portraitStyle" id="portraitStyle">
             {{#select settings.portraitStyle.value}}
             <option value="default">{{localize "TIDY5E.Settings.PortraitStyle.default"}}</option>
             <option value="pc">{{localize "TIDY5E.Settings.PortraitStyle.pc"}}</option>
@@ -360,7 +367,7 @@
           <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionEffects.hint'}}</p>
         </div>
          <div class="settings-group">
-          <select name="exhaustionEffectsEnabled" id="exhaustionEffectsEnabled">  
+          <select name="exhaustionEffectsEnabled" id="exhaustionEffectsEnabled">
             {{#select settings.exhaustionEffectsEnabled.value}}
             <option value="default">{{localize "TIDY5E.Settings.ExhaustionEffects.default"}}</option>
             <option value="tidy5e">{{localize "TIDY5E.Settings.ExhaustionEffects.tidy5e"}}</option>
@@ -420,7 +427,7 @@
 
   <section class='tab gm-only' data-tab='modules'>
     <h2>{{localize 'TIDY5E.Settings.TabModules.header'}}</h2>
-    
+
     <h3>{{localize 'TIDY5E.Settings.TabModules.labelActionsFavorites'}}</h3>
     <article class="setting group">
       <section>
@@ -429,7 +436,7 @@
           <p class="notes">{{localize 'TIDY5E.Settings.DefaultActionsTab.hint'}}</p>
         </div>
          <div class="settings-group">
-          <select name="defaultActionsTab" id="defaultActionsTab">  
+          <select name="defaultActionsTab" id="defaultActionsTab">
             {{#select settings.defaultActionsTab.value}}
             <option value="default">{{localize "TIDY5E.Settings.DefaultActionsTab.default"}}</option>
             <option value="attributes">{{localize "TIDY5E.Settings.DefaultActionsTab.attributes"}}</option>
@@ -461,7 +468,7 @@
   <section class='tab' data-tab='info'>
     <h2>{{localize 'TIDY5E.Settings.TabInfo.header'}}</h2>
   </section>
-  
+
   <footer class="sheet-footer flexrow">
     <button type="submit" name="submit">
       <i class="fas fa-save"></i>{{localize 'Save Changes'}}

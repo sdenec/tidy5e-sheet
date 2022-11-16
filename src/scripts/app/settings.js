@@ -9,7 +9,7 @@ export class Tidy5eUserSettings extends FormApplication {
       type: Tidy5eUserSettings,
       restricted: false
     });
-		
+
 		settingsList();
 
 	}
@@ -23,12 +23,12 @@ export class Tidy5eUserSettings extends FormApplication {
 			title: game.i18n.localize("TIDY5E.Settings.SheetMenu.title"),
 			width: 600,
 			classes: ["tidy5e", "settings"],
-			tabs: [ 
+			tabs: [
 				{
 					navSelector: '.tabs',
 					contentSelector: 'form',
 					initial: 'Players'
-				} 
+				}
 			],
 			submitOnClose: true
 		}
@@ -42,10 +42,10 @@ export class Tidy5eUserSettings extends FormApplication {
 		let btns = super._getHeaderButtons();
 		btns[0].label = "Close";
 		return btns;
-	}		
+	}
 
-	getSettingsData() {		
-		
+	getSettingsData() {
+
 		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
 			'ammoEquippedOnly',
@@ -66,6 +66,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'hideIfZero',
 			'hiddenDeathSavesEnabled',
 			'hideSpellSlotMarker',
+      'enableSpellLevelButtons',
 			'hpBarDisabled',
 			'hpBarDisabledNpc',
 			'hpBarDisabledVehicle',
@@ -84,7 +85,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'itemCardsForAllItems',
 			'journalTabDisabled',
 			'linkMarkerNpc',
-			
+
 			'playerNameEnabled',
 			'portraitStyle',
 			'quantityAlwaysShownEnabled',
@@ -103,7 +104,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'traitsMovedBelowResourceNpc',
 			'traitsTogglePc',
 
-			
+
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
@@ -125,7 +126,7 @@ export class Tidy5eUserSettings extends FormApplication {
 		super.activateListeners(html);
 		// console.log('Listeners Active!')
 		// console.log(html)
-		
+
 		let exhaustionEffectSelect = html.find('select#exhaustionEffectsEnabled');
 		let exhaustionSelected = $(exhaustionEffectSelect).val();
 		// console.log(exhaustionSelected)
@@ -141,8 +142,8 @@ export class Tidy5eUserSettings extends FormApplication {
 				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
 			break;
 		}
-		
-		exhaustionEffectSelect.on('change', function(e){			
+
+		exhaustionEffectSelect.on('change', function(e){
 			html.find('input#exhaustionEffectIcon').closest('.setting').hide();
 			html.find('input#exhaustionEffectCustom').closest('.setting').hide();
 
@@ -185,7 +186,7 @@ export class Tidy5eUserSettings extends FormApplication {
 		if(settingsUpdated){
 			this.redrawOpenSheets();
 		}
-	}	
+	}
 }
 
 Hooks.on("renderTidy5eUserSettings", () => {

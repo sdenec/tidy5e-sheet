@@ -797,6 +797,9 @@ Hooks.once("ready", (app, html, data) => {
 });
 
 Hooks.on('renderAbilityUseDialog', function(options) {
+  if(!game.settings.get("tidy5e-sheet", "enableSpellLevelButtons")){
+    return;
+  }
   if($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) { // If the dialog box has a option to select a spell level
 
       // Resize the window to fit the contents
@@ -806,7 +809,7 @@ Hooks.on('renderAbilityUseDialog', function(options) {
       $(options._element[0]).height(originalWindowHeight + heightOffset);
 
       // Find the label that says "Cast at level", and select it's parent parent (There's no specific class or ID for this wrapper)
-      let levelSelectWrapper = $(options._element[0]).find('.form-group label:contains("Cast at Level")').parent();
+      let levelSelectWrapper = $(options._element[0]).find(`.form-group label:contains("${game.i18n.localize(`DND5E.SpellCastUpcast`)}")`).parent();
       let selectedLevel = levelSelectWrapper.find('select').val();
 
       let appId = options.appId;
@@ -817,7 +820,7 @@ Hooks.on('renderAbilityUseDialog', function(options) {
       // Append a container for the buttons
       levelSelectWrapper.after(`
           <div class="form-group spell-lvl-btn">
-              <label>Cast at Level</label>
+              <label>${game.i18n.localize(`DND5E.SpellCastUpcast`)}</label>
               <div class="form-fields"></div>
           </div>
       `);
