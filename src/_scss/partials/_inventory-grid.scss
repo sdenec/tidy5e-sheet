@@ -78,7 +78,10 @@
     		border-radius: 5px;
 			}
 
-			&.equipped,
+			&.equipped {
+				box-shadow: 0 0 0 2px var(--equipped-outline);
+			}
+
 			&.prepared {
 				box-shadow: 0 0 0 2px var(--prepared-outline);
 			}
@@ -99,7 +102,11 @@
 				box-shadow: 0 0 0 2px var(--always-prepared-outline);
 			}
 
-			&.equipped .item-image,
+			&.equipped .item-image {
+    			box-shadow: 0 0 1px 1px inset var(--equipped-accent);
+				border-radius: 5px;
+			}
+
 			&.prepared .item-image {
     			box-shadow: 0 0 1px 1px inset var(--prepared-accent);
 				border-radius: 5px;

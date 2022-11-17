@@ -587,4 +587,42 @@ export function settingsList(){
 			type: Number,
 			default: 740
 		});
+
+		// Lazy Money
+
+		game.settings.register("tidy5e-sheet", "lazyMoneyEnable", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyEnable.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyEnable.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "lazyMoneyAddConvert", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyAddConvert.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyAddConvert.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "lazyMoneyIgnoreElectrum", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyIgnoreElectrum.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "lazyMoneyChatLog", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyChatLog.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyChatLog.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
 }

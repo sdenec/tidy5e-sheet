@@ -132,7 +132,8 @@
     "tabLabel": "Modules",
     "header": "Module Options",
     "labelActionsFavorites": "Actor Actions/Favorites",
-    "labelMidiQoL": "Midi Qol"
+    "labelMidiQoL": "Midi Qol",
+    "labelLazyMoney": "Lazy Money"
   },
   "TIDY5E.Settings.TabInfo": {
     "tabLabel": "Info",
@@ -348,5 +349,21 @@
   "TIDY5E.Settings.vehicleSheetWidth": {
     "name": "Default vehicle sheet width.",
     "hint": "The width of the vehicle sheet in pixels, requires a refresh to take effect (default 740)."
+  },
+  "TIDY5E.Settings.LazyMoneyEnable": {
+    "name": "Enable Lazy Money",
+    "hint": "Easily add or remove currency with automatic conversion and no overdraft."
+  },
+  "TIDY5E.Settings.LazyMoneyAddConvert": {
+    "name": "Convert when adding money",
+    "hint": "Automatically convert currency to higher denominations when adding money instead of the default behaviour of preserving the denominations you receive."
+  },
+  "TIDY5E.Settings.LazyMoneyIgnoreElectrum": {
+    "name": "Ignore electrum",
+    "hint": "When converting, ignore electrum. This won't affect directly adding or removing it, except in the case when \"Convert when adding money\" is also enabled."
+  },
+  "TIDY5E.Settings.LazyMoneyChatLog": {
+    "name": "Chat log",
+    "hint": "Whisper any currency changes to the GM."
   }
 }

@@ -97,7 +97,12 @@
     display: flex;
     flex-direction: column;
 
-    &.equipped,
+    &.equipped {
+      background: var(--equipped);
+      background: linear-gradient(180deg, var(--equipped) 0px, var(--equipped) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--equipped) inset;
+    }
+
     &.prepared {
       background: var(--prepared);
       background: linear-gradient(180deg, var(--prepared) 0px, var(--prepared) 26px, rgba(0, 0, 0, 0) 36px);
@@ -125,7 +130,7 @@
     &.alwaysPrepared {
       background: var(--always-prepared);
       background: linear-gradient(180deg, var(--always-prepared) 0px, var(--always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--prepared) inset;
+      // box-shadow: 0 0 10px var(--always-prepared) inset;
     }
 
     &.magic-item {

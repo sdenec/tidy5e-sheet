@@ -10,6 +10,7 @@ import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
+import { applyLazyMoney } from "./app/lazymoney.js";
 
 let position = 0;
 
@@ -788,6 +789,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
   countInventoryItems(app, html, data);
   markActiveEffects(app, html, data);
   spellSlotMarker(app, html, data);
+  applyLazyMoney(app, html, data);
   // console.log(data.actor);
   // console.log("Tidy5e Sheet rendered!");
 });

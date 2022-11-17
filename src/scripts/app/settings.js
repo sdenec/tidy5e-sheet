@@ -3,11 +3,11 @@ import {settingsList} from './settingsList.js';
 export class Tidy5eUserSettings extends FormApplication {
 	static init() {
 		game.settings.registerMenu('tidy5e-sheet', 'userMenu', {
-      name: '',
-      label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
-      icon: 'fas fa-cog',
-      type: Tidy5eUserSettings,
-      restricted: false
+		name: '',
+		label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
+		icon: 'fas fa-cog',
+		type: Tidy5eUserSettings,
+		restricted: false
     });
 
 		settingsList();
@@ -66,7 +66,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'hideIfZero',
 			'hiddenDeathSavesEnabled',
 			'hideSpellSlotMarker',
-      'enableSpellLevelButtons',
+            'enableSpellLevelButtons',
 			'hpBarDisabled',
 			'hpBarDisabledNpc',
 			'hpBarDisabledVehicle',
@@ -104,7 +104,10 @@ export class Tidy5eUserSettings extends FormApplication {
 			'traitsMovedBelowResourceNpc',
 			'traitsTogglePc',
 
-
+			'lazyMoneyEnable',
+			'lazyMoneyAddConvert',
+			'lazyMoneyIgnoreElectrum',
+			'lazyMoneyChatLog'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

@@ -461,6 +461,36 @@
         <p class="notes">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.hint'}}</p>
       </div>
     </article>
+
+    <h3>{{localize 'TIDY5E.Settings.TabModules.labelLazyMoney'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyEnable' id='lazyMoneyEnable' {{checked settings.lazyMoneyEnable.value}}>
+      <div class="description">
+        <label for="lazyMoneyEnable">{{localize 'TIDY5E.Settings.LazyMoneyEnable.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyEnable.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyAddConvert' id='lazyMoneyAddConvert' {{checked settings.lazyMoneyAddConvert.value}}>
+      <div class="description">
+        <label for="lazyMoneyAddConvert">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyIgnoreElectrum' id='lazyMoneyIgnoreElectrum' {{checked settings.lazyMoneyIgnoreElectrum.value}}>
+      <div class="description">
+        <label for="lazyMoneyIgnoreElectrum">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyChatLog' id='lazyMoneyChatLog' {{checked settings.lazyMoneyChatLog.value}}>
+      <div class="description">
+        <label for="lazyMoneyChatLog">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.hint'}}</p>
+      </div>
+    </article>
   </section>
 
   {{!-- INFO --}}
