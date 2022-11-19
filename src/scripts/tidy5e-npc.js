@@ -216,6 +216,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
 
     context.appId = this.appId;
     context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
+    context.hideSpellbookTabNpc =  game.settings.get("tidy5e-sheet", "hideSpellbookTabNpc");
     return context;
   }
 

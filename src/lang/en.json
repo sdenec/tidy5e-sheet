@@ -245,6 +245,10 @@
     "name": "Always show skills.",
     "hint": "By default unproficient skills are hidden by a toggle button. Enable to never hide."
   },
+  "TIDY5E.Settings.HideSpellbookTabNpc": {
+    "name": "Hide Spellbook tab on NPC",
+    "hint": "By default the spellbook tab on NPC is moved on the attributes tab. Disable this for never do that."
+  },
 
   "TIDY5E.Settings.ActiveEffectsMarker": {
     "name": "Show Active Effects Marker on items.",

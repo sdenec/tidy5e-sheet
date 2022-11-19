@@ -248,6 +248,15 @@ export function settingsList(){
 			type: Boolean
 		});
 
+		game.settings.register("tidy5e-sheet", "hideSpellbookTabNpc", {
+			name: `${game.i18n.localize("TIDY5E.Settings.SkillsAlwaysShown.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.SkillsAlwaysShown.hint"),
+			scope: "user",
+			config: false,
+			default: true,
+			type: Boolean
+		});
+		
 		// Vehicle Sheet Settings
 
 		game.settings.register("tidy5e-sheet", "hpBarDisabledVehicle", {
