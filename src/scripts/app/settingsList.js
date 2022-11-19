@@ -422,10 +422,20 @@ export function settingsList(){
 		// Enable Spell Level Buttons
 		game.settings.register("tidy5e-sheet", "enableSpellLevelButtons", {
 			name: `${game.i18n.localize("TIDY5E.Settings.EnableSpellLevelButtons.name")}`,
-			hint: game.i18n.localize("TIDY5E.Settings.EnableSpellLevelButtons.hint"),
+			hint: `${game.i18n.localize("TIDY5E.Settings.EnableSpellLevelButtons.hint")}`,
 			scope: "world",
 			config: false,
 			default: true,
+			type: Boolean
+		});
+
+		// Hide Standard Encumbrance Bar
+		game.settings.register("tidy5e-sheet", "hideStandardEncumbranceBar", {
+			name: `${game.i18n.localize("TIDY5E.Settings.HideStandardEncumbranceBar.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.HideStandardEncumbranceBar.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
 			type: Boolean
 		});
 

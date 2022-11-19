@@ -346,7 +346,11 @@
     "name": "Enable Spell Level Buttons.",
     "hint": "Enable to replaces the spell level select dropdown menu with buttons."
   },
-  "TIDY5E.Settings.npsSheetWidth": {
+  "TIDY5E.Settings.HideStandardEncumbranceBar": {
+    "name": "Remove/Hide standard encumbrance bar from the character sheet",
+    "hint": "If enabled it will hide the standard bar of encumbrance, YOU DO NOT NEED THIS if you are using 'Variant Encumbrance' module you probably do not need this"
+  },
+	"TIDY5E.Settings.npsSheetWidth": {
     "name": "Default NPC sheet width.",
     "hint": "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."
   },

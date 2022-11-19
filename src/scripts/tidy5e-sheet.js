@@ -668,6 +668,19 @@ function spellSlotMarker(app, html, data) {
   });
 }
 
+// Hide Standard Encumbrance Bar
+function hideStandardEncumbranceBar(app, html, data) {
+  if(!game.settings.get("tidy5e-sheet", "hideStandardEncumbranceBar")){
+    return;
+  }
+  const elements = html.find(".encumbrance");
+  if (elements && elements.length > 0) {
+    for(const elem of elements) {
+      elem.style.display = "none";
+    }
+  }
+}
+
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
   // let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
@@ -791,6 +804,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
   countInventoryItems(app, html, data);
   markActiveEffects(app, html, data);
   spellSlotMarker(app, html, data);
+  hideStandardEncumbranceBar(app, html, data);
   applyLazyMoney(app, html, data);
   applyLazyExp(app, html, data);
   applyLazyHp(app, html, data);

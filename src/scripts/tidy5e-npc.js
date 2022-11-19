@@ -846,6 +846,19 @@ function spellSlotMarker(app, html, data) {
   });
 }
 
+// Hide Standard Encumbrance Bar
+function hideStandardEncumbranceBar(app, html, data) {
+  if(!game.settings.get("tidy5e-sheet", "hideStandardEncumbranceBar")){
+    return;
+  }
+  const elements = html.find(".encumbrance");
+  if (elements && elements.length > 0) {
+    for(const elem of elements) {
+      elem.style.display = "none";
+    }
+  }
+}
+
 Actors.registerSheet("dnd5e", Tidy5eNPC, {
   types: ["npc"],
   makeDefault: true,
@@ -874,6 +887,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   editProtection(app, html, data);
   npcFavorites(app, html, data);
   spellSlotMarker(app, html, data);
+  hideStandardEncumbranceBar(app, html, data);
   applyLazyMoney(app, html, data);
   applyLazyExp(app, html, data);
   applyLazyHp(app, html, data);

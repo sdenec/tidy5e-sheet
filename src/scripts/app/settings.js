@@ -66,6 +66,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'hideIfZero',
 			'hiddenDeathSavesEnabled',
 			'hideSpellSlotMarker',
+			'hideStandardEncumbranceBar',
             'enableSpellLevelButtons',
 			'hpBarDisabled',
 			'hpBarDisabledNpc',

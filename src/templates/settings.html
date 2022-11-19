@@ -250,7 +250,14 @@
           <label for="enableSpellLevelButtons">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.name'}}</label>
           <p class="notes">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.hint'}}</p>
         </div>
-      </article>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hideStandardEncumbranceBar' id='hideStandardEncumbranceBar' {{checked settings.hideStandardEncumbranceBar.value}}>
+      <div class="description">
+        <label for="hideStandardEncumbranceBar">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.hint'}}</p>
+      </div>
+    </article>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
       <div class="description">
@@ -524,7 +531,7 @@
         <p class="notes">{{localize 'TIDY5E.Settings.LockHpMaxChanges.hint'}}</p>
       </div>
     </article>
-    
+
     <h3>{{localize 'TIDY5E.Settings.TabLocks.labelInventoryLocks'}}</h3>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='lockMoneyChanges' id='lockMoneyChanges' {{checked settings.lockMoneyChanges.value}}>
