@@ -508,6 +508,22 @@
     <h2>{{localize 'TIDY5E.Settings.TabLocks.header'}}</h2>
     <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint'}}</p>
     <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint2'}}</p>
+
+    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelGeneralLocks'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockExpChanges' id='lockExpChanges' {{checked settings.lockExpChanges.value}}>
+      <div class="description">
+        <label for="lockExpChanges">{{localize 'TIDY5E.Settings.LockExpChanges.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockExpChanges.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockHpMaxChanges' id='lockHpMaxChanges' {{checked settings.lockHpMaxChanges.value}}>
+      <div class="description">
+        <label for="lockHpMaxChanges">{{localize 'TIDY5E.Settings.LockHpMaxChanges.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockHpMaxChanges.hint'}}</p>
+      </div>
+    </article>
     
     <h3>{{localize 'TIDY5E.Settings.TabLocks.labelInventoryLocks'}}</h3>
     <article class="setting">

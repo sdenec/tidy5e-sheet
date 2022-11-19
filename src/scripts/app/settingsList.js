@@ -637,6 +637,24 @@ export function settingsList(){
 			type: Boolean
 		});
 
+		game.settings.register("tidy5e-sheet", "lockExpChanges", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LockExpChanges.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.LockExpChanges.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "lockHpMaxChanges", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LockHpMaxChanges.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.LockHpMaxChanges.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
 		// Other 
 
 		game.settings.register("tidy5e-sheet", "allowCantripToBePreparedOnContext", {

@@ -140,6 +140,7 @@
     "header": "Lock Options",
     "hint": "Prevents players from making changes to aspects of their character sheets that should change infrequently, and provides the option to completely hide some elements that you don't want to use at all. Settings are available to customize exactly what is locked / hidden, and determine who has permission to make sheets editable through a toggle button.",
     "hint2": "Note that this is not a secure lockdown and players could get around the restrictions, so this is not a sufficient answer if your players are malicious. This is intended for games where the players are inexperienced (with D&D and/or with using computers) to prevent them from making mistakes (ex. accidentally adding/removing saving throw proficiency).",
+    "labelGeneralLocks": "General Locks",
     "labelInventoryLocks": "Inventory Locks"
   },
   "TIDY5E.Settings.TabInfo": {
@@ -380,5 +381,13 @@
   "TIDY5E.Settings.LockMoneyChanges": {
     "name": "Lock change money for non GM",
     "hint": "This will lock up the money input pp, gp, ep, sp, cp on the sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockExpChanges": {
+    "name": "Lock change experience for non GM",
+    "hint": "This will lock up the experience input on the sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockHpMaxChanges": {
+    "name": "Lock change hp max for non GM",
+    "hint": "This will lock up the hp max input on the sheet for non GM player. All other module working with these fields are working just fine."
   }
 }

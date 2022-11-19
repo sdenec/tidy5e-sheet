@@ -111,7 +111,9 @@ export class Tidy5eUserSettings extends FormApplication {
 
 			'allowCantripToBePreparedOnContext',
 
-			'lockMoneyChanges'
+			'lockMoneyChanges',
+			'lockExpChanges',
+			'lockHpMaxChanges'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
