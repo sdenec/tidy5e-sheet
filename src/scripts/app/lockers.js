@@ -21,4 +21,10 @@ export function applyLocks(app, html, actorData) {
             elem.setAttribute('readonly', true);
         }
     }
+    if (game.settings.get('tidy5e-sheet', "lockLevelSelector")) {
+        for (const elem of html.find("select[class^='level-selector']")) {
+            elem.setAttribute('disabled', true);
+        }
+    }
+    
 }

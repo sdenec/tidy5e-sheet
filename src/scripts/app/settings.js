@@ -115,7 +115,8 @@ export class Tidy5eUserSettings extends FormApplication {
 
 			'lockMoneyChanges',
 			'lockExpChanges',
-			'lockHpMaxChanges'
+			'lockHpMaxChanges',
+			'lockLevelSelector'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

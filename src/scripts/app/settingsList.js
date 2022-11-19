@@ -681,6 +681,15 @@ export function settingsList(){
 			type: Boolean
 		});
 
+		game.settings.register("tidy5e-sheet", "lockLevelSelector", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LockLevelSelector.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.LockLevelSelector.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
 		// Other 
 
 		game.settings.register("tidy5e-sheet", "allowCantripToBePreparedOnContext", {

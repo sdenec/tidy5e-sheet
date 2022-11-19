@@ -554,6 +554,16 @@
         <p class="notes">{{localize 'TIDY5E.Settings.LockMoneyChanges.hint'}}</p>
       </div>
     </article>
+
+    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelFeaturesLocks'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockLevelSelector' id='lockLevelSelector' {{checked settings.lockLevelSelector.value}}>
+      <div class="description">
+        <label for="lockLevelSelector">{{localize 'TIDY5E.Settings.LockLevelSelector.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockLevelSelector.hint'}}</p>
+      </div>
+    </article>
+    
   </section>
 
   {{!-- INFO --}}
