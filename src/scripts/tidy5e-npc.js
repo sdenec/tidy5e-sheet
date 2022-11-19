@@ -7,6 +7,7 @@ import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -873,5 +874,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   npcFavorites(app, html, data);
   spellSlotMarker(app, html, data);
   applyLazyMoney(app, html, data);
+  applyLazyExp(app, html, data);
+  applyLazyHp(app, html, data);
   // console.log(data.actor);
 });

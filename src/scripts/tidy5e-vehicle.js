@@ -4,6 +4,7 @@ import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 
@@ -190,5 +191,7 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
   toggleTraitsList(app, html, data);
   abbreviateCurrency(app,html,data);
   applyLazyMoney(app, html, data);
+  applyLazyExp(app, html, data);
+  applyLazyHp(app, html, data);
   // console.log(data);
 });
