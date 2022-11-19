@@ -107,7 +107,11 @@ export class Tidy5eUserSettings extends FormApplication {
 			'lazyMoneyEnable',
 			'lazyMoneyAddConvert',
 			'lazyMoneyIgnoreElectrum',
-			'lazyMoneyChatLog'
+			'lazyMoneyChatLog',
+
+			'allowCantripToBePreparedOnContext',
+
+			'lockMoneyChanges'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

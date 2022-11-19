@@ -135,6 +135,13 @@
     "labelMidiQoL": "Midi Qol",
     "labelLazyMoney": "Lazy Money"
   },
+  "TIDY5E.Settings.TabLocks": {
+    "tabLabel": "Locks",
+    "header": "Lock Options",
+    "hint": "Prevents players from making changes to aspects of their character sheets that should change infrequently, and provides the option to completely hide some elements that you don't want to use at all. Settings are available to customize exactly what is locked / hidden, and determine who has permission to make sheets editable through a toggle button.",
+    "hint2": "Note that this is not a secure lockdown and players could get around the restrictions, so this is not a sufficient answer if your players are malicious. This is intended for games where the players are inexperienced (with D&D and/or with using computers) to prevent them from making mistakes (ex. accidentally adding/removing saving throw proficiency).",
+    "labelInventoryLocks": "Inventory Locks"
+  },
   "TIDY5E.Settings.TabInfo": {
     "tabLabel": "Info",
     "header": "Info"
@@ -365,5 +372,13 @@
   "TIDY5E.Settings.LazyMoneyChatLog": {
     "name": "Chat log",
     "hint": "Whisper any currency changes to the GM."
+  },
+  "TIDY5E.Settings.AllowCantripToBePreparedOnContext": {
+    "name": "Allow cantrips to be 'prepared' via right-click",
+    "hint": "The \"cantrip formulas\" optional rule from Tashas Cauldron of Everything allows Wizards to prepare their cantrips after a long rest in the same way that they do with leveled spells."
+  },
+  "TIDY5E.Settings.LockMoneyChanges": {
+    "name": "Lock change money for non GM",
+    "hint": "This will lock up the money input pp, gp, ep, sp, cp on the sheet for non GM player. All other module working with these fields are working just fine."
   }
 }

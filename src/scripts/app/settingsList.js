@@ -592,7 +592,7 @@ export function settingsList(){
 
 		game.settings.register("tidy5e-sheet", "lazyMoneyEnable", {
 			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyEnable.name")}`,
-			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyEnable.hint"),
+			hint: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyEnable.hint")}`,
 			scope: "world",
 			config: false,
 			default: false,
@@ -601,7 +601,7 @@ export function settingsList(){
 
 		game.settings.register("tidy5e-sheet", "lazyMoneyAddConvert", {
 			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyAddConvert.name")}`,
-			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyAddConvert.hint"),
+			hint: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyAddConvert.hint")}`,
 			scope: "world",
 			config: false,
 			default: false,
@@ -610,7 +610,7 @@ export function settingsList(){
 
 		game.settings.register("tidy5e-sheet", "lazyMoneyIgnoreElectrum", {
 			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyIgnoreElectrum.name")}`,
-			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint"),
+			hint: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint")}`,
 			scope: "world",
 			config: false,
 			default: false,
@@ -619,7 +619,29 @@ export function settingsList(){
 
 		game.settings.register("tidy5e-sheet", "lazyMoneyChatLog", {
 			name: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyChatLog.name")}`,
-			hint: game.i18n.localize("TIDY5E.Settings.LazyMoneyChatLog.hint"),
+			hint: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyChatLog.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		// Locks
+
+		game.settings.register("tidy5e-sheet", "lockMoneyChanges", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LockMoneyChanges.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.LockMoneyChanges.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		// Other 
+
+		game.settings.register("tidy5e-sheet", "allowCantripToBePreparedOnContext", {
+			name: `${game.i18n.localize("TIDY5E.Settings.AllowCantripToBePreparedOnContext.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint")}`,
 			scope: "world",
 			config: false,
 			default: false,

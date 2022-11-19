@@ -8,6 +8,7 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
+import { applyLocks } from "./app/lockers.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -213,7 +214,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     });
 
     context.appId = this.appId;
-
+    context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
     return context;
   }
 
@@ -877,4 +878,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   applyLazyExp(app, html, data);
   applyLazyHp(app, html, data);
   // console.log(data.actor);
+
+  // NOTE LOCKS ARE THE LAST THING TO SET
+  applyLocks(app, html, data);
 });

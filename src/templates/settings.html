@@ -4,6 +4,7 @@
 		<a class='item' data-tab='npc-sheet'>{{localize 'TIDY5E.Settings.TabNPCsVehicles.tabLabel'}}</a>
 		<a class='item gm-only' data-tab='gm-options'>{{localize 'TIDY5E.Settings.TabGM.tabLabel'}}</a>
 		<a class='item gm-only' data-tab='modules'>{{localize 'TIDY5E.Settings.TabModules.tabLabel'}}</a>
+    <a class='item gm-only' data-tab='locks'>{{localize 'TIDY5E.Settings.TabLocks.tabLabel'}}</a>
 		<a class='item' data-tab='info'>{{localize 'TIDY5E.Settings.TabInfo.tabLabel'}}</a>
 	</nav>
 
@@ -421,6 +422,13 @@
         <p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
       </div>
     </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='allowCantripToBePreparedOnContext' id='allowCantripToBePreparedOnContext' {{checked settings.allowCantripToBePreparedOnContext.value}}>
+      <div class="description">
+        <label for="allowCantripToBePreparedOnContext">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint'}}</p>
+      </div>
+    </article>
 	</section>
 
   {{!-- MODULE OPTIONS --}}
@@ -489,6 +497,24 @@
       <div class="description">
         <label for="lazyMoneyChatLog">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.name'}}</label>
         <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.hint'}}</p>
+      </div>
+    </article>
+  </section>
+
+
+  {{!-- LOCKS OPTIONS --}}
+
+  <section class='tab gm-only' data-tab='locks'>
+    <h2>{{localize 'TIDY5E.Settings.TabLocks.header'}}</h2>
+    <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint'}}</p>
+    <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint2'}}</p>
+    
+    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelInventoryLocks'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockMoneyChanges' id='lockMoneyChanges' {{checked settings.lockMoneyChanges.value}}>
+      <div class="description">
+        <label for="lockMoneyChanges">{{localize 'TIDY5E.Settings.LockMoneyChanges.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockMoneyChanges.hint'}}</p>
       </div>
     </article>
   </section>
