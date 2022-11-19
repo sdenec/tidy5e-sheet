@@ -331,8 +331,15 @@
   "TIDY5E.Settings.DefaultActionsTab": {
     "name": "Default Tab when opening a sheet for the first time.",
     "hint": "Chose between 'Actions' and 'Attributes'.",
-    "default": "Actions",
-    "attributes": "Attributes"
+    "default": "",
+    "attributes": "Attributes",
+    "inventory": "Inventory",
+    "spellbook": "Spellbook",
+    "features": "Features",
+    "effects": "Effects",
+    "biography": "Biography",
+    "journal": "Journal",
+    "actions": "Actions"
   },
   "TIDY5E.Settings.HiddenDeathSaves": {
     "name": "Hide Death Saves from Players.",

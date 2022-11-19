@@ -564,6 +564,13 @@ export function settingsList(){
 			choices: {
 				"default": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.default"),
 				"attributes": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.attributes"),
+				"inventory": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.inventory"),
+				"spellbook": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.spellbook"),
+				"features": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.features"),
+				"effects": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.effects"),
+				"biography": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.biography"),
+				"journal": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.journal"),
+				"actions": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.actions"),
 			},
 			default: 'default'
 		});

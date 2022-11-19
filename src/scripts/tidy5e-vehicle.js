@@ -10,9 +10,13 @@ import { applyLocks } from "./app/lockers.js";
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 
 	static get defaultOptions() {
-    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' ? 'attributes' : 'actions';
-		if (!game.modules.get('character-actions-list-5e')?.active) defaultTab = 'description';
-
+    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' 
+      ? game.settings.get("tidy5e-sheet", "defaultActionsTab")
+      : 'attributes' ;
+		if (!game.modules.get('character-actions-list-5e')?.active && 
+      game.settings.get("tidy5e-sheet", "defaultActionsTab") == 'actions') {
+      defaultTab = 'attributes';
+    }
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "vehicle"],
 			width: game.settings.get("tidy5e-sheet", "vehicleSheetWidth") ?? 740,
