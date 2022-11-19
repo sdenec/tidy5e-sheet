@@ -1115,20 +1115,20 @@
     margin: initial;
   }
 }
-
-.dnd5e.sheet.actor .inventory-filters .currency input.lazymoney[type="text"] {
+/* Lazy Money */
+.tidy5e.sheet.actor .inventory-filters .currency input.lazymoney[type="text"] {
 	flex: 0 0 48px;
 	text-align: center;
 	margin-left: 8px;
 	border-bottom: 2px groove #eeede0;
 }
 
-.dnd5e.sheet input.lazymoney[type="text"] {
+.tidy5e.sheet input.lazymoney[type="text"] {
 	background: none;
 	border: 1px solid transparent;
 }
 
-.dnd5e input.lazymoney[type="text"] {
+.tidy5e input.lazymoney[type="text"] {
 	height: calc(100% - 2px);
 	border: 1px solid #7a7971;
 	background: rgba(0, 0, 0, 0.05);
