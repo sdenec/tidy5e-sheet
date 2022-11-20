@@ -26,5 +26,11 @@ export function applyLocks(app, html, actorData) {
             elem.setAttribute('disabled', true);
         }
     }
-    
+    if (game.settings.get('tidy5e-sheet', "lockConfigureSheet")) {
+        for (const elem of html.find("a[class$='configure-sheet']")) {
+            elem.style.pointerEvents="none";
+            elem.style.cursor="default";
+            elem.style.display="none";
+        }
+    }
 }

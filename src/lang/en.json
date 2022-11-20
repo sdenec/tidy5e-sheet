@@ -396,18 +396,22 @@
   },
   "TIDY5E.Settings.LockMoneyChanges": {
     "name": "Lock change money for non GM",
-    "hint": "This will lock up the money input pp, gp, ep, sp, cp on the sheet for non GM player. All other module working with these fields are working just fine."
+    "hint": "This will lock up the money input pp, gp, ep, sp, cp on the tidy sheet for non GM player. All other module working with these fields are working just fine."
   },
   "TIDY5E.Settings.LockExpChanges": {
     "name": "Lock change experience for non GM",
-    "hint": "This will lock up the experience input on the sheet for non GM player. All other module working with these fields are working just fine."
+    "hint": "This will lock up the experience input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
   },
   "TIDY5E.Settings.LockHpMaxChanges": {
     "name": "Lock change hp max for non GM",
-    "hint": "This will lock up the hp max input on the sheet for non GM player. All other module working with these fields are working just fine."
+    "hint": "This will lock up the hp max input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
   },
   "TIDY5E.Settings.LockLevelSelector": {
     "name": "Lock level selector for non GM",
-    "hint": "Disable Level Dropdown under Features Tab or Offer Option to Lock PLayers out from changing it. All other module working with these fields are working just fine."
+    "hint": "Disable Level Dropdown on the tidy sheet under Features Tab or Offer Option to Lock PLayers out from changing it. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockConfigureSheet": {
+    "name": "Lock configure sheet for non GM",
+    "hint": "Disable and hide the button for configure sheet on the tidy sheet, to avoid players to use other sheet. All other module working with these fields are working just fine."
   }
 }
