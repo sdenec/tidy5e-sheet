@@ -209,12 +209,6 @@ export const tidy5eItemCard = function (html, actor) {
     let itemId = $(this).closest('.info-card').attr('data-item-id');
     let action = $(this).attr('data-action');
     $(`.tidy5e-sheet .item[data-item-id='${itemId}'] .item-buttons .button[data-action='${action}']`).trigger(e);
-
-    // 
-    let itemId2 = $(this).closest('.info-card').attr('data-item-index');
-    let action2 = $(this).attr('data-action');
-    $(`.tidy5e-sheet .item[data-item-index='${itemId2}'] .item-buttons .button[data-action='${action2}']`).trigger(e);
-
   })
 
 }
