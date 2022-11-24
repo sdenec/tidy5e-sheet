@@ -38,7 +38,7 @@ async function updateExhaustion(actorEntity) {
           });
         }
         movementSet.forEach( el => {
-          const changeKey = "data.attributes.movement." + el;
+          const changeKey = "system.attributes.movement." + el;
           let effect = {
             key: changeKey,
             value: "0.5",
@@ -67,7 +67,7 @@ async function updateExhaustion(actorEntity) {
       }
       if(exhaustion > 3 ){
         let effect =  {
-          key: "data.attributes.hp.max",
+          key: "system.attributes.hp.max",
           value: "0.5",
           mode: 1,
           priority: 20
@@ -87,7 +87,7 @@ async function updateExhaustion(actorEntity) {
           });
         }
         movementSet.forEach( el => {
-          const changeKey = "data.attributes.movement." + el;
+          const changeKey = "system.attributes.movement." + el;
           let effect = {
             key: changeKey,
             value: "0",
@@ -99,7 +99,7 @@ async function updateExhaustion(actorEntity) {
       }
       if(exhaustion > 5 ){
         let effect =  {
-          key: "data.attributes.hp.value",
+          key: "system.attributes.hp.value",
           value: "0",
           mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
           priority: 20
@@ -196,7 +196,7 @@ Hooks.on(`restCompleted`, (actorEntity, data) => {
   let actor = game.actors.get(actorEntity._id);
   if(data.longRest){
     let exhaustion = actorEntity.system.attributes.exhaustion;
-    if (exhaustion > 0) actor.update({"data.attributes.exhaustion": exhaustion-1});
+    if (exhaustion > 0) actor.update({"system.attributes.exhaustion": exhaustion-1});
   }
 });
 
