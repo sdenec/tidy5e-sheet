@@ -413,5 +413,9 @@
   "TIDY5E.Settings.LockConfigureSheet": {
     "name": "Lock configure sheet for non GM",
     "hint": "Disable and hide the button for configure sheet on the tidy sheet, to avoid players to use other sheet. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockItemQuantity": {
+    "name": "Lock item quantity for non GM",
+    "hint": "Enable this to lock the input quantity on the inventory and item sheet on the tidy sheet. All other module working with these fields are working just fine."
   }
 }

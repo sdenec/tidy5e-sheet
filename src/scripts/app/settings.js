@@ -117,7 +117,8 @@ export class Tidy5eUserSettings extends FormApplication {
 			'lockExpChanges',
 			'lockHpMaxChanges',
 			'lockLevelSelector',
-			'lockConfigureSheet'
+			'lockConfigureSheet',
+			'lockItemQuantity'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

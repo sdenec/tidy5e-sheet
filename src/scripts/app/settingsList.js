@@ -699,6 +699,15 @@ export function settingsList(){
 			type: Boolean
 		});
 
+		game.settings.register("tidy5e-sheet", "lockItemQuantity", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LockItemQuantity.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.LockItemQuantity.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
 		// Other 
 
 		game.settings.register("tidy5e-sheet", "allowCantripToBePreparedOnContext", {

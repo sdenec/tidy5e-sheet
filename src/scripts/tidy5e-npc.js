@@ -8,7 +8,7 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
-import { applyLocks } from "./app/lockers.js";
+import { applyLocksNpcSheet } from "./app/lockers.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -896,5 +896,5 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   // console.log(data.actor);
 
   // NOTE LOCKS ARE THE LAST THING TO SET
-  applyLocks(app, html, data);
+  applyLocksNpcSheet(app, html, data);
 });

@@ -5,7 +5,7 @@ import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
-import { applyLocks } from "./app/lockers.js";
+import { applyLocksVehicleSheet } from "./app/lockers.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 
@@ -201,5 +201,5 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
   // console.log(data);
 
   // NOTE LOCKS ARE THE LAST THING TO SET
-  applyLocks(app, html, data);
+  applyLocksVehicleSheet(app, html, data);
 });
