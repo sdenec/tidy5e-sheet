@@ -313,6 +313,7 @@ async function editProtection(app, html, data) {
   ) {
     html.find(".classic-controls").addClass("gmEdit");
   } else if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+    /* MOVED TO LOCKERS.JS
     if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
       html.find(".skill input").prop("disabled", true);
       html.find(".skill .config-button").remove();
@@ -340,6 +341,7 @@ async function editProtection(app, html, data) {
       ).length;
       if (spellbook == 0) html.find(".item[data-tab='spellbook']").remove();
     }
+    */
 
     let resourcesUsed = 0;
     html.find('.resources input[type="text"]').each(function () {

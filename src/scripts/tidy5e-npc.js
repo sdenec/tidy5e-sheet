@@ -8,7 +8,7 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
-import { applyLocksNpcSheet } from "./app/lockers.js";
+import { applyLockEditTotal, applyLocksNpcSheet } from "./app/lockers.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -652,6 +652,7 @@ async function hideSpellbook(app, html, data) {
 async function editProtection(app, html, data) {
   let actor = app.actor;
   if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+    /* MOVED TO LOCKERS.JS
     if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
       html.find(".skill input").prop("disabled", true);
       html.find(".skill .config-button").remove();
@@ -674,6 +675,7 @@ async function editProtection(app, html, data) {
       html.find(".caster-level input").prop("disabled", true);
       html.find(".spellcasting-attribute select").prop("disabled", true);
     }
+    */
 
     let itemContainer = html.find(
       ".inventory-list:not(.spellbook-list).items-list"

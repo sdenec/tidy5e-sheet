@@ -340,13 +340,6 @@
       </section>
     </article>
     <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='editTotalLockEnabled' id='editTotalLockEnabled' {{checked settings.editTotalLockEnabled.value}}>
-      <div class="description">
-        <label for="editTotalLockEnabled">{{localize 'TIDY5E.Settings.EditTotalLock.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.EditTotalLock.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='editGmAlwaysEnabled' id='editGmAlwaysEnabled' {{checked settings.editGmAlwaysEnabled.value}}>
       <div class="description">
         <label for="editGmAlwaysEnabled">{{localize 'TIDY5E.Settings.EditGmAlways.name'}}</label>
@@ -529,6 +522,14 @@
     <h2>{{localize 'TIDY5E.Settings.TabLocks.header'}}</h2>
     <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint'}}</p>
     <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint2'}}</p>
+
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='editTotalLockEnabled' id='editTotalLockEnabled' {{checked settings.editTotalLockEnabled.value}}>
+      <div class="description">
+        <label for="editTotalLockEnabled">{{localize 'TIDY5E.Settings.EditTotalLock.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.EditTotalLock.hint'}}</p>
+      </div>
+    </article>
 
     <h3>{{localize 'TIDY5E.Settings.TabLocks.labelGeneralLocks'}}</h3>
     <article class="setting">

@@ -1,5 +1,29 @@
 
 export function applyLocksCharacterSheet(app, html, actorData) {
+    if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+        if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
+            html.find(".skill input").prop("disabled", true);
+            html.find(".skill .config-button").remove();
+            html.find(".skill .proficiency-toggle").remove();
+            html.find(".ability-score").prop("disabled", true);
+            html.find(".ac-display input").prop("disabled", true);
+            html.find(".initiative input").prop("disabled", true);
+            html.find(".hp-max").prop("disabled", true);
+            html.find(".resource-name input").prop("disabled", true);
+            html.find(".res-max").prop("disabled", true);
+            html.find(".res-options").remove();
+            html.find(".ability-modifiers .proficiency-toggle").remove();
+            html.find(".ability .config-button").remove();
+            html
+            .find(
+                ".traits .config-button,.traits .trait-selector,.traits .proficiency-selector"
+            )
+            .remove();
+            html.find("[contenteditable]").prop("contenteditable", false);
+            html.find(".caster-level input").prop("disabled", true);
+            html.find(".spellcasting-attribute select").prop("disabled", true);
+        }
+    }
     if(game.user.isGM){
         return;
     }
@@ -44,6 +68,35 @@ export function applyLocksCharacterSheet(app, html, actorData) {
 }
 
 export function applyLocksNpcSheet(app, html, actorData) {
+    if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+        if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
+            html.find(".skill input").prop("disabled", true);
+            html.find(".skill .config-button").remove();
+            // html.find(".skill .proficiency-toggle").remove();
+            html.find(".skill .proficiency-toggle").removeClass("proficiency-toggle");
+            html.find(".ability-score").prop("disabled", true);
+            html.find(".ac-display input").prop("disabled", true);
+            html.find(".initiative input").prop("disabled", true);
+            html.find(".hp-max").prop("disabled", true);
+            html.find(".resource-name input").prop("disabled", true);
+            html.find(".res-max").prop("disabled", true);
+            html.find(".res-options").remove();
+            html.find(".ability-modifiers .proficiency-toggle").remove();
+            html.find(".ability .config-button").remove();
+            html
+            .find(
+                ".traits .config-button,.traits .trait-selector,.traits .proficiency-selector"
+            )
+            .remove();
+            html.find("[contenteditable]").prop("contenteditable", false);
+            html.find(".spellbook .slot-max-override").remove();
+            html.find(".spellcasting-attribute select").prop("disabled", true);
+            const spellbook = html.find(
+            ".spellbook .inventory-list .item-list"
+            ).length;
+            if (spellbook == 0) html.find(".item[data-tab='spellbook']").remove();
+        }
+    }
     applyLocksCharacterSheet(app, html, actorData);
 }
 
