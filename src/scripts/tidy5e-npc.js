@@ -8,7 +8,7 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
-import { applyLockEditTotal, applyLocksNpcSheet } from "./app/lockers.js";
+import { applyLocksNpcSheet } from "./app/lockers.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
