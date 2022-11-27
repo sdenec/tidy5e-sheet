@@ -1,6 +1,6 @@
 
 export function applyLocksCharacterSheet(app, html, actorData) {
-    if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+    if (!app.actor?.getFlag("tidy5e-sheet", "allow-edit")) {
         if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
             html.find(".skill input").prop("disabled", true);
             html.find(".skill .config-button").remove();
@@ -68,7 +68,7 @@ export function applyLocksCharacterSheet(app, html, actorData) {
 }
 
 export function applyLocksNpcSheet(app, html, actorData) {
-    if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+    if (!app.actor?.getFlag("tidy5e-sheet", "allow-edit")) {
         if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
             html.find(".skill input").prop("disabled", true);
             html.find(".skill .config-button").remove();
