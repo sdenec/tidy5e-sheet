@@ -167,7 +167,7 @@ export const tidy5eItemCard = function (html, actor) {
     }
     let item = actor.items.get(li.data("item-id"));
     if(!item){
-      console.warn(`tidy-sheet | no item found on actor '${actor.name}' with id '${li.data("item-id")}'`);
+      console.warn(`tidy5e-sheet | no item found on actor '${actor.name}' with id '${li.data("item-id")}'`);
       return;
     }
     let chatData = await item.getChatData({secrets: actor.isOwner});
