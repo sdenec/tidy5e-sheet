@@ -52,7 +52,26 @@ French: @temvaryen
 
 Thank you very much!
 
-## License
-This Foundry VTT module, written by sdenec, is licensed under a Creative Commons Attribution 4.0 International License.
+## [Changelog](./changelog.md)
 
-This work is licensed under Foundry Virtual Tabletop EULA - Limited License Agreement for module development v 0.1.6.
+## Issues
+
+Any issues, bugs, or feature requests are always welcome to be reported directly to the [Issue Tracker](https://github.com/p4535992/environment-interactionenvironment-interaction-multisystem/issues ), or using the [Bug Reporter Module](https://foundryvtt.com/packages/bug-reporter/).
+
+## License
+
+- **[Lazy Money](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e)** : [MIT](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e/blob/master/LICENSE)
+- **[Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)** : [???](https://github.com/MrEnigmamgine/spell-class-filter-for-5e/blob/master/LICENSE)
+- **[Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)** : [???](https://github.com/thatlonelybugbear/spell-class-filter-for-5e/blob/master/LICENSE)
+- **[Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)** : [???](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e/blob/master/LICENSE)
+
+This package, written by sdenec, is under an [Creative Commons Attribution 4.0 International License](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
+
+## Credits
+
+- [p4535992](https://github.com/p4535992) for the module [Lazy Money](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e)
+- [MrEnigmamgine](https://github.com/MrEnigmamgine) for the module [Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)
+- [thatlonelybugbear](https://github.com/thatlonelybugbear) for the module [Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)
+- [Rayuaz](https://github.com/Rayuaz) for the module [[Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)
+
+

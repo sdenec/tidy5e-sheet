@@ -446,6 +446,11 @@ export function applyLazyMoney(app, html, actorData) {
     if (!game.settings.get('tidy5e-sheet', "lazyMoneyEnable")) {
         return;
     }
+    // The module already do the job so for avoid redundance...
+    if (game.modules.get('lazymoney')?.active) {
+      return;
+    }
+
     for (const elem of html.find("input[name^='system.currency']")) {
         elem.type = "text";
         elem.classList.add("lazymoney");
