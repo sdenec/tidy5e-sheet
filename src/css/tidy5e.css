@@ -3986,7 +3986,8 @@
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.tidy5e.sheet.actor .note-entries article .editor .editor-edit, .tidy5e.sheet.actor .note-entries article:hover .editor .tox-tinymce ~ .editor-edit {
+.tidy5e.sheet.actor .note-entries article .editor .editor-edit, .tidy5e.sheet.actor .note-entries article:hover .editor .tox-tinymce ~ .editor-edit,
+.tidy5e.sheet.actor .note-entries article .editor .editor-edit, .tidy5e.sheet.actor .note-entries article:hover .editor .tox-prosemirror ~ .editor-edit {
   display: none;
 }
 .tidy5e.sheet.actor .note-entries article .section-titles {
@@ -4012,7 +4013,8 @@
   width: 24px;
   height: 24px;
 }
-.tidy5e.sheet.actor .note-entries article .editor .tox.tox-tinymce .tox-tbtn[title=Formats] {
+.tidy5e.sheet.actor .note-entries article .editor .tox.tox-tinymce .tox-tbtn[title=Formats],
+.tidy5e.sheet.actor .note-entries article .editor .tox.tox-prosemirror .tox-tbtn[title=Formats] {
   width: 90px;
 }
 .tidy5e.sheet.actor .note-entries article .editor .tox .tox-tbtn--select {
@@ -4078,7 +4080,8 @@
   background: var(--faint-color);
   color: var(--primary-font);
 }
-.tidy5e.sheet.actor .tox.tox-tinymce {
+.tidy5e.sheet.actor .tox.tox-tinymce,
+.tidy5e.sheet.actor .tox.tox-prosemirror {
   border: none;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -5048,7 +5051,8 @@
   width: 24px;
   height: 24px;
 }
-.tidy5e.sheet.item .sheet-body .editor .tox.tox-tinymce .tox-tbtn[title=Formats] {
+.tidy5e.sheet.item .sheet-body .editor .tox.tox-tinymce .tox-tbtn[title=Formats],
+.tidy5e.sheet.item .sheet-body .editor .tox.tox-prosemirror .tox-tbtn[title=Formats] {
   width: 90px;
 }
 .tidy5e.sheet.item .sheet-body .editor .tox .tox-tbtn--select {

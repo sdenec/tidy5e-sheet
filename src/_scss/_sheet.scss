@@ -194,7 +194,8 @@
     }
 
     .editor .editor-edit,
-    &:hover .editor .tox-tinymce ~ .editor-edit {
+    &:hover .editor .tox-tinymce ~ .editor-edit,
+    &:hover .editor .tox-prosemirror ~ .editor-edit {
       display: none;
     }
 
@@ -224,7 +225,8 @@
       height: 24px;
     }
 
-    .editor .tox.tox-tinymce .tox-tbtn[title="Formats"] {
+    .editor .tox.tox-tinymce .tox-tbtn[title="Formats"],
+    .editor .tox.tox-prosemirror .tox-tbtn[title="Formats"] {
       width: 90px;
     }
 
@@ -307,7 +309,8 @@
     } //.editor-content
   }
 
-  .tox.tox-tinymce {
+  .tox.tox-tinymce,
+  .tox.tox-prosemirror {
     border: none;
     flex: 1;
     min-height: 100px;

@@ -365,7 +365,8 @@
           height: 24px;
         }
 
-        &.tox-tinymce .tox-tbtn[title="Formats"] {
+        &.tox-tinymce .tox-tbtn[title="Formats"],
+        &.tox-prosemirror .tox-tbtn[title="Formats"] {
           width: 90px;
         }
 
