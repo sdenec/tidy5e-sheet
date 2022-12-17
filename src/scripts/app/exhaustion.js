@@ -218,10 +218,9 @@ async function updateExhaustion(actorEntity) {
 
       for(let i = 1; i<=levels; i++){
         let tier = `${effectName} ${i}`;
-        if (game.cub.hasCondition(tier, [token]) 
-            && tier != effectNameCustom){
+        if (tier != effectNameCustom){
           // console.log(tier);
-          await game.cub.removeCondition(tier, [token]);
+          await game.cub.removeCondition(tier, [token], {warn: false});
         }
       }
 
@@ -230,7 +229,7 @@ async function updateExhaustion(actorEntity) {
           ui.notifications.warn(`${game.i18n.localize("TIDY5E.Settings.CustomExhaustionEffect.warning")}`);
           return;
         }
-        game.cub.addCondition(effectNameCustom, [token])
+        game.cub.addCondition(effectNameCustom, [token], {warn: false})
       }
     }
     else {
