@@ -145,16 +145,23 @@ export class Tidy5eUserSettings extends FormApplication {
 		let exhaustionSelected = $(exhaustionEffectSelect).val();
 		// console.log(exhaustionSelected)
 		switch (exhaustionSelected) {
-			case 'default':
+			case 'default': {
 				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
 				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
-			break;
-			case 'tidy5e' :
+				break;
+			}
+			case 'tidy5e' : {
 				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
-			break;
-			case 'custom' :
+				break;
+			}
+			case 'dfredce' : {
 				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
-			break;
+				break;
+			}
+			case 'cub' : {
+				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
+				break;
+			}
 		}
 
 		exhaustionEffectSelect.on('change', function(e){

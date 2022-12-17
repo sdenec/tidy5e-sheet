@@ -301,6 +301,8 @@
     "hint": "Choose how to apply exhaustion effects corresponding to tiers (requires midiQol for disadvantage rolls)",
     "default": "No automatic exhaustion effects",
     "tidy5e": "Tidy5e - Apply integrated effects (uses Active Effects)",
+    "dfredce": "DFreds Convenient Effects - Use your own effects",
+    "cub": "CUB - Use your own effects",
     "custom": "Custom - Use your own effects (requires CUB)"
   },
   "TIDY5E.Settings.CustomExhaustionIcon": {

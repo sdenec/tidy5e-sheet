@@ -467,7 +467,8 @@ export function settingsList(){
 			choices : {
 				'default' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default"),
 				'tidy5e' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default"),
-				'custom' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default")
+				'dfredce' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.dfredce"),
+				'cub' : game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.cub")
 			},
 			type: String,
 			default: 'default'
