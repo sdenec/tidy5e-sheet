@@ -32,7 +32,7 @@
   --checkbox-checked: rgba(0, 255, 0, 0.5);
   --color-bg-option: rgb(100 100 100);
 }
-.system-dnd5e.tidy5eDark .prosemirror {
+.system-dnd5e.tidy5eDark .sheet-body .prosemirror {
   --color-control-bg: rgb(50 50 50);
   --color-hover-bg: rgb(20 20 20);
 }
