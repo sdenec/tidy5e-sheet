@@ -103,12 +103,32 @@
 
   "TIDY5E.ItemDetailsHeadline": "Mechanics/Flavor Text",
 
+  "TIDY5E.Class" : "Class", 
+  "TIDY5E.SpellClass": "Spell Class",
+  "TIDY5E.Spellbook" : "Spellbook",
+
+  "TIDY5E.ClassArtificer" : "Artificer",
+  "TIDY5E.ClassBarbarian" : "Barbarian",
+  "TIDY5E.ClassBard"      : "Bard",
+  "TIDY5E.ClassCleric"    : "Cleric",
+  "TIDY5E.ClassCustom"    : "Custom",
+  "TIDY5E.ClassDruid"     : "Druid",  
+  "TIDY5E.ClassFighter"   : "Fighter",
+  "TIDY5E.ClassMonk"      : "Monk",
+  "TIDY5E.ClassPaladin"   : "Paladin",
+  "TIDY5E.ClassRanger"    : "Ranger",
+  "TIDY5E.ClassRogue"     : "Rogue",
+  "TIDY5E.ClassSorcerer"  : "Sorcerer",
+  "TIDY5E.ClassWarlock"   : "Warlock",
+  "TIDY5E.ClassWizard"    : "Wizard",
+
   "TIDY5E.Settings.GlobalLabel": "Global",
   "TIDY5E.Settings.DebugLabel": "Debug",
   "TIDY5E.Settings.UserLabel": "User",
   "TIDY5E.Settings.PcLabel": "PCs",
   "TIDY5E.Settings.NpcLabel": "NPCs",
   "TIDY5E.Settings.VehicleLabel": "Vehicles",
+  "TIDY5E.Settings.MulticlassSpellbookFilterLabel": "Multiclass Spellbook Filter",
 
   "TIDY5E.Settings.SheetMenu": {
     "label": "Sheet Settings",
@@ -375,6 +395,14 @@
   "TIDY5E.Settings.vehicleSheetWidth": {
     "name": "Default vehicle sheet width.",
     "hint": "The width of the vehicle sheet in pixels, requires a refresh to take effect (default 740)."
+  },
+  "TIDY5E.Settings.SpellClassFilterSelect": {
+    "name": "Enable Multiclass Spellbook filter",
+    "hint": "If you don't need this for your character, disabling this option will allow you to reclaim the space and declutter your sheet."
+  },
+  "TIDY5E.Settings.SpellClassFilterIconReplace": {
+    "name": "Cover spell icon with class icon",
+    "hint": "Enabling this will change the spellbook tab to display the icon for the spell's class instead of the spell's image. Useful for managing multiple lists without having to switch between them."
   },
   "TIDY5E.Settings.LazyMoneyEnable": {
     "name": "Enable Lazy Money",

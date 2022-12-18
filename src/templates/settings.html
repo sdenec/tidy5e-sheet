@@ -437,6 +437,21 @@
         <p class="notes">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint'}}</p>
       </div>
     </article>
+    <h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='spellClassFilterSelect' id='spellClassFilterSelect' {{checked settings.spellClassFilterSelect.value}}>
+      <div class="description">
+        <label for="spellClassFilterSelect">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='spellClassFilterIconReplace' id='spellClassFilterIconReplace' {{checked settings.spellClassFilterIconReplace.value}}>
+      <div class="description">
+        <label for="spellClassFilterIconReplace">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.hint'}}</p>
+      </div>
+    </article>
 	</section>
 
   {{!-- MODULE OPTIONS --}}

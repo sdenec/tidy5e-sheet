@@ -186,7 +186,7 @@ async function updateExhaustion(actorEntity) {
           return;
         }
         if (game.dfreds.effectInterface.hasEffectApplied(effectNameCustom,actorToCheck.uuid)){
-          ui.notifications.error(`Effect ${effectNameCustom} is already applied to the actor ${actorToCheck.name}`);
+          // ui.notifications.error(`Effect ${effectNameCustom} is already applied to the actor ${actorToCheck.name}`);
           return;
         }
         const contextEffect = {

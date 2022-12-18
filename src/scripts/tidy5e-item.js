@@ -1,5 +1,6 @@
 import { applyLocksItemSheet } from "./app/lockers.js";
 import { tidy5eShowItemArt } from "./app/show-item-art.js";
+import { applySpellClassFilterItemSheet } from "./app/spellClassFilter.js";
 
 export class Tidy5eItemSheet extends dnd5e.applications.item.ItemSheet5e {
   static get defaultOptions() {
@@ -33,6 +34,7 @@ Items.registerSheet("dnd5e", Tidy5eItemSheet, { makeDefault: true });
 
 Hooks.on("renderTidy5eItemSheet", (app, html, data) => {
   addEditorHeadline(app, html, data);
+  applySpellClassFilterItemSheet(app, html, data);
 
   // NOTE LOCKS ARE THE LAST THING TO SET
   applyLocksItemSheet(app, html, data);

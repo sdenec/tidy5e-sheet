@@ -4,7 +4,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "colorScheme", {
 			name: `${game.i18n.localize("TIDY5E.Settings.SheetTheme.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.SheetTheme.hint"),
-			scope: "user",
+			scope: "client",
 			config: true,
 			type: String,
 			choices: {
@@ -26,7 +26,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "classicControlsEnabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ClassicControls.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.ClassicControls.hint"),
-			scope: "user",
+			scope: "client",
 			config: true,
 			default: false,
 			type: Boolean
@@ -36,7 +36,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "itemCardsForAllItems", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ItemCardsForAllItems.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.ItemCardsForAllItems.hint"),
-			scope: "user",
+			scope: "client",
 			config: true,
 			default: true,
 			type: Boolean
@@ -54,7 +54,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "itemCardsAreFloating", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ItemCardsAreFloating.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.ItemCardsAreFloating.hint"),
-			scope: "user",
+			scope: "client",
 			config: true,
 			default: false,
 			type: Boolean
@@ -63,7 +63,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "itemCardsDelay", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ItemCardsDelay.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.ItemCardsDelay.hint"),
-			scope: "user",
+			scope: "client",
 			config: true,
 			default: 300,
 			type: Number
@@ -104,7 +104,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "journalTabDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.JournalTab.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.JournalTab.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -113,7 +113,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "classListDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ClassList.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.ClassList.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -122,7 +122,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "inspirationAnimationDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.InspirationAnimation.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.InspirationAnimation.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -131,7 +131,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hideIfZero", {
 			name: `${game.i18n.localize("TIDY5E.Settings.HideIfZero.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.HideIfZero.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -140,7 +140,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "inspirationOnHover", {
 			name: `${game.i18n.localize("TIDY5E.Settings.InspirationOnHover.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.InspirationOnHover.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -149,7 +149,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "exhaustionOnHover", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.ExhaustionOnHover.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -158,7 +158,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hpBarDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.HpBar.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.HpBar.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -167,7 +167,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hpOverlayDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.HpOverlay.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.HpOverlay.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -176,7 +176,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "traitsTogglePc", {
 			name: `${game.i18n.localize("TIDY5E.Settings.TraitsTogglePc.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.TraitsTogglePc.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -185,7 +185,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "traitsMovedBelowResource", {
 			name: `${game.i18n.localize("TIDY5E.Settings.TraitsMovedBelowResource.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.TraitsMovedBelowResource.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -194,7 +194,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "ammoEquippedOnly", {
 			name: `${game.i18n.localize("TIDY5E.Settings.AmmoEquippedOnly.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.AmmoEquippedOnly.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -206,7 +206,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "traitsMovedBelowResourceNpc", {
 			name: `${game.i18n.localize("TIDY5E.Settings.TraitsMovedBelowResource.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.TraitsMovedBelowResource.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -215,7 +215,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hpBarDisabledNpc", {
 			name: `${game.i18n.localize("TIDY5E.Settings.HpBar.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.HpBar.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -224,7 +224,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hpOverlayDisabledNpc", {
 			name: `${game.i18n.localize("TIDY5E.Settings.HpOverlay.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.HpOverlay.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -233,7 +233,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "traitsAlwaysShownNpc", {
 			name: `${game.i18n.localize("TIDY5E.Settings.TraitsAlwaysShown.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.TraitsAlwaysShown.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -242,7 +242,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "skillsAlwaysShownNpc", {
 			name: `${game.i18n.localize("TIDY5E.Settings.SkillsAlwaysShown.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.SkillsAlwaysShown.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -251,7 +251,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hideSpellbookTabNpc", {
 			name: `${game.i18n.localize("TIDY5E.Settings.SkillsAlwaysShown.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.SkillsAlwaysShown.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: true,
 			type: Boolean
@@ -262,7 +262,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hpBarDisabledVehicle", {
 			name: `${game.i18n.localize("TIDY5E.Settings.HpBar.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.HpBar.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -271,7 +271,7 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "hpOverlayDisabledVehicle", {
 			name: `${game.i18n.localize("TIDY5E.Settings.HpOverlay.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.HpOverlay.hint"),
-			scope: "user",
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean
@@ -589,7 +589,7 @@ export function settingsList(){
 
 		game.settings.register("tidy5e-sheet", "playerSheetWidth", {
 			name: `${game.i18n.localize("TIDY5E.Settings.playerSheetWidth")}`,
-			scope: "user",
+			scope: "client",
 			config: false,
 			type: Number,
 			default: 740
@@ -599,7 +599,7 @@ export function settingsList(){
 
 		game.settings.register("tidy5e-sheet", "npsSheetWidth", {
 			name: `${game.i18n.localize("TIDY5E.Settings.npsSheetWidth")}`,
-			scope: "user",
+			scope: "client",
 			config: false,
 			type: Number,
 			default: 740
@@ -609,7 +609,7 @@ export function settingsList(){
 
 		game.settings.register("tidy5e-sheet", "vehicleSheetWidth", {
 			name: `${game.i18n.localize("TIDY5E.Settings.vehicleSheetWidth")}`,
-			scope: "user",
+			scope: "client",
 			config: false,
 			type: Number,
 			default: 740
@@ -715,6 +715,24 @@ export function settingsList(){
 			name: `${game.i18n.localize("TIDY5E.Settings.AllowCantripToBePreparedOnContext.name")}`,
 			hint: `${game.i18n.localize("TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint")}`,
 			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "spellClassFilterSelect", {
+			name: `${game.i18n.localize("TIDY5E.Settings.SpellClassFilterSelect.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.SpellClassFilterSelect.hint")}`,
+			scope: "client",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "spellClassFilterIconReplace", {
+			name: `${game.i18n.localize("TIDY5E.Settings.SpellClassFilterIconReplace.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.SpellClassFilterIconReplace.hint")}`,
+			scope: "client",
 			config: false,
 			default: false,
 			type: Boolean

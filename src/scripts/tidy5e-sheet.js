@@ -13,6 +13,7 @@ import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
+import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 
 let position = 0;
 
@@ -810,6 +811,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
   applyLazyMoney(app, html, data);
   applyLazyExp(app, html, data);
   applyLazyHp(app, html, data);
+  applySpellClassFilterActorSheet(app, html, data);
   // console.log(data.actor);
   // console.log("Tidy5e Sheet rendered!");
 

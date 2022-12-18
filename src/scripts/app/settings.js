@@ -112,6 +112,8 @@ export class Tidy5eUserSettings extends FormApplication {
 			'lazyMoneyChatLog',
 
 			'allowCantripToBePreparedOnContext',
+			'spellClassFilterSelect',
+			'spellClassFilterIconReplace',
 
 			'lockMoneyChanges',
 			'lockExpChanges',
