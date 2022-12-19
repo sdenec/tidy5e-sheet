@@ -827,6 +827,10 @@ Hooks.on('renderAbilityUseDialog', function(options) {
   if(!game.settings.get("tidy5e-sheet", "enableSpellLevelButtons")){
     return;
   }
+  // The module already do the job so for avoid redundance...
+  if (game.modules.get('spell-level-buttons-for-dnd5e')?.active) {
+      return;
+  }
   if($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) { // If the dialog box has a option to select a spell level
 
       // Resize the window to fit the contents
