@@ -117,14 +117,16 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
             }
 
             if(user_setting_filterSelect){
-                // Hide each element that doesn't match. Or don't hide anything if nothing is selected.
-                if(actorSCFlags.classFilter != ''){
-                    if (itemSCFlags){
-                        if (!(itemSCFlags.parentClass == actorSCFlags.classFilter)){
+                if(hasProperty(actorSCFlags, "classFilter")) {
+                    // Hide each element that doesn't match. Or don't hide anything if nothing is selected.
+                    if(actorSCFlags.classFilter != ''){
+                        if (itemSCFlags){
+                            if (!(itemSCFlags.parentClass == actorSCFlags.classFilter)){
+                                $(this).hide()
+                            }
+                        }else{
                             $(this).hide()
                         }
-                    }else{
-                        $(this).hide()
                     }
                 }
             }

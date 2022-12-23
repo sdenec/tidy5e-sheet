@@ -215,7 +215,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     });
 
     // Journal HTML enrichment
-    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes.value, {
+    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes?.value, {
       secrets: this.actor.isOwner,
       rollData: context.rollData,
       async: true,
