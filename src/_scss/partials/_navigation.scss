@@ -9,9 +9,9 @@
 
 	.item {
 		padding: 5px 8px 0 8px;
-		background: var(--header-background);
+		background: var(--t5e-header-background);
 		border: 1px solid transparent;
-		border-bottom: 1px solid var(--header-border);
+		border-bottom: 1px solid var(--t5e-header-border);
 		font-size: 13px;
 		text-align: left;
 		height: 26px;
@@ -22,20 +22,20 @@
 		}
 		
 		&:hover {
-			color: var(--primary-accent);
+			color: var(--t5e-primary-accent);
 		}
 	}
 
 	.item[data-tab="attributes"] i {
 		margin-right: 4px;
-		color: var(--tertiary-color);
+		color: var(--t5e-tertiary-color);
 		position: relative;
 		top: 1px;
 	}
 
 	.item.active {
 		background: transparent;
-		border: 1px solid var(--light-color);
+		border: 1px solid var(--t5e-light-color);
 		border-bottom-color: transparent;
 		font-weight: 700;
 		cursor: default;
@@ -61,16 +61,16 @@
     align-items: center;
     white-space: nowrap;
     padding: 2px 1rem;
-    background: var(--header-background);
+    background: var(--t5e-header-background);
     border: 1px solid transparent;
-    border-bottom: 1px solid var(--header-border);
+    border-bottom: 1px solid var(--t5e-header-border);
     font-size: 13px;
     text-align: left;
     height: 26px;
 
     span {
 	    cursor: pointer;
-    	background: var(--safe-accent);
+    	background: var(--t5e-safe-accent);
     	color: rgba(255,255,255,.6);
       border-radius: 3px;
 
@@ -94,7 +94,7 @@
 .allow-edit .tidy5e-navigation {
 	.toggle-allow-edit {
     span {
-    	background: var(--unsafe-accent);
+    	background: var(--t5e-unsafe-accent);
     }
 
     .fa-lock-open {

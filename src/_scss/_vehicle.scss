@@ -6,7 +6,7 @@
 
 	.counters {
 		width: 100%;
-    background: var(--faint-color);
+    background: var(--t5e-faint-color);
     border-radius: 5px;
     padding: 4px 8px;
     font-size: 12px;
@@ -16,7 +16,7 @@
     	justify-content: space-between;
     	align-items: center;
     	white-space: nowrap;
-    	border-top: 1px solid var(--light-color);
+    	border-top: 1px solid var(--t5e-light-color);
 
     	&:first-child {
     		border: none;
@@ -87,7 +87,7 @@
 	}
 
 	.profile .hp-overlay-wrapper::before {
-		border-width: var(--vehicle-border);
+		border-width: var(--t5e-vehicle-border);
 	}
 
 	.items-header {

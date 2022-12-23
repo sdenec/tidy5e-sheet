@@ -32,7 +32,7 @@
 		height: 100%;
 		border-radius: 5px;
 		overflow: hidden;
-		border: 1px solid var(--icon-outline);
+		border: 1px solid var(--t5e-icon-outline);
 		position: relative;
 		mix-blend-mode: multiply;
 		z-index: 2;
@@ -53,20 +53,20 @@
 			}
 
 			.showActorArt {
-				background: var(--background);
-				color: var(--primary-font);
+				background: var(--t5e-background);
+				color: var(--t5e-primary-font);
 				border: none;
 				margin: 1px 0;
 				padding: 4px 6px;
 				line-height: 1;
 				font-size: 12px;
-				border: 1px solid var(--light-color);
+				border: 1px solid var(--t5e-light-color);
 				border-radius: 5px;
 				text-align: center;
 
 				&:hover {
-					background: var(--background);
-					color: var(--primary-accent);
+					background: var(--t5e-background);
+					color: var(--t5e-primary-accent);
 				}
 			}
 		}
@@ -74,8 +74,8 @@
 	}
 	
 	.player-image {
-		background: var(--icon-background);
-		box-shadow: 0 0 10px var(--icon-shadow) inset;
+		background: var(--t5e-icon-background);
+		box-shadow: 0 0 10px var(--t5e-icon-shadow) inset;
 	}
 
 	.roundPortrait .player-image {
@@ -129,7 +129,7 @@
 		bottom: 0;
 		border-radius: 50%;
 		border: 0px solid #fff;
-		border-width: var(--pc-border);
+		border-width: var(--t5e-pc-border);
 		z-index: 1;
 	}
 
@@ -238,11 +238,11 @@
 		align-items: center;
 		border-radius: 0 5px 0 5px;
 		font-size: 24px;
-		color: var(--icon-font);
+		color: var(--t5e-icon-font);
 		cursor: pointer;
-		box-shadow:	0 0 10px var(--icon-shadow) inset;
-		border: 1px solid var(--icon-outline);
-		background: var(--icon-background);
+		box-shadow:	0 0 10px var(--t5e-icon-shadow) inset;
+		border: 1px solid var(--t5e-icon-outline);
+		background: var(--t5e-icon-background);
 	}
 
 	.roundPortrait .inspiration label {
@@ -318,11 +318,11 @@
 		overflow: hidden;
 		border-radius: 0 5px 0 5px;
 		transition: width .3s ease;
-		background: var(--icon-background);
+		background: var(--t5e-icon-background);
 		display: flex;
-		box-shadow:	0 0 10px var(--icon-shadow) inset;
-		border: 1px solid var(--icon-outline);
-		color: var(--icon-font);
+		box-shadow:	0 0 10px var(--t5e-icon-shadow) inset;
+		border: 1px solid var(--t5e-icon-outline);
+		color: var(--t5e-icon-font);
 	}
 
 	.roundPortrait .resting {
@@ -358,7 +358,7 @@
 		padding: 0;
 		font-size: 18px;
 		line-height: 32px;
-		font-family: var(--signika);
+		font-family: var(--t5e-signika);
 		font-weight: 700;
 	}
 
@@ -367,7 +367,7 @@
 	}
 
 	.resting .rest:hover {
-		color: var(--icon-hover);
+		color: var(--t5e-icon-hover);
 	}
 
 // Hover Notes
@@ -377,7 +377,7 @@
 		position: absolute;
 		left: 50%;
 		bottom: calc(100% + .5rem );
-		background: var(--note-background);
+		background: var(--t5e-note-background);
 		color: #fff;
 		font-size: 12px;
 		padding: .5rem 1rem;
@@ -426,7 +426,7 @@
 		height: 34px;
 		width: 34px;
 		z-index: 50;
-		color: var(--icon-font);
+		color: var(--t5e-icon-font);
 	}
 	
 	.exhaustion-container .level-display {
@@ -437,9 +437,9 @@
 		text-align: center;
 		font-size: 14px;
 		position: absolute;
-	  background: var(--icon-background);
-	  box-shadow: 0 0 8px var(--icon-shadow) inset;
-	  border: 1px solid var(--icon-outline);
+	  background: var(--t5e-icon-background);
+	  box-shadow: 0 0 8px var(--t5e-icon-shadow) inset;
+	  border: 1px solid var(--t5e-icon-outline);
 		top: -2px;
 		left: -2px;
 		border-radius: 50%;
@@ -461,10 +461,10 @@
 		overflow: hidden; 
 	  border-radius: 5px 0 5px 0;
 	  transition: width .3s ease;
-	  background: var(--icon-background);
+	  background: var(--t5e-icon-background);
 	  display: flex;
-	  box-shadow: 0 0 10px var(--icon-shadow) inset;
-	  border: 1px solid var(--icon-outline);
+	  box-shadow: 0 0 10px var(--t5e-icon-shadow) inset;
+	  border: 1px solid var(--t5e-icon-outline);
 	}
 
 	.roundPortrait .exhaustion-wrap {
@@ -499,12 +499,12 @@
 		text-align: center;
 		line-height: 34px;
 		cursor: pointer;
-		background: var(--light-color);
+		background: var(--t5e-light-color);
 	}
 
 	.exhaustion-wrap .exhaust-level li:hover {
-		background: var(--tertiary-color) !important;
-		color: var(--primary-font);
+		background: var(--t5e-tertiary-color) !important;
+		color: var(--t5e-primary-font);
 	}
 
 // # exhaustion effect note #
@@ -553,14 +553,14 @@
 	}
 
 	.exhaustion-container:not(.level-):not(.level-0) .exhaustion-icon {
-		color: var(--exhaustion-font);
+		color: var(--t5e-exhaustion-font);
 	}
 
 	.exhaustion-container:not(.level-):not(.level-0) .exhaustion-icon,
 	.exhaustion-container.level-1 .exhaust-level li:nth-of-type(-n+2),
 	.exhaustion-container.level-2 .exhaust-level li:nth-of-type(-n+3) {
-		color: var(--exhaustion-font);
-		background: var(--exhaustion-lvl1);
+		color: var(--t5e-exhaustion-font);
+		background: var(--t5e-exhaustion-lvl1);
 	}
 
 	.exhaustion-container.level-1 .exhaustion-icon i:nth-child(2) {
@@ -574,7 +574,7 @@
 	.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2) .exhaustion-icon,
 	.exhaustion-container.level-3 .exhaust-level li:nth-of-type(-n+4),
 	.exhaustion-container.level-4 .exhaust-level li:nth-of-type(-n+5) {
-		background: var(--exhaustion-lvl2);
+		background: var(--t5e-exhaustion-lvl2);
 	}
 
 	.exhaustion-container.level-3 .exhaustion-icon i:nth-child(4) {
@@ -588,7 +588,7 @@
 	.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4) .exhaustion-icon,
 	.exhaustion-container.level-5 .exhaust-level li:nth-of-type(-n+6),
 	.exhaustion-container.level-6 .exhaust-level li:nth-of-type(-n+7) {
-		background: var(--exhaustion-lvl3);
+		background: var(--t5e-exhaustion-lvl3);
 	}
 
 	.exhaustion-container.level-5 .exhaustion-icon i:nth-child(6) {
@@ -600,16 +600,16 @@
 	}
 
 	.exhaustion-container:not(.level-):not(.level-0) .level-display {
-		color: var(--exhaustion-font);
-		background: var(--exhaustion-lvl1);
+		color: var(--t5e-exhaustion-font);
+		background: var(--t5e-exhaustion-lvl1);
 	}
 
 	.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2) .level-display {
-		background: var(--exhaustion-lvl2);
+		background: var(--t5e-exhaustion-lvl2);
 	}
 
 	.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4) .level-display{
-		background: var(--exhaustion-lvl3);
+		background: var(--t5e-exhaustion-lvl3);
 	}
 
 // Portrait Hit Points
@@ -622,11 +622,11 @@
     bottom: 0;
     width: 34px;
 	  height: 34px;
-    background: var(--icon-background);
-    box-shadow: 0 0 10px var(--icon-shadow) inset;
-    border: 1px solid var(--icon-outline);
+    background: var(--t5e-icon-background);
+    box-shadow: 0 0 10px var(--t5e-icon-shadow) inset;
+    border: 1px solid var(--t5e-icon-outline);
     border-radius: 5px 0 5px 0px;
-		color: var(--icon-font);
+		color: var(--t5e-icon-font);
     
 
     .current-hd {
@@ -634,7 +634,7 @@
 	    justify-content: center;
 	    align-items: center;
 	    height: 100%;
-	    font-family: var(--modesto);
+	    font-family: var(--t5e-modesto);
 	    font-size: 20px;
 	    font-weight: 700;
     	padding: 2px 0 0 0;
@@ -659,9 +659,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--icon-background);
-    box-shadow: 0 0 5px var(--icon-shadow) inset;
-		border: 1px solid var(--icon-outline);
+    background: var(--t5e-icon-background);
+    box-shadow: 0 0 5px var(--t5e-icon-shadow) inset;
+		border: 1px solid var(--t5e-icon-outline);
 		
 		.hp-bar {
 			position: absolute;
@@ -680,7 +680,7 @@
 
 	.portrait-hp input,
 	.portrait-hp span {
-		font-family: var(--modesto);
+		font-family: var(--t5e-modesto);
 		height: 100%;
 		font-weight: 700;
     width: 40px;

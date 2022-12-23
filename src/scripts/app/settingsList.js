@@ -13,13 +13,13 @@ export function settingsList(){
 			},
 			default: 'default',
 			onChange: data => {
-				data === 'dark' ? document.body.classList.add("tidy5eDark"):document.body.classList.remove("tidy5eDark");
-			 }
+				data === 'dark' ? document.querySelector('html').classList.add("tidy5eDark"):document.querySelector('html').classList.remove("tidy5eDark");
+			}
 		});
 
 		const colorScheme = game.settings.get('tidy5e-sheet', "colorScheme");
 		if (colorScheme === 'dark') {
-			document.body.classList.add("tidy5eDark");
+			document.querySelector('html').classList.add("tidy5eDark");
 		}
 
 		// Classic Item Controls

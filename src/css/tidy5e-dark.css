@@ -30,13 +30,14 @@
   --checkbox-outline: rgba(50, 50, 50, 1);
   --checkbox-unchecked: rgba(75, 75, 75, 1);
   --checkbox-checked: rgba(0, 255, 0, 0.5);
+}
+.system-dnd5e.tidy5eDark .tidy5e {
   --color-bg-option: rgb(100 100 100);
 }
-.system-dnd5e.tidy5eDark .sheet-body .prosemirror {
+.system-dnd5e.tidy5eDark .tidy5e .prosemirror {
   --color-control-bg: rgb(50 50 50);
   --color-hover-bg: rgb(20 20 20);
 }
-
 .tidy5eDark .tidy5e.sheet.actor .tidy5e-sheet {
   background-color: var(--background);
 }
@@ -124,6 +125,18 @@
 .tidy5eDark .tidy5e.sheet.actor .tox-sidebar-wrap {
   padding: 8px;
   background: var(--secondary-color);
+}
+.tidy5eDark .tidy5e.sheet .prosemirror menu button:hover {
+  background: rgb(100, 100, 100);
+}
+.tidy5eDark .tidy5e.sheet .prosemirror menu .pm-dropdown {
+  background: rgb(100, 100, 100);
+}
+.tidy5eDark .tidy5e.sheet .prosemirror menu .pm-dropdown ul {
+  background: rgb(100, 100, 100);
+}
+.tidy5eDark .tidy5e.sheet .prosemirror menu .pm-dropdown li:hover {
+  background: rgb(50, 50, 50);
 }
 
 .disable {

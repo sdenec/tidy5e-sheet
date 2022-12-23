@@ -40,7 +40,7 @@
 	.br5e-consume-box {
 		margin-top: 4px;
     border: none;
-    border-top: 1px solid var(--light-color);
+    border-top: 1px solid var(--t5e-light-color);
     box-shadow: none;
     background: transparent;
     border-radius: 0;
@@ -78,7 +78,7 @@
 	}
 
 	.spellbook-header div:not(.spell-slots):not(.spell-rechargeable) {
-		color: var(--light-color);
+		color: var(--t5e-light-color);
 	}
 
 	.item-name {
@@ -125,8 +125,8 @@
 			justify-content: center;
 			align-items: center;
 			font-size: 12px;
-			color: var(--secondary-color);
-			border-left: 1px solid var(--faint-color);
+			color: var(--t5e-secondary-color);
+			border-left: 1px solid var(--t5e-faint-color);
 		}
 
 		.spell-slots {
@@ -137,7 +137,7 @@
 			input {
 				width: 20px;
 				height: 16px;
-				background:var(--faint-color);
+				background:var(--t5e-faint-color);
 				padding: 0 2px;
 				border-radius: 3px;
 			}
@@ -271,15 +271,15 @@
 			// 	line-height: 20px;
 			// 	background: transparent;
 			// 	border: none;
-			// 	border-top: 1px solid var(--faintest-color);
-			// 	font-family: var(--signika);
+			// 	border-top: 1px solid var(--t5e-faintest-color);
+			// 	font-family: var(--t5e-signika);
 			// }
 
 			.item {
 				padding: 0;
 			  line-height: 26px;
 		    height: 26px;
-			  background: var(--faintest-color);
+			  background: var(--t5e-faintest-color);
 			  border: none;
 			  border-radius: 5px;
 			  margin: 2px 0;
@@ -324,9 +324,9 @@
 			}
 
 			.inventory-header {
-				background: var(--faint-color);
-		    box-shadow: 0 0 5px inset var(--light-color);
-		    border-bottom: 1px solid var(--light-color);
+				background: var(--t5e-faint-color);
+		    box-shadow: 0 0 5px inset var(--t5e-light-color);
+		    border-bottom: 1px solid var(--t5e-light-color);
 			}
 
 	    .inventory-header h3 {
@@ -409,16 +409,16 @@
   margin: 0;
   flex: 0 0 1px;
   margin-right: 2px;
-  font-family: var(--signika);
+  font-family: var(--t5e-signika);
   height: 14px;
-  color: var(--primary-font);
+  color: var(--t5e-primary-font);
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover,
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus {
-  background: var(--primary-accent);
-  color: var(--primary-font);
-  box-shadow: 0 0 0 1px var(--primary-accent);
+  background: var(--t5e-primary-accent);
+  color: var(--t5e-primary-font);
+  box-shadow: 0 0 0 1px var(--t5e-primary-accent);
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover option,
@@ -442,7 +442,7 @@
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
 	border: none;
-	box-shadow: 0 0 0 1px var(--light-color) inset;
+	box-shadow: 0 0 0 1px var(--t5e-light-color) inset;
   margin-top: -2px;
 	padding-top: 2px;
 	text-align: center;
@@ -450,7 +450,7 @@
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:hover,
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:focus {
-	box-shadow: 0 0 0 1px var(--primary-accent) inset;
+	box-shadow: 0 0 0 1px var(--t5e-primary-accent) inset;
 }
 
 
@@ -464,7 +464,7 @@
     font-size: 12px;
 
     &:hover {
-    	color: var(--primary-accent);
+    	color: var(--t5e-primary-accent);
     }
 	}
 
@@ -473,14 +473,14 @@
     font-size: 18px;
     line-height: 12px;
     margin-right: 5px;
-    color: var(--default-light-color);
+    color: var(--t5e-default-light-color);
     height: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
 
 		&:hover {
-			color: var(--primary-font);
+			color: var(--t5e-primary-font);
 		}
 
 		i {
@@ -496,13 +496,13 @@
 
 		a {
 			margin-right: 5px;
-	    color: var(--light-color);
+	    color: var(--t5e-light-color);
 	    display: flex;
 	    justify-content: center;
 	    align-items: center;
 
 			&:hover {
-				color: var(--primary-font);
+				color: var(--t5e-primary-font);
 			}
 		}
 
@@ -524,11 +524,11 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%,-50%);
-			color: var(--faint-color);
+			color: var(--t5e-faint-color);
 		}
 
 		&:hover i {
-			color: var(--tertiary-color);
+			color: var(--t5e-tertiary-color);
 		}
 		
 	}
@@ -543,7 +543,7 @@
 	overflow-y: scroll;
 
 	.items-header .item-detail {
-		color: var(--tertiary-color);
+		color: var(--t5e-tertiary-color);
 		line-height: 12px;
 		height: 12px;
 		border: none;
@@ -582,12 +582,12 @@
 
 			span {
 				// font-size: 10px;
-				color: var(--secondary-color);
+				color: var(--t5e-secondary-color);
 			}
 
 			small {
 				font-size: 10px;
-				color: var(--tertiary-color);
+				color: var(--t5e-tertiary-color);
 				display: block;
 			}
 		}

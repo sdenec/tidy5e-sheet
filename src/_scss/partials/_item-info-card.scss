@@ -42,7 +42,7 @@
 
   .item-info-container-background {
     font-size: 150px;
-    color: var(--faintest-color);
+    color: var(--t5e-faintest-color);
     position: absolute;
     top: 0;
     left: 0;
@@ -59,20 +59,20 @@
     display: flex;
     height: 100%;
     flex-direction: column;
-    border-right: 1px solid var(--light-color);
+    border-right: 1px solid var(--t5e-light-color);
   }
 
   .info-card-hint {
     width: 279px;
     font-size: 12px;
-    border-top: 1px solid var(--faint-color);
+    border-top: 1px solid var(--t5e-faint-color);
     padding: 4px 8px 0 8px;
     font-style: italic;
 
     .key {
       display: inline-block;
-      background: var(--primary-font);
-      color: var(--background);
+      background: var(--t5e-primary-font);
+      color: var(--t5e-background);
       border-radius: 3px;
       font-style: normal;
       padding: 0 4px;
@@ -98,47 +98,47 @@
     flex-direction: column;
 
     &.equipped {
-      background: var(--equipped);
-      background: linear-gradient(180deg, var(--equipped) 0px, var(--equipped) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--equipped) inset;
+      background: var(--t5e-equipped);
+      background: linear-gradient(180deg, var(--t5e-equipped) 0px, var(--t5e-equipped) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5e-equipped) inset;
     }
 
     &.prepared {
-      background: var(--prepared);
-      background: linear-gradient(180deg, var(--prepared) 0px, var(--prepared) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--prepared) inset;
+      background: var(--t5e-prepared);
+      background: linear-gradient(180deg, var(--t5e-prepared) 0px, var(--t5e-prepared) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5e-prepared) inset;
     }
 
     &.pact {
-      background: var(--pact);
-      background: linear-gradient(180deg, var(--pact) 0px, var(--pact) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--pact) inset;
+      background: var(--t5e-pact);
+      background: linear-gradient(180deg, var(--t5e-pact) 0px, var(--t5e-pact) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5e-pact) inset;
     }
 
     &.atwill {
-      background: var(--atwill);
-      background: linear-gradient(180deg, var(--atwill) 0px, var(--atwill) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--atwill) inset;
+      background: var(--t5e-atwill);
+      background: linear-gradient(180deg, var(--t5e-atwill) 0px, var(--t5e-atwill) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5e-atwill) inset;
     }
 
     &.innate {
-      background: var(--innate);
-      background: linear-gradient(180deg, var(--innate) 0px, var(--innate) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--innate) inset;
+      background: var(--t5e-innate);
+      background: linear-gradient(180deg, var(--t5e-innate) 0px, var(--t5e-innate) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5e-innate) inset;
     }
 
     &.alwaysPrepared {
-      background: var(--always-prepared);
-      background: linear-gradient(180deg, var(--always-prepared) 0px, var(--always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--always-prepared) inset;
+      background: var(--t5e-always-prepared);
+      background: linear-gradient(180deg, var(--t5e-always-prepared) 0px, var(--t5e-always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5e-always-prepared) inset;
     }
 
     &.magic-item {
-      box-shadow: 0 0 6px 2px var(--magic-accent) inset;
+      box-shadow: 0 0 6px 2px var(--t5e-magic-accent) inset;
     }
 
     .info-card-name {
-      font-family: var(--modesto);
+      font-family: var(--t5e-modesto);
       font-size: 24px;
       margin: 0 0 4px 0;
       line-height: 1;
@@ -159,7 +159,7 @@
       font-size: 12px;
       display: flex;
       justify-content: space-between;
-      border-top: 1px solid var(--faint-color);
+      border-top: 1px solid var(--t5e-faint-color);
 
       span {
         padding: 4px 0;
@@ -183,8 +183,8 @@
       flex: 1;
       overflow: hidden;
       padding: 6px 0;
-      border-top: 2px solid var(--light-color);
-      border-bottom: 2px solid var(--light-color);
+      border-top: 2px solid var(--t5e-light-color);
+      border-bottom: 2px solid var(--t5e-light-color);
     }
 
     .info-card-description {
@@ -239,14 +239,14 @@
         gap: 2px;
         margin-top: 4px;
         padding-top: 4px;
-        border-top: 1px solid var(--light-color);
+        border-top: 1px solid var(--t5e-light-color);
 
         .button {
-          background: var(--secondary-color);
+          background: var(--t5e-secondary-color);
           font-size: 12px;
           padding: 2px 4px 1px 4px;
           border-radius: 3px;
-          color: var(--background);
+          color: var(--t5e-background);
         }
       }
     }

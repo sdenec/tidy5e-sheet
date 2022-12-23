@@ -21,8 +21,8 @@
   .window-content {
     padding: 0;
     margin: 0;
-    color: var(--primary-font);
-    font-family: var(--signika);
+    color: var(--t5e-primary-font);
+    font-family: var(--t5e-signika);
 
     form {
       height: 100%;
@@ -54,10 +54,10 @@
 
     .notice {
       display: block;
-      background: var(--warning-accent);
+      background: var(--t5e-warning-accent);
       padding: 10px;
       font-size: 12px;
-      color: var(--background);
+      color: var(--t5e-background);
       border-radius: 5px;
       margin-bottom: 8px;
     }
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: center;
     padding: 10px 16px 16px 16px;
-    background: var(--header-background);
+    background: var(--t5e-header-background);
   }
 
   @import "partials/_portrait.scss";
@@ -167,7 +167,7 @@
   }
 
   .note-entries article {
-    background: var(--faintest-color);
+    background: var(--t5e-faintest-color);
     border-radius: 5px;
     padding: 8px;
     margin-bottom: 1rem;
@@ -201,7 +201,7 @@
 
     .section-titles {
       font-weight: 700;
-      border-bottom: 1px solid var(--light-color);
+      border-bottom: 1px solid var(--t5e-light-color);
       padding-bottom: 0.25rem;
       margin-bottom: 0.5rem;
       flex: 0 0 1px;
@@ -281,7 +281,7 @@
     }
 
     .tox-editor-header {
-      border-bottom: 1px solid var(--faint-color);
+      border-bottom: 1px solid var(--t5e-faint-color);
     }
 
     .tox-toolbar-overlord,
@@ -303,8 +303,8 @@
       a.inline-roll {
         padding: 1px 2px 0px 2px;
         border-radius: 5px;
-        background: var(--faint-color);
-        color: var(--primary-font);
+        background: var(--t5e-faint-color);
+        color: var(--t5e-primary-font);
       }
     } //.editor-content
   }

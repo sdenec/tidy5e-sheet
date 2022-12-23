@@ -62,6 +62,14 @@ export class Tidy5eSheet extends dnd5e.applications.actor
       context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
+    // Journal HTML enrichment
+    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes.value, {
+      secrets: this.actor.isOwner,
+      rollData: context.rollData,
+      async: true,
+      relativeTo: this.actor
+    });
+
     context.appId = this.appId;
     context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
     return context;
