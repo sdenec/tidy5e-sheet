@@ -37,7 +37,11 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if system.preparation.prepared}} prepared{{/if}}{{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if system.preparation.prepared}} prepared{{/if}}
+        {{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}
+        {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
+        {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
+        {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>
@@ -77,7 +81,11 @@
         </div>
         <div class="item-detail spell-action" title="{{localize 'DND5E.SpellUsage'}}">{{labels.activation}}</div>
         
-        <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}{{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
+        <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
+          {{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}
+          {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
+          {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
+          {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
             <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
@@ -106,8 +114,14 @@
         </div>
         <div class="item-controls context-menu">
           <hr class="context-divider">
+          {{#if @root/allowCantripToBePreparedOnContext }}
+          {{#if (ne system.preparation.mode 'always')}}
+          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i> <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>{{else}}<i class="fas fa-book inactive"></i> <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>{{/if}}</a>
+          {{/if}}
+          {{else}}
           {{#if (and section.canPrepare (ne system.preparation.mode 'always'))}}
           <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i> <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>{{else}}<i class="fas fa-book inactive"></i> <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>{{/if}}</a>
+          {{/if}}
           {{/if}}
           <hr class="context-divider">
           <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize 'TIDY5E.EditSpell'}}</span></a>

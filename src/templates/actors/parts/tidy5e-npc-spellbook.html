@@ -68,7 +68,11 @@
 
         <div class="item-detail spell-action">{{labels.activation}}</div>
 
-        <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}{{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
+        <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
+          {{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}
+          {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
+          {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
+          {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
           <p class="info-card-name">{{item.name}}</p>
           <div class="info-card-states">
             <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>

@@ -119,20 +119,20 @@
 								 	rgba(0,200,0,0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0,200,0,0.5) 100%);">
 						</div>
-						<input class="hp-min" name="system.attributes.hp.value" type="text" value="{{system.attributes.hp.value}}"
-						data-dtype="Number" placeholder="0" maxlength="5">
+						<input class="hp-min" name="system.attributes.hp.value" type="number" step="any" value="{{system.attributes.hp.value}}"
+						placeholder="0" maxlength="5" title="{{localize 'DND5E.HitPointsCurrent'}}">
 						<span class="value-seperator">/</span>
-						<input class="hp-max" name="system.attributes.hp.max" type="text" value="{{system.attributes.hp.max}}"
-						data-dtype="Number" placeholder="0" maxlength="5">
+						<input class="hp-max" name="system.attributes.hp.max" type="number" value="{{system.attributes.hp.max}}"
+						placeholder="0" maxlength="5" title="{{localize 'DND5E.HitPointsMax'}}">
 					</div>
 				</div>
 
         {{!-- Hit Points --}}
 				<div class="portrait-temp">
-					<input name="system.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
-					value="{{system.attributes.hp.temp}}" data-dtype="Number" maxlength="3">
-					<input name="system.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
-					value="{{system.attributes.hp.tempmax}}" data-dtype="Number" maxlength="3">
+					<input name="system.attributes.hp.temp" type="number" step="any" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
+					value="{{system.attributes.hp.temp}}" maxlength="3">
+					<input name="system.attributes.hp.tempmax" type="number" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
+					value="{{system.attributes.hp.tempmax}}" maxlength="3">
 				</div>
 
 			</section>
@@ -141,7 +141,7 @@
 			<div class="character-details">
 				<section class="general-information">
 					<input data-input="{{actor._id}}-name" name="name" type="hidden" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
-          <h1 class="char-name" {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-name" data-placeholder="{{ localize 'DND5E.Name' }}" data-maxlength="40">{{actor.name}}</h1>
+          <h1 class="char-name" {{#if owner}} contenteditable="true" {{/if}} spellcheck="false" data-target="{{actor._id}}-name" data-placeholder="{{ localize 'DND5E.Name' }}" data-maxlength="40">{{actor.name}}</h1>
 					<div class="level-information {{#if disableExperience}}noxp{{/if}}">
 						<h2 class="level">{{ localize 'DND5E.AbbreviationLevel' }} {{system.details.level}}</h2>
 						{{#unless disableExperience}}
@@ -457,7 +457,7 @@
 				<div class="right-notes note-entries">
 					<article class="journal-notes">
 						<div class="section-titles">{{ localize 'TIDY5E.JournalEntries' }}</div>
-						{{editor system.details.notes.value target="system.details.notes.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+						{{editor journalHTML target="system.details.notes.value" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
 				</div>
 			</div>

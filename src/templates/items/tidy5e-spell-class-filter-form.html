@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label>{{ localize "TIDY5E.SpellClass" }}</label>
+    <select
+        name="flags.tidy5e-sheet.parentClass"
+    >
+        {{#select flags.tidy5e-sheet.parentClass}}
+            <option value=""> --- </option>
+        {{#each SCF as |name key|}}
+            <option value="{{key}}">{{ localize name}}</option>
+        {{/each}}
+        {{/select}}
+    </select>
+</div>

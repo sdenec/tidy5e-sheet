@@ -4,7 +4,7 @@
 /* ------------------------------------ */
 
 .tidy5eDark .tidy5e.sheet.actor .items-list .item-summary .item-buttons .tag button:hover {
-	background: var(--darkmode-primary-accent);
+	background: var(--t5e-darkmode-primary-accent);
 }
 
 /* ------------------------ */
@@ -15,18 +15,18 @@
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-mode,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-value,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
-	color: var(--darkmode-primary-color);
-  font-weight: 400;
+	color: var(--t5e-darkmode-primary-color);
+	font-weight: 400;
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-name,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
-	color: var(--darkmode-tertiary-color);
+	color: var(--t5e-darkmode-tertiary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect {
-	background: var(--darkmode-faint-color);
+	background: var(--t5e-darkmode-faint-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect .effect-name {
@@ -34,48 +34,48 @@
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create {
-	background: var(--darkmode-light-color);
+	background: var(--t5e-darkmode-light-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create:hover {
-	background: var(--darkmode-primary-accent);
+	background: var(--t5e-darkmode-primary-accent);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-edit:hover {
-	color: var(--darkmode-primary-accent);
+	color: var(--t5e-darkmode-primary-accent);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete {
-	color: var(--danger-500);
+	color: var(--t5e-danger-500);
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete:hover {
-	color: var(--danger-700);
+	color: var(--t5e-danger-700);
 }
 /* ------------------------ */
 /*    Support Magic Items   */
 /* ------------------------ */
 .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .spellbook-filters.magic-items-head,
 .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head {
-  border-color: var(--darkmode-light-color);
+  border-color: var(--t5e-darkmode-light-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
 .tidy5eDark .tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
-  border-color: var(--darkmode-faint-color); 
+  border-color: var(--t5e-darkmode-faint-color); 
 }
 
 .tidy5eDark .dnd5e.sheet.actor .spell-rechargeable,
 .tidy5eDark .dnd5e.sheet.actor .spell-level,
 .tidy5eDark .dnd5e.sheet.actor .spell-consumption,
 .tidy5eDark .dnd5e.sheet.actor .spell-upcast {
-  color: var(--darkmode-primary-color);
+  color: var(--t5e-darkmode-primary-color);
   font-weight: 300;
 }
 
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-mode,
 .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-value {
-	color: var(--darkmode-primary-color);
+	color: var(--t5e-darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image,
@@ -91,34 +91,34 @@
 /* Magic Item Sheet */
 
 .tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items label {
-	color: var(--darkmode-primary-color);
+	color: var(--t5e-darkmode-primary-color);
   font-weight: 300;
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"],
 .tidy5eDark .dnd5e.sheet.item .magic-items-content select {
 	border: none !important;
-	background: var(--darkmode-faint-color);
-	color: var(--darkmode-primary-color);
+	background: var(--t5e-darkmode-faint-color);
+	color: var(--t5e-darkmode-primary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"]:hover,
 .tidy5eDark .dnd5e.sheet.item .magic-items-content select:hover,
 .tidy5eDark .dnd5e.sheet.item .magic-items-content select:focus {
 	border: none !important;
-	box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+	box-shadow: 0 0 0 1px var(--t5e-darkmode-primary-accent);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.items-header) {
-	background: var(--darkmode-faint-color);
-	color: var(--darkmode-primary-color);
+	background: var(--t5e-darkmode-faint-color);
+	color: var(--t5e-darkmode-primary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-level,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-consumption,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-upcast,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-cost {
-	color: var(--darkmode-primary-color);
+	color: var(--t5e-darkmode-primary-color);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header:first-child,
@@ -128,16 +128,16 @@
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-upcast-head,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-cost-head,
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .items-header .spell-constrols-head {
-	color: var(--darkmode-tertiary-color);
+	color: var(--t5e-darkmode-tertiary-color);
 	font-weight: 400;
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a {
-	color: var(--danger-500);
+	color: var(--t5e-danger-500);
 }
 
 .tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a:hover {
-	color: var(--danger-700);
+	color: var(--t5e-danger-700);
 }
 
 
@@ -147,14 +147,14 @@
 
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select,
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
-  color: var(--darkmode-primary-color);
+  color: var(--t5e-darkmode-primary-color);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover,
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus {
-  background: var(--darkmode-primary-accent);
-  color: var(--darkmode-primary-color);
-  box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+  background: var(--t5e-darkmode-primary-accent);
+  color: var(--t5e-darkmode-primary-color);
+  box-shadow: 0 0 0 1px var(--t5e-darkmode-primary-accent);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover option,
@@ -164,11 +164,11 @@
 }
 
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
-	box-shadow: 0 0 0 1px var(--darkmode-tertiary-color) inset;
+	box-shadow: 0 0 0 1px var(--t5e-darkmode-tertiary-color) inset;
 }
 
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:hover,
 .tidy5eDark .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:focus {
-	box-shadow: 0 0 0 1px var(--darkmode-primary-accent) inset;
+	box-shadow: 0 0 0 1px var(--t5e-darkmode-primary-accent) inset;
 }
 }

@@ -3,13 +3,20 @@ import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
+import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
+import { applyLocksVehicleSheet } from "./app/lockers.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 
 	static get defaultOptions() {
-    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' ? 'attributes' : 'actions';
-		if (!game.modules.get('character-actions-list-5e')?.active) defaultTab = 'description';
-
+    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' 
+      ? game.settings.get("tidy5e-sheet", "defaultActionsTab")
+      : 'attributes' ;
+		if (!game.modules.get('character-actions-list-5e')?.active && 
+      game.settings.get("tidy5e-sheet", "defaultActionsTab") == 'actions') {
+      defaultTab = 'attributes';
+    }
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "vehicle"],
 			width: game.settings.get("tidy5e-sheet", "vehicleSheetWidth") ?? 740,
@@ -188,5 +195,11 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
 	editProtection(app, html, data);
   toggleTraitsList(app, html, data);
   abbreviateCurrency(app,html,data);
+  applyLazyMoney(app, html, data);
+  applyLazyExp(app, html, data);
+  applyLazyHp(app, html, data);
   // console.log(data);
+
+  // NOTE LOCKS ARE THE LAST THING TO SET
+  applyLocksVehicleSheet(app, html, data);
 });

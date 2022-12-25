@@ -10,6 +10,10 @@ import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
+import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
+import { applyLocksCharacterSheet } from "./app/lockers.js";
+import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 
 let position = 0;
 
@@ -26,13 +30,13 @@ export class Tidy5eSheet extends dnd5e.applications.actor
   }
 
   static get defaultOptions() {
-    let defaultTab =
-      game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default"
-        ? "attributes"
-        : "actions";
-    if (!game.modules.get("character-actions-list-5e")?.active)
-      defaultTab = "description";
-
+    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' 
+      ? game.settings.get("tidy5e-sheet", "defaultActionsTab")
+      : 'attributes' ;
+		if (!game.modules.get('character-actions-list-5e')?.active && 
+      game.settings.get("tidy5e-sheet", "defaultActionsTab") == 'actions') {
+      defaultTab = 'attributes';
+    }
     return mergeObject(super.defaultOptions, {
       classes: ["tidy5e", "sheet", "actor", "character"],
       blockFavTab: true,
@@ -58,8 +62,16 @@ export class Tidy5eSheet extends dnd5e.applications.actor
       context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
-    context.appId = this.appId;
+    // Journal HTML enrichment
+    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes?.value, {
+      secrets: this.actor.isOwner,
+      rollData: context.rollData,
+      async: true,
+      relativeTo: this.actor
+    });
 
+    context.appId = this.appId;
+    context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
     return context;
   }
 
@@ -310,6 +322,7 @@ async function editProtection(app, html, data) {
   ) {
     html.find(".classic-controls").addClass("gmEdit");
   } else if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+    /* MOVED TO LOCKERS.JS
     if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
       html.find(".skill input").prop("disabled", true);
       html.find(".skill .config-button").remove();
@@ -337,6 +350,7 @@ async function editProtection(app, html, data) {
       ).length;
       if (spellbook == 0) html.find(".item[data-tab='spellbook']").remove();
     }
+    */
 
     let resourcesUsed = 0;
     html.find('.resources input[type="text"]').each(function () {
@@ -579,6 +593,9 @@ function markActiveEffects(app, html, data) {
 
 // Add Spell Slot Marker
 function spellSlotMarker(app, html, data) {
+  if(game.settings.get("tidy5e-sheet", "hideSpellSlotMarker")){
+    return;
+  }
   let actor = app.actor;
   let items = data.actor.items;
   let options = [
@@ -660,6 +677,19 @@ function spellSlotMarker(app, html, data) {
       }
     }
   });
+}
+
+// Hide Standard Encumbrance Bar
+function hideStandardEncumbranceBar(app, html, data) {
+  if(!game.settings.get("tidy5e-sheet", "hideStandardEncumbranceBar")){
+    return;
+  }
+  const elements = html.find(".encumbrance");
+  if (elements && elements.length > 0) {
+    for(const elem of elements) {
+      elem.style.display = "none";
+    }
+  }
 }
 
 // Manage Sheet Options
@@ -785,10 +815,89 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
   countInventoryItems(app, html, data);
   markActiveEffects(app, html, data);
   spellSlotMarker(app, html, data);
+  hideStandardEncumbranceBar(app, html, data);
+  applyLazyMoney(app, html, data);
+  applyLazyExp(app, html, data);
+  applyLazyHp(app, html, data);
+  applySpellClassFilterActorSheet(app, html, data);
   // console.log(data.actor);
   // console.log("Tidy5e Sheet rendered!");
+
+  // NOTE LOCKS ARE THE LAST THING TO SET
+  applyLocksCharacterSheet(app, html, data);
 });
 
 Hooks.once("ready", (app, html, data) => {
   // console.log("Tidy5e Sheet is ready!");
+});
+
+Hooks.on('renderAbilityUseDialog', function(options) {
+  if(!game.settings.get("tidy5e-sheet", "enableSpellLevelButtons")){
+    return;
+  }
+  // The module already do the job so for avoid redundance...
+  if (game.modules.get('spell-level-buttons-for-dnd5e')?.active) {
+      return;
+  }
+  if($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) { // If the dialog box has a option to select a spell level
+
+      // Resize the window to fit the contents
+      let originalWindowHeight = parseInt($(options._element[0]).css('height'));
+      let heightOffset = 42;
+
+      $(options._element[0]).height(originalWindowHeight + heightOffset);
+
+      // Find the label that says "Cast at level", and select it's parent parent (There's no specific class or ID for this wrapper)
+      let levelSelectWrapper = $(options._element[0]).find(`.form-group label:contains("${game.i18n.localize(`DND5E.SpellCastUpcast`)}")`).parent();
+      let selectedLevel = levelSelectWrapper.find('select').val();
+
+      let appId = options.appId;
+
+      // Hide the default level select menu
+      levelSelectWrapper.css('display', 'none');
+
+      // Append a container for the buttons
+      levelSelectWrapper.after(`
+          <div class="form-group spell-lvl-btn">
+              <label>${game.i18n.localize(`DND5E.SpellCastUpcast`)}</label>
+              <div class="form-fields"></div>
+          </div>
+      `);
+
+      // Append a button for each spell level that the user can cast
+      $(options._element[0]).find(`select[name="consumeSpellLevel"] option`).each(function() {
+
+          let availableSlots = $(this).text().match(/\(\d+\s\w+\)/)[0].match(/\d+/)[0];
+          let availableSlotsBadge = '';
+          let value = $(this).val();
+          let i;
+
+          if(value == "pact") {
+              i = "p" + $(this).text().match(/\d/)[0]; // Get the pact slot level
+          } else {
+              i = value;
+          }
+
+          if(availableSlots > 0) {
+              availableSlotsBadge = `<span class="available-slots">${availableSlots}</span>`;
+          }
+
+          $(options._element[0]).find('.spell-lvl-btn .form-fields').append(`
+              <label title="${$(this).text()}" class="spell-lvl-btn__label" for="${appId}lvl-btn-${i}">
+                  <input type="radio" id="${appId}lvl-btn-${i}" name="lvl-btn" value="${value}">
+                  <div class="spell-lvl-btn__btn">${i}</div>
+                  ${availableSlotsBadge}
+              </label>
+          `);
+      });
+
+      // Click on the button corresponding to the default value on the cast level dropdown menu
+      $(options._element[0]).find(`#${appId}lvl-btn-${selectedLevel}`).trigger('click');
+
+      // Change the dropdown menu value when user clicks on a button
+      $(options._element[0]).find('.spell-lvl-btn__label').on('click', function() {
+          levelSelectWrapper.find('select').val( $(this).find('input').val() );
+      });
+
+  }
 });

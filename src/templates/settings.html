@@ -4,12 +4,13 @@
 		<a class='item' data-tab='npc-sheet'>{{localize 'TIDY5E.Settings.TabNPCsVehicles.tabLabel'}}</a>
 		<a class='item gm-only' data-tab='gm-options'>{{localize 'TIDY5E.Settings.TabGM.tabLabel'}}</a>
 		<a class='item gm-only' data-tab='modules'>{{localize 'TIDY5E.Settings.TabModules.tabLabel'}}</a>
+    <a class='item gm-only' data-tab='locks'>{{localize 'TIDY5E.Settings.TabLocks.tabLabel'}}</a>
 		<a class='item' data-tab='info'>{{localize 'TIDY5E.Settings.TabInfo.tabLabel'}}</a>
-	</nav>	
+	</nav>
 
 
   {{!-- PC OPTIONS --}}
-  
+
 
   <section class='tab' data-tab='pc-sheet'>
     <h2>{{localize 'TIDY5E.Settings.TabPlayers.header'}}</h2>
@@ -105,9 +106,9 @@
     </article>
 	</section>
 
-  
+
   {{!-- NPC/VEHICLE OPTIONS --}}
-  
+
 
   <section class='tab' data-tab='npc-sheet'>
     <h2>{{localize 'TIDY5E.Settings.TabNPCsVehicles.header'}}</h2>
@@ -134,7 +135,7 @@
           <p class="notes">{{localize 'TIDY5E.Settings.LinkMarker.hint'}}</p>
         </div>
         <div class="settings-group">
-          <select name="linkMarkerNpc" id="linkMarkerNpc">  
+          <select name="linkMarkerNpc" id="linkMarkerNpc">
             {{#select settings.linkMarkerNpc.value}}
             <option value="default">{{localize "TIDY5E.Settings.LinkMarker.default"}}</option>
             <option value="unlinked">{{localize "TIDY5E.Settings.LinkMarker.unlinked"}}</option>
@@ -177,6 +178,13 @@
       <div class="description">
         <label for="skillsAlwaysShownNpc">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.name'}}</label>
         <p class="notes">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hideSpellbookTabNpc' id='hideSpellbookTabNpc' {{checked settings.hideSpellbookTabNpc.value}}>
+      <div class="description">
+        <label for="hideSpellbookTabNpc">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.hint'}}</p>
       </div>
     </article>
     <article class="setting group">
@@ -222,11 +230,11 @@
       </div>
     </article>
 	</section>
-  
+
 
   {{!-- GM OPTIONS --}}
 
-  
+
   <section class='tab gm-only' data-tab='gm-options'>
     <h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
     <article class="setting">
@@ -234,6 +242,27 @@
       <div class="description">
         <label for="hiddenDeathSavesEnabled">{{localize 'TIDY5E.Settings.HiddenDeathSaves.name'}}</label>
         <p class="notes">{{localize 'TIDY5E.Settings.HiddenDeathSaves.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hideSpellSlotMarker' id='hideSpellSlotMarker' {{checked settings.hideSpellSlotMarker.value}}>
+      <div class="description">
+        <label for="hideSpellSlotMarker">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+        <input type="checkbox" data-dtype='boolean' name='enableSpellLevelButtons' id='enableSpellLevelButtons' {{checked settings.enableSpellLevelButtons.value}}>
+        <div class="description">
+          <label for="enableSpellLevelButtons">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.name'}}</label>
+          <p class="notes">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.hint'}}</p>
+        </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hideStandardEncumbranceBar' id='hideStandardEncumbranceBar' {{checked settings.hideStandardEncumbranceBar.value}}>
+      <div class="description">
+        <label for="hideStandardEncumbranceBar">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.hint'}}</p>
       </div>
     </article>
     <article class="setting">
@@ -277,7 +306,7 @@
           <p class="notes">{{localize 'TIDY5E.Settings.PortraitStyle.hint'}}</p>
         </div>
         <div class="settings-group">
-          <select name="portraitStyle" id="portraitStyle">  
+          <select name="portraitStyle" id="portraitStyle">
             {{#select settings.portraitStyle.value}}
             <option value="default">{{localize "TIDY5E.Settings.PortraitStyle.default"}}</option>
             <option value="pc">{{localize "TIDY5E.Settings.PortraitStyle.pc"}}</option>
@@ -309,13 +338,6 @@
           </article>
         </div>
       </section>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='editTotalLockEnabled' id='editTotalLockEnabled' {{checked settings.editTotalLockEnabled.value}}>
-      <div class="description">
-        <label for="editTotalLockEnabled">{{localize 'TIDY5E.Settings.EditTotalLock.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.EditTotalLock.hint'}}</p>
-      </div>
     </article>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='editGmAlwaysEnabled' id='editGmAlwaysEnabled' {{checked settings.editGmAlwaysEnabled.value}}>
@@ -353,11 +375,12 @@
           <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionEffects.hint'}}</p>
         </div>
          <div class="settings-group">
-          <select name="exhaustionEffectsEnabled" id="exhaustionEffectsEnabled">  
+          <select name="exhaustionEffectsEnabled" id="exhaustionEffectsEnabled">
             {{#select settings.exhaustionEffectsEnabled.value}}
             <option value="default">{{localize "TIDY5E.Settings.ExhaustionEffects.default"}}</option>
             <option value="tidy5e">{{localize "TIDY5E.Settings.ExhaustionEffects.tidy5e"}}</option>
-            <option value="custom">{{localize "TIDY5E.Settings.ExhaustionEffects.custom"}}</option>
+            <option value="dfredce">{{localize "TIDY5E.Settings.ExhaustionEffects.dfredce"}}</option>
+            <option value="cub">{{localize "TIDY5E.Settings.ExhaustionEffects.cub"}}</option>
             {{/select}}
           </select>
         </div>
@@ -407,13 +430,35 @@
         <p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
       </div>
     </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='allowCantripToBePreparedOnContext' id='allowCantripToBePreparedOnContext' {{checked settings.allowCantripToBePreparedOnContext.value}}>
+      <div class="description">
+        <label for="allowCantripToBePreparedOnContext">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint'}}</p>
+      </div>
+    </article>
+    <h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='spellClassFilterSelect' id='spellClassFilterSelect' {{checked settings.spellClassFilterSelect.value}}>
+      <div class="description">
+        <label for="spellClassFilterSelect">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='spellClassFilterIconReplace' id='spellClassFilterIconReplace' {{checked settings.spellClassFilterIconReplace.value}}>
+      <div class="description">
+        <label for="spellClassFilterIconReplace">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.hint'}}</p>
+      </div>
+    </article>
 	</section>
 
   {{!-- MODULE OPTIONS --}}
 
   <section class='tab gm-only' data-tab='modules'>
     <h2>{{localize 'TIDY5E.Settings.TabModules.header'}}</h2>
-    
+
     <h3>{{localize 'TIDY5E.Settings.TabModules.labelActionsFavorites'}}</h3>
     <article class="setting group">
       <section>
@@ -422,10 +467,17 @@
           <p class="notes">{{localize 'TIDY5E.Settings.DefaultActionsTab.hint'}}</p>
         </div>
          <div class="settings-group">
-          <select name="defaultActionsTab" id="defaultActionsTab">  
+          <select name="defaultActionsTab" id="defaultActionsTab">
             {{#select settings.defaultActionsTab.value}}
             <option value="default">{{localize "TIDY5E.Settings.DefaultActionsTab.default"}}</option>
             <option value="attributes">{{localize "TIDY5E.Settings.DefaultActionsTab.attributes"}}</option>
+            <option value="inventory">{{localize "TIDY5E.Settings.DefaultActionsTab.inventory"}}</option>
+            <option value="spellbook">{{localize "TIDY5E.Settings.DefaultActionsTab.spellbook"}}</option>
+            <option value="features">{{localize "TIDY5E.Settings.DefaultActionsTab.features"}}</option>
+            <option value="effects">{{localize "TIDY5E.Settings.DefaultActionsTab.effects"}}</option>
+            <option value="biography">{{localize "TIDY5E.Settings.DefaultActionsTab.biography"}}</option>
+            <option value="journal">{{localize "TIDY5E.Settings.DefaultActionsTab.journal"}}</option>
+            <option value="actions">{{localize "TIDY5E.Settings.DefaultActionsTab.actions"}}</option>
             {{/select}}
           </select>
         </div>
@@ -447,6 +499,102 @@
         <p class="notes">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.hint'}}</p>
       </div>
     </article>
+
+    <h3>{{localize 'TIDY5E.Settings.TabModules.labelLazyMoney'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyEnable' id='lazyMoneyEnable' {{checked settings.lazyMoneyEnable.value}}>
+      <div class="description">
+        <label for="lazyMoneyEnable">{{localize 'TIDY5E.Settings.LazyMoneyEnable.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyEnable.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyAddConvert' id='lazyMoneyAddConvert' {{checked settings.lazyMoneyAddConvert.value}}>
+      <div class="description">
+        <label for="lazyMoneyAddConvert">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyIgnoreElectrum' id='lazyMoneyIgnoreElectrum' {{checked settings.lazyMoneyIgnoreElectrum.value}}>
+      <div class="description">
+        <label for="lazyMoneyIgnoreElectrum">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyMoneyChatLog' id='lazyMoneyChatLog' {{checked settings.lazyMoneyChatLog.value}}>
+      <div class="description">
+        <label for="lazyMoneyChatLog">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.hint'}}</p>
+      </div>
+    </article>
+  </section>
+
+
+  {{!-- LOCKS OPTIONS --}}
+
+  <section class='tab gm-only' data-tab='locks'>
+    <h2>{{localize 'TIDY5E.Settings.TabLocks.header'}}</h2>
+    <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint'}}</p>
+    <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint2'}}</p>
+
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='editTotalLockEnabled' id='editTotalLockEnabled' {{checked settings.editTotalLockEnabled.value}}>
+      <div class="description">
+        <label for="editTotalLockEnabled">{{localize 'TIDY5E.Settings.EditTotalLock.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.EditTotalLock.hint'}}</p>
+      </div>
+    </article>
+
+    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelGeneralLocks'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockExpChanges' id='lockExpChanges' {{checked settings.lockExpChanges.value}}>
+      <div class="description">
+        <label for="lockExpChanges">{{localize 'TIDY5E.Settings.LockExpChanges.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockExpChanges.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockHpMaxChanges' id='lockHpMaxChanges' {{checked settings.lockHpMaxChanges.value}}>
+      <div class="description">
+        <label for="lockHpMaxChanges">{{localize 'TIDY5E.Settings.LockHpMaxChanges.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockHpMaxChanges.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockConfigureSheet' id='lockConfigureSheet' {{checked settings.lockConfigureSheet.value}}>
+      <div class="description">
+        <label for="lockConfigureSheet">{{localize 'TIDY5E.Settings.LockConfigureSheet.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockConfigureSheet.hint'}}</p>
+      </div>
+    </article>
+
+    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelInventoryLocks'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockMoneyChanges' id='lockMoneyChanges' {{checked settings.lockMoneyChanges.value}}>
+      <div class="description">
+        <label for="lockMoneyChanges">{{localize 'TIDY5E.Settings.LockMoneyChanges.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockMoneyChanges.hint'}}</p>
+      </div>
+    </article>
+
+    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelFeaturesLocks'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockLevelSelector' id='lockLevelSelector' {{checked settings.lockLevelSelector.value}}>
+      <div class="description">
+        <label for="lockLevelSelector">{{localize 'TIDY5E.Settings.LockLevelSelector.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockLevelSelector.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lockItemQuantity' id='lockItemQuantity' {{checked settings.lockItemQuantity.value}}>
+      <div class="description">
+        <label for="lockItemQuantity">{{localize 'TIDY5E.Settings.LockItemQuantity.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LockItemQuantity.hint'}}</p>
+      </div>
+    </article>
+    
   </section>
 
   {{!-- INFO --}}
@@ -454,7 +602,7 @@
   <section class='tab' data-tab='info'>
     <h2>{{localize 'TIDY5E.Settings.TabInfo.header'}}</h2>
   </section>
-  
+
   <footer class="sheet-footer flexrow">
     <button type="submit" name="submit">
       <i class="fas fa-save"></i>{{localize 'Save Changes'}}

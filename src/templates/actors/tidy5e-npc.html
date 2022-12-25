@@ -55,10 +55,10 @@
 								 	rgba(0,200,0,0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0,200,0,0.5) 100%);">
 						</div>
-            <input class="hp-min" name="system.attributes.hp.value" type="text" value="{{system.attributes.hp.value}}"
+            <input class="hp-min" name="system.attributes.hp.value" type="number" step="any" value="{{system.attributes.hp.value}}"
             data-dtype="Number" placeholder="0" maxlength="5">
             <span class="value-seperator">/</span>
-            <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{system.attributes.hp.max}}"
+            <input class="hp-max" name="system.attributes.hp.max" type="number" value="{{system.attributes.hp.max}}"
             data-dtype="Number" placeholder="0" maxlength="5">
           </div>
         </div>
@@ -72,9 +72,9 @@
 
         {{!-- Temp Hit Points --}}
         <div class="portrait-temp">
-          <input name="system.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
+          <input name="system.attributes.hp.temp" type="number" step="any" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
           value="{{#if (eq system.attributes.hp.temp 0)}}{{else}}{{system.attributes.hp.temp}}{{/if}}" data-dtype="Number" maxlength="5">
-          <input name="system.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
+          <input name="system.attributes.hp.tempmax" type="number" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
           value="{{#if (eq system.attributes.hp.tempmax 0)}}{{else}}{{system.attributes.hp.tempmax}}{{/if}}" data-dtype="Number" maxlength="5">
         </div>
 
@@ -196,6 +196,9 @@
     {{!-- NPC Sheet Navigation --}}
     <nav class="flex tidy5e-navigation tabs" data-group="primary">
       <a class="item active" data-tab="attributes">{{ localize "TIDY5E.Abilities" }}</a>
+      {{#unless @root/hideSpellbookTabNpc}}
+      <a class="item" data-tab="spellbook">{{ localize "DND5E.Spellbook" }}</a>
+      {{/unless}}
       <a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
       <a class="item" data-tab="biography">{{ localize "DND5E.Biography" }}</a>
       <a class="item" data-tab="journal">{{ localize "TIDY5E.Journal" }}</a>
@@ -282,11 +285,22 @@
               <!-- <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}"><i class="fas fa-funnel-dollar"></i></a></li> -->
             </ul>
           </div>
-          
+          {{#if @root/hideSpellbookTabNpc}}
           {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-npc-spellbook.html"}}
+          {{/if}}
         </section>
         
       </div>
+
+      {{#unless @root/hideSpellbookTabNpc}}
+
+			{{!-- Spellbook Tab --}}
+      {{!-- TODO add grid support ? --}}
+			<div class="tab spellbook" data-group="primary" data-tab="spellbook">
+        {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html"}}
+			</div>
+
+      {{/unless}}
 
       {{!-- Effects Tab --}}
       <div class="tab effects" data-group="primary" data-tab="effects">
@@ -367,7 +381,7 @@
         <div class="right-notes note-entries">
           <article class="journal-notes">
             <div class="section-titles">{{ localize 'TIDY5E.JournalEntries' }}</div>
-            {{editor system.details.notes.value target="system.details.notes.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+            {{editor journalHTML target="system.details.notes.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
         </div>
       </div>

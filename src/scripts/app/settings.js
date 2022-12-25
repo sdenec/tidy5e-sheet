@@ -3,13 +3,13 @@ import {settingsList} from './settingsList.js';
 export class Tidy5eUserSettings extends FormApplication {
 	static init() {
 		game.settings.registerMenu('tidy5e-sheet', 'userMenu', {
-      name: '',
-      label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
-      icon: 'fas fa-cog',
-      type: Tidy5eUserSettings,
-      restricted: false
+		name: '',
+		label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
+		icon: 'fas fa-cog',
+		type: Tidy5eUserSettings,
+		restricted: false
     });
-		
+
 		settingsList();
 
 	}
@@ -23,12 +23,12 @@ export class Tidy5eUserSettings extends FormApplication {
 			title: game.i18n.localize("TIDY5E.Settings.SheetMenu.title"),
 			width: 600,
 			classes: ["tidy5e", "settings"],
-			tabs: [ 
+			tabs: [
 				{
 					navSelector: '.tabs',
 					contentSelector: 'form',
 					initial: 'Players'
-				} 
+				}
 			],
 			submitOnClose: true
 		}
@@ -42,10 +42,10 @@ export class Tidy5eUserSettings extends FormApplication {
 		let btns = super._getHeaderButtons();
 		btns[0].label = "Close";
 		return btns;
-	}		
+	}
 
-	getSettingsData() {		
-		
+	getSettingsData() {
+
 		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
 			'ammoEquippedOnly',
@@ -65,6 +65,9 @@ export class Tidy5eUserSettings extends FormApplication {
 			'expandedSheetEnabled',
 			'hideIfZero',
 			'hiddenDeathSavesEnabled',
+			'hideSpellSlotMarker',
+			'hideStandardEncumbranceBar',
+            'enableSpellLevelButtons',
 			'hpBarDisabled',
 			'hpBarDisabledNpc',
 			'hpBarDisabledVehicle',
@@ -83,7 +86,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'itemCardsForAllItems',
 			'journalTabDisabled',
 			'linkMarkerNpc',
-			
+
 			'playerNameEnabled',
 			'portraitStyle',
 			'quantityAlwaysShownEnabled',
@@ -91,6 +94,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'restingForNpcsChatDisabled',
 			'rightClickDisabled',
 			'skillsAlwaysShownNpc',
+			'hideSpellbookTabNpc',
 
 			'playerSheetWidth',
 			'npsSheetWidth',
@@ -100,7 +104,23 @@ export class Tidy5eUserSettings extends FormApplication {
 			'traitsAlwaysShownNpc',
 			'traitsMovedBelowResource',
 			'traitsMovedBelowResourceNpc',
-			'traitsTogglePc'
+			'traitsTogglePc',
+
+			'lazyMoneyEnable',
+			'lazyMoneyAddConvert',
+			'lazyMoneyIgnoreElectrum',
+			'lazyMoneyChatLog',
+
+			'allowCantripToBePreparedOnContext',
+			'spellClassFilterSelect',
+			'spellClassFilterIconReplace',
+
+			'lockMoneyChanges',
+			'lockExpChanges',
+			'lockHpMaxChanges',
+			'lockLevelSelector',
+			'lockConfigureSheet',
+			'lockItemQuantity'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
@@ -122,24 +142,31 @@ export class Tidy5eUserSettings extends FormApplication {
 		super.activateListeners(html);
 		// console.log('Listeners Active!')
 		// console.log(html)
-		
+
 		let exhaustionEffectSelect = html.find('select#exhaustionEffectsEnabled');
 		let exhaustionSelected = $(exhaustionEffectSelect).val();
 		// console.log(exhaustionSelected)
 		switch (exhaustionSelected) {
-			case 'default':
+			case 'default': {
 				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
 				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
-			break;
-			case 'tidy5e' :
+				break;
+			}
+			case 'tidy5e' : {
 				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
-			break;
-			case 'custom' :
+				break;
+			}
+			case 'dfredce' : {
 				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
-			break;
+				break;
+			}
+			case 'cub' : {
+				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
+				break;
+			}
 		}
-		
-		exhaustionEffectSelect.on('change', function(e){			
+
+		exhaustionEffectSelect.on('change', function(e){
 			html.find('input#exhaustionEffectIcon').closest('.setting').hide();
 			html.find('input#exhaustionEffectCustom').closest('.setting').hide();
 
@@ -182,7 +209,7 @@ export class Tidy5eUserSettings extends FormApplication {
 		if(settingsUpdated){
 			this.redrawOpenSheets();
 		}
-	}	
+	}
 }
 
 Hooks.on("renderTidy5eUserSettings", () => {

@@ -6,6 +6,9 @@ import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
+import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
+import { applyLocksNpcSheet } from "./app/lockers.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -27,12 +30,13 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
    * @return {Object}
    */
   static get defaultOptions() {
-    let defaultTab =
-      game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default"
-        ? "attributes"
-        : "actions";
-    if (!game.modules.get("character-actions-list-5e")?.active)
-      defaultTab = "description";
+    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' 
+      ? game.settings.get("tidy5e-sheet", "defaultActionsTab")
+      : 'attributes' ;
+		if (!game.modules.get('character-actions-list-5e')?.active && 
+      game.settings.get("tidy5e-sheet", "defaultActionsTab") == 'actions') {
+      defaultTab = 'attributes';
+    }
 
     return mergeObject(super.defaultOptions, {
       classes: ["tidy5e", "sheet", "actor", "npc"],
@@ -210,8 +214,17 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
       context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
-    context.appId = this.appId;
+    // Journal HTML enrichment
+    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes?.value, {
+      secrets: this.actor.isOwner,
+      rollData: context.rollData,
+      async: true,
+      relativeTo: this.actor
+    });
 
+    context.appId = this.appId;
+    context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
+    context.hideSpellbookTabNpc =  game.settings.get("tidy5e-sheet", "hideSpellbookTabNpc");
     return context;
   }
 
@@ -647,6 +660,7 @@ async function hideSpellbook(app, html, data) {
 async function editProtection(app, html, data) {
   let actor = app.actor;
   if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+    /* MOVED TO LOCKERS.JS
     if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
       html.find(".skill input").prop("disabled", true);
       html.find(".skill .config-button").remove();
@@ -669,6 +683,7 @@ async function editProtection(app, html, data) {
       html.find(".caster-level input").prop("disabled", true);
       html.find(".spellcasting-attribute select").prop("disabled", true);
     }
+    */
 
     let itemContainer = html.find(
       ".inventory-list:not(.spellbook-list).items-list"
@@ -757,6 +772,9 @@ async function npcFavorites(app, html, data) {
 
 // Add Spell Slot Marker
 function spellSlotMarker(app, html, data) {
+  if(game.settings.get("tidy5e-sheet", "hideSpellSlotMarker")){
+    return;
+  }
   let actor = app.actor;
   let items = data.actor.items;
   let options = [
@@ -840,6 +858,19 @@ function spellSlotMarker(app, html, data) {
   });
 }
 
+// Hide Standard Encumbrance Bar
+function hideStandardEncumbranceBar(app, html, data) {
+  if(!game.settings.get("tidy5e-sheet", "hideStandardEncumbranceBar")){
+    return;
+  }
+  const elements = html.find(".encumbrance");
+  if (elements && elements.length > 0) {
+    for(const elem of elements) {
+      elem.style.display = "none";
+    }
+  }
+}
+
 Actors.registerSheet("dnd5e", Tidy5eNPC, {
   types: ["npc"],
   makeDefault: true,
@@ -868,5 +899,12 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   editProtection(app, html, data);
   npcFavorites(app, html, data);
   spellSlotMarker(app, html, data);
+  hideStandardEncumbranceBar(app, html, data);
+  applyLazyMoney(app, html, data);
+  applyLazyExp(app, html, data);
+  applyLazyHp(app, html, data);
   // console.log(data.actor);
+
+  // NOTE LOCKS ARE THE LAST THING TO SET
+  applyLocksNpcSheet(app, html, data);
 });

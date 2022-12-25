@@ -305,6 +305,9 @@ export const addFavorites = async function (app, html, data, position) {
           favItems.push(item);
           break;
       }
+      if(item.canPrep) {
+        item.canPrepare = item.system.level >= 1;
+      }
     }
   }
 
@@ -356,6 +359,7 @@ export const addFavorites = async function (app, html, data, position) {
     data.favSpellsPrepMode = spellPrepModeCount > 0 ? favSpellsPrepMode : false;
     data.favSpells = spellCount > 0 ? favSpells : false;
     data.editable = app.options.editable;
+    data.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
 
     await loadTemplates(["modules/tidy5e-sheet/templates/favorites/item.hbs"]);
     let favHtml = $(
@@ -400,7 +404,7 @@ export const addFavorites = async function (app, html, data, position) {
           item.type === "spell"
             ? "system.preparation.prepared"
             : "system.equipped";
-        return item.update({ [attr]: !getProperty(item.system, attr) });
+        return item.update({ [attr]: !getProperty(item, attr) });
       });
 
       // update item attunement
@@ -526,6 +530,7 @@ export const addFavorites = async function (app, html, data, position) {
     }
 
     // better rolls support
+    // TODO TO REMOVE...IN THE FUTURE
     if (window.BetterRolls) {
       BetterRolls.addItemContent(
         app.object,

@@ -161,18 +161,25 @@ export const tidy5eItemCard = function (html, actor) {
   async function showCard(event){
     getBounds();
     event.preventDefault();
-    let li = $(event.currentTarget).closest('.item'),
-        item = actor.items.get(li.data("item-id")),
-        chatData = await item.getChatData({secrets: actor.isOwner}),
-        itemDescription = chatData.description.value,
-        
-        infoCard = li.find('.info-card');
-        
+    let li = $(event.currentTarget).closest('.item');
+    if(!actor.items || actor.items?.length <= 0 || !li.data("item-id")) {
+      return;
+    }
+    let item = actor.items.get(li.data("item-id"));
+    if(!item){
+      console.warn(`tidy5e-sheet | no item found on actor '${actor.name}' with id '${li.data("item-id")}'`);
+      return;
+    }
+    let chatData = await item.getChatData({secrets: actor.isOwner});
+    let itemDescription = chatData.description.value;
+
+    let infoCard = li.find('.info-card');
+
     infoCard.clone().appendTo(infoContainerContent);
 
-    let	infoBackground = infoContainer.find('.item-info-container-background'),
-        infoDescription = infoContainerContent.find('.info-card-description'),
-        props = $(`<div class="item-properties"></div>`);
+    let	infoBackground = infoContainer.find('.item-info-container-background');
+    let infoDescription = infoContainerContent.find('.info-card-description');
+    let props = $(`<div class="item-properties"></div>`);
 
     infoDescription.html(itemDescription);
 

@@ -103,12 +103,32 @@
 
   "TIDY5E.ItemDetailsHeadline": "Mechanics/Flavor Text",
 
+  "TIDY5E.Class" : "Class", 
+  "TIDY5E.SpellClass": "Spell Class",
+  "TIDY5E.Spellbook" : "Spellbook",
+
+  "TIDY5E.ClassArtificer" : "Artificer",
+  "TIDY5E.ClassBarbarian" : "Barbarian",
+  "TIDY5E.ClassBard"      : "Bard",
+  "TIDY5E.ClassCleric"    : "Cleric",
+  "TIDY5E.ClassCustom"    : "Custom",
+  "TIDY5E.ClassDruid"     : "Druid",  
+  "TIDY5E.ClassFighter"   : "Fighter",
+  "TIDY5E.ClassMonk"      : "Monk",
+  "TIDY5E.ClassPaladin"   : "Paladin",
+  "TIDY5E.ClassRanger"    : "Ranger",
+  "TIDY5E.ClassRogue"     : "Rogue",
+  "TIDY5E.ClassSorcerer"  : "Sorcerer",
+  "TIDY5E.ClassWarlock"   : "Warlock",
+  "TIDY5E.ClassWizard"    : "Wizard",
+
   "TIDY5E.Settings.GlobalLabel": "Global",
   "TIDY5E.Settings.DebugLabel": "Debug",
   "TIDY5E.Settings.UserLabel": "User",
   "TIDY5E.Settings.PcLabel": "PCs",
   "TIDY5E.Settings.NpcLabel": "NPCs",
   "TIDY5E.Settings.VehicleLabel": "Vehicles",
+  "TIDY5E.Settings.MulticlassSpellbookFilterLabel": "Multiclass Spellbook Filter",
 
   "TIDY5E.Settings.SheetMenu": {
     "label": "Sheet Settings",
@@ -132,7 +152,17 @@
     "tabLabel": "Modules",
     "header": "Module Options",
     "labelActionsFavorites": "Actor Actions/Favorites",
-    "labelMidiQoL": "Midi Qol"
+    "labelMidiQoL": "Midi Qol",
+    "labelLazyMoney": "Lazy Money"
+  },
+  "TIDY5E.Settings.TabLocks": {
+    "tabLabel": "Locks",
+    "header": "Lock Options",
+    "hint": "Prevents players from making changes to aspects of their character sheets that should change infrequently, and provides the option to completely hide some elements that you don't want to use at all. Settings are available to customize exactly what is locked / hidden, and determine who has permission to make sheets editable through a toggle button.",
+    "hint2": "Note that this is not a secure lockdown and players could get around the restrictions, so this is not a sufficient answer if your players are malicious. This is intended for games where the players are inexperienced (with D&D and/or with using computers) to prevent them from making mistakes (ex. accidentally adding/removing saving throw proficiency).",
+    "labelGeneralLocks": "General Locks",
+    "labelInventoryLocks": "Inventory Locks",
+    "labelFeaturesLocks": "Features Locks"
   },
   "TIDY5E.Settings.TabInfo": {
     "tabLabel": "Info",
@@ -236,6 +266,10 @@
     "name": "Always show skills.",
     "hint": "By default unproficient skills are hidden by a toggle button. Enable to never hide."
   },
+  "TIDY5E.Settings.HideSpellbookTabNpc": {
+    "name": "Hide Spellbook tab on NPC",
+    "hint": "By default the spellbook tab on NPC is moved on the attributes tab. Disable this for never do that."
+  },
 
   "TIDY5E.Settings.ActiveEffectsMarker": {
     "name": "Show Active Effects Marker on items.",
@@ -287,6 +321,8 @@
     "hint": "Choose how to apply exhaustion effects corresponding to tiers (requires midiQol for disadvantage rolls)",
     "default": "No automatic exhaustion effects",
     "tidy5e": "Tidy5e - Apply integrated effects (uses Active Effects)",
+    "dfredce": "DFreds Convenient Effects - Use your own effects",
+    "cub": "CUB - Use your own effects",
     "custom": "Custom - Use your own effects (requires CUB)"
   },
   "TIDY5E.Settings.CustomExhaustionIcon": {
@@ -322,14 +358,33 @@
   "TIDY5E.Settings.DefaultActionsTab": {
     "name": "Default Tab when opening a sheet for the first time.",
     "hint": "Chose between 'Actions' and 'Attributes'.",
-    "default": "Actions",
-    "attributes": "Attributes"
+    "default": "",
+    "attributes": "Attributes",
+    "inventory": "Inventory",
+    "spellbook": "Spellbook",
+    "features": "Features",
+    "effects": "Effects",
+    "biography": "Biography",
+    "journal": "Journal",
+    "actions": "Actions"
   },
   "TIDY5E.Settings.HiddenDeathSaves": {
     "name": "Hide Death Saves from Players.",
     "hint": "Enable to make Death Saves and Death Save Results only visible to the GM"
   },
-  "TIDY5E.Settings.npsSheetWidth": {
+  "TIDY5E.Settings.HideSpellSlotMarker": {
+    "name": "Hide Spell Slot Marker on sheet.",
+    "hint": "Enable to hide the colored spell slot marker, this is usually useful when the spell points variant rule is use."
+  },
+  "TIDY5E.Settings.EnableSpellLevelButtons": {
+    "name": "Enable Spell Level Buttons.",
+    "hint": "Enable to replaces the spell level select dropdown menu with buttons."
+  },
+  "TIDY5E.Settings.HideStandardEncumbranceBar": {
+    "name": "Remove/Hide standard encumbrance bar from the character sheet",
+    "hint": "If enabled it will hide the standard bar of encumbrance, YOU DO NOT NEED THIS if you are using 'Variant Encumbrance' module you probably do not need this"
+  },
+	"TIDY5E.Settings.npsSheetWidth": {
     "name": "Default NPC sheet width.",
     "hint": "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."
   },
@@ -340,5 +395,57 @@
   "TIDY5E.Settings.vehicleSheetWidth": {
     "name": "Default vehicle sheet width.",
     "hint": "The width of the vehicle sheet in pixels, requires a refresh to take effect (default 740)."
+  },
+  "TIDY5E.Settings.SpellClassFilterSelect": {
+    "name": "Enable Multiclass Spellbook filter",
+    "hint": "If you don't need this for your character, disabling this option will allow you to reclaim the space and declutter your sheet."
+  },
+  "TIDY5E.Settings.SpellClassFilterIconReplace": {
+    "name": "Cover spell icon with class icon",
+    "hint": "Enabling this will change the spellbook tab to display the icon for the spell's class instead of the spell's image. Useful for managing multiple lists without having to switch between them."
+  },
+  "TIDY5E.Settings.LazyMoneyEnable": {
+    "name": "Enable Lazy Money",
+    "hint": "Easily add or remove currency with automatic conversion and no overdraft."
+  },
+  "TIDY5E.Settings.LazyMoneyAddConvert": {
+    "name": "Convert when adding money",
+    "hint": "Automatically convert currency to higher denominations when adding money instead of the default behaviour of preserving the denominations you receive."
+  },
+  "TIDY5E.Settings.LazyMoneyIgnoreElectrum": {
+    "name": "Ignore electrum",
+    "hint": "When converting, ignore electrum. This won't affect directly adding or removing it, except in the case when \"Convert when adding money\" is also enabled."
+  },
+  "TIDY5E.Settings.LazyMoneyChatLog": {
+    "name": "Chat log",
+    "hint": "Whisper any currency changes to the GM."
+  },
+  "TIDY5E.Settings.AllowCantripToBePreparedOnContext": {
+    "name": "Allow cantrips to be 'prepared' via right-click",
+    "hint": "The \"cantrip formulas\" optional rule from Tashas Cauldron of Everything allows Wizards to prepare their cantrips after a long rest in the same way that they do with leveled spells."
+  },
+  "TIDY5E.Settings.LockMoneyChanges": {
+    "name": "Lock change money for non GM",
+    "hint": "This will lock up the money input pp, gp, ep, sp, cp on the tidy sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockExpChanges": {
+    "name": "Lock change experience for non GM",
+    "hint": "This will lock up the experience input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockHpMaxChanges": {
+    "name": "Lock change hp max for non GM",
+    "hint": "This will lock up the hp max input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockLevelSelector": {
+    "name": "Lock level selector for non GM",
+    "hint": "Disable Level Dropdown on the tidy sheet under Features Tab or Offer Option to Lock PLayers out from changing it. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockConfigureSheet": {
+    "name": "Lock configure sheet for non GM",
+    "hint": "Disable and hide the button for configure sheet on the tidy sheet, to avoid players to use other sheet. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockItemQuantity": {
+    "name": "Lock item quantity for non GM",
+    "hint": "Enable this to lock the input quantity on the inventory and item sheet on the tidy sheet. All other module working with these fields are working just fine."
   }
 }

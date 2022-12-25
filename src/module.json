@@ -26,7 +26,21 @@
           "verified": "2.0"
         }
       }
-    ]
+    ],
+    "conflicts": [
+			{
+				"id": "spell-level-buttons-for-dnd5e",
+				"description": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
+			},
+      {
+				"id": "lazymoney",
+				"description": "Redundancy of features you can disable 'Lazy Money' module if you want"
+			},
+      {
+				"id": "spell-level-buttons-for-dnd5e",
+				"description": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
+			}
+		]
   },
   "esmodules": [
     "./scripts/tidy5e-sheet.js",
