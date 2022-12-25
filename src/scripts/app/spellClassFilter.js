@@ -69,7 +69,7 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
         const spellbook = html.find(".tab.spellbook")
         const filterList = spellbook.find("ul.filter-list");
         const firstItem = filterList.children("li.filter-item:first");
-        // const itemData = actor.data.items
+        // const itemData = actor.items
         const actorItems = actor.items
 
         // Inject a simple dropdown menu.

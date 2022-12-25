@@ -640,7 +640,7 @@ export function settingsList(){
 			hint: `${game.i18n.localize("TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint")}`,
 			scope: "world",
 			config: false,
-			default: false,
+			default: true,
 			type: Boolean
 		});
 
