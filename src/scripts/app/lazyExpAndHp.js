@@ -277,7 +277,7 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
         else if(String(hpValue).startsWith("0")){
             while(String(hpValue).startsWith("0")){
-                hpValue = hpValue.slice(1)
+                hpValue =  String(hpValue).slice(1)
             }
             setProperty(update, "system.attributes.hp.value", Number(hpValue));
         }
@@ -303,7 +303,7 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
         else if(String(xpValue).startsWith("0")){
             while(String(xpValue).startsWith("0")){
-                xpValue = xpValue.slice(1)
+                xpValue = String(xpValue).slice(1)
             }
             setProperty(update, "system.details.xp.value", Number(xpValue));
         }
