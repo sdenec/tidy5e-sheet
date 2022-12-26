@@ -106,6 +106,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'traitsMovedBelowResourceNpc',
 			'traitsTogglePc',
 
+			'lazyHpAndExpEnable',
 			'lazyMoneyEnable',
 			'lazyMoneyAddConvert',
 			'lazyMoneyIgnoreElectrum',

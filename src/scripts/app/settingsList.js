@@ -615,6 +615,17 @@ export function settingsList(){
 			default: 740
 		});
 
+		// Lazy HP and Exp
+
+		game.settings.register("tidy5e-sheet", "lazyHpAndExpEnable", {
+			name: `${game.i18n.localize("TIDY5E.Settings.LazyHpAndExpEnable.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpAndExpEnable.hint")}`,
+			scope: "world",
+			config: false,
+			default: true,
+			type: Boolean
+		});
+
 		// Lazy Money
 
 		game.settings.register("tidy5e-sheet", "lazyMoneyEnable", {

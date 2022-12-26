@@ -404,9 +404,13 @@
     "name": "Cover spell icon with class icon",
     "hint": "Enabling this will change the spellbook tab to display the icon for the spell's class instead of the spell's image. Useful for managing multiple lists without having to switch between them."
   },
+  "TIDY5E.Settings.LazyHpAndExpEnable": {
+    "name": "Enable Lazy Hp and Exp",
+    "hint": "Easily add or remove HP and Experience with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
+  },
   "TIDY5E.Settings.LazyMoneyEnable": {
     "name": "Enable Lazy Money",
-    "hint": "Easily add or remove currency with automatic conversion and no overdraft."
+    "hint": "Easily add or remove currency with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
   },
   "TIDY5E.Settings.LazyMoneyAddConvert": {
     "name": "Convert when adding money",

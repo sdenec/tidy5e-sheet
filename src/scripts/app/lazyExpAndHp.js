@@ -203,9 +203,9 @@ function _onChangeHpMax(ev) {
 }
 
 export function applyLazyExp(app, html, actorData) {
-    // if (!game.settings.get('tidy5e-sheet', "lazyExpEnable")) {
-    //     return;
-    // }
+    if (!game.settings.get('tidy5e-sheet', "lazyHpAndExpEnable")) {
+        return;
+    }
 
     for (const elem of html.find("input[name^='system.details.xp.value']")) {
         elem.type = "text";
@@ -219,9 +219,9 @@ export function applyLazyExp(app, html, actorData) {
 }
 
 export function applyLazyHp(app, html, actorData) {
-    // if (!game.settings.get('tidy5e-sheet', "lazyHpEnable")) {
-    //     return;
-    // }
+    if (!game.settings.get('tidy5e-sheet', "lazyHpAndExpEnable")) {
+        return;
+    }
 
     for (const elem of html.find("input[name^='system.attributes.hp.value']")) {
         elem.type = "text";
@@ -248,25 +248,63 @@ function is_real_number(inNumber) {
 	return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
 }
 
+function is_lazy_number(inNumber) {
+	const isSign = String(inNumber).startsWith(signCase.add) ||
+        String(inNumber).startsWith(signCase.subtract) ||
+        String(inNumber).startsWith(signCase.equals) ||
+        String(inNumber).startsWith(signCase.default);
+    if(isSign){
+        const withoutFirst = String(inNumber).slice(1);
+        return is_real_number(withoutFirst);
+    } else {    
+        return true;
+    }
+}
+
 Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
+    if (!game.settings.get('tidy5e-sheet', "lazyHpAndExpEnable")) {
+        return;
+    }
+
     if (!actorEntity) {
         return;
     }
     if(hasProperty(update, "system.attributes.hp.value")) {
-        const hpValue = getProperty(update, "system.attributes.hp.value") || 0;
-        if(!is_real_number(hpValue)) {
+        let hpValue = getProperty(update, "system.attributes.hp.value") || 0;
+        if(!is_lazy_number(hpValue)) {
+            setProperty(update, "system.attributes.hp.value", Number(hpValue));
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if(String(hpValue).startsWith("0")){
+            while(String(hpValue).startsWith("0")){
+                hpValue =  String(hpValue).slice(1)
+            }
             setProperty(update, "system.attributes.hp.value", Number(hpValue));
         }
     }
     if(hasProperty(update, "system.attributes.hp.max")) {
-        const hpMaxValue = getProperty(update, "system.attributes.hp.max") || 0;
-        if(!is_real_number(hpMaxValue)) {
+        let hpMaxValue = getProperty(update, "system.attributes.hp.max") || 0;
+        if(!is_lazy_number(hpMaxValue)) {
+            setProperty(update, "system.attributes.hp.max", Number(hpMaxValue));
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if(String(hpMaxValue).startsWith("0")){
+            while(String(hpMaxValue).startsWith("0")){
+                hpMaxValue =  String(hpMaxValue).slice(1)
+            }
             setProperty(update, "system.attributes.hp.max", Number(hpMaxValue));
         }
     }
     if(hasProperty(update, "system.details.xp.value")) {
-        const xpValue = getProperty(update, "system.details.xp.value") || 0;
-        if(!is_real_number(xpValue)) {
+        let xpValue = getProperty(update, "system.details.xp.value") || 0;
+        if(!is_lazy_number(xpValue)) {
+            setProperty(update, "system.details.xp.value", Number(xpValue));
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if(String(xpValue).startsWith("0")){
+            while(String(xpValue).startsWith("0")){
+                xpValue = String(xpValue).slice(1)
+            }
             setProperty(update, "system.details.xp.value", Number(xpValue));
         }
     }
