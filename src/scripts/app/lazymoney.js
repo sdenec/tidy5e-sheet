@@ -473,7 +473,7 @@ function is_lazy_number(inNumber) {
         String(inNumber).startsWith(signCase.equals) ||
         String(inNumber).startsWith(signCase.default);
     if(isSign){
-        const withoutFirst = str.slice(1);
+        const withoutFirst = inNumber.slice(1);
         return is_real_number(withoutFirst);
     } else {    
         return true;
