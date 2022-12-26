@@ -254,7 +254,7 @@ function is_lazy_number(inNumber) {
         String(inNumber).startsWith(signCase.equals) ||
         String(inNumber).startsWith(signCase.default);
     if(isSign){
-        const withoutFirst = inNumber.slice(1);
+        const withoutFirst = String(inNumber).slice(1);
         return is_real_number(withoutFirst);
     } else {    
         return true;
