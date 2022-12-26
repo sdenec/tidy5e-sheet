@@ -437,6 +437,13 @@
         <p class="notes">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint'}}</p>
       </div>
     </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='lazyHpAndExpEnable' id='lazyHpAndExpEnable' {{checked settings.lazyHpAndExpEnable.value}}>
+      <div class="description">
+        <label for="lazyHpAndExpEnable">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.hint'}}</p>
+      </div>
+    </article>
     <h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='spellClassFilterSelect' id='spellClassFilterSelect' {{checked settings.spellClassFilterSelect.value}}>

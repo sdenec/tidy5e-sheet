@@ -203,9 +203,9 @@ function _onChangeHpMax(ev) {
 }
 
 export function applyLazyExp(app, html, actorData) {
-    // if (!game.settings.get('tidy5e-sheet', "lazyExpEnable")) {
-    //     return;
-    // }
+    if (!game.settings.get('tidy5e-sheet', "lazyHpAndExpEnable")) {
+        return;
+    }
 
     for (const elem of html.find("input[name^='system.details.xp.value']")) {
         elem.type = "text";
@@ -219,9 +219,9 @@ export function applyLazyExp(app, html, actorData) {
 }
 
 export function applyLazyHp(app, html, actorData) {
-    // if (!game.settings.get('tidy5e-sheet', "lazyHpEnable")) {
-    //     return;
-    // }
+    if (!game.settings.get('tidy5e-sheet', "lazyHpAndExpEnable")) {
+        return;
+    }
 
     for (const elem of html.find("input[name^='system.attributes.hp.value']")) {
         elem.type = "text";
@@ -262,6 +262,10 @@ function is_lazy_number(inNumber) {
 }
 
 Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
+    if (!game.settings.get('tidy5e-sheet', "lazyHpAndExpEnable")) {
+        return;
+    }
+
     if (!actorEntity) {
         return;
     }
