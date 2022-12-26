@@ -27,7 +27,7 @@ function _onChangeExp(ev) {
     else {
         delta = Number(splitVal[0]);
     }
-    let newAmount = {};
+    let newAmount = exp;
 
     switch (sign) {
         case signCase.add: {
@@ -46,6 +46,10 @@ function _onChangeExp(ev) {
             newAmount = delta;
             break;
         }
+    }
+
+    if(!is_real_number(newAmount)) {
+        newAmount = exp;
     }
 
     if(newAmount > maxExp) {
@@ -89,7 +93,7 @@ function _onChangeHp(ev) {
     else {
         delta = Number(splitVal[0]);
     }
-    let newAmount = {};
+    let newAmount = hp;
 
     switch (sign) {
         case signCase.add: {
@@ -108,6 +112,10 @@ function _onChangeHp(ev) {
             newAmount = delta;
             break;
         }
+    }
+
+    if(!is_real_number(newAmount)) {
+        newAmount = hp;
     }
 
     if(newAmount > maxHp) {
@@ -151,7 +159,7 @@ function _onChangeHpMax(ev) {
     else {
         delta = Number(splitVal[0]);
     }
-    let newAmount = {};
+    let newAmount = maxHp;
 
     switch (sign) {
         case signCase.add: {
@@ -170,6 +178,10 @@ function _onChangeHpMax(ev) {
             newAmount = delta;
             break;
         }
+    }
+
+    if(!is_real_number(newAmount)) {
+        newAmount = maxHp;
     }
 
     // if(newAmount > maxHp) {
