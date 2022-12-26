@@ -61,8 +61,8 @@ function _onChangeCurrency(ev) {
         actor
             .update({ "system.currency": newAmount })
             .then(() => {
-            input.value = getProperty(actor.data, input.name);
-            sheet.submitOnChange = true;
+                input.value = Number(getProperty(actor, input.name));
+                sheet.submitOnChange = true;
         })
         .catch(console.log.bind(console));
     }
@@ -462,3 +462,73 @@ export function applyLazyMoney(app, html, actorData) {
     }, _onChangeCurrency);
 
 }
+
+function is_real_number(inNumber) {
+	return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
+}
+
+Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
+    if (!actorEntity) {
+        return;
+    }
+
+    const currency = getProperty(update, "system.currency");
+    const isCurrencyUndefined = currency == undefined || currency == null;
+    if(isCurrencyUndefined) {
+        setProperty(update, "system.currency", 
+            {
+                "pp": 0,
+                "gp": 0,
+                "ep": 0,
+                "sp": 0,
+                "cp": 0
+            }
+        );
+    }
+
+    if(hasProperty(update, "system.currency")) {
+        if(isCurrencyUndefined) {
+            setProperty(update, "system.currency", 
+                {
+                    "pp": 0,
+                    "gp": 0,
+                    "ep": 0,
+                    "sp": 0,
+                    "cp": 0
+                }
+            );
+        } else {
+            if(hasProperty(update, "system.currency.pp")) {
+                const ppValue = getProperty(update, "system.currency.pp") || 0;
+                if(!is_real_number(ppValue)) {
+                    setProperty(update, "system.currency.pp", Number(ppValue));
+                }
+            }
+            if(hasProperty(update, "system.currency.gp")) {
+                const gpValue = getProperty(update, "system.currency.gp") || 0;
+                if(!is_real_number(gpValue)) {
+                    setProperty(update, "system.currency.gp", Number(gpValue));
+                }
+            }
+            if(hasProperty(update, "system.currency.ep")) {
+                const epValue = getProperty(update, "system.currency.ep") || 0;
+                if(!is_real_number(epValue)) {
+                    setProperty(update, "system.currency.ep", Number(epValue));
+                }
+            }
+            if(hasProperty(update, "system.currency.sp")) {
+                const spValue = getProperty(update, "system.currency.sp") || 0;
+                if(!is_real_number(spValue)) {
+                    setProperty(update, "system.currency.sp", Number(spValue));
+                }
+            }
+            if(hasProperty(update, "system.currency.cp")) {
+                const cpValue = getProperty(update, "system.currency.cp") || 0;
+                if(!is_real_number(cpValue)) {
+                    setProperty(update, "system.currency.cp", Number(cpValue));
+                }
+            }
+        }
+    }
+    // console.log('actor updated!')
+});

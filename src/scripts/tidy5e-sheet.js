@@ -537,7 +537,9 @@ async function abbreviateCurrency(app, html, data) {
 
 // transform DAE formulas for maxPreparesSpells
 async function tidyCustomEffect(actor, change) {
-  if (change.key !== "system.details.maxPreparedSpells") return;
+  if (change.key !== "system.details.maxPreparedSpells") {
+    return;
+  }
   if (change.value?.length > 0) {
     let oldValue = getProperty(actor.system, change.key) || 0;
     let changeText = change.value.trim();
