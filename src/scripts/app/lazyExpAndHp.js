@@ -290,7 +290,7 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
         else if(String(hpMaxValue).startsWith("0")){
             while(String(hpMaxValue).startsWith("0")){
-                hpMaxValue = hpMaxValue.slice(1)
+                hpMaxValue =  String(hpMaxValue).slice(1)
             }
             setProperty(update, "system.attributes.hp.max", Number(hpMaxValue));
         }
