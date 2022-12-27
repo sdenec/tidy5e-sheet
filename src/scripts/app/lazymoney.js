@@ -586,6 +586,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
                 // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
                 else if (String(ppValue).startsWith("0")) {
                     while (String(ppValue).startsWith("0")) {
+                        if(String(ppValue) === "0") {
+                          break;
+                        }
                         ppValue = String(ppValue).slice(1);
                     }
                     setProperty(update, "system.currency.pp", Number(ppValue));
@@ -599,6 +602,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
                 // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
                 else if (String(gpValue).startsWith("0")) {
                     while (String(gpValue).startsWith("0")) {
+                        if(String(gpValue) === "0") {
+                          break;
+                        }
                         gpValue = String(gpValue).slice(1);
                     }
                     setProperty(update, "system.currency.gp", Number(gpValue));
@@ -612,6 +618,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
                 // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
                 else if (String(epValue).startsWith("0")) {
                     while (String(epValue).startsWith("0")) {
+                        if(String(epValue) === "0") {
+                          break;
+                        }
                         epValue = String(epValue).slice(1);
                     }
                     setProperty(update, "system.currency.ep", Number(epValue));
@@ -625,6 +634,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
                 // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
                 else if (String(spValue).startsWith("0")) {
                     while (String(spValue).startsWith("0")) {
+                        if(String(spValue) === "0") {
+                          break;
+                        }
                         spValue = String(spValue).slice(1);
                     }
                     setProperty(update, "system.currency.sp", Number(spValue));
@@ -638,6 +650,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
                 // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
                 else if (String(cpValue).startsWith("0")) {
                     while (String(cpValue).startsWith("0")) {
+                        if(String(cpValue) === "0") {
+                          break;
+                        }
                         cpValue = String(cpValue).slice(1);
                     }
                     setProperty(update, "system.currency.cp", Number(cpValue));
