@@ -30,10 +30,10 @@ export class Tidy5eSheet extends dnd5e.applications.actor
   }
 
   static get defaultOptions() {
-    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' 
+    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default'
       ? game.settings.get("tidy5e-sheet", "defaultActionsTab")
       : 'attributes' ;
-		if (!game.modules.get('character-actions-list-5e')?.active && 
+		if (!game.modules.get('character-actions-list-5e')?.active &&
       game.settings.get("tidy5e-sheet", "defaultActionsTab") == 'actions') {
       defaultTab = 'attributes';
     }
@@ -833,73 +833,129 @@ Hooks.once("ready", (app, html, data) => {
   // console.log("Tidy5e Sheet is ready!");
 });
 
-Hooks.on('renderAbilityUseDialog', function(options) {
-  if(!game.settings.get("tidy5e-sheet", "enableSpellLevelButtons")){
+Hooks.on('renderAbilityUseDialog', (application, html, context) => {
+
+  if (application?.item?.type != 'spell') {
+    return; // Nevermind if this isn't a spell
+  }
+  if (html.find('[name="consumeSpellSlot"]').length == 0) {
     return;
   }
-  // The module already do the job so for avoid redundance...
-  if (game.modules.get('spell-level-buttons-for-dnd5e')?.active) {
-      return;
-  }
-  if($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) { // If the dialog box has a option to select a spell level
 
-      // Resize the window to fit the contents
-      let originalWindowHeight = parseInt($(options._element[0]).css('height'));
-      let heightOffset = 42;
+  // TODO Integration checkbox upcast (ty to mxzf on discord )
+  /*
+  // Add a new checkbox and insert it at the end of the list
+  let new_checkbox = $('<div class="form-group"><label class="checkbox"><input type="checkbox" name="freeUpcast"="">Level Bump</label></div>')
+  new_checkbox.insertAfter(html.find('.form-group').last())
+  // Bind a change handler to the new checkbox to increment/decrement the options in the dropdown
+  // This is so that dnd5e will scale the spell up under the hood as-if it's upcast
+  new_checkbox.change(ev => {
+    if (ev.target.checked) {
+      Object.values(html.find('[name="consumeSpellLevel"] option')).map(o => {
+        if (o.value === 'pact') o.value = String(application.item.actor.system.spells.pact.level+1)
+        else o.value = String(parseInt(o.value)+1)
 
-      $(options._element[0]).height(originalWindowHeight + heightOffset);
+      })
+    } else {
+      Object.values(html.find('[name="consumeSpellLevel"] option')).map(o => {
+          if (o.text.includes('Pact')) o.value = 'pact'
+          else o.value = String(parseInt(o.value)-1)
+      })
+    }
+  })
+  application.setPosition({height:'auto'}) // Reset the height of the window to match the new content
+})
+  Hooks.on('dnd5e.preItemUsageConsumption', (item,config,options) => {
+    // If the checkbox is checked, drop the spell level used to calculate the slot cost by 1
+    if (config?.freeUpcast) {
+      if (item.system.preparation.mode === 'pact') config.consumeSpellLevel = 'pact'
+      else config.consumeSpellLevel = String(parseInt(config.consumeSpellLevel)-1)
+    }
+  });
+  */
+  if(game.settings.get("tidy5e-sheet", "enableSpellLevelButtons") &&
+    // The module already do the job so for avoid redundance...
+    !game.modules.get('spell-level-buttons-for-dnd5e')?.active) {
 
-      // Find the label that says "Cast at level", and select it's parent parent (There's no specific class or ID for this wrapper)
-      let levelSelectWrapper = $(options._element[0]).find(`.form-group label:contains("${game.i18n.localize(`DND5E.SpellCastUpcast`)}")`).parent();
-      let selectedLevel = levelSelectWrapper.find('select').val();
+    const options = html;
 
-      let appId = options.appId;
+    if($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) { // If the dialog box has a option to select a spell level
 
-      // Hide the default level select menu
-      levelSelectWrapper.css('display', 'none');
+        // Resize the window to fit the contents
+        let originalWindowHeight = parseInt($(options._element[0]).css('height'));
+        let heightOffset = 42;
 
-      // Append a container for the buttons
-      levelSelectWrapper.after(`
-          <div class="form-group spell-lvl-btn">
-              <label>${game.i18n.localize(`DND5E.SpellCastUpcast`)}</label>
-              <div class="form-fields"></div>
-          </div>
-      `);
+        $(options._element[0]).height(originalWindowHeight + heightOffset);
 
-      // Append a button for each spell level that the user can cast
-      $(options._element[0]).find(`select[name="consumeSpellLevel"] option`).each(function() {
+        // Find the label that says "Cast at level", and select it's parent parent (There's no specific class or ID for this wrapper)
+        let levelSelectWrapper = $(options._element[0]).find(`.form-group label:contains("${game.i18n.localize(`DND5E.SpellCastUpcast`)}")`).parent();
+        let selectedLevel = levelSelectWrapper.find('select').val();
 
-          let availableSlots = $(this).text().match(/\(\d+\s\w+\)/)[0].match(/\d+/)[0];
-          let availableSlotsBadge = '';
-          let value = $(this).val();
-          let i;
+        let appId = options.appId;
 
-          if(value == "pact") {
-              i = "p" + $(this).text().match(/\d/)[0]; // Get the pact slot level
-          } else {
+        // Hide the default level select menu
+        levelSelectWrapper.css('display', 'none');
+
+        // Append a container for the buttons
+        levelSelectWrapper.after(`
+            <div class="form-group spell-lvl-btn">
+                <label>${game.i18n.localize(`DND5E.SpellCastUpcast`)}</label>
+                <div class="form-fields"></div>
+            </div>
+        `);
+
+        // Append a button for each spell level that the user can cast
+        $(options._element[0]).find(`select[name="consumeSpellLevel"] option`).each(function() {
+
+            let availableTextSlotsFounded = $(this).text().match(/\(\d+\s\w+\)/);
+            if(!availableTextSlotsFounded){
+              console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\(\d+\s\w+\)/}`);
+            }
+            let availableSlotsFounded =  availableTextSlotsFounded ?  availableTextSlotsFounded[0].match(/\d+/) : undefined;
+            if(!availableSlotsFounded){
+              console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\d+/}`);
+            }
+            let availableSlots = availableSlotsFounded ? availableSlotsFounded[0] : 0;
+            let availableSlotsBadge = '';
+            let value = $(this).val();
+            let i;
+
+            if(value == "pact") {
+              // i = "p" + $(this).text().match(/\d/)[0]; // Get the pact slot level
+              let availablePactSlotsFounded = $(this).text().match(/\d/);
+              if(!availablePactSlotsFounded){
+                console.warn(`Cannot find the pact slots on text '${$(this).text()}' with ${/\d/}`);
+              }
+              if(availablePactSlotsFounded) {
+                i = "p" + availablePactSlotsFounded[0]; // Get the pact slot level
+              } else {
+                i = "p" + 0;
+              }
+            } else {
               i = value;
-          }
+            }
 
-          if(availableSlots > 0) {
-              availableSlotsBadge = `<span class="available-slots">${availableSlots}</span>`;
-          }
+            if(availableSlots > 0) {
+                availableSlotsBadge = `<span class="available-slots">${availableSlots}</span>`;
+            }
 
-          $(options._element[0]).find('.spell-lvl-btn .form-fields').append(`
-              <label title="${$(this).text()}" class="spell-lvl-btn__label" for="${appId}lvl-btn-${i}">
-                  <input type="radio" id="${appId}lvl-btn-${i}" name="lvl-btn" value="${value}">
-                  <div class="spell-lvl-btn__btn">${i}</div>
-                  ${availableSlotsBadge}
-              </label>
-          `);
-      });
+            $(options._element[0]).find('.spell-lvl-btn .form-fields').append(`
+                <label title="${$(this).text()}" class="spell-lvl-btn__label" for="${appId}lvl-btn-${i}">
+                    <input type="radio" id="${appId}lvl-btn-${i}" name="lvl-btn" value="${value}">
+                    <div class="spell-lvl-btn__btn">${i}</div>
+                    ${availableSlotsBadge}
+                </label>
+            `);
+        });
 
-      // Click on the button corresponding to the default value on the cast level dropdown menu
-      $(options._element[0]).find(`#${appId}lvl-btn-${selectedLevel}`).trigger('click');
+        // Click on the button corresponding to the default value on the cast level dropdown menu
+        $(options._element[0]).find(`#${appId}lvl-btn-${selectedLevel}`).trigger('click');
 
-      // Change the dropdown menu value when user clicks on a button
-      $(options._element[0]).find('.spell-lvl-btn__label').on('click', function() {
-          levelSelectWrapper.find('select').val( $(this).find('input').val() );
-      });
+        // Change the dropdown menu value when user clicks on a button
+        $(options._element[0]).find('.spell-lvl-btn__label').on('click', function() {
+            levelSelectWrapper.find('select').val( $(this).find('input').val() );
+        });
 
+    }
   }
 });
