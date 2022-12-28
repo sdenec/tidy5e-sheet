@@ -532,6 +532,17 @@ export function applyLazyMoney(app, html, actorData) {
 function is_real_number(inNumber) {
     return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
 }
+function isEmptyObject(obj) {
+    // because Object.keys(new Date()).length === 0;
+    // we have to do some additional check
+    if (obj === null || obj === undefined) {
+        return true;
+    }
+    const result =
+        obj && // null and undefined check
+        Object.keys(obj).length === 0; // || Object.getPrototypeOf(obj) === Object.prototype);
+    return result;
+}
 function is_lazy_number(inNumber) {
     const isSign = String(inNumber).startsWith(signCase.add) ||
         String(inNumber).startsWith(signCase.subtract) ||
@@ -557,27 +568,33 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         return;
     }
     const currency = getProperty(update, "system.currency");
-    const isCurrencyUndefined = currency == undefined || currency == null;
-    if (isCurrencyUndefined) {
-        setProperty(update, "system.currency", {
-            pp: 0,
-            gp: 0,
-            ep: 0,
-            sp: 0,
-            cp: 0,
-        });
-    }
+    const isCurrencyUndefined = isEmptyObject(currency);
+    const isCurrencyUndefined2 = (
+        hasProperty(update, "system.currency.pp") && system.currency.pp === 0 && 
+        hasProperty(update, "system.currency.gp") && system.currency.gp === 0 && 
+        hasProperty(update, "system.currency.ep") && system.currency.ep === 0 && 
+        hasProperty(update, "system.currency.sp") && system.currency.sp === 0 && 
+        hasProperty(update, "system.currency.cp") && system.currency.cp === 0
+        ) ||
+        (
+        hasProperty(update, "system.currency.pp") && system.currency.pp === "0" && 
+        hasProperty(update, "system.currency.gp") && system.currency.gp === "0" && 
+        hasProperty(update, "system.currency.ep") && system.currency.ep === "0" && 
+        hasProperty(update, "system.currency.sp") && system.currency.sp === "0" && 
+        hasProperty(update, "system.currency.cp") && system.currency.cp === "0"
+        ); 
     if (hasProperty(update, "system.currency")) {
         if (isCurrencyUndefined) {
-            setProperty(update, "system.currency", {
-                pp: 0,
-                gp: 0,
-                ep: 0,
-                sp: 0,
-                cp: 0,
-            });
+            return;
         }
         else {
+            //CHECK IF ALL ARE STRING AND EQUAL TO ZERO
+            // IS A TRICK FOR THE LONG REST ?????
+            let isARest = isCurrencyUndefined2;
+            if(isARest){
+                return;
+            }
+
             if (hasProperty(update, "system.currency.pp")) {
                 let ppValue = getProperty(update, "system.currency.pp") || 0;
                 if (!is_lazy_number(ppValue)) {
