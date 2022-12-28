@@ -590,10 +590,10 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         else {
             //CHECK IF ALL ARE STRING AND EQUAL TO ZERO
             // IS A TRICK FOR THE LONG REST ?????
-            let isARest = isCurrencyUndefined2;
-            if(isARest){
-                return;
-            }
+            // let isARest = isCurrencyUndefined2;
+            // if(isARest){
+            //     return;
+            // }
 
             if (hasProperty(update, "system.currency.pp")) {
                 let ppValue = getProperty(update, "system.currency.pp") || 0;
