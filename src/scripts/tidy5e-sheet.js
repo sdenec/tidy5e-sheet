@@ -909,6 +909,14 @@ Hooks.on('renderAbilityUseDialog', (application, html, context) => {
 
             let availableTextSlotsFounded = $(this).text().match(/\(\d+\s\w+\)/);
             if(!availableTextSlotsFounded){
+              availableTextSlotsFounded = $(this).text().match(/\d+/g);
+              const lastMatch = availableTextSlotsFounded[availableTextSlotsFounded.length-1];
+              if(lastMatch) {
+                availableTextSlotsFounded = lastMatch;
+              }
+            }
+            
+            if(!availableTextSlotsFounded){
               console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\(\d+\s\w+\)/}`);
             }
             let availableSlotsFounded =  availableTextSlotsFounded ?  availableTextSlotsFounded[0].match(/\d+/) : undefined;
