@@ -877,7 +877,7 @@ Hooks.on('renderAbilityUseDialog', (application, html, context) => {
     // The module already do the job so for avoid redundance...
     !game.modules.get('spell-level-buttons-for-dnd5e')?.active) {
 
-    const options = html;
+    const options = application;
 
     if($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) { // If the dialog box has a option to select a spell level
 
