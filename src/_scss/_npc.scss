@@ -350,7 +350,8 @@
 
   .items-list {
     padding: 0 0 8px 0;
-    overflow-y: visible;
+    // overflow-y: visible;
+    overflow-y: scroll;
 
     &.effects-list {
       overflow-y: scroll;
