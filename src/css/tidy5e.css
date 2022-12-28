@@ -4528,7 +4528,8 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 }
 .tidy5e.sheet.actor.npc .items-list {
   padding: 0 0 8px 0;
-  overflow-y: visible;
+  /* overflow-y: visible; */
+  overflow-y: scroll;
 }
 .tidy5e.sheet.actor.npc .items-list.effects-list {
   overflow-y: scroll;
@@ -4734,7 +4735,8 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 }
 .tidy5e.sheet.actor.vehicle .attributes .items-list {
   padding: 0 0 8px 0;
-  overflow-y: visible;
+  /* overflow-y: visible; */
+  overflow-y: scroll;
 }
 .tidy5e.sheet.actor.vehicle .header-attributes .ac-display .value {
   top: 28px;

@@ -58,7 +58,7 @@ function _onChangeExp(ev) {
     if(newAmount <  minExp) {
         newAmount = minExp;
     }
-    
+
     sheet.submitOnChange = false;
     actor
         .update({ "system.details.xp.value": Number(newAmount) })
@@ -67,7 +67,7 @@ function _onChangeExp(ev) {
             sheet.submitOnChange = true;
     })
     .catch(console.log.bind(console));
-    
+
 }
 
 function _onChangeHp(ev) {
@@ -124,7 +124,7 @@ function _onChangeHp(ev) {
     if(newAmount <  minHp) {
         newAmount = minHp;
     }
-    
+
     sheet.submitOnChange = false;
     actor
         .update({ "system.attributes.hp.value": Number(newAmount) })
@@ -133,7 +133,7 @@ function _onChangeHp(ev) {
             sheet.submitOnChange = true;
     })
     .catch(console.log.bind(console));
-    
+
 }
 
 function _onChangeHpMax(ev) {
@@ -190,7 +190,7 @@ function _onChangeHpMax(ev) {
     if(newAmount <  minHp) {
         newAmount = minHp;
     }
-    
+
     sheet.submitOnChange = false;
     actor
         .update({ "system.attributes.hp.max": Number(newAmount) })
@@ -199,7 +199,7 @@ function _onChangeHpMax(ev) {
             sheet.submitOnChange = true;
     })
     .catch(console.log.bind(console));
-    
+
 }
 
 export function applyLazyExp(app, html, actorData) {
@@ -256,7 +256,7 @@ function is_lazy_number(inNumber) {
     if(isSign){
         const withoutFirst = String(inNumber).slice(1);
         return is_real_number(withoutFirst);
-    } else {    
+    } else {
         return true;
     }
 }
@@ -277,6 +277,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
         else if(String(hpValue).startsWith("0")){
             while(String(hpValue).startsWith("0")){
+                if(String(hpValue) === "0") {
+                  break;
+                }
                 hpValue =  String(hpValue).slice(1)
             }
             setProperty(update, "system.attributes.hp.value", Number(hpValue));
@@ -290,6 +293,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
         else if(String(hpMaxValue).startsWith("0")){
             while(String(hpMaxValue).startsWith("0")){
+                if(String(hpMaxValue) === "0") {
+                  break;
+                }
                 hpMaxValue =  String(hpMaxValue).slice(1)
             }
             setProperty(update, "system.attributes.hp.max", Number(hpMaxValue));
@@ -303,6 +309,9 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
         // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
         else if(String(xpValue).startsWith("0")){
             while(String(xpValue).startsWith("0")){
+                if(String(xpValue) === "0") {
+                  break;
+                }
                 xpValue = String(xpValue).slice(1)
             }
             setProperty(update, "system.details.xp.value", Number(xpValue));
