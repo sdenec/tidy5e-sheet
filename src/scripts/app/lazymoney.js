@@ -4,11 +4,96 @@ const signCase = {
     equals: "=",
     default: " ",
 };
+function patchCurrency(currency){
+    if (hasProperty(currency, "pp")) {
+        let ppValue = getProperty(currency, "pp") || 0;
+        if (!is_lazy_number(ppValue)) {
+            // Do nothing
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if (String(ppValue).startsWith("0")) {
+            while (String(ppValue).startsWith("0")) {
+                if(String(ppValue) === "0") {
+                    break;
+                }
+                ppValue = String(ppValue).slice(1);
+            }
+        }
+        setProperty(currency, "pp", Number(ppValue));
+    }
+    if (hasProperty(currency, "gp")) {
+        let gpValue = getProperty(currency, "gp") || 0;
+        if (!is_lazy_number(gpValue)) {
+            // Do nothing
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if (String(gpValue).startsWith("0")) {
+            while (String(gpValue).startsWith("0")) {
+                if(String(gpValue) === "0") {
+                    break;
+                }
+                gpValue = String(gpValue).slice(1);
+            }
+        }
+        setProperty(currency, "gp", Number(gpValue));
+    }
+    if (hasProperty(currency, "ep")) {
+        let epValue = getProperty(currency, "ep") || 0;
+        if (!is_lazy_number(epValue)) {
+            // Do nothing
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if (String(epValue).startsWith("0")) {
+            while (String(epValue).startsWith("0")) {
+                if(String(epValue) === "0") {
+                    break;
+                }
+                epValue = String(epValue).slice(1);
+            }
+        }
+        setProperty(currency, "ep", Number(epValue));
+    }
+    if (hasProperty(currency, "sp")) {
+        let spValue = getProperty(currency, "sp") || 0;
+        if (!is_lazy_number(spValue)) {
+            // Do nothing
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if (String(spValue).startsWith("0")) {
+            while (String(spValue).startsWith("0")) {
+                if(String(spValue) === "0") {
+                    break;
+                }
+                spValue = String(spValue).slice(1);
+            }
+        }
+        setProperty(currency, "sp", Number(spValue));
+    }
+    if (hasProperty(currency, "cp")) {
+        let cpValue = getProperty(currency, "cp") || 0;
+        if (!is_lazy_number(cpValue)) {
+            // Do nothing
+        }
+        // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+        else if (String(cpValue).startsWith("0")) {
+            while (String(cpValue).startsWith("0")) {
+                if(String(cpValue) === "0") {
+                    break;
+                }
+                cpValue = String(cpValue).slice(1);
+            }
+        }
+        setProperty(currency, "cp", Number(cpValue));
+    }
+    return currency;
+}
 function _onChangeCurrency(ev) {
     const input = ev.target;
     const actor = ev.data.app.actor;
     const sheet = ev.data.app.options;
-    const money = ev.data.app.actor.system.currency;
+    let money = ev.data.app.actor.system.currency;
+    money = patchCurrency(money);
+
     const denom = input.name.split(".")[2];
     const value = input.value;
     let sign = signCase.default;
@@ -567,114 +652,15 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
     if (!actorEntity) {
         return;
     }
-    const currency = getProperty(update, "system.currency");
-    const isCurrencyUndefined = isEmptyObject(currency);
-    const isCurrencyUndefined2 = (
-        hasProperty(update, "system.currency.pp") && system.currency.pp === 0 && 
-        hasProperty(update, "system.currency.gp") && system.currency.gp === 0 && 
-        hasProperty(update, "system.currency.ep") && system.currency.ep === 0 && 
-        hasProperty(update, "system.currency.sp") && system.currency.sp === 0 && 
-        hasProperty(update, "system.currency.cp") && system.currency.cp === 0
-        ) ||
-        (
-        hasProperty(update, "system.currency.pp") && system.currency.pp === "0" && 
-        hasProperty(update, "system.currency.gp") && system.currency.gp === "0" && 
-        hasProperty(update, "system.currency.ep") && system.currency.ep === "0" && 
-        hasProperty(update, "system.currency.sp") && system.currency.sp === "0" && 
-        hasProperty(update, "system.currency.cp") && system.currency.cp === "0"
-        ); 
+
     if (hasProperty(update, "system.currency")) {
+        const currency = getProperty(update, "system.currency");
+        const isCurrencyUndefined = isEmptyObject(currency);
         if (isCurrencyUndefined) {
             return;
         }
         else {
-            //CHECK IF ALL ARE STRING AND EQUAL TO ZERO
-            // IS A TRICK FOR THE LONG REST ?????
-            // let isARest = isCurrencyUndefined2;
-            // if(isARest){
-            //     return;
-            // }
-
-            if (hasProperty(update, "system.currency.pp")) {
-                let ppValue = getProperty(update, "system.currency.pp") || 0;
-                if (!is_lazy_number(ppValue)) {
-                    setProperty(update, "system.currency.pp", Number(ppValue));
-                }
-                // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-                else if (String(ppValue).startsWith("0")) {
-                    while (String(ppValue).startsWith("0")) {
-                        if(String(ppValue) === "0") {
-                          break;
-                        }
-                        ppValue = String(ppValue).slice(1);
-                    }
-                    setProperty(update, "system.currency.pp", Number(ppValue));
-                }
-            }
-            if (hasProperty(update, "system.currency.gp")) {
-                let gpValue = getProperty(update, "system.currency.gp") || 0;
-                if (!is_lazy_number(gpValue)) {
-                    setProperty(update, "system.currency.gp", Number(gpValue));
-                }
-                // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-                else if (String(gpValue).startsWith("0")) {
-                    while (String(gpValue).startsWith("0")) {
-                        if(String(gpValue) === "0") {
-                          break;
-                        }
-                        gpValue = String(gpValue).slice(1);
-                    }
-                    setProperty(update, "system.currency.gp", Number(gpValue));
-                }
-            }
-            if (hasProperty(update, "system.currency.ep")) {
-                let epValue = getProperty(update, "system.currency.ep") || 0;
-                if (!is_lazy_number(epValue)) {
-                    setProperty(update, "system.currency.ep", Number(epValue));
-                }
-                // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-                else if (String(epValue).startsWith("0")) {
-                    while (String(epValue).startsWith("0")) {
-                        if(String(epValue) === "0") {
-                          break;
-                        }
-                        epValue = String(epValue).slice(1);
-                    }
-                    setProperty(update, "system.currency.ep", Number(epValue));
-                }
-            }
-            if (hasProperty(update, "system.currency.sp")) {
-                let spValue = getProperty(update, "system.currency.sp") || 0;
-                if (!is_lazy_number(spValue)) {
-                    setProperty(update, "system.currency.sp", Number(spValue));
-                }
-                // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-                else if (String(spValue).startsWith("0")) {
-                    while (String(spValue).startsWith("0")) {
-                        if(String(spValue) === "0") {
-                          break;
-                        }
-                        spValue = String(spValue).slice(1);
-                    }
-                    setProperty(update, "system.currency.sp", Number(spValue));
-                }
-            }
-            if (hasProperty(update, "system.currency.cp")) {
-                let cpValue = getProperty(update, "system.currency.cp") || 0;
-                if (!is_lazy_number(cpValue)) {
-                    setProperty(update, "system.currency.cp", Number(cpValue));
-                }
-                // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-                else if (String(cpValue).startsWith("0")) {
-                    while (String(cpValue).startsWith("0")) {
-                        if(String(cpValue) === "0") {
-                          break;
-                        }
-                        cpValue = String(cpValue).slice(1);
-                    }
-                    setProperty(update, "system.currency.cp", Number(cpValue));
-                }
-            }
+            update = patchCurrency(update.system.currency);
         }
     }
     // console.log('actor updated!')
