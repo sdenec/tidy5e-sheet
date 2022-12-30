@@ -300,7 +300,7 @@ async function checkDeathSaveStatus(app, html, data) {
 
     // console.log(`current HP: ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
     if (currentHealth <= 0) {
-      $(".tidy5e-sheet .profile").addClass("dead");
+      html.find(".tidy5e-sheet .profile").addClass("dead");
     }
 
     if (
