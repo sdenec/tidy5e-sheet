@@ -14,6 +14,7 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
+import { colorPicker } from "./config/colorPicker.js";
 
 let position = 0;
 
@@ -966,4 +967,9 @@ Hooks.on('renderAbilityUseDialog', (application, html, context) => {
 
     }
   }
+});
+
+Hooks.on("renderSettingsConfig", (app, html, data) => {
+	// Create color picker
+	colorPicker("tidy5e-sheet", "arrowColor", html);
 });

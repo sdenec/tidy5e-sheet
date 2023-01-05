@@ -129,6 +129,7 @@
   "TIDY5E.Settings.NpcLabel": "NPCs",
   "TIDY5E.Settings.VehicleLabel": "Vehicles",
   "TIDY5E.Settings.MulticlassSpellbookFilterLabel": "Multiclass Spellbook Filter",
+  "TIDY5E.Settings.ColorPickerSpellLabel": "Color Picker Spell",
 
   "TIDY5E.Settings.SheetMenu": {
     "label": "Sheet Settings",
@@ -451,5 +452,80 @@
   "TIDY5E.Settings.LockItemQuantity": {
     "name": "Lock item quantity for non GM",
     "hint": "Enable this to lock the input quantity on the inventory and item sheet on the tidy sheet. All other module working with these fields are working just fine."
+  },
+
+  "TIDY5E.Settings.ColorPickerEquipped": {
+    "name": "Color Picker for 'Equipped'",
+    "hint": "Select what color you want to use for 'Equipped'"
+  },
+  "TIDY5E.Settings.ColorPickerEquippedOutline": {
+      "name": "Color Picker for 'Equipped Outline'",
+      "hint": "Select what color you want to use for 'Equipped Outline'"
+  },
+  "TIDY5E.Settings.ColorPickerEquippedAccent": {
+      "name": "Color Picker for 'Equipped Accent'",
+      "hint": "Select what color you want to use for 'Equipped Accent'"
+  },
+  "TIDY5E.Settings.ColorPickerPrepared": {
+      "name": "Color Picker for 'Prepared'",
+      "hint": "Select what color you want to use for 'Prepared'"
+  },
+  "TIDY5E.Settings.ColorPickerPreparedOutline": {
+      "name": "Color Picker for 'Prepared Outline'",
+      "hint": "Select what color you want to use for 'Prepared Outline'"
+  },
+  "TIDY5E.Settings.ColorPickerPreparedAccent": {
+      "name": "Color Picker for 'Prepared Accent'",
+      "hint": "Select what color you want to use for 'Prepared Accent'"
+  },
+  "TIDY5E.Settings.ColorPickerPact": {
+      "name": "Color Picker for 'Pact'",
+      "hint": "Select what color you want to use for 'Pact'"
+  },
+  "TIDY5E.Settings.ColorPickerPactOutline": {
+      "name": "Color Picker for 'PactOutline'",
+      "hint": "Select what color you want to use for 'PactOutline'"
+  },
+  "TIDY5E.Settings.ColorPickerPactAccent": {
+      "name": "Color Picker for 'PactAccent'",
+      "hint": "Select what color you want to use for 'PactAccent'"
+  },
+  "TIDY5E.Settings.ColorPickerAtWill": {
+      "name": "Color Picker for 'At Will'",
+      "hint": "Select what color you want to use for 'At Will'"
+  },
+  "TIDY5E.Settings.ColorPickerAtWillOutline": {
+      "name": "Color Picker for 'At Will Outline'",
+      "hint": "Select what color you want to use for 'At Will Outline'"
+  },
+  "TIDY5E.Settings.ColorPickerAtWillAccent": {
+      "name": "Color Picker for 'At Will Accent'",
+      "hint": "Select what color you want to use for 'At Will Accent'"
+  },
+  "TIDY5E.Settings.ColorPickerInnate": {
+      "name": "Color Picker for 'Innate'",
+      "hint": "Select what color you want to use for 'Innate'"
+  },
+  "TIDY5E.Settings.ColorPickerInnateOutline": {
+      "name": "Color Picker for 'Innate Outline'",
+      "hint": "Select what color you want to use for 'Innate Outline'"
+  },
+  "TIDY5E.Settings.ColorPickerInnateAccent": {
+      "name": "Color Picker for 'Innate Accent'",
+      "hint": "Select what color you want to use for 'Innate Accent'"
+  },
+  "TIDY5E.Settings.ColorPickerAlwaysPrepared": {
+      "name": "Color Picker for 'Always Prepared'",
+      "hint": "Select what color you want to use for 'Always Prepared'"
+  },
+  "TIDY5E.Settings.ColorPickerAlwaysPreparedOutline": {
+      "name": "Color Picker for 'Always Prepared Outline'",
+      "hint": "Select what color you want to use for 'Always Prepared Outline'"
+  },
+  "TIDY5E.Settings.ColorPickerAlwaysPreparedAccent": {
+      "name": "Color Picker for 'Always Prepared Accent'",
+      "hint": "Select what color you want to use for 'Always Prepared Accent'"
   }
+
+
 }

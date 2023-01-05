@@ -121,7 +121,26 @@ export class Tidy5eUserSettings extends FormApplication {
 			'lockHpMaxChanges',
 			'lockLevelSelector',
 			'lockConfigureSheet',
-			'lockItemQuantity'
+			'lockItemQuantity',
+
+			'colorPickerEquipped',
+			'colorPickerEquippedOutline',
+			'colorPickerEquippedAccent',
+			'colorPickerPrepared',
+			'colorPickerPreparedOutline',
+			'colorPickerPreparedAccent',
+			'colorPickerPact',
+			'colorPickerPactOutline',
+			'colorPickerPactAccent',
+			'colorPickerAtWill',
+			'colorPickerAtWillOutline',
+			'colorPickerAtWillAccent',
+			'colorPickerInnate',
+			'colorPickerInnateOutline',
+			'colorPickerInnateAccent',
+			'colorPickerAlwaysPrepared',
+			'colorPickerAlwaysPreparedOutline',
+			'colorPickerAlwaysPreparedAccent'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
