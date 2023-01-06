@@ -13,9 +13,9 @@
 		background: none;
 
 		button {
-			border: 1px solid rgba(0,0,0,.2);
-			background: rgba(0,0,0,.4);
-			color: rgba(255,255,255,.8);
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			background: rgba(0, 0, 0, 0.4);
+			color: rgba(255, 255, 255, 0.8);
 			padding: 2px 4px;
 			box-shadow: none;
 			cursor: pointer;
@@ -23,7 +23,7 @@
 			font-size: 12px;
 
 			&:hover {
-				background: rgba(0,0,0,.6);
+				background: rgba(0, 0, 0, 0.6);
 			}
 		}
 	}
@@ -34,7 +34,7 @@
 	.item-betterRolls select {
 		height: 24px;
 		border: none;
-		background: rgba(255,255,255,.3); 
+		background: rgba(255, 255, 255, 0.3); 
 	}
 
 	.br5e-consume-box {
@@ -211,10 +211,10 @@
 	}
 
 	.form-group label.checkbox {
-		background: rgba(255,255,255,0.3);
+		background: rgba(255, 255, 255, 0.3);
 
 		&:hover {
-			background: rgba(255,255,255,0.1);
+			background: rgba(255, 255, 255, 0.1);
 		}
 	}
 
@@ -307,7 +307,7 @@
 			  input:not([type=checkbox]) {
 			  	line-height: 20px;
 			  	height: 20px;
-					background: rgba(255,255,255,0.3);
+					background: rgba(255, 255, 255, 0.3);
 			  }
 
 			  .item-controls {

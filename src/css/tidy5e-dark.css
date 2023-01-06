@@ -1,6 +1,6 @@
 :root.tidy5eDark {
   --t5e-primary-font: rgba(255, 255, 255, 0.8);
-  --t5e-background: rgb(30, 30, 30);
+  --t5e-background: rgba(30, 30, 30, 1);
   --t5e-white: rgba(0, 0, 0, 1);
   --t5e-primary-color: rgba(255, 255, 255, 0.8);
   --t5e-secondary-color: rgba(255, 255, 255, 0.65);
@@ -18,7 +18,7 @@
   --t5e-atwill: rgba(226, 246, 4, 0.3);
   --t5e-innate: rgba(255, 0, 0, 0.3);
   --t5e-always-prepared: rgba(0, 100, 255, 0.3);
-  --t5e-icon-background: rgb(30, 30, 30);
+  --t5e-icon-background: rgba(30, 30, 30, 1);
   --t5e-icon-shadow: rgba(0, 0, 0, 0.4);
   --t5e-icon-outline: rgba(0, 0, 0, 0.4);
   --t5e-icon-font: rgba(255, 255, 255, 0.4);
@@ -32,11 +32,11 @@
   --t5e-checkbox-checked: rgba(0, 255, 0, 0.5);
 }
 :root.tidy5eDark .tidy5e {
-  --t5e-color-bg-option: rgb(100 100 100);
+  --t5e-color-bg-option: rgba(100, 100, 100, 1);
 }
 :root.tidy5eDark .tidy5e .prosemirror {
-  --t5e-color-control-bg: rgb(50 50 50);
-  --t5e-color-hover-bg: rgb(20 20 20);
+  --t5e-color-control-bg: rgba(50, 50, 50, 1);
+  --t5e-color-hover-bg: rgba(20, 20, 20, 1);
 }
 
 .tidy5eDark .tidy5e.sheet.actor .tidy5e-sheet {
@@ -128,16 +128,16 @@
   background: var(--t5e-secondary-color);
 }
 .tidy5eDark .tidy5e.sheet .prosemirror menu button:hover {
-  background: rgb(100, 100, 100);
+  background: rgba(100, 100, 100, 1);
 }
 .tidy5eDark .tidy5e.sheet .prosemirror menu .pm-dropdown {
-  background: rgb(100, 100, 100);
+  background: rgba(100, 100, 100, 1);
 }
 .tidy5eDark .tidy5e.sheet .prosemirror menu .pm-dropdown ul {
-  background: rgb(100, 100, 100);
+  background: rgba(100, 100, 100, 1);
 }
 .tidy5eDark .tidy5e.sheet .prosemirror menu .pm-dropdown li:hover {
-  background: rgb(50, 50, 50);
+  background: rgba(50, 50, 50, 1);
 }
 
 .disable {

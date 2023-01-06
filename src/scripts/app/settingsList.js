@@ -1,4 +1,4 @@
-import { RGBAToHexAFromColor } from "../config/colorPicker.js";
+import { RGBAToHexAFromColor } from "./colorPicker.js";
 
 export function settingsList(){
   // General Settings
