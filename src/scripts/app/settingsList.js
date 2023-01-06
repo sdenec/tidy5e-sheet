@@ -951,18 +951,18 @@ class ResetSettingsDialog extends FormApplication {
 		super(...args);
 		//@ts-ignore
 		return new Dialog({
-			title: game.i18n.localize(`TIDY5E.Dialogs.ResetSettings.title`),
+			title: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.title`),
 			content:
 				'<p style="margin-bottom:1rem;">' +
-				game.i18n.localize(`TIDY5E.Dialogs.ResetSettings.content`) +
+				game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.content`) +
 				"</p>",
 			buttons: {
 				confirm: {
 					icon: '<i class="fas fa-check"></i>',
-					label: game.i18n.localize(`TIDY5E.Dialogs.ResetSettings.confirm`),
+					label: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.confirm`),
 					callback: async () => {
 						for (let setting of game.settings.storage.get("world")
-							.filter(setting => setting.key.startsWith("tidy5e-sheet"))) {
+							.filter(setting => setting.key.startsWith("tidy5e-sheet."))) {
 							
 							console.log(`Reset setting '${setting.key}'`);
 							await setting.delete();
@@ -972,7 +972,7 @@ class ResetSettingsDialog extends FormApplication {
 				},
 				cancel: {
 					icon: '<i class="fas fa-times"></i>',
-					label: game.i18n.localize(`TIDY5E.Dialogs.ResetSettings.cancel`),
+					label: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.cancel`),
 				},
 			},
 			default: "cancel",

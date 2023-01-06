@@ -529,7 +529,16 @@
   "TIDY5E.Settings.ColorPickerAlwaysPreparedAccent": {
       "name": "Color Picker for 'Always Prepared Accent'",
       "hint": "Select what color you want to use for 'Always Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+
+  "TIDY5E.Settings.Reset": {
+    "name": "Reset settings to default",
+    "hint": "This will reset all of the settings of back to the active game system's default.",
+    "dialogs": {
+      "title": "Reset Module Settings",
+      "content": "Are you sure you want to reset all of the module settings to the current system's defaults? <strong>THIS CANNOT BE UNDONE!</strong>",
+      "confirm": "Reset Module Settings",
+      "cancel": "Cancel"
+    }
   }
-
-
 }
