@@ -460,75 +460,75 @@
   },
   "TIDY5E.Settings.ColorPickerEquipped": {
     "name": "Color Picker for 'Equipped'",
-    "hint": "Select what color you want to use for 'Equipped'"
+    "hint": "Select what color you want to use for 'Equipped'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerEquippedOutline": {
       "name": "Color Picker for 'Equipped Outline'",
-      "hint": "Select what color you want to use for 'Equipped Outline'"
+      "hint": "Select what color you want to use for 'Equipped Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerEquippedAccent": {
       "name": "Color Picker for 'Equipped Accent'",
-      "hint": "Select what color you want to use for 'Equipped Accent'"
+      "hint": "Select what color you want to use for 'Equipped Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerPrepared": {
       "name": "Color Picker for 'Prepared'",
-      "hint": "Select what color you want to use for 'Prepared'"
+      "hint": "Select what color you want to use for 'Prepared'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerPreparedOutline": {
       "name": "Color Picker for 'Prepared Outline'",
-      "hint": "Select what color you want to use for 'Prepared Outline'"
+      "hint": "Select what color you want to use for 'Prepared Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerPreparedAccent": {
       "name": "Color Picker for 'Prepared Accent'",
-      "hint": "Select what color you want to use for 'Prepared Accent'"
+      "hint": "Select what color you want to use for 'Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerPact": {
       "name": "Color Picker for 'Pact'",
-      "hint": "Select what color you want to use for 'Pact'"
+      "hint": "Select what color you want to use for 'Pact'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerPactOutline": {
       "name": "Color Picker for 'PactOutline'",
-      "hint": "Select what color you want to use for 'PactOutline'"
+      "hint": "Select what color you want to use for 'PactOutline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerPactAccent": {
       "name": "Color Picker for 'PactAccent'",
-      "hint": "Select what color you want to use for 'PactAccent'"
+      "hint": "Select what color you want to use for 'PactAccent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerAtWill": {
       "name": "Color Picker for 'At Will'",
-      "hint": "Select what color you want to use for 'At Will'"
+      "hint": "Select what color you want to use for 'At Will'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerAtWillOutline": {
       "name": "Color Picker for 'At Will Outline'",
-      "hint": "Select what color you want to use for 'At Will Outline'"
+      "hint": "Select what color you want to use for 'At Will Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerAtWillAccent": {
       "name": "Color Picker for 'At Will Accent'",
-      "hint": "Select what color you want to use for 'At Will Accent'"
+      "hint": "Select what color you want to use for 'At Will Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerInnate": {
       "name": "Color Picker for 'Innate'",
-      "hint": "Select what color you want to use for 'Innate'"
+      "hint": "Select what color you want to use for 'Innate'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerInnateOutline": {
       "name": "Color Picker for 'Innate Outline'",
-      "hint": "Select what color you want to use for 'Innate Outline'"
+      "hint": "Select what color you want to use for 'Innate Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerInnateAccent": {
       "name": "Color Picker for 'Innate Accent'",
-      "hint": "Select what color you want to use for 'Innate Accent'"
+      "hint": "Select what color you want to use for 'Innate Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerAlwaysPrepared": {
       "name": "Color Picker for 'Always Prepared'",
-      "hint": "Select what color you want to use for 'Always Prepared'"
+      "hint": "Select what color you want to use for 'Always Prepared'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerAlwaysPreparedOutline": {
       "name": "Color Picker for 'Always Prepared Outline'",
-      "hint": "Select what color you want to use for 'Always Prepared Outline'"
+      "hint": "Select what color you want to use for 'Always Prepared Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
   "TIDY5E.Settings.ColorPickerAlwaysPreparedAccent": {
       "name": "Color Picker for 'Always Prepared Accent'",
-      "hint": "Select what color you want to use for 'Always Prepared Accent'"
+      "hint": "Select what color you want to use for 'Always Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   }
 
 

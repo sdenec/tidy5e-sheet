@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History
 
+### 0.7.1-2-3-4-56
+
+- Bug fixing and features (check out the PR for more infos)
+
 ### Version 0.6.6
 
 - attack mod calculation fix

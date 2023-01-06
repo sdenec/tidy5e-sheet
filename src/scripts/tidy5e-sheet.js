@@ -836,6 +836,13 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 
 Hooks.once("ready", (app, html, data) => {
   // console.log("Tidy5e Sheet is ready!");
+  if (!game.modules.get("colorsettings")?.active && game.user?.isGM) {
+		let word = "install and activate";
+		if (game.modules.get("colorsettings")) word = "activate";
+    const errorText = `tidy-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace("<br>", "\n");
+    ui.notifications?.error(errorText);
+		throw new Error(errorText);
+	}
 });
 
 Hooks.on('renderAbilityUseDialog', (application, html, context) => {

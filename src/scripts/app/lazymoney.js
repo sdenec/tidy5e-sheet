@@ -589,7 +589,7 @@ function totalMoney(money) {
     return total;
 }
 function flash(input) {
-    input.style.backgroundColor = "rgba(255,0,0,0.5)";
+    input.style.backgroundColor = "rgba(255, 0, 0, 0.5)";
     setTimeout(() => {
         input.style.backgroundColor = "";
     }, 150);

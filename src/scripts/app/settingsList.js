@@ -764,14 +764,14 @@ export function settingsList(){
 			name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEnabled.name")}`,
 			hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEnabled.hint")}`,
 			scope: "world",
-			type: String,
-			default: RGBAToHexAFromColor(50,205,50,.3),
+			type: Boolean,
+			default: false,
 			config: false,
 		});
 
-		// --t5e-equipped: 					rgba(50,205,50,.3);
-		// --t5e-equipped-outline: 			rgba(50,205,50,1);
-		// --t5e-equipped-accent: 			rgba(173,255,47,1);
+		// --t5e-equipped: 					rgba(50, 205, 50, 0.3);
+		// --t5e-equipped-outline: 			rgba(50, 205, 50, 1);
+		// --t5e-equipped-accent: 			rgba(173, 255, 47, 1);
 
 		game.settings.register("tidy5e-sheet", "colorPickerEquipped", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquipped.name")}`,
@@ -798,9 +798,9 @@ export function settingsList(){
 			config: false,
 		});
 
-		// --t5e-prepared: 					rgba(50,205,50,.3);
-		// --t5e-prepared-outline: 			rgba(50,205,50,1);
-		// --t5e-prepared-accent: 			rgba(173,255,47,1);
+		// --t5e-prepared: 					rgba(50, 205, 50, 0.3);
+		// --t5e-prepared-outline: 			rgba(50, 205, 50, 1);
+		// --t5e-prepared-accent: 			rgba(173, 255, 47, 1);
 
 		game.settings.register("tidy5e-sheet", "colorPickerPrepared", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPrepared.name")}`,
@@ -827,7 +827,7 @@ export function settingsList(){
 			config: false,
 		});
 
-		// --t5e-pact:					    rgba(250, 0, 180, .3);
+		// --t5e-pact:					    rgba(250, 0, 180, 0.3);
 		// --t5e-pact-outline: 			    rgba(250, 50, 213, 1);
 		// --t5e-pact-accent: 				rgba(198, 119, 193, 1);
 
@@ -856,7 +856,7 @@ export function settingsList(){
 			config: false,
 		});
 
-		// --t5e-atwill: 					rgba(226, 246, 4, .3);
+		// --t5e-atwill: 					rgba(226, 246, 4, 0.3);
 		// --t5e-atwill-outline: 			rgba(163, 165, 50, 1);
 		// --t5e-atwill-accent: 		    rgba(255, 242, 0, 1);
 
@@ -885,7 +885,7 @@ export function settingsList(){
 			config: false,
 		});
 
-		// --t5e-innate: 					rgba(255, 0, 0, .3);
+		// --t5e-innate: 					rgba(255, 0, 0, 0.3);
 		// --t5e-innate-outline: 			rgba(231, 23, 23, 1);
 		// --t5e-innate-accent: 			rgba(195, 69, 69, 1);
 
@@ -914,9 +914,9 @@ export function settingsList(){
 			config: false,
 		});
 
-		// --t5e-alwaysprepared: 			rgba(0,0,255,.15);
-		// --t5e-alwaysprepared-outline: 	rgba(65,105,225,1);
-		// --t5e-alwaysprepared-accent: 	rgba(0,191,255,1);
+		// --t5e-alwaysprepared: 			rgba(0, 0, 255, 0.15);
+		// --t5e-alwaysprepared-outline: 	rgba(65, 105, 225, 1);
+		// --t5e-alwaysprepared-accent: 	rgba(0, 191, 255, 1);
 
 		game.settings.register("tidy5e-sheet", "colorPickerAlwaysPrepared", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPrepared.name")}`,
