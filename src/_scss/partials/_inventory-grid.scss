@@ -98,8 +98,8 @@
 				box-shadow: 0 0 0 2px var(--t5e-innate-outline);
 			}
 
-			&.prepared.alwaysPrepared {
-				box-shadow: 0 0 0 2px var(--t5e-always-prepared-outline);
+			&.prepared.alwaysprepared {
+				box-shadow: 0 0 0 2px var(--t5e-alwaysprepared-outline);
 			}
 
 			&.equipped .item-image {
@@ -127,8 +127,8 @@
 				border-radius: 5px;
 			}
 
-			&.prepared.alwaysPrepared .item-image {
-    		box-shadow: 0 0 1px 1px inset var(--t5e-always-prepared-accent);
+			&.prepared.alwaysprepared .item-image {
+    		box-shadow: 0 0 1px 1px inset var(--t5e-alwaysprepared-accent);
 			}
 
 			&.magic-item {

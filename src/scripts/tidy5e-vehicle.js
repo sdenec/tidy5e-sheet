@@ -181,6 +181,8 @@ async function setSheetClasses(app, html, data){
 		html.find('.tidy5e-sheet .profile').addClass('disable-hp-bar');
 	}
 	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'itemCardsFixKey'));
+
+  applyColorPickerCustomization(html);
 }
 
 // Register Tidy5e Vehicle Sheet and make default vehicle sheet
@@ -188,7 +190,6 @@ Actors.registerSheet("dnd5e", Tidy5eVehicle, {
 	types: ["vehicle"],
 	makeDefault: true
 });
-
 
 Hooks.on("renderTidy5eVehicle", (app, html, data) => {
   setSheetClasses(app,html,data);

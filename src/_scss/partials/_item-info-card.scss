@@ -127,10 +127,10 @@
       // box-shadow: 0 0 10px var(--t5e-innate) inset;
     }
 
-    &.alwaysPrepared {
-      background: var(--t5e-always-prepared);
-      background: linear-gradient(180deg, var(--t5e-always-prepared) 0px, var(--t5e-always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
-      // box-shadow: 0 0 10px var(--t5e-always-prepared) inset;
+    &.alwaysprepared {
+      background: var(--t5e-alwaysprepared);
+      background: linear-gradient(180deg, var(--t5e-alwaysprepared) 0px, var(--t5e-alwaysprepared) 26px, rgba(0, 0, 0, 0) 36px);
+      // box-shadow: 0 0 10px var(--t5e-alwaysprepared) inset;
     }
 
     &.magic-item {

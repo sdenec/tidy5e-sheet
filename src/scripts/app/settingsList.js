@@ -905,9 +905,9 @@ export function settingsList(){
 			config: false,
 		});
 
-		// --t5e-always-prepared: 			rgba(0,0,255,.15);
-		// --t5e-always-prepared-outline: 	rgba(65,105,225,1);
-		// --t5e-always-prepared-accent: 	rgba(0,191,255,1);
+		// --t5e-alwaysprepared: 			rgba(0,0,255,.15);
+		// --t5e-alwaysprepared-outline: 	rgba(65,105,225,1);
+		// --t5e-alwaysprepared-accent: 	rgba(0,191,255,1);
 
 		game.settings.register("tidy5e-sheet", "colorPickerAlwaysPrepared", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPrepared.name")}`,

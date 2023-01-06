@@ -30,7 +30,7 @@
     <ul class="item-list">
       {{#each section.spells as |item i|}}
       <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if section.canPrepare}} preparable{{/if}} {{~#if system.preparation.prepared}} prepared{{/if}}
-        {{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}
+        {{#if (eq system.preparation.mode 'always')}} alwaysprepared{{/if}}
         {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
         {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
         {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
@@ -56,7 +56,7 @@
         {{/if}}
 
         <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
-          {{#if (eq system.preparation.mode 'always')}} alwaysPrepared{{/if}}
+          {{#if (eq system.preparation.mode 'always')}} alwaysprepared{{/if}}
           {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
           {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
           {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">

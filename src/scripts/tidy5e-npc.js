@@ -9,6 +9,7 @@ import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
+import { applyColorPickerCustomization } from "./app/colorPicker.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -617,6 +618,8 @@ async function setSheetClasses(app, html, data) {
   $(".info-card-hint .key").html(
     game.settings.get("tidy5e-sheet", "itemCardsFixKey")
   );
+
+  applyColorPickerCustomization(html);
 }
 
 // Abbreviate Currency

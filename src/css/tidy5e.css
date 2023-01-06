@@ -49,9 +49,9 @@
   --t5e-innate:	rgba(255, 0, 0, 0.3);
   --t5e-innate-outline:	rgba(231, 23, 23, 1);
   --t5e-innate-accent:	rgba(195, 69, 69, 1);
-  --t5e-always-prepared:	rgba(0, 0, 255, 0.15);
-  --t5e-always-prepared-outline:	rgba(65, 105, 225, 1);
-  --t5e-always-prepared-accent:	rgba(0, 191, 255, 1);
+  --t5e-alwaysprepared:	rgba(0, 0, 255, 0.15);
+  --t5e-alwaysprepared-outline:	rgba(65, 105, 225, 1);
+  --t5e-alwaysprepared-accent:	rgba(0, 191, 255, 1);
   --t5e-magic-accent:	rgba(255, 255, 0, 1);
   --t5e-faint-magic-accent:	rgba(255, 255, 0, 0.6);
   --t5e-magic-outline:	rgba(175, 255, 47, 1);
@@ -404,9 +404,9 @@
   background: var(--t5e-innate);
   background: linear-gradient(180deg, var(--t5e-innate) 0px, var(--t5e-innate) 26px, rgba(0, 0, 0, 0) 36px);
 }
-.tidy5e.sheet.actor #item-info-container-content .info-card.alwaysPrepared {
-  background: var(--t5e-always-prepared);
-  background: linear-gradient(180deg, var(--t5e-always-prepared) 0px, var(--t5e-always-prepared) 26px, rgba(0, 0, 0, 0) 36px);
+.tidy5e.sheet.actor #item-info-container-content .info-card.alwaysprepared {
+  background: var(--t5e-alwaysprepared);
+  background: linear-gradient(180deg, var(--t5e-alwaysprepared) 0px, var(--t5e-alwaysprepared) 26px, rgba(0, 0, 0, 0) 36px);
 }
 .tidy5e.sheet.actor #item-info-container-content .info-card.magic-item {
   -webkit-box-shadow: 0 0 6px 2px var(--t5e-magic-accent) inset;
@@ -2982,8 +2982,8 @@
 .tidy5e.sheet.actor .items-list .item.innate {
   background: var(--t5e-innate);
 }
-.tidy5e.sheet.actor .items-list .item.alwaysPrepared {
-  background: var(--t5e-always-prepared);
+.tidy5e.sheet.actor .items-list .item.alwaysprepared {
+  background: var(--t5e-alwaysprepared);
 }
 .tidy5e.sheet.actor .items-list .item .item-name .item-image {
   -webkit-box-flex: 0;
@@ -3723,9 +3723,9 @@
   -webkit-box-shadow: 0 0 0 2px var(--t5e-innate-outline);
           box-shadow: 0 0 0 2px var(--t5e-innate-outline);
 }
-.tidy5e.sheet.actor .grid-layout .item-list .item.prepared.alwaysPrepared {
-  -webkit-box-shadow: 0 0 0 2px var(--t5e-always-prepared-outline);
-          box-shadow: 0 0 0 2px var(--t5e-always-prepared-outline);
+.tidy5e.sheet.actor .grid-layout .item-list .item.prepared.alwaysprepared {
+  -webkit-box-shadow: 0 0 0 2px var(--t5e-alwaysprepared-outline);
+          box-shadow: 0 0 0 2px var(--t5e-alwaysprepared-outline);
 }
 .tidy5e.sheet.actor .grid-layout .item-list .item.equipped .item-image {
   -webkit-box-shadow: 0 0 1px 1px inset var(--t5e-equipped-accent);
@@ -3752,9 +3752,9 @@
           box-shadow: 0 0 1px 1px inset var(--t5e-innate-accent);
   border-radius: 5px;
 }
-.tidy5e.sheet.actor .grid-layout .item-list .item.prepared.alwaysPrepared .item-image {
-  -webkit-box-shadow: 0 0 1px 1px inset var(--t5e-always-prepared-accent);
-          box-shadow: 0 0 1px 1px inset var(--t5e-always-prepared-accent);
+.tidy5e.sheet.actor .grid-layout .item-list .item.prepared.alwaysprepared .item-image {
+  -webkit-box-shadow: 0 0 1px 1px inset var(--t5e-alwaysprepared-accent);
+          box-shadow: 0 0 1px 1px inset var(--t5e-alwaysprepared-accent);
 }
 .tidy5e.sheet.actor .grid-layout .item-list .item.magic-item .item-image {
   -webkit-box-shadow: 0 0 0 1px var(--t5e-magic-accent) inset, 0 0 3px 2px var(--t5e-magic-accent) inset;

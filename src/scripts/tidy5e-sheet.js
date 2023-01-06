@@ -792,6 +792,12 @@ async function setSheetClasses(app, html, data) {
   applyColorPickerCustomization(html);
 }
 
+// Register Tidy5e Sheet and make default character sheet
+Actors.registerSheet("dnd5e", Tidy5eSheet, {
+  types: ["character"],
+  makeDefault: true,
+});
+
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
   preloadTidy5eHandlebarsTemplates();
@@ -799,12 +805,6 @@ Hooks.once("init", () => {
 
   // init user settings menu
   Tidy5eUserSettings.init();
-});
-
-// Register Tidy5e Sheet and make default character sheet
-Actors.registerSheet("dnd5e", Tidy5eSheet, {
-  types: ["character"],
-  makeDefault: true,
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
