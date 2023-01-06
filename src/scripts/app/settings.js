@@ -123,6 +123,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'lockConfigureSheet',
 			'lockItemQuantity',
 
+			'colorPickerEnabled',
 			'colorPickerEquipped',
 			'colorPickerEquippedOutline',
 			'colorPickerEquippedAccent',

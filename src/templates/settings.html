@@ -459,7 +459,14 @@
         <p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.hint'}}</p>
       </div>
     </article>
-    <h3>{{localize 'TIDY5E.Settings.ColorPickerSpellLabel'}}</h3>
+    <h3>{{localize 'TIDY5E.Settings.ColorPickerLabel'}}</h3>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='colorPickerEnabled' id='colorPickerEnabled' {{checked settings.colorPickerEnabled.value}}>
+      <div class="description">
+        <label for="colorPickerEnabled">{{localize 'TIDY5E.Settings.ColorPickerEnabled.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEnabled.hint'}}</p>
+      </div>
+    </article>
     <article class="setting">
       <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerEquipped' id='colorPickerEquipped' value='{{settings.colorPickerEquipped.value}}' is="colorpicker-input" data-responsive-color>
       <div class="description">

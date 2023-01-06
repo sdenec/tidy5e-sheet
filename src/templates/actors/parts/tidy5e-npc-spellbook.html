@@ -37,7 +37,11 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if system.preparation.prepared}} prepared {{/if}}" data-item-id="{{item._id}}">
+      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if system.preparation.prepared}} prepared{{/if}}
+        {{#if (eq system.preparation.mode 'always')}} alwaysprepared{{/if}}
+        {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
+        {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
+        {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
           <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>

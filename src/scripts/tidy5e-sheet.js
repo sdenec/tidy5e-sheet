@@ -14,7 +14,7 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
-import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/colorPicker.js";
+import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
 
 let position = 0;
 
@@ -359,7 +359,9 @@ async function editProtection(app, html, data) {
         resourcesUsed++;
       }
     });
-    if (resourcesUsed == 0) html.find(".resources").hide();
+    if (resourcesUsed == 0) {
+      html.find(".resources").hide();
+    }
 
     let itemContainer = html.find(
       ".inventory-list.items-list, .effects-list.items-list"

@@ -1,4 +1,4 @@
-import { RGBAToHexAFromColor } from "./colorPicker.js";
+import { RGBAToHexAFromColor } from "./color-picker.js";
 
 export function settingsList(){
   // General Settings
@@ -760,6 +760,15 @@ export function settingsList(){
 
 		// Spell color customization
 
+		game.settings.register("tidy5e-sheet", "colorPickerEnabled", {
+			name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEnabled.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEnabled.hint")}`,
+			scope: "world",
+			type: String,
+			default: RGBAToHexAFromColor(50,205,50,.3),
+			config: false,
+		});
+
 		// --t5e-equipped: 					rgba(50,205,50,.3);
 		// --t5e-equipped-outline: 			rgba(50,205,50,1);
 		// --t5e-equipped-accent: 			rgba(173,255,47,1);
@@ -931,7 +940,7 @@ export function settingsList(){
 			scope: "world",
 			type: String,
 			default: RGBAToHexAFromColor(0,191,255,1),
-			config: true,
+			config: false,
 		});
 
 }

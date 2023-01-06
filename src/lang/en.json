@@ -129,7 +129,7 @@
   "TIDY5E.Settings.NpcLabel": "NPCs",
   "TIDY5E.Settings.VehicleLabel": "Vehicles",
   "TIDY5E.Settings.MulticlassSpellbookFilterLabel": "Multiclass Spellbook Filter",
-  "TIDY5E.Settings.ColorPickerSpellLabel": "Color Picker Spell",
+  "TIDY5E.Settings.ColorPickerLabel": "Color Picker (Customize the color)",
 
   "TIDY5E.Settings.SheetMenu": {
     "label": "Sheet Settings",
@@ -454,6 +454,10 @@
     "hint": "Enable this to lock the input quantity on the inventory and item sheet on the tidy sheet. All other module working with these fields are working just fine."
   },
 
+  "TIDY5E.Settings.ColorPickerEnabled": {
+    "name": "Enable Color Picker",
+    "hint": "Enable/Disable the coloration picker"
+  },
   "TIDY5E.Settings.ColorPickerEquipped": {
     "name": "Color Picker for 'Equipped'",
     "hint": "Select what color you want to use for 'Equipped'"
