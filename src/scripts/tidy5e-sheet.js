@@ -971,5 +971,22 @@ Hooks.on('renderAbilityUseDialog', (application, html, context) => {
 
 Hooks.on("renderSettingsConfig", (app, html, data) => {
 	// Create color picker
-	colorPicker("tidy5e-sheet", "arrowColor", html);
+	// colorPicker('tidy5e-sheet','colorPickerEquipped',html);
+  // colorPicker('tidy5e-sheet','colorPickerEquippedOutline',html);
+  // colorPicker('tidy5e-sheet','colorPickerEquippedAccent',html);
+  // colorPicker('tidy5e-sheet','colorPickerPrepared',html);
+  // colorPicker('tidy5e-sheet','colorPickerPreparedOutline',html);
+  // colorPicker('tidy5e-sheet','colorPickerPreparedAccent',html);
+  // colorPicker('tidy5e-sheet','colorPickerPact',html);
+  // colorPicker('tidy5e-sheet','colorPickerPactOutline',html);
+  // colorPicker('tidy5e-sheet','colorPickerPactAccent',html);
+  // colorPicker('tidy5e-sheet','colorPickerAtWill',html);
+  // colorPicker('tidy5e-sheet','colorPickerAtWillOutline',html);
+  // colorPicker('tidy5e-sheet','colorPickerAtWillAccent',html);
+  // colorPicker('tidy5e-sheet','colorPickerInnate',html);
+  // colorPicker('tidy5e-sheet','colorPickerInnateOutline',html);
+  // colorPicker('tidy5e-sheet','colorPickerInnateAccent',html);
+  // colorPicker('tidy5e-sheet','colorPickerAlwaysPrepared',html);
+  // colorPicker('tidy5e-sheet','colorPickerAlwaysPreparedOutline',html);
+  // colorPicker('tidy5e-sheet','colorPickerAlwaysPreparedAccent',html);
 });
