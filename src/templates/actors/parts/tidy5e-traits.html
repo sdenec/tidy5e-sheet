@@ -26,7 +26,7 @@
         {{/each}}
       </ul>
     </article>
-    <a class="trait-selector" data-options="languages" data-target="system.traits.languages"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-options="languages" data-target="languages"><i class="fas fa-pencil-alt"></i></a>
   </div>
   {{/unless}}
 
@@ -41,7 +41,7 @@
         {{/each}}
       </ul>
     </article>
-    <a class="trait-selector" data-options="damageResistanceTypes" data-target="system.traits.di"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-options="damageResistanceTypes" data-target="di"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{system.traits.dr.cssClass}}">
@@ -55,7 +55,7 @@
         {{/each}}
       </ul>
     </article>
-    <a class="trait-selector" data-options="damageResistanceTypes" data-target="system.traits.dr"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-options="damageResistanceTypes" data-target="dr"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{system.traits.dv.cssClass}}">
@@ -69,7 +69,7 @@
         {{/each}}
       </ul>
     </article>
-    <a class="trait-selector" data-options="damageResistanceTypes" data-target="system.traits.dv"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-options="damageResistanceTypes" data-target="dv"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{system.traits.ci.cssClass}}">
@@ -83,7 +83,7 @@
         {{/each}}
       </ul>
     </article>
-    <a class="trait-selector" data-options="conditionTypes" data-target="system.traits.ci"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-options="conditionTypes" data-target="ci"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   {{#if isCharacter}}
@@ -105,7 +105,7 @@
         {{/each}}
       </ul>
     </article>
-    <a class="proficiency-selector" data-type="weapon" data-target="system.traits.weaponProf"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-type="weapon"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
   <div class="form-group {{system.traits.armorProf.cssClass}}">
@@ -125,21 +125,21 @@
         {{/each}}
       </ul>
     </article>
-    <a class="proficiency-selector" data-type="armor" data-target="system.traits.armorProf"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-type="armor"><i class="fas fa-pencil-alt"></i></a>
   </div>
 
-  <div class="form-group {{system.traits.toolProf.cssClass}}">
+  <div class="form-group {{toolProf.cssClass}}">
     <article title="{{localize 'DND5E.TraitToolProf'}}">
-      <label for="system.traits.toolProf">
+      <label for="toolProf">
         <i class="fas fa-hammer"></i> <span>{{localize 'DND5E.TraitToolProf'}}</span>
       </label>
       <ul class="traits-list">
-        {{#each system.traits.toolProf.selected as |v k|}}
+        {{#each toolProf.selected as |v k|}}
         <li class="tag {{k}}">{{v}}</li>
         {{/each}}
       </ul>
     </article>
-    <a class="proficiency-selector" data-type="tool" data-target="system.traits.toolProf"><i class="fas fa-pencil-alt"></i></a>
+    <a class="trait-selector" data-type="tool"><i class="fas fa-pencil-alt"></i></a>
   </div>
   {{/if}}
   <div class="toggle-traits" data-show-traits="{{localize 'TIDY5E.Show'}}" data-hide-traits="{{localize 'TIDY5E.Hide'}}"> {{localize "TIDY5E.TraitsEmpty"}}</div>
