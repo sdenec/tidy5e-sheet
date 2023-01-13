@@ -162,7 +162,7 @@
       <select name="system.attributes.spellcasting" data-type="String">
         {{#select system.attributes.spellcasting}}
         <option value="">{{localize 'DND5E.None'}}</option>
-        {{#each system.abilities as |abl a|}}
+        {{#each abilities as |abl a|}}
         <option value="{{a}}">{{abl.label}}</option>
         {{/each}}
         {{/select}}

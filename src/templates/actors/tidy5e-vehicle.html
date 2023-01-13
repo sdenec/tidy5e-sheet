@@ -130,12 +130,12 @@
 
           {{!-- Ability Scores --}}
           <ul class="ability-scores">
-            {{#each system.abilities as |ability id|}}
+            {{#each abilities as |ability id|}}
             <li class="ability" data-ability="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
                 <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
                 <div class="value">
-                  <input class="ability-score" name="system.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
+                  <input class="ability-score" name="abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
                 </div>
                 <div class="ability-modifiers value-footer">
                   <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>

@@ -58,8 +58,8 @@ export class Tidy5eSheet extends dnd5e.applications.actor
   async getData() {
     const context = await super.getData();
 
-    Object.keys(context.system.abilities).forEach((id) => {
-      context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+    Object.keys(context.abilities).forEach((id) => {
+      context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
     // Journal HTML enrichment
@@ -482,7 +482,7 @@ async function spellAttackMod(app, html, data) {
       .find(".spellcasting-attribute select option:selected")
       .val(),
     abilityMod =
-      spellAbility != "" ? actor.system.abilities[spellAbility].mod : 0,
+      spellAbility != "" ? actor.abilities[spellAbility].mod : 0,
     spellBonus = 0;
   // console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
 
