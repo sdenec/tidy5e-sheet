@@ -177,16 +177,6 @@ export const addFavorites = async function (app, html, data, position) {
         }${translateLabels(key)}`;
       }
 
-      // adding info that damage and attacks are possible
-      if (
-        ["mwak", "rwak", "msak", "rsak"].indexOf(item.system.actionType) !== -1
-      ) {
-        item.hasAttack = true;
-      }
-      if (item.system.damage && item.system.damage.parts.length > 0) {
-        item.hasDamage = true;
-      }
-
       // is item chargeable and on Cooldown
       item.isOnCooldown = false;
       if (

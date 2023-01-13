@@ -15,12 +15,12 @@
 				</article>
 			</div>
 		</section>
-    
+
 		{{> "dnd5e.actor-warnings"}}
 		{{!-- Sheet Header --}}
 		<header class="tidy5e-header">
-			
-			
+
+
 			<section class="profile-wrap">
 				<div class="profile">
 
@@ -259,7 +259,7 @@
 			</div>
 
 		</header>
-		
+
 		{{!-- PC Sheet Navigation --}}
 		<nav class="tidy5e-navigation tabs" data-group="primary">
 			<a class="item active" data-tab="attributes">{{ localize "DND5E.Attributes" }}</a>
@@ -279,7 +279,7 @@
 		<section class="sheet-body">
 
 			<div class="tab attributes" data-group="primary" data-tab="attributes">
-				
+
 				<div class="left-pane">
 
 					{{!-- Skills --}}
@@ -315,11 +315,11 @@
 									<h4>{{ localize "TIDY5E.RestoreOnRest" }}</h4>
 									<input id="{{@root/appId}}-{{res.name}}.sr" name="system.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}>
 									<label for="{{@root/appId}}-{{res.name}}.sr" class="checkbox" title="{{ localize 'TIDY5E.RestS' }}">
-										{{ localize "DND5E.RestS" }} 
+										{{ localize "DND5E.RestS" }}
 									</label>
 									<input id="{{@root/appId}}-{{res.name}}.lr" name="system.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}>
 									<label for="{{@root/appId}}-{{res.name}}.lr" class="checkbox" title="{{ localize 'TIDY5E.RestL' }}">
-										{{ localize "DND5E.RestL" }} 
+										{{ localize "DND5E.RestL" }}
 									</label>
 								</div>
 							</header>
@@ -349,7 +349,7 @@
 
 			{{!-- Inventory Tab --}}
 			<div class="tab inventory {{#if actor.flags.tidy5e-sheet.inventory-grid}}grid{{/if}}" data-group="primary" data-tab="inventory">
-				{{#if actor.flags.tidy5e-sheet.inventory-grid}} 
+				{{#if actor.flags.tidy5e-sheet.inventory-grid}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-grid.html" sections=inventory}}
 					{{else}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory.html" sections=inventory}}
@@ -358,7 +358,7 @@
 
 			{{!-- Spellbook Tab --}}
 			<div class="tab spellbook {{#if actor.flags.tidy5e-sheet.spellbook-grid}}grid{{/if}}" data-group="primary" data-tab="spellbook">
-				{{#if actor.flags.tidy5e-sheet.spellbook-grid}} 
+				{{#if actor.flags.tidy5e-sheet.spellbook-grid}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-grid.html"}}
 					{{else}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html"}}

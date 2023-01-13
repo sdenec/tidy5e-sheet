@@ -915,7 +915,7 @@ Hooks.on('renderAbilityUseDialog', (application, html, context) => {
                 availableTextSlotsFounded = lastMatch;
               }
             }
-            
+
             if(!availableTextSlotsFounded){
               console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\(\d+\s\w+\)/}`);
             }
