@@ -63,7 +63,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor
     });
 
     // Journal HTML enrichment
-    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes?.value, {
+    context.journalHTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.details?.notes?.value, {
       secrets: this.actor.isOwner,
       rollData: context.rollData,
       async: true,
@@ -482,7 +482,7 @@ async function spellAttackMod(app, html, data) {
       .find(".spellcasting-attribute select option:selected")
       .val(),
     abilityMod =
-      spellAbility != "" ? actor.abilities[spellAbility].mod : 0,
+      spellAbility != "" ? actor.system.abilities[spellAbility].mod : 0,
     spellBonus = 0;
   // console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
 
