@@ -107,14 +107,14 @@
 						{{#if movement.special}}
 						<li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
 						{{/if}}
-						<li class="configure-movement"><a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
+						<li class="configure-movement"><a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
           </ul>
         </section>
 
         <section class="character-stats">
           {{!-- Header Attributes --}}
           <ul class="header-attributes">
-            <li class="header-attribute ac-display" title="{{ localize 'DND5E.ArmorClass' }}">
+            <li class="header-attribute ac-display" data-tooltip="{{ localize 'DND5E.ArmorClass' }}">
               <svg version="1.1" x="0px" y="0px" viewBox="0 0 90 100" xml:space="preserve">
               <path d="M45,100C-2.6,79.3,0,12.6,0,12.6c0-2.2,1.8-4,4.4-4.6l39.1-7.9C44,0,44.5,0,45,0c0.5,0,1,0,1.4,0.1L85.5,8
                 c2.6,0.5,4.4,2.4,4.4,4.6C90,12.6,92.6,79.3,45,100L45,100z"/>
@@ -130,12 +130,12 @@
 
           {{!-- Ability Scores --}}
           <ul class="ability-scores">
-            {{#each system.abilities as |ability id|}}
+            {{#each abilities as |ability id|}}
             <li class="ability" data-ability="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
                 <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
                 <div class="value">
-                  <input class="ability-score" name="system.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
+                  <input type="text" name="system.abilities.{{id}}.value" value="{{ability.value}}" class="ability-score" placeholder="10" data-dtype="Number">
                 </div>
                 <div class="ability-modifiers value-footer">
                   <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>

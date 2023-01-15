@@ -136,7 +136,7 @@
             {{#if movement.special}}
             <li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
             {{/if}}
-            <li class="configure-movement"><a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
+            <li class="configure-movement"><a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
           </ul>
         </section>
 
@@ -154,24 +154,24 @@
 						</li>
             <li class="header-attribute initiative">
               <h4 class="attribute-name rollable" data-action="rollInitiative" title="{{ localize 'DND5E.Initiative' }}">{{ localize 'TIDY5E.AbbrInitiative' }}</h4>
+              <a class="config-button" data-action="initiative" data-tooltip="{{localize 'DND5E.InitiativeConfig'}}">
+                <i class="fas fa-cog"></i>
+              </a>
               <div class="value">
                 <span>{{numberFormat system.attributes.init.total decimals=0 sign=true}}</span>
               </div>
-              <footer class="value-footer">
-                <label for="{{@root/appId}}-ini-mod">{{ localize 'TIDY5E.AbbrMod' }}</label>
-                <input id="{{@root/appId}}-ini-mod" class="ini-mod" name="system.attributes.init.value" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat system.attributes.init.value decimals=0 sign=true}}" maxlength="2">
             </footer>
             </li>
           </ul>
 
           {{!-- Ability Scores --}}
           <ul class="ability-scores">
-            {{#each system.abilities as |ability id|}}
+            {{#each abilities as |ability id|}}
             <li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
                 <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
                 <div class="value">
-                  <input class="ability-score" name="system.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
+                  <input type="text" name="system.abilities.{{id}}.value" value="{{ability.value}}" class="ability-score" placeholder="10" data-dtype="Number">
                 </div>
                 <div class="ability-modifiers value-footer">
                   <span class="ability-mod rollable" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
@@ -183,8 +183,9 @@
                 <span class="mod-label ability-mod-label">{{ localize 'TIDY5E.AbbrMod' }}</span>
                 <span class="mod-label save-mod-label">{{ localize 'TIDY5E.AbbrSavingThrow' }}</span>
               </div>
-              
-              <a class="config-button" data-action="ability" title="{{localize 'DND5E.AbilityConfigure'}}"><i class="fas fa-cog"></i></a>
+              <a class="config-button" data-action="ability" data-tooltip="{{localize 'DND5E.AbilityConfigure'}}">
+                <i class="fas fa-cog"></i>
+              </a>
             </li>
             {{/each}}
           </ul>

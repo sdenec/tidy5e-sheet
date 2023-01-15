@@ -74,6 +74,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor
 
     context.appId = this.appId;
     context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
+    context.isGM = game.user.isGM;
     return context;
   }
 

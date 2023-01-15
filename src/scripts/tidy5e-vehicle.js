@@ -49,6 +49,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
       context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
+    context.isGM = game.user.isGM;
     return context;
   }
 
