@@ -865,7 +865,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
   applyLocksCharacterSheet(app, html, data);
 
   // Little Patch for migration to system dnd 2.1.X
-  migrateFor21X(app, html, data);
+  // migrateFor21X(app, html, data);
 });
 
 Hooks.once("ready", (app, html, data) => {

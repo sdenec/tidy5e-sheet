@@ -232,7 +232,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
       async: true,
       relativeTo: this.actor
     });
-    
+
     context.journalHTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes?.value, {
       secrets: this.actor.isOwner,
       rollData: context.rollData,
@@ -935,5 +935,5 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   applyLocksNpcSheet(app, html, data);
 
   // Little Patch for migration to system dnd 2.1.X
-  migrateFor21X(app, html, data);
+  // migrateFor21X(app, html, data);
 });

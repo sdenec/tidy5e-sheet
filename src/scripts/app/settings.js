@@ -3,12 +3,12 @@ import {settingsList} from './settingsList.js';
 export class Tidy5eUserSettings extends FormApplication {
 	static init() {
 		game.settings.registerMenu('tidy5e-sheet', 'userMenu', {
-		name: '',
-		label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
-		icon: 'fas fa-cog',
-		type: Tidy5eUserSettings,
-		restricted: false
-    });
+			name: '',
+			label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
+			icon: 'fas fa-cog',
+			type: Tidy5eUserSettings,
+			restricted: false
+		});
 
 		settingsList();
 
