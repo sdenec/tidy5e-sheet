@@ -55,11 +55,11 @@
 								 	rgba(0, 200, 0, 0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0, 200, 0, 0.5) 100%);">
 						</div>
-            <input class="hp-min" name="system.attributes.hp.value" type="number" step="any" value="{{system.attributes.hp.value}}"
-            data-dtype="Number" placeholder="0" maxlength="5">
-            <span class="value-seperator">/</span>
-            <input class="hp-max" name="system.attributes.hp.max" type="number" value="{{system.attributes.hp.max}}"
-            data-dtype="Number" placeholder="0" maxlength="5">
+            <input class="hp-min" name="system.attributes.hp.value" type="text" value="{{hp.value}}" placeholder="10"
+            title="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
+            <span class="sep"> / </span>
+            <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10"
+            title="{{localize 'DND5E.HitPointsMax'}}" data-dtype="Number" maxlength="5">
           </div>
         </div>
 
@@ -72,10 +72,15 @@
 
         {{!-- Temp Hit Points --}}
         <div class="portrait-temp">
-          <input name="system.attributes.hp.temp" type="number" step="any" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
-          value="{{#if (eq system.attributes.hp.temp 0)}}{{else}}{{system.attributes.hp.temp}}{{/if}}" data-dtype="Number" maxlength="5">
-          <input name="system.attributes.hp.tempmax" type="number" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
-          value="{{#if (eq system.attributes.hp.tempmax 0)}}{{else}}{{system.attributes.hp.tempmax}}{{/if}}" data-dtype="Number" maxlength="5">
+          <input name="system.attributes.hp.temp" type="text" class="temphp"
+          placeholder="+{{ localize 'DND5E.Temp' }}" value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}"
+          title="{{localize 'DND5E.HitPointsTemp'}}" data-dtype="Number" maxlength="5">
+          <input name="system.attributes.hp.tempmax" type="text" class="temphp"
+          placeholder="+{{ localize 'DND5E.Max' }}" value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}"
+          title="{{localize 'DND5E.HitPointsTempMax'}}" data-dtype="Number" maxlength="5">
+          <a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
+						<i class="fas fa-cog"></i>
+					</a>
         </div>
 
       </section>
@@ -136,7 +141,11 @@
             {{#if movement.special}}
             <li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
             {{/if}}
-            <li class="configure-movement"><a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
+            <li class="configure-movement">
+              <a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}">
+                <i class="fas fa-cog"></i>
+              </a>
+            </li>
           </ul>
         </section>
 
@@ -149,7 +158,10 @@
 								c2.6,0.5,4.4,2.4,4.4,4.6C90,12.6,92.6,79.3,45,100L45,100z"/>
 							</svg>
 							<div class="attribute-value attributable" data-property="attributes.ac">
-								<a class="config-button" data-action="armor" title="{{localize 'DND5E.ArmorConfig'}}">{{system.attributes.ac.value}}</a>
+                <a class="config-button" data-action="armor" title="{{localize 'DND5E.ArmorConfig'}}">
+                  <!--<i class="fas fa-cog"></i>-->
+                  {{system.attributes.ac.value}}
+                </a>
 							</div>
 						</li>
             <li class="header-attribute initiative">
@@ -171,7 +183,8 @@
 							<div class="wrapper" data-ability="{{id}}">
                 <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
                 <div class="value">
-                  <input type="text" name="system.abilities.{{id}}.value" value="{{ability.value}}" class="ability-score" placeholder="10" data-dtype="Number">
+                  <input type="text" value="{{ability.value}}" name="system.abilities.{{id}}.value"
+                  class="ability-score" placeholder="10" data-dtype="Number">
                 </div>
                 <div class="ability-modifiers value-footer">
                   <span class="ability-mod rollable" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
@@ -215,7 +228,8 @@
         <div class="left-pane">
           {{!-- Skills --}}
           <ul class="skills-list {{#if actor.flags.tidy5e-sheet.npcSkillsExpanded}}expanded{{/if}} {{#if actor.flags.tidy5e-sheet.npcSkillsAlwaysVisible}}.always-visible{{/if}}">
-            {{#each system.skills as |skill s|}}
+            {{#each config.skills as |obj s|}}
+            {{#with (lookup ../skills s) as |skill|}}
             <li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
 							<a class="config-button" data-action="skill" title="{{localize 'DND5E.SkillConfigure'}}"><i class="fas fa-cog"></i></a>
               <input type="hidden" name="system.skills.{{s}}.value" value="{{skill.baseValue}}" data-dtype="Number">
@@ -225,6 +239,7 @@
               <span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
               <span class="skill-passive" title="{{skill.label}} ({{ localize 'DND5E.Passive' }})">({{skill.passive}})</span>
             </li>
+            {{/with}}
             {{/each}}
             <li class="toggle-proficient" data-show-skills="{{ localize 'TIDY5E.Show' }}" data-hide-skills="{{ localize 'TIDY5E.Hide' }}"> {{ localize "DND5E.NotProficient" }}</li>
           </ul>
@@ -239,21 +254,25 @@
             <div class="counter legendary">
               <h4>{{ localize "DND5E.LegAct" }}</h4>
               <div class="counter-value">
-                <input type="text" name="system.resources.legact.value" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legact.value}}">
+                <input name="system.resources.legact.value" type="text" step="any"
+                value="{{system.resources.legact.value}}" placeholder="0"
+                title="{{localize 'DND5E.LegActRemaining'}}"
+                data-dtype="Number">
                 <span class="sep">/</span>
-                <input type="text" name="system.resources.legact.max" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legact.max}}">
+                {{numberInput system.resources.legact.max name="system.resources.legact.max" min=0 step=1
+                placeholder=0}}
               </div>
             </div>
             <div class="counter legendary">
               <h4>{{ localize "DND5E.LegRes" }}</h4>
               <div class="counter-value">
-                <input type="text" name="system.resources.legres.value" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legres.value}}">
+                <input name="system.resources.legres.value" type="text" step="any"
+                value="{{system.resources.legres.value}}" placeholder="0"
+                title="{{localize 'DND5E.LegResRemaining'}}"
+                data-dtype="Number">
                 <span class="sep">/</span>
-                <input type="text" name="system.resources.legres.max" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legres.max}}">
+                {{numberInput system.resources.legres.max name="system.resources.legres.max" min=0 step=1
+                placeholder=0}}
               </div>
             </div>
             <div class="counter lair">
