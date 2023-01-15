@@ -15,41 +15,6 @@
     "minimum": "10.283",
     "verified": "10"
   },
-  "system": "dnd5e",
-  "relationships": {
-    "systems": [
-      {
-        "id": "dnd5e",
-        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
-        "compatibility": {
-          "minimum": "2.0.0",
-          "verified": "2.0"
-        }
-      }
-    ],
-    "requires": [
-			{
-				"id": "colorsettings",
-				"type": "module",
-				"manifest": "https://raw.githubusercontent.com/ardittristan/VTTColorSettings/master/module.json",
-				"compatibility": {}
-			}
-		],
-    "conflicts": [
-			{
-				"id": "spell-level-buttons-for-dnd5e",
-				"description": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
-			},
-      {
-				"id": "lazymoney",
-				"description": "Redundancy of features you can disable 'Lazy Money' module if you want"
-			},
-      {
-				"id": "spell-level-buttons-for-dnd5e",
-				"description": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
-			}
-		]
-  },
   "esmodules": [
     "./scripts/tidy5e-sheet.js",
     "./scripts/tidy5e-npc.js",
@@ -121,5 +86,39 @@
   ],
   "url": "https://github.com/sdenec/tidy5e-sheet",
   "manifest": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.json",
-  "download": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.zip"
+  "download": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.zip",
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+        "compatibility": {
+          "minimum": "2.1.2",
+          "verified": "2.1.2"
+        }
+      }
+    ],
+    "requires": [
+			{
+				"id": "colorsettings",
+				"type": "module",
+				"manifest": "https://raw.githubusercontent.com/ardittristan/VTTColorSettings/master/module.json",
+				"compatibility": {}
+			}
+		],
+    "conflicts": [
+			{
+				"id": "spell-level-buttons-for-dnd5e",
+				"reason": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
+			},
+      {
+				"id": "lazymoney",
+				"reason": "Redundancy of features you can disable 'Lazy Money' module if you want"
+			},
+      {
+				"id": "spell-level-buttons-for-dnd5e",
+				"reason": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
+			}
+		]
+  }
 }

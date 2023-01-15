@@ -204,6 +204,35 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     });
 
     // Journal HTML enrichment
+
+    context.journalNotes1HTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes1?.value, {
+      secrets: this.actor.isOwner,
+      rollData: context.rollData,
+      async: true,
+      relativeTo: this.actor
+    });
+
+    context.journalNotes2HTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes2?.value, {
+      secrets: this.actor.isOwner,
+      rollData: context.rollData,
+      async: true,
+      relativeTo: this.actor
+    });
+
+    context.journalNotes3HTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes3?.value, {
+      secrets: this.actor.isOwner,
+      rollData: context.rollData,
+      async: true,
+      relativeTo: this.actor
+    });
+
+    context.journalNotes4HTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes4?.value, {
+      secrets: this.actor.isOwner,
+      rollData: context.rollData,
+      async: true,
+      relativeTo: this.actor
+    });
+    
     context.journalHTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes?.value, {
       secrets: this.actor.isOwner,
       rollData: context.rollData,
