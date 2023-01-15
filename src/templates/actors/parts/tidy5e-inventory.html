@@ -28,7 +28,7 @@
     <ul class="item-list">
       {{#each section.items as |item iid|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item {{section.css}} {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}" {{#if section.editableName}}data-item-index="{{iid}}"{{/if}}>
+        <li class="item {{section.css}} {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
           <div class="item-name {{@root.rollableClass}}">
             {{#if section.editableName}}
               <input type="text" value="{{item.name}}">

@@ -20,7 +20,8 @@
     <header class="tidy5e-header">
 
       <section class="profile-wrap">
-        <div class="profile">
+        <div class="profile hp-{{system.attributes.hp.value}}-{{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}}">
+
           {{!-- Portrait --}}
           <div class="portrait">
             <img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{ localize 'TIDY5E.EditActorImage' }} / {{ localize 'TIDY5E.ShowActorImage' }}" data-edit="img">
@@ -29,7 +30,6 @@
 							<a class="showActorArt" id="showToken">{{ localize 'TIDY5E.ShowTokenArt' }}</a>
 						</div>
           </div>
-
           {{!-- HP Overlay --}}
           <div class="hp-overlay-wrapper">
             <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) 100%);">
@@ -47,6 +47,13 @@
             </div>
           </div>
           -->
+
+          {{!-- Hit Dice --}}
+          <div class="portrait-hd has-note" title="{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}">
+            <div class="note">{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}</div>
+            <div class="current-hd">{{system.attributes.hd}}</div>
+          </div>
+
           {{!-- Hit Points --}}
           <div class="portrait-hp" title="{{ localize 'DND5E.HitPoints' }}">
             <div class="hp-bar" style="background: linear-gradient(
