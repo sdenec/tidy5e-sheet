@@ -10,25 +10,25 @@
 
     {{#unless isNPC}}
     <div class="inventory-currency">  
-      <ul class="currency">
-        <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
-          <i class="fas fa-coins"></i>
-        </li>
+      <ol class="currency">
+        <h3>
+            {{localize "DND5E.Currency"}}
+            <a class="action-button currency-convert {{rollableClass}}" data-action="convertCurrency" data-tooltip="DND5E.CurrencyConvert">
+                <i class="fas fa-coins"></i>
+            </a>
+        </h3>
         {{#each system.currency as |v k|}}
-        <li class="currency-item {{k}}" title="{{ lookup ../labels.currencies k }}">
-          <input type="number" step="any" name="system.currency.{{k}}" id="{{@root/appId}}-system.currency.{{k}}" value="{{v}}"/>
-          <label for="{{@root/appId}}-system.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../label.currencies k }}</label>
-        </li>
+        <label class="denomination {{k}}">{{ lookup ../labels.currencies k }}</label>
+        <input type="text" name="system.currency.{{k}}" value="{{v}}" data-dtype="Number">
         {{/each}}
-        <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}"><i class="fas fa-funnel-dollar"></i></a></li>
-      </ul>
+      </ol>
     </div>
     {{/unless}}
 
   </div>
 
   {{#unless isNPC}}
-    {{#with system.attributes.encumbrance}}
+    {{#with encumbrance}}
     <div class="encumbrance {{#if encumbered}}encumbered{{/if}}" title="{{localize 'TIDY5E.Encumbrance'}}">
       <span class="encumbrance-bar" style="width:{{pct}}%"></span>
       <span class="encumbrance-label">{{value}} / {{max}}</span>

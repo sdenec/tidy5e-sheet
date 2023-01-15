@@ -10,90 +10,92 @@
     </li>
     <ul class="item-list">
       {{#each section.items as |item iid|}}
-      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item._id}}">
-        {{~#if item.attunement}} 
-          <i class="fas fa-sun icon-attuned {{item.attunement.cls}}" title="{{localize item.attunement.title}}"></i>
-        {{/if}}
-        {{~#if item.flags.favtab}} 
-        {{~#if item.flags.favtab.isFavorite}} 
-          <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
-        {{/if}}
-        {{/if}}
-        <div class="item-name rollable" >
-          <div class="item-image" style="background-image: url('{{item.img}}')">
-            <i class="fa fa-dice-d20"></i>
-          </div>
-        </div>
-        <div class="item-stats">
-          
-          <!-- {{#if item.system.quantity}} {{/if}} -->
-          <span class="item-quantity{{#if item.isStack}} isStack{{/if}}" title="{{localize 'DND5E.Quantity'}}">
-            <input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="2" >
-          </span>
-
-          <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
-            {{#if item.hasUses }}
-            <i class="fas fa-bolt"></i><input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
-            {{/if}}
-          </div>
-
-        </div>
-
-        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
-          <p class="info-card-name">{{item.name}}</p>
-          {{#if item.system.properties.amm}}
-            <span class="ammo" data-id="{{item._id}}"></span>
+      {{#with (lookup @root.itemContext item.id) as |ctx|}}
+        <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}" {{#if section.editableName}}data-item-index="{{iid}}"{{/if}}>
+          {{~#if item.attunement}} 
+            <i class="fas fa-sun icon-attuned {{item.attunement.cls}}" title="{{localize item.attunement.title}}"></i>
           {{/if}}
-          <div class="info-card-states">
-            {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
-            {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
-          </div>
-          {{#if item.hasUses }}
-          <div class="info-card-amount">
-            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
-          </div>
-           {{/if}}
-          <div class="info-card-amount">
-            <!-- {{#if item.totalWeight}} {{/if}} -->
-            <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
-            <!-- {{#if item.system.quantity}} {{/if}} -->
-            <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.system.quantity}}</span>
-          </div>
-          <div class="description-wrap">
-            <div class="info-card-description">
-              <!-- item description -->
+          {{~#if item.flags.favtab}} 
+          {{~#if item.flags.favtab.isFavorite}} 
+            <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
+          {{/if}}
+          {{/if}}
+          <div class="item-name rollable" >
+            <div class="item-image" style="background-image: url('{{item.img}}')">
+              <i class="fa fa-dice-d20"></i>
             </div>
           </div>
-				  <article class="mod-roll-buttons"></article>
-        </div>
+          <div class="item-stats">
+            
+            <!-- {{#if item.system.quantity}} {{/if}} -->
+            <span class="item-quantity{{#if item.isStack}} isStack{{/if}}" title="{{localize 'DND5E.Quantity'}}">
+              <input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="2" >
+            </span>
 
-        {{#if ../../owner}}
-        <div class="activate-context-menu">
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-        <div class="item-controls context-menu">
-          <hr class="context-divider">
-          
-          {{#if item.attunement}}
+            <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
+              {{#if item.hasUses }}
+              <i class="fas fa-bolt"></i><input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
+              {{/if}}
+            </div>
+
+          </div>
+
+          <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+            <p class="info-card-name">{{item.name}}</p>
+            {{#if item.system.properties.amm}}
+              <span class="ammo" data-id="{{item._id}}"></span>
+            {{/if}}
+            <div class="info-card-states">
+              {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
+              {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
+            </div>
+            {{#if item.hasUses }}
+            <div class="info-card-amount">
+              <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
+            </div>
+            {{/if}}
+            <div class="info-card-amount">
+              <!-- {{#if item.totalWeight}} {{/if}} -->
+              <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
+              <!-- {{#if item.system.quantity}} {{/if}} -->
+              <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.system.quantity}}</span>
+            </div>
+            <div class="description-wrap">
+              <div class="info-card-description">
+                <!-- item description -->
+              </div>
+            </div>
+            <article class="mod-roll-buttons"></article>
+          </div>
+
+          {{#if ../../owner}}
+          <div class="activate-context-menu">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+          <div class="item-controls context-menu">
+            <hr class="context-divider">
+            
+            {{#if ctx.attunement}}
             <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
               <i class="fas fa-sun"></i> <span class="control-label">{{#if (eq item.system.attunement 2) }}{{localize "TIDY5E.Deattune"}}{{else}}{{localize "TIDY5E.Attune"}}{{/if}}</span>
             </a>
-          {{/if}}
+            {{/if}}
 
-          <a class="item-control item-toggle {{item.toggleClass}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
-          
-          <hr class="context-divider">
-          <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i>{{localize "DND5E.ItemEdit"}}</a>
-          <hr class="context-divider">
-          <a class="item-control item-delete warning"><i class="fas fa-trash"></i>{{localize "DND5E.ItemDelete"}}</a>
-        </div>
-        {{/if}}
-      </li>
+            <a class="item-control item-toggle {{item.toggleClass}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
+            
+            <hr class="context-divider">
+            <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i>{{localize "DND5E.ItemEdit"}}</a>
+            <hr class="context-divider">
+            <a class="item-control item-delete warning"><i class="fas fa-trash"></i>{{localize "DND5E.ItemDelete"}}</a>
+          </div>
+          {{/if}}
+        </li>
+      {{/with}}
       {{/each}}
 
       {{#if ../owner}}
       <li class="items-footer">
-        <a class="item-create" title='{{localize "DND5E.ItemCreate"}}' {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+        <a class="item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
           <i class="fas fa-plus-circle"></i>
         </a>
       </li>
