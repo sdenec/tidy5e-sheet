@@ -1,4 +1,5 @@
 import { applyLocksItemSheet } from "./app/lockers.js";
+import { migrateFor21X } from "./app/migration-util.js";
 import { tidy5eShowItemArt } from "./app/show-item-art.js";
 import { applySpellClassFilterItemSheet } from "./app/spellClassFilter.js";
 
@@ -38,4 +39,7 @@ Hooks.on("renderTidy5eItemSheet", (app, html, data) => {
 
   // NOTE LOCKS ARE THE LAST THING TO SET
   applyLocksItemSheet(app, html, data);
+
+  // Little Patch for migration to system dnd 2.1.X
+  migrateFor21X(app, html, data);
 });

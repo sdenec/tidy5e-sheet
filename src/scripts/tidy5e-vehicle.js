@@ -6,6 +6,7 @@ import { tidy5eItemCard } from "./app/itemcard.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksVehicleSheet } from "./app/lockers.js";
+import { migrateFor21X } from "./app/migration-util.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 
@@ -44,8 +45,8 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
   async getData() {
     const context = await super.getData();
 
-    Object.keys(context.system.abilities).forEach(id => {
-      context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+    Object.keys(context.abilities).forEach(id => {
+      context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
     return context;
@@ -203,4 +204,7 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
 
   // NOTE LOCKS ARE THE LAST THING TO SET
   applyLocksVehicleSheet(app, html, data);
+
+  // Little Patch for migration to system dnd 2.1.X
+  migrateFor21X(app, html, data);
 });

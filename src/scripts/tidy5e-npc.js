@@ -10,6 +10,7 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
+import { migrateFor21X } from "./app/migration-util.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -115,9 +116,6 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
           item.isOnCooldown &&
           item.system.uses.per &&
           item.system.uses.value > 0;
-        item.hasTarget =
-          !!item.system.target &&
-          !["none", ""].includes(item.system.target.type);
 
         // Item toggle state
         this._prepareItemToggleState(item);
@@ -211,12 +209,12 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
   async getData(options) {
     const context = await super.getData(options);
 
-    Object.keys(context.system.abilities).forEach((id) => {
-      context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+    Object.keys(context.abilities).forEach((id) => {
+      context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
     // Journal HTML enrichment
-    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes?.value, {
+    context.journalHTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes?.value, {
       secrets: this.actor.isOwner,
       rollData: context.rollData,
       async: true,
@@ -910,4 +908,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
 
   // NOTE LOCKS ARE THE LAST THING TO SET
   applyLocksNpcSheet(app, html, data);
+
+  // Little Patch for migration to system dnd 2.1.X
+  migrateFor21X(app, html, data);
 });

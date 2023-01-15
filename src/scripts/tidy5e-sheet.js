@@ -15,6 +15,7 @@ import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
+import { migrateFor21X } from "./app/migration-util.js";
 
 let position = 0;
 
@@ -59,12 +60,12 @@ export class Tidy5eSheet extends dnd5e.applications.actor
   async getData() {
     const context = await super.getData();
 
-    Object.keys(context.system.abilities).forEach((id) => {
-      context.system.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+    Object.keys(context.abilities).forEach((id) => {
+      context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
     });
 
     // Journal HTML enrichment
-    context.journalHTML = await TextEditor.enrichHTML(context.system.details.notes?.value, {
+    context.journalHTML = await TextEditor.enrichHTML(context.actor.flags['tidy5e-sheet']?.notes?.value, {
       secrets: this.actor.isOwner,
       rollData: context.rollData,
       async: true,
@@ -832,6 +833,9 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 
   // NOTE LOCKS ARE THE LAST THING TO SET
   applyLocksCharacterSheet(app, html, data);
+
+  // Little Patch for migration to system dnd 2.1.X
+  migrateFor21X(app, html, data);
 });
 
 Hooks.once("ready", (app, html, data) => {
@@ -978,26 +982,4 @@ Hooks.on('renderAbilityUseDialog', (application, html, context) => {
 
     }
   }
-});
-
-Hooks.on("renderSettingsConfig", (app, html, data) => {
-	// Create color picker
-	// colorPicker('tidy5e-sheet','colorPickerEquipped',html);
-  // colorPicker('tidy5e-sheet','colorPickerEquippedOutline',html);
-  // colorPicker('tidy5e-sheet','colorPickerEquippedAccent',html);
-  // colorPicker('tidy5e-sheet','colorPickerPrepared',html);
-  // colorPicker('tidy5e-sheet','colorPickerPreparedOutline',html);
-  // colorPicker('tidy5e-sheet','colorPickerPreparedAccent',html);
-  // colorPicker('tidy5e-sheet','colorPickerPact',html);
-  // colorPicker('tidy5e-sheet','colorPickerPactOutline',html);
-  // colorPicker('tidy5e-sheet','colorPickerPactAccent',html);
-  // colorPicker('tidy5e-sheet','colorPickerAtWill',html);
-  // colorPicker('tidy5e-sheet','colorPickerAtWillOutline',html);
-  // colorPicker('tidy5e-sheet','colorPickerAtWillAccent',html);
-  // colorPicker('tidy5e-sheet','colorPickerInnate',html);
-  // colorPicker('tidy5e-sheet','colorPickerInnateOutline',html);
-  // colorPicker('tidy5e-sheet','colorPickerInnateAccent',html);
-  // colorPicker('tidy5e-sheet','colorPickerAlwaysPrepared',html);
-  // colorPicker('tidy5e-sheet','colorPickerAlwaysPreparedOutline',html);
-  // colorPicker('tidy5e-sheet','colorPickerAlwaysPreparedAccent',html);
 });
