@@ -57,8 +57,8 @@ export class Tidy5eSheet extends dnd5e.applications.actor
   /**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
    */
-  async getData() {
-    const context = await super.getData();
+  async getData(options) {
+    const context = await super.getData(options);
 
     Object.keys(context.abilities).forEach((id) => {
       context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];

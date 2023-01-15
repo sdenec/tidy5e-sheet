@@ -196,7 +196,7 @@
           {{/if}}
           {{#unless @root.isVehicle}}
           {{#unless (eq item.type "feat")}}
-          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
+          <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">{{#if (eq ctx.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
           {{/unless}}
           {{/unless}}
           <hr class="context-divider">

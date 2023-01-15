@@ -18,6 +18,6 @@
   {{#if isNPC}}
   <h3>{{localize 'DND5E.SpellcasterLevel'}}</h3>
   <input class="spellcasting-level" type="text" name="system.details.spellLevel"
-  value="{{system.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
+  value="{{system.details.spellLevel}}" data-dtype="Number" placeholder="0" min=0 step=1/>
   {{/if}}
 </div>

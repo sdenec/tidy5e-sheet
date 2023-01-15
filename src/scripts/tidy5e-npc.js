@@ -72,76 +72,64 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
 
   /**
    * Organize Owned Items for rendering the NPC sheet
+   * @override
    * @private
    */
-  _prepareItems(data) {
+  _prepareItems(context) {
+    // super._prepareItems(context);
+    // =========================
+    // Original system code
+    // =========================
+
     // Categorize Items as Features and Spells
     const features = {
-      passive: {
-        label: game.i18n.localize("DND5E.Features"),
-        items: [],
-        dataset: { type: "feat" },
-      },
-      weapons: {
-        label: game.i18n.localize("DND5E.AttackPl"),
-        items: [],
-        hasActions: true,
-        dataset: { type: "weapon", "weapon-type": "natural" },
-      },
-      actions: {
-        label: game.i18n.localize("DND5E.ActionPl"),
-        items: [],
-        hasActions: true,
-        dataset: { type: "feat", "activation.type": "action" },
-      },
-      equipment: {
-        label: game.i18n.localize("DND5E.Inventory"),
-        items: [],
-        hasActions: true,
-        dataset: { type: "loot" },
-      },
+      weapons: { label: game.i18n.localize("DND5E.AttackPl"), items: [], hasActions: true,
+        dataset: {type: "weapon", "weapon-type": "natural"} },
+      actions: { label: game.i18n.localize("DND5E.ActionPl"), items: [], hasActions: true,
+        dataset: {type: "feat", "activation.type": "action"} },
+      passive: { label: game.i18n.localize("DND5E.Features"), items: [], dataset: {type: "feat"} },
+      equipment: { label: game.i18n.localize("DND5E.Inventory"), items: [], dataset: {type: "loot"}}
     };
 
     // Start by classifying items into groups for rendering
-    let [spells, other] = data.items.reduce(
-      (arr, item) => {
-        item.img = item.img || CONST.DEFAULT_TOKEN;
-        item.isStack = item.system.quantity ? item.system.quantity > 1 : false;
-        item.hasUses = item.system.uses && item.system.uses.max > 0;
-        item.isOnCooldown =
-          item.system.recharge &&
-          !!item.system.recharge.value &&
-          item.system.recharge.charged === false;
-        item.isDepleted =
-          item.isOnCooldown &&
-          item.system.uses.per &&
-          item.system.uses.value > 0;
-
-        // Item toggle state
-        this._prepareItemToggleState(item);
-
-        if (item.type === "spell") arr[0].push(item);
-        else arr[1].push(item);
-        return arr;
-      },
-      [[], []]
-    );
+    let [spells, other] = context.items.reduce((arr, item) => {
+      const {quantity, uses, recharge, target} = item.system;
+      const ctx = context.itemContext[item.id] ??= {};
+      ctx.isStack = Number.isNumeric(quantity) && (quantity !== 1);
+      ctx.hasUses = uses && (uses.max > 0);
+      ctx.isOnCooldown = recharge && !!recharge.value && (recharge.charged === false);
+      ctx.isDepleted = item.isOnCooldown && (uses.per && (uses.value > 0));
+      ctx.hasTarget = !!target && !(["none", ""].includes(target.type));
+      ctx.canToggle = false;
+      if ( item.type === "spell" ) arr[0].push(item);
+      else arr[1].push(item);
+      return arr;
+    }, [[], []]);
 
     // Apply item filters
     spells = this._filterItems(spells, this._filters.spellbook);
     other = this._filterItems(other, this._filters.features);
 
     // Organize Spellbook
-    const spellbook = this._prepareSpellbook(data, spells);
+    const spellbook = this._prepareSpellbook(context, spells);
 
     // Organize Features
-    for (let item of other) {
-      if (item.type === "weapon") features.weapons.items.push(item);
-      else if (item.type === "feat") {
-        if (item.system.activation.type) features.actions.items.push(item);
+    for ( let item of other ) {
+      if ( item.type === "weapon" ) features.weapons.items.push(item);
+      else if ( item.type === "feat" ) {
+        if ( item.system.activation.type ) features.actions.items.push(item);
         else features.passive.items.push(item);
-      } else features.equipment.items.push(item);
+      }
+      else features.equipment.items.push(item);
     }
+
+    // Assign and return
+    context.inventoryFilters = true;
+    // context.features = Object.values(features); // Removed from 4535992
+    context.spellbook = spellbook;
+    // =========================
+    // End original system code
+    // =========================
 
     // Sort others equipements type
     const sortingOrder = {
@@ -150,8 +138,9 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     };
 
     features.equipment.items.sort((a, b) => {
-      if (!a.hasOwnProperty("type") || !b.hasOwnProperty("type")) return 0;
-
+      if (!a.hasOwnProperty("type") || !b.hasOwnProperty("type")) {
+        return 0;
+      }
       const first =
         a["type"].toLowerCase() in sortingOrder
           ? sortingOrder[a["type"]]
@@ -162,15 +151,16 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
           : Number.MAX_SAFE_INTEGER;
 
       let result = 0;
-      if (first < second) result = -1;
-      else if (first > second) result = 1;
-
+      if (first < second) {
+        result = -1;
+      }
+      else if (first > second) {
+        result = 1;
+      }
       return result;
     });
 
-    // Assign and return
-    data.features = Object.values(features);
-    data.spellbook = spellbook;
+    context.features = Object.values(features);
   }
 
   /* -------------------------------------------- */

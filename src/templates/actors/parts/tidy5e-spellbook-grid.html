@@ -29,81 +29,83 @@
 
     <ul class="item-list">
       {{#each section.spells as |item i|}}
-      <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if section.canPrepare}} preparable{{/if}} {{~#if system.preparation.prepared}} prepared{{/if}}
-        {{#if (eq system.preparation.mode 'always')}} alwaysprepared{{/if}}
-        {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
-        {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
-        {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
-        {{~#if item.flags.favtab}} 
-        {{~#if item.flags.favtab.isFavorite}} 
-          <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
-        {{/if}}
-        {{/if}}
-        <div class="item-name rollable">
-          <div class="item-image" style="background-image: url({{item.img}})">
-            <i class="fa fa-dice-d20"></i>
-          </div>
-        </div>
-
-        {{#if item.system.uses.per }}
-        <div class="item-stats">
-          <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
-            {{#if item.hasUses }}
-            <i class="fas fa-bolt"></i><input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
-            {{/if}}
-          </div>
-        </div>
-        {{/if}}
-
-        <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
-          {{#if (eq system.preparation.mode 'always')}} alwaysprepared{{/if}}
-          {{#if (eq system.preparation.mode 'pact')}} pact{{/if}}
-          {{#if (eq system.preparation.mode 'atwill')}} atwill{{/if}}
-          {{#if (eq system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
-          <p class="info-card-name">{{item.name}}</p>
-          <div class="info-card-states">
-            <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
-            {{#if ../../owner}}
-            {{#if section.canPrepare}}
-              <span>{{item.toggleTitle}}</span>
-            {{/if}}
-            {{/if}}
-          </div>
-          <div class="info-card-amount">
-            {{#if item.hasUses }}
-            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
-            {{/if}}
-          </div>
-          <div class="description-wrap">
-            <div class="info-card-description">
-              <!-- item description -->
+      {{#with (lookup @root.itemContext item.id) as |ctx|}}
+        <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if section.canPrepare}} preparable{{/if}} {{~#if item.system.preparation.prepared}} prepared{{/if}}
+          {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
+          {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
+          {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
+          {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
+          {{~#if item.flags.favtab}} 
+          {{~#if item.flags.favtab.isFavorite}} 
+            <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
+          {{/if}}
+          {{/if}}
+          <div class="item-name rollable">
+            <div class="item-image" style="background-image: url({{item.img}})">
+              <i class="fa fa-dice-d20"></i>
             </div>
           </div>
-				  <article class="mod-roll-buttons"></article>
-        </div>
 
-        {{#if ../../owner}}
-        <div class="activate-context-menu">
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-        <div class="item-controls context-menu">
-          <hr class="context-divider">
-          {{#if @root/allowCantripToBePreparedOnContext }}
-          {{#if (ne system.preparation.mode 'always') }}
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq item.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
+          {{#if item.system.uses.per }}
+          <div class="item-stats">
+            <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
+              {{#if item.hasUses }}
+              <i class="fas fa-bolt"></i><input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
+              {{/if}}
+            </div>
+          </div>
           {{/if}}
-          {{else}}
-          {{#if (and section.canPrepare (ne system.preparation.mode 'always')) }}
-          <a class="item-control item-toggle {{item.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq item.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
+
+          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
+            {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
+            {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
+            {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
+            {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
+            <p class="info-card-name">{{item.name}}</p>
+            <div class="info-card-states">
+              <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
+              {{#if @root.owner}}
+              {{#if section.canPrepare}}
+                <span>{{ctx.toggleTitle}}</span>
+              {{/if}}
+              {{/if}}
+            </div>
+            <div class="info-card-amount">
+              {{#if item.hasUses }}
+              <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
+              {{/if}}
+            </div>
+            <div class="description-wrap">
+              <div class="info-card-description">
+                <!-- item description -->
+              </div>
+            </div>
+            <article class="mod-roll-buttons"></article>
+          </div>
+
+          {{#if ../../owner}}
+          <div class="activate-context-menu">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+          <div class="item-controls context-menu">
+            <hr class="context-divider">
+            {{#if @root/allowCantripToBePreparedOnContext }}
+            {{#if (ne item.system.preparation.mode 'always') }}
+            <a class="item-control item-toggle {{ctx.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq ctx.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
+            {{/if}}
+            {{else}}
+            {{#if (and section.canPrepare (ne item.system.preparation.mode 'always')) }}
+            <a class="item-control item-toggle {{ctx.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq ctx.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
+            {{/if}}
+            {{/if}}
+            <hr class="context-divider">
+            <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
+            <hr class="context-divider">
+            <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i> {{localize 'TIDY5E.DeleteSpell'}}</a>
+          </div>
           {{/if}}
-          {{/if}}
-          <hr class="context-divider">
-          <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
-          <hr class="context-divider">
-          <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i> {{localize 'TIDY5E.DeleteSpell'}}</a>
-        </div>
-        {{/if}}
-      </li>
+        </li>
+      {{/with}}
       {{/each}}
 
       {{#if section.canCreate}}
