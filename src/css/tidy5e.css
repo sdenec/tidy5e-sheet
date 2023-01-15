@@ -1290,12 +1290,19 @@
   text-align: right;
   padding: 0 4px;
 }
+.tidy5e.sheet.actor .max-xp {
+  width: calc(8.5ch + 0.3rem);
+  height: 16px;
+  text-align: left;
+  padding: 0 4px;
+}
 .tidy5e.sheet.actor .max-xp::before {
   content: "/";
   margin-right: 0.15rem;
 }
 .tidy5e.sheet.actor .xp-tracker {
   margin-right: 0.5rem;
+  width: 30%;
 }
 .tidy5e.sheet.actor .noxp .xp-tracker {
   display: none;

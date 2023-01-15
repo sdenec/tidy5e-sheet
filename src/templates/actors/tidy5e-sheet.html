@@ -159,7 +159,11 @@
 							<div class="experience">
 								<input class="current-xp" type="text" name="system.details.xp.value" value="{{system.details.xp.value}}" placeholder="0" data-dtype="Number" maxlength="7">
 								<span class="sep">/</span>
+								{{#if @root.isGM}}
+								<input class="max-xp max" type="text" name="system.details.xp.max" value="{{system.details.xp.max}}" placeholder="0" data-dtype="Number" maxlength="7">
+								{{else}}
 								<span class="max">{{system.details.xp.max}}</span>
+								{{/if}}
 							</div>
 							<div class="xp-bar">
 								<div class="xp-bar-total">

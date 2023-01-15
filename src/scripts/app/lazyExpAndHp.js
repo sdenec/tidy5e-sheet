@@ -10,7 +10,7 @@ function _onChangeExp(ev) {
     const sheet = ev.data.app.options;
     const exp = ev.data.app.actor.system.details.xp.value;
     const maxExp = ev.data.app.actor.system.details.xp.max;
-    const minExp = ev.data.app.actor.system.details.xp.min;
+    // const minExp = ev.data.app.actor.system.details.xp.min;
     const denom = input.name.split(".")[2];
     const value = input.value;
     let sign = signCase.default;
@@ -55,8 +55,11 @@ function _onChangeExp(ev) {
     if(newAmount > maxExp) {
         newAmount = maxExp;
     }
-    if(newAmount <  minExp) {
-        newAmount = minExp;
+    // if(newAmount <  minExp) {
+    //     newAmount = minExp;
+    // }
+    if(newAmount <  0) {
+        newAmount = 0;
     }
 
     sheet.submitOnChange = false;
@@ -76,7 +79,7 @@ function _onChangeHp(ev) {
     const sheet = ev.data.app.options;
     const hp = ev.data.app.actor.system.attributes.hp.value;
     const maxHp = ev.data.app.actor.system.attributes.hp.max;
-    const minHp = ev.data.app.actor.system.attributes.hp.min;
+    // const minHp = ev.data.app.actor.system.attributes.hp.min;
     const denom = input.name.split(".")[2];
     const value = input.value;
     let sign = signCase.default;
@@ -121,8 +124,11 @@ function _onChangeHp(ev) {
     if(newAmount > maxHp) {
         newAmount = maxHp;
     }
-    if(newAmount <  minHp) {
-        newAmount = minHp;
+    // if(newAmount <  minHp) {
+    //     newAmount = minHp;
+    // }
+    if(newAmount <  0) {
+        newAmount = 0;
     }
 
     sheet.submitOnChange = false;
@@ -142,7 +148,7 @@ function _onChangeHpMax(ev) {
     const sheet = ev.data.app.options;
     const hp = ev.data.app.actor.system.attributes.hp.value;
     const maxHp = ev.data.app.actor.system.attributes.hp.max;
-    const minHp = ev.data.app.actor.system.attributes.hp.min;
+    // const minHp = ev.data.app.actor.system.attributes.hp.min;
     const denom = input.name.split(".")[2];
     const value = input.value;
     let sign = signCase.default;
@@ -187,8 +193,11 @@ function _onChangeHpMax(ev) {
     // if(newAmount > maxHp) {
     //     newAmount = maxHp;
     // }
-    if(newAmount <  minHp) {
-        newAmount = minHp;
+    // if(newAmount <  minHp) {
+    //     newAmount = minHp;
+    // }
+    if(newAmount < 0) {
+        newAmount = 0;
     }
 
     sheet.submitOnChange = false;

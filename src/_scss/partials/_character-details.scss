@@ -46,6 +46,13 @@
 	padding: 0 4px;
 }
 
+.max-xp {
+	width: calc(8.5ch + 0.3rem);
+	height: 16px;
+	text-align: left;
+	padding: 0 4px;
+}
+
 .max-xp::before {
 	content: '/';
 	margin-right: .15rem;
@@ -53,6 +60,7 @@
 
 .xp-tracker {
 	margin-right: .5rem;
+	width: 30%;
 }
 
 .noxp .xp-tracker {

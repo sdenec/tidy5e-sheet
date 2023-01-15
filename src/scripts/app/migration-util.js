@@ -1,5 +1,5 @@
 export function migrateFor21X(app, html, data){
-    if(!isEmptyObject(app.object?.system.details.notes)) {
+    if(!isEmptyObject(app.object?.system?.details?.notes)) {
         if(!app.object.flags) {
             app.object.flags = {};
         }
