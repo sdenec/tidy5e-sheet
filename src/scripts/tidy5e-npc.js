@@ -242,7 +242,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     // calculate average hp on right clicking roll hit dice icon
     html.find(".portrait-hp-formula span.rollable").mousedown(async (event) => {
       switch (event.which) {
-        case 3:
+        case 3: {
           let formula = actor.system.attributes.hp.formula;
           // console.log(formula);
           let r = new Roll(formula);
@@ -252,19 +252,23 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
           for (let i = 0; i < term.length; i++) {
             let type = term[i].constructor.name;
             switch (type) {
-              case "Die":
+              case "Die": {
                 averageString += Math.floor(
                   (term[i].faces * term[i].number + term[i].number) / 2
                 );
                 break;
-              case "OperatorTerm":
+              }
+              case "OperatorTerm": {
                 averageString += term[i].operator;
                 break;
-              case "NumericTerm":
+              }
+              case "NumericTerm": {
                 averageString += term[i].number;
                 break;
-              default:
+              }
+              default: {
                 break;
+              }
             }
           }
           // console.log(averageString);
@@ -272,9 +276,9 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
           let average = 0;
           averageString =
             averageString.replace(/\s/g, "").match(/[+\-]?([0-9\.\s]+)/g) || [];
-          while (averageString.length)
+          while (averageString.length) {
             average += parseFloat(averageString.shift());
-
+          }
           // console.log(average);
           let data = {};
           data["system.attributes.hp.value"] = average;
@@ -282,6 +286,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
           actor.update(data);
 
           break;
+        }
       }
     });
 

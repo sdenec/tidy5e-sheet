@@ -247,7 +247,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor
         actionsLayout.html(actionsTabHtml);
       }
     } catch (e) {
-      // log(true, e);
+      console.error(e.message)
     }
 
     return html;

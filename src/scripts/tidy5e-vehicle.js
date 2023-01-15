@@ -7,6 +7,7 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksVehicleSheet } from "./app/lockers.js";
 import { migrateFor21X } from "./app/migration-util.js";
+import { applyColorPickerCustomization } from "./app/color-picker.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 
@@ -73,6 +74,11 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
         await actor.setFlag('tidy5e-sheet', 'traitsExpanded', true);
       }
     });
+
+    // TODO in the future 
+    // Short and Long Rest
+    // html.find(".short-rest").click(this._onShortRest.bind(this));
+    // html.find(".long-rest").click(this._onLongRest.bind(this));
     
 	}
 
@@ -168,7 +174,11 @@ async function setSheetClasses(app, html, data){
 	if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
 		tidy5eClassicControls(html);
 	}
-  if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
+  if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
+    html.find(".tidy5e-sheet.tidy5e-vehicle .rest-container").remove();
+  }
+  if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || 
+    game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
     html.find('.tidy5e-sheet.tidy5e-vehicle .profile').addClass('roundPortrait');
   }
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") > 0) {

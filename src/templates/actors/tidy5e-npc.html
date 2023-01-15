@@ -36,6 +36,7 @@
             <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) 100%);">
             </div>
           </div>
+
           {{!-- Resting --}}
           <div class="rest-container has-note">
             <div class="note">{{ localize 'TIDY5E.RestHint' }}</div>
@@ -57,7 +58,7 @@
 						</div>
             <input class="hp-min" name="system.attributes.hp.value" type="text" value="{{hp.value}}" placeholder="10"
             title="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
-            <span class="sep"> / </span>
+            <span class="value-seperator sep"> / </span>
             <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10"
             title="{{localize 'DND5E.HitPointsMax'}}" data-dtype="Number" maxlength="5">
           </div>
@@ -75,7 +76,7 @@
           <input name="system.attributes.hp.temp" type="text" class="temphp"
           placeholder="+{{ localize 'DND5E.Temp' }}" value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}"
           title="{{localize 'DND5E.HitPointsTemp'}}" data-dtype="Number" maxlength="5">
-          <input name="system.attributes.hp.tempmax" type="text" class="temphp"
+          <input name="system.attributes.hp.tempmax" type="text" class="max-temphp"
           placeholder="+{{ localize 'DND5E.Max' }}" value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}"
           title="{{localize 'DND5E.HitPointsTempMax'}}" data-dtype="Number" maxlength="5">
           <a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
@@ -293,6 +294,7 @@
 
           <div class="inventory-currency">  
             <ol class="currency">
+              <!--
               <h3>
                   {{localize "DND5E.Currency"}}
                   <a class="action-button currency-convert {{rollableClass}}" data-action="convertCurrency" data-tooltip="DND5E.CurrencyConvert">
@@ -303,6 +305,25 @@
               <label class="denomination {{k}}">{{ lookup ../labels.currencies k }}</label>
               <input type="text" name="system.currency.{{k}}" value="{{v}}" data-dtype="Number">
               {{/each}}
+              -->
+              <ul class="currency">
+                <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
+                  <i class="fas fa-coins"></i>
+                </li>
+                {{#each system.currency as |v k|}}
+                <li class="currency-item {{k}}" title="{{ lookup ../config.currencies k }}">
+                  <input type="text" name="system.currency.{{k}}" id="{{@root/appId}}-system.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
+                  <label for="{{@root/appId}}-system.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../config.currencies k }}</label>
+                </li>
+                {{/each}}
+                <!-- 
+                <li class="currency-item convert">
+                  <a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}">
+                    <i class="fas fa-funnel-dollar"></i>
+                  </a>
+                </li> 
+                -->
+              </ul>
             </ol>
           </div>
           {{#if @root/hideSpellbookTabNpc}}

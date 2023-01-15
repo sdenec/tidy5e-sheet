@@ -4295,7 +4295,8 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
   position: absolute;
   z-index: 25;
   right: 7px;
-  bottom: 14px;
+  /* bottom: 14px; */
+  bottom: 16px;
 }
 .tidy5e.sheet.actor.npc .profile-wrap .health span {
   display: -webkit-box;
@@ -4754,13 +4755,133 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 .tidy5e.sheet.actor.vehicle .ability-scores .ability .ability-mod {
   text-align: center;
 }
-.tidy5e.sheet.actor.vehicle .portrait-hp input,
-.tidy5e.sheet.actor.vehicle .portrait-hp span,
-.tidy5e.sheet.actor.vehicle .portrait-temp input {
-  width: 60px;
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .rest-container {
+  display: block;
 }
-.tidy5e.sheet.actor.vehicle .profile .hp-overlay-wrapper::before {
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .rest-container .resting {
+  width: 24px;
+  height: 20px;
+  border-radius: 0 0 0 5px;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .rest-container .resting:hover {
+  width: 94px;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .rest-container .resting .rest {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  color: var(--t5e-tertiary-color);
+  padding: 0;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: var(--t5e-signika);
+  font-weight: 700;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .rest-container .resting .rest:hover {
+  color: var(--t5e-primary-font);
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .rest-container .resting .resting-icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  width: 24px;
+  height: 18px;
+  margin-right: 8px;
+  border-radius: 0;
+  font-size: 12px;
+  color: var(--t5e-primary-font);
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .hp-overlay-wrapper::before {
   border-width: var(--t5e-vehicle-border);
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile.roundPortrait .rest-container {
+  left: 7px;
+  bottom: 0;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile.roundPortrait .rest-container .resting {
+  border-radius: 5px 0 0 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile.roundPortrait .rest-container .resting:not(:hover) {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: transparent;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile .portrait-hp {
+  width: 136px !important;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .profile.roundPortrait .portrait-hp {
+  border-radius: 5px;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .health {
+  position: absolute;
+  z-index: 25;
+  right: 7px;
+  /* bottom: 14px; */
+  bottom: 16px;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .health span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20px;
+  width: 22px;
+  border-radius: 0 5px 5px 0;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .health .formula-edit {
+  background: var(--t5e-icon-background);
+  -webkit-box-shadow: 0 0 10px var(--t5e-icon-shadow) inset;
+          box-shadow: 0 0 10px var(--t5e-icon-shadow) inset;
+  border: 1px solid var(--t5e-icon-outline);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 136px;
+  height: 20px;
+  border-radius: 5px;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .health:hover .formula-edit,
+.tidy5e.sheet.actor.vehicle .profile-wrap .health .formula-edit:focus-within {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tidy5e.sheet.actor.vehicle .profile-wrap .health input {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0;
 }
 .tidy5e.sheet.actor.vehicle .items-header .items-header-item-cover,
 .tidy5e.sheet.actor.vehicle .items-header .items-header-item-crew {

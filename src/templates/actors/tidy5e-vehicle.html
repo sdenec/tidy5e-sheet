@@ -20,8 +20,7 @@
     <header class="tidy5e-header">
 
       <section class="profile-wrap">
-        <div class="profile hp-{{system.attributes.hp.value}}-{{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}}">
-
+        <div class="profile">
           {{!-- Portrait --}}
           <div class="portrait">
             <img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{ localize 'TIDY5E.EditActorImage' }} / {{ localize 'TIDY5E.ShowActorImage' }}" data-edit="img">
@@ -30,18 +29,24 @@
 							<a class="showActorArt" id="showToken">{{ localize 'TIDY5E.ShowTokenArt' }}</a>
 						</div>
           </div>
+
           {{!-- HP Overlay --}}
           <div class="hp-overlay-wrapper">
             <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) 100%);">
             </div>
           </div>
-
-          {{!-- Hit Dice --}}
-          <div class="portrait-hd has-note" title="{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}">
-            <div class="note">{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}</div>
-            <div class="current-hd">{{system.attributes.hd}}<!-- <span>/</span>{{system.details.level}} --></div>
+          
+          {{!-- Resting --}}
+          <!-- TODO in the future 
+          <div class="rest-container has-note">
+            <div class="note">{{ localize 'TIDY5E.RestHint' }}</div>
+            <div class="resting">
+              <span class="resting-icon"><i class="rest-icon fas fa-bed"></i></span>
+              <a class="rest short-rest" title="{{ localize 'TIDY5E.RestS' }}"><i class="fas fa-hourglass-half"></i></a>
+              <a class="rest long-rest" title="{{ localize 'TIDY5E.RestL' }}"><i class="fas fa-hourglass-end"></i></a>
+            </div>
           </div>
-
+          -->
           {{!-- Hit Points --}}
           <div class="portrait-hp" title="{{ localize 'DND5E.HitPoints' }}">
             <div class="hp-bar" style="background: linear-gradient(
@@ -51,20 +56,34 @@
 								 	rgba(0, 200, 0, 0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0, 200, 0, 0.5) 100%);">
 						</div>
-            <input class="hp-min" name="system.attributes.hp.value" type="number" step="any" value="{{system.attributes.hp.value}}"
-            data-dtype="Number" placeholder="0" maxlength="5">
-            <span class="value-seperator">/</span>
-            <input class="hp-max" name="system.attributes.hp.max" type="number" value="{{system.attributes.hp.max}}"
-            data-dtype="Number" placeholder="0" maxlength="5">
+            <input class="hp-min" name="system.attributes.hp.value" type="text" value="{{hp.value}}" placeholder="10"
+            title="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
+            <span class="value-seperator sep"> / </span>
+            <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10"
+            title="{{localize 'DND5E.HitPointsMax'}}" data-dtype="Number" maxlength="5">
           </div>
         </div>
-
-        {{!-- Hit Points --}}
+        <!-- TODO in the future 
+        <div class="portrait-hp-formula health" title="{{ localize 'DND5E.HPFormula' }}">
+          <span class="rollable" title="{{ localize 'DND5E.HitDiceRoll'}}/{{ localize 'TIDY5E.HitDiceRollAverage'}}"><i class="fas fa-dice-six"></i></span>
+          <div class="formula-edit">
+            <input name="system.attributes.hp.formula" class="hpformula" type="text" placeholder="{{ localize 'DND5E.HPFormula' }}" value="{{system.attributes.hp.formula}}"  maxlength="12" title="{{ localize 'DND5E.HPFormula' }}: {{system.attributes.hp.formula}}">
+          </div>
+        </div>
+        -->
+        {{!-- Temp Hit Points --}}
         <div class="portrait-temp">
-          <input name="system.attributes.hp.dt" type="number" class="temphp" placeholder="{{localize 'DND5E.Threshold'}}" title="{{localize 'DND5E.Threshold'}}"
-          value="{{system.attributes.hp.dt}}" data-dtype="Number" maxlength="3">
-          <input name="system.attributes.hp.mt" type="number" class="max-temphp" placeholder="{{localize 'DND5E.VehicleMishap'}}" title="{{localize 'DND5E.VehicleMishap'}}"
-          value="{{system.attributes.hp.mt}}" data-dtype="Number" maxlength="3">
+          <input name="system.attributes.hp.temp" type="text" class="temphp"
+          placeholder="+{{ localize 'DND5E.Temp' }}" value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}"
+          title="{{localize 'DND5E.HitPointsTemp'}}" data-dtype="Number" maxlength="5">
+          <input name="system.attributes.hp.tempmax" type="text" class="max-temphp"
+          placeholder="+{{ localize 'DND5E.Max' }}" value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}"
+          title="{{localize 'DND5E.HitPointsTempMax'}}" data-dtype="Number" maxlength="5">
+          <!-- TODO in the future 
+          <a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
+						<i class="fas fa-cog"></i>
+					</a>
+          -->
         </div>
 
       </section>
@@ -107,7 +126,11 @@
 						{{#if movement.special}}
 						<li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
 						{{/if}}
-						<li class="configure-movement"><a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
+						<li class="configure-movement">
+              <a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}">
+                <i class="fas fa-cog"></i>
+              </a>
+            </li>
           </ul>
         </section>
 
@@ -120,7 +143,8 @@
                 c2.6,0.5,4.4,2.4,4.4,4.6C90,12.6,92.6,79.3,45,100L45,100z"/>
               </svg>
               <div class="attribute-value">
-                <input class="value" name="system.attributes.ac.flat" type="text" value="{{system.attributes.ac.flat}}" data-dtype="Number" placeholder="0" maxlength="2">
+                {{numberInput system.attributes.ac.flat name="system.attributes.ac.flat" min=0 step=1
+                placeholder="10"}}
               </div>
               <footer class="value-footer">
                 <input type="text" name="system.attributes.ac.motionless" placeholder="&mdash;" value="{{system.attributes.ac.motionless}}">
@@ -174,8 +198,8 @@
             <div class="counter cargo-cap">
               <h4>{{localize 'DND5E.VehicleCargoCapacity'}}</h4>
               <div class="counter-value">
-                <input type="text" name="system.attributes.capacity.cargo" placeholder="0"
-                data-dtype="Number" value="{{system.attributes.capacity.cargo}}">
+                {{numberInput system.attributes.capacity.cargo name="system.attributes.capacity.cargo" min=0
+                placeholder=0}}
               </div>
             </div>
             <div class="counter stations">
@@ -189,25 +213,25 @@
             <div class="counter actions">
               <h4>{{localize 'DND5E.ActionPl'}}</h4>
               <div class="counter-value">
-                <input type="text" name="system.attributes.actions.value" placeholder="0"
-                data-dtype="Number" value="{{system.attributes.actions.value}}">
+                {{numberInput system.attributes.actions.value name="system.attributes.actions.value" min=0
+                step=1 placeholder=0 title=(localize "DND5E.VehicleActionsHint")}}
               </div>
             </div>
             <div class="counter action-thresholds">
               <h4>{{localize 'DND5E.VehicleActionThresholds'}}</h4>
               <div class="counter-value">
                 <span class="sep">&lt;</span>
-                <input type="text" placeholder="&mdash;" data-dtype="Number"
-                value="{{system.attributes.actions.thresholds.[2]}}"
-                name="system.attributes.actions.thresholds.2">
+                {{numberInput system.attributes.actions.thresholds.[2] min=0 step=1 placeholder="&mdash;"
+                  name="system.attributes.actions.thresholds.2"
+                  title=(localize "DND5E.VehicleActionThresholdsFull")}}
                 <span class="sep">&lt;</span>
-                <input type="text" placeholder="&mdash;" data-dtype="Number"
-                value="{{system.attributes.actions.thresholds.[1]}}"
-                name="system.attributes.actions.thresholds.1">
+                {{numberInput system.attributes.actions.thresholds.[1] min=0 step=1 placeholder="&mdash;"
+                  name="system.attributes.actions.thresholds.1"
+                  title=(localize "DND5E.VehicleActionThresholdsMid")}}
                 <span class="sep">&lt;</span>
-                <input type="text" placeholder="&mdash;" data-dtype="Number"
-                value="{{system.attributes.actions.thresholds.[0]}}"
-                name="system.attributes.actions.thresholds.0">
+                {{numberInput system.attributes.actions.thresholds.[0] min=0 step=1 placeholder="&mdash;"
+                  name="system.attributes.actions.thresholds.0"
+                  title=(localize "DND5E.VehicleActionThresholdsMin")}}
               </div>
             </div>
           </div>
