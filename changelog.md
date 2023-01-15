@@ -16,6 +16,17 @@ Thank you very much!
 
 ## Version History
 
+### Version 0.8.0
+
+- Compatibility with dnd5e 2.1.X
+- Double check PR https://github.com/sdenec/tidy5e-sheet/pull/630
+- Add button on module settings for reset setting
+- Add module settings for customize the colors or remove the color with the value "#000000"
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/624
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/625
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/628
+
+
 ### 0.7.1-2-3-4-56
 
 - Bug fixing and features (check out the PR for more infos)
