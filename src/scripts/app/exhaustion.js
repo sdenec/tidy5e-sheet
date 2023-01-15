@@ -251,7 +251,7 @@ Hooks.on('updateActor', function (actorEntity, update, options, userId) {
 });
 
 // Rest reduces by 1
-Hooks.on(`restCompleted`, (actorEntity, data) => { 
+Hooks.on(`dnd5e.restComplete`, (actorEntity, data) => { 
   if(game.settings.get('tidy5e-sheet', 'exhaustionEffectsEnabled') == 'default') {
     return
   }
