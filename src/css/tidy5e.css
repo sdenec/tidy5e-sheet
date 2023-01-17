@@ -1660,6 +1660,16 @@
   display: block;
   height: 100%;
 }
+.tidy5e.sheet.actor .header-attributes .initiative .config-button {
+  /* position: absolute; */
+  bottom: -15px;
+  right: calc(50% - 12px);
+  font-size: 10px;
+  color: var(--t5e-tertiary-color);
+}
+.tidy5e.sheet.actor .header-attributes .initiative .config-button:hover {
+  color: var(--t5e-primary-color);
+}
 .tidy5e.sheet.actor .header-attributes .initiative {
   width: 60px;
 }

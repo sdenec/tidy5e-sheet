@@ -443,6 +443,18 @@
 	height: 100%;
 }
 
+.header-attributes .initiative .config-button {
+	position: absolute;
+	bottom: -15px;
+	right: calc(50% - 12px);
+	font-size: 10px;
+	color: var(--t5e-tertiary-color);
+
+	&:hover {
+		color: var(--t5e-primary-color);
+	}
+}
+
 .header-attributes .initiative {
 	width: 60px;
 }
@@ -595,13 +607,13 @@ input.ini-mod {
 		}
 
 		.proficiency-toggle {
-	    position: absolute;
-	    font-size: 10px;
-	    opacity: .4;
-	    transition: opacity .3s ease;
-	    left: calc(50% - 12px);
-	    bottom: -14px;
-	    // transform: translateX(-50%);
+			position: absolute;
+			font-size: 10px;
+			opacity: .4;
+			transition: opacity .3s ease;
+			left: calc(50% - 12px);
+			bottom: -14px;
+			// transform: translateX(-50%);
 		}
 
 		.ability-modifiers .ability-proficiency {

@@ -237,9 +237,6 @@
 						</li>
 						<li class="header-attribute initiative">
 							<h4 class="attribute-name rollable" data-action="rollInitiative" title="{{ localize 'DND5E.Initiative' }}">{{ localize 'TIDY5E.AbbrInitiative' }}</h4>
-							<a class="config-button" data-action="initiative" data-tooltip="{{localize 'DND5E.InitiativeConfig'}}">
-								<i class="fas fa-cog"></i>
-							</a>
 							<div class="value">
 								<span>{{numberFormat system.attributes.init.total decimals=0 sign=true}}</span>
 							</div>
@@ -247,6 +244,9 @@
 								<label for="{{@root/appId}}-ini-mod">{{ localize 'TIDY5E.AbbrMod' }}</label>
 								<input id="{{@root/appId}}-ini-mod" class="ini-mod" name="system.attributes.init.bonus" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat system.attributes.init.bonus decimals=0 sign=true}}" maxlength="2">
 							</footer>
+							<a class="config-button" data-action="initiative" data-tooltip="{{localize 'DND5E.InitiativeConfig'}}">
+								<i class="fas fa-cog"></i>
+							</a>
 						</li>
 					</ul>
 
