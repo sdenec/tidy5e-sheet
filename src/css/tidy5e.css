@@ -1844,7 +1844,7 @@
 }
 .tidy5e.sheet.actor .ability-scores .ability .config-button {
   position: absolute;
-  bottom: -11px;
+  bottom: -15px;
   right: calc(50% - 12px);
   font-size: 10px;
   color: var(--t5e-tertiary-color);
