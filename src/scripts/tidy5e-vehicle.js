@@ -51,6 +51,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
     });
 
     context.isGM = game.user.isGM;
+    context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
     return context;
   }
 

@@ -11,7 +11,12 @@
     <ul class="item-list">
       {{#each section.items as |item iid|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+        <li class="item 
+        {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} 
+        {{item.attunement.cls}} 
+        {{#if item.system.equipped}}equipped{{/if}}" 
+        data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" 
+        data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
           {{~#if item.attunement}} 
             <i class="fas fa-sun icon-attuned {{item.attunement.cls}}" title="{{localize item.attunement.title}}"></i>
           {{/if}}
@@ -77,7 +82,14 @@
             
             {{#if ctx.attunement}}
             <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-              <i class="fas fa-sun"></i> <span class="control-label">{{#if (eq item.system.attunement 2) }}{{localize "TIDY5E.Deattune"}}{{else}}{{localize "TIDY5E.Attune"}}{{/if}}</span>
+              <i class="fas fa-sun"></i> 
+              <span class="control-label">
+                {{#if (eq item.system.attunement 2) }}
+                  {{localize "TIDY5E.Deattune"}}
+                {{else}}
+                  {{localize "TIDY5E.Attune"}}
+                {{/if}}
+              </span>
             </a>
             {{/if}}
 
@@ -90,6 +102,37 @@
           </div>
           {{/if}}
           -->
+          {{#if @root.owner}}
+          {{#if @root.rightClickDisabled}}
+          <div class="item-controls flexrow">
+            {{#if ctx.attunement}}
+            <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+              <i class="fas fa-sun"></i> 
+              <span class="control-label">
+                {{#if (eq item.system.attunement 2) }}
+                  {{localize "TIDY5E.Deattune"}}
+                {{else}}
+                  {{localize "TIDY5E.Attune"}}
+                {{/if}}
+              </span>
+            </a>
+            {{/if}}
+            {{#if ctx.canToggle}}
+            <a class="item-control item-toggle {{ctx.toggleClass}}" data-action="itemToggle" data-tooltip='{{ctx.toggleTitle}}'>
+                <i class="fas fa-shield-alt"></i>
+            </a>
+            {{/if}}
+            {{#unless section.editableName}}
+            <a class="item-control item-edit" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
+                <i class="fas fa-edit"></i>
+            </a>
+            {{/unless}}
+            <a class="item-control item-delete" data-action="itemDelete" data-tooltip="DND5E.ItemDelete">
+                <i class="fas fa-trash"></i>
+            </a>
+          </div>
+          {{/if}}
+          {{/if}}
         </li>
       {{/with}}
       {{/each}}

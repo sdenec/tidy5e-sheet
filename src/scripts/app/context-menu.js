@@ -1,39 +1,44 @@
 export const tidy5eContextMenu = function (html, sheet) {
-  if ( sheet.actor.isOwner ) {
-    // Override COntext Menu
-    // Item Context Menu
-    // new ContextMenu(html, ".item-list .item #context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
+  // Override COntext Menu
+  // Item Context Menu
+  // new ContextMenu(html, ".item-list .item #context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
 
-    Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
+  Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
+    if ( effect.actor?.isOwner ) {
       if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
         contextOptions = [];
       } else {
         contextOptions = _getActiveEffectContextOptions(effect);
       }
       ui.context.menuItems = contextOptions;
-    });
+    }
+  });
 
-    Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
+  Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
+    if ( item.actor?.isOwner ) {
       if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
         contextOptions = [];
       } else {
         contextOptions = _getItemContextOptions(item);
       }
       ui.context.menuItems = contextOptions;
-    });
+    }
+  });
 
-    Hooks.on("dnd5e.getItemAdvancementContext", (html, contextOptions) => {
-      // TODO cannot recover the 'this' reference
-      /*
+  Hooks.on("dnd5e.getItemAdvancementContext", (html, contextOptions) => {
+    // TODO cannot recover the 'this' reference
+    /*
+    if ( actor?.isOwner ) {
+
       if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
         contextOptions = [];
       } else {
         contextOptions = _getAdvancementContextMenuOptions(html);
       }
       ui.context.menuItems = contextOptions;
-      */
-    });
-  }
+    }
+    */
+  });
 }
 
 /**
@@ -326,103 +331,103 @@ const _getItemContextOptions = function(item) {
 
 }
 
-export const tidy5eContextMenuOLD = function (html) {
-  // open context menu
+// export const tidy5eContextMenuOLD = function (html) {
+//   // open context menu
 
-  html.find('.item-list .item.context-enabled').mousedown( async (event) => {
-    let target = event.target.class;
-    let item = event.currentTarget;
-    switch (event.which) {
-      case 2:
-        // middle mouse opens item editor
-        event.preventDefault();
-        if($(item).find('.item-edit')) {
-          $(item).find('.item-edit').trigger('click');
-        }
+//   html.find('.item-list .item.context-enabled').mousedown( async (event) => {
+//     let target = event.target.class;
+//     let item = event.currentTarget;
+//     switch (event.which) {
+//       case 2:
+//         // middle mouse opens item editor
+//         event.preventDefault();
+//         if($(item).find('.item-edit')) {
+//           $(item).find('.item-edit').trigger('click');
+//         }
 
-        if($(item).find('.effect-edit')) {
-          $(item).find('.effect-edit').trigger('click');
-        }
+//         if($(item).find('.effect-edit')) {
+//           $(item).find('.effect-edit').trigger('click');
+//         }
 
-        break;
-      case 3:
-        // right click opens context menu
-        item.addEventListener('contextmenu', e => e.preventDefault());
-        event.preventDefault();
-        if(!game.settings.get("tidy5e-sheet", "rightClickDisabled") && $(item).hasClass('context-enabled')){
-          html.find('.item').removeClass('context');
-          html.find('.item #context-menu').hide();
-          itemContextMenu(event);
-        }
-        break;
-    }
-  });
+//         break;
+//       case 3:
+//         // right click opens context menu
+//         item.addEventListener('contextmenu', e => e.preventDefault());
+//         event.preventDefault();
+//         if(!game.settings.get("tidy5e-sheet", "rightClickDisabled") && $(item).hasClass('context-enabled')){
+//           html.find('.item').removeClass('context');
+//           html.find('.item #context-menu').hide();
+//           itemContextMenu(event);
+//         }
+//         break;
+//     }
+//   });
 
-  html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
-    if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
-      switch (event.which) {
-        case 1:
-          event.preventDefault();
-          html.find('.item').removeClass('context');
-          html.find('.item #context-menu').hide();
-          itemContextMenu(event);
-          break;
-      }
-    }
-  });
+//   html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
+//     if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
+//       switch (event.which) {
+//         case 1:
+//           event.preventDefault();
+//           html.find('.item').removeClass('context');
+//           html.find('.item #context-menu').hide();
+//           itemContextMenu(event);
+//           break;
+//       }
+//     }
+//   });
 
-  // context menu calculations
-  async function itemContextMenu(event){
-    let item = event.currentTarget;
+//   // context menu calculations
+//   async function itemContextMenu(event){
+//     let item = event.currentTarget;
     
-    if($(item).hasClass('activate-context-menu')){
-      item = item.parentNode;
-    }
+//     if($(item).hasClass('activate-context-menu')){
+//       item = item.parentNode;
+//     }
     
-    let	mouseX = event.clientX,
-    mouseY = event.clientY,
-    itemTop = $(item).offset().top,
-    itemLeft = $(item).offset().left,
-    itemHeight = $(item).height(),
-    itemWidth = $(item).width(),
-    contextTop = mouseY-itemTop+1,
-    contextLeft = mouseX-itemLeft+1,
-    contextWidth = $(item).find('#context-menu').width(),
-    contextHeight = $(item).find('#context-menu').height(),
-    contextRightBound = mouseX + contextWidth,
-    contextBottomBound = mouseY + contextHeight,
-    itemsList = $(item).closest('.items-list'),
-    itemsListRightBound = itemsList.offset().left + itemsList.width() - 17,
-    itemsListBottomBound = itemsList.offset().top + itemsList.height();			
+//     let	mouseX = event.clientX,
+//     mouseY = event.clientY,
+//     itemTop = $(item).offset().top,
+//     itemLeft = $(item).offset().left,
+//     itemHeight = $(item).height(),
+//     itemWidth = $(item).width(),
+//     contextTop = mouseY-itemTop+1,
+//     contextLeft = mouseX-itemLeft+1,
+//     contextWidth = $(item).find('#context-menu').width(),
+//     contextHeight = $(item).find('#context-menu').height(),
+//     contextRightBound = mouseX + contextWidth,
+//     contextBottomBound = mouseY + contextHeight,
+//     itemsList = $(item).closest('.items-list'),
+//     itemsListRightBound = itemsList.offset().left + itemsList.width() - 17,
+//     itemsListBottomBound = itemsList.offset().top + itemsList.height();			
     
-    // check right side bounds
-    if(contextRightBound > itemsListRightBound) {
-      let rightDiff = itemsListRightBound - contextRightBound;
-      contextLeft = contextLeft + rightDiff;
-    }
+//     // check right side bounds
+//     if(contextRightBound > itemsListRightBound) {
+//       let rightDiff = itemsListRightBound - contextRightBound;
+//       contextLeft = contextLeft + rightDiff;
+//     }
     
-    // check bottom bounds
-    if(contextBottomBound > itemsListBottomBound) {
-      let bottomDiff = itemsListBottomBound - contextBottomBound;
-      contextTop = contextTop + bottomDiff;
-    }
+//     // check bottom bounds
+//     if(contextBottomBound > itemsListBottomBound) {
+//       let bottomDiff = itemsListBottomBound - contextBottomBound;
+//       contextTop = contextTop + bottomDiff;
+//     }
 
-    $(item)
-      .addClass('context')
-      .find('#context-menu')
-      .css({'top': contextTop+'px', 'left': contextLeft+'px'})
-      .fadeIn(300);
-  }
+//     $(item)
+//       .addClass('context')
+//       .find('#context-menu')
+//       .css({'top': contextTop+'px', 'left': contextLeft+'px'})
+//       .fadeIn(300);
+//   }
 
-  //close context menu on any click outside
-  $(html).mousedown( async (event) => {
-    switch (event.which) {
-      case 1:
-      if ( ! $(event.target).closest('.item #context-menu').length && ! $(event.target).closest('.item .activate-context-menu').length ) {
-        html.find('.item').removeClass('context');
-        html.find('.item #context-menu').hide();
-      }
-        break;
-    }
-  });
-}
+//   //close context menu on any click outside
+//   $(html).mousedown( async (event) => {
+//     switch (event.which) {
+//       case 1:
+//       if ( ! $(event.target).closest('.item #context-menu').length && ! $(event.target).closest('.item .activate-context-menu').length ) {
+//         html.find('.item').removeClass('context');
+//         html.find('.item #context-menu').hide();
+//       }
+//         break;
+//     }
+//   });
+// }

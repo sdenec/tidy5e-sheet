@@ -245,6 +245,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
     context.hideSpellbookTabNpc =  game.settings.get("tidy5e-sheet", "hideSpellbookTabNpc");
     context.isGM = game.user.isGM;
+    context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
     return context;
   }
 

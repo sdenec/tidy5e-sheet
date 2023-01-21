@@ -12,7 +12,8 @@
 
     <ul class="item-list">
       {{#each section.effects as |effect|}}
-      <li class="item effect {{#if ../../owner}}context-enabled{{/if}}" data-effect-id="{{effect.id}}">
+      <li class="item effect 
+        data-effect-id="{{effect.id}}">
         <div class="item-name effect-name">
           <img class="item-image" src="{{effect.icon}}"/>
           <h4>{{effect.label}}</h4>

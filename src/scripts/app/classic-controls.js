@@ -4,8 +4,8 @@ export const tidy5eClassicControls = function (html) {
       itemControls = html.find('.tidy5e-sheet .list-layout .item-controls');
 
   itemList.addClass('classic-controls');
-	item.removeClass('context-enabled').removeClass('context');
-  itemControls.removeClass('context-menu');
+	// item.removeClass('context-enabled').removeClass('context');
+  // itemControls.removeClass('context-menu');
 
   /*
   itemControls.each(function(){

@@ -38,7 +38,8 @@
     <ul class="item-list">
       {{#each section.spells as |item i|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if item.system.preparation.prepared}} prepared{{/if}}
+        <li class="item 
+          {{~#if item.system.preparation.prepared}} prepared{{/if}}
           {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
           {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
           {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
@@ -131,6 +132,30 @@
           </div>
           {{/if}}
           -->
+          {{#if @root.owner}}
+          {{#if @root.rightClickDisabled}}
+          <div class="item-controls flexrow">
+              {{#if section.canPrepare}}
+              <!--
+              <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
+                <i class="fas fa-sun"></i>
+              </a>
+              -->
+              <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
+                {{#if (eq ctx.toggleClass 'active')}}
+                  <i class="fas fa-book"></i> 
+                  <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>
+                {{else}}
+                  <i class="fas fa-book inactive"></i> 
+                  <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>
+                {{/if}}
+              </a>
+              {{/if}}
+              <a class="item-control item-edit" title="{{localize 'DND5E.ItemEdit'}}"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="{{localize 'DND5E.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/if}}
         </li>
       {{/with}}
       {{/each}}
