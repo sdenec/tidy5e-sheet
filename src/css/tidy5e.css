@@ -1232,6 +1232,9 @@
 .tidy5e.sheet.actor span.hp-max,
 .tidy5e.sheet.actor input.max-temphp {
   text-align: left;
+}
+.tidy5e.sheet.actor input.hp-max,
+.tidy5e.sheet.actor span.hp-max {
   width: 100%;
 }
 .tidy5e.sheet.actor input.max-temphp {
