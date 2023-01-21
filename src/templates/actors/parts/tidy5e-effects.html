@@ -19,8 +19,8 @@
         </div>
         <div class="item-detail effect-source" title="{{effect.sourceName}}"><span>{{effect.sourceName}}</span></div>
         <div class="item-detail effect-duration">{{effect.duration.label}}</div>
-        
-        {{#if ../../owner}}
+        <!--
+        {{#if @root.owner}}
         <div class="activate-context-menu">
           <i class="fas fa-ellipsis-v"></i>
         </div>
@@ -37,6 +37,7 @@
           </a>
         </div>
         {{/if}}
+        -->
       </li>
       {{/each}}
       <li class="items-footer" data-effect-type="{{section.type}}">

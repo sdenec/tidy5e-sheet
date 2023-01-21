@@ -82,28 +82,51 @@
             </div>
             <article class="mod-roll-buttons"></article>
           </div>
-
-          {{#if ../../owner}}
+          <!--
+          {{#if @root.owner}}
           <div class="activate-context-menu">
             <i class="fas fa-ellipsis-v"></i>
           </div>
           <div class="item-controls context-menu">
             <hr class="context-divider">
             {{#if @root.allowCantripToBePreparedOnContext }}
-            {{#if (ne item.system.preparation.mode 'always') }}
-            <a class="item-control item-toggle {{ctx.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq ctx.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
-            {{/if}}
+              {{#if (ne item.system.preparation.mode 'always') }}
+              <a class="item-control item-toggle {{ctx.toggleClass}}">
+                {{#if (eq ctx.toggleClass 'active')}}
+                  <i class="fas fa-book icon-on"></i>
+                  {{localize 'TIDY5E.Unprepare'}}
+                {{else}}
+                  <i class="fas fa-book icon-off"></i> 
+                  {{localize 'TIDY5E.Prepare'}}
+                {{/if}}
+              </a>
+              {{/if}}
             {{else}}
             {{#if (and section.canPrepare (ne item.system.preparation.mode 'always')) }}
-            <a class="item-control item-toggle {{ctx.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq ctx.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
+              <a class="item-control item-toggle {{ctx.toggleClass}}">
+                {{#if (eq ctx.toggleClass 'active')}}
+                  <i class="fas fa-book icon-on"></i>
+                  {{localize 'TIDY5E.Unprepare'}}
+                {{else}}
+                  <i class="fas fa-book icon-off"></i> 
+                  {{localize 'TIDY5E.Prepare'}}
+                {{/if}}
+              </a>
             {{/if}}
             {{/if}}
             <hr class="context-divider">
-            <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i> {{localize 'TIDY5E.EditSpell'}}</a>
+            <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}">
+              <i class="fas fa-pencil-alt"></i> 
+              {{localize 'TIDY5E.EditSpell'}}
+            </a>
             <hr class="context-divider">
-            <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i> {{localize 'TIDY5E.DeleteSpell'}}</a>
+            <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}">
+              <i class="fas fa-trash"></i> 
+              {{localize 'TIDY5E.DeleteSpell'}}
+            </a>
           </div>
           {{/if}}
+          -->
         </li>
       {{/with}}
       {{/each}}

@@ -170,6 +170,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
    * @param {Item} item
    * @private
    */
+  // TODO to remove with system 2.1.X
   _prepareItemToggleState(item) {
     if (item.type === "spell") {
       const isAlways =

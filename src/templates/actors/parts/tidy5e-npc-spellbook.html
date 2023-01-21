@@ -100,7 +100,7 @@
             <article class="mod-roll-buttons"></article>
           </div>
 
-
+          <!--
           {{#if @root.owner}}
           <div class="activate-context-menu">
             <i class="fas fa-ellipsis-v"></i>
@@ -108,15 +108,29 @@
           <div class="item-controls context-menu">
             <hr class="context-divider">
             {{#if system.preparation}}
-            <a class="item-control item-toggle {{ctx.toggleClass}}">{{#if (eq ctx.toggleClass 'active')}}<i class="fas fa-book"></i> <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>{{else}}<i class="fas fa-book inactive"></i> <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>{{/if}}</a>
+            <a class="item-control item-toggle {{ctx.toggleClass}}">
+              {{#if (eq ctx.toggleClass 'active')}}
+                <i class="fas fa-book"></i> 
+                <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>
+              {{else}}
+                <i class="fas fa-book inactive"></i> 
+                <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>
+              {{/if}}
+            </a>
             {{/if}}
             <hr class="context-divider">
-            <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}"><i class="fas fa-pencil-alt"></i>  <span class="control-label">{{localize 'TIDY5E.EditSpell'}}</span></a>
+            <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}">
+              <i class="fas fa-pencil-alt"></i>  
+              <span class="control-label">{{localize 'TIDY5E.EditSpell'}}</span>
+            </a>
             <hr class="context-divider">
-            <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}"><i class="fas fa-trash"></i>  <span class="control-label">{{localize 'TIDY5E.DeleteSpell'}}</span></a>
+            <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}">
+              <i class="fas fa-trash"></i>  
+              <span class="control-label">{{localize 'TIDY5E.DeleteSpell'}}</span>
+            </a>
           </div>
           {{/if}}
-
+          -->
         </li>
       {{/with}}
       {{/each}}

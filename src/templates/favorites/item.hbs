@@ -65,7 +65,7 @@
       <span title="{{localize 'DND5E.Usage'}}: {{label}}">{{label}}</span>
     {{/each}}
   </div>
-
+  <!--
   <div class="activate-context-menu">
     <i class="fas fa-ellipsis-v"></i>
   </div>
@@ -73,57 +73,40 @@
     <hr class="context-divider">
     {{#if (and item.isItem item.notFeat)}}
     {{#if (and (ne item.type 'tool') (ne item.type 'loot') )}}
-      <!--
-      <a class="item-control item-toggle {{item.toggleClass}}" 
-      title="{{item.toggleTitle}}">
-      {{#if (eq item.toggleClass 'active')}}
-      <i class="fas fa-user-alt"></i>
-      {{else}}
-      <i class="fas fa-user-alt inactive"></i>
-      {{/if}} 
-      <span class="control-label">{{item.toggleTitle}}</span>
-      </a>
-      -->
-      <a 
-      class="item-control item-toggle {{item.toggleClass}}" 
-      title="{{item.toggleTitle}}">
-      {{#if (eq item.toggleClass 'active')}}
-      <i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>
-      {{else}}
-      <i class="fas fa-user-alt inactive"></i> 
-      <span class="control-label">{{localize "TIDY5E.Equip"}}</span>
-      {{/if}}
+      <a  class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">
+        {{#if (eq item.toggleClass 'active')}}
+          <i class="fas fa-user-alt"></i> 
+          <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>
+        {{else}}
+          <i class="fas fa-user-alt inactive"></i> 
+          <span class="control-label">{{localize "TIDY5E.Equip"}}</span>
+        {{/if}}
       </a>
     {{/if}}
     {{/if}}
     {{#if item.attunement}}
     <a class="item-control item-attunement 
-    {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}"
-    title="{{localize item.attunement.title}}">
-    <i class="fas fa-sun"></i> 
-    <span class="control-label">{{localize item.attunement.title}}</span>
+      {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}"
+      title="{{localize item.attunement.title}}">
+      <i class="fas fa-sun"></i> 
+      <span class="control-label">{{localize item.attunement.title}}</span>
     </a>
     {{/if}}
-    <!--
-    {{#if item.canPrep}}
-    <a class="item-control item-toggle {{item.toggleClass}}" 
-    title="{{item.toggleTitle}}">
-    {{#if (eq item.toggleClass 'active')}}
-    <i class="fas fa-book"></i>
-    {{else}}
-    <i class="fas fa-book inactive"></i>
-    {{/if}} 
-    <span class="control-label">{{item.toggleTitle}}</span>
-    </a>
-    {{/if}}
-    -->
     {{#if @root.allowCantripToBePreparedOnContext }}
     {{#if (ne item.system.preparation.mode 'always')}}
     <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i> <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>{{else}}<i class="fas fa-book inactive"></i> <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>{{/if}}</a>
     {{/if}}
     {{else}}
     {{#if (and item.canPrepare (ne item.system.preparation.mode 'always'))}}
-    <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-book"></i> <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>{{else}}<i class="fas fa-book inactive"></i> <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>{{/if}}</a>
+    <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">
+      {{#if (eq item.toggleClass 'active')}}
+        <i class="fas fa-book"></i> 
+        <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>
+      {{else}}
+        <i class="fas fa-book inactive"></i> 
+        <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>
+      {{/if}}
+    </a>
     {{/if}}
     {{/if}}
 
@@ -136,4 +119,5 @@
       <i class="fas fa-bookmark"></i> <span class="control-label">{{localize 'TIDY5E.RemoveFav'}}</span>
     </a>
   </div>
+  -->
 </li>
