@@ -280,6 +280,13 @@
       </div>
     </article>
     <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='classicControlsEnabled' id='classicControlsEnabled' {{checked settings.classicControlsEnabled.value}}>
+      <div class="description">
+        <label for="classicControlsEnabled">{{localize 'TIDY5E.Settings.ClassicControls.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.ClassicControls.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='expandedSheetEnabled' id='expandedSheetEnabled' {{checked settings.expandedSheetEnabled.value}}>
       <div class="description">
         <label for="expandedSheetEnabled">{{localize 'TIDY5E.Settings.ExpandedSheet.name'}}</label>

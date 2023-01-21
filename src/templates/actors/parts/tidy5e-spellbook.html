@@ -157,14 +157,9 @@
           {{/if}}
           -->
           {{#if @root.owner}}
-          {{#if @root.rightClickDisabled}}
+          {{#if @root.classicControlsEnabled}}
           <div class="item-controls flexrow">
             {{#if section.canPrepare}}
-            <!--
-            <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
-              <i class="fas fa-sun"></i>
-            </a>
-            -->
             <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
               {{#if (eq ctx.toggleClass 'active')}}
                 <i class="fas fa-book"></i> 

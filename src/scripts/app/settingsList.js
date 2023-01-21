@@ -37,7 +37,7 @@ export function settingsList(){
 			hint: game.i18n.localize("TIDY5E.Settings.ClassicControls.hint"),
 			scope: "client",
 			config: true,
-			default: false,
+			default: true,
 			type: Boolean
 		});
 

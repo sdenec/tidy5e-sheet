@@ -1,6 +1,5 @@
 import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eListeners } from "./app/listeners.js";
-import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
@@ -52,6 +51,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 
     context.isGM = game.user.isGM;
     context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
+    context.classicControlsEnabled = game.user.isGM && game.settings.get("tidy5e-sheet", "classicControlsEnabled");
     return context;
   }
 
@@ -172,9 +172,9 @@ async function setSheetClasses(app, html, data){
 			html.find('.tidy5e-sheet .items-list').addClass('alt-context');
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
-		tidy5eClassicControls(html);
-	}
+	// if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	// 	tidy5eClassicControls(html);
+	// }
   if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
     html.find(".tidy5e-sheet.tidy5e-vehicle .rest-container").remove();
   }

@@ -1,3 +1,6 @@
+// ==================================
+// THIS METHOD IS DEPRECATED WITH 2.1.X FOR NOW I LEAVE
+// ============================================
 export const tidy5eClassicControls = function (html) {
   let itemList = html.find('.tidy5e-sheet .list-layout .items-list'),
       item = html.find('.tidy5e-sheet .list-layout .item'),

@@ -6,7 +6,6 @@ import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eSearchFilter } from "./app/search-filter.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
-import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
@@ -106,6 +105,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor
     context.isGM = game.user.isGM;
     context.allowHpMaxOverride = game.user.isGM && game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
     context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
+    context.classicControlsEnabled = game.user.isGM && game.settings.get("tidy5e-sheet", "classicControlsEnabled");
     return context;
   }
 
@@ -751,9 +751,9 @@ async function setSheetClasses(app, html, data) {
       html.find(".tidy5e-sheet .items-list").addClass("alt-context");
     }
   }
-  if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
-    tidy5eClassicControls(html);
-  }
+  // if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+  //   tidy5eClassicControls(html);
+  // }
   if (
     game.settings.get("tidy5e-sheet", "portraitStyle") == "pc" ||
     game.settings.get("tidy5e-sheet", "portraitStyle") == "all"

@@ -17,7 +17,13 @@ export const tidy5eContextMenu = function (html, sheet) {
   Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
     if ( item.actor?.isOwner ) {
       if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
-        contextOptions = [];
+        if(item.type === "spell" && !item.actor.getFlag("tidy5e-sheet","tidy5e-sheet.spellbook-grid")) {
+          contextOptions = [];
+        } else if(item.type !== "spell" && !item.actor.getFlag("tidy5e-sheet","inventory-grid")) {
+          contextOptions = [];
+        } else {
+          contextOptions = _getItemContextOptions(item);
+        }
       } else {
         contextOptions = _getItemContextOptions(item);
       }

@@ -74,36 +74,7 @@
           </div>
           <!--
           {{#if @root.owner}}
-          <div class="activate-context-menu">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-          <div class="item-controls context-menu">
-            <hr class="context-divider">
-            
-            {{#if ctx.attunement}}
-            <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-              <i class="fas fa-sun"></i> 
-              <span class="control-label">
-                {{#if (eq item.system.attunement 2) }}
-                  {{localize "TIDY5E.Deattune"}}
-                {{else}}
-                  {{localize "TIDY5E.Attune"}}
-                {{/if}}
-              </span>
-            </a>
-            {{/if}}
-
-            <a class="item-control item-toggle {{ctx.toggleClass}}">{{#if (eq ctx.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
-            
-            <hr class="context-divider">
-            <a class="item-control item-edit"><i class="fas fa-pencil-alt"></i>{{localize "DND5E.ItemEdit"}}</a>
-            <hr class="context-divider">
-            <a class="item-control item-delete warning"><i class="fas fa-trash"></i>{{localize "DND5E.ItemDelete"}}</a>
-          </div>
-          {{/if}}
-          -->
-          {{#if @root.owner}}
-          {{#if @root.rightClickDisabled}}
+          {{#if @root.classicControlsEnabled}}
           <div class="item-controls flexrow">
             {{#if ctx.attunement}}
             <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
@@ -133,11 +104,12 @@
           </div>
           {{/if}}
           {{/if}}
+          -->
         </li>
       {{/with}}
       {{/each}}
 
-      {{#if ../owner}}
+      {{#if @root.owner}}
       <li class="items-footer">
         <a class="item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
           <i class="fas fa-plus-circle"></i>

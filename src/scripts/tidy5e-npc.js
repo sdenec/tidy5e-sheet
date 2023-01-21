@@ -2,7 +2,6 @@ import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-npc-templates.js"
 
 import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eContextMenu } from "./app/context-menu.js";
-import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
@@ -246,6 +245,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     context.hideSpellbookTabNpc =  game.settings.get("tidy5e-sheet", "hideSpellbookTabNpc");
     context.isGM = game.user.isGM;
     context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
+    context.classicControlsEnabled = game.user.isGM && game.settings.get("tidy5e-sheet", "classicControlsEnabled");
     return context;
   }
 
@@ -572,9 +572,9 @@ async function setSheetClasses(app, html, data) {
       html.find(".tidy5e-sheet .items-list").addClass("alt-context");
     }
   }
-  if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
-    tidy5eClassicControls(html);
-  }
+  // if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+  //   tidy5eClassicControls(html);
+  // }
   if (game.settings.get("tidy5e-sheet", "traitsMovedBelowResourceNpc")) {
     let altPos = html.find(".alt-trait-pos");
     let traits = html.find(".traits");
