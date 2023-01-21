@@ -93,6 +93,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'restingForNpcsEnabled',
 			'restingForNpcsChatDisabled',
 			'rightClickDisabled',
+			'classicControlsEnabled',
 			'skillsAlwaysShownNpc',
 			'hideSpellbookTabNpc',
 

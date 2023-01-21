@@ -2934,8 +2934,12 @@
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-target,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-duration,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-feat-source,
-.tidy5e.sheet.actor .items-list .items-header-labels .items-header-requirements {
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-requirements,
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-controls {
   width: 120px;
+}
+.tidy5e.sheet.actor .items-list .items-header-labels .items-header-controls {
+  display: none;
 }
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-subclass,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-source {

@@ -31,6 +31,7 @@
         <!-- <div class="items-header-school">{{localize 'DND5E.SpellSchool'}}</div> -->
         <div class="items-header-target" title="{{localize 'DND5E.SpellTarget'}}">{{localize 'DND5E.Target'}}</div>
         <div class="items-header-usage" title="{{localize 'DND5E.SpellUsage'}}">{{localize 'DND5E.Usage'}}</div>
+        <div class="items-header-controls"></div>
       </div>
 
     </li>
@@ -38,12 +39,7 @@
     <ul class="item-list">
       {{#each section.spells as |item i|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item 
-          {{~#if item.system.preparation.prepared}} prepared{{/if}}
-          {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
-          {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
-          {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
-          {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
+        <li class="item {{~#if item.system.preparation.prepared}} prepared{{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
           <div class="item-name rollable">
             <div class="item-image" style="background-image: url('{{item.img}}')">
               <i class="fa fa-dice-d20"></i>
@@ -74,11 +70,7 @@
 
           <div class="item-detail spell-action">{{item.labels.activation}}</div>
 
-          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
-            {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
-            {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
-            {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
-            {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
+          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
             <p class="info-card-name">{{item.name}}</p>
             <div class="info-card-states">
               <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{item.labels.school}}</span>

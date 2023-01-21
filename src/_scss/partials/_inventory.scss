@@ -419,8 +419,13 @@
     .items-header-target,
     .items-header-duration,
     .items-header-feat-source,
-    .items-header-requirements {
+    .items-header-requirements,
+    .items-header-controls {
       width: 120px;
+    }
+
+    .items-header-controls {
+      display: none;
     }
 
     .items-header-subclass,

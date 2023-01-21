@@ -11,12 +11,7 @@
     <ul class="item-list">
       {{#each section.items as |item iid|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item 
-        {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} 
-        {{item.attunement.cls}} 
-        {{#if item.system.equipped}}equipped{{/if}}" 
-        data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" 
-        data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+        <li class="item {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
           {{~#if item.attunement}} 
             <i class="fas fa-sun icon-attuned {{item.attunement.cls}}" title="{{localize item.attunement.title}}"></i>
           {{/if}}
@@ -31,8 +26,7 @@
             </div>
           </div>
           <div class="item-stats">
-            
-            <!-- {{#if item.system.quantity}} {{/if}} -->
+
             <span class="item-quantity{{#if item.isStack}} isStack{{/if}}" title="{{localize 'DND5E.Quantity'}}">
               <input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="2" >
             </span>
@@ -45,7 +39,7 @@
 
           </div>
 
-          <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}">
+          <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}" data-item-index="{{item._id}}" >
             <p class="info-card-name">{{item.name}}</p>
             {{#if item.system.properties.amm}}
               <span class="ammo" data-id="{{item._id}}"></span>

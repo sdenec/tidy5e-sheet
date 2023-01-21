@@ -5,6 +5,7 @@
     
   <ul class="inventory-list items-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each sections as |section sid|}}
+    
     <li class="items-header">
       <h3 class="item-name">{{localize section.label}}</h3>
 
@@ -20,19 +21,46 @@
           {{/if}}
           <div class="items-header-charge" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
           <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
+          <div class="items-header-controls"></div>
         {{/if}}
       </div>
       <div class="item-control inventory-plus-helper" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}></div>
     </li>
+    <!--
+    <li class="items-header flexrow">
+      <h3 class="item-name flexrow">{{localize section.label}}</h3>
+
+      {{#if section.columns}}
+          {{#each section.columns}}
+              <div class="item-detail {{css}}">{{label}}</div>
+          {{/each}}
+      {{else}}
+          {{#if ../isCharacter}}
+              <div class="item-detail item-weight">{{localize "DND5E.Weight"}}</div>
+          {{/if}}
+
+          <div class="item-detail item-uses">{{localize "DND5E.Charges"}}</div>
+          <div class="item-detail item-action">{{localize "DND5E.Usage"}}</div>
+      {{/if}}
+
+      {{#if ../owner}}
+      <div class="item-controls flexrow"> 
+
+        <a class="item-control item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate"
+            {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+            <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
+        </a>
+        
+      </div>
+    
+      {{/if}}
+    </li>
+    -->
 
     <ul class="item-list">
       {{#each section.items as |item iid|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item {{section.css}} 
-          {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} 
-          {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" 
-          data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" 
-          data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+        <li class="item {{section.css}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
           <div class="item-name {{@root.rollableClass}}">
             {{#if section.editableName}}
               <input type="text" value="{{item.name}}">
@@ -109,7 +137,7 @@
           {{/if}}
 
           
-          <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}" data-item-index="{{item._id}} >
+          <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}" data-item-index="{{item._id}}" >
             <p class="info-card-name">{{item.name}}</p>
             <div class="info-card-states">
               {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}

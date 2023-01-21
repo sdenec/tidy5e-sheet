@@ -32,18 +32,52 @@
         <div class="items-header-target" title="{{localize 'DND5E.SpellTarget'}}">{{localize 'DND5E.Target'}}</div>
         <div class="items-header-range" title="{{localize 'DND5E.SpellRange'}}">{{localize 'DND5E.Range'}}</div>
         <div class="items-header-usage" title="{{localize 'DND5E.SpellUsage'}}">{{localize 'DND5E.Usage'}}</div>
+        <div class="items-header-controls"></div>
       </div>
     </li>
+    <!--
+    <li class="items-header spellbook-header flexrow">
+      <div class="item-name flexrow">
+          <h3>{{section.label}}</h3>
+          <div class="spell-slots">
+              {{#if section.usesSlots}}
+              <input type="text" name="system.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
+                    data-dtype="Number">
+              <span class="sep"> / </span>
+              <span class="spell-max" data-level="{{section.prop}}" data-slots="{{section.slots}}">
+                  {{{section.slots}}}
+                  {{#if ../editable}}
+                  <a class="slot-max-override" title="{{localize 'DND5E.SpellProgOverride'}}">
+                      <i class="fas fa-edit"></i>
+                  </a>
+                  {{/if}}
+              </span>
+              {{ else }}
+              <span>{{{section.uses}}}</span>
+              <span class="sep"> / </span>
+              <span class="spell-max">{{{section.slots}}}</span>
+              {{/if}}
+          </div>
+      </div>
+      <div class="spell-school">{{localize "DND5E.SpellSchool"}}</div>
+      <div class="spell-action">{{localize "DND5E.SpellUsage"}}</div>
+      <div class="spell-target">{{localize "DND5E.SpellTarget"}}</div>
 
+      <div class="item-controls flexrow">
+        
+        {{#if section.canCreate}}
+        <a class="item-control item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+            <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
+        </a>
+        {{/if}}
+        
+      </div>
+    </li>
+    -->
     <ul class="item-list">
       {{#each section.spells as |item i|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item 
-          {{~#if item.system.preparation.prepared}} prepared{{/if}}
-          {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
-          {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
-          {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
-          {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
+        <li class="item {{~#if item.system.preparation.prepared}} prepared{{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
           <div class="item-name rollable">
             <div class="item-image" style="background-image: url('{{item.img}}')">
               <i class="fa fa-dice-d20"></i>
@@ -83,11 +117,7 @@
           </div>
           <div class="item-detail spell-action" title="{{localize 'DND5E.SpellUsage'}}">{{item.labels.activation}}</div>
           
-          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
-            {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
-            {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
-            {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
-            {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
+          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
             <p class="info-card-name">{{item.name}}</p>
             <div class="info-card-states">
               <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{item.labels.school}}</span>

@@ -30,13 +30,7 @@
     <ul class="item-list">
       {{#each section.spells as |item i|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
-        <li class="item 
-          {{~#if section.canPrepare}} preparable{{/if}} 
-          {{~#if item.system.preparation.prepared}} prepared{{/if}}
-          {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
-          {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
-          {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
-          {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
+        <li class="item {{~#if section.canPrepare}} preparable{{/if}} {{~#if item.system.preparation.prepared}} prepared{{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
           {{~#if item.flags.favtab}} 
           {{~#if item.flags.favtab.isFavorite}} 
             <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
@@ -58,11 +52,7 @@
           </div>
           {{/if}}
 
-          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}}
-            {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}}
-            {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}}
-            {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}}
-            {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
+          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
             <p class="info-card-name">{{item.name}}</p>
             <div class="info-card-states">
               <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
