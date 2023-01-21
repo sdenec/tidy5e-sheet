@@ -261,7 +261,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     let actor = this.actor;
 
     tidy5eListeners(html, actor);
-    tidy5eContextMenu(html);
+    tidy5eContextMenu(html, this);
     tidy5eShowActorArt(html, actor);
     if (game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
       tidy5eItemCard(html, actor);

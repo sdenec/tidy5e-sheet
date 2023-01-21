@@ -375,7 +375,7 @@ export const addFavorites = async function (app, html, data, position) {
     // showing item summary
     favHtml.find(".item-name h4").click((event) => app._onItemSummary(event));
 
-    tidy5eContextMenu(favHtml);
+    tidy5eContextMenu(favHtml, app);
 
     // the rest is only needed if the sheet is editable
     if (app.options.editable) {

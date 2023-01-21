@@ -1,4 +1,69 @@
-export const tidy5eContextMenu = function (html) {
+export const tidy5eContextMenu = function (html, sheet) {
+  if ( sheet.actor.isOwner ) {
+    // Override COntext Menu
+    // Item Context Menu
+    // new ContextMenu(html, ".item-list .item .context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
+
+    Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
+      // TODO
+    });
+
+    Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
+      tidy5eContextMenuOptions(item, contextOptions);
+    });
+
+    Hooks.on("dnd5e.getItemAdvancementContext", (html, contextOptions) => {
+      // TODO
+    });
+  }
+}
+
+/**
+ * Get the set of ContextMenu options which should be applied for advancement entries.
+ * @returns {ContextMenuEntry[]}  Context menu entries.
+ * @protected
+ */
+export const tidy5eContextMenuOptions = function(item, contextOptions) {
+  if(!game.settings.get("tidy5e-sheet", "rightClickDisabled")){
+    return;
+  }
+  contextOptions.push(
+    {
+      name: item.system.attunement === 2 
+        ? "TIDY5E.Deattune"
+        : "TIDY5E.Attune",
+      icon: "<i class='fas fa-sun'></i>",
+      condition: (li) => {
+        return item.attunement;
+      },
+      callback: (li) => {
+        if(item.system.attunement === 2) {
+          li.classList.add("active");
+        }
+        const element = li[0];
+      }
+    }
+  );
+
+    // {
+    //   name: "DND5E.AdvancementControlDuplicate",
+    //   icon: "<i class='fas fa-copy fa-fw'></i>",
+    //   condition: li => {
+    //     const id = li[0].closest(".advancement-item")?.dataset.id;
+    //     const advancement = this.item.advancement.byId[id];
+    //     return condition(li) && advancement?.constructor.availableForItem(this.item);
+    //   },
+    //   callback: li => this._onAdvancementAction(li[0], "duplicate")
+    // },
+    // {
+    //   name: "DND5E.AdvancementControlDelete",
+    //   icon: "<i class='fas fa-trash fa-fw' style='color: rgb(255, 65, 65);'></i>",
+    //   condition,
+    //   callback: li => this._onAdvancementAction(li[0], "delete")
+    // }
+}
+
+export const tidy5eContextMenuOLD = function (html) {
   // open context menu
 
   html.find('.item-list .item.context-enabled').mousedown( async (event) => {

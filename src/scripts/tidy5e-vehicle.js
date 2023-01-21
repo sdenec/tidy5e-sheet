@@ -60,7 +60,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		let actor = this.actor;
 
     tidy5eListeners(html, actor);
-    tidy5eContextMenu(html);
+    tidy5eContextMenu(html, this);
 		tidy5eShowActorArt(html, actor);
     if(game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
       tidy5eItemCard(html, actor);

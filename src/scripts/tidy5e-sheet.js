@@ -124,7 +124,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor
     let actor = this.actor;
 
     tidy5eListeners(html, actor);
-    tidy5eContextMenu(html);
+    tidy5eContextMenu(html, this);
     tidy5eSearchFilter(html, actor);
     tidy5eShowActorArt(html, actor);
     tidy5eItemCard(html, actor);
