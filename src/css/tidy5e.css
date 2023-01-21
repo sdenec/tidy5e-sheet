@@ -3116,9 +3116,14 @@
 .tidy5e.sheet.actor .items-list .item .activate-context-menu:hover {
   color: var(--t5e-primary-font);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu {
+.tidy5e.sheet.actor .items-list .item #context-menu {
   display: none;
+  width: 100%;
+  height: max-content;
   min-width: 70px;
+  max-width: 120px;
+  left: 0;
+  color: var(--t5e-primary-font);
   max-height: 203px;
   background: var(--t5e-background);
   border: 1px solid var(--t5e-context-outline);
@@ -3130,7 +3135,8 @@
   -webkit-box-shadow: 0 0 5px var(--t5e-context-shadow);
           box-shadow: 0 0 5px var(--t5e-context-shadow);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a {
+.tidy5e.sheet.actor .items-list .item #context-menu a,
+.tidy5e.sheet.actor .items-list .item #context-menu li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3144,54 +3150,69 @@
   font-weight: 400;
   font-size: 12px;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a:first-child {
+.tidy5e.sheet.actor .items-list .item #context-menu a:first-child,
+.tidy5e.sheet.actor .items-list .item #context-menu li:first-child {
   border-radius: 3px 3px 0 0;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a:last-child {
+.tidy5e.sheet.actor .items-list .item #context-menu a:last-child,
+.tidy5e.sheet.actor .items-list .item #context-menu li:last-child  {
   border-radius: 0 0 3px 3px;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a.active {
+.tidy5e.sheet.actor .items-list .item #context-menu a.active,
+.tidy5e.sheet.actor .items-list .item #context-menu li.active {
   color: var(--t5e-attunement-required);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a.active:hover {
+.tidy5e.sheet.actor .items-list .item #context-menu a.active:hover,
+.tidy5e.sheet.actor .items-list .item #context-menu li.active:hover {
   background: var(--t5e-warning-accent);
   color: rgba(255, 255, 255, 0.8);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a .icon-on, .tidy5e.sheet.actor .items-list .item .context-menu a.active .icon-off {
+.tidy5e.sheet.actor .items-list .item #context-menu a .icon-on, 
+.tidy5e.sheet.actor .items-list .item #context-menu a.active .icon-off,
+.tidy5e.sheet.actor .items-list .item #context-menu li .icon-on, 
+.tidy5e.sheet.actor .items-list .item #context-menu li.active .icon-off {
   display: none;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a .icon-off, .tidy5e.sheet.actor .items-list .item .context-menu a.active .icon-on {
+.tidy5e.sheet.actor .items-list .item #context-menu a .icon-off, 
+.tidy5e.sheet.actor .items-list .item #context-menu a.active .icon-on,
+.tidy5e.sheet.actor .items-list .item #context-menu li .icon-off, 
+.tidy5e.sheet.actor .items-list .item #context-menu li.active .icon-on {
   display: inline-block;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a:hover {
+.tidy5e.sheet.actor .items-list .item #context-menu a:hover,
+.tidy5e.sheet.actor .items-list .item #context-menu li:hover {
   -webkit-box-shadow: 0 0 2px var(--t5e-tertiary-color), 0 0 0 1px var(--t5e-tertiary-color) inset;
           box-shadow: 0 0 2px var(--t5e-tertiary-color), 0 0 0 1px var(--t5e-tertiary-color) inset;
+  color: var(--t5e-primary-font);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a i {
+.tidy5e.sheet.actor .items-list .item #context-menu a i,
+.tidy5e.sheet.actor .items-list .item #context-menu li i {
   margin-right: 4px;
   width: 16px;
   text-align: center;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a.warning {
+.tidy5e.sheet.actor .items-list .item #context-menu a.warning,
+.tidy5e.sheet.actor .items-list .item #context-menu li.warning {
   background: var(--t5e-warning-accent);
   color: rgba(255, 255, 255, 0.6);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu a.warning:hover {
+.tidy5e.sheet.actor .items-list .item #context-menu a.warning:hover,
+.tidy5e.sheet.actor .items-list .item #context-menu li.warning:hover {
   background: var(--t5e-warning-accent);
   color: rgba(255, 255, 255, 0.8);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu .context-divider {
+.tidy5e.sheet.actor .items-list .item #context-menu .context-divider {
   margin: 1px 0 0 0;
   border-top: 1px solid var(--t5e-light-color);
   border-bottom: none;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu .context-divider + .context-divider {
+.tidy5e.sheet.actor .items-list .item #context-menu .context-divider + .context-divider {
   display: none;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu .context-divider:first-child, .tidy5e.sheet.actor .items-list .item .context-menu .context-divider:last-child {
+.tidy5e.sheet.actor .items-list .item #context-menu .context-divider:first-child, .tidy5e.sheet.actor .items-list .item #context-menu .context-divider:last-child {
   display: none;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons .button {
+.tidy5e.sheet.actor .items-list .item #context-menu .item-buttons .button {
   border: none;
   border-radius: 0;
   background: var(--t5e-tertiary-color);
@@ -3209,15 +3230,15 @@
   font-weight: 400;
   font-size: 12px;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons .button:hover {
+.tidy5e.sheet.actor .items-list .item #context-menu .item-buttons .button:hover {
   background: var(--t5e-secondary-color);
 }
-.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons .button i {
+.tidy5e.sheet.actor .items-list .item #context-menu .item-buttons .button i {
   margin-right: 4px;
   width: 16px;
   text-align: center;
 }
-.tidy5e.sheet.actor .items-list .item .context-menu .item-buttons > .button:first-child {
+.tidy5e.sheet.actor .items-list .item #context-menu .item-buttons > .button:first-child {
   border-radius: 3px 3px 0 0;
 }
 .tidy5e.sheet.actor .items-list .info-card {
@@ -3317,7 +3338,7 @@
 .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .items-header {
   padding-right: 69px;
 }
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list .item-controls:not(#context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 69px;
           flex: 0 0 69px;
@@ -3325,7 +3346,7 @@
 .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.gmEdit .items-header {
   padding-right: 85px;
 }
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.gmEdit .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.unlocked .item-controls:not(#context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.inventory-list.gmEdit .item-controls:not(#context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 85px;
           flex: 0 0 85px;
@@ -3333,7 +3354,7 @@
 .tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list .items-header {
   padding-right: 53px;
 }
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list .item-controls:not(#context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 53px;
           flex: 0 0 53px;
@@ -3341,7 +3362,7 @@
 .tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.gmEdit .items-header {
   padding-right: 69px;
 }
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.gmEdit .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.unlocked .item-controls:not(#context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.spellbook-list.gmEdit .item-controls:not(#context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 69px;
           flex: 0 0 69px;
@@ -3349,7 +3370,7 @@
 .tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list .items-header {
   padding-right: 37px;
 }
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list .item-controls:not(#context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list .item-controls:not(#context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 37px;
           flex: 0 0 37px;
@@ -3357,7 +3378,7 @@
 .tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.gmEdit .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .items-header, .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.gmEdit .items-header {
   padding-right: 53px;
 }
-.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.gmEdit .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .item-controls:not(.context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.gmEdit .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.unlocked .item-controls:not(#context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.features-list.gmEdit .item-controls:not(#context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.unlocked .item-controls:not(#context-menu), .tidy5e.sheet.actor .list-layout .items-list.classic-controls.effects-list.gmEdit .item-controls:not(#context-menu) {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 53px;
           flex: 0 0 53px;
@@ -3422,7 +3443,7 @@
 .tidy5e.sheet.actor .list-layout .items-list .item:not(.context) .item-name:hover .item-image:hover i {
   color: var(--t5e-primary-font);
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3434,31 +3455,31 @@
   padding: 0 2px;
   border-left: 1px solid var(--t5e-faint-color);
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) .control-label,
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) hr {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) .control-label,
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) hr {
   display: none;
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) a {
   width: 14px;
   text-align: center;
   margin: 0 0 0 2px;
   color: var(--t5e-secondary-color);
   float: left;
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a.fixed {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) a.fixed {
   opacity: 0;
   cursor: default;
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a.warning {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) a.warning {
   color: var(--t5e-warning-accent);
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a.not-attuned {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) a.not-attuned {
   color: var(--t5e-attunement-required);
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a .inactive {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) a .inactive {
   color: var(--t5e-light-color);
 }
-.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a .inactive:hover, .tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a:hover {
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) a .inactive:hover, .tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(#context-menu) a:hover {
   color: var(--t5e-primary-color);
 }
 .tidy5e.sheet.actor .list-layout .items-list .items-footer {

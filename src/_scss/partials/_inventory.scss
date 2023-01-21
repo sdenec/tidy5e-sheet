@@ -596,9 +596,14 @@
       }
     }
 
-    .context-menu {
+    #context-menu {
       display: none;
+      width: 100%;
+      height: max-content;
       min-width: 70px;
+      max-width: 120px;
+      left: 0;
+      color: var(--t5e-primary-font);
       max-height: 203px;
       background: var(--t5e-background);
       border: 1px solid var(--t5e-context-outline);
@@ -609,7 +614,8 @@
       overflow-y: auto;
       box-shadow: 0 0 5px var(--t5e-context-shadow);
 
-      a {
+      a,
+      li {
         display: flex;
         align-items: center;
         padding: 4px 8px 4px 6px;
@@ -651,6 +657,7 @@
         &:hover {
           box-shadow: 0 0 2px var(--t5e-tertiary-color),
             0 0 0 1px var(--t5e-tertiary-color) inset;
+          color: var(--t5e-primary-font);
         }
 
         i {
@@ -668,7 +675,7 @@
             color: rgba(255, 255, 255, 0.8);
           }
         } //&item-delete
-      } //a
+      } //a, li
 
       .context-divider {
         margin: 1px 0 0 0;
@@ -806,7 +813,7 @@
         padding-right: 69px;
       }
 
-      .item-controls:not(.context-menu) {
+      .item-controls:not(#context-menu) {
         flex: 0 0 69px;
       }
 
@@ -816,7 +823,7 @@
           padding-right: 85px;
         }
 
-        .item-controls:not(.context-menu) {
+        .item-controls:not(#context-menu) {
           flex: 0 0 85px;
         }
       }
@@ -827,7 +834,7 @@
         padding-right: 53px;
       }
 
-      .item-controls:not(.context-menu) {
+      .item-controls:not(#context-menu) {
         flex: 0 0 53px;
       }
 
@@ -837,7 +844,7 @@
           padding-right: 69px;
         }
 
-        .item-controls:not(.context-menu) {
+        .item-controls:not(#context-menu) {
           flex: 0 0 69px;
         }
       }
@@ -849,7 +856,7 @@
         padding-right: 37px;
       }
 
-      .item-controls:not(.context-menu) {
+      .item-controls:not(#context-menu) {
         flex: 0 0 37px;
       }
 
@@ -859,7 +866,7 @@
           padding-right: 53px;
         }
 
-        .item-controls:not(.context-menu) {
+        .item-controls:not(#context-menu) {
           flex: 0 0 53px;
         }
       }
@@ -927,7 +934,7 @@
         color: var(--t5e-primary-font);
       }
 
-      .item-controls:not(.context-menu) {
+      .item-controls:not(#context-menu) {
         display: flex;
         justify-content: flex-end;
         font-size: 12px;
@@ -940,7 +947,8 @@
           display: none;
         }
 
-        a {
+        a,
+        li {
           width: 14px;
           text-align: center;
           margin: 0 0 0 2px;

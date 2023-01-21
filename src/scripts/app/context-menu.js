@@ -2,7 +2,7 @@ export const tidy5eContextMenu = function (html, sheet) {
   if ( sheet.actor.isOwner ) {
     // Override COntext Menu
     // Item Context Menu
-    // new ContextMenu(html, ".item-list .item .context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
+    // new ContextMenu(html, ".item-list .item #context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
 
     Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
       // TODO
@@ -88,7 +88,7 @@ export const tidy5eContextMenuOLD = function (html) {
         event.preventDefault();
         if(!game.settings.get("tidy5e-sheet", "rightClickDisabled") && $(item).hasClass('context-enabled')){
           html.find('.item').removeClass('context');
-          html.find('.item .context-menu').hide();
+          html.find('.item #context-menu').hide();
           itemContextMenu(event);
         }
         break;
@@ -101,7 +101,7 @@ export const tidy5eContextMenuOLD = function (html) {
         case 1:
           event.preventDefault();
           html.find('.item').removeClass('context');
-          html.find('.item .context-menu').hide();
+          html.find('.item #context-menu').hide();
           itemContextMenu(event);
           break;
       }
@@ -124,8 +124,8 @@ export const tidy5eContextMenuOLD = function (html) {
     itemWidth = $(item).width(),
     contextTop = mouseY-itemTop+1,
     contextLeft = mouseX-itemLeft+1,
-    contextWidth = $(item).find('.context-menu').width(),
-    contextHeight = $(item).find('.context-menu').height(),
+    contextWidth = $(item).find('#context-menu').width(),
+    contextHeight = $(item).find('#context-menu').height(),
     contextRightBound = mouseX + contextWidth,
     contextBottomBound = mouseY + contextHeight,
     itemsList = $(item).closest('.items-list'),
@@ -146,7 +146,7 @@ export const tidy5eContextMenuOLD = function (html) {
 
     $(item)
       .addClass('context')
-      .find('.context-menu')
+      .find('#context-menu')
       .css({'top': contextTop+'px', 'left': contextLeft+'px'})
       .fadeIn(300);
   }
@@ -155,9 +155,9 @@ export const tidy5eContextMenuOLD = function (html) {
   $(html).mousedown( async (event) => {
     switch (event.which) {
       case 1:
-      if ( ! $(event.target).closest('.item .context-menu').length && ! $(event.target).closest('.item .activate-context-menu').length ) {
+      if ( ! $(event.target).closest('.item #context-menu').length && ! $(event.target).closest('.item .activate-context-menu').length ) {
         html.find('.item').removeClass('context');
-        html.find('.item .context-menu').hide();
+        html.find('.item #context-menu').hide();
       }
         break;
     }
