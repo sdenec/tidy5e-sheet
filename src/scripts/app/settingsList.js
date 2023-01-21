@@ -758,6 +758,15 @@ export function settingsList(){
 			type: Boolean
 		});
 
+		game.settings.register("tidy5e-sheet", "allowHpMaxOverride", {
+			name: `${game.i18n.localize("TIDY5E.Settings.AllowHpMaxOverride.name")}`,
+			hint: `${game.i18n.localize("TIDY5E.Settings.AllowHpMaxOverride.hint")}`,
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
 		// Spell color customization
 
 		game.settings.register("tidy5e-sheet", "colorPickerEnabled", {

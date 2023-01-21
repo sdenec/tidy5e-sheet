@@ -115,6 +115,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			'allowCantripToBePreparedOnContext',
 			'spellClassFilterSelect',
 			'spellClassFilterIconReplace',
+			'allowHpMaxOverride',
 
 			'lockMoneyChanges',
 			'lockExpChanges',

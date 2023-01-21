@@ -530,6 +530,10 @@
       "name": "Color Picker for 'Always Prepared Accent'",
       "hint": "Select what color you want to use for 'Always Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
   },
+  "TIDY5E.Settings.AllowHpMaxOverride": {
+    "name": "Allow Hp Max override on Character",
+    "hint": "If enable this module replace will let the GM to manually change the hp max  value on the character sheet."
+  },
 
   "TIDY5E.Settings.Reset": {
     "name": "Reset settings to default",

@@ -104,6 +104,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor
     context.appId = this.appId;
     context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
     context.isGM = game.user.isGM;
+    context.allowHpMaxOverride = game.user.isGM && game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
     return context;
   }
 

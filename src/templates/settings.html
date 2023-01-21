@@ -444,6 +444,13 @@
         <p class="notes">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.hint'}}</p>
       </div>
     </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='allowHpMaxOverride' id='allowHpMaxOverride' {{checked settings.allowHpMaxOverride.value}}>
+      <div class="description">
+        <label for="allowHpMaxOverride">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.hint'}}</p>
+      </div>
+    </article> 
     <h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='spellClassFilterSelect' id='spellClassFilterSelect' {{checked settings.spellClassFilterSelect.value}}>

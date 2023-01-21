@@ -122,9 +122,9 @@
 						<input class="hp-min" name="system.attributes.hp.value" type="text" value="{{hp.value}}" placeholder="10"
 						data-tooltip="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
 						<span class="value-seperator sep"> / </span>	
-						{{#if @root.isGM}}
+						{{#if @root.allowHpMaxOverride}}
 						<input class="hp-max" name="system.attributes.hp.max" type="number" step="any"
-						value="{{system.attributes.hp.max}}" placeholder="10"
+						value="{{hp.max}}" placeholder="10"
 						data-tooltip="{{#if hp.max}}{{localize 'DND5E.HitPointsOverride'}}
 						{{~ else}}{{localize 'DND5E.HitPointsMax'}}{{/if}}" maxlength="5">
 						{{else}}

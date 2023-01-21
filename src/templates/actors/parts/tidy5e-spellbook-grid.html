@@ -89,7 +89,7 @@
           </div>
           <div class="item-controls context-menu">
             <hr class="context-divider">
-            {{#if @root/allowCantripToBePreparedOnContext }}
+            {{#if @root.allowCantripToBePreparedOnContext }}
             {{#if (ne item.system.preparation.mode 'always') }}
             <a class="item-control item-toggle {{ctx.toggleClass}}"><i class="fas fa-book icon-on"></i><i class="fas fa-book icon-off"></i> {{#if (eq ctx.toggleClass 'active')}}{{localize 'TIDY5E.Unprepare'}}{{else}}{{localize 'TIDY5E.Prepare'}}{{/if}}</a>
             {{/if}}
