@@ -683,13 +683,13 @@
 		font-family: var(--t5e-modesto);
 		height: 100%;
 		font-weight: 700;
-    width: 40px;
+		// width: 40px;
 	}
-
+	/*
 	.portrait-hp span {
 		flex: 0;
 	}
-
+	*/
 // Portrait Hit Temp
 
 	.portrait-temp {
@@ -712,8 +712,10 @@
 	}
 
 	input.hp-max,
+	span.hp-max,
 	input.max-temphp {
 		text-align: left;
+		width: 100%;
 	}
 
 	input.max-temphp {

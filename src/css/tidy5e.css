@@ -1197,13 +1197,15 @@
   font-family: var(--t5e-modesto);
   height: 100%;
   font-weight: 700;
-  width: 40px;
+  /* width: 40px; */
 }
+/*
 .tidy5e.sheet.actor .portrait-hp span {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
 }
+*/
 .tidy5e.sheet.actor .portrait-temp {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1227,8 +1229,10 @@
   text-align: right;
 }
 .tidy5e.sheet.actor input.hp-max,
+.tidy5e.sheet.actor span.hp-max,
 .tidy5e.sheet.actor input.max-temphp {
   text-align: left;
+  width: 100%;
 }
 .tidy5e.sheet.actor input.max-temphp {
   margin-left: 0.5rem;
