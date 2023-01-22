@@ -1,3 +1,5 @@
+import { isItemFavorite } from "./tidy5e-favorites.js";
+
 export const tidy5eContextMenu = function (html, sheet) {
   // Override COntext Menu
   // Item Context Menu
@@ -203,6 +205,7 @@ const _getActiveEffectContextOptions = function(effect) {
  */
 const _getItemContextOptions = function(item) {
   const allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext"); 
+  const actor = item.actor;
 
   let toggleClass = "";
   let toggleTitle = "";
@@ -299,6 +302,51 @@ const _getItemContextOptions = function(item) {
       }
     }
   }
+
+  // Add favorites to context menu
+  let isFav = isItemFavorite(item);
+
+  let favoriteColor = "rgba(0, 0, 0, 0.65)"; //Standard black
+  let favoriteIcon = "fa-bookmark";
+  if(game.modules.get("favorite-items")?.active) {
+    favoriteIcon = game.settings.get('favorite-items','favorite-icon');
+    favoriteColor = game.settings.get('favorite-items','favorite-color');
+  }
+  options.push(
+    {
+      name: isFav ? "TIDY5E.RemoveFav" : "TIDY5E.AddFav",
+      icon: isFav ? `<i class='fas ${favoriteIcon} fa-fw'></i>` : `<i class='fas ${favoriteIcon} fa-fw inactive'></i>`,
+      callback: () => {
+        // const item_id = ev[0].dataset.itemId; //ev.currentTarget.closest('[data-item-id]').dataset.itemId;
+        // const item = actor.items.get(item_id);
+        if(!item){
+          console.warn(`tidy5e-sheet | Item no founded!`);
+          return;
+        }
+        let isFav = isItemFavorite(item);
+        
+        item.update(
+        { 
+          "flags.tidy5e-sheet.favorite": !isFav,
+        });
+        // Sync favorite flag with module 'favorite-items'
+        if(game.modules.get("favorite-items")?.active) {
+          item.update(
+          { 
+            "flags.favorite-items.favorite": !isFav,
+          });
+        }
+        // Sync favorite flag with module 'favtab'
+        if(game.modules.get("favtab")?.active) {
+          item.update(
+          { 
+            "flags.favtab.isFavorite": !isFav
+          });
+        }
+      }
+    }
+  );
+
 
   /*
   // Standard Options

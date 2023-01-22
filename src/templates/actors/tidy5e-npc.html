@@ -182,7 +182,7 @@
 
           {{!-- Ability Scores --}}
           <ul class="ability-scores">
-            {{#each abilities as |ability id|}}
+            {{#each system.abilities as |ability id|}}
             <li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
                 <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>

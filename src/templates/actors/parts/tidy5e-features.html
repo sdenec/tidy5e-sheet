@@ -77,10 +77,8 @@
           {{/unless}}
         </div>
 
-        {{~#if item.flags.favtab}} 
-        {{~#if item.flags.favtab.isFavorite}} 
+        {{#if item.flags.tidy5e-sheet.favorite}}
           <div class="item-state-icon" title="Favorite"><i class="fas fa-bookmark icon-fav"></i></div>
-        {{/if}}
         {{/if}}
 
         {{#if section.hasActions}}

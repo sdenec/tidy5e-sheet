@@ -875,7 +875,7 @@ Hooks.once("ready", (app, html, data) => {
   if (!game.modules.get("colorsettings")?.active && game.user?.isGM) {
 		let word = "install and activate";
 		if (game.modules.get("colorsettings")) word = "activate";
-    const errorText = `tidy-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace("<br>", "\n");
+    const errorText = `tidy5e-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace("<br>", "\n");
     ui.notifications?.error(errorText);
 		throw new Error(errorText);
 	}

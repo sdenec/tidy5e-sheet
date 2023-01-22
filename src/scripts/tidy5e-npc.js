@@ -10,6 +10,7 @@ import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
 import { migrateFor21X } from "./app/migration-util.js";
+import { addFavorites } from "./app/tidy5e-favorites.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -751,22 +752,15 @@ async function editProtection(app, html, data) {
 
 // add fav button for npc-favorites
 async function npcFavorites(app, html, data) {
+  addFavorites(app, html, data);
+  /*
   let items = data.actor.items;
 
   for (let item of items) {
     // do not add the fav button for class items
     if (item.type == "class") continue;
 
-    // making sure the flag to set favorites exists
-    if (
-      item.flags.favtab === undefined ||
-      item.flags.favtab.isFavorite === undefined
-    ) {
-      item.flags.favtab = { isFavorite: false };
-      // DO NOT SAVE AT THIS POINT! saving for each and every item creates unneeded data and hogs the system
-      //app.actor.updateOwnedItem(item, true);
-    }
-    let isFav = item.flags.favtab.isFavorite;
+    let isFav = isItemFavorite(item);
 
     if (app.options.editable) {
       let favBtn = $(
@@ -796,6 +790,7 @@ async function npcFavorites(app, html, data) {
       }
     }
   }
+  */
 }
 
 // Add Spell Slot Marker

@@ -10,7 +10,7 @@
     </li>
     <ul class="item-list">
       {{#each favItems as |item id|}}
-       {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=item}}
+        {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=item}}
       {{/each}}
     </ul>
   {{/if}}
@@ -24,7 +24,7 @@
     </li>
     <ul class="item-list">
       {{#each favFeats as |feat lvl|}}
-      {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=feat}}
+        {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=feat}}
       {{/each}}
     </ul>
   {{/if}}
@@ -58,7 +58,7 @@
         {{/if}}
         <ul class="item-list">
           {{#each section.spells as |spell id|}}
-            {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
+            {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=spell}}
           {{/each}}
         </ul>
       {{/if}}
@@ -95,7 +95,7 @@
         {{/if}}
         <ul class="item-list">
           {{#each section.spells as |spell id|}}
-            {{> "modules/tidy5e-sheet/templates/favorites/item.hbs" item=spell}}
+            {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=spell}}
           {{/each}}
         </ul>
       {{/if}}

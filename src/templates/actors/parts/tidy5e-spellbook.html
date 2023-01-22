@@ -87,13 +87,10 @@
             </h4>
 
           </div>
-          
-          {{~#if item.flags.favtab}} 
-          {{~#if item.flags.favtab.isFavorite}} 
-            <div class="item-state-icon" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
+        
+          {{#if item.flags.tidy5e-sheet.favorite}}
+          <div class="item-state-icon" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
           {{/if}}
-          {{/if}}
-
 
           {{#if item.system.uses.per }}
           <div class="item-detail item-charges">
