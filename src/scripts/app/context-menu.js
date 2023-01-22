@@ -5,6 +5,20 @@ export const tidy5eContextMenu = function (html, sheet) {
 
   Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
     if ( effect.actor?.isOwner ) {
+      contextOptions = contextOptions.filter(function( obj ) {
+        return 
+          ["DND5E.ContextMenuActionEdit", 
+          "DND5E.ContextMenuActionDuplicate", 
+          "DND5E.ContextMenuActionDelete",
+          "DND5E.ContextMenuActionEnable",
+          "DND5E.ContextMenuActionDisable",
+          "DND5E.ContextMenuActionUnattune",
+          "DND5E.ContextMenuActionAttune",
+          "DND5E.ContextMenuActionUnequip",
+          "DND5E.ContextMenuActionEquip",
+          "DND5E.ContextMenuActionUnprepare", 
+          "DND5E.ContextMenuActionPrepare"].includes(obj?.name);
+      });
       if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
         contextOptions = [];
       } else {
@@ -16,6 +30,20 @@ export const tidy5eContextMenu = function (html, sheet) {
 
   Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
     if ( item.actor?.isOwner ) {
+      contextOptions = contextOptions.filter(function( obj ) {
+        return 
+          ["DND5E.ContextMenuActionEdit", 
+          "DND5E.ContextMenuActionDuplicate", 
+          "DND5E.ContextMenuActionDelete",
+          "DND5E.ContextMenuActionEnable",
+          "DND5E.ContextMenuActionDisable",
+          "DND5E.ContextMenuActionUnattune",
+          "DND5E.ContextMenuActionAttune",
+          "DND5E.ContextMenuActionUnequip",
+          "DND5E.ContextMenuActionEquip",
+          "DND5E.ContextMenuActionUnprepare", 
+          "DND5E.ContextMenuActionPrepare"].includes(obj?.name);
+      });
       if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
         if(item.type === "spell" && !item.actor.getFlag("tidy5e-sheet","tidy5e-sheet.spellbook-grid")) {
           contextOptions = [];

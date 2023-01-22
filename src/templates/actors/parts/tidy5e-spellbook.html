@@ -105,7 +105,7 @@
             <span class="spell-component{{#if tag}} {{abbr}}{{/if}}">{{abbr}}</span>
             {{/each}}
           </div>
-          <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}: {{item.labels.school}}"><span class="truncate">{{labels.school}}</span></div>
+          <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}: {{item.labels.school}}"><span class="truncate">{{item.labels.school}}</span></div>
           <div class="item-detail spell-target" title="{{localize 'DND5E.Target'}}: {{item.labels.target}}">
             {{#if item.labels.target}}
             {{item.labels.target}}
@@ -139,53 +139,7 @@
             </div>
             <article class="mod-roll-buttons"></article>
           </div>
-          <!--
-          {{#if @root.owner}}
-          <div class="activate-context-menu">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-          <div class="item-controls context-menu">
-            <hr class="context-divider">
-            {{#if @root.allowCantripToBePreparedOnContext }}
-              {{#if (ne item.system.preparation.mode 'always')}}
-              <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
-                {{#if (eq ctx.toggleClass 'active')}}
-                  <i class="fas fa-book"></i> <span class="control-label">
-                    {{localize 'TIDY5E.Unprepare'}}
-                  </span>
-                  {{else}}
-                  <i class="fas fa-book inactive"></i> <span class="control-label">
-                    {{localize 'TIDY5E.Prepare'}}
-                  </span>
-                  {{/if}}
-              </a>
-              {{/if}}
-            {{else}}
-              {{#if (and section.canPrepare (ne item.system.preparation.mode 'always'))}}
-                <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
-                  {{#if (eq ctx.toggleClass 'active')}}
-                    <i class="fas fa-book"></i> 
-                    <span class="control-label">{{localize 'TIDY5E.Unprepare'}}</span>
-                  {{else}}
-                    <i class="fas fa-book inactive"></i> 
-                    <span class="control-label">{{localize 'TIDY5E.Prepare'}}</span>
-                  {{/if}}
-                </a>
-              {{/if}}
-            {{/if}}
-            <hr class="context-divider">
-            <a class="item-control item-edit" title="{{localize 'TIDY5E.EditSpell'}}">
-              <i class="fas fa-pencil-alt"></i> 
-              <span class="control-label">{{localize 'TIDY5E.EditSpell'}}</span>
-            </a>
-            <hr class="context-divider">
-            <a class="item-control item-delete warning" title="{{localize 'TIDY5E.DeleteSpell'}}">
-              <i class="fas fa-trash"></i> 
-              <span class="control-label">{{localize 'TIDY5E.DeleteSpell'}}</span>
-            </a>
-          </div>
-          {{/if}}
-          -->
+
           {{#if @root.owner}}
           {{#if @root.classicControlsEnabled}}
           <div class="item-controls flexrow">

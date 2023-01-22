@@ -50,7 +50,7 @@
             {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
             <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
         </a>
-        
+
       </div>
     
       {{/if}}
@@ -162,54 +162,6 @@
             <article class="mod-roll-buttons"></article>
           </div>
 
-          <!--
-          {{#if @root.owner}}
-          <div class="activate-context-menu">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-          <div class="item-controls context-menu">
-            <hr class="context-divider">
-
-            {{#if item.attunement}}
-              <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-                <i class="fas fa-sun"></i> 
-                <span class="control-label">
-                  {{#if (eq item.system.attunement 2) }}
-                    {{localize "TIDY5E.Deattune"}}
-                  {{else}}
-                    {{localize "TIDY5E.Attune"}}
-                  {{/if}}
-                </span>
-              </a>
-            {{/if}}
-            {{#if ctx.canToggle}}
-              <a class="item-control item-toggle {{ctx.toggleClass}}" data-action="itemToggle" data-tooltip='{{ctx.toggleTitle}}'>
-                {{#if (eq ctx.toggleClass 'active')}}
-                  <i class="fas fa-user-alt"></i> 
-                  <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>
-                {{else}}
-                  <i class="fas fa-user-alt inactive"></i> 
-                  <span class="control-label">{{localize "TIDY5E.Equip"}}</span>
-                {{/if}}
-              </a>
-            {{/if}}
-
-            <hr class="context-divider">
-
-            {{#unless section.editableName}}
-              <a class="item-control item-edit" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
-                <i class="fas fa-pencil-alt"></i> 
-                <span class="control-label">{{localize "DND5E.ItemEdit"}}</span>
-              </a>
-            {{/unless}}
-            <hr class="context-divider">
-            <a class="item-control item-delete warning" data-action="itemDelete" data-tooltip="DND5E.ItemDelete">
-              <i class="fas fa-trash"></i> 
-              <span class="control-label">{{localize "DND5E.ItemDelete"}}</span>
-            </a>
-          </div>
-          {{/if}}
-          -->
           {{#if @root.owner}}
           {{#if @root.classicControlsEnabled}}
           <div class="item-controls flexrow">

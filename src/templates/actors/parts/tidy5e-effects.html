@@ -21,25 +21,6 @@
         </div>
         <div class="item-detail effect-source" title="{{effect.sourceName}}"><span>{{effect.sourceName}}</span></div>
         <div class="item-detail effect-duration">{{effect.duration.label}}</div>
-        <!--
-        {{#if @root.owner}}
-        <div class="activate-context-menu">
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-        <div class="item-controls effect-controls context-menu">
-          <a class="effect-control" data-action="toggle" title="{{localize 'DND5E.EffectToggle'}}">
-              <i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i> <span class="control-label">{{localize 'DND5E.EffectToggle'}}</span>
-          </a>
-          <a class="effect-control effect-edit" data-action="edit" title=" {{localize 'DND5E.EffectEdit'}}">
-              <i class="fas fas fa-pencil-alt"></i> <span class="control-label">{{localize 'DND5E.EffectEdit'}}</span>
-          </a>
-          <hr class="context-divider">
-          <a class="effect-control effect-delete warning" data-action="delete" title="{{localize 'DND5E.EffectDelete'}}">
-              <i class="fas fa-trash"></i> <span class="control-label">{{localize 'DND5E.EffectDelete'}}</span>
-          </a>
-        </div>
-        {{/if}}
-        -->
         {{#if @root.owner}}
         {{#if @root.classicControlsEnabled}}
         <div class="item-controls effect-controls flexrow">

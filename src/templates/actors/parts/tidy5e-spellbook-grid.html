@@ -55,7 +55,8 @@
           <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
             <p class="info-card-name">{{item.name}}</p>
             <div class="info-card-states">
-              <span><!-- <i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b>  -->{{labels.school}}</span>
+              <span>{{labels.school}}</span>
+              <!-- <span><i class="fas fa-hat-wizard"></i><b>{{localize 'DND5E.SpellSchool'}}:</b> {{item.labels.school}}</span> -->
               {{#if @root.owner}}
               {{#if section.canPrepare}}
                 <span>{{ctx.toggleTitle}}</span>
