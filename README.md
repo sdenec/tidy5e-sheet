@@ -23,7 +23,7 @@ To install this module manually:
 - Update integration for [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
 - The module setting _"Use classic item controls in list view."_ when enabled it shows the actions correctly but the section headers are "not synchronized at the column level" should be fixed with CSS ...
   ![img](https://i.imgur.com/UoIz6Y1.png)
-- The favorite mechanism should be integrated with the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) for synchronization between standard and tidy sheet
+- The current template for favorite items is to complicated ... we should be apply the same template of the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
 
 ## Features
 
@@ -71,6 +71,9 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 - **[Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)** : [???](https://github.com/MrEnigmamgine/spell-class-filter-for-5e/blob/master/LICENSE)
 - **[Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)** : [???](https://github.com/thatlonelybugbear/spell-class-filter-for-5e/blob/master/LICENSE)
 - **[Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)** : [???](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e/blob/master/LICENSE)
+- **[Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items)**: [MIT](https://gitlab.com/mxzf/favorite-items/-/blob/master/LICENSE)
+- **[Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions)**: [MIT](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions/blob/main/LICENSE)
+- **[Character Actions 5e (fork)](https://github.com/p4535992/foundryvtt-character-actions-dnd5e)** : [MIT](https://github.com/p4535992/foundryvtt-character-actions-dnd5e/blob/master/LICENSE)
 
 This package, written by sdenec, is under an [Creative Commons Attribution 4.0 International License](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
@@ -80,5 +83,7 @@ This package, written by sdenec, is under an [Creative Commons Attribution 4.0 I
 - [MrEnigmamgine](https://github.com/MrEnigmamgine) for the module [Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)
 - [thatlonelybugbear](https://github.com/thatlonelybugbear) for the module [Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)
 - [Rayuaz](https://github.com/Rayuaz) for the module [[Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)
-
+- [mxzf](https://gitlab.com/mxzf) for the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
+- [ElfFriend-DnD](https://github.com/ElfFriend-DnD/) for the module [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
+- [p4535992](https://github.com/p4535992) for the module [Character Actions 5e (fork)](https://github.com/p4535992/foundryvtt-character-actions-dnd5e) 
 
