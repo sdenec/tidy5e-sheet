@@ -18,6 +18,11 @@ To install this module manually:
 4. Click 'Install' and wait for installation to complete
 5. Don't forget to enable the module in game using the "Manage Module" button
 
+# Known issue
+
+- Update integration for [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
+- if the classic controls when enabled with the settings form _"Use classic item controls in list view."_ it shows the actions correctly but the section headers are "not synchronized at the column level" should be fixed with CSS ...
+
 ## Features
 
 ### item controls
