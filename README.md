@@ -24,24 +24,66 @@ To install this module manually:
 - The module setting _"Use classic item controls in list view."_ when enabled it shows the actions correctly but the section headers are "not synchronized at the column level" should be fixed with CSS ...
   ![img](https://i.imgur.com/UoIz6Y1.png)
 - The current template for favorite items is to complicated ... we should be apply the same template of the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
+- Integration of a  checkbox upcast (ty to mxzf on discord ) on the tidy sheet for the ability dialog option.
 
 ## Features
 
-### item controls
+### Feature: Item controls
+
 All item controls are hidden by default - you can use right mouse click to show a context menu for all available item interaction: equip/unequip, attuned/attunement required, prepared/unprepared, add/remove favorite, delete. If you don't want the context menu - that was created to conserve space and was the only way to make the option avalable in the grid view - you can bring back the classic item controls as a user setting. The inline controls will only show for PC sheets and the item/spell inventory in list layout. For every other view or sheet it is either impracticable or too spacious.
 
-### sheet lock
+### Feature: Sheet lock
+
 To be able to add or delete items you'll have to "unlock" the sheet with the lock icon in the navigation bar.
 The lock button in the "locked" position also hides any section that has no content to clean up the sheet a little.
 
-### grid/list view
+### Feature: Grid/List view
+
 You can toggle item and spell inventorys into grid or list layout. List is the default view. Grid offers a more condensed overview of your icons and spell with focus on icon art. Youll still able to see the main infos like quantity, charges, equipment/preparation/attunement and if an item is magical. Every other info will show in the info box to the left when you hover over an item.
 
-### Better Spell Level Buttons for DnD 5e
+### Feature: Better Spell Level Buttons for DnD 5e
 
-This is an embedded version of Rayuaz's module [Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e), replaces the spell level select dropdown menu with buttons.
+This is an embedded version of the module [Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e), replaces the spell level select dropdown menu with buttons.
 
-### settings
+![](/doc/Spell_Level_Buttons_for_DnD_5e.png)
+
+### Feature: Multiclass Spellbook Filter
+
+This is an embedded version of the module [Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e), it adds options for players to organize their spellbook by which class the spell is for. Useful for multiclass characters or characters with the magic initiate feat.
+
+To get the filter to work, you will need to populate the data in each spell.
+
+![](/doc/Multiclass_Spellbook_Filter_1.gif)
+
+![](/doc/Multiclass_Spellbook_Filter_2.png)
+
+All settings for this module are found in Foundry's settings menu under the module settings tab.
+
+Currently all of the settings that are available are client-side settings. This means that what you change here will not have an effect on any other computer or player.
+
+#### Using the filter
+
+This module relies on populating data that doesn't seem to exist by default: "Is this spell a {class} spell for you?" So the first step is going to be going through each spell on your sheet and selecting the spell's class in the itemsheet's details tab.
+
+Note: Your selection does not change which ability modifier your spell uses. That is configured elsewhere in the sheet.
+
+Afterwards, if the proper setting is enabled, you will see a dropdown menu at the top of the spellbook with the rest of the filters. Selecting an one of the classes will hide all of the spells that don't match your selection.
+
+#### Icon Replacement
+
+Some players find it helpful to differentiate spells by class even when the list is not filtered. To help with that this module provides the option to 'cover' the spell's icon in the spellbook with the icon of their source class.
+
+To enable this behavior enable it in the module's settings. This setting is disabled by default.
+
+Note: This feature does not change any data or other behaviors. The spell's icon will still be what is displayed in chat and in other sections of the sheet.
+
+### Feature: Lazy Money/Hp/Experience
+
+This is an embedded version of the module [Lazy Money](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e), Easily add or remove currency, Hp and Experience with automatic conversion and no overdraft.
+
+![](/doc/Lazy_Money_1.gif)
+
+## Settings
 there are plenty of settings from dark mode to round/square portraits, health visualization and user specific options.
 I tried to make each settings description as clear as possible so you should be able to carefully read an pick what you want.
 
@@ -82,7 +124,7 @@ This package, written by sdenec, is under an [Creative Commons Attribution 4.0 I
 - [p4535992](https://github.com/p4535992) for the module [Lazy Money](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e)
 - [MrEnigmamgine](https://github.com/MrEnigmamgine) for the module [Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)
 - [thatlonelybugbear](https://github.com/thatlonelybugbear) for the module [Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)
-- [Rayuaz](https://github.com/Rayuaz) for the module [[Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)
+- [Rayuaz](https://github.com/Rayuaz) for the module [Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)
 - [mxzf](https://gitlab.com/mxzf) for the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
 - [ElfFriend-DnD](https://github.com/ElfFriend-DnD/) for the module [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
 - [p4535992](https://github.com/p4535992) for the module [Character Actions 5e (fork)](https://github.com/p4535992/foundryvtt-character-actions-dnd5e) 

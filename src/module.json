@@ -1,9 +1,8 @@
 {
   "id": "tidy5e-sheet",
-  "name": "tidy5e-sheet",
   "title": "Tidy5e Sheet",
   "description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "authors": [
     {
       "name": "sednec#3813"
@@ -85,8 +84,8 @@
     }
   ],
   "url": "https://github.com/p4535992/tidy5e-sheet",
-  "manifest": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.3/module.json",
-  "download": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.3/module.zip",
+  "manifest": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.4/module.json",
+  "download": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.4/module.zip",
   "relationships": {
     "systems": [
       {
@@ -116,8 +115,8 @@
 				"reason": "Redundancy of features you can disable 'Lazy Money' module if you want"
 			},
       {
-				"id": "spell-level-buttons-for-dnd5e",
-				"reason": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
+				"id": "spell-class-filter-for-5e",
+				"reason": "Redundancy of features you can disable 'Multiclass Spellbook Filter"
 			}
 		]
   }

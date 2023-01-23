@@ -3,12 +3,47 @@ export function migrateFor21X(app, html, data){
     return migrateActorFor21X(app.object);
 }
 export function migrateActorFor21X(actor){
+    actor.update({
+        "flags.tidy5e-sheet":{
+            gender:actor.system.details?.gender ?? "",
+            age:actor.system.details?.age ?? "",
+            height:actor.system.details?.height ?? "",
+            weight:actor.system.details?.weight ?? "",
+            eyes:actor.system.details?.eyes ?? "",
+            skin:actor.system.details?.skin ?? "",
+            hair:actor.system.details?.hair ?? "",
+            notes: {
+                "value": actor.system.details?.notes?.value  ?? ""
+            },
+            notes1:{
+                "name": actor.system.details?.notes1name ?? "",
+                "value": actor.system.details?.notes1  ?? ""
+            },
+            notes2:{
+                "name": actor.system.details?.notes2name ?? "",
+                "value": actor.system.details?.notes2  ?? ""
+            },
+            notes3:{
+                "name": actor.system.details?.notes3name  ?? "",
+                "value": actor.system.details?.notes3  ?? ""
+            },
+            notes4:{
+                "name": actor.system.details?.notes4name  ?? "",
+                "value": actor.system.details?.notes4  ?? ""
+            }
+        }
+    });
+
+    /*
     if(!isEmptyObject(actor?.system?.details?.notes)) {
         if(!actor.flags) {
             actor.flags = {};
         }
         if(isEmptyObject(actor.flags["tidy5e-sheet"]?.notes)) {
-            actor.setFlag("tidy5e-sheet", "notes", actor?.system.details.notes);
+            actor.setFlag("tidy5e-sheet", "notes", {});
+        }
+        if(isEmptyObject(actor.flags["tidy5e-sheet"]?.notes?.value)) {
+            actor.setFlag("tidy5e-sheet", "notes", actor?.system.details.notes?.value ?? "");
         }
     }
 
@@ -17,7 +52,7 @@ export function migrateActorFor21X(actor){
             actor.flags = {};
         }
         if(isEmptyObject(actor.flags["tidy5e-sheet"]?.notes1)) {
-            actor.setFlag("tidy5e-sheet", "notes1", actor?.system.details.notes1);
+            actor.setFlag("tidy5e-sheet", "notes1", {});
         }
     }
 
@@ -26,7 +61,7 @@ export function migrateActorFor21X(actor){
             actor.flags = {};
         }
         if(isEmptyObject(actor.flags["tidy5e-sheet"]?.notes2)) {
-            actor.setFlag("tidy5e-sheet", "notes2", actor?.system.details.notes2);
+            actor.setFlag("tidy5e-sheet", "notes2", {});
         }
     }
 
@@ -35,7 +70,7 @@ export function migrateActorFor21X(actor){
             actor.flags = {};
         }
         if(isEmptyObject(actor.flags["tidy5e-sheet"]?.notes3)) {
-            actor.setFlag("tidy5e-sheet", "notes3", actor?.system.details.notes3);
+            actor.setFlag("tidy5e-sheet", "notes3", {});
         }
     }
 
@@ -44,7 +79,7 @@ export function migrateActorFor21X(actor){
             actor.flags = {};
         }
         if(isEmptyObject(actor.flags["tidy5e-sheet"]?.notes4)) {
-            actor.setFlag("tidy5e-sheet", "notes4", actor?.system.details.notes4);
+            actor.setFlag("tidy5e-sheet", "notes4", {});
         }
     }
 
@@ -56,6 +91,7 @@ export function migrateActorFor21X(actor){
         }
         const notes1 = actor.getFlag("tidy5e-sheet", "notes1");
         notes1.name = actor?.system?.details?.notes1name;
+        notes1.value = actor?.system?.details?.notes1;
         actor.setFlag("tidy5e-sheet", "notes1", notes1);
     }
 
@@ -65,6 +101,7 @@ export function migrateActorFor21X(actor){
         }
         const notes2 = actor.getFlag("tidy5e-sheet", "notes2");
         notes2.name = actor?.system?.details?.notes2name;
+        notes2.value = actor?.system?.details?.notes2;
         actor.setFlag("tidy5e-sheet", "notes2", notes2);
     }
 
@@ -74,6 +111,7 @@ export function migrateActorFor21X(actor){
         }
         const notes3 = actor.getFlag("tidy5e-sheet", "notes3");
         notes3.name = actor?.system?.details?.notes3name;
+        notes3.value = actor?.system?.details?.notes3;
         actor.setFlag("tidy5e-sheet", "notes3", notes3);
     }
 
@@ -83,6 +121,7 @@ export function migrateActorFor21X(actor){
         }
         const notes4 = actor.getFlag("tidy5e-sheet", "notes4");
         notes4.name = actor?.system?.details?.notes4name;
+        notes4.value = actor?.system?.details?.notes4;
         actor.setFlag("tidy5e-sheet", "notes4", notes4);
     }
 
@@ -148,6 +187,7 @@ export function migrateActorFor21X(actor){
             actor.setFlag("tidy5e-sheet", "hair", actor?.system.details.hair);
         }
     }
+    */
 }
 
 function isEmptyObject(obj) {

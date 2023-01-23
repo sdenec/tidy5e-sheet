@@ -16,7 +16,7 @@ Thank you very much!
 
 ## Version History
 
-### Version 0.8.0
+### Version 0.8.0-1-2-3-4
 
 - Compatibility with dnd5e 2.1.X
 - Double check PR https://github.com/sdenec/tidy5e-sheet/pull/630
