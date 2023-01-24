@@ -5239,8 +5239,8 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 }
 .tidy5e.sheet.item .sheet-body .item-properties .form-group input {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50px;
-          flex: 0 0 50px;
+      -ms-flex: 0 0 40px;
+          flex: 0 0 40px;
   text-align: right;
   background: none;
   height: 16px;

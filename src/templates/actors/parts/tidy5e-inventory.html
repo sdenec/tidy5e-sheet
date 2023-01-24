@@ -193,11 +193,16 @@
             {{/if}}
             {{#unless section.editableName}}
             <a class="item-control item-edit" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
-                <i class="fas fa-edit"></i>
+                <i class="fas fa-edit fa-fw"></i>
             </a>
+            <!--TODO
+            <a class="item-control item-duplicate" data-action="itemDuplicate" title="{{localize 'DND5E.ContextMenuActionDuplicate'}}">
+              <i class="fas fa-copy fa-fw"></i>
+            </a>
+            -->
             {{/unless}}
             <a class="item-control item-delete" data-action="itemDelete" data-tooltip="DND5E.ItemDelete">
-                <i class="fas fa-trash"></i>
+                <i class="fas fa-trash fa-fw"></i>
             </a>
           </div>
           {{/if}}
