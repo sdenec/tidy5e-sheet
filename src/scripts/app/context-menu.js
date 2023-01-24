@@ -353,13 +353,15 @@ const _getItemContextOptions = function(item) {
   );
 
   if(game.modules.get("lets-trade-5e")?.active) {
-    options.push({
-        name: `${game.i18n.localize("LetsTrade5E.Send")}`,
-        icon: `<i class="fas fa-balance-scale-right"></i>`,
-        callback: ()=>{
-          game.modules.get("lets-trade-5e").api.openItemTrade(item.actor?.id, item.id);
-        }
-    });
+    if(!['feat','background','class','subclass','spell'].includes(item.type)) {
+      options.push({
+          name: `${game.i18n.localize("LetsTrade5E.Send")}`,
+          icon: `<i class="fas fa-balance-scale-right"></i>`,
+          callback: ()=>{
+            game.modules.get("lets-trade-5e").api.openItemTrade(item.actor?.id, item.id);
+          }
+      });
+    }
   }
 
   /*
