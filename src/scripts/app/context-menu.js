@@ -7,9 +7,9 @@ export const tidy5eContextMenu = function (html, sheet) {
 
   Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
     if ( effect.actor?.isOwner ) {
-      contextOptions = contextOptions.filter(function( obj ) {
-        return 
-          ["DND5E.ContextMenuActionEdit", 
+      contextOptions = contextOptions.filter(( obj )=> { 
+          //check for default options and remove them.
+          return !["DND5E.ContextMenuActionEdit", 
           "DND5E.ContextMenuActionDuplicate", 
           "DND5E.ContextMenuActionDelete",
           "DND5E.ContextMenuActionEnable",
@@ -24,7 +24,8 @@ export const tidy5eContextMenu = function (html, sheet) {
       if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
         contextOptions = [];
       } else {
-        contextOptions = _getActiveEffectContextOptions(effect);
+        let tidy5eContextOptions = _getActiveEffectContextOptions(effect);
+        contextOptions=tidy5eContextOptions.concat(contextOptions);
       }
       ui.context.menuItems = contextOptions;
     }
@@ -32,9 +33,9 @@ export const tidy5eContextMenu = function (html, sheet) {
 
   Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
     if ( item.actor?.isOwner ) {
-      contextOptions = contextOptions.filter(function( obj ) {
-        return 
-          ["DND5E.ContextMenuActionEdit", 
+      contextOptions = contextOptions.filter(( obj )=> { 
+          //check for default options and remove them.
+          return !["DND5E.ContextMenuActionEdit", 
           "DND5E.ContextMenuActionDuplicate", 
           "DND5E.ContextMenuActionDelete",
           "DND5E.ContextMenuActionEnable",
@@ -52,10 +53,14 @@ export const tidy5eContextMenu = function (html, sheet) {
         } else if(item.type !== "spell" && !item.actor.getFlag("tidy5e-sheet","inventory-grid")) {
           contextOptions = [];
         } else {
-          contextOptions = _getItemContextOptions(item);
+          //merge new options with tidy5e options
+          let tidy5eContextOptions = _getItemContextOptions(item);
+          contextOptions=tidy5eContextOptions.concat(contextOptions);
         }
       } else {
-        contextOptions = _getItemContextOptions(item);
+        //merge new options with tidy5e options
+        let tidy5eContextOptions = _getItemContextOptions(item);
+        contextOptions=tidy5eContextOptions.concat(contextOptions);
       }
       ui.context.menuItems = contextOptions;
     }
@@ -250,7 +255,7 @@ const _getItemContextOptions = function(item) {
     //   })
     // });
     options.push({
-      name: isAttuned ? "DND5E.ContextMenuActionUnattune" : "DND5E.ContextMenuActionAttune",
+      name: isAttuned ? "TIDY5E.Deattune" : "TIDY5E.Attune",
       icon: "<i class='fas fa-sun fa-fw'></i>",
       callback: () => item.update({
         "system.attunement": CONFIG.DND5E.attunementTypes[isAttuned ? "REQUIRED" : "ATTUNED"]
@@ -267,8 +272,8 @@ const _getItemContextOptions = function(item) {
     // });
     const isEquipped = item.system.equipped;
     options.push({
-      name: isEquipped? "DND5E.ContextMenuActionUnequip" : "DND5E.ContextMenuActionEquip",
-      icon:  isEquipped ? "<i class='fas fa-user-alt fa-fw'></i> " : "<i class='fas fa-user-alt fa-fw'></i> ",
+      name: isEquipped? "TIDY5E.Unequip" : "TIDY5E.Equip",
+      icon:  isEquipped ? "<i class='fas fa-user-alt fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i> " : "<i class='fas fa-user-alt fa-fw'></i> ",
       callback: () => item.update({"system.equipped": !isEquipped})
     });
   }
@@ -347,6 +352,15 @@ const _getItemContextOptions = function(item) {
     }
   );
 
+  if(game.modules.get("lets-trade-5e")?.active) {
+    options.push({
+        name: `${game.i18n.localize("LetsTrade5E.Send")}`,
+        icon: `<i class="fas fa-balance-scale-right"></i>`,
+        callback: ()=>{
+          game.modules.get("lets-trade-5e").api.openItemTrade(item.actor?.id, item.id);
+        }
+    });
+  }
 
   /*
   // Standard Options
