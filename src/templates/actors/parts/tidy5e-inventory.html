@@ -107,7 +107,7 @@
             {{/each}}
           {{else}}
             {{#if @root.isCharacter}}
-            <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.totalWeight }} {{ @root.weightUnit }}">
+            <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.system.weight }} {{ @root.weightUnit }}">
               {{#if ctx.totalWeight}}
               <div>
                 {{ ctx.totalWeight }}
@@ -147,10 +147,10 @@
             </div>
             {{/if}}
             <div class="info-card-amount">
-              <!-- {{#if item.totalWeight}} {{/if}} -->
-              <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
+              <!-- {{#if item.system.weight }} {{/if}} -->
+              <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.system.weight }} {{ @root.weightUnit }}</span>
               <!-- {{#if item.system.quantity}} {{/if}} -->
-              <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.system.quantity}} &times; {{item.system.price}} {{localize 'DND5E.CurrencyAbbrGP'}}</span>
+              <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.system.quantity}} &times; {{item.system.price.value}} {{item.system.price.denomination}}</span>
             </div>
             <div class="description-wrap">
               <div class="info-card-description">
