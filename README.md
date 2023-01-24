@@ -26,6 +26,48 @@ To install this module manually:
 - The current template for favorite items is to complicated ... we should be apply the same template of the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
 - Integration of a  checkbox upcast (ty to mxzf on discord ) on the tidy sheet for the ability dialog option.
 
+## Macro from migrate from 2.0.3 to 2.1.X
+
+FOR ANYONE STILL HAVING THE 2.0.3 BACKUP HERE THE "MIGRATION MACRO" FOR 2.1.X:
+
+DO A BACKUP BEFORE LAUNCH THIS JUST TO BE SAFE
+
+```
+//Update old tidy5e data
+game.actors.updateAll((actor)=>{
+    return {
+        "flags.tidy5e-sheet":{
+            gender:actor.system.details?.gender ?? "",
+            age:actor.system.details?.age ?? "",
+            height:actor.system.details?.height ?? "",
+            weight:actor.system.details?.weight ?? "",
+            eyes:actor.system.details?.eyes ?? "",
+            skin:actor.system.details?.skin ?? "",
+            hair:actor.system.details?.hair ?? "",
+	    notes: {
+			 "value": actor.system.details?.notes?.value  ?? ""
+	    },
+            notes1:{
+			"name": actor.system.details?.notes1name ?? "",
+			"value": actor.system.details?.notes1?.value  ?? ""
+	    },
+	    notes2:{
+			"name": actor.system.details?.notes2name ?? "",
+			"value": actor.system.details?.notes2?.value  ?? ""
+	   },
+	   notes3:{
+			"name": actor.system.details?.notes3name  ?? "",
+			"value": actor.system.details?.notes3?.value  ?? ""
+	    },
+            notes4:{
+			"name": actor.system.details?.notes4name  ?? "",
+			"value": actor.system.details?.notes4?.value  ?? ""
+	    }
+        }
+    }
+});
+```
+
 ## Features
 
 ### Feature: Item controls
