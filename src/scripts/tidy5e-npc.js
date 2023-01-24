@@ -263,7 +263,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
 
     let actor = this.actor;
 
-    tidy5eListeners(html, actor);
+    tidy5eListeners(html, actor, this);
     tidy5eContextMenu(html, this);
     tidy5eShowActorArt(html, actor);
     if (game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
@@ -392,6 +392,23 @@ export default class Tidy5eNPC extends dnd5e.applications.actor
     // Short and Long Rest
     html.find(".short-rest").click(this._onShortRest.bind(this));
     html.find(".long-rest").click(this._onLongRest.bind(this));
+  }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Handle duplicate an existing Item entry from the Advancement.
+   * @param {Event} event        The originating click event.
+   * @returns {Promise<Item5e>}  The updated parent Item after the application re-renders.
+   * @protected
+   */
+  async _onItemDuplicate(event) {
+    event.preventDefault();
+    // const uuidToDuplicate = event.currentTarget.closest("[data-item-uuid]")?.dataset.itemUuid;
+    const uuidToDuplicate = event.currentTarget.closest("[data-item-id]")?.dataset.itemId;
+    if ( !uuidToDuplicate ) return;
+    const item = this.actor.items.get(uuidToDuplicate);
+    item.clone({name: game.i18n.format("DOCUMENT.CopyOf", {name: item.name})}, {save: true})
   }
 
   /* -------------------------------------------- */

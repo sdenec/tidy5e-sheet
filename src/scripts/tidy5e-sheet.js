@@ -124,7 +124,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor
 
     let actor = this.actor;
 
-    tidy5eListeners(html, actor);
+    tidy5eListeners(html, actor, this);
     tidy5eContextMenu(html, this);
     tidy5eSearchFilter(html, actor);
     tidy5eShowActorArt(html, actor);
@@ -235,6 +235,25 @@ export class Tidy5eSheet extends dnd5e.applications.actor
       }
     });
   }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Handle duplicate an existing Item entry from the Advancement.
+   * @param {Event} event        The originating click event.
+   * @returns {Promise<Item5e>}  The updated parent Item after the application re-renders.
+   * @protected
+   */
+  async _onItemDuplicate(event) {
+    event.preventDefault();
+    // const uuidToDuplicate = event.currentTarget.closest("[data-item-uuid]")?.dataset.itemUuid;
+    const uuidToDuplicate = event.currentTarget.closest("[data-item-id]")?.dataset.itemId;
+    if ( !uuidToDuplicate ) return;
+    const item = this.actor.items.get(uuidToDuplicate);
+    item.clone({name: game.i18n.format("DOCUMENT.CopyOf", {name: item.name})}, {save: true})
+  }
+
+  /* -------------------------------------------- */
 
   // add actions module
   async _renderInner(...args) {
