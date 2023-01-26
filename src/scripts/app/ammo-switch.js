@@ -6,7 +6,7 @@ export const tidy5eAmmoSwitch = function (html, actor) {
     if (token)
       actor = actor
         .getActiveTokens(false, true)
-        .find((t) => t.data._id === token.id).actor; // get synthetic actor
+        .find((t) => t._id === token.id).actor; // get synthetic actor
     const item = actor.items.get(itemId);
     const equippedOnly = game.settings.get("tidy5e-sheet", "ammoEquippedOnly");
     const ammoItems = actor.items.filter(
@@ -40,7 +40,7 @@ export const tidy5eAmmoSwitch = function (html, actor) {
       if (token)
         actor = actor
           .getActiveTokens(false, true)
-          .find((t) => t.data._id === token).actor; // get synthetic actor
+          .find((t) => t._id === token).actor; // get synthetic actor
       const item = actor.items.get(selector.attr("data-item"));
       const ammo = actor.items.get(val);
       item.update({

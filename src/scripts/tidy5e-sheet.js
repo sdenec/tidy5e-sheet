@@ -345,7 +345,7 @@ async function toggleTraitsList(app, html, data) {
 // Check Death Save Status
 async function checkDeathSaveStatus(app, html, data) {
   if (data.editable) {
-    // var actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+    // var actor = game.actors.entities.find(a => a._id === data.actor._id);
     let actor = app.actor;
     var currentHealth = actor.system.attributes.hp.value;
     var deathSaveSuccess = actor.system.attributes.death.success;
@@ -502,7 +502,7 @@ async function editProtection(app, html, data) {
 async function addClassList(app, html, data) {
   if (data.editable) {
     if (!game.settings.get("tidy5e-sheet", "classListDisabled")) {
-      // let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+      // let actor = game.actors.entities.find(a => a_id === data.actor._id);
       let actor = app.actor;
       let classList = [];
       let items = data.actor.items;
@@ -751,7 +751,7 @@ function hideStandardEncumbranceBar(app, html, data) {
 
 // Manage Sheet Options
 async function setSheetClasses(app, html, data) {
-  // let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
+  // let actor = game.actors.entities.find(a => a._id === data.actor._id);
   let actor = app.actor;
   if (!game.settings.get("tidy5e-sheet", "playerNameEnabled")) {
     html.find(".tidy5e-sheet #playerName").remove();
