@@ -28,11 +28,12 @@ To install this module manually:
 
 ## Macro from migrate from 2.0.3 to 2.1.X
 
-FOR ANYONE STILL HAVING THE 2.0.3 BACKUP HERE THE "MIGRATION MACRO" FOR 2.1.X:
-
-DO A BACKUP BEFORE LAUNCH THIS JUST TO BE SAFE
-
 ```
+// IMPORTANT NOTES: 
+// 1) THIS MACRO MUST BE LAUNCHED IN A 2.0.3 WORLDS IF YOU DON'T HAVVE A BACKUP SADLY YOU LOST THE JOURNAL DATA
+// 2) THIS MACRO MUST NOT BE LAUNCHED IN A 2.1.X WORLD
+// 3) BEFORE LAUNCH THIS MACRO DO A BACKUP OF THE CURRENT WORLD JUST TO BE SAFE
+
 //Update old tidy5e CHARACTER data
 game.actors.updateAll((actor)=>{
     return {
@@ -45,23 +46,23 @@ game.actors.updateAll((actor)=>{
             skin:actor.system.details?.skin ?? "",
             hair:actor.system.details?.hair ?? "",
 	    notes: {
-			 "value": actor.system.details?.notes?.value  ?? ""
+			 "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
 	    },
             notes1:{
-			"name": actor.system.details?.notes1name ?? "",
-			"value": actor.system.details?.notes1?.value  ?? ""
+			"name": actor.system.details?.notes1name ?? actor.flags["tidy5e-sheet"]?.notes1?.name ?? "",
+			"value": actor.system.details?.notes1?.value ?? actor.flags["tidy5e-sheet"]?.notes1?.value ?? ""
 	    },
 	    notes2:{
-			"name": actor.system.details?.notes2name ?? "",
-			"value": actor.system.details?.notes2?.value  ?? ""
+			"name": actor.system.details?.notes2name ?? actor.flags["tidy5e-sheet"]?.notes2?.name ?? "",
+			"value": actor.system.details?.notes2?.value  ?? actor.flags["tidy5e-sheet"]?.notes2?.value ?? ""
 	   },
 	   notes3:{
-			"name": actor.system.details?.notes3name  ?? "",
-			"value": actor.system.details?.notes3?.value  ?? ""
+			"name": actor.system.details?.notes3name ?? actor.flags["tidy5e-sheet"]?.notes3?.name ?? "",
+			"value": actor.system.details?.notes3?.value ?? actor.flags["tidy5e-sheet"]?.notes3?.value ?? ""
 	    },
             notes4:{
-			"name": actor.system.details?.notes4name  ?? "",
-			"value": actor.system.details?.notes4?.value  ?? ""
+			"name": actor.system.details?.notes4name ?? actor.flags["tidy5e-sheet"]?.notes4?.name ?? "",
+			"value": actor.system.details?.notes4?.value ?? actor.flags["tidy5e-sheet"]?.notes4?.value ?? ""
 	    }
         }
     }
@@ -73,10 +74,10 @@ game.actors.updateAll((actor)=>{
 game.actors.updateAll((actor)=>{
     return {
         "flags.tidy5e-sheet":{
-            trait:actor.system.details?.trait ?? "",
-            ideal:actor.system.details?.ideal ?? "",
-            bond:actor.system.details?.bond ?? "",
-            flaw:actor.system.details?.flaw ?? ""
+            trait:actor.system.details?.trait ?? actor.flags["tidy5e-sheet"]?.trait ?? "",
+            ideal:actor.system.details?.ideal ?? actor.flags["tidy5e-sheet"]?.ideal ?? "",
+            bond:actor.system.details?.bond ?? actor.flags["tidy5e-sheet"]?.bond ?? "",
+            flaw:actor.system.details?.flaw ?? actor.flags["tidy5e-sheet"]?.flaw ?? ""
         }
     }
 }, (actor)=>{
