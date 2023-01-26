@@ -33,7 +33,7 @@ FOR ANYONE STILL HAVING THE 2.0.3 BACKUP HERE THE "MIGRATION MACRO" FOR 2.1.X:
 DO A BACKUP BEFORE LAUNCH THIS JUST TO BE SAFE
 
 ```
-//Update old tidy5e data
+//Update old tidy5e CHARACTER data
 game.actors.updateAll((actor)=>{
     return {
         "flags.tidy5e-sheet":{
@@ -65,6 +65,22 @@ game.actors.updateAll((actor)=>{
 	    }
         }
     }
+}, (actor)=>{
+	return actor.type === 'character';
+});
+
+//Update old tidy5e NPC Traits data
+game.actors.updateAll((actor)=>{
+    return {
+        "flags.tidy5e-sheet":{
+            trait:actor.system.details?.trait ?? "",
+            ideal:actor.system.details?.ideal ?? "",
+            bond:actor.system.details?.bond ?? "",
+            flaw:actor.system.details?.flaw ?? ""
+        }
+    }
+}, (actor)=>{
+	return actor.type === 'npc';
 });
 ```
 
