@@ -22,7 +22,9 @@ To install this module manually:
 
 - Update integration for [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
 - The module setting _"Use classic item controls in list view."_ when enabled it shows the actions correctly but the section headers are "not synchronized at the column level" should be fixed with CSS ...
+- 
   ![img](https://i.imgur.com/UoIz6Y1.png)
+  
 - The current template for favorite items is to complicated ... we should be apply the same template of the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
 - Integration of a  checkbox upcast (ty to mxzf on discord ) on the tidy sheet for the ability dialog option.
 
@@ -38,13 +40,13 @@ To install this module manually:
 game.actors.updateAll((actor)=>{
     return {
         "flags.tidy5e-sheet":{
-            gender:actor.system.details?.gender ?? "",
-            age:actor.system.details?.age ?? "",
-            height:actor.system.details?.height ?? "",
-            weight:actor.system.details?.weight ?? "",
-            eyes:actor.system.details?.eyes ?? "",
-            skin:actor.system.details?.skin ?? "",
-            hair:actor.system.details?.hair ?? "",
+            gender:actor.system.details?.gender ?? actor.flags["tidy5e-sheet"]?.gender ?? "",
+            age:actor.system.details?.age ?? actor.flags["tidy5e-sheet"]?.age ?? "",
+            height:actor.system.details?.height ?? actor.flags["tidy5e-sheet"]?.height ?? "",
+            weight:actor.system.details?.weight ?? actor.flags["tidy5e-sheet"]?.weight ?? "",
+            eyes:actor.system.details?.eyes ?? actor.flags["tidy5e-sheet"]?.eyes ?? "",
+            skin:actor.system.details?.skin ?? actor.flags["tidy5e-sheet"]?.skin ?? "",
+            hair:actor.system.details?.hair ?? actor.flags["tidy5e-sheet"]?.hair ?? "",
 	    notes: {
 			 "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
 	    },
