@@ -22,7 +22,7 @@
 		<i class="fas fa-sun"></i>
 	</div>
 	{{/if}} {{#if item.isItem}}
-	<div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
+	<div class="item-detail item-uses" title="{{localize 'DND5E.Uses'}}">
 		{{#if item.system.uses.max}} <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}"
 		{{#if item.editable}}{{else}}disabled{{/if}}> / <input class="uses-max" data-path="system.uses.max" type="text"
 		value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}> {{else}} {{#if item.editable}}

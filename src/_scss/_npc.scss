@@ -407,13 +407,15 @@
 		}
 
 		.item-charges,
+		.item-uses,
 		.spell-action,
 		.spell-target,
 		.spell-school {
 			flex: 0 0 90px;
 		}
 
-		.item-charges {
+		.item-charges,
+		.item-uses {
 			flex: 0 0 50px;
 		}
 

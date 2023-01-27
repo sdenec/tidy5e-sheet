@@ -137,6 +137,11 @@ All settings for this module are found in Foundry's settings menu under the modu
 
 Currently all of the settings that are available are client-side settings. This means that what you change here will not have an effect on any other computer or player.
 
+### Feature: All your favorite items are synced between modules
+
+The favorite system is syncronized with the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) and [Favorite tab](https://github.com/syl3r86/favtab)
+
+
 #### Using the filter
 
 This module relies on populating data that doesn't seem to exist by default: "Is this spell a {class} spell for you?" So the first step is going to be going through each spell on your sheet and selecting the spell's class in the itemsheet's details tab.

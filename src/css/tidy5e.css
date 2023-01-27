@@ -2996,7 +2996,8 @@
 	align-items: center;
 	background: var(--t5e-faintest-color);
 }
-.tidy5e.sheet.actor .items-list .item .item-charges a.addCharges {
+.tidy5e.sheet.actor .items-list .item .item-charges a.addCharges,
+.tidy5e.sheet.actor .items-list .item .item-uses a.addCharges {
 	display: block;
 	width: 100%;
 	text-align: center;
@@ -3004,12 +3005,14 @@
 	-webkit-transition: opacity 0.3s ease;
 	transition: opacity 0.3s ease;
 }
-.tidy5e.sheet.actor .items-list .item .item-charges:hover a.addCharges {
+.tidy5e.sheet.actor .items-list .item .item-charges:hover a.addCharges,
+.tidy5e.sheet.actor .items-list .item .item-uses:hover a.addCharges {
 	opacity: 1;
 	color: var(--t5e-secondary-color);
 }
 .tidy5e.sheet.actor .items-list .item .item-charges .uses-max,
-.tidy5e.sheet.actor .items-list .item .spell-slots .spell-max {
+.tidy5e.sheet.actor .items-list .item .spell-slots .spell-max,
+.tidy5e.sheet.actor .items-list .item .item-uses .uses-max {
 	text-align: left;
 }
 .tidy5e.sheet.actor .items-list .item .item-quantity {
@@ -3100,7 +3103,8 @@
 	font-size: 12px;
 	font-family: "Signika";
 }
-.tidy5e.sheet.actor .items-list .item .item-charges {
+.tidy5e.sheet.actor .items-list .item .item-charges,
+.tidy5e.sheet.actor .items-list .item .item-uses {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -3112,7 +3116,8 @@
 	-ms-flex-pack: center;
 	justify-content: center;
 }
-.tidy5e.sheet.actor .items-list .item .item-charges input {
+.tidy5e.sheet.actor .items-list .item .item-charges input,
+.tidy5e.sheet.actor .items-list .item .item-uses input {
 	text-align: right;
 	width: 50%;
 	padding: 0 2px 0 0;
@@ -3120,7 +3125,8 @@
 	line-height: 1;
 	height: 100%;
 }
-.tidy5e.sheet.actor .items-list .item .item-charges .uses-max {
+.tidy5e.sheet.actor .items-list .item .item-charges .uses-max,
+.tidy5e.sheet.actor .items-list .item .item-uses .uses-max {
 	padding: 0 0 0 2px;
 }
 .tidy5e.sheet.actor .items-list .item .item-recharge {
@@ -3651,7 +3657,8 @@
 	-ms-flex: 0 0 40px;
 	flex: 0 0 40px;
 }
-.tidy5e.sheet.actor .items-list .item-charges {
+.tidy5e.sheet.actor .items-list .item-charges,
+.tidy5e.sheet.actor .items-list .item-uses {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 50px;
 	flex: 0 0 50px;
@@ -3893,14 +3900,16 @@
 	height: 14px;
 }
 .tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-quantity,
-.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges {
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges,
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-uses {
 	border: none;
 	font-size: 12px;
 	color: var(--t5e-stat-font);
 	float: right;
 }
 .tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-quantity input,
-.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges input {
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges input,
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-uses {
 	height: 14px;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
 	color: var(--t5e-stat-font);
@@ -3909,14 +3918,17 @@
 	width: 16px;
 	padding: 0;
 }
-.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges {
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges,
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-uses {
 	float: left;
 	line-height: 1;
 }
-.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges input {
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges input,
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-uses input {
 	text-align: left;
 }
-.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges .fa-bolt {
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-charges .fa-bolt,
+.tidy5e.sheet.actor .grid-layout .item-list .item .item-stats .item-uses .fa-bolt {
 	font-size: 8px;
 	margin-right: 1px;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
@@ -4682,12 +4694,14 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 .tidy5e.sheet.actor.npc .items-list .item-charges,
 .tidy5e.sheet.actor.npc .items-list .spell-action,
 .tidy5e.sheet.actor.npc .items-list .spell-target,
-.tidy5e.sheet.actor.npc .items-list .spell-school {
+.tidy5e.sheet.actor.npc .items-list .spell-school,
+.tidy5e.sheet.actor.npc .items-list .item-uses {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 90px;
 	flex: 0 0 90px;
 }
-.tidy5e.sheet.actor.npc .items-list .item-charges {
+.tidy5e.sheet.actor.npc .items-list .item-charges,
+.tidy5e.sheet.actor.npc .items-list .item-uses {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 50px;
 	flex: 0 0 50px;

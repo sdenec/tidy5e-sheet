@@ -571,6 +571,9 @@ async function setSheetClasses(app, html, data) {
 	// if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
 	//   tidy5eClassicControls(html);
 	// }
+	if (!game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+		html.find(".tidy5e-sheet .items-header-controls").remove();
+	}
 	if (game.settings.get("tidy5e-sheet", "traitsMovedBelowResourceNpc")) {
 		let altPos = html.find(".alt-trait-pos");
 		let traits = html.find(".traits");

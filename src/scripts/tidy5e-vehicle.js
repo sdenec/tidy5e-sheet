@@ -200,6 +200,9 @@ async function setSheetClasses(app, html, data) {
 	// if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
 	// 	tidy5eClassicControls(html);
 	// }
+	if (!game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+		html.find(".tidy5e-sheet .items-header-controls").remove();
+	}
 	if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .rest-container").remove();
 	}

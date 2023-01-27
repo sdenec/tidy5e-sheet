@@ -1,5 +1,5 @@
 <div class="inventory-footer">
-	{{#if isCharacter}}
+	{{#if @root.isCharacter}}
 	<div class="attuned-items-counter" title="{{localize 'DND5E.Attunement'}}">
 		<i class="fas fa-sun"></i>
 		<span class="attuned-items-current">{{system.attributes.attunement.value}}</span>
@@ -14,7 +14,7 @@
 			title="{{localize 'TIDY5E.AttunementMax'}}"
 		/>
 	</div>
-	{{/if}} {{#unless isNPC}}
+	{{/if}} {{#unless @root.isNPC}}
 	<div class="inventory-currency">
 		<ol class="currency">
 			<!--
@@ -60,7 +60,7 @@
 	{{/unless}}
 </div>
 
-{{#unless isNPC}} {{#with encumbrance}}
+{{#unless @root.isNPC}} {{#with encumbrance}}
 <div class="encumbrance {{#if encumbered}}encumbered{{/if}}" title="{{localize 'TIDY5E.Encumbrance'}}">
 	<span class="encumbrance-bar" style="width:{{pct}}%"></span>
 	<span class="encumbrance-label">{{value}} / {{max}}</span>

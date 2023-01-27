@@ -1,5 +1,5 @@
 <div class="traits {{#if actor.flags.tidy5e-sheet.traitsExpanded}}expanded{{/if}}">
-	{{#unless isVehicle}}
+	{{#unless @root.isVehicle}}
 	<div class="form-group">
 		<article title="{{localize 'DND5E.Senses'}}">
 			<label for="traits.traits.senses">
@@ -126,7 +126,7 @@
 		</a>
 	</div>
 
-	{{#if isCharacter}}
+	{{#if @root.isCharacter}}
 	<div class="form-group {{traits.traits.weaponProf.cssClass}}">
 		<article title="{{localize 'DND5E.TraitWeaponProf'}}">
 			<label for="traits.traits.weaponProf">
@@ -214,7 +214,7 @@
 	>
 		{{localize "TIDY5E.TraitsEmpty"}}
 	</div>
-	{{#unless isVehicle}}
+	{{#unless @root.isVehicle}}
 	<a
 		class="config-button configure-flags"
 		data-action="flags"

@@ -383,7 +383,7 @@
 	},
 	"TIDY5E.Settings.HideStandardEncumbranceBar": {
 		"name": "Remove/Hide standard encumbrance bar from the character sheet",
-		"hint": "If enabled it will hide the standard bar of encumbrance, YOU DO NOT NEED THIS if you are using 'Variant Encumbrance' module you probably do not need this"
+		"hint": "If enabled it will hide the standard bar of encumbrance, if you are using 'Variant Encumbrance' module you probably DO NOT NEED THIS"
 	},
 	"TIDY5E.Settings.npsSheetWidth": {
 		"name": "Default NPC sheet width.",

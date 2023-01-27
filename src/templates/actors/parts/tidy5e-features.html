@@ -1,5 +1,5 @@
-{{#unless isVehicle}}
-{{#if isCharacter}}
+{{#unless @root.isVehicle}}
+{{#if @root.isCharacter}}
 <div class="inventory-filters">
   <ul class="filter-list" data-filter="features">
     <li class="filter-title" title="{{localize 'DND5E.Filter'}}"><i class="fas fa-filter"></i></li>
@@ -23,7 +23,7 @@
         {{#if section.hasActions}}
           <div class="items-header-uses">{{localize 'DND5E.Uses'}}</div>
           <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
-          {{#if ../isCharacter}}
+          {{#if @root.isCharacter}}
           <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
           <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
           {{/if}}
@@ -31,7 +31,7 @@
           <!-- <div class="items-header-subclass">{{localize 'TIDY5E.Subclass'}}</div> -->
           <div class="items-header-level">{{localize 'DND5E.Level'}}</div>
         {{else}}
-        {{#if ../isCharacter}}
+        {{#if @root.isCharacter}}
         {{#unless section.columns}}
           <div class="items-header-feat-source">{{localize 'DND5E.Source'}}</div>
           <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
@@ -77,7 +77,7 @@
         {{/if}}
 
         {{#if section.hasActions}}
-        <div class="item-detail item-charges {{#if ../../isNPC}}{{#unless item.hasUses}} no-border{{/unless}}{{/if}}">
+        <div class="item-detail item-charges {{#if @root.isNPC}}{{#unless item.hasUses}} no-border{{/unless}}{{/if}}">
           {{#if ctx.isOnCooldown}}
           <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i> {{item.system.recharge.value}}{{#if (ne item.system.recharge.value 6)}}+{{/if}}</a>
           {{else if item.system.recharge.value}}
@@ -90,7 +90,7 @@
           {{/if}}
         </div>
 
-        <div class="item-detail item-action {{#if ../../isNPC}}{{#unless item.system.activation.type}} no-border{{/unless}}{{/if}}">
+        <div class="item-detail item-action {{#if @root.isNPC}}{{#unless item.system.activation.type}} no-border{{/unless}}{{/if}}">
           {{#if item.system.activation.type }}
           {{item.labels.activation}}
           {{/if}}

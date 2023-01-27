@@ -16,7 +16,7 @@
           <div class="items-header-{{css}}">{{label}}</div>
           {{/each}}
         {{else}}
-          {{#if ../isCharacter}}
+          {{#if @root.isCharacter}}
           <div class="items-header-weight" title="{{localize 'DND5E.Weight'}} ({{ @root.weightUnit }})"><i class="fas fa-weight-hanging"></i></div>
           {{/if}}
           <div class="items-header-charge" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
@@ -35,7 +35,7 @@
               <div class="item-detail {{css}}">{{label}}</div>
           {{/each}}
       {{else}}
-          {{#if ../isCharacter}}
+          {{#if @root.isCharacter}}
               <div class="item-detail item-weight">{{localize "DND5E.Weight"}}</div>
           {{/if}}
 
@@ -43,7 +43,7 @@
           <div class="item-detail item-action">{{localize "DND5E.Usage"}}</div>
       {{/if}}
 
-      {{#if ../owner}}
+      {{#if @root.owner}}
       <div class="item-controls flexrow"> 
 
         <a class="item-control item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate"
@@ -109,14 +109,18 @@
             {{#if @root.isCharacter}}
             <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.system.weight }} {{ @root.weightUnit }}">
               {{#if ctx.totalWeight}}
-              <div>
-                {{ ctx.totalWeight }}
-              </div>
+                  <div class="item-detail">
+                      {{ ctx.totalWeight }} {{ @root.weightUnit }}
+                  </div>
+              {{ else }}
+                  <div class="item-detail">
+                    {{ item.system.weight }} {{ @root.weightUnit }}
+                  </div>
               {{/if}}
             </div>
             {{/if}}
 
-            <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
+            <div class="item-detail item-uses" title="{{localize 'DND5E.Uses'}}">
               {{#if ctx.hasUses }}
               <input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0"/>
               / <input class="uses-max" type="text" data-path="system.uses.max" value="{{item.system.uses.max}}">

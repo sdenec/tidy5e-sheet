@@ -31,7 +31,7 @@
               <input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="2" >
             </span>
 
-            <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
+            <div class="item-detail item-uses" title="{{localize 'DND5E.Uses'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
               {{#if item.hasUses }}
               <i class="fas fa-bolt"></i><input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
               {{/if}}

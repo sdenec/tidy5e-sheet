@@ -447,7 +447,8 @@
 		align-items: center;
 		background: var(--t5e-faintest-color);
 
-		.item-charges a.addCharges {
+		.item-charges a.addCharges,
+		.item-uses a.addCharges {
 			display: block;
 			width: 100%;
 			text-align: center;
@@ -455,13 +456,15 @@
 			transition: opacity 0.3s ease;
 		}
 
-		.item-charges:hover a.addCharges {
+		.item-charges:hover a.addCharges,
+		.item-uses:hover a.addCharges {
 			opacity: 1;
 			color: var(--t5e-secondary-color);
 		}
 
 		.item-charges .uses-max,
-		.spell-slots .spell-max {
+		.spell-slots .spell-max,
+		.item-uses .uses-max {
 			text-align: left;
 		}
 
@@ -548,7 +551,8 @@
 			font-family: "Signika";
 		}
 
-		.item-charges {
+		.item-charges,
+		.item-uses {
 			align-items: center;
 			text-align: center;
 			display: flex;
@@ -1079,7 +1083,8 @@
 	flex: 0 0 40px;
 }
 
-.items-list .item-charges {
+.items-list .item-charges,
+.items-list .item-uses {
 	flex: 0 0 50px;
 }
 
