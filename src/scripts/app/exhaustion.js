@@ -1,4 +1,4 @@
-async function updateExhaustion(actorEntity) {
+export async function updateExhaustion(actorEntity) {
 	if (game.actors.get(actorEntity._id).type !== "character") {
 		return;
 	}
@@ -244,16 +244,16 @@ async function updateExhaustion(actorEntity) {
 }
 
 // Hooks Update Actor
-Hooks.on("updateActor", function (actorEntity, update, options, userId) {
-	if (game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") != "default") {
-		if (game.userId !== userId || actorEntity.constructor.name != "Actor5e") {
-			// Only act if we initiated the update ourselves, and the effect is a child of a character
-			return;
-		}
-		updateExhaustion(actorEntity);
-	}
-	// console.log('actor updated!')
-});
+// Hooks.on("updateActor", function (actorEntity, update, options, userId) {
+// 	if (game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") != "default") {
+// 		if (game.userId !== userId || actorEntity.constructor.name != "Actor5e") {
+// 			// Only act if we initiated the update ourselves, and the effect is a child of a character
+// 			return;
+// 		}
+// 		updateExhaustion(actorEntity);
+// 	}
+// 	// console.log('actor updated!')
+// });
 
 // Rest reduces by 1
 Hooks.on(`dnd5e.restComplete`, (actorEntity, data) => {
@@ -263,7 +263,9 @@ Hooks.on(`dnd5e.restComplete`, (actorEntity, data) => {
 	let actor = game.actors.get(actorEntity._id);
 	if (data.longRest) {
 		let exhaustion = actorEntity.system.attributes.exhaustion;
-		if (exhaustion > 0) actor.update({ "system.attributes.exhaustion": exhaustion - 1 });
+		if (exhaustion > 0) {
+			actor.update({ "system.attributes.exhaustion": exhaustion - 1 });
+		}
 	}
 });
 

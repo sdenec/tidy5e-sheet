@@ -13,6 +13,7 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
+import { updateExhaustion } from "./app/exhaustion.js"
 import {
 	HexToRGBA,
 	colorPicker,
@@ -115,6 +116,33 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		context.allowHpMaxOverride = game.user.isGM && game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
 		context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
 		context.classicControlsEnabled = game.user.isGM && game.settings.get("tidy5e-sheet", "classicControlsEnabled");
+		
+		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
+		if(this.actor.system.attributes.exhaustion === 0) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion0")}`;
+		}
+		else if(this.actor.system.attributes.exhaustion === 1) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion1")}`;
+		}
+		else if(this.actor.system.attributes.exhaustion === 2) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion2")}`;
+		}
+		else if(this.actor.system.attributes.exhaustion === 3) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion3")}`;
+		}
+		else if(this.actor.system.attributes.exhaustion === 4) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion4")}`;
+		}
+		else if(this.actor.system.attributes.exhaustion === 5) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion5")}`;
+		}
+		else if(this.actor.system.attributes.exhaustion === 6) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion6")}`;
+		}
+		else {
+			context.exhaustionTooltip = exhaustionTooltipPrefix;
+		}
+
 		return context;
 	}
 
@@ -187,6 +215,15 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			let target = event.currentTarget;
 			let value = Number(target.dataset.elvl);
 			await actor.update({ "system.attributes.exhaustion": value });
+			// TODO strange why i did need this ???
+			setProperty(actor,"system.attributes.exhaustion",value);
+			if (game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") != "default") {
+				if (actor.constructor.name != "Actor5e") {
+					// Only act if we initiated the update ourselves, and the effect is a child of a character
+				} else {
+					updateExhaustion(actor);
+				}
+			}
 		});
 
 		// changing item qty and charges values (removing if both value and max are 0)

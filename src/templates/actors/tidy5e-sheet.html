@@ -60,8 +60,9 @@
 					</div>
 
 					{{!-- Exhaustion --}}
-					<div class="exhaustion-container level-{{system.attributes.exhaustion}} has-note" >
+					<div class="exhaustion-container level-{{system.attributes.exhaustion}} has-note" data-tooltip="{{ @root.exhaustionTooltip }}">
 						<div class="level-display">{{system.attributes.exhaustion}}</div>
+						<!--
 						<div class="note">
 							<h4>{{ localize "DND5E.Exhaustion" }} {{ localize "DND5E.AbbreviationLevel" }} {{system.attributes.exhaustion}}</h4>
 							<p class="lvl-0">{{ localize "TIDY5E.Exhaustion0" }}</p>
@@ -72,6 +73,7 @@
 							<p class="lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion5" }}</p>
 							<p class="lvl-6">{{ localize "TIDY5E.Exhaustion6" }}</p>
 						</div>
+						-->
 						<div class="exhaustion-wrap">
 							<div class="exhaustion-icon">
 								<i class="far fa-grin"></i>
