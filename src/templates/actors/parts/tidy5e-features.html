@@ -108,13 +108,6 @@
         {{/unless}}
 
         {{else if (eq item.type "class")}}
-        <!-- <div class="item-detail player-class" title="{{item.system.subclass}}">
-          <span>{{item.system.subclass}}</span>
-        </div>
-        <div class="item-detail item-level">
-          {{item.system.levels}}
-        </div> -->
-
 
         <div class="item-detail item-action">
           <select class="level-selector">
@@ -184,12 +177,7 @@
             </a>
           {{/if}}
           {{#if section.crewable}}
-          <!--
-          <a class="item-control item-toggle {{ctx.toggleClass}}"
-              title="{{ctx.toggleTitle}}">
-              <i class="fas fa-sun"></i>
-          </a>
-          -->
+
           <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
             {{#if (eq ctx.toggleClass 'active')}}
               <i class="fas fa-user-alt"></i> 
