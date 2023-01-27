@@ -1224,22 +1224,28 @@
   padding: 1px 0;
   width: 35px;
 }
-.tidy5e.sheet.actor input.hp-min,
-.tidy5e.sheet.actor input.temphp {
+.tidy5e.sheet.actor input.hp-min {
   text-align: right;
 }
+.tidy5e.sheet.actor input.temphp {
+  text-align: center;
+}
 .tidy5e.sheet.actor input.hp-max,
-.tidy5e.sheet.actor span.hp-max,
-.tidy5e.sheet.actor input.max-temphp {
+.tidy5e.sheet.actor span.hp-max {
   text-align: left;
+}
+.tidy5e.sheet.actor input.max-temphp {
+  text-align: center;
 }
 .tidy5e.sheet.actor input.hp-max,
 .tidy5e.sheet.actor span.hp-max {
   width: 100%;
 }
+/*
 .tidy5e.sheet.actor input.max-temphp {
   margin-left: 0.5rem;
 }
+*/
 .tidy5e.sheet.actor .character-details {
   margin-left: 1rem;
   -webkit-box-flex: 1;

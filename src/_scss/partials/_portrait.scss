@@ -706,23 +706,27 @@
 		width: 35px;
 	}
 
-	input.hp-min,
-	input.temphp {
+	input.hp-min {
 		text-align: right;
+	}
+	input.temphp {
+		text-align: center;
 	}
 
 	input.hp-max,
-	span.hp-max,
-	input.max-temphp {
+	span.hp-max {
 		text-align: left;
-		
+	}
+	input.max-temphp {
+		text-align: center;
 	}
 	
 	input.hp-max,
 	span.hp-max {
 		width: 100%;
 	}
-
+    /*
 	input.max-temphp {
 		margin-left: .5rem;
 	}
+	*/
