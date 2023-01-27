@@ -79,7 +79,26 @@ game.actors.updateAll((actor)=>{
             trait:actor.system.details?.trait ?? actor.flags["tidy5e-sheet"]?.trait ?? "",
             ideal:actor.system.details?.ideal ?? actor.flags["tidy5e-sheet"]?.ideal ?? "",
             bond:actor.system.details?.bond ?? actor.flags["tidy5e-sheet"]?.bond ?? "",
-            flaw:actor.system.details?.flaw ?? actor.flags["tidy5e-sheet"]?.flaw ?? ""
+            flaw:actor.system.details?.flaw ?? actor.flags["tidy5e-sheet"]?.flaw ?? "",
+        notes: {
+                "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
+        },
+               notes1:{
+               "name": actor.system.details?.notes1name ?? actor.flags["tidy5e-sheet"]?.notes1?.name ?? "",
+               "value": actor.system.details?.notes1?.value ?? actor.flags["tidy5e-sheet"]?.notes1?.value ?? ""
+        },
+           notes2:{
+               "name": actor.system.details?.notes2name ?? actor.flags["tidy5e-sheet"]?.notes2?.name ?? "",
+               "value": actor.system.details?.notes2?.value  ?? actor.flags["tidy5e-sheet"]?.notes2?.value ?? ""
+        },
+          notes3:{
+               "name": actor.system.details?.notes3name ?? actor.flags["tidy5e-sheet"]?.notes3?.name ?? "",
+               "value": actor.system.details?.notes3?.value ?? actor.flags["tidy5e-sheet"]?.notes3?.value ?? ""
+        },
+               notes4:{
+               "name": actor.system.details?.notes4name ?? actor.flags["tidy5e-sheet"]?.notes4?.name ?? "",
+               "value": actor.system.details?.notes4?.value ?? actor.flags["tidy5e-sheet"]?.notes4?.value ?? ""
+        }
         }
     }
 }, (actor)=>{
