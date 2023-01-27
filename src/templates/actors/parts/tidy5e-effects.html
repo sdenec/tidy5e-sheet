@@ -23,7 +23,8 @@
 					<span>{{effect.sourceName}}</span>
 				</div>
 				<div class="item-detail effect-duration">{{effect.duration.label}}</div>
-				{{#if @root.owner}} {{#if @root.classicControlsEnabled}}
+				{{#if @root.owner}} 
+				{{#if @root.classicControlsEnabled}}
 				<div class="item-controls effect-controls flexrow">
 					{{#if @root.editable}}
 					<a
@@ -41,7 +42,8 @@
 					</a>
 					{{/if}}
 				</div>
-				{{/if}} {{/if}}
+				{{/if}} 
+				{{/if}}
 			</li>
 			{{/each}}
 			<li class="items-footer" data-effect-type="{{section.type}}">
