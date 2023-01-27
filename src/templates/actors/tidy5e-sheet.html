@@ -29,9 +29,9 @@
 						<div class="counter-value">
 							<i class="fas fa-check"></i>
 							<input type="text" name="system.attributes.death.success" data-dtype="Number" placeholder="0"
-							value="{{system.attributes.death.success}}" maxlength="1">
+							value="{{system.attributes.death.success}}" maxlength="1" data-tooltip="{{ localize 'DND5E.DeathSave' }}">
 							<div class="death-save rollable has-note" data-action="rollDeathSave">
-								<div class="note">{{ localize "DND5E.DeathSave" }}</div>
+								<!-- <div class="note">{{ localize "DND5E.DeathSave" }}</div> -->
 								<i class="fas fa-skull"></i>
 							</div>
 							<input type="text" name="system.attributes.death.failure" data-dtype="Number" placeholder="0"
@@ -60,44 +60,52 @@
 					</div>
 
 					{{!-- Exhaustion --}}
-					<div class="exhaustion-container level-{{system.attributes.exhaustion}} has-note">
+					<div class="exhaustion-container level-{{system.attributes.exhaustion}} has-note" >
 						<div class="level-display">{{system.attributes.exhaustion}}</div>
-	      		<div class="note">
-	      			<h4>{{ localize "DND5E.Exhaustion" }} {{ localize "DND5E.AbbreviationLevel" }} {{system.attributes.exhaustion}}</h4>
-	      			<p class="lvl-0">{{ localize "TIDY5E.Exhaustion0" }}</p>
-	      			<p class="lvl-1 lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion1" }}</p>
-	      			<p class="lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion2" }}</p>
-	      			<p class="lvl-3 lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion3" }}</p>
-	      			<p class="lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion4" }}</p>
-	      			<p class="lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion5" }}</p>
-	      			<p class="lvl-6">{{ localize "TIDY5E.Exhaustion6" }}</p>
-	      		</div>
-	      		<div class="exhaustion-wrap">
-	      			<div class="exhaustion-icon"><i class="far fa-grin"></i><i class="far fa-smile"></i><i class="far fa-meh"></i><i class="far fa-frown"></i><i class="far fa-frown-open"></i><i class="far fa-tired"></i><i class="far fa-dizzy"></i></div>
-	      			<ul class="exhaust-level">
-	            	<li data-elvl="0">0</li>
-	            	<li data-elvl="1">1</li>
-	            	<li data-elvl="2">2</li>
-	            	<li data-elvl="3">3</li>
-	            	<li data-elvl="4">4</li>
-	            	<li data-elvl="5">5</li>
-	            	<li data-elvl="6">6</li>
-	            </ul>
-	      		</div>
+						<div class="note">
+							<h4>{{ localize "DND5E.Exhaustion" }} {{ localize "DND5E.AbbreviationLevel" }} {{system.attributes.exhaustion}}</h4>
+							<p class="lvl-0">{{ localize "TIDY5E.Exhaustion0" }}</p>
+							<p class="lvl-1 lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion1" }}</p>
+							<p class="lvl-2 lvl-3 lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion2" }}</p>
+							<p class="lvl-3 lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion3" }}</p>
+							<p class="lvl-4 lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion4" }}</p>
+							<p class="lvl-5 lvl-6">{{ localize "TIDY5E.Exhaustion5" }}</p>
+							<p class="lvl-6">{{ localize "TIDY5E.Exhaustion6" }}</p>
+						</div>
+						<div class="exhaustion-wrap">
+							<div class="exhaustion-icon">
+								<i class="far fa-grin"></i>
+								<i class="far fa-smile"></i>
+								<i class="far fa-meh"></i>
+								<i class="far fa-frown"></i>
+								<i class="far fa-frown-open"></i>
+								<i class="far fa-tired"></i>
+								<i class="far fa-dizzy"></i>
+							</div>
+							<ul class="exhaust-level">
+								<li data-elvl="0">0</li>
+								<li data-elvl="1">1</li>
+								<li data-elvl="2">2</li>
+								<li data-elvl="3">3</li>
+								<li data-elvl="4">4</li>
+								<li data-elvl="5">5</li>
+								<li data-elvl="6">6</li>
+							</ul>
+						</div>
 					</div>
 
 					{{!-- Inspiration --}}
-					<div class="inspiration has-note {{#if actor.system.attributes.inspiration}}inspiration-1{{else}}inspiration-0{{/if}}">
+					<div class="inspiration has-note {{#if actor.system.attributes.inspiration}}inspiration-1{{else}}inspiration-0{{/if}}" data-tooltip="{{ localize 'DND5E.Inspiration' }}">
 						<input id="{{@root/appId}}-inspiration" type="checkbox" name="system.attributes.inspiration" data-dtype="Boolean" {{checked system.attributes.inspiration}}>
 						<label for="{{@root/appId}}-inspiration">
 							<i class="inspiration-icon fas fa-dice-d20"></i>
 						</label>
-						<div class="note">{{ localize 'DND5E.Inspiration' }}</div>
+						<!-- <div class="note">{{ localize 'DND5E.Inspiration' }}</div> -->
 					</div>
 
 					{{!-- Resting --}}
-					<div class="rest-container has-note">
-						<div class="note">{{ localize 'TIDY5E.RestHint' }}</div>
+					<div class="rest-container has-note" data-tooltip="{{ localize 'TIDY5E.RestHint' }}">
+						<!-- <div class="note">{{ localize 'TIDY5E.RestHint' }}</div> -->
 						<div class="resting">
 							<span class="resting-icon"><i class="rest-icon fas fa-bed"></i></span>
 							<a class="rest short-rest" title="{{ localize 'TIDY5E.RestS' }}"><i class="fas fa-hourglass-half"></i></a>
@@ -106,7 +114,7 @@
 					</div>
 					{{!-- Hit Dice --}}
 					<div class="portrait-hd has-note" data-tooltip="{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}&#10;{{localize 'DND5E.HitDiceConfig'}}">
-						<div class="note">{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}</div>
+						<!-- <div class="note">{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}</div> -->
 						<a class="current-hd config-button" data-action="hit-dice" >{{system.attributes.hd}}</a>
 					</div>
 

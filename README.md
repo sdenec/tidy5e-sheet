@@ -18,13 +18,9 @@ To install this module manually:
 4. Click 'Install' and wait for installation to complete
 5. Don't forget to enable the module in game using the "Manage Module" button
 
-## Known issue
+## Known issue / TODO
 
 - Update integration for [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
-- The module setting _"Use classic item controls in list view."_ when enabled it shows the actions correctly but the section headers are "not synchronized at the column level" should be fixed with CSS ...
-- 
-  ![img](https://i.imgur.com/UoIz6Y1.png)
-  
 - The current template for favorite items is to complicated ... we should be apply the same template of the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
 - Integration of a  checkbox upcast (ty to mxzf on discord ) on the tidy sheet for the ability dialog option.
 
