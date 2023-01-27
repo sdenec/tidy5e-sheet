@@ -56,7 +56,7 @@
 								 	rgba(0, 200, 0, 0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0, 200, 0, 0.5) 100%);">
 						</div>
-            <input class="hp-min" name="system.attributes.hp.value" type="text" value="{{hp.value}}" placeholder="10"
+            <input class="hp-min" name="system.attributes.hp.value" type="number" value="{{hp.value}}" placeholder="10"
             title="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
             <span class="value-seperator sep"> / </span>
             <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10"
@@ -260,7 +260,7 @@
             <div class="counter legendary">
               <h4>{{ localize "DND5E.LegAct" }}</h4>
               <div class="counter-value">
-                <input name="system.resources.legact.value" type="text" step="any"
+                <input name="system.resources.legact.value" type="number" step="any"
                 value="{{system.resources.legact.value}}" placeholder="0"
                 title="{{localize 'DND5E.LegActRemaining'}}"
                 data-dtype="Number">
@@ -272,7 +272,7 @@
             <div class="counter legendary">
               <h4>{{ localize "DND5E.LegRes" }}</h4>
               <div class="counter-value">
-                <input name="system.resources.legres.value" type="text" step="any"
+                <input name="system.resources.legres.value" type="number" step="any"
                 value="{{system.resources.legres.value}}" placeholder="0"
                 title="{{localize 'DND5E.LegResRemaining'}}"
                 data-dtype="Number">

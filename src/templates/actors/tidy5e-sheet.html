@@ -119,7 +119,7 @@
 								 	rgba(0, 200, 0, 0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0, 200, 0, 0.5) 100%);">
 						</div>
-						<input class="hp-min" name="system.attributes.hp.value" type="text" value="{{hp.value}}" placeholder="10"
+						<input class="hp-min" name="system.attributes.hp.value" type="number" value="{{hp.value}}" placeholder="10"
 						data-tooltip="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
 						<span class="value-seperator sep"> / </span>	
 						{{#if @root.allowHpMaxOverride}}
