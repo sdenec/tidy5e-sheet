@@ -1,10 +1,8 @@
 @font-face {
 	font-family: "tidy-icons";
 	src: url("../fonts/tidy-icons.eot?hzg6v1");
-	src: url("../fonts/tidy-icons.eot?hzg6v1#iefix") format("embedded-opentype"),
-		url("../fonts/tidy-icons.ttf?hzg6v1") format("truetype"), url("../fonts/tidy-icons.woff2?hzg6v1") format("woff"),
-		url("../fonts/tidy-icons.woff?hzg6v1") format("woff"),
-		url("../fonts/tidy-icons.svg?hzg6v1#tidy-icons") format("svg");
+	src: url("../fonts/tidy-icons.eot?hzg6v1#iefix") format("embedded-opentype"), url("../fonts/tidy-icons.ttf?hzg6v1") format("truetype"), url("../fonts/tidy-icons.woff2?hzg6v1") format("woff"),
+		url("../fonts/tidy-icons.woff?hzg6v1") format("woff"), url("../fonts/tidy-icons.svg?hzg6v1#tidy-icons") format("svg");
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;

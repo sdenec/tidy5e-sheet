@@ -9,9 +9,7 @@ export async function updateExhaustion(actorEntity) {
 		let icon = game.settings.get("tidy5e-sheet", "exhaustionEffectIcon");
 		let currentExhaustion;
 		let exhaustionPresent = null;
-		let effectName = `${game.i18n.localize("DND5E.ConExhaustion")} ${game.i18n.localize(
-			"DND5E.AbbreviationLevel"
-		)} ${exhaustion}`;
+		let effectName = `${game.i18n.localize("DND5E.ConExhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${exhaustion}`;
 
 		// define exhaustion effects by level
 		let exhaustionSet = [];
@@ -198,11 +196,7 @@ export async function updateExhaustion(actorEntity) {
 				await game.dfreds.effectInterface.addEffect(contextEffect);
 			}
 		} else {
-			ui.notifications.warn(
-				`${game.i18n.localize(
-					"The module 'Dfreds Convenient Effects' is not active, but the module setting 'Auto Exhaustion effects' is enabled"
-				)}`
-			);
+			ui.notifications.warn(`${game.i18n.localize("The module 'Dfreds Convenient Effects' is not active, but the module setting 'Auto Exhaustion effects' is enabled")}`);
 		}
 	}
 
@@ -234,11 +228,7 @@ export async function updateExhaustion(actorEntity) {
 				game.cub.addCondition(effectNameCustom, [token], { warn: false });
 			}
 		} else {
-			ui.notifications.warn(
-				`${game.i18n.localize(
-					"The module 'CUB' is not active, but the module setting 'Auto Exhaustion effects' is enabled"
-				)}`
-			);
+			ui.notifications.warn(`${game.i18n.localize("The module 'CUB' is not active, but the module setting 'Auto Exhaustion effects' is enabled")}`);
 		}
 	}
 }
@@ -271,10 +261,7 @@ Hooks.on(`dnd5e.restComplete`, (actorEntity, data) => {
 
 // set exhaustion value to dfred/cub effect level
 Hooks.on(`createActiveEffect`, (effect, data, id) => {
-	if (
-		game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "dfredce" ||
-		game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "cub"
-	) {
+	if (game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "dfredce" || game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "cub") {
 		let actor = game.actors.get(effect.parent._id);
 		let effectName = effect.label;
 		if (effectName.includes(game.settings.get("tidy5e-sheet", "exhaustionEffectCustom"))) {
@@ -290,10 +277,7 @@ Hooks.on(`createActiveEffect`, (effect, data, id) => {
 
 // reset exhaustion value when dfred/cub effect is removed
 Hooks.on(`deleteActiveEffect`, (effect, data, id) => {
-	if (
-		game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "dfredce" ||
-		game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "cub"
-	) {
+	if (game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "dfredce" || game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") == "cub") {
 		const actor = game.actors.get(effect.parent._id);
 		const effectName = game.settings.get("tidy5e-sheet", "exhaustionEffectCustom");
 		const levels = game.settings.get("tidy5e-sheet", "exhaustionEffectCustomTiers");

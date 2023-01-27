@@ -583,8 +583,7 @@
 	display: inline-block;
 }
 
-.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4)
-	.exhaustion-icon,
+.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4) .exhaustion-icon,
 .exhaustion-container.level-5 .exhaust-level li:nth-of-type(-n + 6),
 .exhaustion-container.level-6 .exhaust-level li:nth-of-type(-n + 7) {
 	background: var(--t5e-exhaustion-lvl3);
@@ -607,8 +606,7 @@
 	background: var(--t5e-exhaustion-lvl2);
 }
 
-.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4)
-	.level-display {
+.exhaustion-container:not(.level-):not(.level-0):not(.level-1):not(.level-2):not(.level-3):not(.level-4) .level-display {
 	background: var(--t5e-exhaustion-lvl3);
 }
 

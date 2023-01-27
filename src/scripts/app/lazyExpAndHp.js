@@ -261,11 +261,7 @@ function is_real_number(inNumber) {
 }
 
 function is_lazy_number(inNumber) {
-	const isSign =
-		String(inNumber).startsWith(signCase.add) ||
-		String(inNumber).startsWith(signCase.subtract) ||
-		String(inNumber).startsWith(signCase.equals) ||
-		String(inNumber).startsWith(signCase.default);
+	const isSign = String(inNumber).startsWith(signCase.add) || String(inNumber).startsWith(signCase.subtract) || String(inNumber).startsWith(signCase.equals) || String(inNumber).startsWith(signCase.default);
 	if (isSign) {
 		const withoutFirst = String(inNumber).slice(1);
 		return is_real_number(withoutFirst);

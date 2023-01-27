@@ -108,10 +108,7 @@ function _onChangeCurrency(ev) {
 		delta = Number(splitVal[1]);
 	} else {
 		delta = Number(splitVal[0]);
-		chatLog(
-			actor,
-			`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
-		);
+		chatLog(actor, `${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`);
 		return;
 	}
 	let newAmount = {};
@@ -133,18 +130,12 @@ function _onChangeCurrency(ev) {
 			}
 			case signCase.equals: {
 				newAmount = updateMoney(money, delta, denom);
-				chatLog(
-					actor,
-					`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
-				);
+				chatLog(actor, `${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`);
 				break;
 			}
 			default: {
 				newAmount = updateMoney(money, delta, denom);
-				chatLog(
-					actor,
-					`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
-				);
+				chatLog(actor, `${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`);
 				break;
 			}
 		}
@@ -620,11 +611,7 @@ function isEmptyObject(obj) {
 	return result;
 }
 function is_lazy_number(inNumber) {
-	const isSign =
-		String(inNumber).startsWith(signCase.add) ||
-		String(inNumber).startsWith(signCase.subtract) ||
-		String(inNumber).startsWith(signCase.equals) ||
-		String(inNumber).startsWith(signCase.default);
+	const isSign = String(inNumber).startsWith(signCase.add) || String(inNumber).startsWith(signCase.subtract) || String(inNumber).startsWith(signCase.equals) || String(inNumber).startsWith(signCase.default);
 	if (isSign) {
 		const withoutFirst = String(inNumber).slice(1);
 		return is_real_number(withoutFirst);

@@ -22,11 +22,7 @@ export const isItemFavorite = function (item) {
 	if (!item) {
 		return false;
 	}
-	let isFav =
-		(game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) ||
-		(game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) ||
-		item.flags["tidy5e-sheet"]?.favorite ||
-		false;
+	let isFav = (game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) || (game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) || item.flags["tidy5e-sheet"]?.favorite || false;
 
 	const isAlreadyTidyFav = getProperty(item.flags["tidy5e-sheet"]?.favorite);
 	// for retrocompatibility
@@ -65,9 +61,7 @@ export const addFavorites = async function (app, html, data, position) {
 
 	let context = {
 		owner: data.owner,
-		inventory: favs.filter((i) =>
-			["weapon", "equipment", "consumable", "tool", "backpack", "loot"].includes(i.type)
-		),
+		inventory: favs.filter((i) => ["weapon", "equipment", "consumable", "tool", "backpack", "loot"].includes(i.type)),
 		features: favs.filter((i) => ["feat", "background", "class", "subclass"].includes(i.type)),
 		spells: app._prepareSpellbook(
 			{ actor: app.actor },
@@ -174,13 +168,9 @@ export const addFavorites = async function (app, html, data, position) {
 		// add button to toggle favorite of the item in their native tab
 		if (app.options.editable) {
 			let favBtn = $(
-				`<a class="item-control item-fav ${isFav ? "active" : ""}" title="${
-					isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")
-				}" data-fav="${isFav}"><i class="${
+				`<a class="item-control item-fav ${isFav ? "active" : ""}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${
 					isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"
-				}"></i> <span class="control-label">${
-					isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")
-				}</span></a>`
+				}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`
 			);
 			favBtn.click((ev) => {
 				const item_id = ev.currentTarget.closest("[data-item-id]").dataset.itemId;
@@ -242,9 +232,7 @@ export const addFavorites = async function (app, html, data, position) {
 			if (item.system.activation && item.system.activation.type) {
 				let key = item.system.activation.type;
 				// item.system.activation.type.capitalize()
-				labels.activation = `${
-					item.system.activation.cost ? item.system.activation.cost + " " : ""
-				}${translateLabels(key)}`;
+				labels.activation = `${item.system.activation.cost ? item.system.activation.cost + " " : ""}${translateLabels(key)}`;
 			}
 
 			// is item chargeable and on Cooldown
@@ -274,10 +262,7 @@ export const addFavorites = async function (app, html, data, position) {
 
 			// check magic item
 			item.isMagic = false;
-			if (
-				(item.flags.magicitems && item.flags.magicitems.enabled) ||
-				(item.system.properties && item.system.properties.mgc)
-			) {
+			if ((item.flags.magicitems && item.flags.magicitems.enabled) || (item.system.properties && item.system.properties.mgc)) {
 				item.isMagic = true;
 			}
 
@@ -449,15 +434,10 @@ export const addFavorites = async function (app, html, data, position) {
 		context.favSpellsPrepMode = spellPrepModeCount > 0 ? favSpellsPrepMode : false;
 		context.favSpells = spellCount > 0 ? favSpells : false;
 		context.editable = app.options.editable;
-		context.allowCantripToBePreparedOnContext = game.settings.get(
-			"tidy5e-sheet",
-			"allowCantripToBePreparedOnContext"
-		);
+		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
 
 		await loadTemplates(["modules/tidy5e-sheet/templates/favorites/favorite-item.html"]);
-		let favHtml = $(
-			await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context)
-		);
+		let favHtml = $(await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context));
 
 		// Activating favorite-list events
 

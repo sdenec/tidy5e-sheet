@@ -10,14 +10,8 @@ import { applyColorPickerCustomization } from "./app/color-picker.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 	static get defaultOptions() {
-		let defaultTab =
-			game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default"
-				? game.settings.get("tidy5e-sheet", "defaultActionsTab")
-				: "attributes";
-		if (
-			!game.modules.get("character-actions-list-5e")?.active &&
-			game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions"
-		) {
+		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default" ? game.settings.get("tidy5e-sheet", "defaultActionsTab") : "attributes";
+		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions") {
 			defaultTab = "attributes";
 		}
 		return mergeObject(super.defaultOptions, {
@@ -37,8 +31,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 	 * @type {String}
 	 */
 	get template() {
-		if (!game.user.isGM && this.actor.limited)
-			return "modules/tidy5e-sheet/templates/actors/tidy5e-vehicle-ltd.html";
+		if (!game.user.isGM && this.actor.limited) return "modules/tidy5e-sheet/templates/actors/tidy5e-vehicle-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-vehicle.html";
 	}
 
@@ -109,15 +102,12 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 		let injectVehicleSheet;
-		if (game.modules.get("character-actions-list-5e")?.active)
-			injectVehicleSheet = game.settings.get("character-actions-list-5e", "inject-vehicles");
+		if (game.modules.get("character-actions-list-5e")?.active) injectVehicleSheet = game.settings.get("character-actions-list-5e", "inject-vehicles");
 
 		try {
 			if (game.modules.get("character-actions-list-5e")?.active && injectVehicleSheet) {
 				// Update the nav menu
-				const actionsTabButton = $(
-					'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
-				);
+				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>");
 				const tabs = html.find('.tabs[data-group="primary"]');
 				tabs.prepend(actionsTabButton);
 
@@ -147,11 +137,7 @@ async function editProtection(app, html, data) {
 	if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
 		let itemContainer = html.find(".inventory-list.items-list");
 		html.find(".inventory-list .items-header").each(function () {
-			if (
-				$(this).next(".item-list").find("li").length -
-					$(this).next(".item-list").find("li.items-footer").length ==
-				0
-			) {
+			if ($(this).next(".item-list").find("li").length - $(this).next(".item-list").find("li.items-footer").length == 0) {
 				$(this).next(".item-list").remove();
 				$(this).remove();
 			}
@@ -206,10 +192,7 @@ async function setSheetClasses(app, html, data) {
 	if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .rest-container").remove();
 	}
-	if (
-		game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" ||
-		game.settings.get("tidy5e-sheet", "portraitStyle") == "all"
-	) {
+	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .profile").addClass("roundPortrait");
 	}
 	if (game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") > 0) {

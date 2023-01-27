@@ -13,36 +13,21 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
-import { updateExhaustion } from "./app/exhaustion.js"
-import {
-	HexToRGBA,
-	colorPicker,
-	mapDefaultColorsRGBA,
-	mapDefaultColorsDarkRGBA,
-	mapDefaultColorsDarkRGB,
-	mapDefaultColorsRGB,
-	applyColorPickerCustomization,
-} from "./app/color-picker.js";
+import { updateExhaustion } from "./app/exhaustion.js";
+import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
 import { migrateFor21X } from "./app/migration-util.js";
 
 let position = 0;
 
 export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter {
 	get template() {
-		if (!game.user.isGM && this.actor.limited && !game.settings.get("tidy5e-sheet", "expandedSheetEnabled"))
-			return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
+		if (!game.user.isGM && this.actor.limited && !game.settings.get("tidy5e-sheet", "expandedSheetEnabled")) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
 	}
 
 	static get defaultOptions() {
-		let defaultTab =
-			game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default"
-				? game.settings.get("tidy5e-sheet", "defaultActionsTab")
-				: "attributes";
-		if (
-			!game.modules.get("character-actions-list-5e")?.active &&
-			game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions"
-		) {
+		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default" ? game.settings.get("tidy5e-sheet", "defaultActionsTab") : "attributes";
+		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions") {
 			defaultTab = "attributes";
 		}
 		return mergeObject(super.defaultOptions, {
@@ -108,38 +93,28 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		});
 
 		context.appId = this.appId;
-		context.allowCantripToBePreparedOnContext = game.settings.get(
-			"tidy5e-sheet",
-			"allowCantripToBePreparedOnContext"
-		);
+		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
 		context.isGM = game.user.isGM;
 		context.allowHpMaxOverride = game.user.isGM && game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
 		context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
 		context.classicControlsEnabled = game.user.isGM && game.settings.get("tidy5e-sheet", "classicControlsEnabled");
-		
+
 		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
-		if(this.actor.system.attributes.exhaustion === 0) {
+		if (this.actor.system.attributes.exhaustion === 0) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion0")}`;
-		}
-		else if(this.actor.system.attributes.exhaustion === 1) {
+		} else if (this.actor.system.attributes.exhaustion === 1) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion1")}`;
-		}
-		else if(this.actor.system.attributes.exhaustion === 2) {
+		} else if (this.actor.system.attributes.exhaustion === 2) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion2")}`;
-		}
-		else if(this.actor.system.attributes.exhaustion === 3) {
+		} else if (this.actor.system.attributes.exhaustion === 3) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion3")}`;
-		}
-		else if(this.actor.system.attributes.exhaustion === 4) {
+		} else if (this.actor.system.attributes.exhaustion === 4) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion4")}`;
-		}
-		else if(this.actor.system.attributes.exhaustion === 5) {
+		} else if (this.actor.system.attributes.exhaustion === 5) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion5")}`;
-		}
-		else if(this.actor.system.attributes.exhaustion === 6) {
+		} else if (this.actor.system.attributes.exhaustion === 6) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion6")}`;
-		}
-		else {
+		} else {
 			context.exhaustionTooltip = exhaustionTooltipPrefix;
 		}
 
@@ -216,7 +191,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			let value = Number(target.dataset.elvl);
 			await actor.update({ "system.attributes.exhaustion": value });
 			// TODO strange why i did need this ???
-			setProperty(actor,"system.attributes.exhaustion",value);
+			setProperty(actor, "system.attributes.exhaustion", value);
 			if (game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") != "default") {
 				if (actor.constructor.name != "Actor5e") {
 					// Only act if we initiated the update ourselves, and the effect is a child of a character
@@ -302,15 +277,12 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 		let injectCharacterSheet;
-		if (game.modules.get("character-actions-list-5e")?.active)
-			injectCharacterSheet = game.settings.get("character-actions-list-5e", "inject-characters");
+		if (game.modules.get("character-actions-list-5e")?.active) injectCharacterSheet = game.settings.get("character-actions-list-5e", "inject-characters");
 
 		try {
 			if (game.modules.get("character-actions-list-5e")?.active && injectCharacterSheet) {
 				// Update the nav menu
-				const actionsTabButton = $(
-					'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
-				);
+				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>");
 				const tabs = html.find('.tabs[data-group="primary"]');
 				tabs.prepend(actionsTabButton);
 
@@ -433,18 +405,12 @@ async function editProtection(app, html, data) {
 		}
 
 		let itemContainer = html.find(".inventory-list.items-list, .effects-list.items-list");
-		html.find(".inventory-list .items-header:not(.spellbook-header), .effects-list .items-header").each(
-			function () {
-				if (
-					$(this).next(".item-list").find("li").length -
-						$(this).next(".item-list").find("li.items-footer").length ==
-					0
-				) {
-					$(this).next(".item-list").addClass("hidden").hide();
-					$(this).addClass("hidden").hide();
-				}
+		html.find(".inventory-list .items-header:not(.spellbook-header), .effects-list .items-header").each(function () {
+			if ($(this).next(".item-list").find("li").length - $(this).next(".item-list").find("li.items-footer").length == 0) {
+				$(this).next(".item-list").addClass("hidden").hide();
+				$(this).addClass("hidden").hide();
 			}
-		);
+		});
 
 		html.find(".inventory-list .items-footer").addClass("hidden").hide();
 		html.find(".inventory-list .item-control.item-delete").remove();
@@ -461,22 +427,14 @@ async function editProtection(app, html, data) {
 			let totalSections = $(this).children().not(".notice").length;
 			// console.log('hidden: '+ hiddenSections + '/ total: '+totalSections);
 			if (hiddenSections >= totalSections) {
-				if (
-					$(this).hasClass("effects-list") &&
-					!game.user.isGM &&
-					game.settings.get("tidy5e-sheet", "editEffectsGmOnlyEnabled")
-				) {
+				if ($(this).hasClass("effects-list") && !game.user.isGM && game.settings.get("tidy5e-sheet", "editEffectsGmOnlyEnabled")) {
 					$(this).prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
 				} else {
 					$(this).append(`<span class="notice">${game.i18n.localize("TIDY5E.EmptySection")}</span>`);
 				}
 			}
 		});
-	} else if (
-		!game.user.isGM &&
-		actor.getFlag("tidy5e-sheet", "allow-edit") &&
-		game.settings.get("tidy5e-sheet", "editEffectsGmOnlyEnabled")
-	) {
+	} else if (!game.user.isGM && actor.getFlag("tidy5e-sheet", "allow-edit") && game.settings.get("tidy5e-sheet", "editEffectsGmOnlyEnabled")) {
 		let itemContainer = html.find(".effects-list.items-list");
 
 		itemContainer.prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
@@ -508,10 +466,7 @@ async function addClassList(app, html, data) {
 					classList.push(item.name);
 				}
 			}
-			classList =
-				"<ul class='class-list'><li class='class-item'>" +
-				classList.join("</li><li class='class-item'>") +
-				"</li></ul>";
+			classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
 			mergeObject(actor, { "flags.tidy5e-sheet.classlist": classList });
 			let classListTarget = html.find(".bonus-information");
 			classListTarget.append(classList);
@@ -548,10 +503,7 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackMod = prof + abilityMod + spellBonus,
 		text = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
 	html.find(".spell-mod .spell-attack-mod").html(text);
-	html.find(".spell-mod .spell-attack-mod").attr(
-		"title",
-		`${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`
-	);
+	html.find(".spell-mod .spell-attack-mod").attr("title", `${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`);
 }
 
 // Abbreviate Currency
@@ -735,10 +687,7 @@ async function setSheetClasses(app, html, data) {
 	if (!game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
 		html.find(".tidy5e-sheet .items-header-controls").remove();
 	}
-	if (
-		game.settings.get("tidy5e-sheet", "portraitStyle") == "pc" ||
-		game.settings.get("tidy5e-sheet", "portraitStyle") == "all"
-	) {
+	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "pc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
 		html.find(".tidy5e-sheet .profile").addClass("roundPortrait");
 	}
 	if (game.settings.get("tidy5e-sheet", "hpOverlayDisabled")) {
@@ -846,10 +795,7 @@ Hooks.once("ready", (app, html, data) => {
 	if (!game.modules.get("colorsettings")?.active && game.user?.isGM) {
 		let word = "install and activate";
 		if (game.modules.get("colorsettings")) word = "activate";
-		const errorText = `tidy5e-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace(
-			"<br>",
-			"\n"
-		);
+		const errorText = `tidy5e-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace("<br>", "\n");
 		ui.notifications?.error(errorText);
 		throw new Error(errorText);
 	}
@@ -947,9 +893,7 @@ Hooks.on("renderAbilityUseDialog", (application, html, context) => {
 					if (!availableTextSlotsFounded) {
 						console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\(\d+\s\w+\)/}`);
 					}
-					let availableSlotsFounded = availableTextSlotsFounded
-						? availableTextSlotsFounded[0].match(/\d+/)
-						: undefined;
+					let availableSlotsFounded = availableTextSlotsFounded ? availableTextSlotsFounded[0].match(/\d+/) : undefined;
 					if (!availableSlotsFounded) {
 						console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\d+/}`);
 					}

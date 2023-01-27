@@ -31,14 +31,8 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 	 * @return {Object}
 	 */
 	static get defaultOptions() {
-		let defaultTab =
-			game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default"
-				? game.settings.get("tidy5e-sheet", "defaultActionsTab")
-				: "attributes";
-		if (
-			!game.modules.get("character-actions-list-5e")?.active &&
-			game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions"
-		) {
+		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default" ? game.settings.get("tidy5e-sheet", "defaultActionsTab") : "attributes";
+		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions") {
 			defaultTab = "attributes";
 		}
 
@@ -241,10 +235,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		});
 
 		context.appId = this.appId;
-		context.allowCantripToBePreparedOnContext = game.settings.get(
-			"tidy5e-sheet",
-			"allowCantripToBePreparedOnContext"
-		);
+		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
 		context.hideSpellbookTabNpc = game.settings.get("tidy5e-sheet", "hideSpellbookTabNpc");
 		context.isGM = game.user.isGM;
 		context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
@@ -476,15 +467,12 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 		let injectNPCSheet;
-		if (game.modules.get("character-actions-list-5e")?.active)
-			injectNPCSheet = game.settings.get("character-actions-list-5e", "inject-npcs");
+		if (game.modules.get("character-actions-list-5e")?.active) injectNPCSheet = game.settings.get("character-actions-list-5e", "inject-npcs");
 
 		try {
 			if (game.modules.get("character-actions-list-5e")?.active && injectNPCSheet) {
 				// Update the nav menu
-				const actionsTabButton = $(
-					'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
-				);
+				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>");
 				const tabs = html.find('.tabs[data-group="primary"]');
 				tabs.prepend(actionsTabButton);
 
@@ -582,10 +570,7 @@ async function setSheetClasses(app, html, data) {
 	if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .rest-container").remove();
 	}
-	if (
-		game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" ||
-		game.settings.get("tidy5e-sheet", "portraitStyle") == "all"
-	) {
+	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
 		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("roundPortrait");
 	}
 	if (game.settings.get("tidy5e-sheet", "hpOverlayDisabledNpc")) {
@@ -613,19 +598,10 @@ async function setSheetClasses(app, html, data) {
 	if (token && token.actor.prototypeToken.actorLink && game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both") {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("linked");
 	}
-	if (
-		token &&
-		!token.actor.prototypeToken.actorLink &&
-		(game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" ||
-			game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")
-	) {
+	if (token && !token.actor.prototypeToken.actorLink && (game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("unlinked");
 	}
-	if (
-		!token &&
-		(game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" ||
-			game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")
-	) {
+	if (!token && (game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("original");
 	}
 	$(".info-card-hint .key").html(game.settings.get("tidy5e-sheet", "itemCardsFixKey"));
@@ -701,11 +677,7 @@ async function editProtection(app, html, data) {
 
 		let itemContainer = html.find(".inventory-list:not(.spellbook-list).items-list");
 		html.find(".inventory-list:not(.spellbook-list) .items-header").each(function () {
-			if (
-				$(this).next(".item-list").find("li").length -
-					$(this).next(".item-list").find("li.items-footer").length ==
-				0
-			) {
+			if ($(this).next(".item-list").find("li").length - $(this).next(".item-list").find("li.items-footer").length == 0) {
 				$(this).next(".item-list").addClass("hidden").hide();
 				$(this).addClass("hidden").hide();
 			}

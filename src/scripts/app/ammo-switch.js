@@ -6,21 +6,10 @@ export const tidy5eAmmoSwitch = function (html, actor) {
 		if (token) actor = actor.getActiveTokens(false, true).find((t) => t._id === token.id).actor; // get synthetic actor
 		const item = actor.items.get(itemId);
 		const equippedOnly = game.settings.get("tidy5e-sheet", "ammoEquippedOnly");
-		const ammoItems = actor.items.filter(
-			(x) => x.system.consumableType === "ammo" && (!equippedOnly || x.system.equipped)
-		);
+		const ammoItems = actor.items.filter((x) => x.system.consumableType === "ammo" && (!equippedOnly || x.system.equipped));
 		// console.log(ammoItems);
 		const target = item.system.consume.target;
-		const ammoItemStrings = ['<option value=""></option>']
-			.concat(
-				ammoItems.map(
-					(x) =>
-						`<option value="${x.id}" ${x.id === target ? "selected" : ""}>${x.name} (${
-							x.system.quantity
-						})</option>`
-				)
-			)
-			.join("");
+		const ammoItemStrings = ['<option value=""></option>'].concat(ammoItems.map((x) => `<option value="${x.id}" ${x.id === target ? "selected" : ""}>${x.name} (${x.system.quantity})</option>`)).join("");
 		const selector = $(`<select class="ammo-switch">${ammoItemStrings}</select>`);
 		selector.attr("data-item", item.id);
 		selector.attr("data-actor", actor.id);

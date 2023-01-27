@@ -194,8 +194,7 @@ const _getActiveEffectContextOptions = function (effect) {
 		options.push({
 			name: "DND5E.ContextMenuActionDuplicate",
 			icon: "<i class='fas fa-copy fa-fw'></i>",
-			callback: () =>
-				effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.label }) }, { save: true }),
+			callback: () => effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.label }) }, { save: true }),
 		});
 		options.push({
 			name: "DND5E.ContextMenuActionDelete",
@@ -275,9 +274,7 @@ const _getItemContextOptions = function (item) {
 		const isEquipped = item.system.equipped;
 		options.push({
 			name: isEquipped ? "TIDY5E.Unequip" : "TIDY5E.Equip",
-			icon: isEquipped
-				? "<i class='fas fa-user-alt fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i> "
-				: "<i class='fas fa-user-alt fa-fw'></i> ",
+			icon: isEquipped ? "<i class='fas fa-user-alt fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i> " : "<i class='fas fa-user-alt fa-fw'></i> ",
 			callback: () => item.update({ "system.equipped": !isEquipped }),
 		});
 	}
@@ -323,9 +320,7 @@ const _getItemContextOptions = function (item) {
 	}
 	options.push({
 		name: isFav ? "TIDY5E.RemoveFav" : "TIDY5E.AddFav",
-		icon: isFav
-			? `<i class='fas ${favoriteIcon} fa-fw'></i>`
-			: `<i class='fas ${favoriteIcon} fa-fw inactive'></i>`,
+		icon: isFav ? `<i class='fas ${favoriteIcon} fa-fw'></i>` : `<i class='fas ${favoriteIcon} fa-fw inactive'></i>`,
 		callback: () => {
 			// const item_id = ev[0].dataset.itemId; //ev.currentTarget.closest('[data-item-id]').dataset.itemId;
 			// const item = actor.items.get(item_id);
@@ -399,8 +394,7 @@ const _getItemContextOptions = function (item) {
 				name: "DND5E.ContextMenuActionDuplicate",
 				icon: "<i class='fas fa-copy fa-fw'></i>",
 				condition: () => !["race", "background", "class", "subclass"].includes(item.type),
-				callback: () =>
-					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
+				callback: () => item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
 			});
 			options.push({
 				name: "TIDY5E.DeleteSpell",
@@ -420,8 +414,7 @@ const _getItemContextOptions = function (item) {
 				name: "DND5E.ContextMenuActionDuplicate",
 				icon: "<i class='fas fa-copy fa-fw'></i>",
 				condition: () => !["race", "background", "class", "subclass"].includes(item.type),
-				callback: () =>
-					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
+				callback: () => item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
 			});
 			options.push({
 				name: "DND5E.ContextMenuActionDelete",

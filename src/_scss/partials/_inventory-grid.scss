@@ -138,8 +138,7 @@
 
 				&.equipped .item-image {
 					background-image: url("systems/dnd5e/icons/items/inventory/pearl.jpg");
-					box-shadow: 0 0 0px 1px var(--t5e-magic-outline) inset, 0 0 0 1px var(--t5e-magic-accent) inset,
-						0 0 3px 2px var(--t5e-magic-accent) inset;
+					box-shadow: 0 0 0px 1px var(--t5e-magic-outline) inset, 0 0 0 1px var(--t5e-magic-accent) inset, 0 0 3px 2px var(--t5e-magic-accent) inset;
 					border: none;
 				}
 			} //.magic-items

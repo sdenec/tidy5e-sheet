@@ -387,30 +387,18 @@ export function applyColorPickerCustomization(html) {
 		const vColorPickerInnate = HexToRGBA(game.settings.get("tidy5e-sheet", "colorPickerInnate"), 0.3);
 		const vColorPickerInnateOutline = HexToRGBA(game.settings.get("tidy5e-sheet", "colorPickerInnateOutline"));
 		const vColorPickerInnateAccent = HexToRGBA(game.settings.get("tidy5e-sheet", "colorPickerInnateAccent"));
-		const vColorPickerAlwaysPrepared = HexToRGBA(
-			game.settings.get("tidy5e-sheet", "colorPickerAlwaysPrepared"),
-			0.3
-		);
-		const vColorPickerAlwaysPreparedOutline = HexToRGBA(
-			game.settings.get("tidy5e-sheet", "colorPickerAlwaysPreparedOutline")
-		);
-		const vColorPickerAlwaysPreparedAccent = HexToRGBA(
-			game.settings.get("tidy5e-sheet", "colorPickerAlwaysPreparedAccent")
-		);
+		const vColorPickerAlwaysPrepared = HexToRGBA(game.settings.get("tidy5e-sheet", "colorPickerAlwaysPrepared"), 0.3);
+		const vColorPickerAlwaysPreparedOutline = HexToRGBA(game.settings.get("tidy5e-sheet", "colorPickerAlwaysPreparedOutline"));
+		const vColorPickerAlwaysPreparedAccent = HexToRGBA(game.settings.get("tidy5e-sheet", "colorPickerAlwaysPreparedAccent"));
 
 		// Equipped
 
 		html.find(".tidy5e-sheet #item-info-container-content .info-card.equipped").each(function (index, element) {
 			const curValue = $(element).css(`background`);
 			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_equipped, vColorPickerEquipped)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_equipped, vColorPickerEquipped);
+				game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_equipped, vColorPickerEquipped) : curValue.replace(mapDefaultColorsRGBA.t5e_equipped, vColorPickerEquipped);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_equipped, vColorPickerEquipped)
-					: newValue.replace(mapDefaultColorsRGB.t5e_equipped, vColorPickerEquipped);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_equipped, vColorPickerEquipped) : newValue.replace(mapDefaultColorsRGB.t5e_equipped, vColorPickerEquipped);
 
 			$(element).css(`background`, newValue);
 		});
@@ -418,14 +406,9 @@ export function applyColorPickerCustomization(html) {
 		html.find(".tidy5e-sheet .items-list .item.equipped").each(function (index, element) {
 			const curValue = $(element).css(`background`);
 			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_equipped, vColorPickerEquipped)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_equipped, vColorPickerEquipped);
+				game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_equipped, vColorPickerEquipped) : curValue.replace(mapDefaultColorsRGBA.t5e_equipped, vColorPickerEquipped);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_equipped, vColorPickerEquipped)
-					: newValue.replace(mapDefaultColorsRGB.t5e_equipped, vColorPickerEquipped);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_equipped, vColorPickerEquipped) : newValue.replace(mapDefaultColorsRGB.t5e_equipped, vColorPickerEquipped);
 
 			$(element).css(`background`, newValue);
 		});
@@ -491,14 +474,9 @@ export function applyColorPickerCustomization(html) {
 		html.find(".tidy5e-sheet #item-info-container-content .info-card.prepared").each(function (index, element) {
 			const curValue = $(element).css(`background`);
 			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_prepared, vColorPickerPrepared)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_prepared, vColorPickerPrepared);
+				game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_prepared, vColorPickerPrepared) : curValue.replace(mapDefaultColorsRGBA.t5e_prepared, vColorPickerPrepared);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_prepared, vColorPickerPrepared)
-					: newValue.replace(mapDefaultColorsRGB.t5e_prepared, vColorPickerPrepared);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_prepared, vColorPickerPrepared) : newValue.replace(mapDefaultColorsRGB.t5e_prepared, vColorPickerPrepared);
 
 			$(element).css(`background`, newValue);
 		});
@@ -506,14 +484,9 @@ export function applyColorPickerCustomization(html) {
 		html.find(".tidy5e-sheet .items-list .item.prepared").each(function (index, element) {
 			const curValue = $(element).css(`background`);
 			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_prepared, vColorPickerPrepared)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_prepared, vColorPickerPrepared);
+				game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_prepared, vColorPickerPrepared) : curValue.replace(mapDefaultColorsRGBA.t5e_prepared, vColorPickerPrepared);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_prepared, vColorPickerPrepared)
-					: newValue.replace(mapDefaultColorsRGB.t5e_prepared, vColorPickerPrepared);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_prepared, vColorPickerPrepared) : newValue.replace(mapDefaultColorsRGB.t5e_prepared, vColorPickerPrepared);
 
 			$(element).css(`background`, newValue);
 		});
@@ -578,30 +551,18 @@ export function applyColorPickerCustomization(html) {
 
 		html.find(".tidy5e-sheet #item-info-container-content .info-card.pact").each(function (index, element) {
 			const curValue = $(element).css(`background`);
-			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_pact, vColorPickerPact)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_pact, vColorPickerPact);
+			let newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_pact, vColorPickerPact) : curValue.replace(mapDefaultColorsRGBA.t5e_pact, vColorPickerPact);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_pact, vColorPickerPact)
-					: newValue.replace(mapDefaultColorsRGB.t5e_pact, vColorPickerPact);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_pact, vColorPickerPact) : newValue.replace(mapDefaultColorsRGB.t5e_pact, vColorPickerPact);
 
 			$(element).css(`background`, newValue);
 		});
 
 		html.find(".tidy5e-sheet .items-list .item.pact").each(function (index, element) {
 			const curValue = $(element).css(`background`);
-			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_pact, vColorPickerPact)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_pact, vColorPickerPact);
+			let newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_pact, vColorPickerPact) : curValue.replace(mapDefaultColorsRGBA.t5e_pact, vColorPickerPact);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_pact, vColorPickerPact)
-					: newValue.replace(mapDefaultColorsRGB.t5e_pact, vColorPickerPact);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_pact, vColorPickerPact) : newValue.replace(mapDefaultColorsRGB.t5e_pact, vColorPickerPact);
 
 			$(element).css(`background`, newValue);
 		});
@@ -642,9 +603,7 @@ export function applyColorPickerCustomization(html) {
 					: curValue.replace(mapDefaultColorsRGBA.t5e_pact_accent, vColorPickerPactAccent);
 
 			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_pact_accent, vColorPickerPactAccent)
-					: newValue.replace(mapDefaultColorsRGB.t5e_pact_accent, vColorPickerPactAccent);
+				game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_pact_accent, vColorPickerPactAccent) : newValue.replace(mapDefaultColorsRGB.t5e_pact_accent, vColorPickerPactAccent);
 
 			$(element).css(`-webkit-box-shadow`, newValue);
 
@@ -666,30 +625,18 @@ export function applyColorPickerCustomization(html) {
 
 		html.find(".tidy5e-sheet #item-info-container-content .info-card.atwill").each(function (index, element) {
 			const curValue = $(element).css(`background`);
-			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_atwill, vColorPickerAtWill)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_atwill, vColorPickerAtWill);
+			let newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_atwill, vColorPickerAtWill) : curValue.replace(mapDefaultColorsRGBA.t5e_atwill, vColorPickerAtWill);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_atwill, vColorPickerAtWill)
-					: newValue.replace(mapDefaultColorsRGB.t5e_atwill, vColorPickerAtWill);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_atwill, vColorPickerAtWill) : newValue.replace(mapDefaultColorsRGB.t5e_atwill, vColorPickerAtWill);
 
 			$(element).css(`background`, newValue);
 		});
 
 		html.find(".tidy5e-sheet .items-list .item.atwill").each(function (index, element) {
 			const curValue = $(element).css(`background`);
-			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_atwill, vColorPickerAtWill)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_atwill, vColorPickerAtWill);
+			let newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_atwill, vColorPickerAtWill) : curValue.replace(mapDefaultColorsRGBA.t5e_atwill, vColorPickerAtWill);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_atwill, vColorPickerAtWill)
-					: newValue.replace(mapDefaultColorsRGB.t5e_atwill, vColorPickerAtWill);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_atwill, vColorPickerAtWill) : newValue.replace(mapDefaultColorsRGB.t5e_atwill, vColorPickerAtWill);
 
 			$(element).css(`background`, newValue);
 		});
@@ -754,30 +701,18 @@ export function applyColorPickerCustomization(html) {
 
 		html.find(".tidy5e-sheet #item-info-container-content .info-card.innate").each(function (index, element) {
 			const curValue = $(element).css(`background`);
-			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_innate, vColorPickerInnate)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_innate, vColorPickerInnate);
+			let newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_innate, vColorPickerInnate) : curValue.replace(mapDefaultColorsRGBA.t5e_innate, vColorPickerInnate);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_innate, vColorPickerInnate)
-					: newValue.replace(mapDefaultColorsRGB.t5e_innate, vColorPickerInnate);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_innate, vColorPickerInnate) : newValue.replace(mapDefaultColorsRGB.t5e_innate, vColorPickerInnate);
 
 			$(element).css(`background`, newValue);
 		});
 
 		html.find(".tidy5e-sheet .items-list .item.innate").each(function (index, element) {
 			const curValue = $(element).css(`background`);
-			let newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_innate, vColorPickerInnate)
-					: curValue.replace(mapDefaultColorsRGBA.t5e_innate, vColorPickerInnate);
+			let newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? curValue.replace(mapDefaultColorsDarkRGBA.t5e_innate, vColorPickerInnate) : curValue.replace(mapDefaultColorsRGBA.t5e_innate, vColorPickerInnate);
 
-			newValue =
-				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(mapDefaultColorsDarkRGB.t5e_innate, vColorPickerInnate)
-					: newValue.replace(mapDefaultColorsRGB.t5e_innate, vColorPickerInnate);
+			newValue = game.settings.get("tidy5e-sheet", "colorScheme") === "dark" ? newValue.replace(mapDefaultColorsDarkRGB.t5e_innate, vColorPickerInnate) : newValue.replace(mapDefaultColorsRGB.t5e_innate, vColorPickerInnate);
 
 			$(element).css(`background`, newValue);
 		});
@@ -840,10 +775,7 @@ export function applyColorPickerCustomization(html) {
 
 		// Always Prepared
 
-		html.find(".tidy5e-sheet #item-info-container-content .info-card.alwaysprepared").each(function (
-			index,
-			element
-		) {
+		html.find(".tidy5e-sheet #item-info-container-content .info-card.alwaysprepared").each(function (index, element) {
 			const curValue = $(element).css(`background`);
 			let newValue =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
@@ -877,76 +809,40 @@ export function applyColorPickerCustomization(html) {
 			const curValue = $(element).css(`-webkit-box-shadow`);
 			let newValue =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(
-							mapDefaultColorsDarkRGBA.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  )
-					: curValue.replace(
-							mapDefaultColorsRGBA.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  );
+					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline)
+					: curValue.replace(mapDefaultColorsRGBA.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline);
 
 			newValue =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(
-							mapDefaultColorsDarkRGB.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  )
-					: newValue.replace(
-							mapDefaultColorsRGB.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  );
+					? newValue.replace(mapDefaultColorsDarkRGB.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline)
+					: newValue.replace(mapDefaultColorsRGB.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline);
 
 			$(element).css(`-webkit-box-shadow`, newValue);
 
 			const curValue2 = $(element).css(`box-shadow`);
 			let newValue2 =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue2.replace(
-							mapDefaultColorsDarkRGBA.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  )
-					: curValue2.replace(
-							mapDefaultColorsRGBA.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  );
+					? curValue2.replace(mapDefaultColorsDarkRGBA.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline)
+					: curValue2.replace(mapDefaultColorsRGBA.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline);
 
 			newValue2 =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue2.replace(
-							mapDefaultColorsDarkRGB.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  )
-					: newValue2.replace(
-							mapDefaultColorsRGB.t5e_alwaysprepared_outline,
-							vColorPickerAlwaysPreparedOutline
-					  );
+					? newValue2.replace(mapDefaultColorsDarkRGB.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline)
+					: newValue2.replace(mapDefaultColorsRGB.t5e_alwaysprepared_outline, vColorPickerAlwaysPreparedOutline);
 
 			$(element).css(`box-shadow`, newValue2);
 		});
 
-		html.find(".tidy5e-sheet .grid-layout .item-list .item.alwaysprepared .item-image").each(function (
-			index,
-			element
-		) {
+		html.find(".tidy5e-sheet .grid-layout .item-list .item.alwaysprepared .item-image").each(function (index, element) {
 			const curValue = $(element).css(`-webkit-box-shadow`);
 			let newValue =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue.replace(
-							mapDefaultColorsDarkRGBA.t5e_alwaysprepared_accent,
-							vColorPickerAlwaysPreparedAccent
-					  )
-					: curValue.replace(
-							mapDefaultColorsRGBA.t5e_alwaysprepared_accent,
-							vColorPickerAlwaysPreparedAccent
-					  );
+					? curValue.replace(mapDefaultColorsDarkRGBA.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent)
+					: curValue.replace(mapDefaultColorsRGBA.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent);
 
 			newValue =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue.replace(
-							mapDefaultColorsDarkRGB.t5e_alwaysprepared_accent,
-							vColorPickerAlwaysPreparedAccent
-					  )
+					? newValue.replace(mapDefaultColorsDarkRGB.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent)
 					: newValue.replace(mapDefaultColorsRGB.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent);
 
 			$(element).css(`-webkit-box-shadow`, newValue);
@@ -954,25 +850,13 @@ export function applyColorPickerCustomization(html) {
 			const curValue2 = $(element).css(`box-shadow`);
 			let newValue2 =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? curValue2.replace(
-							mapDefaultColorsDarkRGBA.t5e_alwaysprepared_accent,
-							vColorPickerAlwaysPreparedAccent
-					  )
-					: curValue2.replace(
-							mapDefaultColorsRGBA.t5e_alwaysprepared_accent,
-							vColorPickerAlwaysPreparedAccent
-					  );
+					? curValue2.replace(mapDefaultColorsDarkRGBA.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent)
+					: curValue2.replace(mapDefaultColorsRGBA.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent);
 
 			newValue2 =
 				game.settings.get("tidy5e-sheet", "colorScheme") === "dark"
-					? newValue2.replace(
-							mapDefaultColorsDarkRGB.t5e_alwaysprepared_accent,
-							vColorPickerAlwaysPreparedAccent
-					  )
-					: newValue2.replace(
-							mapDefaultColorsRGB.t5e_alwaysprepared_accent,
-							vColorPickerAlwaysPreparedAccent
-					  );
+					? newValue2.replace(mapDefaultColorsDarkRGB.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent)
+					: newValue2.replace(mapDefaultColorsRGB.t5e_alwaysprepared_accent, vColorPickerAlwaysPreparedAccent);
 
 			$(element).css(`box-shadow`, newValue2);
 		});

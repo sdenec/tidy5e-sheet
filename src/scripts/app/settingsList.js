@@ -22,9 +22,7 @@ export function settingsList() {
 		},
 		default: "default",
 		onChange: (data) => {
-			data === "dark"
-				? document.querySelector("html").classList.add("tidy5eDark")
-				: document.querySelector("html").classList.remove("tidy5eDark");
+			data === "dark" ? document.querySelector("html").classList.add("tidy5eDark") : document.querySelector("html").classList.remove("tidy5eDark");
 		},
 	});
 
@@ -391,10 +389,7 @@ export function settingsList() {
 		onChange: (data) => {
 			$(".system-dnd5e")
 				.get(0)
-				.style.setProperty(
-					"--vehicle-border",
-					game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") + "px"
-				);
+				.style.setProperty("--vehicle-border", game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") + "px");
 		},
 	});
 
@@ -969,18 +964,13 @@ class ResetSettingsDialog extends FormApplication {
 		//@ts-ignore
 		return new Dialog({
 			title: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.title`),
-			content:
-				'<p style="margin-bottom:1rem;">' +
-				game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.content`) +
-				"</p>",
+			content: '<p style="margin-bottom:1rem;">' + game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.content`) + "</p>",
 			buttons: {
 				confirm: {
 					icon: '<i class="fas fa-check"></i>',
 					label: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.confirm`),
 					callback: async () => {
-						for (let setting of game.settings.storage
-							.get("world")
-							.filter((setting) => setting.key.startsWith("tidy5e-sheet."))) {
+						for (let setting of game.settings.storage.get("world").filter((setting) => setting.key.startsWith("tidy5e-sheet."))) {
 							console.log(`Reset setting '${setting.key}'`);
 							await setting.delete();
 						}

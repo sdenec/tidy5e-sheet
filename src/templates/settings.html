@@ -13,158 +13,77 @@
 	<section class="tab" data-tab="pc-sheet">
 		<h2>{{localize 'TIDY5E.Settings.TabPlayers.header'}}</h2>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="journalTabDisabled"
-				id="journalTabDisabled"
-				{{checked
-				settings.journalTabDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="journalTabDisabled" id="journalTabDisabled" {{checked settings.journalTabDisabled.value}} />
 			<div class="description">
 				<label for="journalTabDisabled">{{localize 'TIDY5E.Settings.JournalTab.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.JournalTab.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="classListDisabled"
-				id="classListDisabled"
-				{{checked
-				settings.classListDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="classListDisabled" id="classListDisabled" {{checked settings.classListDisabled.value}} />
 			<div class="description">
 				<label for="classListDisabled">{{localize 'TIDY5E.Settings.ClassList.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ClassList.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="inspirationAnimationDisabled"
-				id="inspirationAnimationDisabled"
-				{{checked
-				settings.inspirationAnimationDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="inspirationAnimationDisabled" id="inspirationAnimationDisabled" {{checked settings.inspirationAnimationDisabled.value}} />
 			<div class="description">
-				<label for="inspirationAnimationDisabled">
-					{{localize 'TIDY5E.Settings.InspirationAnimation.name'}}
-				</label>
+				<label for="inspirationAnimationDisabled">{{localize 'TIDY5E.Settings.InspirationAnimation.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.InspirationAnimation.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hideIfZero"
-				id="hideIfZero"
-				{{checked
-				settings.hideIfZero.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hideIfZero" id="hideIfZero" {{checked settings.hideIfZero.value}} />
 			<div class="description">
 				<label for="hideIfZero">{{localize 'TIDY5E.Settings.HideIfZero.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HideIfZero.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="inspirationOnHover"
-				id="inspirationOnHover"
-				{{checked
-				settings.inspirationOnHover.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="inspirationOnHover" id="inspirationOnHover" {{checked settings.inspirationOnHover.value}} />
 			<div class="description">
 				<label for="inspirationOnHover">{{localize 'TIDY5E.Settings.InspirationOnHover.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.InspirationOnHover.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="exhaustionOnHover"
-				id="exhaustionOnHover"
-				{{checked
-				settings.exhaustionOnHover.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="exhaustionOnHover" id="exhaustionOnHover" {{checked settings.exhaustionOnHover.value}} />
 			<div class="description">
 				<label for="exhaustionOnHover">{{localize 'TIDY5E.Settings.ExhaustionOnHover.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ExhaustionOnHover.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hpBarDisabled"
-				id="hpBarDisabled"
-				{{checked
-				settings.hpBarDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hpBarDisabled" id="hpBarDisabled" {{checked settings.hpBarDisabled.value}} />
 			<div class="description">
 				<label for="hpBarDisabled">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hpOverlayDisabled"
-				id="hpOverlayDisabled"
-				{{checked
-				settings.hpOverlayDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hpOverlayDisabled" id="hpOverlayDisabled" {{checked settings.hpOverlayDisabled.value}} />
 			<div class="description">
 				<label for="hpOverlayDisabled">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="traitsTogglePc"
-				id="traitsTogglePc"
-				{{checked
-				settings.traitsTogglePc.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="traitsTogglePc" id="traitsTogglePc" {{checked settings.traitsTogglePc.value}} />
 			<div class="description">
 				<label for="traitsTogglePc">{{localize 'TIDY5E.Settings.TraitsTogglePc.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.TraitsTogglePc.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="traitsMovedBelowResource"
-				id="traitsMovedBelowResource"
-				{{checked
-				settings.traitsMovedBelowResource.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="traitsMovedBelowResource" id="traitsMovedBelowResource" {{checked settings.traitsMovedBelowResource.value}} />
 			<div class="description">
-				<label for="traitsMovedBelowResource">
-					{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}
-				</label>
+				<label for="traitsMovedBelowResource">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="ammoEquippedOnly"
-				id="ammoEquippedOnly"
-				{{checked
-				settings.ammoEquippedOnly.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="ammoEquippedOnly" id="ammoEquippedOnly" {{checked settings.ammoEquippedOnly.value}} />
 			<div class="description">
 				<label for="ammoEquippedOnly">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.hint'}}</p>
@@ -178,13 +97,7 @@
 				</div>
 				<div class="settings-group">
 					<article>
-						<input
-							type="number"
-							data-dtype="number"
-							name="playerSheetWidth"
-							id="playerSheetWidth"
-							value="{{settings.playerSheetWidth.value}}"
-						/>
+						<input type="number" data-dtype="number" name="playerSheetWidth" id="playerSheetWidth" value="{{settings.playerSheetWidth.value}}" />
 					</article>
 				</div>
 			</div>
@@ -198,28 +111,14 @@
 
 		<h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelNPCs'}}</h3>
 		<article class="setting gm-only">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="restingForNpcsEnabled"
-				id="restingForNpcsEnabled"
-				{{checked
-				settings.restingForNpcsEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="restingForNpcsEnabled" id="restingForNpcsEnabled" {{checked settings.restingForNpcsEnabled.value}} />
 			<div class="description">
 				<label for="restingForNpcsEnabled">{{localize 'TIDY5E.Settings.RestingForNpcs.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.RestingForNpcs.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting gm-only">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="restingForNpcsChatDisabled"
-				id="restingForNpcsChatDisabled"
-				{{checked
-				settings.restingForNpcsChatDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="restingForNpcsChatDisabled" id="restingForNpcsChatDisabled" {{checked settings.restingForNpcsChatDisabled.value}} />
 			<div class="description">
 				<label for="restingForNpcsChatDisabled">{{localize 'TIDY5E.Settings.RestingForNpcsChat.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.RestingForNpcsChat.hint'}}</p>
@@ -243,86 +142,42 @@
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hpBarDisabledNpc"
-				id="hpBarDisabledNpc"
-				{{checked
-				settings.hpBarDisabledNpc.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hpBarDisabledNpc" id="hpBarDisabledNpc" {{checked settings.hpBarDisabledNpc.value}} />
 			<div class="description">
 				<label for="hpBarDisabledNpc">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hpOverlayDisabledNpc"
-				id="hpOverlayDisabledNpc"
-				{{checked
-				settings.hpOverlayDisabledNpc.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hpOverlayDisabledNpc" id="hpOverlayDisabledNpc" {{checked settings.hpOverlayDisabledNpc.value}} />
 			<div class="description">
 				<label for="hpOverlayDisabledNpc">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="traitsAlwaysShownNpc"
-				id="traitsAlwaysShownNpc"
-				{{checked
-				settings.traitsAlwaysShownNpc.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="traitsAlwaysShownNpc" id="traitsAlwaysShownNpc" {{checked settings.traitsAlwaysShownNpc.value}} />
 			<div class="description">
 				<label for="traitsAlwaysShownNpc">{{localize 'TIDY5E.Settings.TraitsAlwaysShown.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.TraitsAlwaysShown.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="traitsMovedBelowResourceNpc"
-				id="traitsMovedBelowResourceNpc"
-				{{checked
-				settings.traitsMovedBelowResourceNpc.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="traitsMovedBelowResourceNpc" id="traitsMovedBelowResourceNpc" {{checked settings.traitsMovedBelowResourceNpc.value}} />
 			<div class="description">
-				<label for="traitsMovedBelowResourceNpc">
-					{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}
-				</label>
+				<label for="traitsMovedBelowResourceNpc">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="skillsAlwaysShownNpc"
-				id="skillsAlwaysShownNpc"
-				{{checked
-				settings.skillsAlwaysShownNpc.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="skillsAlwaysShownNpc" id="skillsAlwaysShownNpc" {{checked settings.skillsAlwaysShownNpc.value}} />
 			<div class="description">
 				<label for="skillsAlwaysShownNpc">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hideSpellbookTabNpc"
-				id="hideSpellbookTabNpc"
-				{{checked
-				settings.hideSpellbookTabNpc.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hideSpellbookTabNpc" id="hideSpellbookTabNpc" {{checked settings.hideSpellbookTabNpc.value}} />
 			<div class="description">
 				<label for="hideSpellbookTabNpc">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.hint'}}</p>
@@ -336,13 +191,7 @@
 				</div>
 				<div class="settings-group">
 					<article>
-						<input
-							type="number"
-							data-dtype="number"
-							name="npsSheetWidth"
-							id="npsSheetWidth"
-							value="{{settings.npsSheetWidth.value}}"
-						/>
+						<input type="number" data-dtype="number" name="npsSheetWidth" id="npsSheetWidth" value="{{settings.npsSheetWidth.value}}" />
 					</article>
 				</div>
 			</div>
@@ -350,28 +199,14 @@
 
 		<h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelVehicles'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hpBarDisabledVehicle"
-				id="hpBarDisabledVehicle"
-				{{checked
-				settings.hpBarDisabledVehicle.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hpBarDisabledVehicle" id="hpBarDisabledVehicle" {{checked settings.hpBarDisabledVehicle.value}} />
 			<div class="description">
 				<label for="hpBarDisabledVehicle">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hpOverlayDisabledVehicle"
-				id="hpOverlayDisabledVehicle"
-				{{checked
-				settings.hpOverlayDisabledVehicle.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hpOverlayDisabledVehicle" id="hpOverlayDisabledVehicle" {{checked settings.hpOverlayDisabledVehicle.value}} />
 			<div class="description">
 				<label for="hpOverlayDisabledVehicle">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
@@ -385,13 +220,7 @@
 				</div>
 				<div class="settings-group">
 					<article>
-						<input
-							type="number"
-							data-dtype="number"
-							name="vehicleSheetWidth"
-							id="vehicleSheetWidth"
-							value="{{settings.vehicleSheetWidth.value}}"
-						/>
+						<input type="number" data-dtype="number" name="vehicleSheetWidth" id="vehicleSheetWidth" value="{{settings.vehicleSheetWidth.value}}" />
 					</article>
 				</div>
 			</div>
@@ -403,86 +232,42 @@
 	<section class="tab gm-only" data-tab="gm-options">
 		<h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hiddenDeathSavesEnabled"
-				id="hiddenDeathSavesEnabled"
-				{{checked
-				settings.hiddenDeathSavesEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hiddenDeathSavesEnabled" id="hiddenDeathSavesEnabled" {{checked settings.hiddenDeathSavesEnabled.value}} />
 			<div class="description">
 				<label for="hiddenDeathSavesEnabled">{{localize 'TIDY5E.Settings.HiddenDeathSaves.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HiddenDeathSaves.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hideSpellSlotMarker"
-				id="hideSpellSlotMarker"
-				{{checked
-				settings.hideSpellSlotMarker.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hideSpellSlotMarker" id="hideSpellSlotMarker" {{checked settings.hideSpellSlotMarker.value}} />
 			<div class="description">
 				<label for="hideSpellSlotMarker">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="enableSpellLevelButtons"
-				id="enableSpellLevelButtons"
-				{{checked
-				settings.enableSpellLevelButtons.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="enableSpellLevelButtons" id="enableSpellLevelButtons" {{checked settings.enableSpellLevelButtons.value}} />
 			<div class="description">
 				<label for="enableSpellLevelButtons">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="hideStandardEncumbranceBar"
-				id="hideStandardEncumbranceBar"
-				{{checked
-				settings.hideStandardEncumbranceBar.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="hideStandardEncumbranceBar" id="hideStandardEncumbranceBar" {{checked settings.hideStandardEncumbranceBar.value}} />
 			<div class="description">
-				<label for="hideStandardEncumbranceBar">
-					{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.name'}}
-				</label>
+				<label for="hideStandardEncumbranceBar">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="playerNameEnabled"
-				id="playerNameEnabled"
-				{{checked
-				settings.playerNameEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="playerNameEnabled" id="playerNameEnabled" {{checked settings.playerNameEnabled.value}} />
 			<div class="description">
 				<label for="playerNameEnabled">{{localize 'TIDY5E.Settings.PlayerName.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.PlayerName.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="rightClickDisabled"
-				id="rightClickDisabled"
-				{{checked
-				settings.rightClickDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="rightClickDisabled" id="rightClickDisabled" {{checked settings.rightClickDisabled.value}} />
 			<div class="description">
 				<label for="rightClickDisabled">{{localize 'TIDY5E.Settings.RightClick.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.RightClick.hint'}}</p>
@@ -505,14 +290,7 @@
 		</article>
 		-->
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="expandedSheetEnabled"
-				id="expandedSheetEnabled"
-				{{checked
-				settings.expandedSheetEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="expandedSheetEnabled" id="expandedSheetEnabled" {{checked settings.expandedSheetEnabled.value}} />
 			<div class="description">
 				<label for="expandedSheetEnabled">{{localize 'TIDY5E.Settings.ExpandedSheet.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ExpandedSheet.hint'}}</p>
@@ -526,14 +304,7 @@
 				</div>
 				<div class="settings-group">
 					<article>
-						<input
-							type="text"
-							data-dtype="string"
-							name="itemCardsFixKey"
-							id="itemCardsFixKey"
-							value="{{settings.itemCardsFixKey.value}}"
-							maxlength="1"
-						/>
+						<input type="text" data-dtype="string" name="itemCardsFixKey" id="itemCardsFixKey" value="{{settings.itemCardsFixKey.value}}" maxlength="1" />
 					</article>
 				</div>
 			</div>
@@ -565,88 +336,42 @@
 				<div class="settings-group">
 					<article>
 						<label for="hpOverlayBorder">{{localize 'TIDY5E.Settings.PcLabel'}}</label>
-						<input
-							type="text"
-							data-dtype="string"
-							name="hpOverlayBorder"
-							id="hpOverlayBorder"
-							value="{{settings.hpOverlayBorder.value}}"
-						/>
+						<input type="text" data-dtype="string" name="hpOverlayBorder" id="hpOverlayBorder" value="{{settings.hpOverlayBorder.value}}" />
 					</article>
 					<article>
 						<label for="hpOverlayBorderNpc">{{localize 'TIDY5E.Settings.NpcLabel'}}</label>
-						<input
-							type="text"
-							data-dtype="string"
-							name="hpOverlayBorderNpc"
-							id="hpOverlayBorderNpc"
-							value="{{settings.hpOverlayBorderNpc.value}}"
-						/>
+						<input type="text" data-dtype="string" name="hpOverlayBorderNpc" id="hpOverlayBorderNpc" value="{{settings.hpOverlayBorderNpc.value}}" />
 					</article>
 					<article>
 						<label for="hpOverlayBorderVehicle">{{localize 'TIDY5E.Settings.VehicleLabel'}}</label>
-						<input
-							type="text"
-							data-dtype="string"
-							name="hpOverlayBorderVehicle"
-							id="hpOverlayBorderVehicle"
-							value="{{settings.hpOverlayBorderVehicle.value}}"
-						/>
+						<input type="text" data-dtype="string" name="hpOverlayBorderVehicle" id="hpOverlayBorderVehicle" value="{{settings.hpOverlayBorderVehicle.value}}" />
 					</article>
 				</div>
 			</section>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="editGmAlwaysEnabled"
-				id="editGmAlwaysEnabled"
-				{{checked
-				settings.editGmAlwaysEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="editGmAlwaysEnabled" id="editGmAlwaysEnabled" {{checked settings.editGmAlwaysEnabled.value}} />
 			<div class="description">
 				<label for="editGmAlwaysEnabled">{{localize 'TIDY5E.Settings.EditGmAlways.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.EditGmAlways.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="editEffectsGmOnlyEnabled"
-				id="editEffectsGmOnlyEnabled"
-				{{checked
-				settings.editEffectsGmOnlyEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="editEffectsGmOnlyEnabled" id="editEffectsGmOnlyEnabled" {{checked settings.editEffectsGmOnlyEnabled.value}} />
 			<div class="description">
 				<label for="editEffectsGmOnlyEnabled">{{localize 'TIDY5E.Settings.EditEffectsGmOnly.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.EditEffectsGmOnly.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="quantityAlwaysShownEnabled"
-				id="quantityAlwaysShownEnabled"
-				{{checked
-				settings.quantityAlwaysShownEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="quantityAlwaysShownEnabled" id="quantityAlwaysShownEnabled" {{checked settings.quantityAlwaysShownEnabled.value}} />
 			<div class="description">
 				<label for="quantityAlwaysShownEnabled">{{localize 'TIDY5E.Settings.QuantityAlwaysShown.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.QuantityAlwaysShown.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="inspirationDisabled"
-				id="inspirationDisabled"
-				{{checked
-				settings.inspirationDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="inspirationDisabled" id="inspirationDisabled" {{checked settings.inspirationDisabled.value}} />
 			<div class="description">
 				<label for="inspirationDisabled">{{localize 'TIDY5E.Settings.InspirationDisabled.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.InspirationDisabled.hint'}}</p>
@@ -679,13 +404,7 @@
 				</div>
 				<div class="settings-group">
 					<article>
-						<input
-							type="text"
-							data-dtype="string"
-							name="exhaustionEffectIcon"
-							id="exhaustionEffectIcon"
-							value="{{settings.exhaustionEffectIcon.value}}"
-						/>
+						<input type="text" data-dtype="string" name="exhaustionEffectIcon" id="exhaustionEffectIcon" value="{{settings.exhaustionEffectIcon.value}}" />
 					</article>
 				</div>
 			</section>
@@ -693,101 +412,50 @@
 		<article class="setting group">
 			<section>
 				<div class="description">
-					<label for="exhaustionEffectCustom">
-						{{localize 'TIDY5E.Settings.CustomExhaustionEffect.name'}}
-					</label>
+					<label for="exhaustionEffectCustom">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.name'}}</label>
 					<p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.hint'}}</p>
 				</div>
 				<div class="settings-group">
 					<article>
-						<input
-							type="text"
-							data-dtype="string"
-							name="exhaustionEffectCustom"
-							id="exhaustionEffectCustom"
-							value="{{settings.exhaustionEffectCustom.value}}"
-						/>
+						<input type="text" data-dtype="string" name="exhaustionEffectCustom" id="exhaustionEffectCustom" value="{{settings.exhaustionEffectCustom.value}}" />
 					</article>
 					<article>
 						<p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.tiers'}}</p>
-						<input
-							type="text"
-							data-dtype="string"
-							name="exhaustionEffectCustomTiers"
-							id="exhaustionEffectCustomTiers"
-							value="{{settings.exhaustionEffectCustomTiers.value}}"
-						/>
+						<input type="text" data-dtype="string" name="exhaustionEffectCustomTiers" id="exhaustionEffectCustomTiers" value="{{settings.exhaustionEffectCustomTiers.value}}" />
 					</article>
 				</div>
 			</section>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="exhaustionDisabled"
-				id="exhaustionDisabled"
-				{{checked
-				settings.exhaustionDisabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="exhaustionDisabled" id="exhaustionDisabled" {{checked settings.exhaustionDisabled.value}} />
 			<div class="description">
 				<label for="exhaustionDisabled">{{localize 'TIDY5E.Settings.ExhaustionDisabled.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ExhaustionDisabled.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="traitLabelsEnabled"
-				id="traitLabelsEnabled"
-				{{checked
-				settings.traitLabelsEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="traitLabelsEnabled" id="traitLabelsEnabled" {{checked settings.traitLabelsEnabled.value}} />
 			<div class="description">
 				<label for="traitLabelsEnabled">{{localize 'TIDY5E.Settings.TraitLabels.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="allowCantripToBePreparedOnContext"
-				id="allowCantripToBePreparedOnContext"
-				{{checked
-				settings.allowCantripToBePreparedOnContext.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="allowCantripToBePreparedOnContext" id="allowCantripToBePreparedOnContext" {{checked settings.allowCantripToBePreparedOnContext.value}} />
 			<div class="description">
-				<label for="allowCantripToBePreparedOnContext">
-					{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.name'}}
-				</label>
+				<label for="allowCantripToBePreparedOnContext">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lazyHpAndExpEnable"
-				id="lazyHpAndExpEnable"
-				{{checked
-				settings.lazyHpAndExpEnable.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lazyHpAndExpEnable" id="lazyHpAndExpEnable" {{checked settings.lazyHpAndExpEnable.value}} />
 			<div class="description">
 				<label for="lazyHpAndExpEnable">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="allowHpMaxOverride"
-				id="allowHpMaxOverride"
-				{{checked
-				settings.allowHpMaxOverride.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="allowHpMaxOverride" id="allowHpMaxOverride" {{checked settings.allowHpMaxOverride.value}} />
 			<div class="description">
 				<label for="allowHpMaxOverride">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.hint'}}</p>
@@ -795,62 +463,29 @@
 		</article>
 		<h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="spellClassFilterSelect"
-				id="spellClassFilterSelect"
-				{{checked
-				settings.spellClassFilterSelect.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="spellClassFilterSelect" id="spellClassFilterSelect" {{checked settings.spellClassFilterSelect.value}} />
 			<div class="description">
 				<label for="spellClassFilterSelect">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="spellClassFilterIconReplace"
-				id="spellClassFilterIconReplace"
-				{{checked
-				settings.spellClassFilterIconReplace.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="spellClassFilterIconReplace" id="spellClassFilterIconReplace" {{checked settings.spellClassFilterIconReplace.value}} />
 			<div class="description">
-				<label for="spellClassFilterIconReplace">
-					{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.name'}}
-				</label>
+				<label for="spellClassFilterIconReplace">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.hint'}}</p>
 			</div>
 		</article>
 		<h3>{{localize 'TIDY5E.Settings.ColorPickerLabel'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="colorPickerEnabled"
-				id="colorPickerEnabled"
-				{{checked
-				settings.colorPickerEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="colorPickerEnabled" id="colorPickerEnabled" {{checked settings.colorPickerEnabled.value}} />
 			<div class="description">
 				<label for="colorPickerEnabled">{{localize 'TIDY5E.Settings.ColorPickerEnabled.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEnabled.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="text"
-				class="color"
-				style="max-width: 120px"
-				data-dtype="string"
-				name="colorPickerEquipped"
-				id="colorPickerEquipped"
-				value="{{settings.colorPickerEquipped.value}}"
-				is="colorpicker-input"
-				data-responsive-color
-			/>
+			<input type="text" class="color" style="max-width: 120px" data-dtype="string" name="colorPickerEquipped" id="colorPickerEquipped" value="{{settings.colorPickerEquipped.value}}" is="colorpicker-input" data-responsive-color />
 			<div class="description" style="max-width: 240px">
 				<label for="colorPickerEquipped">{{localize 'TIDY5E.Settings.ColorPickerEquipped.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquipped.hint'}}</p>
@@ -869,9 +504,7 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerEquippedOutline">
-					{{localize 'TIDY5E.Settings.ColorPickerEquippedOutline.name'}}
-				</label>
+				<label for="colorPickerEquippedOutline">{{localize 'TIDY5E.Settings.ColorPickerEquippedOutline.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquippedOutline.hint'}}</p>
 			</div>
 		</article>
@@ -888,24 +521,12 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerEquippedAccent">
-					{{localize 'TIDY5E.Settings.ColorPickerEquippedAccent.name'}}
-				</label>
+				<label for="colorPickerEquippedAccent">{{localize 'TIDY5E.Settings.ColorPickerEquippedAccent.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquippedAccent.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="text"
-				class="color"
-				style="max-width: 120px"
-				data-dtype="string"
-				name="colorPickerPrepared"
-				id="colorPickerPrepared"
-				value="{{settings.colorPickerPrepared.value}}"
-				is="colorpicker-input"
-				data-responsive-color
-			/>
+			<input type="text" class="color" style="max-width: 120px" data-dtype="string" name="colorPickerPrepared" id="colorPickerPrepared" value="{{settings.colorPickerPrepared.value}}" is="colorpicker-input" data-responsive-color />
 			<div class="description" style="max-width: 240px">
 				<label for="colorPickerPrepared">{{localize 'TIDY5E.Settings.ColorPickerPrepared.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPrepared.hint'}}</p>
@@ -924,9 +545,7 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerPreparedOutline">
-					{{localize 'TIDY5E.Settings.ColorPickerPreparedOutline.name'}}
-				</label>
+				<label for="colorPickerPreparedOutline">{{localize 'TIDY5E.Settings.ColorPickerPreparedOutline.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPreparedOutline.hint'}}</p>
 			</div>
 		</article>
@@ -943,24 +562,12 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerPreparedAccent">
-					{{localize 'TIDY5E.Settings.ColorPickerPreparedAccent.name'}}
-				</label>
+				<label for="colorPickerPreparedAccent">{{localize 'TIDY5E.Settings.ColorPickerPreparedAccent.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPreparedAccent.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="text"
-				class="color"
-				style="max-width: 120px"
-				data-dtype="string"
-				name="colorPickerPact"
-				id="colorPickerPact"
-				value="{{settings.colorPickerPact.value}}"
-				is="colorpicker-input"
-				data-responsive-color
-			/>
+			<input type="text" class="color" style="max-width: 120px" data-dtype="string" name="colorPickerPact" id="colorPickerPact" value="{{settings.colorPickerPact.value}}" is="colorpicker-input" data-responsive-color />
 			<div class="description" style="max-width: 240px">
 				<label for="colorPickerPact">{{localize 'TIDY5E.Settings.ColorPickerPact.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPact.hint'}}</p>
@@ -1001,17 +608,7 @@
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="text"
-				class="color"
-				style="max-width: 120px"
-				data-dtype="string"
-				name="colorPickerAtWill"
-				id="colorPickerAtWill"
-				value="{{settings.colorPickerAtWill.value}}"
-				is="colorpicker-input"
-				data-responsive-color
-			/>
+			<input type="text" class="color" style="max-width: 120px" data-dtype="string" name="colorPickerAtWill" id="colorPickerAtWill" value="{{settings.colorPickerAtWill.value}}" is="colorpicker-input" data-responsive-color />
 			<div class="description" style="max-width: 240px">
 				<label for="colorPickerAtWill">{{localize 'TIDY5E.Settings.ColorPickerAtWill.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWill.hint'}}</p>
@@ -1030,9 +627,7 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerAtWillOutline">
-					{{localize 'TIDY5E.Settings.ColorPickerAtWillOutline.name'}}
-				</label>
+				<label for="colorPickerAtWillOutline">{{localize 'TIDY5E.Settings.ColorPickerAtWillOutline.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWillOutline.hint'}}</p>
 			</div>
 		</article>
@@ -1054,17 +649,7 @@
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="text"
-				class="color"
-				style="max-width: 120px"
-				data-dtype="string"
-				name="colorPickerInnate"
-				id="colorPickerInnate"
-				value="{{settings.colorPickerInnate.value}}"
-				is="colorpicker-input"
-				data-responsive-color
-			/>
+			<input type="text" class="color" style="max-width: 120px" data-dtype="string" name="colorPickerInnate" id="colorPickerInnate" value="{{settings.colorPickerInnate.value}}" is="colorpicker-input" data-responsive-color />
 			<div class="description" style="max-width: 240px">
 				<label for="colorPickerInnate">{{localize 'TIDY5E.Settings.ColorPickerInnate.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnate.hint'}}</p>
@@ -1083,9 +668,7 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerInnateOutline">
-					{{localize 'TIDY5E.Settings.ColorPickerInnateOutline.name'}}
-				</label>
+				<label for="colorPickerInnateOutline">{{localize 'TIDY5E.Settings.ColorPickerInnateOutline.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnateOutline.hint'}}</p>
 			</div>
 		</article>
@@ -1119,9 +702,7 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerAlwaysPrepared">
-					{{localize 'TIDY5E.Settings.ColorPickerAlwaysPrepared.name'}}
-				</label>
+				<label for="colorPickerAlwaysPrepared">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPrepared.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPrepared.hint'}}</p>
 			</div>
 		</article>
@@ -1138,9 +719,7 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerAlwaysPreparedOutline">
-					{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.name'}}
-				</label>
+				<label for="colorPickerAlwaysPreparedOutline">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.hint'}}</p>
 			</div>
 		</article>
@@ -1157,9 +736,7 @@
 				data-responsive-color
 			/>
 			<div class="description" style="max-width: 240px">
-				<label for="colorPickerAlwaysPreparedAccent">
-					{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.name'}}
-				</label>
+				<label for="colorPickerAlwaysPreparedAccent">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.hint'}}</p>
 			</div>
 		</article>
@@ -1197,28 +774,14 @@
 
 		<h3>{{localize 'TIDY5E.Settings.TabModules.labelMidiQoL'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="contextRollButtons"
-				id="contextRollButtons"
-				{{checked
-				settings.contextRollButtons.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="contextRollButtons" id="contextRollButtons" {{checked settings.contextRollButtons.value}} />
 			<div class="description">
 				<label for="contextRollButtons">{{localize 'TIDY5E.Settings.RollButtonsToCard.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.RollButtonsToCard.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="activeEffectsMarker"
-				id="activeEffectsMarker"
-				{{checked
-				settings.activeEffectsMarker.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="activeEffectsMarker" id="activeEffectsMarker" {{checked settings.activeEffectsMarker.value}} />
 			<div class="description">
 				<label for="activeEffectsMarker">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.hint'}}</p>
@@ -1227,56 +790,28 @@
 
 		<h3>{{localize 'TIDY5E.Settings.TabModules.labelLazyMoney'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lazyMoneyEnable"
-				id="lazyMoneyEnable"
-				{{checked
-				settings.lazyMoneyEnable.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lazyMoneyEnable" id="lazyMoneyEnable" {{checked settings.lazyMoneyEnable.value}} />
 			<div class="description">
 				<label for="lazyMoneyEnable">{{localize 'TIDY5E.Settings.LazyMoneyEnable.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyEnable.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lazyMoneyAddConvert"
-				id="lazyMoneyAddConvert"
-				{{checked
-				settings.lazyMoneyAddConvert.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lazyMoneyAddConvert" id="lazyMoneyAddConvert" {{checked settings.lazyMoneyAddConvert.value}} />
 			<div class="description">
 				<label for="lazyMoneyAddConvert">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lazyMoneyIgnoreElectrum"
-				id="lazyMoneyIgnoreElectrum"
-				{{checked
-				settings.lazyMoneyIgnoreElectrum.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lazyMoneyIgnoreElectrum" id="lazyMoneyIgnoreElectrum" {{checked settings.lazyMoneyIgnoreElectrum.value}} />
 			<div class="description">
 				<label for="lazyMoneyIgnoreElectrum">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lazyMoneyChatLog"
-				id="lazyMoneyChatLog"
-				{{checked
-				settings.lazyMoneyChatLog.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lazyMoneyChatLog" id="lazyMoneyChatLog" {{checked settings.lazyMoneyChatLog.value}} />
 			<div class="description">
 				<label for="lazyMoneyChatLog">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.hint'}}</p>
@@ -1292,14 +827,7 @@
 		<p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint2'}}</p>
 
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="editTotalLockEnabled"
-				id="editTotalLockEnabled"
-				{{checked
-				settings.editTotalLockEnabled.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="editTotalLockEnabled" id="editTotalLockEnabled" {{checked settings.editTotalLockEnabled.value}} />
 			<div class="description">
 				<label for="editTotalLockEnabled">{{localize 'TIDY5E.Settings.EditTotalLock.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.EditTotalLock.hint'}}</p>
@@ -1308,42 +836,21 @@
 
 		<h3>{{localize 'TIDY5E.Settings.TabLocks.labelGeneralLocks'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lockExpChanges"
-				id="lockExpChanges"
-				{{checked
-				settings.lockExpChanges.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lockExpChanges" id="lockExpChanges" {{checked settings.lockExpChanges.value}} />
 			<div class="description">
 				<label for="lockExpChanges">{{localize 'TIDY5E.Settings.LockExpChanges.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LockExpChanges.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lockHpMaxChanges"
-				id="lockHpMaxChanges"
-				{{checked
-				settings.lockHpMaxChanges.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lockHpMaxChanges" id="lockHpMaxChanges" {{checked settings.lockHpMaxChanges.value}} />
 			<div class="description">
 				<label for="lockHpMaxChanges">{{localize 'TIDY5E.Settings.LockHpMaxChanges.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LockHpMaxChanges.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lockConfigureSheet"
-				id="lockConfigureSheet"
-				{{checked
-				settings.lockConfigureSheet.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lockConfigureSheet" id="lockConfigureSheet" {{checked settings.lockConfigureSheet.value}} />
 			<div class="description">
 				<label for="lockConfigureSheet">{{localize 'TIDY5E.Settings.LockConfigureSheet.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LockConfigureSheet.hint'}}</p>
@@ -1352,14 +859,7 @@
 
 		<h3>{{localize 'TIDY5E.Settings.TabLocks.labelInventoryLocks'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lockMoneyChanges"
-				id="lockMoneyChanges"
-				{{checked
-				settings.lockMoneyChanges.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lockMoneyChanges" id="lockMoneyChanges" {{checked settings.lockMoneyChanges.value}} />
 			<div class="description">
 				<label for="lockMoneyChanges">{{localize 'TIDY5E.Settings.LockMoneyChanges.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LockMoneyChanges.hint'}}</p>
@@ -1368,28 +868,14 @@
 
 		<h3>{{localize 'TIDY5E.Settings.TabLocks.labelFeaturesLocks'}}</h3>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lockLevelSelector"
-				id="lockLevelSelector"
-				{{checked
-				settings.lockLevelSelector.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lockLevelSelector" id="lockLevelSelector" {{checked settings.lockLevelSelector.value}} />
 			<div class="description">
 				<label for="lockLevelSelector">{{localize 'TIDY5E.Settings.LockLevelSelector.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LockLevelSelector.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="lockItemQuantity"
-				id="lockItemQuantity"
-				{{checked
-				settings.lockItemQuantity.value}}
-			/>
+			<input type="checkbox" data-dtype="boolean" name="lockItemQuantity" id="lockItemQuantity" {{checked settings.lockItemQuantity.value}} />
 			<div class="description">
 				<label for="lockItemQuantity">{{localize 'TIDY5E.Settings.LockItemQuantity.name'}}</label>
 				<p class="notes">{{localize 'TIDY5E.Settings.LockItemQuantity.hint'}}</p>

@@ -14,13 +14,7 @@
 		"minimum": "10.283",
 		"verified": "10"
 	},
-	"esmodules": [
-		"./scripts/tidy5e-sheet.js",
-		"./scripts/tidy5e-npc.js",
-		"./scripts/tidy5e-vehicle.js",
-		"./scripts/tidy5e-item.js",
-		"./scripts/app/exhaustion.js"
-	],
+	"esmodules": ["./scripts/tidy5e-sheet.js", "./scripts/tidy5e-npc.js", "./scripts/tidy5e-vehicle.js", "./scripts/tidy5e-item.js", "./scripts/app/exhaustion.js"],
 	"styles": ["./css/tidy-icons.css", "./css/tidy5e.css", "./css/tidy5e-dark.css"],
 	"languages": [
 		{

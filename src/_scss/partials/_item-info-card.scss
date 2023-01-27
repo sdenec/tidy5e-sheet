@@ -99,23 +99,13 @@
 
 		&.equipped {
 			background: var(--t5e-equipped);
-			background: linear-gradient(
-				180deg,
-				var(--t5e-equipped) 0px,
-				var(--t5e-equipped) 26px,
-				rgba(0, 0, 0, 0) 36px
-			);
+			background: linear-gradient(180deg, var(--t5e-equipped) 0px, var(--t5e-equipped) 26px, rgba(0, 0, 0, 0) 36px);
 			// box-shadow: 0 0 10px var(--t5e-equipped) inset;
 		}
 
 		&.prepared {
 			background: var(--t5e-prepared);
-			background: linear-gradient(
-				180deg,
-				var(--t5e-prepared) 0px,
-				var(--t5e-prepared) 26px,
-				rgba(0, 0, 0, 0) 36px
-			);
+			background: linear-gradient(180deg, var(--t5e-prepared) 0px, var(--t5e-prepared) 26px, rgba(0, 0, 0, 0) 36px);
 			// box-shadow: 0 0 10px var(--t5e-prepared) inset;
 		}
 
@@ -139,12 +129,7 @@
 
 		&.alwaysprepared {
 			background: var(--t5e-alwaysprepared);
-			background: linear-gradient(
-				180deg,
-				var(--t5e-alwaysprepared) 0px,
-				var(--t5e-alwaysprepared) 26px,
-				rgba(0, 0, 0, 0) 36px
-			);
+			background: linear-gradient(180deg, var(--t5e-alwaysprepared) 0px, var(--t5e-alwaysprepared) 26px, rgba(0, 0, 0, 0) 36px);
 			// box-shadow: 0 0 10px var(--t5e-alwaysprepared) inset;
 		}
 
