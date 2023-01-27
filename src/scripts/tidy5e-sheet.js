@@ -526,7 +526,7 @@ async function abbreviateCurrency(app, html, data) {
 
 // transform DAE formulas for maxPreparesSpells
 async function tidyCustomEffect(actor, change) {
-	if (change.key !== "system.details.maxPreparedSpells") {
+	if (change.key !== "flags.tidy5e-sheet.maxPreparedSpells") { // system.details.maxPreparedSpells
 		return;
 	}
 	if (change.value?.length > 0) {

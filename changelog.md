@@ -384,7 +384,7 @@ Thank you very much!
 - minor css fix for NPC CR text color
 - NPC sheets now have a toggle button for the personality infos (now hidden by default) in the biography tab
 - fix to prevent items sometimes becoming invisible when toggling the item details
-- you now can use DAE to set a "custom" formula for "data.details.maxPreparedSpells" to calculate your available spell preparations. Thanks @tposney!
+- you now can use DAE to set a "custom" formula for "flags.tidy5e-sheet.maxPreparedSpells" to calculate your available spell preparations. Thanks @tposney!
 
 ### Version 0.4.6
 

@@ -7,7 +7,7 @@
 		<p>{{localize 'TIDY5E.PreparedSpells'}}</p>
 		<span class="spells-prepared">{{#if preparedSpells}}{{preparedSpells}}{{else}}0{{/if}}</span>
 		/
-		<input class="max-preparation" type="text" name="system.details.maxPreparedSpells" value="{{system.details.maxPreparedSpells}}" data-dtype="Number" placeholder="0" title="{{localize 'TIDY5E.PreparedSpellsMax'}}" />
+		<input class="max-preparation" type="number" name="flags.tidy5e-sheet.maxPreparedSpells" value="{{actor.flags.tidy5e-sheet.maxPreparedSpells}}" data-dtype="Number" placeholder="0" title="{{localize 'TIDY5E.PreparedSpellsMax'}}" />
 	</div>
 	<div class="spellcasting-attribute">
 		<p>{{localize 'DND5E.SpellAbility'}}</p>
