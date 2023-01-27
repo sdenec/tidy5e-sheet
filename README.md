@@ -37,53 +37,72 @@ To install this module manually:
 // 3) BEFORE LAUNCH THIS MACRO DO A BACKUP OF THE CURRENT WORLD JUST TO BE SAFE
 
 //Update old tidy5e CHARACTER data
-game.actors.updateAll((actor)=>{
+game.actors.updateAll((actor) => {
     return {
-        "flags.tidy5e-sheet":{
-            gender:actor.system.details?.gender ?? actor.flags["tidy5e-sheet"]?.gender ?? "",
-            age:actor.system.details?.age ?? actor.flags["tidy5e-sheet"]?.age ?? "",
-            height:actor.system.details?.height ?? actor.flags["tidy5e-sheet"]?.height ?? "",
-            weight:actor.system.details?.weight ?? actor.flags["tidy5e-sheet"]?.weight ?? "",
-            eyes:actor.system.details?.eyes ?? actor.flags["tidy5e-sheet"]?.eyes ?? "",
-            skin:actor.system.details?.skin ?? actor.flags["tidy5e-sheet"]?.skin ?? "",
-            hair:actor.system.details?.hair ?? actor.flags["tidy5e-sheet"]?.hair ?? "",
-	    notes: {
-			 "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
-	    },
-            notes1:{
-			"name": actor.system.details?.notes1name ?? actor.flags["tidy5e-sheet"]?.notes1?.name ?? "",
-			"value": actor.system.details?.notes1?.value ?? actor.flags["tidy5e-sheet"]?.notes1?.value ?? ""
-	    },
-	    notes2:{
-			"name": actor.system.details?.notes2name ?? actor.flags["tidy5e-sheet"]?.notes2?.name ?? "",
-			"value": actor.system.details?.notes2?.value  ?? actor.flags["tidy5e-sheet"]?.notes2?.value ?? ""
-	   },
-	   notes3:{
-			"name": actor.system.details?.notes3name ?? actor.flags["tidy5e-sheet"]?.notes3?.name ?? "",
-			"value": actor.system.details?.notes3?.value ?? actor.flags["tidy5e-sheet"]?.notes3?.value ?? ""
-	    },
-            notes4:{
-			"name": actor.system.details?.notes4name ?? actor.flags["tidy5e-sheet"]?.notes4?.name ?? "",
-			"value": actor.system.details?.notes4?.value ?? actor.flags["tidy5e-sheet"]?.notes4?.value ?? ""
-	    }
+        "flags.tidy5e-sheet": {
+            gender: actor.system.details?.gender ?? actor.flags["tidy5e-sheet"]?.gender ?? "",
+            age: actor.system.details?.age ?? actor.flags["tidy5e-sheet"]?.age ?? "",
+            height: actor.system.details?.height ?? actor.flags["tidy5e-sheet"]?.height ?? "",
+            weight: actor.system.details?.weight ?? actor.flags["tidy5e-sheet"]?.weight ?? "",
+            eyes: actor.system.details?.eyes ?? actor.flags["tidy5e-sheet"]?.eyes ?? "",
+            skin: actor.system.details?.skin ?? actor.flags["tidy5e-sheet"]?.skin ?? "",
+            hair: actor.system.details?.hair ?? actor.flags["tidy5e-sheet"]?.hair ?? "",
+            notes: {
+                "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
+            },
+            notes1: {
+                "name": actor.system.details?.notes1name ?? actor.flags["tidy5e-sheet"]?.notes1?.name ?? "",
+                "value": actor.system.details?.notes1?.value ?? actor.flags["tidy5e-sheet"]?.notes1?.value ?? ""
+            },
+            notes2: {
+                "name": actor.system.details?.notes2name ?? actor.flags["tidy5e-sheet"]?.notes2?.name ?? "",
+                "value": actor.system.details?.notes2?.value ?? actor.flags["tidy5e-sheet"]?.notes2?.value ?? ""
+            },
+            notes3: {
+                "name": actor.system.details?.notes3name ?? actor.flags["tidy5e-sheet"]?.notes3?.name ?? "",
+                "value": actor.system.details?.notes3?.value ?? actor.flags["tidy5e-sheet"]?.notes3?.value ?? ""
+            },
+            notes4: {
+                "name": actor.system.details?.notes4name ?? actor.flags["tidy5e-sheet"]?.notes4?.name ?? "",
+                "value": actor.system.details?.notes4?.value ?? actor.flags["tidy5e-sheet"]?.notes4?.value ?? ""
+            }
         }
     }
-}, (actor)=>{
-	return actor.type === 'character';
+}, (actor) => {
+    return actor.type === 'character';
 });
 
 //Update old tidy5e NPC Traits data
-game.actors.updateAll((actor)=>{
+game.actors.updateAll((actor) => {
     return {
-        "flags.tidy5e-sheet":{
-            trait:actor.system.details?.trait ?? actor.flags["tidy5e-sheet"]?.trait ?? "",
-            ideal:actor.system.details?.ideal ?? actor.flags["tidy5e-sheet"]?.ideal ?? "",
-            bond:actor.system.details?.bond ?? actor.flags["tidy5e-sheet"]?.bond ?? "",
-            flaw:actor.system.details?.flaw ?? actor.flags["tidy5e-sheet"]?.flaw ?? ""
+        "flags.tidy5e-sheet": {
+            trait: actor.system.details?.trait ?? actor.flags["tidy5e-sheet"]?.trait ?? "",
+            ideal: actor.system.details?.ideal ?? actor.flags["tidy5e-sheet"]?.ideal ?? "",
+            bond: actor.system.details?.bond ?? actor.flags["tidy5e-sheet"]?.bond ?? "",
+            flaw: actor.system.details?.flaw ?? actor.flags["tidy5e-sheet"]?.flaw ?? "",
+            notes: {
+                "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
+            },
+            notes1: {
+                "name": actor.system.details?.notes1name ?? actor.flags["tidy5e-sheet"]?.notes1?.name ?? "",
+                "value": actor.system.details?.notes1?.value ?? actor.flags["tidy5e-sheet"]?.notes1?.value ?? ""
+            },
+            notes2: {
+                "name": actor.system.details?.notes2name ?? actor.flags["tidy5e-sheet"]?.notes2?.name ?? "",
+                "value": actor.system.details?.notes2?.value ?? actor.flags["tidy5e-sheet"]?.notes2?.value ?? ""
+            },
+            notes3: {
+                "name": actor.system.details?.notes3name ?? actor.flags["tidy5e-sheet"]?.notes3?.name ?? "",
+                "value": actor.system.details?.notes3?.value ?? actor.flags["tidy5e-sheet"]?.notes3?.value ?? ""
+            },
+            notes4: {
+                "name": actor.system.details?.notes4name ?? actor.flags["tidy5e-sheet"]?.notes4?.name ?? "",
+                "value": actor.system.details?.notes4?.value ?? actor.flags["tidy5e-sheet"]?.notes4?.value ?? ""
+            }
         }
     }
-}, (actor)=>{
-	return actor.type === 'npc';
+}, (actor) => {
+    return actor.type === 'npc';
 });
 ```
 
