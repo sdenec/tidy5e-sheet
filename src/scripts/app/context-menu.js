@@ -150,6 +150,7 @@ const _getAdvancementContextMenuOptions = function(html) {
  * @protected
  */
 const _getActiveEffectContextOptions = function(effect) {
+  const actor = effect.parent;
   let options = [];
 
   /*
@@ -180,23 +181,29 @@ const _getActiveEffectContextOptions = function(effect) {
       name: effect.disabled ? "DND5E.ContextMenuActionEnable" : "DND5E.ContextMenuActionDisable",
       icon: effect.disabled ? "<i class='fas fa-check fa-fw'></i>" : "<i class='fas fa-times fa-fw'></i>",
       callback: () => effect.update({disabled: !effect.disabled})
-    },
-    {
+    }
+  );
+
+  options.push({
       name: "DND5E.ContextMenuActionEdit",
       icon: "<i class='fas fas fa-pencil-alt fa-fw'></i>",
       callback: () => effect.sheet.render(true)
-    },
-    {
-      name: "DND5E.ContextMenuActionDuplicate",
-      icon: "<i class='fas fa-copy fa-fw'></i>",
-      callback: () => effect.clone({label: game.i18n.format("DOCUMENT.CopyOf", {name: effect.label})}, {save: true})
-    },
-    {
-      name: "DND5E.ContextMenuActionDelete",
-      icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
-      callback: () => effect.deleteDialog()
     }
   );
+  if (actor.getFlag("tidy5e-sheet", "allow-edit")) {
+    options.push({
+        name: "DND5E.ContextMenuActionDuplicate",
+        icon: "<i class='fas fa-copy fa-fw'></i>",
+        callback: () => effect.clone({label: game.i18n.format("DOCUMENT.CopyOf", {name: effect.label})}, {save: true})
+      }
+    );
+    options.push({
+        name: "DND5E.ContextMenuActionDelete",
+        icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
+        callback: () => effect.deleteDialog()
+      }
+    );
+  }
 
   return options;
 }
@@ -209,13 +216,13 @@ const _getActiveEffectContextOptions = function(effect) {
  * @protected
  */
 const _getItemContextOptions = function(item) {
-  const allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext"); 
   const actor = item.actor;
+  let options = [];
 
+  const allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext"); 
   let toggleClass = "";
   let toggleTitle = "";
   let canToggle = false;
-  let options = [];
   let isActive = false;
   let canPrepare = false;
 
@@ -392,140 +399,48 @@ const _getItemContextOptions = function(item) {
         name: "TIDY5E.EditSpell",
         icon: "<i class='fas fa-pencil-alt fa-fw'></i>",
         callback: () => item.sheet.render(true)
-      },
-      {
-        name: "DND5E.ContextMenuActionDuplicate",
-        icon: "<i class='fas fa-copy fa-fw'></i>",
-        condition: () => !["race", "background", "class", "subclass"].includes(item.type),
-        callback: () => item.clone({name: game.i18n.format("DOCUMENT.CopyOf", {name: item.name})}, {save: true})
-      },
-      {
-        name: "TIDY5E.DeleteSpell",
-        icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
-        callback: () => item.deleteDialog()
       }
-    )
+    );
+    if (actor.getFlag("tidy5e-sheet", "allow-edit")) {
+      options.push({
+          name: "DND5E.ContextMenuActionDuplicate",
+          icon: "<i class='fas fa-copy fa-fw'></i>",
+          condition: () => !["race", "background", "class", "subclass"].includes(item.type),
+          callback: () => item.clone({name: game.i18n.format("DOCUMENT.CopyOf", {name: item.name})}, {save: true})
+        }
+      );
+      options.push({
+          name: "TIDY5E.DeleteSpell",
+          icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
+          callback: () => item.deleteDialog()
+        }
+      );
+    }
   } else {
     options.push(
       {
         name: "DND5E.ContextMenuActionEdit",
         icon: "<i class='fas fa-pencil-alt fa-fw'></i>",
         callback: () => item.sheet.render(true)
-      },
-      {
-        name: "DND5E.ContextMenuActionDuplicate",
-        icon: "<i class='fas fa-copy fa-fw'></i>",
-        condition: () => !["race", "background", "class", "subclass"].includes(item.type),
-        callback: () => item.clone({name: game.i18n.format("DOCUMENT.CopyOf", {name: item.name})}, {save: true})
-      },
-      {
-        name: "DND5E.ContextMenuActionDelete",
-        icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
-        callback: () => item.deleteDialog()
       }
     );
+
+    if (actor.getFlag("tidy5e-sheet", "allow-edit")) {
+      options.push({
+          name: "DND5E.ContextMenuActionDuplicate",
+          icon: "<i class='fas fa-copy fa-fw'></i>",
+          condition: () => !["race", "background", "class", "subclass"].includes(item.type),
+          callback: () => item.clone({name: game.i18n.format("DOCUMENT.CopyOf", {name: item.name})}, {save: true})
+        }
+      );
+      options.push({
+          name: "DND5E.ContextMenuActionDelete",
+          icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
+          callback: () => item.deleteDialog()
+        }
+      );
+    }
   }
   return options;
 
 }
-
-// export const tidy5eContextMenuOLD = function (html) {
-//   // open context menu
-
-//   html.find('.item-list .item.context-enabled').mousedown( async (event) => {
-//     let target = event.target.class;
-//     let item = event.currentTarget;
-//     switch (event.which) {
-//       case 2:
-//         // middle mouse opens item editor
-//         event.preventDefault();
-//         if($(item).find('.item-edit')) {
-//           $(item).find('.item-edit').trigger('click');
-//         }
-
-//         if($(item).find('.effect-edit')) {
-//           $(item).find('.effect-edit').trigger('click');
-//         }
-
-//         break;
-//       case 3:
-//         // right click opens context menu
-//         item.addEventListener('contextmenu', e => e.preventDefault());
-//         event.preventDefault();
-//         if(!game.settings.get("tidy5e-sheet", "rightClickDisabled") && $(item).hasClass('context-enabled')){
-//           html.find('.item').removeClass('context');
-//           html.find('.item #context-menu').hide();
-//           itemContextMenu(event);
-//         }
-//         break;
-//     }
-//   });
-
-//   html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
-//     if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
-//       switch (event.which) {
-//         case 1:
-//           event.preventDefault();
-//           html.find('.item').removeClass('context');
-//           html.find('.item #context-menu').hide();
-//           itemContextMenu(event);
-//           break;
-//       }
-//     }
-//   });
-
-//   // context menu calculations
-//   async function itemContextMenu(event){
-//     let item = event.currentTarget;
-    
-//     if($(item).hasClass('activate-context-menu')){
-//       item = item.parentNode;
-//     }
-    
-//     let	mouseX = event.clientX,
-//     mouseY = event.clientY,
-//     itemTop = $(item).offset().top,
-//     itemLeft = $(item).offset().left,
-//     itemHeight = $(item).height(),
-//     itemWidth = $(item).width(),
-//     contextTop = mouseY-itemTop+1,
-//     contextLeft = mouseX-itemLeft+1,
-//     contextWidth = $(item).find('#context-menu').width(),
-//     contextHeight = $(item).find('#context-menu').height(),
-//     contextRightBound = mouseX + contextWidth,
-//     contextBottomBound = mouseY + contextHeight,
-//     itemsList = $(item).closest('.items-list'),
-//     itemsListRightBound = itemsList.offset().left + itemsList.width() - 17,
-//     itemsListBottomBound = itemsList.offset().top + itemsList.height();			
-    
-//     // check right side bounds
-//     if(contextRightBound > itemsListRightBound) {
-//       let rightDiff = itemsListRightBound - contextRightBound;
-//       contextLeft = contextLeft + rightDiff;
-//     }
-    
-//     // check bottom bounds
-//     if(contextBottomBound > itemsListBottomBound) {
-//       let bottomDiff = itemsListBottomBound - contextBottomBound;
-//       contextTop = contextTop + bottomDiff;
-//     }
-
-//     $(item)
-//       .addClass('context')
-//       .find('#context-menu')
-//       .css({'top': contextTop+'px', 'left': contextLeft+'px'})
-//       .fadeIn(300);
-//   }
-
-//   //close context menu on any click outside
-//   $(html).mousedown( async (event) => {
-//     switch (event.which) {
-//       case 1:
-//       if ( ! $(event.target).closest('.item #context-menu').length && ! $(event.target).closest('.item .activate-context-menu').length ) {
-//         html.find('.item').removeClass('context');
-//         html.find('.item #context-menu').hide();
-//       }
-//         break;
-//     }
-//   });
-// }

@@ -749,6 +749,7 @@ async function editProtection(app, html, data) {
 
     html.find(".inventory-list .items-footer").addClass("hidden").hide();
     html.find(".inventory-list .item-control.item-delete").remove();
+    html.find(".inventory-list .item-control.item-duplicate").remove();
 
     let actor = app.actor,
       legAct = actor.system.resources.legact.max,
