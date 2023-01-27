@@ -1,40 +1,39 @@
-
-export function migrateFor21X(app, html, data){
-    return migrateActorFor21X(app.object);
+export function migrateFor21X(app, html, data) {
+	return migrateActorFor21X(app.object);
 }
-export function migrateActorFor21X(actor){
-    actor.update({
-        "flags.tidy5e-sheet":{
-            gender:actor.system.details?.gender ?? "",
-            age:actor.system.details?.age ?? "",
-            height:actor.system.details?.height ?? "",
-            weight:actor.system.details?.weight ?? "",
-            eyes:actor.system.details?.eyes ?? "",
-            skin:actor.system.details?.skin ?? "",
-            hair:actor.system.details?.hair ?? "",
-            notes: {
-                "value": actor.system.details?.notes?.value  ?? ""
-            },
-            notes1:{
-                "name": actor.system.details?.notes1name ?? "",
-                "value": actor.system.details?.notes1  ?? ""
-            },
-            notes2:{
-                "name": actor.system.details?.notes2name ?? "",
-                "value": actor.system.details?.notes2  ?? ""
-            },
-            notes3:{
-                "name": actor.system.details?.notes3name  ?? "",
-                "value": actor.system.details?.notes3  ?? ""
-            },
-            notes4:{
-                "name": actor.system.details?.notes4name  ?? "",
-                "value": actor.system.details?.notes4  ?? ""
-            }
-        }
-    });
+export function migrateActorFor21X(actor) {
+	actor.update({
+		"flags.tidy5e-sheet": {
+			gender: actor.system.details?.gender ?? "",
+			age: actor.system.details?.age ?? "",
+			height: actor.system.details?.height ?? "",
+			weight: actor.system.details?.weight ?? "",
+			eyes: actor.system.details?.eyes ?? "",
+			skin: actor.system.details?.skin ?? "",
+			hair: actor.system.details?.hair ?? "",
+			notes: {
+				value: actor.system.details?.notes?.value ?? "",
+			},
+			notes1: {
+				name: actor.system.details?.notes1name ?? "",
+				value: actor.system.details?.notes1 ?? "",
+			},
+			notes2: {
+				name: actor.system.details?.notes2name ?? "",
+				value: actor.system.details?.notes2 ?? "",
+			},
+			notes3: {
+				name: actor.system.details?.notes3name ?? "",
+				value: actor.system.details?.notes3 ?? "",
+			},
+			notes4: {
+				name: actor.system.details?.notes4name ?? "",
+				value: actor.system.details?.notes4 ?? "",
+			},
+		},
+	});
 
-    /*
+	/*
     if(!isEmptyObject(actor?.system?.details?.notes)) {
         if(!actor.flags) {
             actor.flags = {};
@@ -191,13 +190,13 @@ export function migrateActorFor21X(actor){
 }
 
 function isEmptyObject(obj) {
-    // because Object.keys(new Date()).length === 0;
-    // we have to do some additional check
-    if (obj === null || obj === undefined) {
-        return true;
-    }
-    const result =
-        obj && // null and undefined check
-        Object.keys(obj).length === 0; // || Object.getPrototypeOf(obj) === Object.prototype);
-    return result;
+	// because Object.keys(new Date()).length === 0;
+	// we have to do some additional check
+	if (obj === null || obj === undefined) {
+		return true;
+	}
+	const result =
+		obj && // null and undefined check
+		Object.keys(obj).length === 0; // || Object.getPrototypeOf(obj) === Object.prototype);
+	return result;
 }

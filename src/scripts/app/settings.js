@@ -1,17 +1,16 @@
-import {settingsList} from './settingsList.js';
+import { settingsList } from "./settingsList.js";
 
 export class Tidy5eUserSettings extends FormApplication {
 	static init() {
-		game.settings.registerMenu('tidy5e-sheet', 'userMenu', {
-			name: '',
+		game.settings.registerMenu("tidy5e-sheet", "userMenu", {
+			name: "",
 			label: game.i18n.localize("TIDY5E.Settings.SheetMenu.label"),
-			icon: 'fas fa-cog',
+			icon: "fas fa-cog",
 			type: Tidy5eUserSettings,
-			restricted: false
+			restricted: false,
 		});
 
 		settingsList();
-
 	}
 
 	// settings template
@@ -25,13 +24,13 @@ export class Tidy5eUserSettings extends FormApplication {
 			classes: ["tidy5e", "settings"],
 			tabs: [
 				{
-					navSelector: '.tabs',
-					contentSelector: 'form',
-					initial: 'Players'
-				}
+					navSelector: ".tabs",
+					contentSelector: "form",
+					initial: "Players",
+				},
 			],
-			submitOnClose: true
-		}
+			submitOnClose: true,
+		};
 	}
 
 	constructor(object = {}, options) {
@@ -45,113 +44,112 @@ export class Tidy5eUserSettings extends FormApplication {
 	}
 
 	getSettingsData() {
-
 		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
-			'ammoEquippedOnly',
-			'activeEffectsMarker',
-			'classListDisabled',
-			'contextRollButtons',
-			'defaultActionsTab',
-			'editGmAlwaysEnabled',
-			'editEffectsGmOnlyEnabled',
-			'editTotalLockEnabled',
-			'exhaustionEffectsEnabled',
-			'exhaustionEffectIcon',
-			'exhaustionEffectCustom',
-			'exhaustionEffectCustomTiers',
-			'exhaustionOnHover',
-			'exhaustionDisabled',
-			'expandedSheetEnabled',
-			'hideIfZero',
-			'hiddenDeathSavesEnabled',
-			'hideSpellSlotMarker',
-			'hideStandardEncumbranceBar',
-            'enableSpellLevelButtons',
-			'hpBarDisabled',
-			'hpBarDisabledNpc',
-			'hpBarDisabledVehicle',
-			'hpOverlayDisabled',
-			'hpOverlayDisabledNpc',
-			'hpOverlayDisabledVehicle',
-			'hpOverlayBorder',
-			'hpOverlayBorderNpc',
-			'hpOverlayBorderVehicle',
-			'inspirationAnimationDisabled',
-			'inspirationDisabled',
-			'inspirationOnHover',
-			'itemCardsAreFloating',
-			'itemCardsDelay',
-			'itemCardsFixKey',
-			'itemCardsForAllItems',
-			'journalTabDisabled',
-			'linkMarkerNpc',
+			"ammoEquippedOnly",
+			"activeEffectsMarker",
+			"classListDisabled",
+			"contextRollButtons",
+			"defaultActionsTab",
+			"editGmAlwaysEnabled",
+			"editEffectsGmOnlyEnabled",
+			"editTotalLockEnabled",
+			"exhaustionEffectsEnabled",
+			"exhaustionEffectIcon",
+			"exhaustionEffectCustom",
+			"exhaustionEffectCustomTiers",
+			"exhaustionOnHover",
+			"exhaustionDisabled",
+			"expandedSheetEnabled",
+			"hideIfZero",
+			"hiddenDeathSavesEnabled",
+			"hideSpellSlotMarker",
+			"hideStandardEncumbranceBar",
+			"enableSpellLevelButtons",
+			"hpBarDisabled",
+			"hpBarDisabledNpc",
+			"hpBarDisabledVehicle",
+			"hpOverlayDisabled",
+			"hpOverlayDisabledNpc",
+			"hpOverlayDisabledVehicle",
+			"hpOverlayBorder",
+			"hpOverlayBorderNpc",
+			"hpOverlayBorderVehicle",
+			"inspirationAnimationDisabled",
+			"inspirationDisabled",
+			"inspirationOnHover",
+			"itemCardsAreFloating",
+			"itemCardsDelay",
+			"itemCardsFixKey",
+			"itemCardsForAllItems",
+			"journalTabDisabled",
+			"linkMarkerNpc",
 
-			'playerNameEnabled',
-			'portraitStyle',
-			'quantityAlwaysShownEnabled',
-			'restingForNpcsEnabled',
-			'restingForNpcsChatDisabled',
-			'rightClickDisabled',
-			'classicControlsEnabled',
-			'skillsAlwaysShownNpc',
-			'hideSpellbookTabNpc',
+			"playerNameEnabled",
+			"portraitStyle",
+			"quantityAlwaysShownEnabled",
+			"restingForNpcsEnabled",
+			"restingForNpcsChatDisabled",
+			"rightClickDisabled",
+			"classicControlsEnabled",
+			"skillsAlwaysShownNpc",
+			"hideSpellbookTabNpc",
 
-			'playerSheetWidth',
-			'npsSheetWidth',
-			'vehicleSheetWidth',
+			"playerSheetWidth",
+			"npsSheetWidth",
+			"vehicleSheetWidth",
 
-			'traitLabelsEnabled',
-			'traitsAlwaysShownNpc',
-			'traitsMovedBelowResource',
-			'traitsMovedBelowResourceNpc',
-			'traitsTogglePc',
+			"traitLabelsEnabled",
+			"traitsAlwaysShownNpc",
+			"traitsMovedBelowResource",
+			"traitsMovedBelowResourceNpc",
+			"traitsTogglePc",
 
-			'lazyHpAndExpEnable',
-			'lazyMoneyEnable',
-			'lazyMoneyAddConvert',
-			'lazyMoneyIgnoreElectrum',
-			'lazyMoneyChatLog',
+			"lazyHpAndExpEnable",
+			"lazyMoneyEnable",
+			"lazyMoneyAddConvert",
+			"lazyMoneyIgnoreElectrum",
+			"lazyMoneyChatLog",
 
-			'allowCantripToBePreparedOnContext',
-			'spellClassFilterSelect',
-			'spellClassFilterIconReplace',
-			'allowHpMaxOverride',
+			"allowCantripToBePreparedOnContext",
+			"spellClassFilterSelect",
+			"spellClassFilterIconReplace",
+			"allowHpMaxOverride",
 
-			'lockMoneyChanges',
-			'lockExpChanges',
-			'lockHpMaxChanges',
-			'lockLevelSelector',
-			'lockConfigureSheet',
-			'lockItemQuantity',
+			"lockMoneyChanges",
+			"lockExpChanges",
+			"lockHpMaxChanges",
+			"lockLevelSelector",
+			"lockConfigureSheet",
+			"lockItemQuantity",
 
-			'colorPickerEnabled',
-			'colorPickerEquipped',
-			'colorPickerEquippedOutline',
-			'colorPickerEquippedAccent',
-			'colorPickerPrepared',
-			'colorPickerPreparedOutline',
-			'colorPickerPreparedAccent',
-			'colorPickerPact',
-			'colorPickerPactOutline',
-			'colorPickerPactAccent',
-			'colorPickerAtWill',
-			'colorPickerAtWillOutline',
-			'colorPickerAtWillAccent',
-			'colorPickerInnate',
-			'colorPickerInnateOutline',
-			'colorPickerInnateAccent',
-			'colorPickerAlwaysPrepared',
-			'colorPickerAlwaysPreparedOutline',
-			'colorPickerAlwaysPreparedAccent'
-		]
+			"colorPickerEnabled",
+			"colorPickerEquipped",
+			"colorPickerEquippedOutline",
+			"colorPickerEquippedAccent",
+			"colorPickerPrepared",
+			"colorPickerPreparedOutline",
+			"colorPickerPreparedAccent",
+			"colorPickerPact",
+			"colorPickerPactOutline",
+			"colorPickerPactAccent",
+			"colorPickerAtWill",
+			"colorPickerAtWillOutline",
+			"colorPickerAtWillAccent",
+			"colorPickerInnate",
+			"colorPickerInnateOutline",
+			"colorPickerInnateAccent",
+			"colorPickerAlwaysPrepared",
+			"colorPickerAlwaysPreparedOutline",
+			"colorPickerAlwaysPreparedAccent",
+		];
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
 		let data = {};
-		settings.forEach (setting => {
-			data[setting] = {'value' : game.settings.get('tidy5e-sheet', setting)};
+		settings.forEach((setting) => {
+			data[setting] = { value: game.settings.get("tidy5e-sheet", setting) };
 			// console.log(data[setting]);
-		})
+		});
 		return data;
 	}
 
@@ -166,52 +164,51 @@ export class Tidy5eUserSettings extends FormApplication {
 		// console.log('Listeners Active!')
 		// console.log(html)
 
-		let exhaustionEffectSelect = html.find('select#exhaustionEffectsEnabled');
+		let exhaustionEffectSelect = html.find("select#exhaustionEffectsEnabled");
 		let exhaustionSelected = $(exhaustionEffectSelect).val();
 		// console.log(exhaustionSelected)
 		switch (exhaustionSelected) {
-			case 'default': {
-				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
-				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
+			case "default": {
+				html.find("input#exhaustionEffectIcon").closest(".setting").hide();
+				html.find("input#exhaustionEffectCustom").closest(".setting").hide();
 				break;
 			}
-			case 'tidy5e' : {
-				html.find('input#exhaustionEffectCustom').closest('.setting').hide();
+			case "tidy5e": {
+				html.find("input#exhaustionEffectCustom").closest(".setting").hide();
 				break;
 			}
-			case 'dfredce' : {
-				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
+			case "dfredce": {
+				html.find("input#exhaustionEffectIcon").closest(".setting").hide();
 				break;
 			}
-			case 'cub' : {
-				html.find('input#exhaustionEffectIcon').closest('.setting').hide();
+			case "cub": {
+				html.find("input#exhaustionEffectIcon").closest(".setting").hide();
 				break;
 			}
 		}
 
-		exhaustionEffectSelect.on('change', function(e){
-			html.find('input#exhaustionEffectIcon').closest('.setting').hide();
-			html.find('input#exhaustionEffectCustom').closest('.setting').hide();
+		exhaustionEffectSelect.on("change", function (e) {
+			html.find("input#exhaustionEffectIcon").closest(".setting").hide();
+			html.find("input#exhaustionEffectCustom").closest(".setting").hide();
 
 			let value = e.target.value;
-			if (value == 'tidy5e'){
-				html.find('input#exhaustionEffectIcon').closest('.setting').show();
-			} else if (value == 'custom'){
-				html.find('input#exhaustionEffectCustom').closest('.setting').show();
+			if (value == "tidy5e") {
+				html.find("input#exhaustionEffectIcon").closest(".setting").show();
+			} else if (value == "custom") {
+				html.find("input#exhaustionEffectCustom").closest(".setting").show();
 			}
-		})
+		});
 
-		html.find('input#exhaustionEffectIcon').on('change', function(e){
+		html.find("input#exhaustionEffectIcon").on("change", function (e) {
 			// console.log(e.target.value)
-			if(e.target.value == '' || e.target.value == null){
-				e.target.value="modules/tidy5e-sheet/images/exhaustion.svg";
+			if (e.target.value == "" || e.target.value == null) {
+				e.target.value = "modules/tidy5e-sheet/images/exhaustion.svg";
 			}
-		})
-
+		});
 	}
 
 	redrawOpenSheets() {
-		game.actors.filter(a => a.sheet.rendered).forEach(a => a.sheet.render(true));
+		game.actors.filter((a) => a.sheet.rendered).forEach((a) => a.sheet.render(true));
 	}
 
 	_updateObject(ev, formData) {
@@ -219,17 +216,17 @@ export class Tidy5eUserSettings extends FormApplication {
 		let settingsUpdated = false;
 		// console.log(formData);
 		// console.log(settingOptions);
-		for(let key in data) {
+		for (let key in data) {
 			// console.log(`Key: ${key} with value: ${data[key]}`);
-			let oldSetting = game.settings.get('tidy5e-sheet', key);
+			let oldSetting = game.settings.get("tidy5e-sheet", key);
 			let newSetting = data[key];
-			if(oldSetting == newSetting) continue;
+			if (oldSetting == newSetting) continue;
 			// console.log(`${key} changed to "${data[key]}"`);
-			game.settings.set('tidy5e-sheet', key, data[key]);
+			game.settings.set("tidy5e-sheet", key, data[key]);
 			settingsUpdated = true;
 		}
 
-		if(settingsUpdated){
+		if (settingsUpdated) {
 			this.redrawOpenSheets();
 		}
 	}
@@ -237,7 +234,7 @@ export class Tidy5eUserSettings extends FormApplication {
 
 Hooks.on("renderTidy5eUserSettings", () => {
 	if (!game.user.isGM) {
-		document.querySelectorAll('.tidy5e.settings .gm-only').forEach(function(el){
+		document.querySelectorAll(".tidy5e.settings .gm-only").forEach(function (el) {
 			el.remove();
 		});
 	}

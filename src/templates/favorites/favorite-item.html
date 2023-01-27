@@ -1,62 +1,63 @@
-<li class="item fav-item {{#if item.isMagic}} magic-item{{/if}} {{#if item.system.equipped}} equipped{{/if}} {{#if item.system.preparation.prepared}} prepared{{/if}} {{#if item.alwaysPrep}} alwaysprepared{{/if}} {{ item.attunement.cls }}" data-item-id="{{item._id}}" 
-  {{#if item.canPrep}}title="{{item.toggleTitle}}{{/if}}">
-  <div class="item-name rollable">        
-    <div class="item-image" style="background-image: url('{{item.img}}')">
-      <i class="fa fa-dice-d20"></i>
-    </div>
-    <h4>
-      {{item.name}}
-    </h4>
-    {{#if item.system.quantity}}
-      <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
-        (<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" {{#if item.editable}}{{else}}disabled{{/if}}>)
-      </span>
-    {{/if}}
-  </div>
+<li
+	class="item fav-item {{#if item.isMagic}} magic-item{{/if}} {{#if item.system.equipped}} equipped{{/if}} {{#if item.system.preparation.prepared}} prepared{{/if}} {{#if item.alwaysPrep}} alwaysprepared{{/if}} {{ item.attunement.cls }}"
+	data-item-id="{{item._id}}"
+	{{#if
+	item.canPrep}}title="{{item.toggleTitle}}{{/if}}"
+>
+	<div class="item-name rollable">
+		<div class="item-image" style="background-image: url('{{item.img}}')">
+			<i class="fa fa-dice-d20"></i>
+		</div>
+		<h4>{{item.name}}</h4>
+		{{#if item.system.quantity}}
+		<span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+			(<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}"
+			maxlength="3" {{#if item.editable}}{{else}}disabled{{/if}}>)
+		</span>
+		{{/if}}
+	</div>
 
-  {{#if item.canAttune}} 
-    <div class="item-state-icon {{item.attunement.cls}}" title="{{localize item.attunement.title}}"><i class="fas fa-sun"></i></div>
-  {{/if}}
+	{{#if item.canAttune}}
+	<div class="item-state-icon {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+		<i class="fas fa-sun"></i>
+	</div>
+	{{/if}} {{#if item.isItem}}
+	<div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
+		{{#if item.system.uses.max}} <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}"
+		{{#if item.editable}}{{else}}disabled{{/if}}> / <input class="uses-max" data-path="system.uses.max" type="text"
+		value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}> {{else}} {{#if item.editable}}
+		<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
+		{{/if}} {{/if}}
+	</div>
+	{{/if}} {{#if item.isFeat}}
+	<div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
+		{{#if item.isOnCooldown}}
+		<a class="item-recharge rollable" title="{{item.labels.recharge}}">
+			<i class="fas fa-dice-six"></i>
+			{{item.system.recharge.value}}{{#if (ne item.system.recharge.value 6)}}+{{/if}}
+		</a>
+		{{else if item.system.recharge.value}}
+		<i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
+		{{else if item.system.uses.max}} <input data-path="system.uses.value" type="text"
+		value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}> / <input class="uses-max"
+		data-path="system.uses.max" type="text" value="{{item.system.uses.max}}" {{#if
+		item.editable}}{{else}}disabled{{/if}}> {{else}} {{#if item.editable}}
+		<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
+		{{/if}} {{/if}}
+	</div>
+	{{/if}} {{#if item.spellComps}}
+	<div class="item-detail spell-comps" title="{{localize 'DND5E.SpellComponents'}}">
+		{{item.spellComps}} {{#if item.spellCon}}
+		<span class="spell-component C">C</span>
+		{{/if}} {{#if item.spellRit}}
+		<span class="spell-component R">R</span>
+		{{/if}}
+	</div>
+	{{/if}}
 
-  {{#if item.isItem}}
-  <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
-    {{#if item.system.uses.max}}
-      <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
-      / <input  class="uses-max" data-path="system.uses.max" type="text" value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
-    {{else}}
-      {{#if item.editable}}<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
-      {{/if}}
-    {{/if}}
-  </div>
-  {{/if}}
-  {{#if item.isFeat}}
-  <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
-    {{#if item.isOnCooldown}}
-    <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i>
-      {{item.system.recharge.value}}{{#if (ne item.system.recharge.value 6)}}+{{/if}}</a>
-    {{else if item.system.recharge.value}}
-    <i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
-    {{else if item.system.uses.max}}
-    <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}>
-    / <input class="uses-max" data-path="system.uses.max" type="text" value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}>
-    {{else}}
-      {{#if item.editable}}<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>{{/if}}
-    {{/if}}
-  </div>
-  {{/if}}
-
-  {{#if item.spellComps}}
-    <div class="item-detail spell-comps" title="{{localize 'DND5E.SpellComponents'}}">
-      {{item.spellComps}}
-      {{#if item.spellCon}}<span class="spell-component C">C</span>{{/if}}
-      {{#if item.spellRit}}<span class="spell-component R">R</span>{{/if}}
-    </div>
-  {{/if}}
-
-  <div class="item-detail item-action">
-    {{#each item.favLabels as |label id|}}
-      <span title="{{localize 'DND5E.Usage'}}: {{label}}">{{label}}</span>
-    {{/each}}
-  </div>
-
+	<div class="item-detail item-action">
+		{{#each item.favLabels as |label id|}}
+		<span title="{{localize 'DND5E.Usage'}}: {{label}}">{{label}}</span>
+		{{/each}}
+	</div>
 </li>

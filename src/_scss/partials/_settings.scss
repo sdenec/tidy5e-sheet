@@ -1,98 +1,97 @@
 .app.window-app.tidy5e.settings {
-  border: 2px solid #ff6400;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
-  max-height: 500px;
-  
-  .window-content {
-    padding: 0;
-    overflow: hidden;
+	border: 2px solid #ff6400;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+	max-height: 500px;
 
-    form {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-  }
+	.window-content {
+		padding: 0;
+		overflow: hidden;
 
-  .sheet-tabs {
-    flex: 0;
-    padding: 4px 0;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #222;
+		form {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+	}
 
-    .item {
-      flex: 0;
-      white-space: nowrap;
-      padding: 4px 8px;
-    }
-  }
+	.sheet-tabs {
+		flex: 0;
+		padding: 4px 0;
+		margin-bottom: 8px;
+		border-bottom: 1px solid #222;
 
-  .tab {
-    flex: 1;
-    overflow-y: scroll;
-    padding: 0 8px 8px 8px;
+		.item {
+			flex: 0;
+			white-space: nowrap;
+			padding: 4px 8px;
+		}
+	}
 
-    h2 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0 0 8px;
-      padding: 0 0 4px;
-      border-bottom: 1px solid var(--t5e-light-color);
-    }
+	.tab {
+		flex: 1;
+		overflow-y: scroll;
+		padding: 0 8px 8px 8px;
 
-    h3 {
-      font-weight: 600;
-      margin: 8px 0;
-    }
-  }
+		h2 {
+			font-size: 18px;
+			font-weight: 600;
+			margin: 0 0 8px;
+			padding: 0 0 4px;
+			border-bottom: 1px solid var(--t5e-light-color);
+		}
 
-  .sheet-footer {
-    padding: 8px;
-    flex: 0;
-  }
+		h3 {
+			font-weight: 600;
+			margin: 8px 0;
+		}
+	}
 
-  .setting {
-    display: flex;
-    background: var(--t5e-faintest-color);
-    border-radius: 5px;
-    margin: 2px 0;
-    padding: 4px;
+	.sheet-footer {
+		padding: 8px;
+		flex: 0;
+	}
 
-    &.group {
-      padding-left: 24px;
-    }
+	.setting {
+		display: flex;
+		background: var(--t5e-faintest-color);
+		border-radius: 5px;
+		margin: 2px 0;
+		padding: 4px;
 
-    section {
-      width: 100%;
-    }
+		&.group {
+			padding-left: 24px;
+		}
 
-    input[type=checkbox]{
-      margin: 0;
-    }
+		section {
+			width: 100%;
+		}
 
-    .description{
-      margin-left: 8px;
+		input[type="checkbox"] {
+			margin: 0;
+		}
 
-      label {
-        font-weight: 600;
-      }
-    }
+		.description {
+			margin-left: 8px;
 
-    .settings-group {
-      margin-left: 8px;
+			label {
+				font-weight: 600;
+			}
+		}
 
-      article {
-        margin: 4px 0;
-      }
+		.settings-group {
+			margin-left: 8px;
 
-      label {
-        font-size: 12px;
-        font-weight: 600;
-        padding: 0 4px 8px 4px;
-      }
-    }
-  }
+			article {
+				margin: 4px 0;
+			}
 
+			label {
+				font-size: 12px;
+				font-weight: 600;
+				padding: 0 4px 8px 4px;
+			}
+		}
+	}
 }

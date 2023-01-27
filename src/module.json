@@ -1,103 +1,99 @@
 {
-  "id": "tidy5e-sheet",
-  "title": "Tidy5e Sheet",
-  "description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-  "version": "0.8.8",
-  "authors": [
-    {
-      "name": "sednec#3813"
-    }
-  ],
-  "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "10",
-  "compatibility": {
-    "minimum": "10.283",
-    "verified": "10"
-  },
-  "esmodules": [
-    "./scripts/tidy5e-sheet.js",
-    "./scripts/tidy5e-npc.js",
-    "./scripts/tidy5e-vehicle.js",
-    "./scripts/tidy5e-item.js",
-    "./scripts/app/exhaustion.js"
-  ],
-  "styles": [
-    "./css/tidy-icons.css",
-    "./css/tidy5e.css",
-    "./css/tidy5e-dark.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    },
-    {
-      "lang": "es",
-      "name": "Español",
-      "path": "lang/es.json"
-    },
-    {
-      "lang": "de",
-      "name": "Deutsch",
-      "path": "lang/de.json"
-    },
-    {
-      "lang": "it",
-      "name": "Italian",
-      "path": "lang/it.json"
-    },
-    {
-      "lang": "ja",
-      "name": "日本語 (Japanese)",
-      "path": "lang/ja.json"
-    },
-    {
-      "lang": "ko",
-      "name": "한국어 (Korean)",
-      "path": "lang/ko.json"
-    },
-    {
-      "lang": "pt-BR",
-      "name": "Português (Brasil)",
-      "path": "lang/pt-BR.json"
-    },
-    {
-      "lang": "fr",
-      "name": "Francais",
-      "path": "lang/fr.json"
-    },
-    {
-      "lang": "zh-tw",
-      "name": "正體中文",
-      "path": "lang/zh-tw.json"
-    },
-    {
-      "lang": "cs",
-      "name": "Čeština",
-      "path": "lang/cs.json"
-    },
-    {
-      "lang": "hu",
-      "name": "Magyar",
-      "path": "lang/hu.json"
-    }
-  ],
-  "url": "https://github.com/p4535992/tidy5e-sheet",
-  "manifest": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.8/module.json",
-  "download": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.8/module.zip",
-  "relationships": {
-    "systems": [
-      {
-        "id": "dnd5e",
-        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
-        "compatibility": {
-          "minimum": "2.1.2",
-          "verified": "2.1.2"
-        }
-      }
-    ],
-    "requires": [
+	"id": "tidy5e-sheet",
+	"title": "Tidy5e Sheet",
+	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
+	"version": "0.8.8",
+	"authors": [
+		{
+			"name": "sednec#3813"
+		}
+	],
+	"minimumCoreVersion": "10",
+	"compatibleCoreVersion": "10",
+	"compatibility": {
+		"minimum": "10.283",
+		"verified": "10"
+	},
+	"esmodules": [
+		"./scripts/tidy5e-sheet.js",
+		"./scripts/tidy5e-npc.js",
+		"./scripts/tidy5e-vehicle.js",
+		"./scripts/tidy5e-item.js",
+		"./scripts/app/exhaustion.js"
+	],
+	"styles": ["./css/tidy-icons.css", "./css/tidy5e.css", "./css/tidy5e-dark.css"],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		},
+		{
+			"lang": "es",
+			"name": "Español",
+			"path": "lang/es.json"
+		},
+		{
+			"lang": "de",
+			"name": "Deutsch",
+			"path": "lang/de.json"
+		},
+		{
+			"lang": "it",
+			"name": "Italian",
+			"path": "lang/it.json"
+		},
+		{
+			"lang": "ja",
+			"name": "日本語 (Japanese)",
+			"path": "lang/ja.json"
+		},
+		{
+			"lang": "ko",
+			"name": "한국어 (Korean)",
+			"path": "lang/ko.json"
+		},
+		{
+			"lang": "pt-BR",
+			"name": "Português (Brasil)",
+			"path": "lang/pt-BR.json"
+		},
+		{
+			"lang": "fr",
+			"name": "Francais",
+			"path": "lang/fr.json"
+		},
+		{
+			"lang": "zh-tw",
+			"name": "正體中文",
+			"path": "lang/zh-tw.json"
+		},
+		{
+			"lang": "cs",
+			"name": "Čeština",
+			"path": "lang/cs.json"
+		},
+		{
+			"lang": "hu",
+			"name": "Magyar",
+			"path": "lang/hu.json"
+		}
+	],
+	"url": "https://github.com/p4535992/tidy5e-sheet",
+	"manifest": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.8/module.json",
+	"download": "https://github.com/p4535992/tidy5e-sheet/releases/download/v0.8.8/module.zip",
+	"relationships": {
+		"systems": [
+			{
+				"id": "dnd5e",
+				"manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+				"compatibility": {
+					"minimum": "2.1.2",
+					"verified": "2.1.2"
+				}
+			}
+		],
+		"requires": [
 			{
 				"id": "colorsettings",
 				"type": "module",
@@ -105,19 +101,19 @@
 				"compatibility": {}
 			}
 		],
-    "conflicts": [
+		"conflicts": [
 			{
 				"id": "spell-level-buttons-for-dnd5e",
 				"reason": "Redundancy of features you can disable 'Spell Level Buttons for DnD 5e' module if you want"
 			},
-      {
+			{
 				"id": "lazymoney",
 				"reason": "Redundancy of features you can disable 'Lazy Money' module if you want"
 			},
-      {
+			{
 				"id": "spell-class-filter-for-5e",
 				"reason": "Redundancy of features you can disable 'Multiclass Spellbook Filter"
 			}
 		]
-  }
+	}
 }

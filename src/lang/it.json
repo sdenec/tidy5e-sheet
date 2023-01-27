@@ -1,229 +1,229 @@
 {
-  "TIDY5E.PlayerName": "Player Name",
-  "TIDY5E.Gender": "Gender",
-  "TIDY5E.Age": "Age",
-  "TIDY5E.Weight": "Weight",
-  "TIDY5E.Height": "Height",
-  "TIDY5E.Eyes": "Eyes",
-  "TIDY5E.Skin": "Skin",
-  "TIDY5E.Hair": "Hair",
-  "TIDY5E.Subclass": "Sottoclasse",
-  "TIDY5E.EditActorImage": "tasto sinistro: modifica immagine",
-  "TIDY5E.ShowActorImage": "tasto destro: mostra ritratto PG",
-  "TIDY5E.ShowPortraitArt": "mostra ritratto",
-  "TIDY5E.ShowTokenArt": "mostra token",
-  "TIDY5E.ShowItemImage": "right click: show item art",
-  "TIDY5E.ShowItemArt": "show image",
+	"TIDY5E.PlayerName": "Player Name",
+	"TIDY5E.Gender": "Gender",
+	"TIDY5E.Age": "Age",
+	"TIDY5E.Weight": "Weight",
+	"TIDY5E.Height": "Height",
+	"TIDY5E.Eyes": "Eyes",
+	"TIDY5E.Skin": "Skin",
+	"TIDY5E.Hair": "Hair",
+	"TIDY5E.Subclass": "Sottoclasse",
+	"TIDY5E.EditActorImage": "tasto sinistro: modifica immagine",
+	"TIDY5E.ShowActorImage": "tasto destro: mostra ritratto PG",
+	"TIDY5E.ShowPortraitArt": "mostra ritratto",
+	"TIDY5E.ShowTokenArt": "mostra token",
+	"TIDY5E.ShowItemImage": "right click: show item art",
+	"TIDY5E.ShowItemArt": "show image",
 
-  "TIDY5E.Exhaustion0": "Nessun effetto negativo",
-  "TIDY5E.Exhaustion1": "Svantaggio Sulle Prove di Caratteristica",
-  "TIDY5E.Exhaustion2": "Velocità dimezzata",
-  "TIDY5E.Exhaustion3": "Svantaggio sui Tiri per Colpire e sui Tiri Salvezza",
-  "TIDY5E.Exhaustion4": "Punti ferita massimi dimezzati",
-  "TIDY5E.Exhaustion5": "Velocità ridotta a 0",
-  "TIDY5E.Exhaustion6": "Morte",
+	"TIDY5E.Exhaustion0": "Nessun effetto negativo",
+	"TIDY5E.Exhaustion1": "Svantaggio Sulle Prove di Caratteristica",
+	"TIDY5E.Exhaustion2": "Velocità dimezzata",
+	"TIDY5E.Exhaustion3": "Svantaggio sui Tiri per Colpire e sui Tiri Salvezza",
+	"TIDY5E.Exhaustion4": "Punti ferita massimi dimezzati",
+	"TIDY5E.Exhaustion5": "Velocità ridotta a 0",
+	"TIDY5E.Exhaustion6": "Morte",
 
-  "TIDY5E.AbbrInitiative": "Ini",
+	"TIDY5E.AbbrInitiative": "Ini",
 
-  "TIDY5E.RestHint": "Riposati",
-  "TIDY5E.RestS": "Riposo Breve",
-  "TIDY5E.RestL": "Riposo Lungo",
-  "TIDY5E.HitDiceRollAverage": "Right Click: Average",
+	"TIDY5E.RestHint": "Riposati",
+	"TIDY5E.RestS": "Riposo Breve",
+	"TIDY5E.RestL": "Riposo Lungo",
+	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
 
-  "TIDY5E.Journal": "Diario",
+	"TIDY5E.Journal": "Diario",
 
-  "TIDY5E.RestoreOnRest": "Ripristina dopo un riposo",
+	"TIDY5E.RestoreOnRest": "Ripristina dopo un riposo",
 
-  "TIDY5E.JournalPoi": "Persone di interesse",
-  "TIDY5E.JournalLoi": "Luoghi di interesse",
-  "TIDY5E.JournalQuests": "Missioni",
-  "TIDY5E.JournalMisc": "Miscellanea",
-  "TIDY5E.JournalEntries": "Appunti Diario",
-  "TIDY5E.TogglePersonalityInfo": "Attiva/disattiva le informazioni sulla personalità",
+	"TIDY5E.JournalPoi": "Persone di interesse",
+	"TIDY5E.JournalLoi": "Luoghi di interesse",
+	"TIDY5E.JournalQuests": "Missioni",
+	"TIDY5E.JournalMisc": "Miscellanea",
+	"TIDY5E.JournalEntries": "Appunti Diario",
+	"TIDY5E.TogglePersonalityInfo": "Attiva/disattiva le informazioni sulla personalità",
 
-  "TIDY5E.EnableEdit": "Abilita Modifica",
-  "TIDY5E.DisableEdit": "Disabilita Modifica",
-  "TIDY5E.EditHint": "Attiva/disattiva la visibilità dei pulsanti di aggiunta/eliminazione e delle sezioni vuote",
+	"TIDY5E.EnableEdit": "Abilita Modifica",
+	"TIDY5E.DisableEdit": "Disabilita Modifica",
+	"TIDY5E.EditHint": "Attiva/disattiva la visibilità dei pulsanti di aggiunta/eliminazione e delle sezioni vuote",
 
-  "TIDY5E.EmptySection": "Questa sezione è vuota. Sblocca il foglio per modificare.",
-  "TIDY5E.GmOnlyEdit": "Solo il tuo GM può modificare questa sezione.",
+	"TIDY5E.EmptySection": "Questa sezione è vuota. Sblocca il foglio per modificare.",
+	"TIDY5E.GmOnlyEdit": "Solo il tuo GM può modificare questa sezione.",
 
-  "TIDY5E.AttunementWarning": "Avviso su \"sintonizzazione\": non puoi sintonizzarti su più di {number} oggetti!",
-  "TIDY5E.AttunementItems": "Oggetti Sincronizzati",
-  "TIDY5E.AttunementMax": "Massimi Sincronizzati",
+	"TIDY5E.AttunementWarning": "Avviso su \"sintonizzazione\": non puoi sintonizzarti su più di {number} oggetti!",
+	"TIDY5E.AttunementItems": "Oggetti Sincronizzati",
+	"TIDY5E.AttunementMax": "Massimi Sincronizzati",
 
-  "TIDY5E.GridLayout": "Layout a Griglia",
-  "TIDY5E.ListLayout": "Layout a Lista",
+	"TIDY5E.GridLayout": "Layout a Griglia",
+	"TIDY5E.ListLayout": "Layout a Lista",
 
-  "TIDY5E.Encumbrance": "Ingombro",
+	"TIDY5E.Encumbrance": "Ingombro",
 
-  "TIDY5E.EditSpell": "Modifica Incantesimo",
-  "TIDY5E.DeleteSpell": "Elimina Incantesimo",
-  "TIDY5E.AddFav": "Aggiungi ai Preferiti",
-  "TIDY5E.isFav": "Preferito",
-  "TIDY5E.RemoveFav": "Rimuovi dai Preferiti",
+	"TIDY5E.EditSpell": "Modifica Incantesimo",
+	"TIDY5E.DeleteSpell": "Elimina Incantesimo",
+	"TIDY5E.AddFav": "Aggiungi ai Preferiti",
+	"TIDY5E.isFav": "Preferito",
+	"TIDY5E.RemoveFav": "Rimuovi dai Preferiti",
 
-  "TIDY5E.ItemCardsKeyHint": "hold Key to interact with card.",
-  "TIDY5E.ItemCardsMouseHint": "middle mouse to view/edit item.",
+	"TIDY5E.ItemCardsKeyHint": "hold Key to interact with card.",
+	"TIDY5E.ItemCardsMouseHint": "middle mouse to view/edit item.",
 
-  "TIDY5E.ToggleInfo": "Attiva/disattiva Info",
-  "TIDY5E.ToggleMovement": "Passa dalla visualizzazione della velocità attuale a quella precedente",
+	"TIDY5E.ToggleInfo": "Attiva/disattiva Info",
+	"TIDY5E.ToggleMovement": "Passa dalla visualizzazione della velocità attuale a quella precedente",
 
-  "TIDY5E.Show": "mostra/modifica",
-  "TIDY5E.Hide": "nascondi",
-  "TIDY5E.Edit": "Modifica",
-  "TIDY5E.TraitsEmpty": "nessun tratto",
+	"TIDY5E.Show": "mostra/modifica",
+	"TIDY5E.Hide": "nascondi",
+	"TIDY5E.Edit": "Modifica",
+	"TIDY5E.TraitsEmpty": "nessun tratto",
 
-  "TIDY5E.Abilities": "Caratteristiche",
+	"TIDY5E.Abilities": "Caratteristiche",
 
-  "TIDY5E.Environment": "Ambiente",
+	"TIDY5E.Environment": "Ambiente",
 
-  "TIDY5E.SearchItem": "cerca oggetto",
-  "TIDY5E.SearchSpell": "cerca incantesimo",
-  "TIDY5E.SearchClear": "pulisci ricerca",
-  "TIDY5E.SearchHint": "Inizia a digitare ciò che stai cercando.",
+	"TIDY5E.SearchItem": "cerca oggetto",
+	"TIDY5E.SearchSpell": "cerca incantesimo",
+	"TIDY5E.SearchClear": "pulisci ricerca",
+	"TIDY5E.SearchHint": "Inizia a digitare ciò che stai cercando.",
 
-  "TIDY5E.AbbrMod": "Mod",
-  "TIDY5E.AbbrSavingThrow": "Salva",
-  "TIDY5E.SpellAttackMod": "Mod Attacco",
-  "TIDY5E.PreparedSpells": "Incantesimi Preparati",
-  "TIDY5E.PreparedSpellsMax": "Massimi incantesimi praparati",
-  "TIDY5E.Components": "Comp.",
-  "TIDY5E.SpellSchool": "Scuola",
+	"TIDY5E.AbbrMod": "Mod",
+	"TIDY5E.AbbrSavingThrow": "Salva",
+	"TIDY5E.SpellAttackMod": "Mod Attacco",
+	"TIDY5E.PreparedSpells": "Incantesimi Preparati",
+	"TIDY5E.PreparedSpellsMax": "Massimi incantesimi praparati",
+	"TIDY5E.Components": "Comp.",
+	"TIDY5E.SpellSchool": "Scuola",
 
-  "TIDY5E.TokenLinked": "Token collegato all'attore",
-  "TIDY5E.TokenUnlinked": "Token non collegato all'attore",
+	"TIDY5E.TokenLinked": "Token collegato all'attore",
+	"TIDY5E.TokenUnlinked": "Token non collegato all'attore",
 
-  "TIDY5E.ItemDetailsHeadline": "Meccaniche/Note di Colore",
+	"TIDY5E.ItemDetailsHeadline": "Meccaniche/Note di Colore",
 
-  "TIDY5E.Settings.GlobalLabel": "Globale",
-  "TIDY5E.Settings.UserLabel": "Utente",
-  "TIDY5E.Settings.PcLabel": "PG",
-  "TIDY5E.Settings.NpcLabel": "PNG",
-  "TIDY5E.Settings.VehicleLabel": "Veicoli",
+	"TIDY5E.Settings.GlobalLabel": "Globale",
+	"TIDY5E.Settings.UserLabel": "Utente",
+	"TIDY5E.Settings.PcLabel": "PG",
+	"TIDY5E.Settings.NpcLabel": "PNG",
+	"TIDY5E.Settings.VehicleLabel": "Veicoli",
 
-  "TIDY5E.Settings.SheetMenu": {
-    "label": "Impostazioni Scheda"
-  },
-  "TIDY5E.Settings.SheetTheme": {
-    "name": "Tidy 5e colore tema.",
-    "hint": "Seleziona il tema di colore chiaro predefinito o quello alternativo scuro.",
-    "default": "Predefinito (chiaro)",
-    "dark": "Alternativo (scuro)"
-  },
-  "TIDY5E.Settings.ClassicControls": {
-    "name": "Utilizza i controlli classici degli oggetti nella visualizzazione \"elenco\".",
-    "hint": "Mostra sempre i controlli degli elementi e disabilita il menu di scelta rapida. Si applica solo nell'inventario di oggetti/incantesimi per i PC nella visualizzazione \"elenco\""
-  },
-  "TIDY5E.Settings.RollButtonsToCard": {
-    "name": "Mostra i pulsanti midQoL/Better Rolls degli oggetti nel menu contestuale",
-    "hint": "Per impostazione predefinita, i pulsanti associati ai tiri vengono visualizzati nella descrizione dell'oggetto. Seleziona questa impostazione per spostarli nel menu contestuale. Utile per la visualizzazione a griglia o se li usi frequentemente."
-  },
-  "TIDY5E.Settings.TraitLabels": {
-    "name": "Mostra le etichette relative ai tratti.",
-    "hint": "Per impostazione predefinita, vengono visualizzate solo le icone relative ai tratti. Seleziona per visualizzare anche le etichette."
-  },
+	"TIDY5E.Settings.SheetMenu": {
+		"label": "Impostazioni Scheda"
+	},
+	"TIDY5E.Settings.SheetTheme": {
+		"name": "Tidy 5e colore tema.",
+		"hint": "Seleziona il tema di colore chiaro predefinito o quello alternativo scuro.",
+		"default": "Predefinito (chiaro)",
+		"dark": "Alternativo (scuro)"
+	},
+	"TIDY5E.Settings.ClassicControls": {
+		"name": "Utilizza i controlli classici degli oggetti nella visualizzazione \"elenco\".",
+		"hint": "Mostra sempre i controlli degli elementi e disabilita il menu di scelta rapida. Si applica solo nell'inventario di oggetti/incantesimi per i PC nella visualizzazione \"elenco\""
+	},
+	"TIDY5E.Settings.RollButtonsToCard": {
+		"name": "Mostra i pulsanti midQoL/Better Rolls degli oggetti nel menu contestuale",
+		"hint": "Per impostazione predefinita, i pulsanti associati ai tiri vengono visualizzati nella descrizione dell'oggetto. Seleziona questa impostazione per spostarli nel menu contestuale. Utile per la visualizzazione a griglia o se li usi frequentemente."
+	},
+	"TIDY5E.Settings.TraitLabels": {
+		"name": "Mostra le etichette relative ai tratti.",
+		"hint": "Per impostazione predefinita, vengono visualizzate solo le icone relative ai tratti. Seleziona per visualizzare anche le etichette."
+	},
 
-  "TIDY5E.Settings.ClassList": {
-    "name": "Nascondi l'elenco delle classi per i personaggi.",
-    "hint": "Abilita per nascondere l'elenco delle classi sotto il nome del personaggio."
-  },
-  "TIDY5E.Settings.InspirationAnimation": {
-    "name": "Indicatore punti ispirazione non animato.",
-    "hint": "Seleziona per disattivare l'animazione dell'indicatore dei punti ispirazione."
-  },
-  "TIDY5E.Settings.HideIfZero": {
-    "name": "Nascondi l'indicatore di indebolimento e ispirazione se = 0.",
-    "hint": "Seleziona per nascondere gli indicatori di indebolimento  e ispirazione se = 0. Apparirà al passaggio del mouse."
-  },
-  "TIDY5E.Settings.InspirationOnHover": {
-    "name": "Mostra l'indicatore di ispirazione solo al passaggio del mouse.",
-    "hint": "Seleziona per mostrare l'indicatore di ispirazione solo quando passi il mouse sopra il ritratto."
-  },
-  "TIDY5E.Settings.ExhaustionOnHover": {
-    "name": "Mostra l'indicatore di indebolimento solo al passaggio del mouse.",
-    "hint": "Seleziona per mostrare l'indicatore di indebolimento solo quando passi il mouse sopra il ritratto."
-  },
-  "TIDY5E.Settings.HpBar": {
-    "name": "Disabilita la barra della salute.",
-    "hint": "Seleziona per nascondere la barra colorata che indica i PF rimanenti (i numeri relativi alla salute saranno ancora visibili)."
-  },
-  "TIDY5E.Settings.HpOverlay": {
-    "name": "Nascondi la sovrapposizione dei PF.",
-    "hint": "Seleziona per nascondere l'overlay dei PF per questo tipo di attore."
-  },
-  "TIDY5E.Settings.TraitsTogglePc": {
-    "name": "Attiva/disattiva i tratti se vuoti.",
-    "hint": "Per impostazione predefinita, i tratti \"vuoti\" sono sempre visibili. Seleziona per aggiungere un pulsante di attivazione/disattivazione."
-  },
-  "TIDY5E.Settings.TraitsMovedBelowResource": {
-    "name": "Sposta i tratti sotto le risorse.",
-    "hint": "Seleziona per spostare i tratti dal lato sinistro a sotto le risorse."
-  },
+	"TIDY5E.Settings.ClassList": {
+		"name": "Nascondi l'elenco delle classi per i personaggi.",
+		"hint": "Abilita per nascondere l'elenco delle classi sotto il nome del personaggio."
+	},
+	"TIDY5E.Settings.InspirationAnimation": {
+		"name": "Indicatore punti ispirazione non animato.",
+		"hint": "Seleziona per disattivare l'animazione dell'indicatore dei punti ispirazione."
+	},
+	"TIDY5E.Settings.HideIfZero": {
+		"name": "Nascondi l'indicatore di indebolimento e ispirazione se = 0.",
+		"hint": "Seleziona per nascondere gli indicatori di indebolimento  e ispirazione se = 0. Apparirà al passaggio del mouse."
+	},
+	"TIDY5E.Settings.InspirationOnHover": {
+		"name": "Mostra l'indicatore di ispirazione solo al passaggio del mouse.",
+		"hint": "Seleziona per mostrare l'indicatore di ispirazione solo quando passi il mouse sopra il ritratto."
+	},
+	"TIDY5E.Settings.ExhaustionOnHover": {
+		"name": "Mostra l'indicatore di indebolimento solo al passaggio del mouse.",
+		"hint": "Seleziona per mostrare l'indicatore di indebolimento solo quando passi il mouse sopra il ritratto."
+	},
+	"TIDY5E.Settings.HpBar": {
+		"name": "Disabilita la barra della salute.",
+		"hint": "Seleziona per nascondere la barra colorata che indica i PF rimanenti (i numeri relativi alla salute saranno ancora visibili)."
+	},
+	"TIDY5E.Settings.HpOverlay": {
+		"name": "Nascondi la sovrapposizione dei PF.",
+		"hint": "Seleziona per nascondere l'overlay dei PF per questo tipo di attore."
+	},
+	"TIDY5E.Settings.TraitsTogglePc": {
+		"name": "Attiva/disattiva i tratti se vuoti.",
+		"hint": "Per impostazione predefinita, i tratti \"vuoti\" sono sempre visibili. Seleziona per aggiungere un pulsante di attivazione/disattivazione."
+	},
+	"TIDY5E.Settings.TraitsMovedBelowResource": {
+		"name": "Sposta i tratti sotto le risorse.",
+		"hint": "Seleziona per spostare i tratti dal lato sinistro a sotto le risorse."
+	},
 
-  "TIDY5E.Settings.TraitsAlwaysShown": {
-    "name": "Mostra sempre i tratti.",
-    "hint": "Per impostazione predefinita, i tratti vuoti sono nascosti da un pulsante di attivazione/disattivazione. Seleziona perché non siano mai nascosti."
-  },
-  "TIDY5E.Settings.SkillsAlwaysShown": {
-    "name": "Mostra sempre le abilità.",
-    "hint": "Per impostazione predefinita, le abilità non competenti sono nascoste da un pulsante di attivazione/disattivazione. Seleziona perché non siano mai nascosti."
-  },
+	"TIDY5E.Settings.TraitsAlwaysShown": {
+		"name": "Mostra sempre i tratti.",
+		"hint": "Per impostazione predefinita, i tratti vuoti sono nascosti da un pulsante di attivazione/disattivazione. Seleziona perché non siano mai nascosti."
+	},
+	"TIDY5E.Settings.SkillsAlwaysShown": {
+		"name": "Mostra sempre le abilità.",
+		"hint": "Per impostazione predefinita, le abilità non competenti sono nascoste da un pulsante di attivazione/disattivazione. Seleziona perché non siano mai nascosti."
+	},
 
-  "TIDY5E.Settings.RightClick": {
-    "name": "Disabilita menu tasto destro.",
-    "hint": "In caso di conflitti tra moduli o preferenze è possibile disabilitare il menu contestuale tasto destro. Gli elementi mostreranno al suo posto un'icona di menu."
-  },
-  "TIDY5E.Settings.ExpandedSheet": {
-    "name": "Vista limitata espansa per le schede PG.",
-    "hint": "Mostra l'intera scheda del personaggio (meno il diario) ai giocatori con autorizzazioni limitate."
-  },
-  "TIDY5E.Settings.PortraitStyle": {
-    "name": "Stile ritratto: tondo.",
-    "hint": "Scegli di abilitare i ritratti/icone tondi per gli attori.",
-    "all": "Tutti gli attori",
-    "pc": "PG",
-    "npc": "PNG/Veicoli",
-    "none": "nessuna"
-  },
-  "TIDY5E.Settings.HpOverlayBorder": {
-    "name": "Offset per la sovrapposizione dei PF.",
-    "hint": "Immettere il valore di offset per compensare le cornici verticali e prevenire la colorazione."
-  },
-  "TIDY5E.Settings.EditGmAlways": {
-    "name": "Il GM può sempre modificare le schede dei PG.",
-    "hint": "Seleziona per consentire ai GM di modificare le schede dei PG senza attivare/disattivare il blocco della scheda."
-  },
-  "TIDY5E.Settings.EditEffectsGmOnly": {
-    "name": "Solo il GM può modificare gli effetti attivi.",
-    "hint": "Seleziona per evitare che i giocatori modifichino gli effetti attivi sulle loro schede. Continueranno comunque a vedere gli effetti applicati."
-  },
-  "TIDY5E.Settings.QuantityAlwaysShown": {
-    "name": "Mostra sempre la quantità nell'inventario.",
-    "hint": "Seleziona per non nascondere mai la quantità nell'inventario."
-  },
-  "TIDY5E.Settings.InspirationDisabled": {
-    "name": "Disattiva l'indicatore dei punti ispirazione.",
-    "hint": "Se la tua campagna non utilizza l'ispirazione, puoi disattivare completamente l'indicatore."
-  },
-  "TIDY5E.Settings.ExhaustionEffects": {
-    "name": "Effetti di indebolimento (utilizza effetti attivi).",
-    "hint": "Applica gli effetti attivi corrispondenti quando imposti i livelli di indebolimento - richiede midiQol per i tiri di svantaggio!"
-  },
-  "TIDY5E.Settings.ExhaustionDisabled": {
-    "name": "Disattiva l'indicatore di indebolimento.",
-    "hint": "Se la tua campagna non utilizza l'indebolimento puoi disabilitare completamente l'indicatore."
-  },
-  "TIDY5E.Settings.RestingForNpcs": {
-    "name": "Riposo per i PNG.",
-    "hint": "Seleziona per mostrare l'icona/i pulsanti di riposo sulle schede dei PNG."
-  },
-  "TIDY5E.Settings.LinkMarker": {
-    "name": "Contrassegna i PNG collegati/non collegati.",
-    "hint": "Aggiunge un bordo colorato e un'icona alle schede dei PNG collegati/non collegati.",
-    "default": "Nessun indicatore di collegamento (predefinito)",
-    "unlinked": "Evidenzia i token non collegati",
-    "linked": "Evidenzia i token collegati",
-    "both": "Evidenzia i token collegati e non collegati"
-  }
+	"TIDY5E.Settings.RightClick": {
+		"name": "Disabilita menu tasto destro.",
+		"hint": "In caso di conflitti tra moduli o preferenze è possibile disabilitare il menu contestuale tasto destro. Gli elementi mostreranno al suo posto un'icona di menu."
+	},
+	"TIDY5E.Settings.ExpandedSheet": {
+		"name": "Vista limitata espansa per le schede PG.",
+		"hint": "Mostra l'intera scheda del personaggio (meno il diario) ai giocatori con autorizzazioni limitate."
+	},
+	"TIDY5E.Settings.PortraitStyle": {
+		"name": "Stile ritratto: tondo.",
+		"hint": "Scegli di abilitare i ritratti/icone tondi per gli attori.",
+		"all": "Tutti gli attori",
+		"pc": "PG",
+		"npc": "PNG/Veicoli",
+		"none": "nessuna"
+	},
+	"TIDY5E.Settings.HpOverlayBorder": {
+		"name": "Offset per la sovrapposizione dei PF.",
+		"hint": "Immettere il valore di offset per compensare le cornici verticali e prevenire la colorazione."
+	},
+	"TIDY5E.Settings.EditGmAlways": {
+		"name": "Il GM può sempre modificare le schede dei PG.",
+		"hint": "Seleziona per consentire ai GM di modificare le schede dei PG senza attivare/disattivare il blocco della scheda."
+	},
+	"TIDY5E.Settings.EditEffectsGmOnly": {
+		"name": "Solo il GM può modificare gli effetti attivi.",
+		"hint": "Seleziona per evitare che i giocatori modifichino gli effetti attivi sulle loro schede. Continueranno comunque a vedere gli effetti applicati."
+	},
+	"TIDY5E.Settings.QuantityAlwaysShown": {
+		"name": "Mostra sempre la quantità nell'inventario.",
+		"hint": "Seleziona per non nascondere mai la quantità nell'inventario."
+	},
+	"TIDY5E.Settings.InspirationDisabled": {
+		"name": "Disattiva l'indicatore dei punti ispirazione.",
+		"hint": "Se la tua campagna non utilizza l'ispirazione, puoi disattivare completamente l'indicatore."
+	},
+	"TIDY5E.Settings.ExhaustionEffects": {
+		"name": "Effetti di indebolimento (utilizza effetti attivi).",
+		"hint": "Applica gli effetti attivi corrispondenti quando imposti i livelli di indebolimento - richiede midiQol per i tiri di svantaggio!"
+	},
+	"TIDY5E.Settings.ExhaustionDisabled": {
+		"name": "Disattiva l'indicatore di indebolimento.",
+		"hint": "Se la tua campagna non utilizza l'indebolimento puoi disabilitare completamente l'indicatore."
+	},
+	"TIDY5E.Settings.RestingForNpcs": {
+		"name": "Riposo per i PNG.",
+		"hint": "Seleziona per mostrare l'icona/i pulsanti di riposo sulle schede dei PNG."
+	},
+	"TIDY5E.Settings.LinkMarker": {
+		"name": "Contrassegna i PNG collegati/non collegati.",
+		"hint": "Aggiunge un bordo colorato e un'icona alle schede dei PNG collegati/non collegati.",
+		"default": "Nessun indicatore di collegamento (predefinito)",
+		"unlinked": "Evidenzia i token non collegati",
+		"linked": "Evidenzia i token collegati",
+		"both": "Evidenzia i token collegati e non collegati"
+	}
 }

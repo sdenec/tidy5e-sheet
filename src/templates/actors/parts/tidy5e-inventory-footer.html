@@ -1,17 +1,23 @@
-
-  <div class="inventory-footer">
-    
-    {{#if isCharacter}}
-    <div class="attuned-items-counter" title="{{localize 'DND5E.Attunement'}}">
-      <i class="fas fa-sun"></i> <span class="attuned-items-current">{{system.attributes.attunement.value}}</span>/<span class="attuned-items-max">{{system.attributes.attunement.max}}</span>
-      <input type="number" class="attuned-items-max" name="system.attributes.attunement.max" value="{{system.attributes.attunement.max}}" placeholder="0" title="{{localize 'TIDY5E.AttunementMax'}}">
-    </div>
-    {{/if}}
-
-    {{#unless isNPC}}
-    <div class="inventory-currency">  
-      <ol class="currency">
-        <!--
+<div class="inventory-footer">
+	{{#if isCharacter}}
+	<div class="attuned-items-counter" title="{{localize 'DND5E.Attunement'}}">
+		<i class="fas fa-sun"></i>
+		<span class="attuned-items-current">{{system.attributes.attunement.value}}</span>
+		/
+		<span class="attuned-items-max">{{system.attributes.attunement.max}}</span>
+		<input
+			type="number"
+			class="attuned-items-max"
+			name="system.attributes.attunement.max"
+			value="{{system.attributes.attunement.max}}"
+			placeholder="0"
+			title="{{localize 'TIDY5E.AttunementMax'}}"
+		/>
+	</div>
+	{{/if}} {{#unless isNPC}}
+	<div class="inventory-currency">
+		<ol class="currency">
+			<!--
         <h3>
             {{localize "DND5E.Currency"}}
             <a class="action-button currency-convert {{rollableClass}}" data-action="convertCurrency" data-tooltip="DND5E.CurrencyConvert">
@@ -23,35 +29,44 @@
         <input type="text" name="system.currency.{{k}}" value="{{v}}" data-dtype="Number">
         {{/each}}
         -->
-        <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
-          <i class="fas fa-coins"></i>
-        </li>
-        {{#each system.currency as |v k|}}
-        <li class="currency-item {{k}}" title="{{ lookup ../labels.currencies k }}">
-          <input type="number" step="any" name="system.currency.{{k}}" id="{{@root/appId}}-system.currency.{{k}}" value="{{v}}"/>
-          <label for="{{@root/appId}}-system.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../label.currencies k }}</label>
-        </li>
-        {{/each}}
-        <li class="currency-item convert">
-          <a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}">
-            <i class="fas fa-funnel-dollar"></i>
-          </a>
-        </li>
-      </ol>
-    </div>
-    {{/unless}}
+			<li class="currency-header" title="{{localize 'DND5E.Currency'}}">
+				<i class="fas fa-coins"></i>
+			</li>
+			{{#each system.currency as |v k|}}
+			<li class="currency-item {{k}}" title="{{ lookup ../labels.currencies k }}">
+				<input
+					type="number"
+					step="any"
+					name="system.currency.{{k}}"
+					id="{{@root/appId}}-system.currency.{{k}}"
+					value="{{v}}"
+				/>
+				<label for="{{@root/appId}}-system.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">
+					{{ lookup ../label.currencies k }}
+				</label>
+			</li>
+			{{/each}}
+			<li class="currency-item convert">
+				<a
+					class="currency-convert rollable"
+					data-action="convertCurrency"
+					title="{{localize 'DND5E.CurrencyConvertHint'}}"
+				>
+					<i class="fas fa-funnel-dollar"></i>
+				</a>
+			</li>
+		</ol>
+	</div>
+	{{/unless}}
+</div>
 
-  </div>
-
-  {{#unless isNPC}}
-    {{#with encumbrance}}
-    <div class="encumbrance {{#if encumbered}}encumbered{{/if}}" title="{{localize 'TIDY5E.Encumbrance'}}">
-      <span class="encumbrance-bar" style="width:{{pct}}%"></span>
-      <span class="encumbrance-label">{{value}} / {{max}}</span>
-      <i class="encumbrance-breakpoint encumbrance-33 arrow-up"></i>
-      <i class="encumbrance-breakpoint encumbrance-33 arrow-down"></i>
-      <i class="encumbrance-breakpoint encumbrance-66 arrow-up"></i>
-      <i class="encumbrance-breakpoint encumbrance-66 arrow-down"></i>
-    </div>
-    {{/with}}
-  {{/unless}}
+{{#unless isNPC}} {{#with encumbrance}}
+<div class="encumbrance {{#if encumbered}}encumbered{{/if}}" title="{{localize 'TIDY5E.Encumbrance'}}">
+	<span class="encumbrance-bar" style="width:{{pct}}%"></span>
+	<span class="encumbrance-label">{{value}} / {{max}}</span>
+	<i class="encumbrance-breakpoint encumbrance-33 arrow-up"></i>
+	<i class="encumbrance-breakpoint encumbrance-33 arrow-down"></i>
+	<i class="encumbrance-breakpoint encumbrance-66 arrow-up"></i>
+	<i class="encumbrance-breakpoint encumbrance-66 arrow-down"></i>
+</div>
+{{/with}} {{/unless}}

@@ -1,43 +1,56 @@
 <form class="{{cssClass}}" autocomplete="off">
-  <div class="tidy5e-sheet tidy5e-vehicle {{#if actor.flags.tidy5e-sheet.allow-edit}}allow-edit{{/if}}">
-    
+	<div class="tidy5e-sheet tidy5e-vehicle {{#if actor.flags.tidy5e-sheet.allow-edit}}allow-edit{{/if}}">
 		{{!-- Item Info Card --}}
 		<section id="item-info-container">
 			<div class="info-wrap">
 				<article id="item-info-container-content">
 					<!-- Info Card here -->
 				</article>
-				
+
 				<article class="info-card-hint">
-					<p><span class="key">X</span> {{localize "TIDY5E.ItemCardsKeyHint"}}</p>
-					<p><i class="fas fa-mouse"></i> {{localize "TIDY5E.ItemCardsMouseHint"}}</p>
+					<p>
+						<span class="key">X</span>
+						{{localize "TIDY5E.ItemCardsKeyHint"}}
+					</p>
+					<p>
+						<i class="fas fa-mouse"></i>
+						{{localize "TIDY5E.ItemCardsMouseHint"}}
+					</p>
 				</article>
 			</div>
 		</section>
-    
+
 		{{> "dnd5e.actor-warnings"}}
-    
-    <header class="tidy5e-header">
 
-      <section class="profile-wrap">
-        <div class="profile hp-{{system.attributes.hp.value}}-{{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}}">
-
-          {{!-- Portrait --}}
-          <div class="portrait">
-            <img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{ localize 'TIDY5E.EditActorImage' }} / {{ localize 'TIDY5E.ShowActorImage' }}" data-edit="img">
+		<header class="tidy5e-header">
+			<section class="profile-wrap">
+				<div
+					class="profile hp-{{system.attributes.hp.value}}-{{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}}"
+				>
+					{{!-- Portrait --}}
+					<div class="portrait">
+						<img
+							class="player-image"
+							src="{{actor.img}}"
+							alt="{{actor.name}}"
+							title="{{ localize 'TIDY5E.EditActorImage' }} / {{ localize 'TIDY5E.ShowActorImage' }}"
+							data-edit="img"
+						/>
 						<div class="portrait-menu hidden">
 							<a class="showActorArt" id="showPortrait">{{ localize 'TIDY5E.ShowPortraitArt' }}</a>
 							<a class="showActorArt" id="showToken">{{ localize 'TIDY5E.ShowTokenArt' }}</a>
 						</div>
-          </div>
-          {{!-- HP Overlay --}}
-          <div class="hp-overlay-wrapper">
-            <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) 100%);">
-            </div>
-          </div>
-          
-          {{!-- Resting --}}
-          <!-- TODO in the future 
+					</div>
+					{{!-- HP Overlay --}}
+					<div class="hp-overlay-wrapper">
+						<div
+							class="hp-overlay"
+							style="background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) 100%);"
+						></div>
+					</div>
+
+					{{!-- Resting --}}
+					<!-- TODO in the future 
           <div class="rest-container has-note">
             <div class="note">{{ localize 'TIDY5E.RestHint' }}</div>
             <div class="resting">
@@ -48,29 +61,50 @@
           </div>
           -->
 
-          {{!-- Hit Dice --}}
-          <div class="portrait-hd has-note" data-tooltip="{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}">
-            <!-- <div class="note">{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}</div> -->
-            <div class="current-hd">{{system.attributes.hd}}</div>
-          </div>
+					{{!-- Hit Dice --}}
+					<div
+						class="portrait-hd has-note"
+						data-tooltip="{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}"
+					>
+						<!-- <div class="note">{{ localize 'DND5E.HitDice' }}: {{system.attributes.hd}}/{{system.details.level}}</div> -->
+						<div class="current-hd">{{system.attributes.hd}}</div>
+					</div>
 
-          {{!-- Hit Points --}}
-          <div class="portrait-hp" title="{{ localize 'DND5E.HitPoints' }}">
-            <div class="hp-bar" style="background: linear-gradient(
+					{{!-- Hit Points --}}
+					<div class="portrait-hp" title="{{ localize 'DND5E.HitPoints' }}">
+						<div
+							class="hp-bar"
+							style="background: linear-gradient(
 								-90deg,
 								transparent 0%,
 								transparent calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
 								 	rgba(0, 200, 0, 0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
-								 	rgba(0, 200, 0, 0.5) 100%);">
-						</div>
-            <input class="hp-min" name="system.attributes.hp.value" type="number" value="{{hp.value}}" placeholder="10"
-            title="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
-            <span class="value-seperator sep"> / </span>
-            <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10"
-            title="{{localize 'DND5E.HitPointsMax'}}" data-dtype="Number" maxlength="5">
-          </div>
-        </div>
-        <!-- TODO in the future 
+								 	rgba(0, 200, 0, 0.5) 100%);"
+						></div>
+						<input
+							class="hp-min"
+							name="system.attributes.hp.value"
+							type="number"
+							value="{{hp.value}}"
+							placeholder="10"
+							title="{{localize 'DND5E.HitPointsCurrent'}}"
+							data-dtype="Number"
+							maxlength="5"
+						/>
+						<span class="value-seperator sep">/</span>
+						<input
+							class="hp-max"
+							name="system.attributes.hp.max"
+							type="text"
+							value="{{hp.max}}"
+							placeholder="10"
+							title="{{localize 'DND5E.HitPointsMax'}}"
+							data-dtype="Number"
+							maxlength="5"
+						/>
+					</div>
+				</div>
+				<!-- TODO in the future 
         <div class="portrait-hp-formula health" title="{{ localize 'DND5E.HPFormula' }}">
           <span class="rollable" title="{{ localize 'DND5E.HitDiceRoll'}}/{{ localize 'TIDY5E.HitDiceRollAverage'}}"><i class="fas fa-dice-six"></i></span>
           <div class="formula-edit">
@@ -78,205 +112,301 @@
           </div>
         </div>
         -->
-        {{!-- Temp Hit Points --}}
-        <div class="portrait-temp">
-          <input name="system.attributes.hp.temp" type="text" class="temphp"
-          placeholder="+{{ localize 'DND5E.Temp' }}" value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}"
-          title="{{localize 'DND5E.HitPointsTemp'}}" data-dtype="Number" maxlength="5">
-          <input name="system.attributes.hp.tempmax" type="text" class="max-temphp"
-          placeholder="+{{ localize 'DND5E.Max' }}" value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}"
-          title="{{localize 'DND5E.HitPointsTempMax'}}" data-dtype="Number" maxlength="5">
-          <!-- TODO in the future 
+				{{!-- Temp Hit Points --}}
+				<div class="portrait-temp">
+					<input
+						name="system.attributes.hp.temp"
+						type="text"
+						class="temphp"
+						placeholder="+{{ localize 'DND5E.Temp' }}"
+						value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}"
+						title="{{localize 'DND5E.HitPointsTemp'}}"
+						data-dtype="Number"
+						maxlength="5"
+					/>
+					<input
+						name="system.attributes.hp.tempmax"
+						type="text"
+						class="max-temphp"
+						placeholder="+{{ localize 'DND5E.Max' }}"
+						value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}"
+						title="{{localize 'DND5E.HitPointsTempMax'}}"
+						data-dtype="Number"
+						maxlength="5"
+					/>
+					<!-- TODO in the future 
           <a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
 						<i class="fas fa-cog"></i>
 					</a>
           -->
-        </div>
+				</div>
+			</section>
 
-      </section>
+			<div class="character-details">
+				<section class="general-information">
+					<input
+						data-input="{{actor._id}}-name"
+						name="name"
+						type="hidden"
+						value="{{actor.name}}"
+						placeholder="{{ localize 'DND5E.Name' }}"
+						maxlength="40"
+					/>
+					<h1
+						class="char-name"
+						contenteditable="true"
+						spellcheck="false"
+						data-target="{{actor._id}}-name"
+						data-placeholder="{{ localize 'DND5E.Name' }}"
+						data-maxlength="40"
+					>
+						{{actor.name}}
+					</h1>
+				</section>
 
-      <div class="character-details">
-        <section class="general-information">
-          <input data-input="{{actor._id}}-name" name="name" type="hidden" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" maxlength="40">
-          <h1 class="char-name" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-name" data-placeholder="{{ localize 'DND5E.Name' }}" data-maxlength="40">{{actor.name}}</h1>
-        </section>
+				{{!-- Actor Summary --}}
 
-        {{!-- Actor Summary --}}
+				<ul class="origin-summary">
+					<li>
+						<ul class="actor-size-select">
+							<li>
+								<span class="size-label" data-size="{{system.traits.size}}">
+									{{lookup config.actorSizes system.traits.size}}
+								</span>
+								<ul class="size-list" data-target="system.traits.size">
+									{{#each config.actorSizes as |label size|}}
+									<li data-size="{{size}}">{{label}}</li>
+									{{/each}}
+								</ul>
+							</li>
+						</ul>
+						<span>{{localize 'DND5E.Vehicle'}}</span>
+						<span
+							contenteditable="true"
+							spellcheck="false"
+							data-target="{{actor._id}}-dimensions"
+							data-placeholder="{{localize 'DND5E.Dimensions'}}"
+						>
+							{{system.traits.dimensions}}
+						</span>
+						<span
+							contenteditable="true"
+							spellcheck="false"
+							data-target="{{actor._id}}-source"
+							data-placeholder="{{localize 'DND5E.Source'}}"
+						>
+							{{system.details.source}}
+						</span>
+						<input
+							type="hidden"
+							data-input="{{actor._id}}-dimensions"
+							name="system.traits.dimensions"
+							value="{{system.traits.dimensions}}"
+							placeholder="{{localize 'DND5E.Dimensions'}}"
+						/>
+						<input
+							type="hidden"
+							data-input="{{actor._id}}-source"
+							name="system.details.source"
+							value="{{system.details.source}}"
+							placeholder="{{localize 'DND5E.Source'}}"
+						/>
+					</li>
+				</ul>
 
-        <ul class="origin-summary">
-          <li>
-            <ul class="actor-size-select">
-              <li><span class="size-label" data-size="{{system.traits.size}}">{{lookup config.actorSizes system.traits.size}}</span>
-                <ul class="size-list" data-target="system.traits.size">
-                  {{#each config.actorSizes as |label size|}}
-                    <li data-size="{{size}}">{{label}}</li>
-                  {{/each}}
-                </ul>
-              </li>
-            </ul>
-            <span>{{localize 'DND5E.Vehicle'}}</span>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-dimensions" data-placeholder="{{localize 'DND5E.Dimensions'}}">{{system.traits.dimensions}}</span>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{localize 'DND5E.Source'}}">{{system.details.source}}</span>
-            <input type="hidden" data-input="{{actor._id}}-dimensions" name="system.traits.dimensions" value="{{system.traits.dimensions}}" placeholder="{{localize 'DND5E.Dimensions'}}">
-            <input type="hidden" data-input="{{actor._id}}-source" name="system.details.source" value="{{system.details.source}}" placeholder="{{localize 'DND5E.Source'}}">
-          </li>
-        </ul>
-
-        {{!-- Character Movement --}}
+				{{!-- Character Movement --}}
 
 				<section class="movement">
 					<ul class="speed-form">
 						<li><h4>{{ localize 'DND5E.Speed' }}</h4></li>
 						{{#if movement.primary}}
 						<li class="movement-primary" title="{{movement.primary}}">{{movement.primary}}</li>
-						{{/if}}
-						{{#if movement.special}}
+						{{/if}} {{#if movement.special}}
 						<li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
 						{{/if}}
 						<li class="configure-movement">
-              <a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}">
-                <i class="fas fa-cog"></i>
-              </a>
-            </li>
-          </ul>
-        </section>
+							<a
+								class="config-button"
+								data-action="movement"
+								data-tooltip="{{localize 'DND5E.MovementConfig'}}"
+							>
+								<i class="fas fa-cog"></i>
+							</a>
+						</li>
+					</ul>
+				</section>
 
-        <section class="character-stats">
-          {{!-- Header Attributes --}}
-          <ul class="header-attributes">
-            <li class="header-attribute ac-display" data-tooltip="{{ localize 'DND5E.ArmorClass' }}">
+				<section class="character-stats">
+					{{!-- Header Attributes --}}
+					<ul class="header-attributes">
+						<li class="header-attribute ac-display" data-tooltip="{{ localize 'DND5E.ArmorClass' }}">
 							<svg version="1.1" x="0px" y="0px" viewBox="0 0 90 100" xml:space="preserve">
-							<path d="M45,100C-2.6,79.3,0,12.6,0,12.6c0-2.2,1.8-4,4.4-4.6l39.1-7.9C44,0,44.5,0,45,0c0.5,0,1,0,1.4,0.1L85.5,8
-								c2.6,0.5,4.4,2.4,4.4,4.6C90,12.6,92.6,79.3,45,100L45,100z"/>
+								<path
+									d="M45,100C-2.6,79.3,0,12.6,0,12.6c0-2.2,1.8-4,4.4-4.6l39.1-7.9C44,0,44.5,0,45,0c0.5,0,1,0,1.4,0.1L85.5,8
+								c2.6,0.5,4.4,2.4,4.4,4.6C90,12.6,92.6,79.3,45,100L45,100z"
+								/>
 							</svg>
 							<div class="attribute-value attributable" data-property="attributes.ac">
-                <a class="config-button" data-action="armor" title="{{localize 'DND5E.ArmorConfig'}}">
-                  {{numberInput system.attributes.ac.flat name="system.attributes.ac.flat" min=0 step=1
-                  placeholder="10"}}
-                </a>
+								<a class="config-button" data-action="armor" title="{{localize 'DND5E.ArmorConfig'}}">
+									{{numberInput system.attributes.ac.flat name="system.attributes.ac.flat" min=0
+									step=1 placeholder="10"}}
+								</a>
 							</div>
-              <!--
+							<!--
               <div class="attribute-value">
                 {{numberInput system.attributes.ac.flat name="system.attributes.ac.flat" min=0 step=1
                 placeholder="10"}}
               </div>
               -->
-              <footer class="value-footer">
-                <input type="text" name="system.attributes.ac.motionless" placeholder="&mdash;" value="{{system.attributes.ac.motionless}}">
-              </footer>
-            </li>
-          </ul>
+							<footer class="value-footer">
+								<input
+									type="text"
+									name="system.attributes.ac.motionless"
+									placeholder="&mdash;"
+									value="{{system.attributes.ac.motionless}}"
+								/>
+							</footer>
+						</li>
+					</ul>
 
-          {{!-- Ability Scores --}}
-          <ul class="ability-scores">
-            {{#each abilities as |ability id|}}
-            <li class="ability" data-ability="{{id}}">
+					{{!-- Ability Scores --}}
+					<ul class="ability-scores">
+						{{#each abilities as |ability id|}}
+						<li class="ability" data-ability="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
-                <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
-                <div class="value">
-                  <input type="text" name="system.abilities.{{id}}.value" value="{{ability.value}}" class="ability-score" placeholder="10" data-dtype="Number">
-                </div>
-                <div class="ability-modifiers value-footer">
-                  <span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
-                </div>
-              </div>
-            </li>
-            {{/each}}
-          </ul>
-        </section>
-      </div>
-    </header>
+								<h4 class="ability-name box-title rollable" title="{{ability.label}}">
+									{{ability.abbr}}
+								</h4>
+								<div class="value">
+									<input
+										type="text"
+										name="system.abilities.{{id}}.value"
+										value="{{ability.value}}"
+										class="ability-score"
+										placeholder="10"
+										data-dtype="Number"
+									/>
+								</div>
+								<div class="ability-modifiers value-footer">
+									<span class="ability-mod" title="{{ localize 'DND5E.AbilityModifier' }}">
+										{{numberFormat ability.mod decimals=0 sign=true}}
+									</span>
+								</div>
+							</div>
+						</li>
+						{{/each}}
+					</ul>
+				</section>
+			</div>
+		</header>
 
-    <nav class="tidy5e-navigation tabs" data-group="primary">
-      <a class="item active" data-tab="attributes">{{localize 'DND5E.Attributes'}}</a>
-      <!-- <a class="item" data-tab="features">{{localize 'DND5E.Features'}}</a> -->
-      <a class="item" data-tab="cargo">{{localize 'DND5E.VehicleCargoCrew'}}</a>
-      <a class="item" data-tab="biography">{{localize 'DND5E.Description'}}</a>
-      {{#if owner}}
-      <div class="toggle-allow-edit"><span><i class="fas fa-lock" title="{{localize 'TIDY5E.EnableEdit'}} - {{localize 'TIDY5E.EditHint'}}"></i><i class="fas fa-lock-open" title="{{localize 'TIDY5E.DisableEdit'}} - {{localize 'TIDY5E.EditHint'}}"></i></span></div>
-      {{/if}}
-    </nav>
+		<nav class="tidy5e-navigation tabs" data-group="primary">
+			<a class="item active" data-tab="attributes">{{localize 'DND5E.Attributes'}}</a>
+			<!-- <a class="item" data-tab="features">{{localize 'DND5E.Features'}}</a> -->
+			<a class="item" data-tab="cargo">{{localize 'DND5E.VehicleCargoCrew'}}</a>
+			<a class="item" data-tab="biography">{{localize 'DND5E.Description'}}</a>
+			{{#if owner}}
+			<div class="toggle-allow-edit">
+				<span>
+					<i
+						class="fas fa-lock"
+						title="{{localize 'TIDY5E.EnableEdit'}} - {{localize 'TIDY5E.EditHint'}}"
+					></i>
+					<i
+						class="fas fa-lock-open"
+						title="{{localize 'TIDY5E.DisableEdit'}} - {{localize 'TIDY5E.EditHint'}}"
+					></i>
+				</span>
+			</div>
+			{{/if}}
+		</nav>
 
-    <section class="sheet-body">
+		<section class="sheet-body">
+			<div class="tab attributes" data-group="primary" data-tab="attributes">
+				<div class="left-pane">
+					<div class="counters">
+						<div class="counter creature-cap">
+							<h4>{{localize 'DND5E.VehicleCreatureCapacity'}}</h4>
+							<div class="counter-value">
+								<input
+									type="text"
+									placeholder="&mdash;"
+									name="system.attributes.capacity.creature"
+									value="{{system.attributes.capacity.creature}}"
+								/>
+							</div>
+						</div>
+						<div class="counter cargo-cap">
+							<h4>{{localize 'DND5E.VehicleCargoCapacity'}}</h4>
+							<div class="counter-value">
+								{{numberInput system.attributes.capacity.cargo name="system.attributes.capacity.cargo"
+								min=0 placeholder=0}}
+							</div>
+						</div>
+						<div class="counter stations">
+							<h4>{{localize 'DND5E.VehicleActionStations'}}</h4>
+							<div class="counter-value">
+								<input
+									name="system.attributes.actions.stations"
+									type="checkbox"
+									data-dtype="Boolean"
+									value="{{system.attributes.actions.stations}}"
+									{{checked
+									system.attributes.actions.stations}}
+								/>
+							</div>
+						</div>
+						<div class="counter actions">
+							<h4>{{localize 'DND5E.ActionPl'}}</h4>
+							<div class="counter-value">
+								{{numberInput system.attributes.actions.value name="system.attributes.actions.value"
+								min=0 step=1 placeholder=0 title=(localize "DND5E.VehicleActionsHint")}}
+							</div>
+						</div>
+						<div class="counter action-thresholds">
+							<h4>{{localize 'DND5E.VehicleActionThresholds'}}</h4>
+							<div class="counter-value">
+								<span class="sep">&lt;</span>
+								{{numberInput system.attributes.actions.thresholds.[2] min=0 step=1
+								placeholder="&mdash;" name="system.attributes.actions.thresholds.2" title=(localize
+								"DND5E.VehicleActionThresholdsFull")}}
+								<span class="sep">&lt;</span>
+								{{numberInput system.attributes.actions.thresholds.[1] min=0 step=1
+								placeholder="&mdash;" name="system.attributes.actions.thresholds.1" title=(localize
+								"DND5E.VehicleActionThresholdsMid")}}
+								<span class="sep">&lt;</span>
+								{{numberInput system.attributes.actions.thresholds.[0] min=0 step=1
+								placeholder="&mdash;" name="system.attributes.actions.thresholds.0" title=(localize
+								"DND5E.VehicleActionThresholdsMin")}}
+							</div>
+						</div>
+					</div>
 
-      <div class="tab attributes" data-group="primary" data-tab="attributes">
-        <div class="left-pane">
-          <div class="counters">
-            <div class="counter creature-cap">
-              <h4>{{localize 'DND5E.VehicleCreatureCapacity'}}</h4>
-              <div class="counter-value">
-                <input type="text" placeholder="&mdash;"
-                name="system.attributes.capacity.creature"
-                value="{{system.attributes.capacity.creature}}">
-              </div>
-            </div>
-            <div class="counter cargo-cap">
-              <h4>{{localize 'DND5E.VehicleCargoCapacity'}}</h4>
-              <div class="counter-value">
-                {{numberInput system.attributes.capacity.cargo name="system.attributes.capacity.cargo" min=0
-                placeholder=0}}
-              </div>
-            </div>
-            <div class="counter stations">
-              <h4>{{localize 'DND5E.VehicleActionStations'}}</h4>
-              <div class="counter-value">
-                <input name="system.attributes.actions.stations" type="checkbox"
-                data-dtype="Boolean" value="{{system.attributes.actions.stations}}"
-                {{checked system.attributes.actions.stations}}>
-              </div>
-            </div>
-            <div class="counter actions">
-              <h4>{{localize 'DND5E.ActionPl'}}</h4>
-              <div class="counter-value">
-                {{numberInput system.attributes.actions.value name="system.attributes.actions.value" min=0
-                step=1 placeholder=0 title=(localize "DND5E.VehicleActionsHint")}}
-              </div>
-            </div>
-            <div class="counter action-thresholds">
-              <h4>{{localize 'DND5E.VehicleActionThresholds'}}</h4>
-              <div class="counter-value">
-                <span class="sep">&lt;</span>
-                {{numberInput system.attributes.actions.thresholds.[2] min=0 step=1 placeholder="&mdash;"
-                  name="system.attributes.actions.thresholds.2"
-                  title=(localize "DND5E.VehicleActionThresholdsFull")}}
-                <span class="sep">&lt;</span>
-                {{numberInput system.attributes.actions.thresholds.[1] min=0 step=1 placeholder="&mdash;"
-                  name="system.attributes.actions.thresholds.1"
-                  title=(localize "DND5E.VehicleActionThresholdsMid")}}
-                <span class="sep">&lt;</span>
-                {{numberInput system.attributes.actions.thresholds.[0] min=0 step=1 placeholder="&mdash;"
-                  name="system.attributes.actions.thresholds.0"
-                  title=(localize "DND5E.VehicleActionThresholdsMin")}}
-              </div>
-            </div>
-          </div>
+					{{!-- Traits --}} {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-traits.html"}}
+				</div>
 
-          {{!-- Traits --}}
-          {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-traits.html"}}
-        </div>
+				<section class="center-pane">
+					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-features.html" sections=features}}
+				</section>
+			</div>
 
-        <section class="center-pane">
-          {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-features.html" sections=features}}
-        </section>
-      </div>
+			{{!-- Features Tab --}}
+			<div class="tab features" data-group="primary" data-tab="features">
+				{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-features.html" sections=features}}
+			</div>
 
-      {{!-- Features Tab --}}
-      <div class="tab features" data-group="primary" data-tab="features">
-        {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-features.html" sections=features}}
-      </div>
+			<div class="tab cargo" data-group="primary" data-tab="cargo">
+				{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory.html" sections=cargo}}
+			</div>
 
-      <div class="tab cargo" data-group="primary" data-tab="cargo">
-        {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory.html" sections=cargo}}
-      </div>
-
-      <div class="tab biography" data-group="primary" data-tab="biography">
-        <div class="right-notes note-entries">
-          <article class="biography-notes">
-          {{editor biographyHTML target='system.details.biography.value'
-          button=true engine="prosemirror" owner=owner editable=editable}}
-          </article>
-        </div>
-      </div>
-    </section>
-  </div>
+			<div class="tab biography" data-group="primary" data-tab="biography">
+				<div class="right-notes note-entries">
+					<article class="biography-notes">
+						{{editor biographyHTML target='system.details.biography.value' button=true engine="prosemirror"
+						owner=owner editable=editable}}
+					</article>
+				</div>
+			</div>
+		</section>
+	</div>
 </form>

@@ -1,766 +1,1410 @@
 <form onsubmit="event.preventDefault();" class="{{classes}}" autocomplete="off">
 	<nav class="sheet-tabs tabs">
-		<a class='item' data-tab='pc-sheet'>{{localize 'TIDY5E.Settings.TabPlayers.tabLabel'}}</a>
-		<a class='item' data-tab='npc-sheet'>{{localize 'TIDY5E.Settings.TabNPCsVehicles.tabLabel'}}</a>
-		<a class='item gm-only' data-tab='gm-options'>{{localize 'TIDY5E.Settings.TabGM.tabLabel'}}</a>
-		<a class='item gm-only' data-tab='modules'>{{localize 'TIDY5E.Settings.TabModules.tabLabel'}}</a>
-    <a class='item gm-only' data-tab='locks'>{{localize 'TIDY5E.Settings.TabLocks.tabLabel'}}</a>
-		<a class='item' data-tab='info'>{{localize 'TIDY5E.Settings.TabInfo.tabLabel'}}</a>
+		<a class="item" data-tab="pc-sheet">{{localize 'TIDY5E.Settings.TabPlayers.tabLabel'}}</a>
+		<a class="item" data-tab="npc-sheet">{{localize 'TIDY5E.Settings.TabNPCsVehicles.tabLabel'}}</a>
+		<a class="item gm-only" data-tab="gm-options">{{localize 'TIDY5E.Settings.TabGM.tabLabel'}}</a>
+		<a class="item gm-only" data-tab="modules">{{localize 'TIDY5E.Settings.TabModules.tabLabel'}}</a>
+		<a class="item gm-only" data-tab="locks">{{localize 'TIDY5E.Settings.TabLocks.tabLabel'}}</a>
+		<a class="item" data-tab="info">{{localize 'TIDY5E.Settings.TabInfo.tabLabel'}}</a>
 	</nav>
 
+	{{!-- PC OPTIONS --}}
 
-  {{!-- PC OPTIONS --}}
-
-
-  <section class='tab' data-tab='pc-sheet'>
-    <h2>{{localize 'TIDY5E.Settings.TabPlayers.header'}}</h2>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='journalTabDisabled' id='journalTabDisabled' {{checked settings.journalTabDisabled.value}}>
-      <div class="description">
-        <label for="journalTabDisabled">{{localize 'TIDY5E.Settings.JournalTab.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.JournalTab.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='classListDisabled' id='classListDisabled' {{checked settings.classListDisabled.value}}>
-      <div class="description">
-        <label for="classListDisabled">{{localize 'TIDY5E.Settings.ClassList.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.ClassList.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='inspirationAnimationDisabled' id='inspirationAnimationDisabled' {{checked settings.inspirationAnimationDisabled.value}}>
-      <div class="description">
-        <label for="inspirationAnimationDisabled">{{localize 'TIDY5E.Settings.InspirationAnimation.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.InspirationAnimation.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hideIfZero' id='hideIfZero' {{checked settings.hideIfZero.value}}>
-      <div class="description">
-        <label for="hideIfZero">{{localize 'TIDY5E.Settings.HideIfZero.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HideIfZero.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='inspirationOnHover' id='inspirationOnHover' {{checked settings.inspirationOnHover.value}}>
-      <div class="description">
-        <label for="inspirationOnHover">{{localize 'TIDY5E.Settings.InspirationOnHover.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.InspirationOnHover.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='exhaustionOnHover' id='exhaustionOnHover' {{checked settings.exhaustionOnHover.value}}>
-      <div class="description">
-        <label for="exhaustionOnHover">{{localize 'TIDY5E.Settings.ExhaustionOnHover.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionOnHover.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hpBarDisabled' id='hpBarDisabled' {{checked settings.hpBarDisabled.value}}>
-      <div class="description">
-        <label for="hpBarDisabled">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hpOverlayDisabled' id='hpOverlayDisabled' {{checked settings.hpOverlayDisabled.value}}>
-      <div class="description">
-        <label for="hpOverlayDisabled">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='traitsTogglePc' id='traitsTogglePc' {{checked settings.traitsTogglePc.value}}>
-      <div class="description">
-        <label for="traitsTogglePc">{{localize 'TIDY5E.Settings.TraitsTogglePc.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.TraitsTogglePc.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='traitsMovedBelowResource' id='traitsMovedBelowResource' {{checked settings.traitsMovedBelowResource.value}}>
-      <div class="description">
-        <label for="traitsMovedBelowResource">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='ammoEquippedOnly' id='ammoEquippedOnly' {{checked settings.ammoEquippedOnly.value}}>
-      <div class="description">
-        <label for="ammoEquippedOnly">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting group">
-      <div>
-        <div class="description">
-          <label for="playerSheetWidth">{{localize 'TIDY5E.Settings.playerSheetWidth.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.playerSheetWidth.hint'}}</p>
-        </div>
-        <div class="settings-group">
-           <article>
-            <input type="number" data-dtype='number' name='playerSheetWidth' id='playerSheetWidth' value="{{settings.playerSheetWidth.value}}">
-          </article>
-        </div>
-      </div>
-    </article>
+	<section class="tab" data-tab="pc-sheet">
+		<h2>{{localize 'TIDY5E.Settings.TabPlayers.header'}}</h2>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="journalTabDisabled"
+				id="journalTabDisabled"
+				{{checked
+				settings.journalTabDisabled.value}}
+			/>
+			<div class="description">
+				<label for="journalTabDisabled">{{localize 'TIDY5E.Settings.JournalTab.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.JournalTab.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="classListDisabled"
+				id="classListDisabled"
+				{{checked
+				settings.classListDisabled.value}}
+			/>
+			<div class="description">
+				<label for="classListDisabled">{{localize 'TIDY5E.Settings.ClassList.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ClassList.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="inspirationAnimationDisabled"
+				id="inspirationAnimationDisabled"
+				{{checked
+				settings.inspirationAnimationDisabled.value}}
+			/>
+			<div class="description">
+				<label for="inspirationAnimationDisabled">
+					{{localize 'TIDY5E.Settings.InspirationAnimation.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.InspirationAnimation.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hideIfZero"
+				id="hideIfZero"
+				{{checked
+				settings.hideIfZero.value}}
+			/>
+			<div class="description">
+				<label for="hideIfZero">{{localize 'TIDY5E.Settings.HideIfZero.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HideIfZero.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="inspirationOnHover"
+				id="inspirationOnHover"
+				{{checked
+				settings.inspirationOnHover.value}}
+			/>
+			<div class="description">
+				<label for="inspirationOnHover">{{localize 'TIDY5E.Settings.InspirationOnHover.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.InspirationOnHover.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="exhaustionOnHover"
+				id="exhaustionOnHover"
+				{{checked
+				settings.exhaustionOnHover.value}}
+			/>
+			<div class="description">
+				<label for="exhaustionOnHover">{{localize 'TIDY5E.Settings.ExhaustionOnHover.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ExhaustionOnHover.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hpBarDisabled"
+				id="hpBarDisabled"
+				{{checked
+				settings.hpBarDisabled.value}}
+			/>
+			<div class="description">
+				<label for="hpBarDisabled">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hpOverlayDisabled"
+				id="hpOverlayDisabled"
+				{{checked
+				settings.hpOverlayDisabled.value}}
+			/>
+			<div class="description">
+				<label for="hpOverlayDisabled">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="traitsTogglePc"
+				id="traitsTogglePc"
+				{{checked
+				settings.traitsTogglePc.value}}
+			/>
+			<div class="description">
+				<label for="traitsTogglePc">{{localize 'TIDY5E.Settings.TraitsTogglePc.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.TraitsTogglePc.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="traitsMovedBelowResource"
+				id="traitsMovedBelowResource"
+				{{checked
+				settings.traitsMovedBelowResource.value}}
+			/>
+			<div class="description">
+				<label for="traitsMovedBelowResource">
+					{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="ammoEquippedOnly"
+				id="ammoEquippedOnly"
+				{{checked
+				settings.ammoEquippedOnly.value}}
+			/>
+			<div class="description">
+				<label for="ammoEquippedOnly">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting group">
+			<div>
+				<div class="description">
+					<label for="playerSheetWidth">{{localize 'TIDY5E.Settings.playerSheetWidth.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.playerSheetWidth.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<article>
+						<input
+							type="number"
+							data-dtype="number"
+							name="playerSheetWidth"
+							id="playerSheetWidth"
+							value="{{settings.playerSheetWidth.value}}"
+						/>
+					</article>
+				</div>
+			</div>
+		</article>
 	</section>
 
+	{{!-- NPC/VEHICLE OPTIONS --}}
 
-  {{!-- NPC/VEHICLE OPTIONS --}}
+	<section class="tab" data-tab="npc-sheet">
+		<h2>{{localize 'TIDY5E.Settings.TabNPCsVehicles.header'}}</h2>
 
+		<h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelNPCs'}}</h3>
+		<article class="setting gm-only">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="restingForNpcsEnabled"
+				id="restingForNpcsEnabled"
+				{{checked
+				settings.restingForNpcsEnabled.value}}
+			/>
+			<div class="description">
+				<label for="restingForNpcsEnabled">{{localize 'TIDY5E.Settings.RestingForNpcs.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.RestingForNpcs.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting gm-only">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="restingForNpcsChatDisabled"
+				id="restingForNpcsChatDisabled"
+				{{checked
+				settings.restingForNpcsChatDisabled.value}}
+			/>
+			<div class="description">
+				<label for="restingForNpcsChatDisabled">{{localize 'TIDY5E.Settings.RestingForNpcsChat.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.RestingForNpcsChat.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting group gm-only">
+			<div>
+				<div class="description">
+					<label for="linkMarkerNpc">{{localize 'TIDY5E.Settings.LinkMarker.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.LinkMarker.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<select name="linkMarkerNpc" id="linkMarkerNpc">
+						{{#select settings.linkMarkerNpc.value}}
+						<option value="default">{{localize "TIDY5E.Settings.LinkMarker.default"}}</option>
+						<option value="unlinked">{{localize "TIDY5E.Settings.LinkMarker.unlinked"}}</option>
+						<option value="both">{{localize "TIDY5E.Settings.LinkMarker.both"}}</option>
+						{{/select}}
+					</select>
+				</div>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hpBarDisabledNpc"
+				id="hpBarDisabledNpc"
+				{{checked
+				settings.hpBarDisabledNpc.value}}
+			/>
+			<div class="description">
+				<label for="hpBarDisabledNpc">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hpOverlayDisabledNpc"
+				id="hpOverlayDisabledNpc"
+				{{checked
+				settings.hpOverlayDisabledNpc.value}}
+			/>
+			<div class="description">
+				<label for="hpOverlayDisabledNpc">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="traitsAlwaysShownNpc"
+				id="traitsAlwaysShownNpc"
+				{{checked
+				settings.traitsAlwaysShownNpc.value}}
+			/>
+			<div class="description">
+				<label for="traitsAlwaysShownNpc">{{localize 'TIDY5E.Settings.TraitsAlwaysShown.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.TraitsAlwaysShown.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="traitsMovedBelowResourceNpc"
+				id="traitsMovedBelowResourceNpc"
+				{{checked
+				settings.traitsMovedBelowResourceNpc.value}}
+			/>
+			<div class="description">
+				<label for="traitsMovedBelowResourceNpc">
+					{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="skillsAlwaysShownNpc"
+				id="skillsAlwaysShownNpc"
+				{{checked
+				settings.skillsAlwaysShownNpc.value}}
+			/>
+			<div class="description">
+				<label for="skillsAlwaysShownNpc">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hideSpellbookTabNpc"
+				id="hideSpellbookTabNpc"
+				{{checked
+				settings.hideSpellbookTabNpc.value}}
+			/>
+			<div class="description">
+				<label for="hideSpellbookTabNpc">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting group">
+			<div>
+				<div class="description">
+					<label for="npsSheetWidth">{{localize 'TIDY5E.Settings.npsSheetWidth.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.npsSheetWidth.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<article>
+						<input
+							type="number"
+							data-dtype="number"
+							name="npsSheetWidth"
+							id="npsSheetWidth"
+							value="{{settings.npsSheetWidth.value}}"
+						/>
+					</article>
+				</div>
+			</div>
+		</article>
 
-  <section class='tab' data-tab='npc-sheet'>
-    <h2>{{localize 'TIDY5E.Settings.TabNPCsVehicles.header'}}</h2>
-
-    <h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelNPCs'}}</h3>
-    <article class="setting gm-only">
-      <input type="checkbox" data-dtype='boolean' name='restingForNpcsEnabled' id='restingForNpcsEnabled' {{checked settings.restingForNpcsEnabled.value}}>
-      <div class="description">
-        <label for="restingForNpcsEnabled">{{localize 'TIDY5E.Settings.RestingForNpcs.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.RestingForNpcs.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting gm-only">
-      <input type="checkbox" data-dtype='boolean' name='restingForNpcsChatDisabled' id='restingForNpcsChatDisabled' {{checked settings.restingForNpcsChatDisabled.value}}>
-      <div class="description">
-        <label for="restingForNpcsChatDisabled">{{localize 'TIDY5E.Settings.RestingForNpcsChat.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.RestingForNpcsChat.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting group gm-only">
-      <div>
-        <div class="description">
-          <label for="linkMarkerNpc">{{localize 'TIDY5E.Settings.LinkMarker.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.LinkMarker.hint'}}</p>
-        </div>
-        <div class="settings-group">
-          <select name="linkMarkerNpc" id="linkMarkerNpc">
-            {{#select settings.linkMarkerNpc.value}}
-            <option value="default">{{localize "TIDY5E.Settings.LinkMarker.default"}}</option>
-            <option value="unlinked">{{localize "TIDY5E.Settings.LinkMarker.unlinked"}}</option>
-            <option value="both">{{localize "TIDY5E.Settings.LinkMarker.both"}}</option>
-            {{/select}}
-          </select>
-        </div>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hpBarDisabledNpc' id='hpBarDisabledNpc' {{checked settings.hpBarDisabledNpc.value}}>
-      <div class="description">
-        <label for="hpBarDisabledNpc">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hpOverlayDisabledNpc' id='hpOverlayDisabledNpc' {{checked settings.hpOverlayDisabledNpc.value}}>
-      <div class="description">
-        <label for="hpOverlayDisabledNpc">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='traitsAlwaysShownNpc' id='traitsAlwaysShownNpc' {{checked settings.traitsAlwaysShownNpc.value}}>
-      <div class="description">
-        <label for="traitsAlwaysShownNpc">{{localize 'TIDY5E.Settings.TraitsAlwaysShown.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.TraitsAlwaysShown.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='traitsMovedBelowResourceNpc' id='traitsMovedBelowResourceNpc' {{checked settings.traitsMovedBelowResourceNpc.value}}>
-      <div class="description">
-        <label for="traitsMovedBelowResourceNpc">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='skillsAlwaysShownNpc' id='skillsAlwaysShownNpc' {{checked settings.skillsAlwaysShownNpc.value}}>
-      <div class="description">
-        <label for="skillsAlwaysShownNpc">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hideSpellbookTabNpc' id='hideSpellbookTabNpc' {{checked settings.hideSpellbookTabNpc.value}}>
-      <div class="description">
-        <label for="hideSpellbookTabNpc">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HideSpellbookTabNpc.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting group">
-      <div>
-        <div class="description">
-          <label for="npsSheetWidth">{{localize 'TIDY5E.Settings.npsSheetWidth.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.npsSheetWidth.hint'}}</p>
-        </div>
-        <div class="settings-group">
-           <article>
-            <input type="number" data-dtype='number' name='npsSheetWidth' id='npsSheetWidth' value="{{settings.npsSheetWidth.value}}">
-          </article>
-        </div>
-      </div>
-    </article>
-
-    <h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelVehicles'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hpBarDisabledVehicle' id='hpBarDisabledVehicle' {{checked settings.hpBarDisabledVehicle.value}}>
-      <div class="description">
-        <label for="hpBarDisabledVehicle">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hpOverlayDisabledVehicle' id='hpOverlayDisabledVehicle' {{checked settings.hpOverlayDisabledVehicle.value}}>
-      <div class="description">
-        <label for="hpOverlayDisabledVehicle">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting group">
-      <div>
-        <div class="description">
-          <label for="vehicleSheetWidth">{{localize 'TIDY5E.Settings.vehicleSheetWidth.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.vehicleSheetWidth.hint'}}</p>
-        </div>
-        <div class="settings-group">
-           <article>
-            <input type="number" data-dtype='number' name='vehicleSheetWidth' id='vehicleSheetWidth' value="{{settings.vehicleSheetWidth.value}}">
-          </article>
-        </div>
-      </div>
-    </article>
+		<h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelVehicles'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hpBarDisabledVehicle"
+				id="hpBarDisabledVehicle"
+				{{checked
+				settings.hpBarDisabledVehicle.value}}
+			/>
+			<div class="description">
+				<label for="hpBarDisabledVehicle">{{localize 'TIDY5E.Settings.HpBar.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HpBar.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hpOverlayDisabledVehicle"
+				id="hpOverlayDisabledVehicle"
+				{{checked
+				settings.hpOverlayDisabledVehicle.value}}
+			/>
+			<div class="description">
+				<label for="hpOverlayDisabledVehicle">{{localize 'TIDY5E.Settings.HpOverlay.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting group">
+			<div>
+				<div class="description">
+					<label for="vehicleSheetWidth">{{localize 'TIDY5E.Settings.vehicleSheetWidth.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.vehicleSheetWidth.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<article>
+						<input
+							type="number"
+							data-dtype="number"
+							name="vehicleSheetWidth"
+							id="vehicleSheetWidth"
+							value="{{settings.vehicleSheetWidth.value}}"
+						/>
+					</article>
+				</div>
+			</div>
+		</article>
 	</section>
 
+	{{!-- GM OPTIONS --}}
 
-  {{!-- GM OPTIONS --}}
-
-
-  <section class='tab gm-only' data-tab='gm-options'>
-    <h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hiddenDeathSavesEnabled' id='hiddenDeathSavesEnabled' {{checked settings.hiddenDeathSavesEnabled.value}}>
-      <div class="description">
-        <label for="hiddenDeathSavesEnabled">{{localize 'TIDY5E.Settings.HiddenDeathSaves.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HiddenDeathSaves.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hideSpellSlotMarker' id='hideSpellSlotMarker' {{checked settings.hideSpellSlotMarker.value}}>
-      <div class="description">
-        <label for="hideSpellSlotMarker">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-        <input type="checkbox" data-dtype='boolean' name='enableSpellLevelButtons' id='enableSpellLevelButtons' {{checked settings.enableSpellLevelButtons.value}}>
-        <div class="description">
-          <label for="enableSpellLevelButtons">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.hint'}}</p>
-        </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='hideStandardEncumbranceBar' id='hideStandardEncumbranceBar' {{checked settings.hideStandardEncumbranceBar.value}}>
-      <div class="description">
-        <label for="hideStandardEncumbranceBar">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
-      <div class="description">
-        <label for="playerNameEnabled">{{localize 'TIDY5E.Settings.PlayerName.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.PlayerName.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='rightClickDisabled' id='rightClickDisabled' {{checked settings.rightClickDisabled.value}}>
-      <div class="description">
-        <label for="rightClickDisabled">{{localize 'TIDY5E.Settings.RightClick.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.RightClick.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='classicControlsEnabled' id='classicControlsEnabled' {{checked settings.classicControlsEnabled.value}}>
-      <div class="description">
-        <label for="classicControlsEnabled">{{localize 'TIDY5E.Settings.ClassicControls.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.ClassicControls.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='expandedSheetEnabled' id='expandedSheetEnabled' {{checked settings.expandedSheetEnabled.value}}>
-      <div class="description">
-        <label for="expandedSheetEnabled">{{localize 'TIDY5E.Settings.ExpandedSheet.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.ExpandedSheet.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting group">
-      <div>
-        <div class="description">
-          <label for="itemCardsFixKey">{{localize 'TIDY5E.Settings.ItemCardsFixKey.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.ItemCardsFixKey.hint'}}</p>
-        </div>
-        <div class="settings-group">
-           <article>
-            <input type="text" data-dtype='string' name='itemCardsFixKey' id='itemCardsFixKey' value="{{settings.itemCardsFixKey.value}}" maxlength="1">
-          </article>
-        </div>
-      </div>
-    </article>
-    <article class="setting group">
-      <section>
-        <div class="description">
-          <label for="portraitStyle">{{localize 'TIDY5E.Settings.PortraitStyle.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.PortraitStyle.hint'}}</p>
-        </div>
-        <div class="settings-group">
-          <select name="portraitStyle" id="portraitStyle">
-            {{#select settings.portraitStyle.value}}
-            <option value="default">{{localize "TIDY5E.Settings.PortraitStyle.default"}}</option>
-            <option value="pc">{{localize "TIDY5E.Settings.PortraitStyle.pc"}}</option>
-            <option value="npc">{{localize "TIDY5E.Settings.PortraitStyle.npc"}}</option>
-            <option value="all">{{localize "TIDY5E.Settings.PortraitStyle.all"}}</option>
-            {{/select}}
-          </select>
-        </div>
-      </section>
-    </article>
-    <article class="setting group">
-      <section>
-        <div class="description">
-          <label>{{localize 'TIDY5E.Settings.HpOverlayBorder.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.HpOverlayBorder.hint'}}</p>
-        </div>
-        <div class="settings-group">
-          <article>
-            <label for="hpOverlayBorder">{{localize 'TIDY5E.Settings.PcLabel'}}</label>
-            <input type="text" data-dtype='string' name='hpOverlayBorder' id='hpOverlayBorder' value="{{settings.hpOverlayBorder.value}}">
-          </article>
-          <article>
-            <label for="hpOverlayBorderNpc">{{localize 'TIDY5E.Settings.NpcLabel'}}</label>
-            <input type="text" data-dtype='string' name='hpOverlayBorderNpc' id='hpOverlayBorderNpc' value="{{settings.hpOverlayBorderNpc.value}}">
-          </article>
-          <article>
-            <label for="hpOverlayBorderVehicle">{{localize 'TIDY5E.Settings.VehicleLabel'}}</label>
-            <input type="text" data-dtype='string' name='hpOverlayBorderVehicle' id='hpOverlayBorderVehicle' value="{{settings.hpOverlayBorderVehicle.value}}">
-          </article>
-        </div>
-      </section>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='editGmAlwaysEnabled' id='editGmAlwaysEnabled' {{checked settings.editGmAlwaysEnabled.value}}>
-      <div class="description">
-        <label for="editGmAlwaysEnabled">{{localize 'TIDY5E.Settings.EditGmAlways.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.EditGmAlways.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='editEffectsGmOnlyEnabled' id='editEffectsGmOnlyEnabled' {{checked settings.editEffectsGmOnlyEnabled.value}}>
-      <div class="description">
-        <label for="editEffectsGmOnlyEnabled">{{localize 'TIDY5E.Settings.EditEffectsGmOnly.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.EditEffectsGmOnly.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='quantityAlwaysShownEnabled' id='quantityAlwaysShownEnabled' {{checked settings.quantityAlwaysShownEnabled.value}}>
-      <div class="description">
-        <label for="quantityAlwaysShownEnabled">{{localize 'TIDY5E.Settings.QuantityAlwaysShown.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.QuantityAlwaysShown.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='inspirationDisabled' id='inspirationDisabled' {{checked settings.inspirationDisabled.value}}>
-      <div class="description">
-        <label for="inspirationDisabled">{{localize 'TIDY5E.Settings.InspirationDisabled.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.InspirationDisabled.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting group">
-      <section>
-        <!-- <input type="checkbox" data-dtype='boolean' name='exhaustionEffectsEnabled' id='exhaustionEffectsEnabled' {{checked settings.exhaustionEffectsEnabled.value}}> -->
-        <div class="description">
-          <label for="exhaustionEffectsEnabled">{{localize 'TIDY5E.Settings.ExhaustionEffects.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionEffects.hint'}}</p>
-        </div>
-         <div class="settings-group">
-          <select name="exhaustionEffectsEnabled" id="exhaustionEffectsEnabled">
-            {{#select settings.exhaustionEffectsEnabled.value}}
-            <option value="default">{{localize "TIDY5E.Settings.ExhaustionEffects.default"}}</option>
-            <option value="tidy5e">{{localize "TIDY5E.Settings.ExhaustionEffects.tidy5e"}}</option>
-            <option value="dfredce">{{localize "TIDY5E.Settings.ExhaustionEffects.dfredce"}}</option>
-            <option value="cub">{{localize "TIDY5E.Settings.ExhaustionEffects.cub"}}</option>
-            {{/select}}
-          </select>
-        </div>
-      </section>
-    </article>
-    <article class="setting group">
-      <section>
-        <div class="description">
-          <label for="exhaustionEffectIcon">{{localize 'TIDY5E.Settings.CustomExhaustionIcon.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionIcon.hint'}}</p>
-        </div>
-        <div class="settings-group">
-          <article>
-            <input type="text" data-dtype='string' name='exhaustionEffectIcon' id='exhaustionEffectIcon' value="{{settings.exhaustionEffectIcon.value}}">
-          </article>
-        </div>
-      </section>
-    </article>
-    <article class="setting group">
-      <section>
-        <div class="description">
-          <label for="exhaustionEffectCustom">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.hint'}}</p>
-        </div>
-        <div class="settings-group">
-          <article>
-            <input type="text" data-dtype='string' name='exhaustionEffectCustom' id='exhaustionEffectCustom' value="{{settings.exhaustionEffectCustom.value}}">
-          </article>
-          <article>
-            <p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.tiers'}}</p>
-            <input type="text" data-dtype='string' name='exhaustionEffectCustomTiers' id='exhaustionEffectCustomTiers' value="{{settings.exhaustionEffectCustomTiers.value}}">
-          </article>
-        </div>
-      </section>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='exhaustionDisabled' id='exhaustionDisabled' {{checked settings.exhaustionDisabled.value}}>
-      <div class="description">
-        <label for="exhaustionDisabled">{{localize 'TIDY5E.Settings.ExhaustionDisabled.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionDisabled.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='traitLabelsEnabled' id='traitLabelsEnabled' {{checked settings.traitLabelsEnabled.value}}>
-      <div class="description">
-        <label for="traitLabelsEnabled">{{localize 'TIDY5E.Settings.TraitLabels.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='allowCantripToBePreparedOnContext' id='allowCantripToBePreparedOnContext' {{checked settings.allowCantripToBePreparedOnContext.value}}>
-      <div class="description">
-        <label for="allowCantripToBePreparedOnContext">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lazyHpAndExpEnable' id='lazyHpAndExpEnable' {{checked settings.lazyHpAndExpEnable.value}}>
-      <div class="description">
-        <label for="lazyHpAndExpEnable">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='allowHpMaxOverride' id='allowHpMaxOverride' {{checked settings.allowHpMaxOverride.value}}>
-      <div class="description">
-        <label for="allowHpMaxOverride">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.hint'}}</p>
-      </div>
-    </article> 
-    <h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='spellClassFilterSelect' id='spellClassFilterSelect' {{checked settings.spellClassFilterSelect.value}}>
-      <div class="description">
-        <label for="spellClassFilterSelect">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='spellClassFilterIconReplace' id='spellClassFilterIconReplace' {{checked settings.spellClassFilterIconReplace.value}}>
-      <div class="description">
-        <label for="spellClassFilterIconReplace">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.hint'}}</p>
-      </div>
-    </article>
-    <h3>{{localize 'TIDY5E.Settings.ColorPickerLabel'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='colorPickerEnabled' id='colorPickerEnabled' {{checked settings.colorPickerEnabled.value}}>
-      <div class="description">
-        <label for="colorPickerEnabled">{{localize 'TIDY5E.Settings.ColorPickerEnabled.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEnabled.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerEquipped' id='colorPickerEquipped' value='{{settings.colorPickerEquipped.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerEquipped">{{localize 'TIDY5E.Settings.ColorPickerEquipped.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquipped.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerEquippedOutline' id='colorPickerEquippedOutline' value='{{settings.colorPickerEquippedOutline.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerEquippedOutline">{{localize 'TIDY5E.Settings.ColorPickerEquippedOutline.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquippedOutline.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerEquippedAccent' id='colorPickerEquippedAccent' value='{{settings.colorPickerEquippedAccent.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerEquippedAccent">{{localize 'TIDY5E.Settings.ColorPickerEquippedAccent.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquippedAccent.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerPrepared' id='colorPickerPrepared' value='{{settings.colorPickerPrepared.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerPrepared">{{localize 'TIDY5E.Settings.ColorPickerPrepared.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPrepared.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerPreparedOutline' id='colorPickerPreparedOutline' value='{{settings.colorPickerPreparedOutline.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerPreparedOutline">{{localize 'TIDY5E.Settings.ColorPickerPreparedOutline.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPreparedOutline.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerPreparedAccent' id='colorPickerPreparedAccent' value='{{settings.colorPickerPreparedAccent.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerPreparedAccent">{{localize 'TIDY5E.Settings.ColorPickerPreparedAccent.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPreparedAccent.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerPact' id='colorPickerPact' value='{{settings.colorPickerPact.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerPact">{{localize 'TIDY5E.Settings.ColorPickerPact.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPact.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerPactOutline' id='colorPickerPactOutline' value='{{settings.colorPickerPactOutline.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerPactOutline">{{localize 'TIDY5E.Settings.ColorPickerPactOutline.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPactOutline.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerPactAccent' id='colorPickerPactAccent' value='{{settings.colorPickerPactAccent.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerPactAccent">{{localize 'TIDY5E.Settings.ColorPickerPactAccent.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPactAccent.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerAtWill' id='colorPickerAtWill' value='{{settings.colorPickerAtWill.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerAtWill">{{localize 'TIDY5E.Settings.ColorPickerAtWill.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWill.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerAtWillOutline' id='colorPickerAtWillOutline' value='{{settings.colorPickerAtWillOutline.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerAtWillOutline">{{localize 'TIDY5E.Settings.ColorPickerAtWillOutline.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWillOutline.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerAtWillAccent' id='colorPickerAtWillAccent' value='{{settings.colorPickerAtWillAccent.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerAtWillAccent">{{localize 'TIDY5E.Settings.ColorPickerAtWillAccent.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWillAccent.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerInnate' id='colorPickerInnate' value='{{settings.colorPickerInnate.value}}' is="colorpicker-input" data-responsive-color> 
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerInnate">{{localize 'TIDY5E.Settings.ColorPickerInnate.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnate.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerInnateOutline' id='colorPickerInnateOutline' value='{{settings.colorPickerInnateOutline.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerInnateOutline">{{localize 'TIDY5E.Settings.ColorPickerInnateOutline.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnateOutline.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerInnateAccent' id='colorPickerInnateAccent' value='{{settings.colorPickerInnateAccent.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerInnateAccent">{{localize 'TIDY5E.Settings.ColorPickerInnateAccent.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnateAccent.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerAlwaysPrepared' id='colorPickerAlwaysPrepared' value='{{settings.colorPickerAlwaysPrepared.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerAlwaysPrepared">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPrepared.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPrepared.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerAlwaysPreparedOutline' id='colorPickerAlwaysPreparedOutline' value='{{settings.colorPickerAlwaysPreparedOutline.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerAlwaysPreparedOutline">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="text" class="color" style="max-width: 120px;" data-dtype='string' name='colorPickerAlwaysPreparedAccent' id='colorPickerAlwaysPreparedAccent' value='{{settings.colorPickerAlwaysPreparedAccent.value}}' is="colorpicker-input" data-responsive-color>
-      <div class="description" style="max-width: 240px;">
-      <label for="colorPickerAlwaysPreparedAccent">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.name'}}</label>
-      <p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.hint'}}</p>
-      </div>
-    </article>
+	<section class="tab gm-only" data-tab="gm-options">
+		<h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hiddenDeathSavesEnabled"
+				id="hiddenDeathSavesEnabled"
+				{{checked
+				settings.hiddenDeathSavesEnabled.value}}
+			/>
+			<div class="description">
+				<label for="hiddenDeathSavesEnabled">{{localize 'TIDY5E.Settings.HiddenDeathSaves.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HiddenDeathSaves.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hideSpellSlotMarker"
+				id="hideSpellSlotMarker"
+				{{checked
+				settings.hideSpellSlotMarker.value}}
+			/>
+			<div class="description">
+				<label for="hideSpellSlotMarker">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HideSpellSlotMarker.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="enableSpellLevelButtons"
+				id="enableSpellLevelButtons"
+				{{checked
+				settings.enableSpellLevelButtons.value}}
+			/>
+			<div class="description">
+				<label for="enableSpellLevelButtons">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.EnableSpellLevelButtons.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="hideStandardEncumbranceBar"
+				id="hideStandardEncumbranceBar"
+				{{checked
+				settings.hideStandardEncumbranceBar.value}}
+			/>
+			<div class="description">
+				<label for="hideStandardEncumbranceBar">
+					{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HideStandardEncumbranceBar.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="playerNameEnabled"
+				id="playerNameEnabled"
+				{{checked
+				settings.playerNameEnabled.value}}
+			/>
+			<div class="description">
+				<label for="playerNameEnabled">{{localize 'TIDY5E.Settings.PlayerName.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.PlayerName.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="rightClickDisabled"
+				id="rightClickDisabled"
+				{{checked
+				settings.rightClickDisabled.value}}
+			/>
+			<div class="description">
+				<label for="rightClickDisabled">{{localize 'TIDY5E.Settings.RightClick.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.RightClick.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="classicControlsEnabled"
+				id="classicControlsEnabled"
+				{{checked
+				settings.classicControlsEnabled.value}}
+			/>
+			<div class="description">
+				<label for="classicControlsEnabled">{{localize 'TIDY5E.Settings.ClassicControls.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ClassicControls.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="expandedSheetEnabled"
+				id="expandedSheetEnabled"
+				{{checked
+				settings.expandedSheetEnabled.value}}
+			/>
+			<div class="description">
+				<label for="expandedSheetEnabled">{{localize 'TIDY5E.Settings.ExpandedSheet.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ExpandedSheet.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting group">
+			<div>
+				<div class="description">
+					<label for="itemCardsFixKey">{{localize 'TIDY5E.Settings.ItemCardsFixKey.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.ItemCardsFixKey.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<article>
+						<input
+							type="text"
+							data-dtype="string"
+							name="itemCardsFixKey"
+							id="itemCardsFixKey"
+							value="{{settings.itemCardsFixKey.value}}"
+							maxlength="1"
+						/>
+					</article>
+				</div>
+			</div>
+		</article>
+		<article class="setting group">
+			<section>
+				<div class="description">
+					<label for="portraitStyle">{{localize 'TIDY5E.Settings.PortraitStyle.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.PortraitStyle.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<select name="portraitStyle" id="portraitStyle">
+						{{#select settings.portraitStyle.value}}
+						<option value="default">{{localize "TIDY5E.Settings.PortraitStyle.default"}}</option>
+						<option value="pc">{{localize "TIDY5E.Settings.PortraitStyle.pc"}}</option>
+						<option value="npc">{{localize "TIDY5E.Settings.PortraitStyle.npc"}}</option>
+						<option value="all">{{localize "TIDY5E.Settings.PortraitStyle.all"}}</option>
+						{{/select}}
+					</select>
+				</div>
+			</section>
+		</article>
+		<article class="setting group">
+			<section>
+				<div class="description">
+					<label>{{localize 'TIDY5E.Settings.HpOverlayBorder.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.HpOverlayBorder.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<article>
+						<label for="hpOverlayBorder">{{localize 'TIDY5E.Settings.PcLabel'}}</label>
+						<input
+							type="text"
+							data-dtype="string"
+							name="hpOverlayBorder"
+							id="hpOverlayBorder"
+							value="{{settings.hpOverlayBorder.value}}"
+						/>
+					</article>
+					<article>
+						<label for="hpOverlayBorderNpc">{{localize 'TIDY5E.Settings.NpcLabel'}}</label>
+						<input
+							type="text"
+							data-dtype="string"
+							name="hpOverlayBorderNpc"
+							id="hpOverlayBorderNpc"
+							value="{{settings.hpOverlayBorderNpc.value}}"
+						/>
+					</article>
+					<article>
+						<label for="hpOverlayBorderVehicle">{{localize 'TIDY5E.Settings.VehicleLabel'}}</label>
+						<input
+							type="text"
+							data-dtype="string"
+							name="hpOverlayBorderVehicle"
+							id="hpOverlayBorderVehicle"
+							value="{{settings.hpOverlayBorderVehicle.value}}"
+						/>
+					</article>
+				</div>
+			</section>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="editGmAlwaysEnabled"
+				id="editGmAlwaysEnabled"
+				{{checked
+				settings.editGmAlwaysEnabled.value}}
+			/>
+			<div class="description">
+				<label for="editGmAlwaysEnabled">{{localize 'TIDY5E.Settings.EditGmAlways.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.EditGmAlways.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="editEffectsGmOnlyEnabled"
+				id="editEffectsGmOnlyEnabled"
+				{{checked
+				settings.editEffectsGmOnlyEnabled.value}}
+			/>
+			<div class="description">
+				<label for="editEffectsGmOnlyEnabled">{{localize 'TIDY5E.Settings.EditEffectsGmOnly.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.EditEffectsGmOnly.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="quantityAlwaysShownEnabled"
+				id="quantityAlwaysShownEnabled"
+				{{checked
+				settings.quantityAlwaysShownEnabled.value}}
+			/>
+			<div class="description">
+				<label for="quantityAlwaysShownEnabled">{{localize 'TIDY5E.Settings.QuantityAlwaysShown.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.QuantityAlwaysShown.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="inspirationDisabled"
+				id="inspirationDisabled"
+				{{checked
+				settings.inspirationDisabled.value}}
+			/>
+			<div class="description">
+				<label for="inspirationDisabled">{{localize 'TIDY5E.Settings.InspirationDisabled.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.InspirationDisabled.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting group">
+			<section>
+				<!-- <input type="checkbox" data-dtype='boolean' name='exhaustionEffectsEnabled' id='exhaustionEffectsEnabled' {{checked settings.exhaustionEffectsEnabled.value}}> -->
+				<div class="description">
+					<label for="exhaustionEffectsEnabled">{{localize 'TIDY5E.Settings.ExhaustionEffects.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.ExhaustionEffects.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<select name="exhaustionEffectsEnabled" id="exhaustionEffectsEnabled">
+						{{#select settings.exhaustionEffectsEnabled.value}}
+						<option value="default">{{localize "TIDY5E.Settings.ExhaustionEffects.default"}}</option>
+						<option value="tidy5e">{{localize "TIDY5E.Settings.ExhaustionEffects.tidy5e"}}</option>
+						<option value="dfredce">{{localize "TIDY5E.Settings.ExhaustionEffects.dfredce"}}</option>
+						<option value="cub">{{localize "TIDY5E.Settings.ExhaustionEffects.cub"}}</option>
+						{{/select}}
+					</select>
+				</div>
+			</section>
+		</article>
+		<article class="setting group">
+			<section>
+				<div class="description">
+					<label for="exhaustionEffectIcon">{{localize 'TIDY5E.Settings.CustomExhaustionIcon.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionIcon.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<article>
+						<input
+							type="text"
+							data-dtype="string"
+							name="exhaustionEffectIcon"
+							id="exhaustionEffectIcon"
+							value="{{settings.exhaustionEffectIcon.value}}"
+						/>
+					</article>
+				</div>
+			</section>
+		</article>
+		<article class="setting group">
+			<section>
+				<div class="description">
+					<label for="exhaustionEffectCustom">
+						{{localize 'TIDY5E.Settings.CustomExhaustionEffect.name'}}
+					</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<article>
+						<input
+							type="text"
+							data-dtype="string"
+							name="exhaustionEffectCustom"
+							id="exhaustionEffectCustom"
+							value="{{settings.exhaustionEffectCustom.value}}"
+						/>
+					</article>
+					<article>
+						<p class="notes">{{localize 'TIDY5E.Settings.CustomExhaustionEffect.tiers'}}</p>
+						<input
+							type="text"
+							data-dtype="string"
+							name="exhaustionEffectCustomTiers"
+							id="exhaustionEffectCustomTiers"
+							value="{{settings.exhaustionEffectCustomTiers.value}}"
+						/>
+					</article>
+				</div>
+			</section>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="exhaustionDisabled"
+				id="exhaustionDisabled"
+				{{checked
+				settings.exhaustionDisabled.value}}
+			/>
+			<div class="description">
+				<label for="exhaustionDisabled">{{localize 'TIDY5E.Settings.ExhaustionDisabled.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ExhaustionDisabled.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="traitLabelsEnabled"
+				id="traitLabelsEnabled"
+				{{checked
+				settings.traitLabelsEnabled.value}}
+			/>
+			<div class="description">
+				<label for="traitLabelsEnabled">{{localize 'TIDY5E.Settings.TraitLabels.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="allowCantripToBePreparedOnContext"
+				id="allowCantripToBePreparedOnContext"
+				{{checked
+				settings.allowCantripToBePreparedOnContext.value}}
+			/>
+			<div class="description">
+				<label for="allowCantripToBePreparedOnContext">
+					{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.AllowCantripToBePreparedOnContext.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lazyHpAndExpEnable"
+				id="lazyHpAndExpEnable"
+				{{checked
+				settings.lazyHpAndExpEnable.value}}
+			/>
+			<div class="description">
+				<label for="lazyHpAndExpEnable">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyHpAndExpEnable.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="allowHpMaxOverride"
+				id="allowHpMaxOverride"
+				{{checked
+				settings.allowHpMaxOverride.value}}
+			/>
+			<div class="description">
+				<label for="allowHpMaxOverride">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.hint'}}</p>
+			</div>
+		</article>
+		<h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="spellClassFilterSelect"
+				id="spellClassFilterSelect"
+				{{checked
+				settings.spellClassFilterSelect.value}}
+			/>
+			<div class="description">
+				<label for="spellClassFilterSelect">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterSelect.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="spellClassFilterIconReplace"
+				id="spellClassFilterIconReplace"
+				{{checked
+				settings.spellClassFilterIconReplace.value}}
+			/>
+			<div class="description">
+				<label for="spellClassFilterIconReplace">
+					{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.SpellClassFilterIconReplace.hint'}}</p>
+			</div>
+		</article>
+		<h3>{{localize 'TIDY5E.Settings.ColorPickerLabel'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="colorPickerEnabled"
+				id="colorPickerEnabled"
+				{{checked
+				settings.colorPickerEnabled.value}}
+			/>
+			<div class="description">
+				<label for="colorPickerEnabled">{{localize 'TIDY5E.Settings.ColorPickerEnabled.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEnabled.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerEquipped"
+				id="colorPickerEquipped"
+				value="{{settings.colorPickerEquipped.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerEquipped">{{localize 'TIDY5E.Settings.ColorPickerEquipped.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquipped.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerEquippedOutline"
+				id="colorPickerEquippedOutline"
+				value="{{settings.colorPickerEquippedOutline.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerEquippedOutline">
+					{{localize 'TIDY5E.Settings.ColorPickerEquippedOutline.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquippedOutline.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerEquippedAccent"
+				id="colorPickerEquippedAccent"
+				value="{{settings.colorPickerEquippedAccent.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerEquippedAccent">
+					{{localize 'TIDY5E.Settings.ColorPickerEquippedAccent.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerEquippedAccent.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerPrepared"
+				id="colorPickerPrepared"
+				value="{{settings.colorPickerPrepared.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerPrepared">{{localize 'TIDY5E.Settings.ColorPickerPrepared.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPrepared.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerPreparedOutline"
+				id="colorPickerPreparedOutline"
+				value="{{settings.colorPickerPreparedOutline.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerPreparedOutline">
+					{{localize 'TIDY5E.Settings.ColorPickerPreparedOutline.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPreparedOutline.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerPreparedAccent"
+				id="colorPickerPreparedAccent"
+				value="{{settings.colorPickerPreparedAccent.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerPreparedAccent">
+					{{localize 'TIDY5E.Settings.ColorPickerPreparedAccent.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPreparedAccent.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerPact"
+				id="colorPickerPact"
+				value="{{settings.colorPickerPact.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerPact">{{localize 'TIDY5E.Settings.ColorPickerPact.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPact.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerPactOutline"
+				id="colorPickerPactOutline"
+				value="{{settings.colorPickerPactOutline.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerPactOutline">{{localize 'TIDY5E.Settings.ColorPickerPactOutline.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPactOutline.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerPactAccent"
+				id="colorPickerPactAccent"
+				value="{{settings.colorPickerPactAccent.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerPactAccent">{{localize 'TIDY5E.Settings.ColorPickerPactAccent.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerPactAccent.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerAtWill"
+				id="colorPickerAtWill"
+				value="{{settings.colorPickerAtWill.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerAtWill">{{localize 'TIDY5E.Settings.ColorPickerAtWill.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWill.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerAtWillOutline"
+				id="colorPickerAtWillOutline"
+				value="{{settings.colorPickerAtWillOutline.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerAtWillOutline">
+					{{localize 'TIDY5E.Settings.ColorPickerAtWillOutline.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWillOutline.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerAtWillAccent"
+				id="colorPickerAtWillAccent"
+				value="{{settings.colorPickerAtWillAccent.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerAtWillAccent">{{localize 'TIDY5E.Settings.ColorPickerAtWillAccent.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAtWillAccent.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerInnate"
+				id="colorPickerInnate"
+				value="{{settings.colorPickerInnate.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerInnate">{{localize 'TIDY5E.Settings.ColorPickerInnate.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnate.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerInnateOutline"
+				id="colorPickerInnateOutline"
+				value="{{settings.colorPickerInnateOutline.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerInnateOutline">
+					{{localize 'TIDY5E.Settings.ColorPickerInnateOutline.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnateOutline.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerInnateAccent"
+				id="colorPickerInnateAccent"
+				value="{{settings.colorPickerInnateAccent.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerInnateAccent">{{localize 'TIDY5E.Settings.ColorPickerInnateAccent.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerInnateAccent.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerAlwaysPrepared"
+				id="colorPickerAlwaysPrepared"
+				value="{{settings.colorPickerAlwaysPrepared.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerAlwaysPrepared">
+					{{localize 'TIDY5E.Settings.ColorPickerAlwaysPrepared.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPrepared.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerAlwaysPreparedOutline"
+				id="colorPickerAlwaysPreparedOutline"
+				value="{{settings.colorPickerAlwaysPreparedOutline.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerAlwaysPreparedOutline">
+					{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="text"
+				class="color"
+				style="max-width: 120px"
+				data-dtype="string"
+				name="colorPickerAlwaysPreparedAccent"
+				id="colorPickerAlwaysPreparedAccent"
+				value="{{settings.colorPickerAlwaysPreparedAccent.value}}"
+				is="colorpicker-input"
+				data-responsive-color
+			/>
+			<div class="description" style="max-width: 240px">
+				<label for="colorPickerAlwaysPreparedAccent">
+					{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.name'}}
+				</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.hint'}}</p>
+			</div>
+		</article>
 	</section>
 
-  {{!-- MODULE OPTIONS --}}
+	{{!-- MODULE OPTIONS --}}
 
-  <section class='tab gm-only' data-tab='modules'>
-    <h2>{{localize 'TIDY5E.Settings.TabModules.header'}}</h2>
+	<section class="tab gm-only" data-tab="modules">
+		<h2>{{localize 'TIDY5E.Settings.TabModules.header'}}</h2>
 
-    <h3>{{localize 'TIDY5E.Settings.TabModules.labelActionsFavorites'}}</h3>
-    <article class="setting group">
-      <section>
-        <div class="description">
-          <label for="defaultActionsTab">{{localize 'TIDY5E.Settings.DefaultActionsTab.name'}}</label>
-          <p class="notes">{{localize 'TIDY5E.Settings.DefaultActionsTab.hint'}}</p>
-        </div>
-         <div class="settings-group">
-          <select name="defaultActionsTab" id="defaultActionsTab">
-            {{#select settings.defaultActionsTab.value}}
-            <option value="default">{{localize "TIDY5E.Settings.DefaultActionsTab.default"}}</option>
-            <option value="attributes">{{localize "TIDY5E.Settings.DefaultActionsTab.attributes"}}</option>
-            <option value="inventory">{{localize "TIDY5E.Settings.DefaultActionsTab.inventory"}}</option>
-            <option value="spellbook">{{localize "TIDY5E.Settings.DefaultActionsTab.spellbook"}}</option>
-            <option value="features">{{localize "TIDY5E.Settings.DefaultActionsTab.features"}}</option>
-            <option value="effects">{{localize "TIDY5E.Settings.DefaultActionsTab.effects"}}</option>
-            <option value="biography">{{localize "TIDY5E.Settings.DefaultActionsTab.biography"}}</option>
-            <option value="journal">{{localize "TIDY5E.Settings.DefaultActionsTab.journal"}}</option>
-            <option value="actions">{{localize "TIDY5E.Settings.DefaultActionsTab.actions"}}</option>
-            {{/select}}
-          </select>
-        </div>
-      </section>
-    </article>
+		<h3>{{localize 'TIDY5E.Settings.TabModules.labelActionsFavorites'}}</h3>
+		<article class="setting group">
+			<section>
+				<div class="description">
+					<label for="defaultActionsTab">{{localize 'TIDY5E.Settings.DefaultActionsTab.name'}}</label>
+					<p class="notes">{{localize 'TIDY5E.Settings.DefaultActionsTab.hint'}}</p>
+				</div>
+				<div class="settings-group">
+					<select name="defaultActionsTab" id="defaultActionsTab">
+						{{#select settings.defaultActionsTab.value}}
+						<option value="default">{{localize "TIDY5E.Settings.DefaultActionsTab.default"}}</option>
+						<option value="attributes">{{localize "TIDY5E.Settings.DefaultActionsTab.attributes"}}</option>
+						<option value="inventory">{{localize "TIDY5E.Settings.DefaultActionsTab.inventory"}}</option>
+						<option value="spellbook">{{localize "TIDY5E.Settings.DefaultActionsTab.spellbook"}}</option>
+						<option value="features">{{localize "TIDY5E.Settings.DefaultActionsTab.features"}}</option>
+						<option value="effects">{{localize "TIDY5E.Settings.DefaultActionsTab.effects"}}</option>
+						<option value="biography">{{localize "TIDY5E.Settings.DefaultActionsTab.biography"}}</option>
+						<option value="journal">{{localize "TIDY5E.Settings.DefaultActionsTab.journal"}}</option>
+						<option value="actions">{{localize "TIDY5E.Settings.DefaultActionsTab.actions"}}</option>
+						{{/select}}
+					</select>
+				</div>
+			</section>
+		</article>
 
-    <h3>{{localize 'TIDY5E.Settings.TabModules.labelMidiQoL'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='contextRollButtons' id='contextRollButtons' {{checked settings.contextRollButtons.value}}>
-      <div class="description">
-        <label for="contextRollButtons">{{localize 'TIDY5E.Settings.RollButtonsToCard.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.RollButtonsToCard.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='activeEffectsMarker' id='activeEffectsMarker' {{checked settings.activeEffectsMarker.value}}>
-      <div class="description">
-        <label for="activeEffectsMarker">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.hint'}}</p>
-      </div>
-    </article>
+		<h3>{{localize 'TIDY5E.Settings.TabModules.labelMidiQoL'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="contextRollButtons"
+				id="contextRollButtons"
+				{{checked
+				settings.contextRollButtons.value}}
+			/>
+			<div class="description">
+				<label for="contextRollButtons">{{localize 'TIDY5E.Settings.RollButtonsToCard.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.RollButtonsToCard.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="activeEffectsMarker"
+				id="activeEffectsMarker"
+				{{checked
+				settings.activeEffectsMarker.value}}
+			/>
+			<div class="description">
+				<label for="activeEffectsMarker">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ActiveEffectsMarker.hint'}}</p>
+			</div>
+		</article>
 
-    <h3>{{localize 'TIDY5E.Settings.TabModules.labelLazyMoney'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lazyMoneyEnable' id='lazyMoneyEnable' {{checked settings.lazyMoneyEnable.value}}>
-      <div class="description">
-        <label for="lazyMoneyEnable">{{localize 'TIDY5E.Settings.LazyMoneyEnable.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyEnable.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lazyMoneyAddConvert' id='lazyMoneyAddConvert' {{checked settings.lazyMoneyAddConvert.value}}>
-      <div class="description">
-        <label for="lazyMoneyAddConvert">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lazyMoneyIgnoreElectrum' id='lazyMoneyIgnoreElectrum' {{checked settings.lazyMoneyIgnoreElectrum.value}}>
-      <div class="description">
-        <label for="lazyMoneyIgnoreElectrum">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lazyMoneyChatLog' id='lazyMoneyChatLog' {{checked settings.lazyMoneyChatLog.value}}>
-      <div class="description">
-        <label for="lazyMoneyChatLog">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.hint'}}</p>
-      </div>
-    </article>
-  </section>
+		<h3>{{localize 'TIDY5E.Settings.TabModules.labelLazyMoney'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lazyMoneyEnable"
+				id="lazyMoneyEnable"
+				{{checked
+				settings.lazyMoneyEnable.value}}
+			/>
+			<div class="description">
+				<label for="lazyMoneyEnable">{{localize 'TIDY5E.Settings.LazyMoneyEnable.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyEnable.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lazyMoneyAddConvert"
+				id="lazyMoneyAddConvert"
+				{{checked
+				settings.lazyMoneyAddConvert.value}}
+			/>
+			<div class="description">
+				<label for="lazyMoneyAddConvert">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyAddConvert.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lazyMoneyIgnoreElectrum"
+				id="lazyMoneyIgnoreElectrum"
+				{{checked
+				settings.lazyMoneyIgnoreElectrum.value}}
+			/>
+			<div class="description">
+				<label for="lazyMoneyIgnoreElectrum">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyIgnoreElectrum.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lazyMoneyChatLog"
+				id="lazyMoneyChatLog"
+				{{checked
+				settings.lazyMoneyChatLog.value}}
+			/>
+			<div class="description">
+				<label for="lazyMoneyChatLog">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.hint'}}</p>
+			</div>
+		</article>
+	</section>
 
+	{{!-- LOCKS OPTIONS --}}
 
-  {{!-- LOCKS OPTIONS --}}
+	<section class="tab gm-only" data-tab="locks">
+		<h2>{{localize 'TIDY5E.Settings.TabLocks.header'}}</h2>
+		<p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint'}}</p>
+		<p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint2'}}</p>
 
-  <section class='tab gm-only' data-tab='locks'>
-    <h2>{{localize 'TIDY5E.Settings.TabLocks.header'}}</h2>
-    <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint'}}</p>
-    <p class="notes">{{localize 'TIDY5E.Settings.TabLocks.hint2'}}</p>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="editTotalLockEnabled"
+				id="editTotalLockEnabled"
+				{{checked
+				settings.editTotalLockEnabled.value}}
+			/>
+			<div class="description">
+				<label for="editTotalLockEnabled">{{localize 'TIDY5E.Settings.EditTotalLock.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.EditTotalLock.hint'}}</p>
+			</div>
+		</article>
 
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='editTotalLockEnabled' id='editTotalLockEnabled' {{checked settings.editTotalLockEnabled.value}}>
-      <div class="description">
-        <label for="editTotalLockEnabled">{{localize 'TIDY5E.Settings.EditTotalLock.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.EditTotalLock.hint'}}</p>
-      </div>
-    </article>
+		<h3>{{localize 'TIDY5E.Settings.TabLocks.labelGeneralLocks'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lockExpChanges"
+				id="lockExpChanges"
+				{{checked
+				settings.lockExpChanges.value}}
+			/>
+			<div class="description">
+				<label for="lockExpChanges">{{localize 'TIDY5E.Settings.LockExpChanges.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LockExpChanges.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lockHpMaxChanges"
+				id="lockHpMaxChanges"
+				{{checked
+				settings.lockHpMaxChanges.value}}
+			/>
+			<div class="description">
+				<label for="lockHpMaxChanges">{{localize 'TIDY5E.Settings.LockHpMaxChanges.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LockHpMaxChanges.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lockConfigureSheet"
+				id="lockConfigureSheet"
+				{{checked
+				settings.lockConfigureSheet.value}}
+			/>
+			<div class="description">
+				<label for="lockConfigureSheet">{{localize 'TIDY5E.Settings.LockConfigureSheet.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LockConfigureSheet.hint'}}</p>
+			</div>
+		</article>
 
-    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelGeneralLocks'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lockExpChanges' id='lockExpChanges' {{checked settings.lockExpChanges.value}}>
-      <div class="description">
-        <label for="lockExpChanges">{{localize 'TIDY5E.Settings.LockExpChanges.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LockExpChanges.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lockHpMaxChanges' id='lockHpMaxChanges' {{checked settings.lockHpMaxChanges.value}}>
-      <div class="description">
-        <label for="lockHpMaxChanges">{{localize 'TIDY5E.Settings.LockHpMaxChanges.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LockHpMaxChanges.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lockConfigureSheet' id='lockConfigureSheet' {{checked settings.lockConfigureSheet.value}}>
-      <div class="description">
-        <label for="lockConfigureSheet">{{localize 'TIDY5E.Settings.LockConfigureSheet.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LockConfigureSheet.hint'}}</p>
-      </div>
-    </article>
+		<h3>{{localize 'TIDY5E.Settings.TabLocks.labelInventoryLocks'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lockMoneyChanges"
+				id="lockMoneyChanges"
+				{{checked
+				settings.lockMoneyChanges.value}}
+			/>
+			<div class="description">
+				<label for="lockMoneyChanges">{{localize 'TIDY5E.Settings.LockMoneyChanges.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LockMoneyChanges.hint'}}</p>
+			</div>
+		</article>
 
-    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelInventoryLocks'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lockMoneyChanges' id='lockMoneyChanges' {{checked settings.lockMoneyChanges.value}}>
-      <div class="description">
-        <label for="lockMoneyChanges">{{localize 'TIDY5E.Settings.LockMoneyChanges.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LockMoneyChanges.hint'}}</p>
-      </div>
-    </article>
+		<h3>{{localize 'TIDY5E.Settings.TabLocks.labelFeaturesLocks'}}</h3>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lockLevelSelector"
+				id="lockLevelSelector"
+				{{checked
+				settings.lockLevelSelector.value}}
+			/>
+			<div class="description">
+				<label for="lockLevelSelector">{{localize 'TIDY5E.Settings.LockLevelSelector.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LockLevelSelector.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="lockItemQuantity"
+				id="lockItemQuantity"
+				{{checked
+				settings.lockItemQuantity.value}}
+			/>
+			<div class="description">
+				<label for="lockItemQuantity">{{localize 'TIDY5E.Settings.LockItemQuantity.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LockItemQuantity.hint'}}</p>
+			</div>
+		</article>
+	</section>
 
-    <h3>{{localize 'TIDY5E.Settings.TabLocks.labelFeaturesLocks'}}</h3>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lockLevelSelector' id='lockLevelSelector' {{checked settings.lockLevelSelector.value}}>
-      <div class="description">
-        <label for="lockLevelSelector">{{localize 'TIDY5E.Settings.LockLevelSelector.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LockLevelSelector.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='lockItemQuantity' id='lockItemQuantity' {{checked settings.lockItemQuantity.value}}>
-      <div class="description">
-        <label for="lockItemQuantity">{{localize 'TIDY5E.Settings.LockItemQuantity.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.LockItemQuantity.hint'}}</p>
-      </div>
-    </article>
-    
-  </section>
+	{{!-- INFO --}}
 
-  {{!-- INFO --}}
+	<section class="tab" data-tab="info">
+		<h2>{{localize 'TIDY5E.Settings.TabInfo.header'}}</h2>
+	</section>
 
-  <section class='tab' data-tab='info'>
-    <h2>{{localize 'TIDY5E.Settings.TabInfo.header'}}</h2>
-  </section>
-
-  <footer class="sheet-footer flexrow">
-    <button type="submit" name="submit">
-      <i class="fas fa-save"></i>{{localize 'Save Changes'}}
-    </button>
-  </footer>
+	<footer class="sheet-footer flexrow">
+		<button type="submit" name="submit">
+			<i class="fas fa-save"></i>
+			{{localize 'Save Changes'}}
+		</button>
+	</footer>
 </form>
