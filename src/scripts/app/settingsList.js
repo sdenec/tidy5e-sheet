@@ -31,12 +31,22 @@ export function settingsList() {
 		document.querySelector("html").classList.add("tidy5eDark");
 	}
 
+	// Disable Right Click
+	game.settings.register("tidy5e-sheet", "rightClickDisabled", {
+		name: `${game.i18n.localize("TIDY5E.Settings.RightClick.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.RightClick.hint"),
+		scope: "client",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+	
 	// Classic Item Controls
 	game.settings.register("tidy5e-sheet", "classicControlsEnabled", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ClassicControls.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.ClassicControls.hint"),
 		scope: "client",
-		config: true,
+		config: false,
 		default: true,
 		type: Boolean,
 	});
@@ -292,16 +302,6 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "playerNameEnabled", {
 		name: `${game.i18n.localize("TIDY5E.Settings.PlayerName.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.PlayerName.hint"),
-		scope: "world",
-		config: false,
-		default: false,
-		type: Boolean,
-	});
-
-	// Disable Right Click
-	game.settings.register("tidy5e-sheet", "rightClickDisabled", {
-		name: `${game.i18n.localize("TIDY5E.Settings.RightClick.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.RightClick.hint"),
 		scope: "world",
 		config: false,
 		default: false,

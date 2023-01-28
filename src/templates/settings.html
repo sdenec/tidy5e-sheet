@@ -102,6 +102,27 @@
 				</div>
 			</div>
 		</article>
+		<article class="setting">
+			<input type="checkbox" data-dtype="boolean" name="rightClickDisabled" id="rightClickDisabled" {{checked settings.rightClickDisabled.value}} />
+			<div class="description">
+				<label for="rightClickDisabled">{{localize 'TIDY5E.Settings.RightClick.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.RightClick.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="classicControlsEnabled"
+				id="classicControlsEnabled"
+				{{checked
+				settings.classicControlsEnabled.value}}
+			/>
+			<div class="description">
+				<label for="classicControlsEnabled">{{localize 'TIDY5E.Settings.ClassicControls.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.ClassicControls.hint'}}</p>
+			</div>
+		</article>
 	</section>
 
 	{{!-- NPC/VEHICLE OPTIONS --}}
@@ -266,29 +287,6 @@
 				<p class="notes">{{localize 'TIDY5E.Settings.PlayerName.hint'}}</p>
 			</div>
 		</article>
-		<article class="setting">
-			<input type="checkbox" data-dtype="boolean" name="rightClickDisabled" id="rightClickDisabled" {{checked settings.rightClickDisabled.value}} />
-			<div class="description">
-				<label for="rightClickDisabled">{{localize 'TIDY5E.Settings.RightClick.name'}}</label>
-				<p class="notes">{{localize 'TIDY5E.Settings.RightClick.hint'}}</p>
-			</div>
-		</article>
-		<!--
-		<article class="setting">
-			<input
-				type="checkbox"
-				data-dtype="boolean"
-				name="classicControlsEnabled"
-				id="classicControlsEnabled"
-				{{checked
-				settings.classicControlsEnabled.value}}
-			/>
-			<div class="description">
-				<label for="classicControlsEnabled">{{localize 'TIDY5E.Settings.ClassicControls.name'}}</label>
-				<p class="notes">{{localize 'TIDY5E.Settings.ClassicControls.hint'}}</p>
-			</div>
-		</article>
-		-->
 		<article class="setting">
 			<input type="checkbox" data-dtype="boolean" name="expandedSheetEnabled" id="expandedSheetEnabled" {{checked settings.expandedSheetEnabled.value}} />
 			<div class="description">

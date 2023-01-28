@@ -95,9 +95,9 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		context.appId = this.appId;
 		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
 		context.isGM = game.user.isGM;
-		context.allowHpMaxOverride = game.user.isGM && game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
-		context.rightClickDisabled = game.user.isGM && game.settings.get("tidy5e-sheet", "rightClickDisabled");
-		context.classicControlsEnabled = game.user.isGM && game.settings.get("tidy5e-sheet", "classicControlsEnabled");
+		context.allowHpMaxOverride = game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
+		context.rightClickDisabled = game.settings.get("tidy5e-sheet", "rightClickDisabled");
+		context.classicControlsEnabled = game.settings.get("tidy5e-sheet", "classicControlsEnabled");
 
 		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
 		if (this.actor.system.attributes.exhaustion === 0) {
