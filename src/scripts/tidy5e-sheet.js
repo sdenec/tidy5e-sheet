@@ -15,7 +15,6 @@ import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 import { updateExhaustion } from "./app/exhaustion.js";
 import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
-import { migrateFor21X } from "./app/migration-util.js";
 
 let position = 0;
 
@@ -785,9 +784,6 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksCharacterSheet(app, html, data);
-
-	// Little Patch for migration to system dnd 2.1.X
-	// migrateFor21X(app, html, data);
 });
 
 Hooks.once("ready", (app, html, data) => {

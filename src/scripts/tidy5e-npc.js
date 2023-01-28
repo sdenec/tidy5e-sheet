@@ -9,7 +9,6 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
-import { migrateFor21X } from "./app/migration-util.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
 
 /**
@@ -865,7 +864,4 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksNpcSheet(app, html, data);
-
-	// Little Patch for migration to system dnd 2.1.X
-	// migrateFor21X(app, html, data);
 });
