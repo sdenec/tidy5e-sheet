@@ -2,10 +2,10 @@
 	height: 100%;
 	flex-direction: column;
 	scrollbar-width: thin;
-  	scrollbar-color: #782e22 #0000;
+	scrollbar-color: #782e22 #0000;
 
 	&.active {
-	  display: flex;
+		display: flex;
 	}
 
 	&.attributes,
@@ -13,7 +13,7 @@
 	&.journal {
 		align-items: flex-start;
 		flex-direction: row;
-		padding-right: .75rem;
+		padding-right: 0.75rem;
 		overflow-y: scroll;
 	}
 
@@ -27,7 +27,7 @@
 	}
 
 	&.inventory {
-	  // overflow: hidden;
+		// overflow: hidden;
 	}
 
 	&.grid .toggle-grid,
@@ -39,5 +39,4 @@
 	&.grid .toggle-list {
 		display: inline-block;
 	}
-
 }

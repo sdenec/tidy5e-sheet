@@ -15,8 +15,8 @@
 .char-name {
 	flex: 1;
 	margin-right: 8px;
-  padding: 0 4px;
-  font-size: 24px;
+	padding: 0 4px;
+	font-size: 24px;
 }
 
 .level-information {
@@ -25,10 +25,10 @@
 }
 
 .level {
-  padding: 4px 6px;
-  border-radius: 3px;
+	padding: 4px 6px;
+	border-radius: 3px;
 	background: var(--t5e-faint-color);
-  color: var(--t5e-secondary-color);
+	color: var(--t5e-secondary-color);
 	font-size: 1.25rem;
 	line-height: 1;
 	height: 25px;
@@ -40,19 +40,27 @@
 }
 
 .current-xp {
-	width: calc(7.5ch + .3rem);
+	width: calc(7.5ch + 0.3rem);
 	height: 16px;
 	text-align: right;
 	padding: 0 4px;
 }
 
+.max-xp {
+	width: calc(8.5ch + 0.3rem);
+	height: 16px;
+	text-align: left;
+	padding: 0 4px;
+}
+
 .max-xp::before {
-	content: '/';
-	margin-right: .15rem;
+	content: "/";
+	margin-right: 0.15rem;
 }
 
 .xp-tracker {
-	margin-right: .5rem;
+	margin-right: 0.5rem;
+	width: 50%;
 }
 
 .noxp .xp-tracker {
@@ -75,7 +83,7 @@
 	height: 100%;
 	max-width: 100%;
 	background: var(--t5e-xp-bar);
-	transition: width .3s ease;
+	transition: width 0.3s ease;
 }
 
 .bonus-information {
@@ -90,12 +98,12 @@
 	padding-top: 3px;
 }
 
-#playerName+.class-list{
+#playerName + .class-list {
 	padding-left: 3px;
 }
 
 #playerName + .class-list::before {
-	content: '';
+	content: "";
 	display: block;
 	width: 3px;
 	height: 3px;
@@ -129,7 +137,7 @@
 	line-height: 1;
 
 	li::before {
-		content: '/';
+		content: "/";
 		margin: 0 2px;
 	}
 
@@ -141,13 +149,11 @@
 	.subclass-info {
 		margin-left: 2px;
 	}
-
 } // .class-list
 
 // Origin Summary
 
 .origin-summary {
-
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--t5e-light-color);
@@ -162,19 +168,18 @@
 
 	li {
 		flex: 1;
-		margin-right: .5rem;
+		margin-right: 0.5rem;
 		display: flex;
 	}
 
 	li span {
 		position: relative;
 		margin-left: 4px;
-    padding: 0 4px 0 8px;
+		padding: 0 4px 0 8px;
 	}
 
-
 	li span::after {
-		content: '';
+		content: "";
 		display: block;
 		width: 3px;
 		height: 3px;
@@ -188,7 +193,7 @@
 
 	li span:first-child {
 		margin: 0 4px;
-    padding: 0;
+		padding: 0;
 	}
 
 	li span:first-child::after {
@@ -202,7 +207,6 @@
 		padding: 0 4px 0 0;
 		justify-content: flex-end;
 	}
-
 } // .origin-summary
 
 // Size Select
@@ -273,10 +277,10 @@
 .movement-primary,
 .movement-special {
 	display: flex;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 0 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 4px;
 }
 
 .movement-special {
@@ -289,9 +293,9 @@
 
 .configure-movement i {
 	font-size: 12px;
-  color: var(--t5e-tertiary-color);
-  transition: color .3s ease;
-  cursor: pointer;
+	color: var(--t5e-tertiary-color);
+	transition: color 0.3s ease;
+	cursor: pointer;
 }
 
 .movement .speed-form {
@@ -304,8 +308,8 @@
 }
 
 .speed-form-legacy .movement-primary {
-  width: 40px;
-  text-align: center;
+	width: 40px;
+	text-align: center;
 }
 
 .speed-form-legacy .movement-special {
@@ -344,16 +348,15 @@
 
 .attribute-name::after {
 	display: block;
-	content: '';
+	content: "";
 	height: 0;
 	width: 60%;
 	border-bottom: 1px solid var(--t5e-faint-color);
 	position: absolute;
 	bottom: -1px;
 	left: 50%;
-	transform: translate(-50%,0);
+	transform: translate(-50%, 0);
 }
-
 
 .header-attributes .value,
 .header-attributes .value-footer {
@@ -368,13 +371,13 @@
 
 .header-attributes .value-footer {
 	font-size: 12px;
-  line-height: 14px;
+	line-height: 14px;
 }
 
 .header-attributes .value-footer input {
-  line-height: 14px;
-  height: 14px;
-  padding: 1px 0;
+	line-height: 14px;
+	height: 14px;
+	padding: 1px 0;
 }
 
 .header-attributes .value span,
@@ -384,27 +387,27 @@
 }
 
 .header-attributes .ac-display {
-  position: relative;
+	position: relative;
 }
 
 .header-attributes .ac-display svg {
-  width: 60px;
+	width: 60px;
 }
 
 .header-attributes .ac-display svg path {
-  fill: var(--t5e-light-color);
+	fill: var(--t5e-light-color);
 }
 
 .header-attributes .ac-display .attribute-value {
-  position: absolute;
-  top: 44%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
-  height: 40px;
-  font-weight: 700;
-  margin: 0 auto;
-  width: 44px;
+	position: absolute;
+	top: 44%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 35px;
+	height: 40px;
+	font-weight: 700;
+	margin: 0 auto;
+	width: 44px;
 	z-index: 40;
 
 	.property-attribution {
@@ -435,6 +438,18 @@
 	height: 100%;
 }
 
+.header-attributes .initiative .config-button {
+	position: absolute;
+	bottom: -15px;
+	right: calc(50% - 12px);
+	font-size: 10px;
+	color: var(--t5e-tertiary-color);
+
+	&:hover {
+		color: var(--t5e-primary-color);
+	}
+}
+
 .header-attributes .initiative {
 	width: 60px;
 }
@@ -448,17 +463,17 @@ input.ini-mod {
 .ability-scores {
 	display: flex;
 	flex: 1;
-  border: none;
+	border: none;
 	border-radius: 0;
-	
+
 	.ability {
 		// position: relative;
-	  padding-bottom: 0;
-	  border-left: 1px solid var(--t5e-faint-color);
-	  flex: 1 0 61px;
+		padding-bottom: 0;
+		border-left: 1px solid var(--t5e-faint-color);
+		flex: 1 0 61px;
 		padding: 0 4px;
 		position: relative;
-		
+
 		.wrapper {
 			text-align: center;
 			position: relative;
@@ -474,54 +489,54 @@ input.ini-mod {
 			line-height: 1;
 			margin: 0;
 			text-transform: capitalize;
-			
+
 			&::after {
 				display: block;
-		    content: '';
-		    height: 0;
-		    width: 60%;
-		    border-bottom: 1px solid var(--t5e-faint-color);
-		    position: absolute;
-		    left: 50%;
-		    bottom: -1px;
-		    transform: translate(-50%, 0);
-		  }
+				content: "";
+				height: 0;
+				width: 60%;
+				border-bottom: 1px solid var(--t5e-faint-color);
+				position: absolute;
+				left: 50%;
+				bottom: -1px;
+				transform: translate(-50%, 0);
+			}
 		}
 
 		.ability-values {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-		  margin-bottom: 1px;
+			margin-bottom: 1px;
 		}
 
 		.ability-score {
 			font-size: 24px;
-	    margin: 2px 0 3px 0;
-	    padding: 2px 0 0 0;
-	    text-align: center;
-	    font-family: var(--t5e-modesto);
-	    font-weight: 700;
-	    height: 23px;
+			margin: 2px 0 3px 0;
+			padding: 2px 0 0 0;
+			text-align: center;
+			font-family: var(--t5e-modesto);
+			font-weight: 700;
+			height: 23px;
 
-	    &:hover + .ability-modifiers {
-		    visibility: visible;
-		  }
+			&:hover + .ability-modifiers {
+				visibility: visible;
+			}
 		}
 
 		.ability-modifiers {
-		  position: relative;
-		  justify-content: space-between;
-		  align-items: center;
-		  width: 100%;
-		  text-align: center;
+			position: relative;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			text-align: center;
 			display: flex;
 			height: auto;
 			margin: 0 auto;
 			padding: 0;
 			opacity: initial;
-		  font-size: 10px;
-		  box-shadow: 0 0 0 1px var(--t5e-tertiary-color);
+			font-size: 10px;
+			box-shadow: 0 0 0 1px var(--t5e-tertiary-color);
 			border-radius: 5px;
 
 			&:hover {
@@ -539,7 +554,7 @@ input.ini-mod {
 				border-radius: 0;
 			}
 		}
-		
+
 		.mod-label {
 			position: absolute;
 			top: 47px;
@@ -550,7 +565,7 @@ input.ini-mod {
 			height: 17px;
 			padding: 3px 4px 2px 4px;
 			white-space: nowrap;
-			
+
 			&.ability-mod-label {
 				right: 25px;
 				transform: translateX(-26px);
@@ -569,8 +584,8 @@ input.ini-mod {
 			flex: 1;
 			text-align: center;
 			font-size: 12px;
-			opacity: .4;
-			transition: opacity .3s ease;
+			opacity: 0.4;
+			transition: opacity 0.3s ease;
 			cursor: pointer;
 		}
 
@@ -587,13 +602,13 @@ input.ini-mod {
 		}
 
 		.proficiency-toggle {
-	    position: absolute;
-	    font-size: 10px;
-	    opacity: .4;
-	    transition: opacity .3s ease;
-	    left: calc(50% - 12px);
-	    bottom: -14px;
-	    // transform: translateX(-50%);
+			position: absolute;
+			font-size: 10px;
+			opacity: 0.4;
+			transition: opacity 0.3s ease;
+			left: calc(50% - 12px);
+			bottom: -14px;
+			// transform: translateX(-50%);
 		}
 
 		.ability-modifiers .ability-proficiency {
@@ -612,7 +627,7 @@ input.ini-mod {
 
 		.config-button {
 			position: absolute;
-			bottom: -11px;
+			bottom: -15px;
 			right: calc(50% - 12px);
 			font-size: 10px;
 			color: var(--t5e-tertiary-color);
@@ -621,6 +636,5 @@ input.ini-mod {
 				color: var(--t5e-primary-color);
 			}
 		}
-
 	} // .ability
 } // .ability-scores

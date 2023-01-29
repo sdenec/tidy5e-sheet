@@ -33,12 +33,13 @@
 
           {{!-- HP Overlay --}}
           <div class="hp-overlay-wrapper">
-            <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255,255,255,1) 100%);">
+            <div class="hp-overlay" style="background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) 100%);">
             </div>
           </div>
+
           {{!-- Resting --}}
-          <div class="rest-container has-note">
-            <div class="note">{{ localize 'TIDY5E.RestHint' }}</div>
+          <div class="rest-container has-note" data-tooltip="{{ localize 'TIDY5E.RestHint' }}">
+            <!-- <div class="note">{{ localize 'TIDY5E.RestHint' }}</div> -->
             <div class="resting">
               <span class="resting-icon"><i class="rest-icon fas fa-bed"></i></span>
               <a class="rest short-rest" title="{{ localize 'TIDY5E.RestS' }}"><i class="fas fa-hourglass-half"></i></a>
@@ -52,14 +53,14 @@
 								-90deg,
 								transparent 0%,
 								transparent calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
-								 	rgba(0,200,0,0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
-								 	rgba(0,200,0,0.5) 100%);">
+								 	rgba(0, 200, 0, 0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
+								 	rgba(0, 200, 0, 0.5) 100%);">
 						</div>
-            <input class="hp-min" name="system.attributes.hp.value" type="number" step="any" value="{{system.attributes.hp.value}}"
-            data-dtype="Number" placeholder="0" maxlength="5">
-            <span class="value-seperator">/</span>
-            <input class="hp-max" name="system.attributes.hp.max" type="number" value="{{system.attributes.hp.max}}"
-            data-dtype="Number" placeholder="0" maxlength="5">
+            <input class="hp-min" name="system.attributes.hp.value" type="number" value="{{hp.value}}" placeholder="10"
+            title="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
+            <span class="value-seperator sep"> / </span>
+            <input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10"
+            title="{{localize 'DND5E.HitPointsMax'}}" data-dtype="Number" maxlength="5">
           </div>
         </div>
 
@@ -72,10 +73,15 @@
 
         {{!-- Temp Hit Points --}}
         <div class="portrait-temp">
-          <input name="system.attributes.hp.temp" type="number" step="any" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
-          value="{{#if (eq system.attributes.hp.temp 0)}}{{else}}{{system.attributes.hp.temp}}{{/if}}" data-dtype="Number" maxlength="5">
-          <input name="system.attributes.hp.tempmax" type="number" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
-          value="{{#if (eq system.attributes.hp.tempmax 0)}}{{else}}{{system.attributes.hp.tempmax}}{{/if}}" data-dtype="Number" maxlength="5">
+          <input name="system.attributes.hp.temp" type="text" class="temphp"
+          placeholder="+{{ localize 'DND5E.Temp' }}" value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}"
+          title="{{localize 'DND5E.HitPointsTemp'}}" data-dtype="Number" maxlength="5">
+          <input name="system.attributes.hp.tempmax" type="text" class="max-temphp"
+          placeholder="+{{ localize 'DND5E.Max' }}" value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}"
+          title="{{localize 'DND5E.HitPointsTempMax'}}" data-dtype="Number" maxlength="5">
+          <a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
+						<i class="fas fa-cog"></i>
+					</a>
         </div>
 
       </section>
@@ -136,7 +142,11 @@
             {{#if movement.special}}
             <li class="movement-special" title="{{movement.special}}">{{movement.special}}</li>
             {{/if}}
-            <li class="configure-movement"><a class="config-button" data-action="movement" title="{{localize 'DND5E.MovementConfig'}}"><i class="fas fa-cog"></i></a></li>
+            <li class="configure-movement">
+              <a class="config-button" data-action="movement" data-tooltip="{{localize 'DND5E.MovementConfig'}}">
+                <i class="fas fa-cog"></i>
+              </a>
+            </li>
           </ul>
         </section>
 
@@ -149,42 +159,52 @@
 								c2.6,0.5,4.4,2.4,4.4,4.6C90,12.6,92.6,79.3,45,100L45,100z"/>
 							</svg>
 							<div class="attribute-value attributable" data-property="attributes.ac">
-								<a class="config-button" data-action="armor" title="{{localize 'DND5E.ArmorConfig'}}">{{system.attributes.ac.value}}</a>
+                <a class="config-button" data-action="armor" title="{{localize 'DND5E.ArmorConfig'}}">
+                  <!--<i class="fas fa-cog"></i>-->
+                  {{system.attributes.ac.value}}
+                </a>
 							</div>
 						</li>
-            <li class="header-attribute initiative">
-              <h4 class="attribute-name rollable" data-action="rollInitiative" title="{{ localize 'DND5E.Initiative' }}">{{ localize 'TIDY5E.AbbrInitiative' }}</h4>
-              <div class="value">
-                <span>{{numberFormat system.attributes.init.total decimals=0 sign=true}}</span>
-              </div>
-              <footer class="value-footer">
-                <label for="{{@root/appId}}-ini-mod">{{ localize 'TIDY5E.AbbrMod' }}</label>
-                <input id="{{@root/appId}}-ini-mod" class="ini-mod" name="system.attributes.init.value" type="text" placeholder="0" data-dtype="Number" value="{{numberFormat system.attributes.init.value decimals=0 sign=true}}" maxlength="2">
-            </footer>
-            </li>
+						<li class="header-attribute initiative">
+							<h4 class="attribute-name rollable" data-action="rollInitiative" title="{{ localize 'DND5E.Initiative' }}">{{ localize 'TIDY5E.AbbrInitiative' }}</h4>
+							<div class="value">
+								<span>{{numberFormat system.attributes.init.total decimals=0 sign=true}}</span>
+							</div>
+							<footer class="value-footer">
+								<label for="{{@root/appId}}-ini-mod">{{ localize 'TIDY5E.AbbrMod' }}</label>
+								<input id="{{@root/appId}}-ini-mod" class="ini-mod" name="system.attributes.init.bonus" type="text" placeholder="0" data-dtype="Number" value="{{system.attributes.init.bonus}}" maxlength="2">
+							</footer>
+              <a class="config-button" data-action="initiative" data-tooltip="{{localize 'DND5E.InitiativeConfig'}}">
+								<i class="fas fa-cog"></i>
+							</a>
+						</li>
           </ul>
 
           {{!-- Ability Scores --}}
           <ul class="ability-scores">
-            {{#each system.abilities as |ability id|}}
+            {{#each abilities as |ability id|}}
             <li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
                 <h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
                 <div class="value">
-                  <input class="ability-score" name="system.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
+                  <input type="text" value="{{ability.value}}" name="system.abilities.{{id}}.value"
+                  class="ability-score" placeholder="10" data-dtype="Number">
                 </div>
                 <div class="ability-modifiers value-footer">
                   <span class="ability-mod rollable" title="{{ localize 'DND5E.AbilityModifier' }}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
                   <input type="hidden" name="system.abilities.{{id}}.proficient" value="{{ability.baseProf}}" data-dtype="Number">
                   <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">
-                  {{{ability.icon}}}</a>
+                    {{{ability.icon}}}
+                  </a>
+                  <a class="config-button" data-action="ability" data-tooltip="{{localize 'DND5E.AbilityConfigure'}}">
+                    <i class="fas fa-cog"></i>
+                  </a>
                   <span class="ability-save rollable" title="{{ localize 'DND5E.ActionSave' }}">{{numberFormat ability.save decimals=0 sign=true}}</span>
                 </div>
                 <span class="mod-label ability-mod-label">{{ localize 'TIDY5E.AbbrMod' }}</span>
                 <span class="mod-label save-mod-label">{{ localize 'TIDY5E.AbbrSavingThrow' }}</span>
               </div>
-              
-              <a class="config-button" data-action="ability" title="{{localize 'DND5E.AbilityConfigure'}}"><i class="fas fa-cog"></i></a>
+
             </li>
             {{/each}}
           </ul>
@@ -209,12 +229,13 @@
 
     {{!-- NPC Sheet Body --}}
     <section class="sheet-body">
-      <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+      <div class="tab attributes" data-group="primary" data-tab="attributes">
 
         <div class="left-pane">
           {{!-- Skills --}}
           <ul class="skills-list {{#if actor.flags.tidy5e-sheet.npcSkillsExpanded}}expanded{{/if}} {{#if actor.flags.tidy5e-sheet.npcSkillsAlwaysVisible}}.always-visible{{/if}}">
-            {{#each system.skills as |skill s|}}
+            {{#each config.skills as |obj s|}}
+            {{#with (lookup ../skills s) as |skill|}}
             <li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
 							<a class="config-button" data-action="skill" title="{{localize 'DND5E.SkillConfigure'}}"><i class="fas fa-cog"></i></a>
               <input type="hidden" name="system.skills.{{s}}.value" value="{{skill.baseValue}}" data-dtype="Number">
@@ -224,6 +245,7 @@
               <span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
               <span class="skill-passive" title="{{skill.label}} ({{ localize 'DND5E.Passive' }})">({{skill.passive}})</span>
             </li>
+            {{/with}}
             {{/each}}
             <li class="toggle-proficient" data-show-skills="{{ localize 'TIDY5E.Show' }}" data-hide-skills="{{ localize 'TIDY5E.Hide' }}"> {{ localize "DND5E.NotProficient" }}</li>
           </ul>
@@ -238,21 +260,25 @@
             <div class="counter legendary">
               <h4>{{ localize "DND5E.LegAct" }}</h4>
               <div class="counter-value">
-                <input type="text" name="system.resources.legact.value" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legact.value}}">
+                <input name="system.resources.legact.value" type="number" step="any"
+                value="{{system.resources.legact.value}}" placeholder="0"
+                title="{{localize 'DND5E.LegActRemaining'}}"
+                data-dtype="Number">
                 <span class="sep">/</span>
-                <input type="text" name="system.resources.legact.max" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legact.max}}">
+                {{numberInput system.resources.legact.max name="system.resources.legact.max" min=0 step=1
+                placeholder=0}}
               </div>
             </div>
             <div class="counter legendary">
               <h4>{{ localize "DND5E.LegRes" }}</h4>
               <div class="counter-value">
-                <input type="text" name="system.resources.legres.value" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legres.value}}">
+                <input name="system.resources.legres.value" type="number" step="any"
+                value="{{system.resources.legres.value}}" placeholder="0"
+                title="{{localize 'DND5E.LegResRemaining'}}"
+                data-dtype="Number">
                 <span class="sep">/</span>
-                <input type="text" name="system.resources.legres.max" data-dtype="Number" placeholder="0"
-                value="{{system.resources.legres.max}}">
+                {{numberInput system.resources.legres.max name="system.resources.legres.max" min=0 step=1
+                placeholder=0}}
               </div>
             </div>
             <div class="counter lair">
@@ -272,18 +298,38 @@
           {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-features.html" sections=features}}
 
           <div class="inventory-currency">  
-            <ul class="currency">
-              <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
-                <i class="fas fa-coins"></i>
-              </li>
+            <ol class="currency">
+              <!--
+              <h3>
+                  {{localize "DND5E.Currency"}}
+                  <a class="action-button currency-convert {{rollableClass}}" data-action="convertCurrency" data-tooltip="DND5E.CurrencyConvert">
+                      <i class="fas fa-coins"></i>
+                  </a>
+              </h3>
               {{#each system.currency as |v k|}}
-              <li class="currency-item {{k}}" title="{{ lookup ../config.currencies k }}">
-                <input type="text" name="system.currency.{{k}}" id="{{@root/appId}}-system.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
-                <label for="{{@root/appId}}-system.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../config.currencies k }}</label>
-              </li>
+              <label class="denomination {{k}}">{{ lookup ../labels.currencies k }}</label>
+              <input type="text" name="system.currency.{{k}}" value="{{v}}" data-dtype="Number">
               {{/each}}
-              <!-- <li class="currency-item convert"><a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}"><i class="fas fa-funnel-dollar"></i></a></li> -->
-            </ul>
+              -->
+              <ul class="currency">
+                <li class="currency-header" title="{{localize 'DND5E.Currency'}}">
+                  <i class="fas fa-coins"></i>
+                </li>
+                {{#each system.currency as |v k|}}
+                <li class="currency-item {{k}}" title="{{ lookup ../config.currencies k }}">
+                  <input type="text" name="system.currency.{{k}}" id="{{@root/appId}}-system.currency.{{k}}" value="{{v}}" data-dtype="Number"/>
+                  <label for="{{@root/appId}}-system.currency.{{k}}" class="denomination {{k}}" data-denom="{{k}}">{{ lookup ../config.currencies k }}</label>
+                </li>
+                {{/each}}
+                <!-- 
+                <li class="currency-item convert">
+                  <a class="currency-convert rollable" data-action="convertCurrency" title="{{localize 'DND5E.CurrencyConvertHint'}}">
+                    <i class="fas fa-funnel-dollar"></i>
+                  </a>
+                </li> 
+                -->
+              </ul>
+            </ol>
           </div>
           {{#if @root/hideSpellbookTabNpc}}
           {{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-npc-spellbook.html"}}
@@ -312,33 +358,33 @@
         <div class="top-notes note-entries">
 					<article>
 						<ul class="character-details">
-							<li><span>{{ localize "TIDY5E.Gender" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-gender" data-maxlength="40">{{system.details.gender}}</span><input data-input="{{actor._id}}-gender" type="hidden" name="system.details.gender" value="{{system.details.gender}}"></li>
-							<li><span>{{ localize "TIDY5E.Age" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-age" data-maxlength="5">{{system.details.age}}</span><input data-input="{{actor._id}}-age" type="hidden" name="system.details.age" value="{{system.details.age}}"></li>
-							<li><span>{{ localize "TIDY5E.Height" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-height" data-maxlength="20">{{system.details.height}}</span><input data-input="{{actor._id}}-height" type="hidden" name="system.details.height" value="{{system.details.height}}"></li>
-							<li><span>{{ localize "TIDY5E.Weight" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-weight" data-maxlength="20">{{system.details.weight}}</span><input data-input="{{actor._id}}-weight" type="hidden" name="system.details.weight" value="{{system.details.weight}}"></li>
-							<li><span>{{ localize "TIDY5E.Eyes" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-eyes" data-maxlength="40">{{system.details.eyes}}</span><input data-input="{{actor._id}}-eyes" type="hidden" name="system.details.eyes" value="{{system.details.eyes}}"></li>
-							<li><span>{{ localize "TIDY5E.Skin" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-skin" data-maxlength="40">{{system.details.skin}}</span><input data-input="{{actor._id}}-skin" type="hidden" name="system.details.skin" value="{{system.details.skin}}"></li>
-							<li><span>{{ localize "TIDY5E.Hair" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-hair" data-maxlength="40">{{system.details.hair}}</span><input data-input="{{actor._id}}-hair" type="hidden" name="system.details.hair" value="{{system.details.hair}}"></li>
+							<li><span>{{ localize "TIDY5E.Gender" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-gender" data-maxlength="40">{{actor.flags.tidy5e-sheet.gender}}</span><input data-input="{{actor._id}}-gender" type="hidden" name="flags.tidy5e-sheet.gender" value="{{actor.flags.tidy5e-sheet.gender}}"></li>
+              <li><span>{{ localize "TIDY5E.Age" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-age" data-maxlength="5">{{actor.flags.tidy5e-sheet.age}}</span><input data-input="{{actor._id}}-age" type="hidden" name="flags.tidy5e-sheet.age" value="{{actor.flags.tidy5e-sheet.age}}"></li>
+              <li><span>{{ localize "TIDY5E.Height" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-height" data-maxlength="20">{{actor.flags.tidy5e-sheet.height}}</span><input data-input="{{actor._id}}-height" type="hidden" name="flags.tidy5e-sheet.height" value="{{actor.flags.tidy5e-sheet.height}}"></li>
+              <li><span>{{ localize "TIDY5E.Weight" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-weight" data-maxlength="20">{{actor.flags.tidy5e-sheet.weight}}</span><input data-input="{{actor._id}}-weight" type="hidden" name="flags.tidy5e-sheet.weight" value="{{actor.flags.tidy5e-sheet.weight}}"></li>
+              <li><span>{{ localize "TIDY5E.Eyes" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-eyes" data-maxlength="40">{{actor.flags.tidy5e-sheet.eyes}}</span><input data-input="{{actor._id}}-eyes" type="hidden" name="flags.tidy5e-sheet.eyes" value="{{actor.flags.tidy5e-sheet.eyes}}"></li>
+              <li><span>{{ localize "TIDY5E.Skin" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-skin" data-maxlength="40">{{actor.flags.tidy5e-sheet.skin}}</span><input data-input="{{actor._id}}-skin" type="hidden" name="flags.tidy5e-sheet.skin" value="{{actor.flags.tidy5e-sheet.skin}}"></li>
+              <li><span>{{ localize "TIDY5E.Hair" }}:</span><span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-hair" data-maxlength="40">{{actor.flags.tidy5e-sheet.hair}}</span><input data-input="{{actor._id}}-hair" type="hidden" name="flags.tidy5e-sheet.hair" value="{{actor.flags.tidy5e-sheet.hair}}"></li>
 						</ul>
 					</article>
 				</div>
         <div class="toggle-personality-info" title="{{localize 'TIDY5E.TogglePersonalityInfo'}}">{{#if actor.flags.tidy5e-sheet.showNpcPersonalityInfo}}<i class="fas fa-angle-double-left"></i>{{else}}<i class="fas fa-angle-double-right"></i>{{/if}}</div>
         <div class="left-notes note-entries hidden">
           <article>
-						<div class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</div>
-						{{editor system.details.trait target="system.details.trait" button=true editable=editable engine="prosemirror" collaborate=false}}
+					<div class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</div>
+						{{editor actor.flags.tidy5e-sheet.trait target="flags.tidy5e-sheet.trait" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
 					<article>
 						<div class="section-titles biopage">{{ localize "DND5E.Ideals" }}</div>
-						{{editor system.details.ideal target="system.details.ideal" button=true editable=editable engine="prosemirror" collaborate=false}}
+						{{editor actor.flags.tidy5e-sheet.ideal target="flags.tidy5e-sheet.ideal" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
 					<article>
 						<div class="section-titles biopage">{{ localize "DND5E.Bonds" }}</div>
-						{{editor system.details.bond target="system.details.bond" button=true editable=editable engine="prosemirror" collaborate=false}}
+						{{editor actor.flags.tidy5e-sheet.bond target="flags.tidy5e-sheet.bond" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
 					<article>
 						<div class="section-titles biopage">{{ localize "DND5E.Flaws" }}</div>
-						{{editor system.details.flaw target="system.details.flaw" button=true editable=editable engine="prosemirror" collaborate=false}}
+						{{editor actor.flags.tidy5e-sheet.flaw target="flags.tidy5e-sheet.flaw" button=true editable=editable engine="prosemirror" collaborate=false}}
 					</article>
         </div>
 
@@ -355,33 +401,33 @@
         <div class="left-notes note-entries">
           <article>
             <div class="section-titles">
-              <input type="text" name="system.details.notes1name" value="{{system.details.notes1name}}" placeholder="{{ localize 'TIDY5E.JournalPoi' }}"/>
+              <input type="text" name="flags.tidy5e-sheet.notes1.name" value="{{actor.flags.tidy5e-sheet.notes1.name}}" placeholder="{{ localize 'TIDY5E.JournalPoi' }}"/>
             </div>
-            {{editor system.details.notes1.value target="system.details.notes1.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+            {{editor journalNotes1HTML target="flags.tidy5e-sheet.notes1.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
           <article>
             <div class="section-titles">
-              <input type="text" name="system.details.notes2name" value="{{system.details.notes2name}}" placeholder="{{ localize 'TIDY5E.JournalLoi' }}"/>
+              <input type="text" name="flags.tidy5e-sheet.notes2.name" value="{{actor.flags.tidy5e-sheet.notes2.name}}" placeholder="{{ localize 'TIDY5E.JournalLoi' }}"/>
             </div>
-            {{editor system.details.notes2.value target="system.details.notes2.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+            {{editor journalNotes2HTML target="flags.tidy5e-sheet.notes2.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
           <article>
             <div class="section-titles">
-              <input type="text" name="system.details.notes3name" value="{{system.details.notes3name}}" placeholder="{{ localize 'TIDY5E.JournalQuests' }}"/>
+              <input type="text" name="flags.tidy5e-sheet.notes3.name" value="{{actor.flags.tidy5e-sheet.notes3.name}}" placeholder="{{ localize 'TIDY5E.JournalQuests' }}"/>
             </div>
-            {{editor system.details.notes3.value target="system.details.notes3.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+            {{editor journalNotes3HTML target="flags.tidy5e-sheet.notes3.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
           <article>
             <div class="section-titles">
-              <input type="text" name="system.details.notes4name" value="{{system.details.notes4name}}" placeholder="{{ localize 'TIDY5E.JournalMisc' }}"/>
+              <input type="text" name="flags.tidy5e-sheet.notes4.name" value="{{actor.flags.tidy5e-sheet.notes4.name}}" placeholder="{{ localize 'TIDY5E.JournalMisc' }}"/>
             </div>
-            {{editor system.details.notes4.value target="system.details.notes4.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+            {{editor journalNotes4HTML target="flags.tidy5e-sheet.notes4.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
         </div>
         <div class="right-notes note-entries">
           <article class="journal-notes">
             <div class="section-titles">{{ localize 'TIDY5E.JournalEntries' }}</div>
-            {{editor journalHTML target="system.details.notes.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+            {{editor journalHTML target="flags.tidy5e-sheet.notes.value" button=true editable=editable engine="prosemirror" collaborate=false}}
           </article>
         </div>
       </div>

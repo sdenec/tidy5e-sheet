@@ -1,23 +1,26 @@
 <div class="spellcasting-ability">
-  <h3 class="spell-dc spell-mod">{{localize 'DND5E.SpellDC'}} {{system.attributes.spelldc}} / {{localize 'TIDY5E.SpellAttackMod'}}: <span class="spell-attack-mod"></span></h3>
-  <div class="max-prepared-spells">
-    <p>{{localize 'TIDY5E.PreparedSpells'}}</p> <span class="spells-prepared">{{#if preparedSpells}}{{preparedSpells}}{{else}}0{{/if}}</span>/<input class="max-preparation" type="text" name="system.details.maxPreparedSpells"
-    value="{{system.details.maxPreparedSpells}}" data-dtype="Number" placeholder="0" title="{{localize 'TIDY5E.PreparedSpellsMax'}}"/>
-  </div>
-  <div class="spellcasting-attribute">
-    <p>{{localize 'DND5E.SpellAbility'}}</p>
-    <select name="system.attributes.spellcasting" data-type="String">
-      {{#select system.attributes.spellcasting}}
-      <option value="">{{localize 'DND5E.None'}}</option>
-      {{#each system.abilities as |abl a|}}
-      <option value="{{a}}">{{abl.label}}</option>
-      {{/each}}
-      {{/select}}
-    </select>
-  </div>
-  {{#if isNPC}}
-  <h3>{{localize 'DND5E.SpellcasterLevel'}}</h3>
-  <input class="spellcasting-level" type="text" name="system.details.spellLevel"
-  value="{{system.details.spellLevel}}" data-dtype="Number" placeholder="0"/>
-  {{/if}}
+	<h3 class="spell-dc spell-mod">
+		{{localize 'DND5E.SpellDC'}} {{system.attributes.spelldc}} / {{localize 'TIDY5E.SpellAttackMod'}}:
+		<span class="spell-attack-mod"></span>
+	</h3>
+	<div class="max-prepared-spells">
+		<p>{{localize 'TIDY5E.PreparedSpells'}}</p>
+		<span class="spells-prepared">{{#if preparedSpells}}{{preparedSpells}}{{else}}0{{/if}}</span>
+		/
+		<input class="max-preparation" type="number" name="flags.tidy5e-sheet.maxPreparedSpells" value="{{actor.flags.tidy5e-sheet.maxPreparedSpells}}" data-dtype="Number" placeholder="0" title="{{localize 'TIDY5E.PreparedSpellsMax'}}" />
+	</div>
+	<div class="spellcasting-attribute">
+		<p>{{localize 'DND5E.SpellAbility'}}</p>
+		<select name="system.attributes.spellcasting" data-type="String">
+			{{#select system.attributes.spellcasting}}
+			<option value="">{{localize 'DND5E.None'}}</option>
+			{{#each abilities as |abl a|}}
+			<option value="{{a}}">{{abl.label}}</option>
+			{{/each}} {{/select}}
+		</select>
+	</div>
+	{{#if @root.isNPC}}
+	<h3>{{localize 'DND5E.SpellcasterLevel'}}</h3>
+	<input class="spellcasting-level" type="text" name="system.details.spellLevel" value="{{system.details.spellLevel}}" data-dtype="Number" placeholder="0" min="0" step="1" />
+	{{/if}}
 </div>

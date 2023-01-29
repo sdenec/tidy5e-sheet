@@ -4,7 +4,6 @@
 	overflow: hidden;
 
 	.items-list {
-
 		padding-left: 2px;
 
 		.items-header {
@@ -23,7 +22,7 @@
 		&.alt-context .context .activate-context-menu {
 			display: flex;
 		}
-	}//.items-list
+	} //.items-list
 
 	.item-list {
 		padding: 0;
@@ -35,7 +34,7 @@
 			height: 50px;
 			position: relative;
 			margin: 3px;
-    	box-shadow: 0 0 1px 1px var(--t5e-light-color);
+			box-shadow: 0 0 1px 1px var(--t5e-light-color);
 			border-radius: 5px;
 
 			&.context {
@@ -43,39 +42,39 @@
 			}
 
 			.icon-attuned {
-    		font-size: 11.5px;
-		    overflow: hidden;
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
-		    color: var(--t5e-icon-attuned);
-		    width: 13px;
-		    height: 13px;
-		    background: var(--t5e-magic-accent);
-		    position: absolute;
-		    top: -1px;
-		    right: -1px;
-		    border-radius: 50%;
-		    box-shadow: 0 0 3px 1px var(--t5e-magic-accent);
+				font-size: 11.5px;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: var(--t5e-icon-attuned);
+				width: 13px;
+				height: 13px;
+				background: var(--t5e-magic-accent);
+				position: absolute;
+				top: -1px;
+				right: -1px;
+				border-radius: 50%;
+				box-shadow: 0 0 3px 1px var(--t5e-magic-accent);
 
-		    &.not-attuned {
-		    	background: var(--t5e-attunement-required);
-		    	box-shadow: 0 0 3px 1px var(--t5e-attunement-required);
-		    }
-			}//.icon-attuned
+				&.not-attuned {
+					background: var(--t5e-attunement-required);
+					box-shadow: 0 0 3px 1px var(--t5e-attunement-required);
+				}
+			} //.icon-attuned
 
 			.icon-fav {
 				position: absolute;
-		    top: -2px;
-		    left: 4px;
-		    color: rgba(0,200,100,1);
-		    text-shadow: 0 0px 2px var(--t5e-primary-color);
-		    font-size: 10px;
+				top: -2px;
+				left: 4px;
+				color: rgba(0, 200, 100, 1);
+				text-shadow: 0 0px 2px var(--t5e-primary-color);
+				font-size: 10px;
 			}
 
 			&.preparable .item-image {
 				box-shadow: 0 0 0 2px inset var(--t5e-prepareable);
-    		border-radius: 5px;
+				border-radius: 5px;
 			}
 
 			&.equipped {
@@ -98,51 +97,51 @@
 				box-shadow: 0 0 0 2px var(--t5e-innate-outline);
 			}
 
-			&.prepared.alwaysPrepared {
-				box-shadow: 0 0 0 2px var(--t5e-always-prepared-outline);
+			&.prepared.alwaysprepared {
+				box-shadow: 0 0 0 2px var(--t5e-alwaysprepared-outline);
 			}
 
 			&.equipped .item-image {
-    			box-shadow: 0 0 1px 1px inset var(--t5e-equipped-accent);
+				box-shadow: 0 0 1px 1px inset var(--t5e-equipped-accent);
 				border-radius: 5px;
 			}
 
 			&.prepared .item-image {
-    		box-shadow: 0 0 1px 1px inset var(--t5e-prepared-accent);
+				box-shadow: 0 0 1px 1px inset var(--t5e-prepared-accent);
 				border-radius: 5px;
 			}
 
 			&.pact .item-image {
-    			box-shadow: 0 0 1px 1px inset var(--t5e-pact-accent);
+				box-shadow: 0 0 1px 1px inset var(--t5e-pact-accent);
 				border-radius: 5px;
 			}
 
 			&.atwill .item-image {
-    			box-shadow: 0 0 1px 1px inset var(--t5e-atwill-accent);
+				box-shadow: 0 0 1px 1px inset var(--t5e-atwill-accent);
 				border-radius: 5px;
 			}
 
 			&.innate .item-image {
-    			box-shadow: 0 0 1px 1px inset var(--t5e-innate-accent);
+				box-shadow: 0 0 1px 1px inset var(--t5e-innate-accent);
 				border-radius: 5px;
 			}
 
-			&.prepared.alwaysPrepared .item-image {
-    		box-shadow: 0 0 1px 1px inset var(--t5e-always-prepared-accent);
+			&.prepared.alwaysprepared .item-image {
+				box-shadow: 0 0 1px 1px inset var(--t5e-alwaysprepared-accent);
 			}
 
 			&.magic-item {
 				.item-image {
 					box-shadow: 0 0 0 1px var(--t5e-magic-accent) inset, 0 0 3px 2px var(--t5e-magic-accent) inset;
-    			border-radius: 5px;
+					border-radius: 5px;
 				}
 
 				&.equipped .item-image {
-					background-image: url('systems/dnd5e/icons/items/inventory/pearl.jpg');
-			    box-shadow: 0 0 0px 1px var(--t5e-magic-outline) inset, 0 0 0 1px var(--t5e-magic-accent) inset, 0 0 3px 2px var(--t5e-magic-accent) inset;
-			    border: none;
+					background-image: url("systems/dnd5e/icons/items/inventory/pearl.jpg");
+					box-shadow: 0 0 0px 1px var(--t5e-magic-outline) inset, 0 0 0 1px var(--t5e-magic-accent) inset, 0 0 3px 2px var(--t5e-magic-accent) inset;
+					border: none;
 				}
-			}//.magic-items
+			} //.magic-items
 
 			.item-name {
 				display: block;
@@ -155,31 +154,33 @@
 
 			.item-stats {
 				position: absolute;
-		    right: 0;
-		    bottom: 0;
-		    left: 0;
-		    padding: 0 2px 0 3px;
-		    height: 14px;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				padding: 0 2px 0 3px;
+				height: 14px;
 
 				.item-quantity,
-				.item-charges {
-			    border: none;
-			    font-size: 12px;
-			    color: var(--t5e-stat-font);
-			    float: right;
+				.item-charges,
+				.item-uses {
+					border: none;
+					font-size: 12px;
+					color: var(--t5e-stat-font);
+					float: right;
 
 					input {
 						height: 14px;
-				    text-shadow: 0 0 5px rgba(0,0,0,1);
-				    color: var(--t5e-stat-font);
-				    text-align: right;
-				    min-width: 0;
-				    width: 16px;
+						text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+						color: var(--t5e-stat-font);
+						text-align: right;
+						min-width: 0;
+						width: 16px;
 						padding: 0;
 					}
 				}
 
-				.item-charges {
+				.item-charges,
+				.item-uses {
 					float: left;
 					line-height: 1;
 
@@ -190,12 +191,10 @@
 					.fa-bolt {
 						font-size: 8px;
 						margin-right: 1px;
-						text-shadow: 0 0 5px rgba(0,0,0,1);
+						text-shadow: 0 0 5px rgba(0, 0, 0, 1);
 					}
-
 				}
-
-			}//.item-stats
+			} //.item-stats
 
 			.item-image {
 				display: flex;
@@ -238,11 +237,9 @@
 			&:not(.context) .item-name:hover .item-image:hover i {
 				color: var(--t5e-primary-font);
 			}
+		} //.item
 
-			
-		}//.item
-		
-		.items-footer{
+		.items-footer {
 			flex: 0 0 50px;
 			height: 50px;
 			margin: 2px;
@@ -260,13 +257,10 @@
 					color: var(--t5e-tertiary-color);
 				}
 			}
-		}//.items-footer
+		} //.items-footer
 
 		// .info-card {
 		// 	display: none;
 		// }
-
-
-	}//.item-list
-
-}//.grid-layout
+	} //.item-list
+} //.grid-layout

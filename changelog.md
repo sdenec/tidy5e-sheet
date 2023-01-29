@@ -16,6 +16,21 @@ Thank you very much!
 
 ## Version History
 
+### Version 0.8.0-1-2-3-4
+
+- Compatibility with dnd5e 2.1.X
+- Double check PR https://github.com/sdenec/tidy5e-sheet/pull/630
+- Add button on module settings for reset setting
+- Add module settings for customize the colors or remove the color with the value "#000000"
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/624
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/625
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/628
+
+
+### 0.7.1-2-3-4-56
+
+- Bug fixing and features (check out the PR for more infos)
+
 ### Version 0.6.6
 
 - attack mod calculation fix
@@ -369,7 +384,7 @@ Thank you very much!
 - minor css fix for NPC CR text color
 - NPC sheets now have a toggle button for the personality infos (now hidden by default) in the biography tab
 - fix to prevent items sometimes becoming invisible when toggling the item details
-- you now can use DAE to set a "custom" formula for "data.details.maxPreparedSpells" to calculate your available spell preparations. Thanks @tposney!
+- you now can use DAE to set a "custom" formula for "flags.tidy5e-sheet.maxPreparedSpells" to calculate your available spell preparations. Thanks @tposney!
 
 ### Version 0.4.6
 

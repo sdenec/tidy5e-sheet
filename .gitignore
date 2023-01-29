@@ -1,2 +1,5 @@
 sftp-config.json
 .vscode/sftp.json
+/doc/backup
+src/module.zip
+.gitignore

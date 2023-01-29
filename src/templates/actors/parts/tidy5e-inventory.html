@@ -5,6 +5,7 @@
     
   <ul class="inventory-list items-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each sections as |section sid|}}
+    
     <li class="items-header">
       <h3 class="item-name">{{localize section.label}}</h3>
 
@@ -15,151 +16,208 @@
           <div class="items-header-{{css}}">{{label}}</div>
           {{/each}}
         {{else}}
-          {{#if ../isCharacter}}
+          {{#if @root.isCharacter}}
           <div class="items-header-weight" title="{{localize 'DND5E.Weight'}} ({{ @root.weightUnit }})"><i class="fas fa-weight-hanging"></i></div>
           {{/if}}
           <div class="items-header-charge" title="{{localize 'DND5E.Charges'}}"><i class="fas fa-bolt"></i></div>
           <div class="items-header-usage">{{localize 'DND5E.Usage'}}</div>
+          <div class="items-header-controls"></div>
         {{/if}}
       </div>
       <div class="item-control inventory-plus-helper" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}></div>
     </li>
+    <!--
+    <li class="items-header flexrow">
+      <h3 class="item-name flexrow">{{localize section.label}}</h3>
+
+      {{#if section.columns}}
+          {{#each section.columns}}
+              <div class="item-detail {{css}}">{{label}}</div>
+          {{/each}}
+      {{else}}
+          {{#if @root.isCharacter}}
+              <div class="item-detail item-weight">{{localize "DND5E.Weight"}}</div>
+          {{/if}}
+
+          <div class="item-detail item-uses">{{localize "DND5E.Charges"}}</div>
+          <div class="item-detail item-action">{{localize "DND5E.Usage"}}</div>
+      {{/if}}
+
+      {{#if @root.owner}}
+      <div class="item-controls flexrow"> 
+
+        <a class="item-control item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate"
+            {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+            <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
+        </a>
+
+      </div>
+    
+      {{/if}}
+    </li>
+    -->
 
     <ul class="item-list">
       {{#each section.items as |item iid|}}
-      <li class="item {{section.css}} {{#if ../../owner}}context-enabled{{/if}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}" data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
-        <div class="item-name rollable" >
-          {{#if section.editableName}}
-            <input type="text" value="{{item.name}}">
-          {{else}}
-
-            <div class="item-image" style="background-image: url('{{item.img}}')">
-              <i class="fa fa-dice-d20"></i>
-            </div>
-            <h4>
-              {{item.name}}
-            </h4>
-            {{#if item.system.properties.amm}}
-            <span class="ammo" data-id="{{item._id}}"></span>
-            {{/if}}
-            <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
-              (<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" >)
-            </span>
-          {{/if}}
-        </div>
-
-        {{~#if item.attunement}} 
-        <div class="item-state-icon {{item.attunement.cls}}" title="{{localize item.attunement.title}}"><i class="fas fa-sun"></i></div>
-        {{/if}}
-        
-        {{~#if item.flags.favtab}} 
-        {{~#if item.flags.favtab.isFavorite}} 
-           <div class="item-state-icon" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
-        {{/if}}
-        {{/if}}
-
-        {{#if section.columns}}
-          {{#each section.columns}}
-            <div class="item-detail {{css}}">
-              {{#with (getProperty item property)}}
-                {{#if ../editable}}
-                  <input type="text" value="{{this}}" placeholder="&mdash;"
-                                   data-dtype="{{../editable}}" data-property="{{../property}}">
-                {{else}}
-                  {{this}}
-                {{/if}}
-              {{/with}}
-            </div>
-          {{/each}}
-        {{else}}
-          {{#if ../../isCharacter}}
-          <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.totalWeight }} {{ @root.weightUnit }}">
-            {{#if item.totalWeight}}
-            <div>
-              {{ item.totalWeight }}
-            </div>
-            {{/if}}
-          </div>
-          {{/if}}
-
-          <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
-            {{#if item.hasUses }}
-            <input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0"/>
-            / <input class="uses-max" type="text" data-path="system.uses.max" value="{{item.system.uses.max}}">
-            <!-- {{item.system.uses.max}} -->
-
+      {{#with (lookup @root.itemContext item.id) as |ctx|}}
+        <li class="item {{section.css}} {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+          <div class="item-name {{@root.rollableClass}}">
+            {{#if section.editableName}}
+              <input type="text" value="{{item.name}}">
             {{else}}
-            <a class="addCharges" value="Add">Add</a>
+
+              <div class="item-image" style="background-image: url('{{item.img}}')">
+                <i class="fa fa-dice-d20"></i>
+              </div>
+              <h4>
+                {{item.name~}}
+                {{~#if ctx.isStack}} ({{item.system.quantity}}){{/if}}
+              </h4>
+              {{#if item.system.properties.amm}}
+              <span class="ammo" data-id="{{item._id}}"></span>
+              {{/if}}
+              <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+                (<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" >)
+              </span>
             {{/if}}
           </div>
 
-          <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}">
-            {{#if item.system.activation.type }}
-              {{item.labels.activation}}
-            {{/if}}
+          {{#if ctx.attunement}}
+          <div class="item-detail attunement">
+              <i class="fas {{ctx.attunement.icon}} {{ctx.attunement.cls}}" title="{{localize ctx.attunement.title}}"></i>
           </div>
-        {{/if}}
-
-        
-        <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}" data-item-index="{{item._id}} >
-          <p class="info-card-name">{{item.name}}</p>
-          <div class="info-card-states">
-            {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
-            {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
-          </div>
-          {{#if item.hasUses }}
-          <div class="info-card-amount">
-            <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
-          </div>
-           {{/if}}
-          <div class="info-card-amount">
-            <!-- {{#if item.totalWeight}} {{/if}} -->
-            <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.totalWeight }} {{ @root.weightUnit }}</span>
-            <!-- {{#if item.system.quantity}} {{/if}} -->
-            <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.system.quantity}} &times; {{item.system.price}} {{localize 'DND5E.CurrencyAbbrGP'}}</span>
-          </div>
-          <div class="description-wrap">
-            <div class="info-card-description">
-              <!-- item description -->
-            </div>
-          </div>
-				  <article class="mod-roll-buttons"></article>
-        </div>
-
-
-        {{#if ../../owner}}
-        <div class="activate-context-menu">
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-        <div class="item-controls context-menu">
-          <hr class="context-divider">
-
-          {{#if item.attunement}}
-            <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-              <i class="fas fa-sun"></i> <span class="control-label">{{#if (eq item.system.attunement 2) }}{{localize "TIDY5E.Deattune"}}{{else}}{{localize "TIDY5E.Attune"}}{{/if}}</span>
-            </a>
           {{/if}}
-          {{#unless @root.isVehicle}}
-          <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">{{#if (eq item.toggleClass 'active')}}<i class="fas fa-user-alt"></i> <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>{{else}}<i class="fas fa-user-alt inactive"></i> <span class="control-label">{{localize "TIDY5E.Equip"}}</span>{{/if}}</a>
-          {{/unless}}
+        
+          {{#if item.flags.tidy5e-sheet.favorite}}
+          <div class="item-state-icon" title="{{localize 'TIDY5E.isFav'}}"><i class="fas fa-bookmark icon-fav"></i></div>
+          {{/if}}
 
-          <hr class="context-divider">
+          {{#if section.columns}}
+            {{#each section.columns}}
+              <div class="item-detail {{css}}">
+                {{#with (getProperty item property)}}
+                  {{#if ../editable}}
+                    <input type="text" value="{{this}}" placeholder="&mdash;"
+                                    data-dtype="{{../editable}}" data-property="{{../property}}">
+                  {{else}}
+                    {{this}}
+                  {{/if}}
+                {{/with}}
+              </div>
+            {{/each}}
+          {{else}}
+            {{#if @root.isCharacter}}
+            <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.system.weight }} {{ @root.weightUnit }}">
+              {{#if ctx.totalWeight}}
+                  <div class="item-detail">
+                      {{ ctx.totalWeight }} {{ @root.weightUnit }}
+                  </div>
+              {{ else }}
+                  <div class="item-detail">
+                    {{ item.system.weight }} {{ @root.weightUnit }}
+                  </div>
+              {{/if}}
+            </div>
+            {{/if}}
 
-          {{#unless section.editableName}}
-            <a class="item-control item-edit" title="{{localize 'DND5E.ItemEdit'}}"><i class="fas fa-pencil-alt"></i> <span class="control-label">{{localize "DND5E.ItemEdit"}}</span></a>
-          {{/unless}}
-          <hr class="context-divider">
-          <a class="item-control item-delete warning" title="{{localize 'DND5E.ItemDelete'}}"><i class="fas fa-trash"></i> <span class="control-label">{{localize "DND5E.ItemDelete"}}</span></a>
-        </div>
-        {{/if}}
+            <div class="item-detail item-uses" title="{{localize 'DND5E.Uses'}}">
+              {{#if ctx.hasUses }}
+              <input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0"/>
+              / <input class="uses-max" type="text" data-path="system.uses.max" value="{{item.system.uses.max}}">
+              <!-- {{item.system.uses.max}} -->
 
-      </li>
+              {{else}}
+              <a class="addCharges" value="Add">Add</a>
+              {{/if}}
+            </div>
+
+            <div class="item-detail item-action" title="{{localize 'DND5E.Usage'}}">
+              {{#if item.system.activation.type }}
+                {{item.labels.activation}}
+              {{/if}}
+            </div>
+          {{/if}}
+
+          
+          <div class="info-card {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}} magic-item {{/if}} {{item.attunement.cls}} {{~#if item.system.equipped}} equipped {{/if}}" data-item-id="{{item._id}}" data-item-index="{{item._id}}" >
+            <p class="info-card-name">{{item.name}}</p>
+            <div class="info-card-states">
+              {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
+              {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
+            </div>
+            {{#if item.hasUses }}
+            <div class="info-card-amount">
+              <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
+            </div>
+            {{/if}}
+            <div class="info-card-amount">
+              <!-- {{#if item.system.weight }} {{/if}} -->
+              <span class="info-weight"><b>{{localize 'DND5E.Weight'}}:</b> {{ item.system.weight }} {{ @root.weightUnit }}</span>
+              <!-- {{#if item.system.quantity}} {{/if}} -->
+              <span class="info-quantity"><b>{{localize 'DND5E.Quantity'}}:</b> {{item.system.quantity}} &times; {{item.system.price.value}} {{item.system.price.denomination}}</span>
+            </div>
+            <div class="description-wrap">
+              <div class="info-card-description">
+                <!-- item description -->
+              </div>
+            </div>
+            <article class="mod-roll-buttons"></article>
+          </div>
+
+          {{#if @root.owner}}
+          {{#if @root.classicControlsEnabled}}
+          <div class="item-controls flexrow">
+            {{#if item.attunement}}
+              <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
+                <i class="fas fa-sun"></i> 
+                <span class="control-label">
+                  {{#if (eq item.system.attunement 2) }}
+                    {{localize "TIDY5E.Deattune"}}
+                  {{else}}
+                    {{localize "TIDY5E.Attune"}}
+                  {{/if}}
+                </span>
+              </a>
+            {{/if}}
+            {{#if ctx.canToggle}}
+            <!--
+            <a class="item-control item-toggle {{ctx.toggleClass}}" data-action="itemToggle" data-tooltip='{{ctx.toggleTitle}}'>
+                <i class="fas fa-shield-alt"></i>
+            </a>
+            -->
+            <a class="item-control item-toggle {{ctx.toggleClass}}" data-action="itemToggle" data-tooltip='{{ctx.toggleTitle}}'>
+              {{#if (eq ctx.toggleClass 'active')}}
+                <i class="fas fa-user-alt"></i> 
+                <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>
+              {{else}}
+                <i class="fas fa-user-alt inactive"></i> 
+                <span class="control-label">{{localize "TIDY5E.Equip"}}</span>
+              {{/if}}
+            </a>
+            {{/if}}
+            {{#unless section.editableName}}
+            <a class="item-control item-edit" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
+                <i class="fas fa-edit fa-fw"></i>
+            </a>
+            <a class="item-control item-duplicate" data-action="itemDuplicate" title="{{localize 'DND5E.ContextMenuActionDuplicate'}}">
+              <i class="fas fa-copy fa-fw"></i>
+            </a>
+            {{/unless}}
+            <a class="item-control item-delete" data-action="itemDelete" data-tooltip="DND5E.ItemDelete">
+                <i class="fas fa-trash fa-fw"></i>
+            </a>
+          </div>
+          {{/if}}
+          {{/if}}
+        </li>
+      {{/with}}
       {{/each}}
 
-      {{#if ../owner}}
+      {{#if @root.owner}}
       <li class="items-footer">
-        <a class="item-create" title='{{localize "DND5E.ItemCreate"}}' {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-          <i class="fas fa-plus-circle"></i> {{localize "DND5E.Add"}}
+        <a class="item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i> 
+          {{localize "DND5E.Add"}}
         </a>
       </li>
       {{/if}}
