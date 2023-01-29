@@ -132,6 +132,8 @@
 	"TIDY5E.Settings.ColorPickerLabel": "Color Picker (Customize the color)",
 
 	"TIDY5E.Settings.SheetMenu": {
+		"name": "Tidy Sheet Settings",
+		"hint": "Customize your own version of Tidy",
 		"label": "Sheet Settings",
 		"title": "Tidy5e Sheet Settings"
 	},

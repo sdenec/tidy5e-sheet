@@ -1,7 +1,17 @@
 import { RGBAToHexAFromColor } from "./color-picker.js";
+import { Tidy5eUserSettings } from "./settings.js";
 
 export function settingsList() {
 	// General Settings
+	game.settings.registerMenu("tidy5e-sheet", "userMenu", {
+		name: `TIDY5E.Settings.SheetMenu.name`,
+		label: "TIDY5E.Settings.SheetMenu.label",
+		hint: `TIDY5E.Settings.SheetMenu.hint`,
+		icon: "fas fa-cog",
+		type: Tidy5eUserSettings,
+		restricted: false,
+	});
+
 	game.settings.registerMenu("tidy5e-sheet", "resetAllSettings", {
 		name: `TIDY5E.Settings.Reset.name`,
 		hint: `TIDY5E.Settings.Reset.hint`,
