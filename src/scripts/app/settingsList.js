@@ -781,12 +781,12 @@ export function settingsList() {
 		type: Boolean,
 	});
 
-	// Spell color customization
+	// Color customization
 
 	game.settings.register("tidy5e-sheet", "colorPickerEnabled", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEnabled.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEnabled.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: Boolean,
 		default: false,
 		config: false,
@@ -799,7 +799,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerEquipped", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquipped.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquipped.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 0.3),
 		config: false,
@@ -807,7 +807,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerEquippedOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquippedOutline.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquippedOutline.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 1),
 		config: false,
@@ -815,7 +815,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerEquippedAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquippedAccent.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquippedAccent.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(173, 255, 47, 1),
 		config: false,
@@ -828,7 +828,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerPrepared", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPrepared.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPrepared.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 0.3),
 		config: false,
@@ -836,7 +836,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerPreparedOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPreparedOutline.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPreparedOutline.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 1),
 		config: false,
@@ -844,7 +844,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerPreparedAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPreparedAccent.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPreparedAccent.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(173, 255, 47, 1),
 		config: false,
@@ -857,7 +857,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerPact", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPact.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPact.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(250, 0, 180, 0.3),
 		config: false,
@@ -865,7 +865,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerPactOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPactOutline.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPactOutline.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(250, 50, 213, 1),
 		config: false,
@@ -873,7 +873,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerPactAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPactAccent.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPactAccent.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(198, 119, 193, 1),
 		config: false,
@@ -886,7 +886,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerAtWill", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWill.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWill.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(226, 246, 4, 0.3),
 		config: false,
@@ -894,7 +894,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerAtWillOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWillOutline.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWillOutline.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(163, 165, 50, 1),
 		config: false,
@@ -902,7 +902,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerAtWillAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWillAccent.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWillAccent.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(255, 242, 0, 1),
 		config: false,
@@ -915,7 +915,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerInnate", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnate.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnate.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(255, 0, 0, 0.3),
 		config: false,
@@ -923,7 +923,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerInnateOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnateOutline.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnateOutline.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(231, 23, 23, 1),
 		config: false,
@@ -931,7 +931,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerInnateAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnateAccent.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnateAccent.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(195, 69, 69, 1),
 		config: false,
@@ -944,7 +944,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerAlwaysPrepared", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPrepared.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPrepared.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(0, 0, 255, 0.15),
 		config: false,
@@ -952,7 +952,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerAlwaysPreparedOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(65, 105, 225, 1),
 		config: false,
@@ -960,7 +960,7 @@ export function settingsList() {
 	game.settings.register("tidy5e-sheet", "colorPickerAlwaysPreparedAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.hint")}`,
-		scope: "world",
+		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(0, 191, 255, 1),
 		config: false,

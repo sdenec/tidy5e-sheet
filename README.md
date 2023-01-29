@@ -24,11 +24,11 @@ To install this module manually:
 - The current template for favorite items is to complicated ... we should be apply the same template of the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
 - Integration of a  checkbox upcast (ty to mxzf on discord ) on the tidy sheet for the ability dialog option.
 
-## Macro from migrate from 2.0.3 to 2.1.X
+## Macro to prepare migration from 2.0.3 to 2.1.X
 
 ```
 // IMPORTANT NOTES: 
-// 1) THIS MACRO MUST BE LAUNCHED IN A 2.0.3 WORLDS IF YOU DON'T HAVVE A BACKUP SADLY YOU LOST THE JOURNAL DATA
+// 1) THIS MACRO MUST BE LAUNCHED IN A 2.0.3 WORLDS IF YOU DON'T HAVE A BACKUP SADLY YOU LOST THE JOURNAL DATA
 // 2) THIS MACRO MUST NOT BE LAUNCHED IN A 2.1.X WORLD
 // 3) BEFORE LAUNCH THIS MACRO DO A BACKUP OF THE CURRENT WORLD JUST TO BE SAFE
 
@@ -138,11 +138,6 @@ All settings for this module are found in Foundry's settings menu under the modu
 
 Currently all of the settings that are available are client-side settings. This means that what you change here will not have an effect on any other computer or player.
 
-### Feature: All your favorite items are synced between modules
-
-The favorite system is syncronized with the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) and [Favorite tab](https://github.com/syl3r86/favtab)
-
-
 #### Using the filter
 
 This module relies on populating data that doesn't seem to exist by default: "Is this spell a {class} spell for you?" So the first step is going to be going through each spell on your sheet and selecting the spell's class in the itemsheet's details tab.
@@ -159,18 +154,24 @@ To enable this behavior enable it in the module's settings. This setting is disa
 
 Note: This feature does not change any data or other behaviors. The spell's icon will still be what is displayed in chat and in other sections of the sheet.
 
+
+### Feature: All your favorite items are synced between modules
+
+The favorite system is syncronized with the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) and [Favorite tab](https://github.com/syl3r86/favtab)
+
+
 ### Feature: Lazy Money/Hp/Experience
 
 This is an embedded version of the module [Lazy Money](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e), Easily add or remove currency, Hp and Experience with automatic conversion and no overdraft.
 
 ![](/doc/Lazy_Money_1.gif)
 
+### Feature: Attunement Tracker
+In the PC inventory you'll find the new attunement tracker at the bottom left. By default you can attune to 3 items. DMs can change the attunement limit for each character by entering a max value in the tracker.
+
 ## Settings
 there are plenty of settings from dark mode to round/square portraits, health visualization and user specific options.
 I tried to make each settings description as clear as possible so you should be able to carefully read an pick what you want.
-
-### Attunement Tracker
-In the PC inventory you'll find the new attunement tracker at the bottom left. By default you can attune to 3 items. DMs can change the attunement limit for each character by entering a max value in the tracker.
 
 ## Attribution Languages
 
