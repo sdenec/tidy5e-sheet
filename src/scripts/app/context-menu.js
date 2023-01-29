@@ -1,6 +1,79 @@
 import { isItemFavorite } from "./tidy5e-favorites.js";
 
 export const tidy5eContextMenu = function (html, sheet) {
+	let actor = sheet.actor;
+	// html.find('.item-list .item.context-enabled').mousedown( async (event) => {
+	// 	let target = event.target.class;
+	// 	let item = event.currentTarget;
+	// 	switch (event.which) {
+	// 		case 2: {
+	// 			// middle mouse opens item editor
+	// 			event.preventDefault();
+	// 			if($(item).find('.item-edit')) {
+	// 				$(item).find('.item-edit').trigger('click');
+	// 			}
+
+	// 			if($(item).find('.effect-edit')) {
+	// 				$(item).find('.effect-edit').trigger('click');
+	// 			}
+
+	// 			break;
+	// 		}
+	// 		case 3: {
+	// 			// right click opens context menu
+	// 			item.addEventListener('contextmenu', e => e.preventDefault());
+	// 			event.preventDefault();
+	// 			if(!game.settings.get("tidy5e-sheet", "rightClickDisabled") && $(item).hasClass('context-enabled')){
+	// 				html.find('.item').removeClass('context');
+	// 				html.find('.item .context-menu').hide();
+	// 				itemContextMenu(event);
+	// 			}
+	// 			break;
+	// 		}
+	// 	}
+	// });
+
+	// html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
+	// 	if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
+	// 		switch (event.which) {
+	// 		case 1:
+	// 			event.preventDefault();
+	// 			html.find('.item').removeClass('context');
+	// 			html.find('.item .context-menu').hide();
+	// 			itemContextMenu(event);
+	// 			break;
+	// 		}
+	// 	}
+	// });
+
+	// Manage Middle Click behavior
+	html.find('.item-list .item .item-name').mousedown( async (event) => {
+		if(event.which === 2) {
+			// let target = event.target.class;
+			// let item = event.currentTarget;
+			// Middle mouse opens item editor
+			event.preventDefault();
+			let li = $(event.target).parents(".item");
+			if($(li).find('.item-edit')) {
+				$(li).find('.item-edit').trigger('click');
+			}
+
+			if($(li).find('.effect-edit')) {
+				$(li).find('.effect-edit').trigger('click');
+			}
+			// let itemId = $(event.target).parents(".item")[0].dataset.itemId;
+			// if(!itemId || !actor) {
+			// 	return;
+			// }
+			// let item = actor.items.get(itemId);
+			// if(!item) {
+			// 	return;
+			// }
+			//item._onAdvancementAction(li[0], "edit")
+			// item.render(true);
+		}
+	});
+	
 	// Override COntext Menu
 	// Item Context Menu
 	// new ContextMenu(html, ".item-list .item #context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});

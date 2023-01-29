@@ -5,7 +5,7 @@ export function settingsList() {
 	game.settings.registerMenu("tidy5e-sheet", "resetAllSettings", {
 		name: `TIDY5E.Settings.Reset.name`,
 		hint: `TIDY5E.Settings.Reset.hint`,
-		icon: "fas fa-coins",
+		icon: "fas fa-database",
 		type: ResetSettingsDialog,
 		restricted: true,
 	});
