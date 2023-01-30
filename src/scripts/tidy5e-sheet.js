@@ -523,40 +523,48 @@ async function abbreviateCurrency(app, html, data) {
 	});
 }
 
-// transform DAE formulas for maxPreparesSpells
-async function tidyCustomEffect(actor, change) {
-	if (change.key !== "flags.tidy5e-sheet.maxPreparedSpells") { // system.details.maxPreparedSpells
-		return;
-	}
-	if (change.value?.length > 0) {
-		let oldValue = getProperty(actor.system, change.key) || 0;
-		let changeText = change.value.trim();
-		let op = "none";
-		if (["+", "-", "/", "*", "="].includes(changeText[0])) {
-			op = changeText[0];
-			changeText = changeText.slice(1);
-		}
-		const rollData = actor.getRollData();
-		Object.keys(rollData.abilities).forEach((abl) => {
-			rollData.abilities[abl].mod = Math.floor((rollData.abilities[abl].value - 10) / 2);
-		});
-		// const value = new Roll(changeText, rollData).roll().total;
-		const roll_value = await new Roll(changeText, rollData).roll();
-		const value = roll_value.total;
-		oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
-		switch (op) {
-			case "+":
-				return setProperty(actor.system, change.key, oldValue + value);
-			case "-":
-				return setProperty(actor.system, change.key, oldValue - value);
-			case "*":
-				return setProperty(actor.system, change.key, oldValue * value);
-			case "/":
-				return setProperty(actor.system, change.key, oldValue / value);
-			case "=":
-				return setProperty(actor.system, change.key, value);
-			default:
-				return setProperty(actor.system, change.key, value);
+/**
+ *  transform DAE formulas for maxPreparesSpells
+ */
+async function tidyCustomEffect(actor, changes) {
+	const changeMaxPreparedList = changes.find((c) => {
+		return c.key === "flags.tidy5e-sheet.maxPreparedSpells";
+	});
+	if(changeMaxPreparedList){
+		if (changeMaxPreparedList.value?.length > 0) {
+			let oldValue = getProperty(actor, changeMaxPreparedList.key) || 0;
+			let changeMaxPreparedListText = changeMaxPreparedList.value.trim();
+			let op = "none";
+			if (["+", "-", "/", "*", "="].includes(changeMaxPreparedListText[0])) {
+				op = changeMaxPreparedListText[0];
+				changeMaxPreparedListText = changeMaxPreparedListText.slice(1);
+			}
+			const rollData = actor.getRollData();
+			Object.keys(rollData.abilities).forEach((abl) => {
+				rollData.abilities[abl].mod = Math.floor((rollData.abilities[abl].value - 10) / 2);
+			});
+			// const value = new Roll(changeText, rollData).roll().total;
+			const roll_value = await new Roll(changeMaxPreparedListText, rollData).roll();
+			const value = roll_value.total;
+			oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
+			if(oldValue != value) {
+				switch (op) {
+					case "+":
+						return setProperty(actor, changeMaxPreparedList.key, oldValue + value);
+					case "-":
+						return setProperty(actor, changeMaxPreparedList.key, oldValue - value);
+					case "*":
+						return setProperty(actor, changeMaxPreparedList.key, oldValue * value);
+					case "/":
+						return setProperty(actor, changeMaxPreparedList.key, oldValue / value);
+					case "=":
+						return setProperty(actor, changeMaxPreparedList.key, value);
+					default:
+						return setProperty(actor, changeMaxPreparedList.key, value);
+				}
+			} else {
+				return;
+			}
 		}
 	}
 }
@@ -755,10 +763,58 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
 	preloadTidy5eHandlebarsTemplates();
-	Hooks.on("applyActiveEffect", tidyCustomEffect);
-
+	// 
 	// init user settings menu
 	Tidy5eUserSettings.init();
+});
+
+Hooks.on("applyActiveEffect", (activeEffect, _config, options) => {
+	if (!(activeEffect?.parent instanceof Actor) ||
+		!_config.changes
+	) {
+		return;
+	}
+	const changes = _config.changes;
+	tidyCustomEffect(activeEffect?.parent, changes);
+});
+
+/**
+ * Handle adding any actor data changes when an active effect is added to an actor
+ */
+Hooks.on('createActiveEffect', (activeEffect, _config, options) => {
+	if (!(activeEffect?.parent instanceof Actor) ||
+		!_config.changes
+	) {
+		return;
+	}
+	const changes = _config.changes;
+	tidyCustomEffect(activeEffect?.parent, changes);
+});
+
+/**
+ * Handle re-rendering the app if it is open and an update occurs
+ */
+Hooks.on('updateActiveEffect', (activeEffect, _config, options) => {
+	if (!(activeEffect?.parent instanceof Actor) ||
+		!_config.changes
+	) {
+		return;
+	}
+	const changes = _config.changes;
+	tidyCustomEffect(activeEffect?.parent, changes);
+});
+
+/**
+ * Handle removing any actor data changes when an active effect is deleted from an actor
+ */
+Hooks.on('deleteActiveEffect', (activeEffect, _config, options) => {
+	if (!(activeEffect?.parent instanceof Actor) ||
+		!_config.changes
+	) {
+		return;
+	}
+	const changes = _config.changes;
+	tidyCustomEffect(activeEffect?.parent, changes);
 });
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
