@@ -1,9 +1,7 @@
 <li
 	class="item fav-item {{#if item.isMagic}} magic-item{{/if}} {{#if item.system.equipped}} equipped{{/if}} {{#if item.system.preparation.prepared}} prepared{{/if}} {{#if item.alwaysPrep}} alwaysprepared{{/if}} {{ item.attunement.cls }}"
 	data-item-id="{{item._id}}"
-	{{#if
-	item.canPrep}}title="{{item.toggleTitle}}{{/if}}"
->
+	{{#if item.canPrep}}title="{{item.toggleTitle}}{{/if}}">
 	<div class="item-name rollable">
 		<div class="item-image" style="background-image: url('{{item.img}}')">
 			<i class="fa fa-dice-d20"></i>
@@ -54,4 +52,14 @@
 		<span title="{{localize 'DND5E.Usage'}}: {{label}}">{{label}}</span>
 		{{/each}}
 	</div>
+
+	{{#if @root.owner}}
+	<div class="item-controls flexrow" style="display:none">
+	  {{#unless section.editableName}}
+	  <a class="item-control item-edit" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
+		  <i class="fas fa-edit fa-fw"></i>
+	  </a>
+	  {{/unless}}
+	</div>
+	{{/if}}	
 </li>

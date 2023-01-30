@@ -239,6 +239,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		context.isGM = game.user.isGM;
 		context.rightClickDisabled = game.settings.get("tidy5e-sheet", "rightClickDisabled");
 		context.classicControlsEnabled = game.settings.get("tidy5e-sheet", "classicControlsEnabled");
+		context.classicControlsDisabled = !game.settings.get("tidy5e-sheet", "classicControlsEnabled");
 		return context;
 	}
 

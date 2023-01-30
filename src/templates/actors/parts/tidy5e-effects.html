@@ -23,8 +23,8 @@
 					<span>{{effect.sourceName}}</span>
 				</div>
 				<div class="item-detail effect-duration">{{effect.duration.label}}</div>
-				{{#if @root.owner}} {{#if @root.classicControlsEnabled}}
-				<div class="item-controls effect-controls flexrow">
+				{{#if @root.owner}} 
+				<div class="item-controls effect-controls flexrow" {{#if @root.classicControlsDisabled}} style="display:none" {{/if}}>
 					{{#if @root.editable}}
 					<a class="effect-control" data-action="toggle" title="{{#if effect.disabled}}{{localize 'DND5E.EffectEnable'}}{{else}}{{localize 'DND5E.EffectDisable'}}{{/if}}">
 						<i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
@@ -37,7 +37,7 @@
 					</a>
 					{{/if}}
 				</div>
-				{{/if}} {{/if}}
+				{{/if}}
 			</li>
 			{{/each}}
 			<li class="items-footer" data-effect-type="{{section.type}}">

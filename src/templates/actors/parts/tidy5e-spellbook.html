@@ -139,8 +139,7 @@
           </div>
 
           {{#if @root.owner}}
-          {{#if @root.classicControlsEnabled}}
-          <div class="item-controls flexrow">
+          <div class="item-controls flexrow" {{#if @root.classicControlsDisabled}} style="display:none" {{/if}}>
             {{#if section.canPrepare}}
             <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
               {{#if (eq ctx.toggleClass 'active')}}
@@ -162,7 +161,6 @@
               <i class="fas fa-trash fa-fw"></i>
             </a>
           </div>
-          {{/if}}
           {{/if}}
         </li>
       {{/with}}

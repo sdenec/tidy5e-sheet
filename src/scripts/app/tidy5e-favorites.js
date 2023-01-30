@@ -440,6 +440,8 @@ export const addFavorites = async function (app, html, data, position) {
 		let favHtml = $(await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context));
 
 		// Activating favorite-list events
+    tidy5eContextMenu(favHtml, app);
+
 
 		// showing item summary
 		favHtml.find(".item-name h4").click((event) => app._onItemSummary(event));

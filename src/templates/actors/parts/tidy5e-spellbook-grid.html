@@ -36,6 +36,12 @@
           <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
           {{/if}}
 
+          {{#if @root.owner}}
+          <a class="item-control item-edit" style="display:none" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
+            <i class="fas fa-edit fa-fw"></i>
+          </a>
+          {{/if}}	
+
           <div class="item-name rollable">
             <div class="item-image" style="background-image: url({{item.img}})">
               <i class="fa fa-dice-d20"></i>
