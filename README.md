@@ -43,7 +43,7 @@ game.actors.updateAll((actor) => {
             eyes: actor.system.details?.eyes ?? actor.flags["tidy5e-sheet"]?.eyes ?? "",
             skin: actor.system.details?.skin ?? actor.flags["tidy5e-sheet"]?.skin ?? "",
             hair: actor.system.details?.hair ?? actor.flags["tidy5e-sheet"]?.hair ?? "",
-            maxPreparedSpells: actor.system.details?.maxPreparedSpells ?? actor.flags["tidy5e-sheet"].maxPreparedSpells ?? "", 
+            maxPreparedSpells: actor.system.details?.maxPreparedSpells ?? actor.flags["tidy5e-sheet"]?.maxPreparedSpells ?? "", 
             notes: {
                 "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
             },
