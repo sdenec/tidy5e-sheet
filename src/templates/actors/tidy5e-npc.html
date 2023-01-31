@@ -79,9 +79,15 @@
           <input name="system.attributes.hp.tempmax" type="text" class="max-temphp"
           placeholder="+{{ localize 'DND5E.Max' }}" value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}"
           title="{{localize 'DND5E.HitPointsTempMax'}}" data-dtype="Number" maxlength="5">
+          {{#if @root.allowHpMaxOverride}}
+          <a class="config-button hit-points-tidy" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
+						<i class="fas fa-cog"></i>
+					</a>
+          {{else}}
           <a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
 						<i class="fas fa-cog"></i>
 					</a>
+          {{/if}}
         </div>
 
       </section>

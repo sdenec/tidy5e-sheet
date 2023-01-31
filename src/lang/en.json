@@ -534,7 +534,7 @@
 	},
 	"TIDY5E.Settings.AllowHpMaxOverride": {
 		"name": "Allow Hp Max override on Character",
-		"hint": "If enable this module replace will let the GM to manually change the hp max  value on the character sheet."
+		"hint": "If enable this module replace will let the GM to manually change the hp max  value on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOUR FOR AVOID THE STRANGE ERROR RESTE TO '0'"
 	},
 
 	"TIDY5E.Settings.Reset": {
