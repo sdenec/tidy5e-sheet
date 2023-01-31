@@ -732,13 +732,13 @@ async function npcFavorites(app, html, data) {
       favBtn.click((ev) => {
         app.actor.items
           .get(item._id)
-          .update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+          .update({ "flags.tidy5e-sheet.favorite": !item.flags.tidy5e-sheet.favorite });
       });
       html
         .find(`.item[data-item-id="${item._id}"]`)
         .find(".item-controls .item-edit")
         .before(favBtn);
-      if (item.flags.favtab.isFavorite) {
+      if (item.flags.tidy5e-sheet.favorite) {
         html.find(`.item[data-item-id="${item._id}"]`).addClass("isFav");
       }
     }

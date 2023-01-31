@@ -1,4 +1,4 @@
-import BaseConfigSheet from "./tidy-base-config-sheet.js";
+import BaseConfigSheet from "./tidy5e-base-config-sheet.js";
 
 /**
  * A form for configuring actor hit points and bonuses.

@@ -1,4 +1,4 @@
-import ActorHitPointsConfig from "./tidy-actor-hit-points-config.js";
+import ActorHitPointsConfig from "./tidy5e-actor-hit-points-config.js";
 
 export const tidy5eListeners = function (html, actor, app) {
 	// set input fields via editable elements
