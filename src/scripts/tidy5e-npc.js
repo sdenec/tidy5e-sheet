@@ -237,8 +237,10 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
 		context.hideSpellbookTabNpc = game.settings.get("tidy5e-sheet", "hideSpellbookTabNpc");
 		context.isGM = game.user.isGM;
+		context.allowHpMaxOverride = game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
 		context.rightClickDisabled = game.settings.get("tidy5e-sheet", "rightClickDisabled");
 		context.classicControlsEnabled = game.settings.get("tidy5e-sheet", "classicControlsEnabled");
+		context.classicControlsDisabled = !game.settings.get("tidy5e-sheet", "classicControlsEnabled");
 		return context;
 	}
 
@@ -730,13 +732,13 @@ async function npcFavorites(app, html, data) {
       favBtn.click((ev) => {
         app.actor.items
           .get(item._id)
-          .update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+          .update({ "flags.tidy5e-sheet.favorite": !item.flags.tidy5e-sheet.favorite });
       });
       html
         .find(`.item[data-item-id="${item._id}"]`)
         .find(".item-controls .item-edit")
         .before(favBtn);
-      if (item.flags.favtab.isFavorite) {
+      if (item.flags.tidy5e-sheet.favorite) {
         html.find(`.item[data-item-id="${item._id}"]`).addClass("isFav");
       }
     }

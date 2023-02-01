@@ -70,22 +70,45 @@ export function RGBAToHexAFromColor(r, g, b, a) {
  * @returns
  */
 export function HexToRGBA(hexCode, opacity = 1) {
+	/*
 	let hex = hexCode.replace("#", "");
 
 	if (hex.length === 3) {
 		hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
 	}
 
-	const r = parseInt(hex.substring(0, 2), 16);
-	const g = parseInt(hex.substring(2, 4), 16);
-	const b = parseInt(hex.substring(4, 6), 16);
+	let r = parseInt(hex.substring(0, 2), 16);
+	let g = parseInt(hex.substring(2, 4), 16);
+	let b = parseInt(hex.substring(4, 6), 16);
 
-	/* Backward compatibility for whole number based opacity values. */
+	// Backward compatibility for whole number based opacity values.
 	if (opacity > 1 && opacity <= 100) {
 		opacity = opacity / 100;
 	}
-
 	return `rgba(${r},${g},${b},${opacity})`;
+	*/
+	let rgba = _hexToRGBA(hexCode)
+	let r =  rgba[0];
+	let g =  rgba[1];
+	let b =  rgba[2];
+	let a = rgba[3];
+	return `rgba(${r},${g},${b},${a})`;
+}
+
+// Hex to rgba
+function _convertHexUnitTo256(hexStr) { 
+	return parseInt(hexStr.repeat(2 / hexStr.length), 16); 
+};
+
+/**
+ * turn hex rgba into rgba string
+ * @param {String} hex 8 long hex value in string form, eg: "#123456ff"
+ * @returns Array of rgba[r, g, b, a]
+ */
+function _hexToRGBA(hex) {
+    const hexArr = hex.slice(1).match(new RegExp(".{2}", "g"));
+    const [r, g, b, a] = hexArr.map(_convertHexUnitTo256);
+    return [r, g, b, Math.round((a / 256 + Number.EPSILON) * 100) / 100];
 }
 
 export const mapDefaultColorsRGB = {

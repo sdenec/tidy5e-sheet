@@ -1,3 +1,5 @@
+import ActorHitPointsConfig from "./tidy5e-actor-hit-points-config.js";
+
 export const tidy5eListeners = function (html, actor, app) {
 	// set input fields via editable elements
 	html.find("[contenteditable]")
@@ -89,4 +91,9 @@ export const tidy5eListeners = function (html, actor, app) {
 	// html.on("click", "[data-action='delete']", app._onItemDelete.bind(app));
 	// html.on("click", "[data-action='duplicate']", app._onItemDuplicate.bind(app));
 	html.on("click", "[data-action='itemDuplicate']", app._onItemDuplicate.bind(app));
+
+	html.find(".hit-points-tidy").click(() => {
+		let app = new ActorHitPointsConfig(actor);
+		app?.render(true);
+	});
 };

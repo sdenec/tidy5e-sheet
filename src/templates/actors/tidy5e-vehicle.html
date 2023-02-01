@@ -106,10 +106,16 @@
 						maxlength="5"
 					/>
 					<!-- TODO in the future 
-          <a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
+					{{#if @root.allowHpMaxOverride}}
+					<a class="config-button hit-points-tidy" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
 						<i class="fas fa-cog"></i>
 					</a>
-          -->
+					{{else}}
+          			<a class="config-button" data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
+						<i class="fas fa-cog"></i>
+					</a>
+					{{/if}}
+          			-->
 				</div>
 			</section>
 
