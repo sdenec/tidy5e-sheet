@@ -31,76 +31,32 @@ To install this module manually:
 // 1) THIS MACRO MUST BE LAUNCHED IN A 2.0.3 WORLDS IF YOU DON'T HAVE A BACKUP SADLY YOU LOST THE JOURNAL DATA
 // 2) THIS MACRO MUST NOT BE LAUNCHED IN A 2.1.X WORLD
 // 3) BEFORE LAUNCH THIS MACRO DO A BACKUP OF THE CURRENT WORLD JUST TO BE SAFE
-
-//Update old tidy5e CHARACTER data
-game.actors.updateAll((actor) => {
-    return {
-        "flags.tidy5e-sheet": {
-            gender: actor.system.details?.gender ?? actor.flags["tidy5e-sheet"]?.gender ?? "",
-            age: actor.system.details?.age ?? actor.flags["tidy5e-sheet"]?.age ?? "",
-            height: actor.system.details?.height ?? actor.flags["tidy5e-sheet"]?.height ?? "",
-            weight: actor.system.details?.weight ?? actor.flags["tidy5e-sheet"]?.weight ?? "",
-            eyes: actor.system.details?.eyes ?? actor.flags["tidy5e-sheet"]?.eyes ?? "",
-            skin: actor.system.details?.skin ?? actor.flags["tidy5e-sheet"]?.skin ?? "",
-            hair: actor.system.details?.hair ?? actor.flags["tidy5e-sheet"]?.hair ?? "",
-            maxPreparedSpells: actor.system.details?.maxPreparedSpells ?? actor.flags["tidy5e-sheet"]?.maxPreparedSpells ?? "", 
-            notes: {
-                "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
-            },
-            notes1: {
-                "name": actor.system.details?.notes1name ?? actor.flags["tidy5e-sheet"]?.notes1?.name ?? "",
-                "value": actor.system.details?.notes1?.value ?? actor.flags["tidy5e-sheet"]?.notes1?.value ?? ""
-            },
-            notes2: {
-                "name": actor.system.details?.notes2name ?? actor.flags["tidy5e-sheet"]?.notes2?.name ?? "",
-                "value": actor.system.details?.notes2?.value ?? actor.flags["tidy5e-sheet"]?.notes2?.value ?? ""
-            },
-            notes3: {
-                "name": actor.system.details?.notes3name ?? actor.flags["tidy5e-sheet"]?.notes3?.name ?? "",
-                "value": actor.system.details?.notes3?.value ?? actor.flags["tidy5e-sheet"]?.notes3?.value ?? ""
-            },
-            notes4: {
-                "name": actor.system.details?.notes4name ?? actor.flags["tidy5e-sheet"]?.notes4?.name ?? "",
-                "value": actor.system.details?.notes4?.value ?? actor.flags["tidy5e-sheet"]?.notes4?.value ?? ""
-            }
-        }
+// Ty to @zhell for the macro
+const updates = game.actors.reduce((acc, a) => {
+    const flags = foundry.utils.getProperty(a, "flags.tidy5e-sheet") ?? {};
+    const asd = a.system.details ?? {};
+    const upd = {};
+    const props = {
+        "character": ["gender", "age", "height", "weight", "eyes", "skin", "hair", "maxPreparedSpells"],
+        "npc": ["trait", "ideal", "bond", "flaw"]
+    } [a.type];
+    if (!props) {
+      return acc;
     }
-}, (actor) => {
-    return actor.type === 'character';
-});
-
-//Update old tidy5e NPC Traits data
-game.actors.updateAll((actor) => {
-    return {
-        "flags.tidy5e-sheet": {
-            trait: actor.system.details?.trait ?? actor.flags["tidy5e-sheet"]?.trait ?? "",
-            ideal: actor.system.details?.ideal ?? actor.flags["tidy5e-sheet"]?.ideal ?? "",
-            bond: actor.system.details?.bond ?? actor.flags["tidy5e-sheet"]?.bond ?? "",
-            flaw: actor.system.details?.flaw ?? actor.flags["tidy5e-sheet"]?.flaw ?? "",
-            notes: {
-                "value": actor.system.details?.notes?.value ?? actor.flags["tidy5e-sheet"]?.notes?.value ?? ""
-            },
-            notes1: {
-                "name": actor.system.details?.notes1name ?? actor.flags["tidy5e-sheet"]?.notes1?.name ?? "",
-                "value": actor.system.details?.notes1?.value ?? actor.flags["tidy5e-sheet"]?.notes1?.value ?? ""
-            },
-            notes2: {
-                "name": actor.system.details?.notes2name ?? actor.flags["tidy5e-sheet"]?.notes2?.name ?? "",
-                "value": actor.system.details?.notes2?.value ?? actor.flags["tidy5e-sheet"]?.notes2?.value ?? ""
-            },
-            notes3: {
-                "name": actor.system.details?.notes3name ?? actor.flags["tidy5e-sheet"]?.notes3?.name ?? "",
-                "value": actor.system.details?.notes3?.value ?? actor.flags["tidy5e-sheet"]?.notes3?.value ?? ""
-            },
-            notes4: {
-                "name": actor.system.details?.notes4name ?? actor.flags["tidy5e-sheet"]?.notes4?.name ?? "",
-                "value": actor.system.details?.notes4?.value ?? actor.flags["tidy5e-sheet"]?.notes4?.value ?? ""
-            }
-        }
+    for (const prop of props) {
+      upd[prop] = asd[prop] || flags[prop] || "";
     }
-}, (actor) => {
-    return actor.type === 'npc';
-});
+    const notes = ["notes", "notes1", "notes2", "notes3", "notes4"];
+    for (const n of notes) {
+      upd[`${n}.value`] = asd[n]?.value || flags[n]?.value || "";
+    }
+    acc.push({
+        _id: a.id,
+        "flags.tidy5e-sheet": upd
+    });
+    return acc;
+}, []);
+await Actor.updateDocuments(updates);
 ```
 
 ## Features
