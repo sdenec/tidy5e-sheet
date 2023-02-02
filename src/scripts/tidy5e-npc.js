@@ -10,6 +10,7 @@ import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
+import CONSTANTS from "./app/constants.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -30,14 +31,14 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 	 * @return {Object}
 	 */
 	static get defaultOptions() {
-		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default" ? game.settings.get("tidy5e-sheet", "defaultActionsTab") : "attributes";
-		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions") {
+		let defaultTab = game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default" ? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") : "attributes";
+		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions") {
 			defaultTab = "attributes";
 		}
 
 		return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "npc"],
-			width: game.settings.get("tidy5e-sheet", "npsSheetWidth") ?? 740,
+			width: game.settings.get(CONSTANTS.MODULE_ID, "npsSheetWidth") ?? 740,
 			height: 720,
 			tabs: [
 				{
@@ -198,35 +199,35 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 
 		// Journal HTML enrichment
 
-		context.journalNotes1HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes1?.value, {
+		context.journalNotes1HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes1?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalNotes2HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes2?.value, {
+		context.journalNotes2HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes2?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalNotes3HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes3?.value, {
+		context.journalNotes3HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes3?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalNotes4HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes4?.value, {
+		context.journalNotes4HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes4?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalHTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes?.value, {
+		context.journalHTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
@@ -234,13 +235,13 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		});
 
 		context.appId = this.appId;
-		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
-		context.hideSpellbookTabNpc = game.settings.get("tidy5e-sheet", "hideSpellbookTabNpc");
+		context.allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
+		context.hideSpellbookTabNpc = game.settings.get(CONSTANTS.MODULE_ID, "hideSpellbookTabNpc");
 		context.isGM = game.user.isGM;
-		context.allowHpMaxOverride = game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
-		context.rightClickDisabled = game.settings.get("tidy5e-sheet", "rightClickDisabled");
-		context.classicControlsEnabled = game.settings.get("tidy5e-sheet", "classicControlsEnabled");
-		context.classicControlsDisabled = !game.settings.get("tidy5e-sheet", "classicControlsEnabled");
+		context.allowHpMaxOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpMaxOverride");
+		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
+		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
+		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		return context;
 	}
 
@@ -260,7 +261,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		tidy5eListeners(html, actor, this);
 		tidy5eContextMenu(html, this);
 		tidy5eShowActorArt(html, actor);
-		if (game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "itemCardsForNpcs")) {
 			tidy5eItemCard(html, actor);
 		}
 		tidy5eAmmoSwitch(html, actor);
@@ -314,10 +315,10 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		});
 
 		html.find(".toggle-personality-info").click(async (event) => {
-			if (actor.getFlag("tidy5e-sheet", "showNpcPersonalityInfo")) {
-				await actor.unsetFlag("tidy5e-sheet", "showNpcPersonalityInfo");
+			if (actor.getFlag(CONSTANTS.MODULE_ID, "showNpcPersonalityInfo")) {
+				await actor.unsetFlag(CONSTANTS.MODULE_ID, "showNpcPersonalityInfo");
 			} else {
-				await actor.setFlag("tidy5e-sheet", "showNpcPersonalityInfo", true);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "showNpcPersonalityInfo", true);
 			}
 		});
 
@@ -341,19 +342,19 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 
 		// toggle proficient skill visibility in the skill list
 		html.find(".skills-list .toggle-proficient").click(async (event) => {
-			if (actor.getFlag("tidy5e-sheet", "npcSkillsExpanded")) {
-				await actor.unsetFlag("tidy5e-sheet", "npcSkillsExpanded");
+			if (actor.getFlag(CONSTANTS.MODULE_ID, "npcSkillsExpanded")) {
+				await actor.unsetFlag(CONSTANTS.MODULE_ID, "npcSkillsExpanded");
 			} else {
-				await actor.setFlag("tidy5e-sheet", "npcSkillsExpanded", true);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "npcSkillsExpanded", true);
 			}
 		});
 
 		// toggle empty traits visibility in the traits list
 		html.find(".traits .toggle-traits").click(async (event) => {
-			if (actor.getFlag("tidy5e-sheet", "traitsExpanded")) {
-				await actor.unsetFlag("tidy5e-sheet", "traitsExpanded");
+			if (actor.getFlag(CONSTANTS.MODULE_ID, "traitsExpanded")) {
+				await actor.unsetFlag(CONSTANTS.MODULE_ID, "traitsExpanded");
 			} else {
-				await actor.setFlag("tidy5e-sheet", "traitsExpanded", true);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "traitsExpanded", true);
 			}
 		});
 
@@ -433,7 +434,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 	async _onShortRest(event) {
 		event.preventDefault();
 		await this._onSubmit(event);
-		if (game.settings.get("tidy5e-sheet", "restingForNpcsChatDisabled")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsChatDisabled")) {
 			let obj = {
 				dialog: true,
 				chat: false,
@@ -453,7 +454,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 	async _onLongRest(event) {
 		event.preventDefault();
 		await this._onSubmit(event);
-		if (game.settings.get("tidy5e-sheet", "restingForNpcsChatDisabled")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsChatDisabled")) {
 			let obj = {
 				dialog: true,
 				chat: false,
@@ -547,65 +548,65 @@ async function resetTempHp(app, html, data) {
 async function setSheetClasses(app, html, data) {
 	const { token } = app;
 	const actor = app.actor;
-	if (actor.getFlag("tidy5e-sheet", "showNpcPersonalityInfo")) {
+	if (actor.getFlag(CONSTANTS.MODULE_ID, "showNpcPersonalityInfo")) {
 		html.find(".tidy5e-sheet .left-notes").removeClass("hidden");
 	}
-	if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
-		if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 			html.find(".tidy5e-sheet .grid-layout .items-list").addClass("alt-context");
 		} else {
 			html.find(".tidy5e-sheet .items-list").addClass("alt-context");
 		}
 	}
-	// if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	// if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 	//   tidy5eClassicControls(html);
 	// }
-	if (!game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 		html.find(".tidy5e-sheet .items-header-controls").remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "traitsMovedBelowResourceNpc")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "traitsMovedBelowResourceNpc")) {
 		let altPos = html.find(".alt-trait-pos");
 		let traits = html.find(".traits");
 		altPos.append(traits);
 	}
-	if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .rest-container").remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "npc" || game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all") {
 		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("roundPortrait");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpOverlayDisabledNpc")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayDisabledNpc")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("disable-hp-overlay");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpBarDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpBarDisabled")) {
 		html.find(".tidy5e-sheet .profile").addClass("disable-hp-bar");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpOverlayBorderNpc") > 0) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderNpc") > 0) {
 		$(".system-dnd5e")
 			.get(0)
-			.style.setProperty("--npc-border", game.settings.get("tidy5e-sheet", "hpOverlayBorderNpc") + "px");
+			.style.setProperty("--npc-border", game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderNpc") + "px");
 	} else {
 		$(".system-dnd5e").get(0).style.removeProperty("--npc-border");
 	}
-	if (game.settings.get("tidy5e-sheet", "traitsAlwaysShownNpc")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "traitsAlwaysShownNpc")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .traits").addClass("always-visible");
 	}
-	if (game.settings.get("tidy5e-sheet", "traitLabelsEnabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "traitLabelsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .traits").addClass("show-labels");
 	}
-	if (game.settings.get("tidy5e-sheet", "skillsAlwaysShownNpc")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "skillsAlwaysShownNpc")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .skills-list").addClass("always-visible");
 	}
-	if (token && token.actor.prototypeToken.actorLink && game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both") {
+	if (token && token.actor.prototypeToken.actorLink && game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both") {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("linked");
 	}
-	if (token && !token.actor.prototypeToken.actorLink && (game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
+	if (token && !token.actor.prototypeToken.actorLink && (game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "unlinked" || game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both")) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("unlinked");
 	}
-	if (!token && (game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "unlinked" || game.settings.get("tidy5e-sheet", "linkMarkerNpc") == "both")) {
+	if (!token && (game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "unlinked" || game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both")) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("original");
 	}
-	$(".info-card-hint .key").html(game.settings.get("tidy5e-sheet", "itemCardsFixKey"));
+	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
 
 	applyColorPickerCustomization(html);
 }
@@ -650,9 +651,9 @@ async function hideSpellbook(app, html, data) {
 // Edit Protection - Hide empty Inventory Sections, add and delete-buttons
 async function editProtection(app, html, data) {
 	let actor = app.actor;
-	if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+	if (!actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 		/* MOVED TO LOCKERS.JS
-    if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, "editTotalLockEnabled")) {
       html.find(".skill input").prop("disabled", true);
       html.find(".skill .config-button").remove();
       html.find(".skill .proficiency-toggle").remove();
@@ -748,7 +749,7 @@ async function npcFavorites(app, html, data) {
 
 // Add Spell Slot Marker
 function spellSlotMarker(app, html, data) {
-	if (game.settings.get("tidy5e-sheet", "hideSpellSlotMarker")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hideSpellSlotMarker")) {
 		return;
 	}
 	let actor = app.actor;
@@ -819,7 +820,7 @@ function spellSlotMarker(app, html, data) {
 
 // Hide Standard Encumbrance Bar
 function hideStandardEncumbranceBar(app, html, data) {
-	if (!game.settings.get("tidy5e-sheet", "hideStandardEncumbranceBar")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "hideStandardEncumbranceBar")) {
 		return;
 	}
 	const elements = html.find(".encumbrance");

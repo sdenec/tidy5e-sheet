@@ -17,15 +17,16 @@
  */
 
 import { applyColorPickerCustomization } from "./color-picker.js";
+import CONSTANTS from "./constants.js";
 import { tidy5eContextMenu } from "./context-menu.js";
 
 export const isItemFavorite = function (item) {
 	if (!item) {
 		return false;
 	}
-	let isFav = (game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) || (game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) || item.flags["tidy5e-sheet"]?.favorite || false;
+	let isFav = (game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) || (game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) || item.flags[CONSTANTS.MODULE_ID]?.favorite || false;
 
-	const isAlreadyTidyFav = getProperty(item.flags["tidy5e-sheet"]?.favorite);
+	const isAlreadyTidyFav = getProperty(item.flags[CONSTANTS.MODULE_ID]?.favorite);
 	// for retrocompatibility
 	const isAlreadyFabTab = getProperty(item.flags["favtab"]?.isFavorite);
 	if (String(isAlreadyFabTab) === "true" && String(isAlreadyFabTab) === "false") {
@@ -35,7 +36,7 @@ export const isItemFavorite = function (item) {
 	}
 
 	// if(String(isAlreadyTidyFav) !== "true" && String(isAlreadyTidyFav) !== "false") {
-	// //   item.setFlag("tidy5e-sheet","favorite",isFav);
+	// //   item.setFlag(CONSTANTS.MODULE_ID,"favorite",isFav);
 	// }
 
 	return isFav;
@@ -298,8 +299,8 @@ export const addFavorites = async function (app, html, data, position) {
 			item.editable = app.options.editable;
 			switch (item.type) {
 				case "feat": {
-					// if (!is_real_number(item.flags["tidy5e-sheet"].sort)) {
-					//   item.flags["tidy5e-sheet"].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
+					// if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+					//   item.flags[CONSTANTS.MODULE_ID].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
 					// }
 					item.isFeat = true;
 					favFeats.push(item);
@@ -331,8 +332,8 @@ export const addFavorites = async function (app, html, data, position) {
 					break;
 				}
 				default: {
-					// if (!is_real_number(item.flags["tidy5e-sheet"].sort)) {
-					//   item.flags["tidy5e-sheet"].sort = (favItems.count + 1) * 100000; // initial sort key if not present
+					// if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+					//   item.flags[CONSTANTS.MODULE_ID].sort = (favItems.count + 1) * 100000; // initial sort key if not present
 					// }
 					item.isItem = true;
 					favItems.push(item);
@@ -426,16 +427,16 @@ export const addFavorites = async function (app, html, data, position) {
 
 		context.favItems =
 			favItems.length > 0
-				? favItems // .sort((a, b) => a.flags["tidy5e-sheet"].sort - b.flags["tidy5e-sheet"].sort)
+				? favItems // .sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
 				: false;
 		context.favFeats =
 			favFeats.length > 0
-				? favFeats // .sort((a, b) => a.flags["tidy5e-sheet"].sort - b.flags["tidy5e-sheet"].sort)
+				? favFeats // .sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
 				: false;
 		context.favSpellsPrepMode = spellPrepModeCount > 0 ? favSpellsPrepMode : false;
 		context.favSpells = spellCount > 0 ? favSpells : false;
 		context.editable = app.options.editable;
-		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
+		context.allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
 
 		await loadTemplates(["modules/tidy5e-sheet/templates/favorites/favorite-item.html"]);
 		let favHtml = $(await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context));
@@ -617,7 +618,7 @@ export const addFavorites = async function (app, html, data, position) {
 		favContent.append(favHtml);
 		// attributesTab.prepend(favMarker);
 		html.find(".tab.attributes").scrollTop(position.top);
-		if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
 			favContent.find(".items-list").addClass("alt-context");
 		}
 

@@ -1,3 +1,4 @@
+import CONSTANTS from "./constants.js";
 import ActorHitPointsConfig from "./tidy5e-actor-hit-points-config.js";
 
 export const tidy5eListeners = function (html, actor, app) {
@@ -81,10 +82,10 @@ export const tidy5eListeners = function (html, actor, app) {
 	html.find(".toggle-allow-edit span").click(async (event) => {
 		event.preventDefault();
 
-		if (actor.getFlag("tidy5e-sheet", "allow-edit")) {
-			await actor.unsetFlag("tidy5e-sheet", "allow-edit");
+		if (actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
+			await actor.unsetFlag(CONSTANTS.MODULE_ID, "allow-edit");
 		} else {
-			await actor.setFlag("tidy5e-sheet", "allow-edit", true);
+			await actor.setFlag(CONSTANTS.MODULE_ID, "allow-edit", true);
 		}
 	});
 

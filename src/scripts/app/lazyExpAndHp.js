@@ -1,3 +1,5 @@
+import CONSTANTS from "./constants";
+
 const signCase = {
 	add: "+",
 	subtract: "-",
@@ -206,7 +208,7 @@ function _onChangeHpMax(ev) {
 }
 
 export function applyLazyExp(app, html, actorData) {
-	if (!game.settings.get("tidy5e-sheet", "lazyHpAndExpEnable")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable")) {
 		return;
 	}
 
@@ -225,7 +227,7 @@ export function applyLazyExp(app, html, actorData) {
 }
 
 export function applyLazyHp(app, html, actorData) {
-	if (!game.settings.get("tidy5e-sheet", "lazyHpAndExpEnable")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable")) {
 		return;
 	}
 
@@ -271,7 +273,7 @@ function is_lazy_number(inNumber) {
 }
 
 Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
-	if (!game.settings.get("tidy5e-sheet", "lazyHpAndExpEnable")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable")) {
 		return;
 	}
 

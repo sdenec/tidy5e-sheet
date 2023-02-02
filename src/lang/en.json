@@ -546,5 +546,9 @@
 			"confirm": "Reset Module Settings",
 			"cancel": "Cancel"
 		}
+	},
+	"TIDY5E.Settings.Debug": {
+		"name": "Enable debugging",
+		"hint": "Prints debug messages to the console"
 	}
 }

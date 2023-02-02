@@ -15,24 +15,25 @@ import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 import { updateExhaustion } from "./app/exhaustion.js";
 import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
+import CONSTANTS from "./app/constants.js";
 
 let position = 0;
 
 export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter {
 	get template() {
-		if (!game.user.isGM && this.actor.limited && !game.settings.get("tidy5e-sheet", "expandedSheetEnabled")) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
+		if (!game.user.isGM && this.actor.limited && !game.settings.get(CONSTANTS.MODULE_ID, "expandedSheetEnabled")) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
 	}
 
 	static get defaultOptions() {
-		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default" ? game.settings.get("tidy5e-sheet", "defaultActionsTab") : "attributes";
-		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions") {
+		let defaultTab = game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default" ? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") : "attributes";
+		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions") {
 			defaultTab = "attributes";
 		}
 		return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "character"],
 			blockFavTab: true,
-			width: game.settings.get("tidy5e-sheet", "playerSheetWidth") ?? 740,
+			width: game.settings.get(CONSTANTS.MODULE_ID, "playerSheetWidth") ?? 740,
 			height: 840,
 			tabs: [
 				{
@@ -56,35 +57,35 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 
 		// Journal HTML enrichment
 
-		context.journalNotes1HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes1?.value, {
+		context.journalNotes1HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes1?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalNotes2HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes2?.value, {
+		context.journalNotes2HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes2?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalNotes3HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes3?.value, {
+		context.journalNotes3HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes3?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalNotes4HTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes4?.value, {
+		context.journalNotes4HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes4?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
 			relativeTo: this.actor,
 		});
 
-		context.journalHTML = await TextEditor.enrichHTML(context.actor.flags["tidy5e-sheet"]?.notes?.value, {
+		context.journalHTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes?.value, {
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
@@ -92,12 +93,12 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		});
 
 		context.appId = this.appId;
-		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
+		context.allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
 		context.isGM = game.user.isGM;
-		context.allowHpMaxOverride = game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
-		context.rightClickDisabled = game.settings.get("tidy5e-sheet", "rightClickDisabled");
-		context.classicControlsEnabled = game.settings.get("tidy5e-sheet", "classicControlsEnabled");
-		context.classicControlsDisabled = !game.settings.get("tidy5e-sheet", "classicControlsEnabled");
+		context.allowHpMaxOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpMaxOverride");
+		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
+		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
+		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 
 		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
 		if (this.actor.system.attributes.exhaustion === 0) {
@@ -159,16 +160,16 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			event.preventDefault();
 
 			if ($(event.currentTarget).hasClass("spellbook-layout")) {
-				if (actor.getFlag("tidy5e-sheet", "spellbook-grid")) {
-					await actor.unsetFlag("tidy5e-sheet", "spellbook-grid");
+				if (actor.getFlag(CONSTANTS.MODULE_ID, "spellbook-grid")) {
+					await actor.unsetFlag(CONSTANTS.MODULE_ID, "spellbook-grid");
 				} else {
-					await actor.setFlag("tidy5e-sheet", "spellbook-grid", true);
+					await actor.setFlag(CONSTANTS.MODULE_ID, "spellbook-grid", true);
 				}
 			} else {
-				if (actor.getFlag("tidy5e-sheet", "inventory-grid")) {
-					await actor.unsetFlag("tidy5e-sheet", "inventory-grid");
+				if (actor.getFlag(CONSTANTS.MODULE_ID, "inventory-grid")) {
+					await actor.unsetFlag(CONSTANTS.MODULE_ID, "inventory-grid");
 				} else {
-					await actor.setFlag("tidy5e-sheet", "inventory-grid", true);
+					await actor.setFlag(CONSTANTS.MODULE_ID, "inventory-grid", true);
 				}
 			}
 		});
@@ -177,10 +178,10 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		html.find(".traits-toggle").click(async (event) => {
 			event.preventDefault();
 
-			if (actor.getFlag("tidy5e-sheet", "traits-compressed")) {
-				await actor.unsetFlag("tidy5e-sheet", "traits-compressed");
+			if (actor.getFlag(CONSTANTS.MODULE_ID, "traits-compressed")) {
+				await actor.unsetFlag(CONSTANTS.MODULE_ID, "traits-compressed");
 			} else {
-				await actor.setFlag("tidy5e-sheet", "traits-compressed", true);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "traits-compressed", true);
 			}
 		});
 
@@ -192,7 +193,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			await actor.update({ "system.attributes.exhaustion": value });
 			// TODO strange why i did need this ???
 			setProperty(actor, "system.attributes.exhaustion", value);
-			if (game.settings.get("tidy5e-sheet", "exhaustionEffectsEnabled") != "default") {
+			if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") != "default") {
 				if (actor.constructor.name != "Actor5e") {
 					// Only act if we initiated the update ourselves, and the effect is a child of a character
 				} else {
@@ -226,10 +227,10 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 
 		// toggle empty traits visibility in the traits list
 		html.find(".traits .toggle-traits").click(async (event) => {
-			if (actor.getFlag("tidy5e-sheet", "traitsExpanded")) {
-				await actor.unsetFlag("tidy5e-sheet", "traitsExpanded");
+			if (actor.getFlag(CONSTANTS.MODULE_ID, "traitsExpanded")) {
+				await actor.unsetFlag(CONSTANTS.MODULE_ID, "traitsExpanded");
 			} else {
-				await actor.setFlag("tidy5e-sheet", "traitsExpanded", true);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "traitsExpanded", true);
 			}
 		});
 
@@ -361,11 +362,11 @@ async function checkDeathSaveStatus(app, html, data) {
 // Edit Protection - Hide empty Inventory Sections, Effects aswell as add and delete-buttons
 async function editProtection(app, html, data) {
 	let actor = app.actor;
-	if (game.user.isGM && game.settings.get("tidy5e-sheet", "editGmAlwaysEnabled")) {
+	if (game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, "editGmAlwaysEnabled")) {
 		html.find(".classic-controls").addClass("gmEdit");
-	} else if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+	} else if (!actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 		/* MOVED TO LOCKERS.JS
-    if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, "editTotalLockEnabled")) {
       html.find(".skill input").prop("disabled", true);
       html.find(".skill .config-button").remove();
       // html.find(".skill .proficiency-toggle").remove();
@@ -416,7 +417,7 @@ async function editProtection(app, html, data) {
 		html.find(".inventory-list .item-control.item-delete").remove();
 		html.find(".inventory-list .item-control.item-duplicate").remove();
 
-		if (game.settings.get("tidy5e-sheet", "editEffectsGmOnlyEnabled") && !game.user.isGM) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled") && !game.user.isGM) {
 			html.find(".effects-list .items-footer, .effects-list .effect-controls").remove();
 		} else {
 			html.find(".effects-list .items-footer, .effects-list .effect-control.effect-delete").remove();
@@ -427,14 +428,14 @@ async function editProtection(app, html, data) {
 			let totalSections = $(this).children().not(".notice").length;
 			// console.log('hidden: '+ hiddenSections + '/ total: '+totalSections);
 			if (hiddenSections >= totalSections) {
-				if ($(this).hasClass("effects-list") && !game.user.isGM && game.settings.get("tidy5e-sheet", "editEffectsGmOnlyEnabled")) {
+				if ($(this).hasClass("effects-list") && !game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled")) {
 					$(this).prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
 				} else {
 					$(this).append(`<span class="notice">${game.i18n.localize("TIDY5E.EmptySection")}</span>`);
 				}
 			}
 		});
-	} else if (!game.user.isGM && actor.getFlag("tidy5e-sheet", "allow-edit") && game.settings.get("tidy5e-sheet", "editEffectsGmOnlyEnabled")) {
+	} else if (!game.user.isGM && actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit") && game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled")) {
 		let itemContainer = html.find(".effects-list.items-list");
 
 		itemContainer.prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
@@ -452,7 +453,7 @@ async function editProtection(app, html, data) {
 // Add Character Class List
 async function addClassList(app, html, data) {
 	if (data.editable) {
-		if (!game.settings.get("tidy5e-sheet", "classListDisabled")) {
+		if (!game.settings.get(CONSTANTS.MODULE_ID, "classListDisabled")) {
 			// let actor = game.actors.entities.find(a => a_id === data.actor._id);
 			let actor = app.actor;
 			let classList = [];
@@ -486,8 +487,8 @@ async function spellAttackMod(app, html, data) {
 	const rollData = actor.getRollData();
 	let formula = Roll.replaceFormulaData(actor.system.bonuses.rsak.attack, rollData, { missing: 0, warn: false });
 	if (formula === "") {
-    formula = "0";
-  }
+		formula = "0";
+	}
 	try {
 		// Roll parser no longer accepts some expressions it used to so we will try and avoid using it
 		spellBonus = Roll.safeEval(formula);
@@ -500,16 +501,17 @@ async function spellAttackMod(app, html, data) {
 			console.error(err);
 		}
 	}
-  console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod+'/ Spell Bonus :'+spellBonus);
 
 	let spellAttackMod = prof + abilityMod;
-  let spellAttackModWihBonus = prof + abilityMod + spellBonus;
+	let spellAttackModWihBonus = prof + abilityMod + spellBonus;
 	let spellAttackText = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
-  let spellAttackTextWithBonus = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
-  let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
-  let spellAttackTextTooltipWithBonus = `with bonus from 'actor.system.bonuses.rsak.attack' => ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`;
+	let spellAttackTextWithBonus = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
+	let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
+	let spellAttackTextTooltipWithBonus = `with bonus from 'actor.system.bonuses.rsak.attack' => ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`;
+	
+	console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod+'/ Spell Bonus :'+spellBonus);
 
-  html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
+	html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
 	html.find(".spell-mod .spell-attack-mod").attr("data-tooltip", `${spellAttackTextTooltip} [${spellAttackTextTooltipWithBonus}] `);
 }
 
@@ -579,7 +581,7 @@ async function tidyCustomEffect(actor, changes) {
 
 // add active effects marker
 function markActiveEffects(app, html, data) {
-	if (game.settings.get("tidy5e-sheet", "activeEffectsMarker")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "activeEffectsMarker")) {
 		let actor = app.actor;
 		let items = data.actor.items;
 		let marker = `<span class="ae-marker" title="Item has active effects">Æ</span>`;
@@ -597,7 +599,7 @@ function markActiveEffects(app, html, data) {
 
 // Add Spell Slot Marker
 function spellSlotMarker(app, html, data) {
-	if (game.settings.get("tidy5e-sheet", "hideSpellSlotMarker")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hideSpellSlotMarker")) {
 		return;
 	}
 	let actor = app.actor;
@@ -668,7 +670,7 @@ function spellSlotMarker(app, html, data) {
 
 // Hide Standard Encumbrance Bar
 function hideStandardEncumbranceBar(app, html, data) {
-	if (!game.settings.get("tidy5e-sheet", "hideStandardEncumbranceBar")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "hideStandardEncumbranceBar")) {
 		return;
 	}
 	const elements = html.find(".encumbrance");
@@ -683,81 +685,81 @@ function hideStandardEncumbranceBar(app, html, data) {
 async function setSheetClasses(app, html, data) {
 	// let actor = game.actors.entities.find(a => a._id === data.actor._id);
 	let actor = app.actor;
-	if (!game.settings.get("tidy5e-sheet", "playerNameEnabled")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "playerNameEnabled")) {
 		html.find(".tidy5e-sheet #playerName").remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "journalTabDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "journalTabDisabled")) {
 		html.find('.tidy5e-sheet .tidy5e-navigation a[data-tab="journal"]').remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
-		if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 			html.find(".tidy5e-sheet .grid-layout .items-list").addClass("alt-context");
 		} else {
 			html.find(".tidy5e-sheet .items-list").addClass("alt-context");
 		}
 	}
-	// if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	// if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 	//   tidy5eClassicControls(html);
 	// }
-	if (!game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 		html.find(".tidy5e-sheet .items-header-controls").remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "pc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "pc" || game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all") {
 		html.find(".tidy5e-sheet .profile").addClass("roundPortrait");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpOverlayDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayDisabled")) {
 		html.find(".tidy5e-sheet .profile").addClass("disable-hp-overlay");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpBarDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpBarDisabled")) {
 		html.find(".tidy5e-sheet .profile").addClass("disable-hp-bar");
 	}
-	if (game.settings.get("tidy5e-sheet", "inspirationDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "inspirationDisabled")) {
 		html.find(".tidy5e-sheet .profile .inspiration").remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "inspirationAnimationDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "inspirationAnimationDisabled")) {
 		html.find(".tidy5e-sheet .profile .inspiration label i").addClass("disable-animation");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpOverlayBorder") > 0) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorder") > 0) {
 		$(".system-dnd5e")
 			.get(0)
-			.style.setProperty("--pc-border", game.settings.get("tidy5e-sheet", "hpOverlayBorder") + "px");
+			.style.setProperty("--pc-border", game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorder") + "px");
 	} else {
 		$(".system-dnd5e").get(0).style.removeProperty("--pc-border");
 	}
-	if (game.settings.get("tidy5e-sheet", "hideIfZero")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hideIfZero")) {
 		html.find(".tidy5e-sheet .profile").addClass("autohide");
 	}
-	if (game.settings.get("tidy5e-sheet", "exhaustionDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionDisabled")) {
 		html.find(".tidy5e-sheet .profile .exhaustion-container").remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "exhaustionOnHover")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionOnHover")) {
 		html.find(".tidy5e-sheet .profile").addClass("exhaustionOnHover");
 	}
 
-	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "inspirationOnHover")) {
 		html.find(".tidy5e-sheet .profile").addClass("inspirationOnHover");
 	}
-	if (game.settings.get("tidy5e-sheet", "traitsMovedBelowResource")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "traitsMovedBelowResource")) {
 		let altPos = html.find(".alt-trait-pos");
 		let traits = html.find(".traits");
 		altPos.append(traits);
 	}
-	if (!game.settings.get("tidy5e-sheet", "traitsTogglePc")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "traitsTogglePc")) {
 		html.find(".tidy5e-sheet .traits").addClass("always-visible");
 	}
-	if (game.settings.get("tidy5e-sheet", "traitLabelsEnabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "traitLabelsEnabled")) {
 		html.find(".tidy5e-sheet .traits").addClass("show-labels");
 	}
 	if (game.user.isGM) {
 		html.find(".tidy5e-sheet").addClass("isGM");
 	}
-	if (game.settings.get("tidy5e-sheet", "hiddenDeathSavesEnabled") && !game.user.isGM) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hiddenDeathSavesEnabled") && !game.user.isGM) {
 		html.find(".tidy5e-sheet .death-saves").addClass("gmOnly");
 	}
-	if (game.settings.get("tidy5e-sheet", "quantityAlwaysShownEnabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "quantityAlwaysShownEnabled")) {
 		html.find(".item").addClass("quantityAlwaysShownEnabled");
 	}
-	$(".info-card-hint .key").html(game.settings.get("tidy5e-sheet", "itemCardsFixKey"));
+	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
 
 	applyColorPickerCustomization(html);
 }
@@ -901,7 +903,7 @@ Hooks.on("renderAbilityUseDialog", (application, html, context) => {
   });
   */
 	if (
-		game.settings.get("tidy5e-sheet", "enableSpellLevelButtons") &&
+		game.settings.get(CONSTANTS.MODULE_ID, "enableSpellLevelButtons") &&
 		// The module already do the job so for avoid redundance...
 		!game.modules.get("spell-level-buttons-for-dnd5e")?.active
 	) {

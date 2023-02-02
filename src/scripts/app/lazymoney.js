@@ -1,3 +1,5 @@
+import CONSTANTS from "./constants";
+
 const signCase = {
 	add: "+",
 	subtract: "-",
@@ -112,7 +114,7 @@ function _onChangeCurrency(ev) {
 		return;
 	}
 	let newAmount = {};
-	if (!(denom === "ep" && game.settings.get("tidy5e-sheet", "lazyMoneyIgnoreElectrum"))) {
+	if (!(denom === "ep" && game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyIgnoreElectrum"))) {
 		switch (sign) {
 			case signCase.add: {
 				newAmount = addMoney(money, delta, denom);
@@ -153,7 +155,7 @@ function _onChangeCurrency(ev) {
 }
 function chatLog(actor, money) {
 	console.log("tidy5e-sheet | " + money);
-	if (game.settings.get("tidy5e-sheet", "lazyMoneyChatLog")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyChatLog")) {
 		const msgData = {
 			content: money,
 			speaker: ChatMessage.getSpeaker({ actor: actor }),
@@ -434,7 +436,7 @@ function getCpValue() {
 			};
 		}
 	} else {
-		if (game.settings.get("tidy5e-sheet", "lazyMoneyIgnoreElectrum")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyIgnoreElectrum")) {
 			cpValue = {
 				pp: { value: 1000, up: "", down: "gp" },
 				gp: { value: 100, up: "pp", down: "sp" },
@@ -504,7 +506,7 @@ function scaleDown(oldAmount, denom) {
 function addMoney(oldAmount, delta, denom) {
 	const cpValue = getCpValue();
 	let newAmount = {};
-	if (game.settings.get("tidy5e-sheet", "lazyMoneyAddConvert")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyAddConvert")) {
 		let cpDelta = delta * cpValue[denom].value;
 		for (let key in cpValue) {
 			const myValue = cpValue[key].value;
@@ -575,7 +577,7 @@ function flash(input) {
 	}, 150);
 }
 export function applyLazyMoney(app, html, actorData) {
-	if (!game.settings.get("tidy5e-sheet", "lazyMoneyEnable")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyEnable")) {
 		return;
 	}
 	// The module already do the job so for avoid redundance...
@@ -620,7 +622,7 @@ function is_lazy_number(inNumber) {
 	}
 }
 Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
-	if (!game.settings.get("tidy5e-sheet", "lazyMoneyEnable")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyEnable")) {
 		return;
 	}
 	// The module already do the job so for avoid redundance...

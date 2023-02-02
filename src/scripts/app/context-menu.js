@@ -1,3 +1,4 @@
+import CONSTANTS from "./constants.js";
 import { isItemFavorite } from "./tidy5e-favorites.js";
 
 export const tidy5eContextMenu = function (html, sheet) {
@@ -23,7 +24,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 	// 			// right click opens context menu
 	// 			item.addEventListener('contextmenu', e => e.preventDefault());
 	// 			event.preventDefault();
-	// 			if(!game.settings.get("tidy5e-sheet", "rightClickDisabled") && $(item).hasClass('context-enabled')){
+	// 			if(!game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled") && $(item).hasClass('context-enabled')){
 	// 				html.find('.item').removeClass('context');
 	// 				html.find('.item .context-menu').hide();
 	// 				itemContextMenu(event);
@@ -34,7 +35,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 	// });
 
 	// html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
-	// 	if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
+	// 	if(game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")){
 	// 		switch (event.which) {
 	// 		case 1:
 	// 			event.preventDefault();
@@ -96,7 +97,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 					"DND5E.ContextMenuActionPrepare",
 				].includes(obj?.name);
 			});
-			if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
+			if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
 				contextOptions = [];
 			} else {
 				let tidy5eContextOptions = _getActiveEffectContextOptions(effect);
@@ -124,10 +125,10 @@ export const tidy5eContextMenu = function (html, sheet) {
 					"DND5E.ContextMenuActionPrepare",
 				].includes(obj?.name);
 			});
-			if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
-				if (item.type === "spell" && !item.actor.getFlag("tidy5e-sheet", "tidy5e-sheet.spellbook-grid")) {
+			if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
+				if (item.type === "spell" && !item.actor.getFlag(CONSTANTS.MODULE_ID, "tidy5e-sheet.spellbook-grid")) {
 					contextOptions = [];
-				} else if (item.type !== "spell" && !item.actor.getFlag("tidy5e-sheet", "inventory-grid")) {
+				} else if (item.type !== "spell" && !item.actor.getFlag(CONSTANTS.MODULE_ID, "inventory-grid")) {
 					contextOptions = [];
 				} else {
 					//merge new options with tidy5e options
@@ -148,7 +149,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 		/*
     if ( actor?.isOwner ) {
 
-      if(game.settings.get("tidy5e-sheet", "rightClickDisabled")){
+      if(game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")){
         contextOptions = [];
       } else {
         contextOptions = _getAdvancementContextMenuOptions(html);
@@ -263,7 +264,7 @@ const _getActiveEffectContextOptions = function (effect) {
 		icon: "<i class='fas fas fa-pencil-alt fa-fw'></i>",
 		callback: () => effect.sheet.render(true),
 	});
-	if (actor.getFlag("tidy5e-sheet", "allow-edit")) {
+	if (actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 		options.push({
 			name: "DND5E.ContextMenuActionDuplicate",
 			icon: "<i class='fas fa-copy fa-fw'></i>",
@@ -289,7 +290,7 @@ const _getItemContextOptions = function (item) {
 	const actor = item.actor;
 	let options = [];
 
-	const allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
+	const allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
 	let toggleClass = "";
 	let toggleTitle = "";
 	let canToggle = false;
@@ -462,7 +463,7 @@ const _getItemContextOptions = function (item) {
 			icon: "<i class='fas fa-pencil-alt fa-fw'></i>",
 			callback: () => item.sheet.render(true),
 		});
-		if (actor.getFlag("tidy5e-sheet", "allow-edit")) {
+		if (actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 			options.push({
 				name: "DND5E.ContextMenuActionDuplicate",
 				icon: "<i class='fas fa-copy fa-fw'></i>",
@@ -482,7 +483,7 @@ const _getItemContextOptions = function (item) {
 			callback: () => item.sheet.render(true),
 		});
 
-		if (actor.getFlag("tidy5e-sheet", "allow-edit")) {
+		if (actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 			options.push({
 				name: "DND5E.ContextMenuActionDuplicate",
 				icon: "<i class='fas fa-copy fa-fw'></i>",

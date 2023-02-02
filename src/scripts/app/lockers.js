@@ -1,6 +1,8 @@
+import CONSTANTS from "./constants";
+
 export function applyLocksCharacterSheet(app, html, actorData) {
-	if (!app.actor?.getFlag("tidy5e-sheet", "allow-edit")) {
-		if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
+	if (!app.actor?.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "editTotalLockEnabled")) {
 			html.find(".skill input").prop("disabled", true);
 			html.find(".skill .config-button").remove();
 			html.find(".skill .proficiency-toggle").remove();
@@ -22,12 +24,12 @@ export function applyLocksCharacterSheet(app, html, actorData) {
 	if (game.user.isGM) {
 		return;
 	}
-	if (game.settings.get("tidy5e-sheet", "lockMoneyChanges")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockMoneyChanges")) {
 		for (const elem of html.find("input[name^='system.currency']")) {
 			elem.setAttribute("readonly", true);
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "lockExpChanges")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockExpChanges")) {
 		for (const elem of html.find("input[name^='system.details.xp.value']")) {
 			elem.setAttribute("readonly", true);
 		}
@@ -35,24 +37,24 @@ export function applyLocksCharacterSheet(app, html, actorData) {
 			elem.setAttribute("readonly", true);
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "lockHpMaxChanges")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockHpMaxChanges")) {
 		for (const elem of html.find("input[name^='system.attributes.hp.max']")) {
 			elem.setAttribute("readonly", true);
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "lockLevelSelector")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockLevelSelector")) {
 		for (const elem of html.find("select[class^='level-selector']")) {
 			elem.setAttribute("disabled", true);
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "lockConfigureSheet")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockConfigureSheet")) {
 		for (const elem of html.find("a[class$='configure-sheet']")) {
 			elem.style.pointerEvents = "none";
 			elem.style.cursor = "default";
 			elem.style.display = "none";
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "lockItemQuantity")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockItemQuantity")) {
 		for (const elem of html.find("input[data-path^='system.quantity']")) {
 			elem.setAttribute("readonly", true);
 		}
@@ -63,8 +65,8 @@ export function applyLocksCharacterSheet(app, html, actorData) {
 }
 
 export function applyLocksNpcSheet(app, html, actorData) {
-	if (!app.actor?.getFlag("tidy5e-sheet", "allow-edit")) {
-		if (game.settings.get("tidy5e-sheet", "editTotalLockEnabled")) {
+	if (!app.actor?.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "editTotalLockEnabled")) {
 			html.find(".skill input").prop("disabled", true);
 			html.find(".skill .config-button").remove();
 			// html.find(".skill .proficiency-toggle").remove();
@@ -97,7 +99,7 @@ export function applyLocksItemSheet(app, html, actorData) {
 	if (game.user.isGM) {
 		return;
 	}
-	if (game.settings.get("tidy5e-sheet", "lockItemQuantity")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockItemQuantity")) {
 		for (const elem of html.find("input[data-path^='system.quantity']")) {
 			elem.setAttribute("readonly", true);
 		}
@@ -105,7 +107,7 @@ export function applyLocksItemSheet(app, html, actorData) {
 			elem.setAttribute("readonly", true);
 		}
 	}
-	if (game.settings.get("tidy5e-sheet", "lockConfigureSheet")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lockConfigureSheet")) {
 		for (const elem of html.find("a[class$='configure-sheet']")) {
 			elem.style.pointerEvents = "none";
 			elem.style.cursor = "default";
