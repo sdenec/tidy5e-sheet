@@ -2025,6 +2025,7 @@
 	flex-direction: row;
 	padding-right: 0.75rem;
 	overflow-y: scroll;
+	overflow-x: inherit;
 }
 .tidy5e.sheet.actor .window-content .tab.biography,
 .tidy5e.sheet.actor .window-content .tab.journal {
@@ -2158,6 +2159,7 @@
 	padding: 0;
 	margin-left: 16px;
 	height: auto;
+	overflow-x: inherit;
 }
 .tidy5e.sheet.actor .center-pane .resources {
 	margin: 0;
@@ -4535,6 +4537,8 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 }
 .tidy5e.sheet.actor.npc .center-pane {
 	min-height: 100%;
+	overflow-x: inherit;
+	overflow-y: initial;
 }
 .tidy5e.sheet.actor.npc .center-pane .features {
 	-webkit-box-flex: 0;
