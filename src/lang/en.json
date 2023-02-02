@@ -550,5 +550,10 @@
 	"TIDY5E.Settings.Debug": {
 		"name": "Enable debugging",
 		"hint": "Prints debug messages to the console"
+	},
+	"TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically": {
+		"name": "Enable Sort Favorites Alphabetically",
+		"hint": "It enabled this setting will sort the items, features, spells alphabetically on the favorites html template"
 	}
+	
 }

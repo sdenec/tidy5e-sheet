@@ -507,7 +507,7 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackText = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
 	let spellAttackTextWithBonus = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
 	let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
-	let spellAttackTextTooltipWithBonus = `with bonus from 'actor.system.bonuses.rsak.attack' => ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`;
+	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
 	
 	console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod+'/ Spell Bonus :'+spellBonus);
 

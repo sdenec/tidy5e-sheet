@@ -39,7 +39,7 @@ export class Tidy5eUserSettings extends FormApplication {
 	getSettingsData() {
 		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
-			"debug",
+			
 			"ammoEquippedOnly",
 			"activeEffectsMarker",
 			"classListDisabled",
@@ -105,6 +105,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"lazyMoneyIgnoreElectrum",
 			"lazyMoneyChatLog",
 
+			"enableSortFavoritesItemsAlphabetically",
 			"allowCantripToBePreparedOnContext",
 			"spellClassFilterSelect",
 			"spellClassFilterIconReplace",
@@ -136,6 +137,8 @@ export class Tidy5eUserSettings extends FormApplication {
 			"colorPickerAlwaysPrepared",
 			"colorPickerAlwaysPreparedOutline",
 			"colorPickerAlwaysPreparedAccent",
+
+			"debug"
 		];
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

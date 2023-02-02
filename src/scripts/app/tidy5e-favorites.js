@@ -299,14 +299,17 @@ export const addFavorites = async function (app, html, data, position) {
 			item.editable = app.options.editable;
 			switch (item.type) {
 				case "feat": {
-					// if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
-					//   item.flags[CONSTANTS.MODULE_ID].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
-					// }
+					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+					  item.flags[CONSTANTS.MODULE_ID].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
+					}
 					item.isFeat = true;
 					favFeats.push(item);
 					break;
 				}
 				case "spell": {
+					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+						item.flags[CONSTANTS.MODULE_ID].sort = (favSpellsPrepMode.count + 1) * 100000; // initial sort key if not present
+					}
 					if (item.system.preparation.mode && item.system.preparation.mode !== "prepared") {
 						if (item.system.preparation.mode == "always") {
 							// favSpellsPrepMode['always'].spells.push(item);
@@ -332,9 +335,9 @@ export const addFavorites = async function (app, html, data, position) {
 					break;
 				}
 				default: {
-					// if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
-					//   item.flags[CONSTANTS.MODULE_ID].sort = (favItems.count + 1) * 100000; // initial sort key if not present
-					// }
+					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+					  item.flags[CONSTANTS.MODULE_ID].sort = (favItems.count + 1) * 100000; // initial sort key if not present
+					}
 					item.isItem = true;
 					favItems.push(item);
 					break;
@@ -346,76 +349,154 @@ export const addFavorites = async function (app, html, data, position) {
 		}
 	}
 
-	// sorting favItems alphabetically
+	let enableSortFavoritesItemsAlphabetically = 
+		game.settings.get(CONSTANTS.MODULE_ID, "enableSortFavoritesItemsAlphabetically");
 
-	const favItemsArray = Object.keys(favItems);
-	for (let key of favItemsArray) {
-		favItems.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
-	}
+	if(enableSortFavoritesItemsAlphabetically) {
 
-	// sorting favItems alphabetically
+		// sorting favItems alphabetically
 
-	const favFeatsArray = Object.keys(favFeats);
-	for (let key of favFeatsArray) {
-		favFeats.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
-	}
+		const favItemsArray = Object.keys(favItems);
+		for (let key of favItemsArray) {
+			favItems.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
 
-	// sorting favSpells alphabetically
+		// sorting favItems alphabetically
 
-	const favSpellsArray = Object.keys(favSpells);
-	for (let key of favSpellsArray) {
-		favSpells[key].spells.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
-	}
+		const favFeatsArray = Object.keys(favFeats);
+		for (let key of favFeatsArray) {
+			favFeats.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
 
-	// sorting favSpellsPrepMode alphabetically
+		// sorting favSpells alphabetically
 
-	const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
-	for (let key of favSpellsPrepModeArray) {
-		favSpellsPrepMode[key].spells.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
+		const favSpellsArray = Object.keys(favSpells);
+		for (let key of favSpellsArray) {
+			favSpells[key].spells.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favSpellsPrepMode alphabetically
+
+		const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
+		for (let key of favSpellsPrepModeArray) {
+			favSpellsPrepMode[key].spells.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+	} else {
+		// sorting favItems by sort
+
+		const favItemsArray = Object.keys(favItems);
+		for (let key of favItemsArray) {
+			favItems.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favItems by sort
+
+		const favFeatsArray = Object.keys(favFeats);
+		for (let key of favFeatsArray) {
+			favFeats.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favSpells by sort
+
+		const favSpellsArray = Object.keys(favSpells);
+		for (let key of favSpellsArray) {
+			favSpells[key].spells.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favSpellsPrepMode by sort
+
+		const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
+		for (let key of favSpellsPrepModeArray) {
+			favSpellsPrepMode[key].spells.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
 	}
 
 	let attributesTab = html.find('.item[data-tab="attributes"]');
@@ -427,11 +508,13 @@ export const addFavorites = async function (app, html, data, position) {
 
 		context.favItems =
 			favItems.length > 0
-				? favItems // .sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
+				? favItems
+				//? enableSortFavoritesItemsAlphabetically ? favItems : favItems?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
 				: false;
 		context.favFeats =
 			favFeats.length > 0
-				? favFeats // .sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
+				? favFeats
+				//? enableSortFavoritesItemsAlphabetically ? favFeats : favFeats?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
 				: false;
 		context.favSpellsPrepMode = spellPrepModeCount > 0 ? favSpellsPrepMode : false;
 		context.favSpells = spellCount > 0 ? favSpells : false;
@@ -442,7 +525,7 @@ export const addFavorites = async function (app, html, data, position) {
 		let favHtml = $(await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context));
 
 		// Activating favorite-list events
-    tidy5eContextMenu(favHtml, app);
+		tidy5eContextMenu(favHtml, app);
 
 
 		// showing item summary
@@ -569,23 +652,23 @@ export const addFavorites = async function (app, html, data, position) {
 				// ev.stopPropagation();
 
 				let dropData = JSON.parse(ev.originalEvent.dataTransfer.getData("text/plain"));
-
-				if (dropData.actorId !== app.actor.id) {
+				let item = fromUuidSync(dropData.uuid);
+				if (!item || item.actor?.id !== app.actor.id) {
 					// only do sorting if the item is from the same actor (not dropped from outside)
 					return;
 				}
-
+				let itemId = item.id;
 				let list = null;
-				if (dropData.type === "feat") {
+				if (item.type === "feat") {
 					list = favFeats;
-				} else if (dropData.type === "spell") {
-					list = favSpells[dropData.system.level].spells;
+				} else if (item.type === "spell" && is_real_number(item.system.level)) {
+					list = favSpells[item.system.level].spells;
 				} else {
 					list = favItems;
 				}
 
-				let dragSource = list.find((i) => i._id === dropData._id);
-				let siblings = list.filter((i) => i._id !== dropData._id);
+				let dragSource = list.find((i) => i._id === itemId);
+				let siblings = list.filter((i) => i._id !== itemId);
 				let targetId = ev.target.closest(".item").dataset.itemId;
 				let dragTarget = siblings.find((s) => s._id === targetId);
 
@@ -622,6 +705,6 @@ export const addFavorites = async function (app, html, data, position) {
 			favContent.find(".items-list").addClass("alt-context");
 		}
 
-    applyColorPickerCustomization(favHtml);
+		applyColorPickerCustomization(favHtml);
 	}
 };

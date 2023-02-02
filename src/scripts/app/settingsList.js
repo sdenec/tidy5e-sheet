@@ -22,15 +22,6 @@ export function settingsList() {
 	});
 
 	// ========================================================================
-	game.settings.register(CONSTANTS.MODULE_ID, "debug", {
-		name: `TIDY5E.Settings.Debug.name`,
-		hint: `TIDY5E.Settings.Debug.hint`,
-		scope: "client",
-		config: true,
-		default: false,
-		type: Boolean,
-	});
-	// ========================================================================
 
 	// Color Theme
 	game.settings.register(CONSTANTS.MODULE_ID, "colorScheme", {
@@ -700,6 +691,17 @@ export function settingsList() {
 		type: Boolean,
 	});
 
+	// Favorites
+
+	game.settings.register(CONSTANTS.MODULE_ID, "enableSortFavoritesItemsAlphabetically", {
+		name: `${game.i18n.localize("TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically.hint")}`,
+		scope: "world",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+
 	// Locks
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lockMoneyChanges", {
@@ -978,6 +980,16 @@ export function settingsList() {
 		default: RGBAToHexAFromColor(0, 191, 255, 1),
 		config: false,
 	});
+
+	// ========================================================================
+	game.settings.register(CONSTANTS.MODULE_ID, "debug", {
+		name: `TIDY5E.Settings.Debug.name`,
+		hint: `TIDY5E.Settings.Debug.hint`,
+		scope: "client",
+		config: true,
+		default: false,
+		type: Boolean,
+	});
 }
 
 class ResetSettingsDialog extends FormApplication {
@@ -993,7 +1005,7 @@ class ResetSettingsDialog extends FormApplication {
 					icon: '<i class="fas fa-check"></i>',
 					label: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.confirm`),
 					callback: async () => {
-						for (let setting of game.settings.storage.get("world").filter((setting) => setting.key.startsWith("tidy5e-sheet."))) {
+						for (let setting of game.settings.storage.get("world").filter((setting) => setting.key.startsWith(`${CONSTANTS.MODULE_ID}.`))) {
 							console.log(`Reset setting '${setting.key}'`);
 							await setting.delete();
 						}
