@@ -707,45 +707,10 @@ async function editProtection(app, html, data) {
 
 // add fav button for npc-favorites
 async function npcFavorites(app, html, data) {
-	addFavorites(app, html, data);
-	/*
-  let items = data.actor.items;
-
-  for (let item of items) {
-    // do not add the fav button for class items
-    if (item.type == "class") continue;
-
-    let isFav = isItemFavorite(item);
-
-    if (app.options.editable) {
-      let favBtn = $(
-        `<a class="item-control item-fav ${isFav ? "active" : ""}" title="${
-          isFav
-            ? game.i18n.localize("TIDY5E.RemoveFav")
-            : game.i18n.localize("TIDY5E.AddFav")
-        }" data-fav="${isFav}"><i class="${
-          isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"
-        }"></i> <span class="control-label">${
-          isFav
-            ? game.i18n.localize("TIDY5E.RemoveFav")
-            : game.i18n.localize("TIDY5E.AddFav")
-        }</span></a>`
-      );
-      favBtn.click((ev) => {
-        app.actor.items
-          .get(item._id)
-          .update({ "flags.tidy5e-sheet.favorite": !item.flags.tidy5e-sheet.favorite });
-      });
-      html
-        .find(`.item[data-item-id="${item._id}"]`)
-        .find(".item-controls .item-edit")
-        .before(favBtn);
-      if (item.flags.tidy5e-sheet.favorite) {
-        html.find(`.item[data-item-id="${item._id}"]`).addClass("isFav");
-      }
-    }
-  }
-  */
+	// TODO intgrate favorite mechanism for NPC too ?
+	// Issue https://github.com/sdenec/tidy5e-sheet/issues/539
+	// for now is beeter use other external module
+	// addFavorites(app, html, data);
 }
 
 // Add Spell Slot Marker

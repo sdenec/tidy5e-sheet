@@ -700,7 +700,9 @@ export const addFavorites = async function (app, html, data, position) {
 		favContainer.addClass("hasFavs");
 		favContent.append(favHtml);
 		// attributesTab.prepend(favMarker);
-		html.find(".tab.attributes").scrollTop(position.top);
+		if(position) {
+			html.find(".tab.attributes")?.scrollTop(position.top);
+		}
 		if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
 			favContent.find(".items-list").addClass("alt-context");
 		}

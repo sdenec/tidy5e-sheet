@@ -4585,6 +4585,11 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	align-items: center;
 	padding-bottom: 2px;
 	margin-top: 3px;
+	font-size: 25px;
+}
+.tidy5e.sheet.actor.npc .counters .counter input {
+	min-width: 30px;
+    max-width: 50px;
 }
 .tidy5e.sheet.actor.npc .counters .counter input[type="text"]:first-of-type {
 	text-align: right;
@@ -4593,12 +4598,12 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	text-align: left;
 }
 .tidy5e.sheet.actor.npc .counters .counter input[type="text"] {
-	height: 14px;
+	height: 25px;
 	max-width: 20px;
 }
 .tidy5e.sheet.actor.npc .counters .counter input[type="checkbox"] {
 	width: 14px;
-	height: 14px;
+	height: 25px;
 	margin: 0;
 }
 .tidy5e.sheet.actor.npc .counters .counter h4 {
