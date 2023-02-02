@@ -150,7 +150,7 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 
 - **[Lazy Money](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e)** : [MIT](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e/blob/master/LICENSE)
 - **[Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)** : [???](https://github.com/MrEnigmamgine/spell-class-filter-for-5e/blob/master/LICENSE)
-- **[Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)** : [???](https://github.com/thatlonelybugbear/spell-class-filter-for-5e/blob/master/LICENSE)
+- **[Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)** : [MIT](https://github.com/thatlonelybugbear/spell-class-filter-for-5e/blob/main/LICENSE)
 - **[Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)** : [???](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e/blob/master/LICENSE)
 - **[Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items)**: [MIT](https://gitlab.com/mxzf/favorite-items/-/blob/master/LICENSE)
 - **[Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions)**: [MIT](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions/blob/main/LICENSE)
