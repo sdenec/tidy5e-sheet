@@ -1,4 +1,4 @@
-import CONSTANTS from "./constants";
+import CONSTANTS from "./constants.js";
 
 const classesConfiguration = {
 	artificer: "TIDY5E.ClassArtificer",

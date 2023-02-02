@@ -1,4 +1,4 @@
-import CONSTANTS from "./constants";
+import CONSTANTS from "./constants.js";
 
 export async function updateExhaustion(actorEntity) {
 	if (game.actors.get(actorEntity._id).type !== "character") {

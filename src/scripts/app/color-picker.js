@@ -2,7 +2,7 @@
 //License: MIT
 //Documentation: https://github.com/kaelad02/adv-reminder/blob/54207ec1ef0500439e57521f15956c07e4c02af4/src/settings.js#L91-L104
 
-import CONSTANTS from "./constants";
+import CONSTANTS from "./constants.js";
 
 export function colorPicker(moduleId, settingId, html) {
 	const settingInput = html.find(`input[name="${moduleId}.${settingId}"]`);

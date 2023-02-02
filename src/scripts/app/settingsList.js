@@ -22,7 +22,7 @@ export function settingsList() {
 	});
 
 	// ========================================================================
-	game.settings.register(CONSTANTS.MODULE_NAME, "debug", {
+	game.settings.register(CONSTANTS.MODULE_ID, "debug", {
 		name: `TIDY5E.Settings.Debug.name`,
 		hint: `TIDY5E.Settings.Debug.hint`,
 		scope: "client",

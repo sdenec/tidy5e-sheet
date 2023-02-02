@@ -1,4 +1,4 @@
-import CONSTANTS from "./constants";
+import CONSTANTS from "./constants.js";
 
 export const tidy5eSearchFilter = function (html, actor) {
 	// filter settings list

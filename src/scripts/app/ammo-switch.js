@@ -1,4 +1,4 @@
-import CONSTANTS from "./constants";
+import CONSTANTS from "./constants.js";
 
 export const tidy5eAmmoSwitch = function (html, actor) {
 	html.find(".ammo").each(function () {

@@ -759,6 +759,7 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get(CONSTANTS.MODULE_ID, "quantityAlwaysShownEnabled")) {
 		html.find(".item").addClass("quantityAlwaysShownEnabled");
 	}
+
 	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
 
 	applyColorPickerCustomization(html);
@@ -850,6 +851,15 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksCharacterSheet(app, html, data);
+});
+
+/** perform some necessary operations on character sheet **/
+Hooks.on("renderActorSheet", (app, html, data) => {
+	// Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills
+	// Issue https://github.com/sdenec/tidy5e-sheet/issues/662
+	if(game.modules.get("dnd5e-custom-skills")?.active) {
+		html.find(".tidy5e-sheet .ability-scores.custom-abilities").removeClass("custom-abilities");
+	}
 });
 
 Hooks.once("ready", (app, html, data) => {

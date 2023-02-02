@@ -1,4 +1,4 @@
-import CONSTANTS from "./constants";
+import CONSTANTS from "./constants.js";
 
 export function applyLocksCharacterSheet(app, html, actorData) {
 	if (!app.actor?.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {

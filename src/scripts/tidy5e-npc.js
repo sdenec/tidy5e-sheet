@@ -549,20 +549,20 @@ async function setSheetClasses(app, html, data) {
 	const { token } = app;
 	const actor = app.actor;
 	if (actor.getFlag(CONSTANTS.MODULE_ID, "showNpcPersonalityInfo")) {
-		html.find(".tidy5e-sheet .left-notes").removeClass("hidden");
+		html.find(".tidy5e-sheet.tidy5e-npc .left-notes").removeClass("hidden");
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
 		if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
-			html.find(".tidy5e-sheet .grid-layout .items-list").addClass("alt-context");
+			html.find(".tidy5e-sheet.tidy5e-npc .grid-layout .items-list").addClass("alt-context");
 		} else {
-			html.find(".tidy5e-sheet .items-list").addClass("alt-context");
+			html.find(".tidy5e-sheet.tidy5e-npc .items-list").addClass("alt-context");
 		}
 	}
 	// if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 	//   tidy5eClassicControls(html);
 	// }
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
-		html.find(".tidy5e-sheet .items-header-controls").remove();
+		html.find(".tidy5e-sheet.tidy5e-npc .items-header-controls").remove();
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "traitsMovedBelowResourceNpc")) {
 		let altPos = html.find(".alt-trait-pos");
@@ -579,7 +579,7 @@ async function setSheetClasses(app, html, data) {
 		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("disable-hp-overlay");
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "hpBarDisabled")) {
-		html.find(".tidy5e-sheet .profile").addClass("disable-hp-bar");
+		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("disable-hp-bar");
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderNpc") > 0) {
 		$(".system-dnd5e")
@@ -606,6 +606,7 @@ async function setSheetClasses(app, html, data) {
 	if (!token && (game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "unlinked" || game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both")) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("original");
 	}
+
 	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
 
 	applyColorPickerCustomization(html);
@@ -867,4 +868,13 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksNpcSheet(app, html, data);
+});
+
+/** perform some necessary operations on character sheet **/
+Hooks.on("renderActorSheet", (app, html, data) => {
+	// Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills
+	// Issue https://github.com/sdenec/tidy5e-sheet/issues/662
+	if(game.modules.get("dnd5e-custom-skills")?.active) {
+		html.find(".tidy5e-sheet.tidy5e-npc .ability-scores.custom-abilities").removeClass("custom-abilities");
+	}
 });

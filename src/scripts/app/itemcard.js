@@ -1,4 +1,4 @@
-import CONSTANTS from "./constants";
+import CONSTANTS from "./constants.js";
 
 export const tidy5eItemCard = function (html, actor) {
 	// show/hide grid layout item info card on mouse enter/leave
