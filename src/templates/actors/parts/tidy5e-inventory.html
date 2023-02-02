@@ -71,9 +71,11 @@
               </div>
               <h4>
                 {{item.name~}}
+                <!--
                 {{~#if ctx.isStack}} ({{item.system.quantity}}){{/if}}
+                -->
               </h4>
-              {{#if item.system.properties.amm}}
+              {{#if (eq item.type 'ammo')}}
               <span class="ammo" data-id="{{item._id}}"></span>
               {{/if}}
               <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
