@@ -477,16 +477,17 @@ async function addClassList(app, html, data) {
 // Calculate Spell Attack modifier
 
 async function spellAttackMod(app, html, data) {
-	let actor = app.actor,
-		prof = actor.system.attributes.prof,
-		spellAbility = html.find(".spellcasting-attribute select option:selected").val(),
-		abilityMod = spellAbility != "" ? actor.system.abilities[spellAbility].mod : 0,
-		spellBonus = 0;
-	// console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod);
+	let actor = app.actor;
+	let prof = actor.system.attributes.prof;
+	let spellAbility = html.find(".spellcasting-attribute select option:selected").val();
+	let abilityMod = spellAbility != "" ? actor.system.abilities[spellAbility].mod : 0;
+	let spellBonus = 0;
 
 	const rollData = actor.getRollData();
 	let formula = Roll.replaceFormulaData(actor.system.bonuses.rsak.attack, rollData, { missing: 0, warn: false });
-	if (formula === "") formula = "0";
+	if (formula === "") {
+    formula = "0";
+  }
 	try {
 		// Roll parser no longer accepts some expressions it used to so we will try and avoid using it
 		spellBonus = Roll.safeEval(formula);
@@ -495,15 +496,21 @@ async function spellAttackMod(app, html, data) {
 		try {
 			spellBonus = new Roll(formula).evaluate({ async: false }).total;
 		} catch (err) {
-			console.warn("spell bonus calculation failed");
-			console.warn(err);
+			console.error("spell bonus calculation failed");
+			console.error(err);
 		}
 	}
+  console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod+'/ Spell Bonus :'+spellBonus);
 
-	let spellAttackMod = prof + abilityMod + spellBonus,
-		text = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
-	html.find(".spell-mod .spell-attack-mod").html(text);
-	html.find(".spell-mod .spell-attack-mod").attr("title", `${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`);
+	let spellAttackMod = prof + abilityMod;
+  let spellAttackModWihBonus = prof + abilityMod + spellBonus;
+	let spellAttackText = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
+  let spellAttackTextWithBonus = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
+  let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
+  let spellAttackTextTooltipWithBonus = `with bonus from 'actor.system.bonuses.rsak.attack' => ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus)`;
+
+  html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
+	html.find(".spell-mod .spell-attack-mod").attr("data-tooltip", `${spellAttackTextTooltip} [${spellAttackTextTooltipWithBonus}] `);
 }
 
 // Abbreviate Currency
@@ -764,7 +771,7 @@ Actors.registerSheet("dnd5e", Tidy5eSheet, {
 // Preload tidy5e Handlebars Templates
 Hooks.once("init", () => {
 	preloadTidy5eHandlebarsTemplates();
-	// 
+	//
 	// init user settings menu
 	Tidy5eUserSettings.init();
 });
