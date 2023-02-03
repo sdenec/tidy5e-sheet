@@ -80,13 +80,17 @@ export default class ActorHitPointsConfig extends BaseConfigSheet {
     await super._onChangeInput(event);
     const t = event.currentTarget;
 
+    // Start of the patch for tidy5e and the strange reset to 0 behaviour...
     if(t.value === "" || t.value === "0" || t.value === null || t.value === undefined) {
-        const rollData = this.object.getRollData();
-        // strange patch ...
-        this.object.system._source.attributes.hp.max = null;
-        this.object._prepareHitPoints(rollData);
-        t.value = this.object.system.attributes.hp.max;
+        if(t.name === "hp.max") {
+          const rollData = this.object.getRollData();
+
+          this.object.system._source.attributes.hp.max = null;
+          this.object._prepareHitPoints(rollData);
+          t.value = this.object.system.attributes.hp.max;
+        }
     }
+    // End of the patch
 
     // Update clone with new data & re-render
     this.clone.updateSource({ [`system.attributes.${t.name}`]: t.value || null });
