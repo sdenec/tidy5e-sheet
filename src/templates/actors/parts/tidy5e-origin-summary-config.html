@@ -3,49 +3,44 @@
 
         <div class="form-group">
             <label>{{localize "DND5E.Race"}}</label>
-            <input type="text" name="race" value="{{race}}"
-                placeholder="{{ localize 'DND5E.Race' }}">
+            <textarea rows="4" cols="50" name="race" value="{{race}}"
+                placeholder="{{ localize 'DND5E.Race' }}">{{race}}</textarea>
         </div>
         <div class="form-group">
             <label>{{localize "DND5E.Background"}}</label>
-            <input type="text" name="background" value="{{background}}"
-                placeholder="{{ localize 'DND5E.Background' }}">
+            <textarea rows="4" cols="50" name="background" value="{{background}}"
+                placeholder="{{ localize 'DND5E.Background' }}">{{background}}</textarea>
         </div>
         <div class="form-group">
             <label>{{localize "DND5E.Alignment"}}</label>
-            <input type="text" name="alignment" value="{{alignment}}"
-                placeholder="{{ localize 'DND5E.Alignment' }}">
+            <textarea rows="4" cols="50" name="alignment" value="{{alignment}}"
+                placeholder="{{ localize 'DND5E.Alignment' }}">{{alignment}}</textarea>
         </div>
 
     {{else if isNPC}}
 
         <div class="environment form-group">
             <label>{{localize "TIDY5E.Environment"}}</label>
-            <input type="number" name="environment" value="{{environment}}"
-                placeholder="{{ localize 'TIDY5E.Environment' }}">
+            <textarea rows="4" cols="50" name="environment" value="{{environment}}"
+                placeholder="{{ localize 'TIDY5E.Environment' }}">{{environment}}</textarea>
         </div>
         <div class="form-group">
             <label>{{localize "DND5E.Alignment"}}</label>
-            <input type="text" name="alignment" value="{{alignment}}"
-                placeholder="{{ localize 'DND5E.Alignment' }}">
+            <textarea rows="4" cols="50" name="alignment" value="{{alignment}}"
+                placeholder="{{ localize 'DND5E.Alignment' }}">{{alignment}}</textarea>
         </div>
         <div class="form-group">
             <label>{{localize "DND5E.Source"}}</label>
-            <input type="text" name="source" value="{{source}}"
-                placeholder="{{ localize 'DND5E.Source' }}">
+            <textarea rows="4" cols="50" name="source" value="{{source}}"
+                placeholder="{{ localize 'DND5E.Source' }}">{{source}}</textarea>
         </div>
 
     {{else if isVehicle}}
 
         <div class="form-group">
             <label>{{localize "DND5E.Dimensions"}}</label>
-            <input type="text" name="dimensions" value="{{dimensions}}"
-                placeholder="{{ localize 'DND5E.Dimensions' }}">
-        </div>
-        <div class="form-group">
-            <label>{{localize "DND5E.Source"}}</label>
-            <input type="text" name="source" value="{{source}}"
-                placeholder="{{ localize 'DND5E.Source' }}">
+            <textarea rows="4" cols="50" name="dimensions" value="{{dimensions}}"
+                placeholder="{{ localize 'DND5E.Dimensions' }}">{{dimensions}}</textarea>
         </div>
 
     {{else}}

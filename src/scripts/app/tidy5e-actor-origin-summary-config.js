@@ -45,8 +45,8 @@ export default class ActorOriginSummaryConfig extends BaseConfigSheet {
       environment: this.clone.system.details.environment,
       alignment: this.clone.system.details.alignment,
       source: this.clone.system.details.source,
-      dimensions: this.clone.system.details.dimensions,
-
+      dimensions: this.clone.system.traits.dimensions,
+      
       isCharacter: this.document.type === "character",
       isNPC: this.document.type === "npc",
       isVehicle: this.document.type === "vehicle"
@@ -102,13 +102,12 @@ export default class ActorOriginSummaryConfig extends BaseConfigSheet {
       });
     } else if(isVehicle){
       // this.clone.updateSource({
-      //   "system.details.dimensions": dimensions,
+      //   "system.traits.dimensions": dimensions,
       //   "system.details.source": source,
       // });
 
       return this.document.update({
-        "system.details.dimensions": dimensions,
-        "system.details.source": source,
+        "system.traits.dimensions": dimensions
       });
     }
   }

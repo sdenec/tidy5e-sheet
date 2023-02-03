@@ -2,50 +2,7 @@ import CONSTANTS from "./constants.js";
 import { isItemFavorite } from "./tidy5e-favorites.js";
 
 export const tidy5eContextMenu = function (html, sheet) {
-	let actor = sheet.actor;
-	// html.find('.item-list .item.context-enabled').mousedown( async (event) => {
-	// 	let target = event.target.class;
-	// 	let item = event.currentTarget;
-	// 	switch (event.which) {
-	// 		case 2: {
-	// 			// middle mouse opens item editor
-	// 			event.preventDefault();
-	// 			if($(item).find('.item-edit')) {
-	// 				$(item).find('.item-edit').trigger('click');
-	// 			}
-
-	// 			if($(item).find('.effect-edit')) {
-	// 				$(item).find('.effect-edit').trigger('click');
-	// 			}
-
-	// 			break;
-	// 		}
-	// 		case 3: {
-	// 			// right click opens context menu
-	// 			item.addEventListener('contextmenu', e => e.preventDefault());
-	// 			event.preventDefault();
-	// 			if(!game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled") && $(item).hasClass('context-enabled')){
-	// 				html.find('.item').removeClass('context');
-	// 				html.find('.item .context-menu').hide();
-	// 				itemContextMenu(event);
-	// 			}
-	// 			break;
-	// 		}
-	// 	}
-	// });
-
-	// html.find('.item-list .item .activate-context-menu').mousedown( async (event) => {
-	// 	if(game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")){
-	// 		switch (event.which) {
-	// 		case 1:
-	// 			event.preventDefault();
-	// 			html.find('.item').removeClass('context');
-	// 			html.find('.item .context-menu').hide();
-	// 			itemContextMenu(event);
-	// 			break;
-	// 		}
-	// 	}
-	// });
+	const actor = sheet.actor ? sheet.actor : sheet.parent;
 
 	// Manage Middle Click behavior
 	html.find('.item-list .item .item-name').mousedown( async (event) => {
@@ -80,7 +37,8 @@ export const tidy5eContextMenu = function (html, sheet) {
 	// new ContextMenu(html, ".item-list .item #context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
 
 	Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
-		if (effect.actor?.isOwner) {
+		const actor = effect.actor ? effect.actor : effect.parent;
+		if (actor?.isOwner) {
 			contextOptions = contextOptions.filter((obj) => {
 				//check for default options and remove them.
 				return ![
@@ -108,7 +66,8 @@ export const tidy5eContextMenu = function (html, sheet) {
 	});
 
 	Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
-		if (item.actor?.isOwner) {
+		const actor = item.actor ? item.actor : item.parent;
+		if (actor?.isOwner) {
 			contextOptions = contextOptions.filter((obj) => {
 				//check for default options and remove them.
 				return ![
@@ -227,7 +186,7 @@ const _getAdvancementContextMenuOptions = function (html) {
  * @protected
  */
 const _getActiveEffectContextOptions = function (effect) {
-	const actor = effect.parent;
+	const actor = effect.actor ? effect.actor : effect.parent;
 	let options = [];
 
 	/*
@@ -287,8 +246,15 @@ const _getActiveEffectContextOptions = function (effect) {
  * @protected
  */
 const _getItemContextOptions = function (item) {
-	const actor = item.actor;
+	const actor = item.actor ? item.actor : item.parent;
+	if(!actor) {
+		return;
+	}
 	let options = [];
+
+	const isCharacter = actor.type === "character";
+    const isNPC = actor.type === "npc";
+    const isVehicle = actor.type === "vehicle";
 
 	const allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
 	let toggleClass = "";
@@ -383,58 +349,61 @@ const _getItemContextOptions = function (item) {
 		}
 	}
 
-	// Add favorites to context menu
-	let isFav = isItemFavorite(item);
+	// TODO SUPPORT FAVORITE ON NPC ?
+	if(isCharacter) {
 
-	let favoriteColor = "rgba(0, 0, 0, 0.65)"; //Standard black
-	let favoriteIcon = "fa-bookmark";
-	if (game.modules.get("favorite-items")?.active) {
-		favoriteIcon = game.settings.get("favorite-items", "favorite-icon");
-		favoriteColor = game.settings.get("favorite-items", "favorite-color");
+		// Add favorites to context menu
+		let isFav = isItemFavorite(item);
+
+		let favoriteColor = "rgba(0, 0, 0, 0.65)"; //Standard black
+		let favoriteIcon = "fa-bookmark";
+		if (game.modules.get("favorite-items")?.active) {
+			favoriteIcon = game.settings.get("favorite-items", "favorite-icon");
+			favoriteColor = game.settings.get("favorite-items", "favorite-color");
+		}
+		options.push({
+			name: isFav ? "TIDY5E.RemoveFav" : "TIDY5E.AddFav",
+			icon: isFav ? `<i class='fas ${favoriteIcon} fa-fw'></i>` : `<i class='fas ${favoriteIcon} fa-fw inactive'></i>`,
+			callback: () => {
+				// const item_id = ev[0].dataset.itemId; //ev.currentTarget.closest('[data-item-id]').dataset.itemId;
+				// const item = actor.items.get(item_id);
+				if (!item) {
+					console.warn(`tidy5e-sheet | Item no founded!`);
+					return;
+				}
+				let isFav = isItemFavorite(item);
+
+				item.update({
+					"flags.tidy5e-sheet.favorite": !isFav,
+				});
+				// Sync favorite flag with module 'favorite-items'
+				if (game.modules.get("favorite-items")?.active) {
+					item.update({
+						"flags.favorite-items.favorite": !isFav,
+					});
+				}
+				// Sync favorite flag with module 'favtab'
+				if (game.modules.get("favtab")?.active) {
+					item.update({
+						"flags.favtab.isFavorite": !isFav,
+					});
+				}
+			},
+		});
+
+		// TODO commented waiting for this PR https://github.com/KageJittai/lets-trade-5e/pulls
+		// if(game.modules.get("lets-trade-5e")?.active) {
+		//   if(!['feat','background','class','subclass','spell'].includes(item.type)) {
+		//     options.push({
+		//         name: `${game.i18n.localize("LetsTrade5E.Send")}`,
+		//         icon: `<i class="fas fa-balance-scale-right"></i>`,
+		//         callback: ()=>{
+		//           game.modules.get("lets-trade-5e").api.openItemTrade(item.actor?.id, item.id);
+		//         }
+		//     });
+		//   }
+		// }
 	}
-	options.push({
-		name: isFav ? "TIDY5E.RemoveFav" : "TIDY5E.AddFav",
-		icon: isFav ? `<i class='fas ${favoriteIcon} fa-fw'></i>` : `<i class='fas ${favoriteIcon} fa-fw inactive'></i>`,
-		callback: () => {
-			// const item_id = ev[0].dataset.itemId; //ev.currentTarget.closest('[data-item-id]').dataset.itemId;
-			// const item = actor.items.get(item_id);
-			if (!item) {
-				console.warn(`tidy5e-sheet | Item no founded!`);
-				return;
-			}
-			let isFav = isItemFavorite(item);
-
-			item.update({
-				"flags.tidy5e-sheet.favorite": !isFav,
-			});
-			// Sync favorite flag with module 'favorite-items'
-			if (game.modules.get("favorite-items")?.active) {
-				item.update({
-					"flags.favorite-items.favorite": !isFav,
-				});
-			}
-			// Sync favorite flag with module 'favtab'
-			if (game.modules.get("favtab")?.active) {
-				item.update({
-					"flags.favtab.isFavorite": !isFav,
-				});
-			}
-		},
-	});
-
-	// TODO commented waiting for this PR https://github.com/KageJittai/lets-trade-5e/pulls
-	// if(game.modules.get("lets-trade-5e")?.active) {
-	//   if(!['feat','background','class','subclass','spell'].includes(item.type)) {
-	//     options.push({
-	//         name: `${game.i18n.localize("LetsTrade5E.Send")}`,
-	//         icon: `<i class="fas fa-balance-scale-right"></i>`,
-	//         callback: ()=>{
-	//           game.modules.get("lets-trade-5e").api.openItemTrade(item.actor?.id, item.id);
-	//         }
-	//     });
-	//   }
-	// }
-
 	/*
   // Standard Options
   const options = [

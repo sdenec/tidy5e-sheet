@@ -416,6 +416,8 @@ async function editProtection(app, html, data) {
 		html.find(".inventory-list .items-footer").addClass("hidden").hide();
 		html.find(".inventory-list .item-control.item-delete").remove();
 		html.find(".inventory-list .item-control.item-duplicate").remove();
+		html.find(".effects .effect-control.effect-delete").remove();
+		html.find(".effects .effect-control.effect-duplicate").remove();
 
 		if (game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled") && !game.user.isGM) {
 			html.find(".effects-list .items-footer, .effects-list .effect-controls").remove();
@@ -460,20 +462,43 @@ async function addClassList(app, html, data) {
 			let items = data.actor.items;
 			for (let item of items) {
 				if (item.type === "class") {
-					let levels = item.system.levels ? `<span class="levels-info">${item.system.levels}</span>` : ``;
-					classList.push(item.name + levels);
+					let levelsHtml = item.system.levels ? `<span class='levels-info'>${item.system.levels}</span>` : ``;
+					classList.push(`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${truncate(item.name, 30, false) + levelsHtml}</li>`);
 				}
 				if (item.type === "subclass") {
-					classList.push(item.name);
+					classList.push(`<li class='class-item' data-tooltip='${item.name}'>${truncate(item.name, 30, false)}</li>`);
 				}
 			}
-			classList = "<ul class='class-list'><li class='class-item'>" + classList.join("</li><li class='class-item'>") + "</li></ul>";
-			mergeObject(actor, { "flags.tidy5e-sheet.classlist": classList });
+			let classListHtml = `<ul class='class-list'>${classList.join("")}</ul>`;
+
+			mergeObject(actor, { "flags.tidy5e-sheet.classlist": classListHtml });
 			let classListTarget = html.find(".bonus-information");
-			classListTarget.append(classList);
+			classListTarget.append(classListHtml);
 		}
+
+		// Prepare summary
+
+		html.find(".origin-summary span").each(function () {
+			let originalText = $(this).text();
+			$(this).text(truncate($(this).text(), 15, false));
+			$(this).attr("data-tooltip", originalText);
+		});
+		// html.find(".origin-summary input").each(function () {
+		// 	let originalText = $(this).text();
+		// 	$(this).attr("data-tooltip", originalText);
+		// });
 	}
 }
+
+function truncate( str, n, useWordBoundary ){
+	if (str.length <= n) { 
+		return str; 
+	}
+	const subString = str.slice(0, n-1); // the original check
+	return (useWordBoundary 
+	  ? subString.slice(0, subString.lastIndexOf(" ")) 
+	  : subString) + "&hellip;";
+};
 
 // Calculate Spell Attack modifier
 
