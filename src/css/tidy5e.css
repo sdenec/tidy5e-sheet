@@ -1311,13 +1311,13 @@
 	align-items: center;
 }
 .tidy5e.sheet.actor .current-xp {
-	width: calc(7.5ch + 0.3rem);
+	width: calc(10.5ch + 0.3rem);
 	height: 16px;
 	text-align: right;
 	padding: 0 4px;
 }
 .tidy5e.sheet.actor .max-xp {
-	width: calc(8.5ch + 0.3rem);
+	width: calc(10.5ch + 0.3rem);
 	height: 16px;
 	text-align: left;
 	padding: 0 4px;
@@ -3133,6 +3133,7 @@
 	padding: 0.5rem;
 	border-top: 1px solid var(--t5e-faint-color);
 	font-size: 12px;
+	width: 100%;
 }
 .tidy5e.sheet.actor .items-list .item .item-summary p:not(:first-child) {
 	margin-top: 0.5em;

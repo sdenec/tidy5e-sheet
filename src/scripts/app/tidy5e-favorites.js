@@ -19,6 +19,7 @@
 import { applyColorPickerCustomization } from "./color-picker.js";
 import CONSTANTS from "./constants.js";
 import { tidy5eContextMenu } from "./context-menu.js";
+import { is_real_number } from "./helpers.js";
 
 export const isItemFavorite = function (item) {
 	if (!item) {
@@ -41,10 +42,6 @@ export const isItemFavorite = function (item) {
 
 	return isFav;
 };
-
-function is_real_number(inNumber) {
-	return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
-}
 
 export const addFavorites = async function (app, html, data, position) {
 	let favs = app.actor.items.filter((i) => {
