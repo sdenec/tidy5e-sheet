@@ -15,12 +15,12 @@
 				</article>
 			</div>
 		</section>
-    
+
 		{{> "dnd5e.actor-warnings"}}
 		{{!-- Sheet Header --}}
 		<header class="tidy5e-header">
-			
-			
+
+
 			<section class="profile-wrap">
 				<div class="profile">
 
@@ -131,7 +131,7 @@
 						</div>
 						<input class="hp-min" name="system.attributes.hp.value" type="number" value="{{hp.value}}" placeholder="10"
 						data-tooltip="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
-						<span class="value-seperator sep"> / </span>	
+						<span class="value-seperator sep"> / </span>
 						{{#if @root.allowHpMaxOverride}}
 						<input class="hp-max" name="system.attributes.hp.max" type="number" step="any"
 						value="{{hp.max}}" placeholder="10"
@@ -147,9 +147,9 @@
         		{{!-- Temp Hit Points --}}
 				<div class="portrait-temp">
 					<input name="system.attributes.hp.temp" type="number" step="any" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
-					value="{{system.attributes.hp.temp}}" maxlength="3">
+					value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}" maxlength="3">
 					<input name="system.attributes.hp.tempmax" type="number" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
-					value="{{system.attributes.hp.tempmax}}" maxlength="3">
+					value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}" maxlength="3">
 					{{#if @root.allowHpMaxOverride}}
 					<a class="config-button hit-points-tidy" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
 						<i class="fas fa-cog"></i>
@@ -212,12 +212,22 @@
 								</ul>
 							</li>
 						</ul>
+                        <!--
 						<span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-race" data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
 						<span {{#if (and owner (not labels.background))}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-background" data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
 						<span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
-						<input type="hidden" data-input="{{actor._id}}-race" name="system.details.race" value="{{system.details.race}}" placeholder="{{ localize 'DND5E.Race' }}">
+                        <input type="hidden" data-input="{{actor._id}}-race" name="system.details.race" value="{{system.details.race}}" placeholder="{{ localize 'DND5E.Race' }}">
 						<input type="hidden" data-input="{{actor._id}}-background" name="system.details.background" value="{{system.details.background}}" placeholder="{{ localize 'DND5E.Background' }}">
 						<input type="hidden" data-input="{{actor._id}}-alignment" name="system.details.alignment" value="{{system.details.alignment}}" placeholder="{{ localize 'DND5E.Alignment' }}">
+                        -->
+                        <span data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
+						<span data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
+						<span data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
+                        {{#if owner}}
+                        <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                        {{/if}}
 					</li>
 					<li class="proficiency">
 						{{ localize 'DND5E.Proficiency' }}: {{labels.proficiency}}
@@ -296,7 +306,7 @@
 			</div>
 
 		</header>
-		
+
 		{{!-- PC Sheet Navigation --}}
 		<nav class="tidy5e-navigation tabs" data-group="primary">
 			<a class="item active" data-tab="attributes">{{ localize "DND5E.Attributes" }}</a>
@@ -316,7 +326,7 @@
 		<section class="sheet-body">
 
 			<div class="tab attributes" data-group="primary" data-tab="attributes">
-				
+
 				<div class="left-pane">
 
 					{{!-- Skills --}}
@@ -354,11 +364,11 @@
 									<h4>{{ localize "TIDY5E.RestoreOnRest" }}</h4>
 									<input id="{{@root/appId}}-{{res.name}}.sr" name="system.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}>
 									<label for="{{@root/appId}}-{{res.name}}.sr" class="checkbox" title="{{ localize 'TIDY5E.RestS' }}">
-										{{ localize "DND5E.RestS" }} 
+										{{ localize "DND5E.RestS" }}
 									</label>
 									<input id="{{@root/appId}}-{{res.name}}.lr" name="system.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}>
 									<label for="{{@root/appId}}-{{res.name}}.lr" class="checkbox" title="{{ localize 'TIDY5E.RestL' }}">
-										{{ localize "DND5E.RestL" }} 
+										{{ localize "DND5E.RestL" }}
 									</label>
 								</div>
 							</header>
@@ -389,7 +399,7 @@
 
 			{{!-- Inventory Tab --}}
 			<div class="tab inventory {{#if actor.flags.tidy5e-sheet.inventory-grid}}grid{{/if}}" data-group="primary" data-tab="inventory">
-				{{#if actor.flags.tidy5e-sheet.inventory-grid}} 
+				{{#if actor.flags.tidy5e-sheet.inventory-grid}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory-grid.html" sections=inventory}}
 					{{else}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-inventory.html" sections=inventory}}
@@ -398,7 +408,7 @@
 
 			{{!-- Spellbook Tab --}}
 			<div class="tab spellbook {{#if actor.flags.tidy5e-sheet.spellbook-grid}}grid{{/if}}" data-group="primary" data-tab="spellbook">
-				{{#if actor.flags.tidy5e-sheet.spellbook-grid}} 
+				{{#if actor.flags.tidy5e-sheet.spellbook-grid}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-grid.html"}}
 					{{else}}
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook.html"}}

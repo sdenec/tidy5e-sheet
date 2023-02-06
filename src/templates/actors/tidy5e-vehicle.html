@@ -42,7 +42,7 @@
 					</div>
 
 					{{!-- Resting --}}
-					<!-- TODO in the future 
+					<!-- TODO in the future
           <div class="rest-container has-note">
             <div class="note">{{ localize 'TIDY5E.RestHint' }}</div>
             <div class="resting">
@@ -75,7 +75,7 @@
 						<input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10" title="{{localize 'DND5E.HitPointsMax'}}" data-dtype="Number" maxlength="5" />
 					</div>
 				</div>
-				<!-- TODO in the future 
+				<!-- TODO in the future
         <div class="portrait-hp-formula health" title="{{ localize 'DND5E.HPFormula' }}">
           <span class="rollable" title="{{ localize 'DND5E.HitDiceRoll'}}/{{ localize 'TIDY5E.HitDiceRollAverage'}}"><i class="fas fa-dice-six"></i></span>
           <div class="formula-edit">
@@ -105,7 +105,7 @@
 						data-dtype="Number"
 						maxlength="5"
 					/>
-					<!-- TODO in the future 
+					<!-- TODO in the future
 					{{#if @root.allowHpMaxOverride}}
 					<a class="config-button hit-points-tidy" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
 						<i class="fas fa-cog"></i>
@@ -140,10 +140,18 @@
 							</li>
 						</ul>
 						<span>{{localize 'DND5E.Vehicle'}}</span>
+                        <!--
 						<span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-dimensions" data-placeholder="{{localize 'DND5E.Dimensions'}}">{{system.traits.dimensions}}</span>
 						<span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{localize 'DND5E.Source'}}">{{system.details.source}}</span>
 						<input type="hidden" data-input="{{actor._id}}-dimensions" name="system.traits.dimensions" value="{{system.traits.dimensions}}" placeholder="{{localize 'DND5E.Dimensions'}}" />
 						<input type="hidden" data-input="{{actor._id}}-source" name="system.details.source" value="{{system.details.source}}" placeholder="{{localize 'DND5E.Source'}}" />
+                        -->
+                        <span data-placeholder="{{localize 'DND5E.Dimensions'}}">{{system.traits.dimensions}}</span>
+                        {{#if owner}}
+                        <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                        {{/if}}
 					</li>
 				</ul>
 

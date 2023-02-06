@@ -237,6 +237,8 @@
 
 	.center-pane {
 		min-height: 100%;
+		overflow-x: inherit;
+		overflow-y: initial;
 
 		.features {
 			flex: 0;
@@ -275,6 +277,12 @@
 				align-items: center;
 				padding-bottom: 2px;
 				margin-top: 3px;
+				font-size: 25px;
+			}
+
+			input {
+				min-width: 30px;
+				max-width: 50px;
 			}
 
 			input[type="text"]:first-of-type {
@@ -286,13 +294,13 @@
 			}
 
 			input[type="text"] {
-				height: 14px;
+				height: 25px;
 				max-width: 20px;
 			}
 
 			input[type="checkbox"] {
 				width: 14px;
-				height: 14px;
+				height: 25px;
 				margin: 0;
 			}
 

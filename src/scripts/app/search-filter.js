@@ -1,3 +1,5 @@
+import CONSTANTS from "./constants.js";
+
 export const tidy5eSearchFilter = function (html, actor) {
 	// filter settings list
 	let searchInput = html.find(".filter-search input");
@@ -20,13 +22,13 @@ export const tidy5eSearchFilter = function (html, actor) {
 			value = $(this).val();
 		switch (id) {
 			case "item-search":
-				await actor.setFlag("tidy5e-sheet", "item-search", value);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "item-search", value);
 				break;
 			case "spell-search":
-				await actor.setFlag("tidy5e-sheet", "spell-search", value);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "spell-search", value);
 				break;
 			case "feat-search":
-				await actor.setFlag("tidy5e-sheet", "feat-search", value);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "feat-search", value);
 				break;
 		}
 		// if(id == "item-search"){
@@ -93,13 +95,13 @@ export const tidy5eSearchFilter = function (html, actor) {
 			filterInventoryList(searchField);
 			switch (id) {
 				case "item-search":
-					await actor.setFlag("tidy5e-sheet", "item-search", "");
+					await actor.setFlag(CONSTANTS.MODULE_ID, "item-search", "");
 					break;
 				case "spell-search":
-					await actor.setFlag("tidy5e-sheet", "spell-search", "");
+					await actor.setFlag(CONSTANTS.MODULE_ID, "spell-search", "");
 					break;
 				case "feat-search":
-					await actor.setFlag("tidy5e-sheet", "feat-search", "");
+					await actor.setFlag(CONSTANTS.MODULE_ID, "feat-search", "");
 					break;
 			}
 			// if(id == "item-search"){

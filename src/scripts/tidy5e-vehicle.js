@@ -6,16 +6,17 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksVehicleSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
+import CONSTANTS from "./app/constants.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 	static get defaultOptions() {
-		let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != "default" ? game.settings.get("tidy5e-sheet", "defaultActionsTab") : "attributes";
-		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get("tidy5e-sheet", "defaultActionsTab") == "actions") {
+		let defaultTab = game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default" ? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") : "attributes";
+		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions") {
 			defaultTab = "attributes";
 		}
 		return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "sheet", "actor", "vehicle"],
-			width: game.settings.get("tidy5e-sheet", "vehicleSheetWidth") ?? 740,
+			width: game.settings.get(CONSTANTS.MODULE_ID, "vehicleSheetWidth") ?? 740,
 			height: 720,
 			tabs: [{ navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab }],
 		});
@@ -45,10 +46,10 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		});
 
 		context.isGM = game.user.isGM;
-		context.allowHpMaxOverride = game.settings.get("tidy5e-sheet", "allowHpMaxOverride");
-		context.rightClickDisabled = game.settings.get("tidy5e-sheet", "rightClickDisabled");
-		context.classicControlsEnabled = game.settings.get("tidy5e-sheet", "classicControlsEnabled");
-		context.classicControlsDisabled = !game.settings.get("tidy5e-sheet", "classicControlsEnabled");
+		context.allowHpMaxOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpMaxOverride");
+		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
+		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
+		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		return context;
 	}
 
@@ -60,16 +61,16 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		tidy5eListeners(html, actor, this);
 		tidy5eContextMenu(html, this);
 		tidy5eShowActorArt(html, actor);
-		if (game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "itemCardsForNpcs")) {
 			tidy5eItemCard(html, actor);
 		}
 
 		// toggle empty traits visibility in the traits list
 		html.find(".traits .toggle-traits").click(async (event) => {
-			if (actor.getFlag("tidy5e-sheet", "traitsExpanded")) {
-				await actor.unsetFlag("tidy5e-sheet", "traitsExpanded");
+			if (actor.getFlag(CONSTANTS.MODULE_ID, "traitsExpanded")) {
+				await actor.unsetFlag(CONSTANTS.MODULE_ID, "traitsExpanded");
 			} else {
-				await actor.setFlag("tidy5e-sheet", "traitsExpanded", true);
+				await actor.setFlag(CONSTANTS.MODULE_ID, "traitsExpanded", true);
 			}
 		});
 
@@ -135,7 +136,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 // Edit Protection - Hide empty Inventory Sections, add and delete-buttons
 async function editProtection(app, html, data) {
 	let actor = app.actor;
-	if (!actor.getFlag("tidy5e-sheet", "allow-edit")) {
+	if (!actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 		let itemContainer = html.find(".inventory-list.items-list");
 		html.find(".inventory-list .items-header").each(function () {
 			if ($(this).next(".item-list").find("li").length - $(this).next(".item-list").find("li.items-footer").length == 0) {
@@ -146,6 +147,9 @@ async function editProtection(app, html, data) {
 
 		html.find(".inventory-list .items-footer").hide();
 		html.find(".inventory-list .item-control.item-delete").remove();
+		html.find(".inventory-list .item-control.item-duplicate").remove();
+		html.find(".effects .effect-control.effect-delete").remove();
+		html.find(".effects .effect-control.effect-duplicate").remove();
 
 		itemContainer.each(function () {
 			if ($(this).children().length < 1) {
@@ -177,39 +181,40 @@ async function abbreviateCurrency(app, html, data) {
 
 // add sheet classes
 async function setSheetClasses(app, html, data) {
-	if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
-		if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
-			html.find(".tidy5e-sheet .grid-layout .items-list").addClass("alt-context");
+	if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
+			html.find(".tidy5e-sheet.tidy5e-vehicle .grid-layout .items-list").addClass("alt-context");
 		} else {
-			html.find(".tidy5e-sheet .items-list").addClass("alt-context");
+			html.find(".tidy5e-sheet.tidy5e-vehicle .items-list").addClass("alt-context");
 		}
 	}
-	// if (game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
+	// if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 	// 	tidy5eClassicControls(html);
 	// }
-	if (!game.settings.get("tidy5e-sheet", "classicControlsEnabled")) {
-		html.find(".tidy5e-sheet .items-header-controls").remove();
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
+		html.find(".tidy5e-sheet.tidy5e-vehicle .items-header-controls").remove();
 	}
-	if (!game.settings.get("tidy5e-sheet", "restingForNpcsEnabled")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .rest-container").remove();
 	}
-	if (game.settings.get("tidy5e-sheet", "portraitStyle") == "npc" || game.settings.get("tidy5e-sheet", "portraitStyle") == "all") {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "npc" || game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all") {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .profile").addClass("roundPortrait");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") > 0) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") > 0) {
 		$(".system-dnd5e")
 			.get(0)
-			.style.setProperty("--vehicle-border", game.settings.get("tidy5e-sheet", "hpOverlayBorderVehicle") + "px");
+			.style.setProperty("--vehicle-border", game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") + "px");
 	} else {
 		$(".system-dnd5e").get(0).style.removeProperty("--vehicle-border");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpOverlayDisabledVehicle")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayDisabledVehicle")) {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .profile").addClass("disable-hp-overlay");
 	}
-	if (game.settings.get("tidy5e-sheet", "hpBarDisabled")) {
-		html.find(".tidy5e-sheet .profile").addClass("disable-hp-bar");
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hpBarDisabled")) {
+		html.find(".tidy5e-sheet.tidy5e-vehicle .profile").addClass("disable-hp-bar");
 	}
-	$(".info-card-hint .key").html(game.settings.get("tidy5e-sheet", "itemCardsFixKey"));
+
+	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
 
 	applyColorPickerCustomization(html);
 }
@@ -232,4 +237,13 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksVehicleSheet(app, html, data);
+});
+
+/** perform some necessary operations on character sheet **/
+Hooks.on("renderActorSheet", (app, html, data) => {
+	// Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills
+	// Issue https://github.com/sdenec/tidy5e-sheet/issues/662
+	if(game.modules.get("dnd5e-custom-skills")?.active) {
+		html.find(".tidy5e-sheet.tidy5e-vehicle .ability-scores.custom-abilities").removeClass("custom-abilities");
+	}
 });

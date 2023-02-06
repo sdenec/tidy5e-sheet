@@ -1,3 +1,4 @@
+import CONSTANTS from "./constants.js";
 import { settingsList } from "./settingsList.js";
 
 export class Tidy5eUserSettings extends FormApplication {
@@ -38,6 +39,7 @@ export class Tidy5eUserSettings extends FormApplication {
 	getSettingsData() {
 		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
+			
 			"ammoEquippedOnly",
 			"activeEffectsMarker",
 			"classListDisabled",
@@ -103,6 +105,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"lazyMoneyIgnoreElectrum",
 			"lazyMoneyChatLog",
 
+			"enableSortFavoritesItemsAlphabetically",
 			"allowCantripToBePreparedOnContext",
 			"spellClassFilterSelect",
 			"spellClassFilterIconReplace",
@@ -134,12 +137,14 @@ export class Tidy5eUserSettings extends FormApplication {
 			"colorPickerAlwaysPrepared",
 			"colorPickerAlwaysPreparedOutline",
 			"colorPickerAlwaysPreparedAccent",
+
+			"debug"
 		];
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
 		let data = {};
 		settings.forEach((setting) => {
-			data[setting] = { value: game.settings.get("tidy5e-sheet", setting) };
+			data[setting] = { value: game.settings.get(CONSTANTS.MODULE_ID, setting) };
 			// console.log(data[setting]);
 		});
 		return data;
@@ -210,11 +215,11 @@ export class Tidy5eUserSettings extends FormApplication {
 		// console.log(settingOptions);
 		for (let key in data) {
 			// console.log(`Key: ${key} with value: ${data[key]}`);
-			let oldSetting = game.settings.get("tidy5e-sheet", key);
+			let oldSetting = game.settings.get(CONSTANTS.MODULE_ID, key);
 			let newSetting = data[key];
 			if (oldSetting == newSetting) continue;
 			// console.log(`${key} changed to "${data[key]}"`);
-			game.settings.set("tidy5e-sheet", key, data[key]);
+			game.settings.set(CONSTANTS.MODULE_ID, key, data[key]);
 			settingsUpdated = true;
 		}
 

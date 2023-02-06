@@ -21,7 +21,7 @@ To install this module manually:
 ## Known issue / TODO
 
 - Update integration for [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
-- The current template for favorite items is to complicated ... we should be apply the same template of the module [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items) 
+- The current template for favorite items is to complicated ... we should be apply the same template of the module, [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items), and divide as a option for the player the inventory between Weapons/Equipment/Consumables
 - Integration of a  checkbox upcast (ty to mxzf on discord ) on the tidy sheet for the ability dialog option.
 
 ## Macro to prepare migration from 2.0.3 to 2.1.X
@@ -149,8 +149,8 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 ## License
 
 - **[Lazy Money](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e)** : [MIT](https://github.com/p4535992/foundryvtt-lazymoney-dnd5e/blob/master/LICENSE)
-- **[Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)** : [???](https://github.com/MrEnigmamgine/spell-class-filter-for-5e/blob/master/LICENSE)
-- **[Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)** : [???](https://github.com/thatlonelybugbear/spell-class-filter-for-5e/blob/master/LICENSE)
+- **[Multiclass Spellbook filter for 5e](https://github.com/MrEnigmamgine/spell-class-filter-for-5e)** : [MIT](https://github.com/thatlonelybugbear/spell-class-filter-for-5e/blob/main/LICENSE)
+- **[Multiclass Spellbook filter for 5e (fork)](https://github.com/thatlonelybugbear/spell-class-filter-for-5e)** : [MIT](https://github.com/thatlonelybugbear/spell-class-filter-for-5e/blob/main/LICENSE)
 - **[Spell Level Buttons for DnD 5e](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e)** : [???](https://github.com/Rayuaz/spell-level-buttons-for-dnd5e/blob/master/LICENSE)
 - **[Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items)**: [MIT](https://gitlab.com/mxzf/favorite-items/-/blob/master/LICENSE)
 - **[Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions)**: [MIT](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions/blob/main/LICENSE)

@@ -1,3 +1,5 @@
+import CONSTANTS from "./constants.js";
+
 export const tidy5eAmmoSwitch = function (html, actor) {
 	html.find(".ammo").each(function () {
 		const element = $(this);
@@ -5,7 +7,7 @@ export const tidy5eAmmoSwitch = function (html, actor) {
 		const token = actor.token || null;
 		if (token) actor = actor.getActiveTokens(false, true).find((t) => t._id === token.id).actor; // get synthetic actor
 		const item = actor.items.get(itemId);
-		const equippedOnly = game.settings.get("tidy5e-sheet", "ammoEquippedOnly");
+		const equippedOnly = game.settings.get(CONSTANTS.MODULE_ID, "ammoEquippedOnly");
 		const ammoItems = actor.items.filter((x) => x.system.consumableType === "ammo" && (!equippedOnly || x.system.equipped));
 		// console.log(ammoItems);
 		const target = item.system.consume.target;

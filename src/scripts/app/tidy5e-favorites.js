@@ -17,15 +17,16 @@
  */
 
 import { applyColorPickerCustomization } from "./color-picker.js";
+import CONSTANTS from "./constants.js";
 import { tidy5eContextMenu } from "./context-menu.js";
 
 export const isItemFavorite = function (item) {
 	if (!item) {
 		return false;
 	}
-	let isFav = (game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) || (game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) || item.flags["tidy5e-sheet"]?.favorite || false;
+	let isFav = (game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) || (game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) || item.flags[CONSTANTS.MODULE_ID]?.favorite || false;
 
-	const isAlreadyTidyFav = getProperty(item.flags["tidy5e-sheet"]?.favorite);
+	const isAlreadyTidyFav = getProperty(item.flags[CONSTANTS.MODULE_ID]?.favorite);
 	// for retrocompatibility
 	const isAlreadyFabTab = getProperty(item.flags["favtab"]?.isFavorite);
 	if (String(isAlreadyFabTab) === "true" && String(isAlreadyFabTab) === "false") {
@@ -35,7 +36,7 @@ export const isItemFavorite = function (item) {
 	}
 
 	// if(String(isAlreadyTidyFav) !== "true" && String(isAlreadyTidyFav) !== "false") {
-	// //   item.setFlag("tidy5e-sheet","favorite",isFav);
+	// //   item.setFlag(CONSTANTS.MODULE_ID,"favorite",isFav);
 	// }
 
 	return isFav;
@@ -298,14 +299,17 @@ export const addFavorites = async function (app, html, data, position) {
 			item.editable = app.options.editable;
 			switch (item.type) {
 				case "feat": {
-					// if (!is_real_number(item.flags["tidy5e-sheet"].sort)) {
-					//   item.flags["tidy5e-sheet"].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
-					// }
+					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+					  item.flags[CONSTANTS.MODULE_ID].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
+					}
 					item.isFeat = true;
 					favFeats.push(item);
 					break;
 				}
 				case "spell": {
+					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+						item.flags[CONSTANTS.MODULE_ID].sort = (favSpellsPrepMode.count + 1) * 100000; // initial sort key if not present
+					}
 					if (item.system.preparation.mode && item.system.preparation.mode !== "prepared") {
 						if (item.system.preparation.mode == "always") {
 							// favSpellsPrepMode['always'].spells.push(item);
@@ -331,9 +335,9 @@ export const addFavorites = async function (app, html, data, position) {
 					break;
 				}
 				default: {
-					// if (!is_real_number(item.flags["tidy5e-sheet"].sort)) {
-					//   item.flags["tidy5e-sheet"].sort = (favItems.count + 1) * 100000; // initial sort key if not present
-					// }
+					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
+					  item.flags[CONSTANTS.MODULE_ID].sort = (favItems.count + 1) * 100000; // initial sort key if not present
+					}
 					item.isItem = true;
 					favItems.push(item);
 					break;
@@ -345,76 +349,154 @@ export const addFavorites = async function (app, html, data, position) {
 		}
 	}
 
-	// sorting favItems alphabetically
+	let enableSortFavoritesItemsAlphabetically = 
+		game.settings.get(CONSTANTS.MODULE_ID, "enableSortFavoritesItemsAlphabetically");
 
-	const favItemsArray = Object.keys(favItems);
-	for (let key of favItemsArray) {
-		favItems.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
-	}
+	if(enableSortFavoritesItemsAlphabetically) {
 
-	// sorting favItems alphabetically
+		// sorting favItems alphabetically
 
-	const favFeatsArray = Object.keys(favFeats);
-	for (let key of favFeatsArray) {
-		favFeats.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
-	}
+		const favItemsArray = Object.keys(favItems);
+		for (let key of favItemsArray) {
+			favItems.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
 
-	// sorting favSpells alphabetically
+		// sorting favItems alphabetically
 
-	const favSpellsArray = Object.keys(favSpells);
-	for (let key of favSpellsArray) {
-		favSpells[key].spells.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
-	}
+		const favFeatsArray = Object.keys(favFeats);
+		for (let key of favFeatsArray) {
+			favFeats.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
 
-	// sorting favSpellsPrepMode alphabetically
+		// sorting favSpells alphabetically
 
-	const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
-	for (let key of favSpellsPrepModeArray) {
-		favSpellsPrepMode[key].spells.sort(function (a, b) {
-			let nameA = a.name.toLowerCase(),
-				nameB = b.name.toLowerCase();
-			if (nameA < nameB) {
-				//sort string ascending
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0; //default return value (no sorting)
-		});
+		const favSpellsArray = Object.keys(favSpells);
+		for (let key of favSpellsArray) {
+			favSpells[key].spells.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favSpellsPrepMode alphabetically
+
+		const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
+		for (let key of favSpellsPrepModeArray) {
+			favSpellsPrepMode[key].spells.sort(function (a, b) {
+				let nameA = a.name.toLowerCase();
+				let nameB = b.name.toLowerCase();
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+	} else {
+		// sorting favItems by sort
+
+		const favItemsArray = Object.keys(favItems);
+		for (let key of favItemsArray) {
+			favItems.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favItems by sort
+
+		const favFeatsArray = Object.keys(favFeats);
+		for (let key of favFeatsArray) {
+			favFeats.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favSpells by sort
+
+		const favSpellsArray = Object.keys(favSpells);
+		for (let key of favSpellsArray) {
+			favSpells[key].spells.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
+
+		// sorting favSpellsPrepMode by sort
+
+		const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
+		for (let key of favSpellsPrepModeArray) {
+			favSpellsPrepMode[key].spells.sort(function (a, b) {
+				let nameA = a.flags[CONSTANTS.MODULE_ID]?.sort;
+				let nameB = b.flags[CONSTANTS.MODULE_ID]?.sort;
+				if (nameA < nameB) {
+					//sort string ascending
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0; //default return value (no sorting)
+			});
+		}
 	}
 
 	let attributesTab = html.find('.item[data-tab="attributes"]');
@@ -426,22 +508,24 @@ export const addFavorites = async function (app, html, data, position) {
 
 		context.favItems =
 			favItems.length > 0
-				? favItems // .sort((a, b) => a.flags["tidy5e-sheet"].sort - b.flags["tidy5e-sheet"].sort)
+				? favItems
+				//? enableSortFavoritesItemsAlphabetically ? favItems : favItems?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
 				: false;
 		context.favFeats =
 			favFeats.length > 0
-				? favFeats // .sort((a, b) => a.flags["tidy5e-sheet"].sort - b.flags["tidy5e-sheet"].sort)
+				? favFeats
+				//? enableSortFavoritesItemsAlphabetically ? favFeats : favFeats?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
 				: false;
 		context.favSpellsPrepMode = spellPrepModeCount > 0 ? favSpellsPrepMode : false;
 		context.favSpells = spellCount > 0 ? favSpells : false;
 		context.editable = app.options.editable;
-		context.allowCantripToBePreparedOnContext = game.settings.get("tidy5e-sheet", "allowCantripToBePreparedOnContext");
+		context.allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
 
 		await loadTemplates(["modules/tidy5e-sheet/templates/favorites/favorite-item.html"]);
 		let favHtml = $(await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context));
 
 		// Activating favorite-list events
-    tidy5eContextMenu(favHtml, app);
+		tidy5eContextMenu(favHtml, app);
 
 
 		// showing item summary
@@ -568,23 +652,23 @@ export const addFavorites = async function (app, html, data, position) {
 				// ev.stopPropagation();
 
 				let dropData = JSON.parse(ev.originalEvent.dataTransfer.getData("text/plain"));
-
-				if (dropData.actorId !== app.actor.id) {
+				let item = fromUuidSync(dropData.uuid);
+				if (!item || item.actor?.id !== app.actor.id) {
 					// only do sorting if the item is from the same actor (not dropped from outside)
 					return;
 				}
-
+				let itemId = item.id;
 				let list = null;
-				if (dropData.type === "feat") {
+				if (item.type === "feat") {
 					list = favFeats;
-				} else if (dropData.type === "spell") {
-					list = favSpells[dropData.system.level].spells;
+				} else if (item.type === "spell" && is_real_number(item.system.level)) {
+					list = favSpells[item.system.level].spells;
 				} else {
 					list = favItems;
 				}
 
-				let dragSource = list.find((i) => i._id === dropData._id);
-				let siblings = list.filter((i) => i._id !== dropData._id);
+				let dragSource = list.find((i) => i._id === itemId);
+				let siblings = list.filter((i) => i._id !== itemId);
 				let targetId = ev.target.closest(".item").dataset.itemId;
 				let dragTarget = siblings.find((s) => s._id === targetId);
 
@@ -616,11 +700,13 @@ export const addFavorites = async function (app, html, data, position) {
 		favContainer.addClass("hasFavs");
 		favContent.append(favHtml);
 		// attributesTab.prepend(favMarker);
-		html.find(".tab.attributes").scrollTop(position.top);
-		if (game.settings.get("tidy5e-sheet", "rightClickDisabled")) {
+		if(position) {
+			html.find(".tab.attributes")?.scrollTop(position.top);
+		}
+		if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
 			favContent.find(".items-list").addClass("alt-context");
 		}
 
-    applyColorPickerCustomization(favHtml);
+		applyColorPickerCustomization(favHtml);
 	}
 };

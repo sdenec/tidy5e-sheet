@@ -1,7 +1,9 @@
+import CONSTANTS from "./constants.js";
+
 export const tidy5eItemCard = function (html, actor) {
 	// show/hide grid layout item info card on mouse enter/leave
 
-	let itemCardsForAllItems = game.settings.get("tidy5e-sheet", "itemCardsForAllItems");
+	let itemCardsForAllItems = game.settings.get(CONSTANTS.MODULE_ID, "itemCardsForAllItems");
 
 	let containerTrigger = itemCardsForAllItems ? html.find(".inventory-list:not(.character-actions-dnd5e)") : html.find(".grid-layout .inventory-list");
 	let cardTrigger = itemCardsForAllItems ? html.find(".inventory-list:not(.character-actions-dnd5e) .item-list .item") : html.find(".grid-layout .item-list .item");
@@ -10,14 +12,14 @@ export const tidy5eItemCard = function (html, actor) {
 		infoContainerContent = html.find("#item-info-container-content");
 
 	let timer;
-	let itemCardDelay = game.settings.get("tidy5e-sheet", "itemCardsDelay");
+	let itemCardDelay = game.settings.get(CONSTANTS.MODULE_ID, "itemCardsDelay");
 	if (!itemCardDelay || itemCardDelay == 0) itemCardDelay = false;
 
 	let mouseOverItem = false;
 	let itemCardIsFixed = false;
-	let itemCardFixKey = game.settings.get("tidy5e-sheet", "itemCardsFixKey") || "x";
+	let itemCardFixKey = game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey") || "x";
 
-	let itemCardsAreFloating = game.settings.get("tidy5e-sheet", "itemCardsAreFloating");
+	let itemCardsAreFloating = game.settings.get(CONSTANTS.MODULE_ID, "itemCardsAreFloating");
 
 	let sheet, sheetWidth, sheetHeight, sheetBorderRight, sheetBorderBottom;
 

@@ -71,9 +71,11 @@
               </div>
               <h4>
                 {{item.name~}}
+                <!--
                 {{~#if ctx.isStack}} ({{item.system.quantity}}){{/if}}
+                -->
               </h4>
-              {{#if item.system.properties.amm}}
+              {{#if (eq item.type 'ammo')}}
               <span class="ammo" data-id="{{item._id}}"></span>
               {{/if}}
               <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
@@ -109,13 +111,9 @@
             {{#if @root.isCharacter}}
             <div class="item-detail item-weight" title="{{localize 'DND5E.Weight'}}: {{ item.system.weight }} {{ @root.weightUnit }}">
               {{#if ctx.totalWeight}}
-                  <div class="item-detail">
-                      {{ ctx.totalWeight }} {{ @root.weightUnit }}
-                  </div>
+                  {{ ctx.totalWeight }} {{ @root.weightUnit }}
               {{ else }}
-                  <div class="item-detail">
-                    {{ item.system.weight }} {{ @root.weightUnit }}
-                  </div>
+                  {{ item.system.weight }} {{ @root.weightUnit }}
               {{/if}}
             </div>
             {{/if}}

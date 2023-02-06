@@ -1,3 +1,5 @@
+import CONSTANTS from "./constants.js";
+
 const classesConfiguration = {
 	artificer: "TIDY5E.ClassArtificer",
 	barbarian: "TIDY5E.ClassBarbarian",
@@ -16,7 +18,7 @@ const classesConfiguration = {
 };
 
 export async function applySpellClassFilterItemSheet(app, html, itemData) {
-	if (!game.settings.get("tidy5e-sheet", "spellClassFilterSelect")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterSelect")) {
 		return;
 	}
 	// The module already do the job so for avoid redundance...
@@ -24,8 +26,8 @@ export async function applySpellClassFilterItemSheet(app, html, itemData) {
 		return;
 	}
 	// collect relevant settings first
-	const user_setting_filterSelect = game.settings.get("tidy5e-sheet", "spellClassFilterSelect");
-	const user_setting_iconReplace = game.settings.get("tidy5e-sheet", "spellClassFilterIconReplace");
+	const user_setting_filterSelect = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterSelect");
+	const user_setting_iconReplace = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterIconReplace");
 
 	const item = app.object;
 	const type = item.type;
@@ -47,7 +49,7 @@ export async function applySpellClassFilterItemSheet(app, html, itemData) {
 // Any time an actor sheet is rendered check if it is a player character.  If so add the option to set the filter.
 // Then hide elements that do not match the filter.
 export async function applySpellClassFilterActorSheet(app, html, actorData) {
-	if (!game.settings.get("tidy5e-sheet", "spellClassFilterSelect")) {
+	if (!game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterSelect")) {
 		return;
 	}
 	// The module already do the job so for avoid redundance...
@@ -55,14 +57,14 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
 		return;
 	}
 	// collect relevant settings first
-	const user_setting_filterSelect = game.settings.get("tidy5e-sheet", "spellClassFilterSelect");
-	const user_setting_iconReplace = game.settings.get("tidy5e-sheet", "spellClassFilterIconReplace");
+	const user_setting_filterSelect = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterSelect");
+	const user_setting_iconReplace = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterIconReplace");
 
 	// collect some data to use later
 	const actor = app.object;
 	const type = actor.type;
 	const flags = actor.flags;
-	const actorSCFlags = flags["tidy5e-sheet"];
+	const actorSCFlags = flags[CONSTANTS.MODULE_ID];
 
 	if (type == "character") {
 		const spellbook = html.find(".tab.spellbook");
@@ -77,7 +79,7 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
 				SCF: classesConfiguration,
 				actor,
 				flags: flags,
-				scFlags: actor.flags["tidy5e-sheet"],
+				scFlags: actor.flags[CONSTANTS.MODULE_ID],
 			});
 			firstItem.before(actorClassFilter);
 		}
@@ -99,7 +101,7 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
 			let itemID = $(this).data("item-id");
 			let item = actorItems.get(itemID);
 			let itemFlags = item.flags;
-			let itemSCFlags = itemFlags["tidy5e-sheet"]; //Should return undefined if doesn't exist.
+			let itemSCFlags = itemFlags[CONSTANTS.MODULE_ID]; //Should return undefined if doesn't exist.
 
 			if (user_setting_iconReplace) {
 				// Replace spell icon image

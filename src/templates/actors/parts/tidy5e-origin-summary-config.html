@@ -1,0 +1,55 @@
+<form>
+    {{#if isCharacter}}
+
+        <div class="form-group">
+            <label>{{localize "DND5E.Race"}}</label>
+            <textarea rows="4" cols="50" name="race" value="{{race}}"
+                placeholder="{{ localize 'DND5E.Race' }}">{{race}}</textarea>
+        </div>
+        <div class="form-group">
+            <label>{{localize "DND5E.Background"}}</label>
+            <textarea rows="4" cols="50" name="background" value="{{background}}"
+                placeholder="{{ localize 'DND5E.Background' }}">{{background}}</textarea>
+        </div>
+        <div class="form-group">
+            <label>{{localize "DND5E.Alignment"}}</label>
+            <textarea rows="4" cols="50" name="alignment" value="{{alignment}}"
+                placeholder="{{ localize 'DND5E.Alignment' }}">{{alignment}}</textarea>
+        </div>
+
+    {{else if isNPC}}
+
+        <div class="environment form-group">
+            <label>{{localize "TIDY5E.Environment"}}</label>
+            <textarea rows="4" cols="50" name="environment" value="{{environment}}"
+                placeholder="{{ localize 'TIDY5E.Environment' }}">{{environment}}</textarea>
+        </div>
+        <div class="form-group">
+            <label>{{localize "DND5E.Alignment"}}</label>
+            <textarea rows="4" cols="50" name="alignment" value="{{alignment}}"
+                placeholder="{{ localize 'DND5E.Alignment' }}">{{alignment}}</textarea>
+        </div>
+        <div class="form-group">
+            <label>{{localize "DND5E.Source"}}</label>
+            <textarea rows="4" cols="50" name="source" value="{{source}}"
+                placeholder="{{ localize 'DND5E.Source' }}">{{source}}</textarea>
+        </div>
+
+    {{else if isVehicle}}
+
+        <div class="form-group">
+            <label>{{localize "DND5E.Dimensions"}}</label>
+            <textarea rows="4" cols="50" name="dimensions" value="{{dimensions}}"
+                placeholder="{{ localize 'DND5E.Dimensions' }}">{{dimensions}}</textarea>
+        </div>
+
+    {{else}}
+
+      <!-- TODO SOMETHING ? -->
+
+    {{/if}}
+
+    <button type="submit">
+      <i class="far fa-save"></i> {{localize "Save"}}
+    </button>
+</form>

@@ -123,6 +123,20 @@
 				<p class="notes">{{localize 'TIDY5E.Settings.ClassicControls.hint'}}</p>
 			</div>
 		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
+				name="enableSortFavoritesItemsAlphabetically"
+				id="enableSortFavoritesItemsAlphabetically"
+				{{checked
+				settings.enableSortFavoritesItemsAlphabetically.value}}
+			/>
+			<div class="description">
+				<label for="enableSortFavoritesItemsAlphabetically">{{localize 'TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically.hint'}}</p>
+			</div>
+		</article>
 		<h3>{{localize 'TIDY5E.Settings.ColorPickerLabel'}}</h3>
 		<article class="setting">
 			<input type="checkbox" data-dtype="boolean" name="colorPickerEnabled" id="colorPickerEnabled" {{checked settings.colorPickerEnabled.value}} />
