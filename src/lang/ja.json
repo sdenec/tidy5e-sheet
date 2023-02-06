@@ -1,5 +1,4 @@
 {
-	"Localization Provided By": "Brother Sharp",
 	"TIDY5E.PlayerName": "プレイヤー名",
 	"TIDY5E.Gender": "性別",
 	"TIDY5E.Age": "年齢",
@@ -13,8 +12,8 @@
 	"TIDY5E.ShowActorImage": "右クリック: 画像表示",
 	"TIDY5E.ShowPortraitArt": "画像表示",
 	"TIDY5E.ShowTokenArt": "トークン表示",
-	"TIDY5E.ShowItemImage": "right click: show item art",
-	"TIDY5E.ShowItemArt": "show image",
+	"TIDY5E.ShowItemImage": "右クリック: 画像表示",
+	"TIDY5E.ShowItemArt": "画像表示",
 
 	"TIDY5E.Exhaustion0": "悪影響なし",
 	"TIDY5E.Exhaustion1": "能力値判定に不利",
@@ -104,14 +103,37 @@
 
 	"TIDY5E.ItemDetailsHeadline": "解説・背景",
 
+	"TIDY5E.Class": "クラス",
+	"TIDY5E.SpellClass": "呪文クラス",
+	"TIDY5E.Spellbook": "呪文書",
+
+	"TIDY5E.ClassArtificer": "アーティフィサ―",
+	"TIDY5E.ClassBarbarian": "バーバリアン",
+	"TIDY5E.ClassBard": "バード",
+	"TIDY5E.ClassCleric": "クレリック",
+	"TIDY5E.ClassCustom": "カスタム",
+	"TIDY5E.ClassDruid": "ドルイド",
+	"TIDY5E.ClassFighter": "ファイター",
+	"TIDY5E.ClassMonk": "モンク",
+	"TIDY5E.ClassPaladin": "パラディン",
+	"TIDY5E.ClassRanger": "レンジャー",
+	"TIDY5E.ClassRogue": "ローグ",
+	"TIDY5E.ClassSorcerer": "ソーサラー",
+	"TIDY5E.ClassWarlock": "ウォーロック",
+	"TIDY5E.ClassWizard": "ウィザード",
+
 	"TIDY5E.Settings.GlobalLabel": "全体",
 	"TIDY5E.Settings.DebugLabel": "デバッグ",
 	"TIDY5E.Settings.UserLabel": "ユーザー",
 	"TIDY5E.Settings.PcLabel": "PC",
 	"TIDY5E.Settings.NpcLabel": "NPC",
 	"TIDY5E.Settings.VehicleLabel": "乗り物",
+	"TIDY5E.Settings.MulticlassSpellbookFilterLabel": "マルチクラス呪文書フィルター",
+	"TIDY5E.Settings.ColorPickerLabel": "色のカスタマイズ",
 
 	"TIDY5E.Settings.SheetMenu": {
+		"name": "Tidy Sheet設定",
+		"hint": "キャラクターシートの見た目を自由にカスタマイズしましょう！",
 		"label": "シート設定",
 		"title": "Tidy5eシート設定"
 	},
@@ -133,7 +155,17 @@
 		"tabLabel": "モジュール",
 		"header": "モジュール･オプション",
 		"labelActionsFavorites": "アクター･アクション/お気に入り",
-		"labelMidiQoL": "Midi Qol"
+		"labelMidiQoL": "Midi Qol",
+		"labelLazyMoney": "Lazy Money"
+	},
+	"TIDY5E.Settings.TabLocks": {
+		"tabLabel": "ロック",
+		"header": "ロック設定",
+		"hint": "シートの中であんまり使わない場所をPLが間違って変更するのを防いだり、そもそも表示したくないものを隠すためのオプションをここで提供しています。何をロックするのか、誰が使って良いのかを権限で完全に管理できます。",
+		"hint2": "注意：やろうと思えばこのロックを迂回する方法は存在します。悪意を持ったPLから完全に身を守ることはできません。あくまでも初心者やミスしやすい操作をさせない等、特定の経験を提供したいDMのためのものです。",
+		"labelGeneralLocks": "一般ロック",
+		"labelInventoryLocks": "所持品ロック",
+		"labelFeaturesLocks": "機能ロック"
 	},
 	"TIDY5E.Settings.TabInfo": {
 		"tabLabel": "情報",
@@ -237,6 +269,10 @@
 		"name": "常に技能を表示",
 		"hint": "デフォルトでは、技能が無効な場合はトグルボタンで表示されます。"
 	},
+	"TIDY5E.Settings.HideSpellbookTabNpc": {
+		"name": "NPCの呪文書タブを隠す",
+		"hint": "デフォルトだと「能力」タブと一体化しています。これをオフにすればタブが分けられます。"
+	},
 
 	"TIDY5E.Settings.ActiveEffectsMarker": {
 		"name": "アイテムに有効な効果を示すマーカーを表示",
@@ -288,6 +324,8 @@
 		"hint": "消耗レベルに対応した消耗効果を適用する方法を選択します（不利ロールのため要midiQol）",
 		"default": "自動消耗効果なし",
 		"tidy5e": "tidy 5e  - DnD5e標準の効果を適用（有効な効果を使用）",
+		"dfredce": "DFreds Convenient Effects - Use your own effects",
+		"cub": "CUB - Use your own effects",
 		"custom": "カスタム - あなた自身で効果を適用（要CUB）"
 	},
 	"TIDY5E.Settings.CustomExhaustionIcon": {
@@ -324,11 +362,30 @@
 		"name": "初めてシートを開くときのデフォルトタブ",
 		"hint": "「アクション」または「能力値」を選択します。",
 		"default": "アクション",
-		"attributes": "能力値"
+		"attributes": "能力値",
+		"inventory": "所持品",
+		"spellbook": "呪文書",
+		"features": "特徴",
+		"effects": "効果",
+		"biography": "経歴",
+		"journal": "資料",
+		"actions": "アクション"
 	},
 	"TIDY5E.Settings.HiddenDeathSaves": {
 		"name": "PLから死亡セーヴを隠す",
 		"hint": "有効化することで死亡セーヴの結果をGMのみ表示します。"
+	},
+	"TIDY5E.Settings.HideSpellSlotMarker": {
+		"name": "シートの呪文スロットマーカーを隠す",
+		"hint": "色の付いた呪文スロットマーカーを非表示にします。魔力点ルールを使っているときに便利です。"
+	},
+	"TIDY5E.Settings.EnableSpellLevelButtons": {
+		"name": "呪文レベルボタン有効化",
+		"hint": "呪文レベルを選択する画面において、ドロップダウンの代わりに一列に並んだボタンを表示します。"
+	},
+	"TIDY5E.Settings.HideStandardEncumbranceBar": {
+		"name": "キャラシから荷重のバーを非表示にする",
+		"hint": "現在のキャラの所持品の合計の重さを表示する荷重バーを非表示にします。「Variant Encumbrance」モッドを使っている場合は非表示をお勧めします。"
 	},
 	"TIDY5E.Settings.npsSheetWidth": {
 		"name": "デフォルトNPCシート幅",
@@ -341,6 +398,154 @@
 	"TIDY5E.Settings.vehicleSheetWidth": {
 		"name": "乗り物シート幅",
 		"hint": "乗り物シートの長さ（ピクセル単位）。再起動が必要です。"
+	},
+	"TIDY5E.Settings.SpellClassFilterSelect": {
+		"name": "マルチクラス呪文フィルタを有効化",
+		"hint": "キャラシの空間を少し空けたい場合はこれを無効化すると良いです。"
+	},
+	"TIDY5E.Settings.SpellClassFilterIconReplace": {
+		"name": "呪文アイコンをクラスアイコンに置き換える",
+		"hint": "呪文の固有のアイコンの代わりにその呪文を獲得したクラスのアイコンを表示するように変更します。呪文の数が多い場合は判別しやすくなります。"
+	},
+	"TIDY5E.Settings.LazyHpAndExpEnable": {
+		"name": "簡易HPと経験値操作",
+		"hint": "HPや経験値に「+10」「-10」「=10」「010」等を入力すると現在の値に大して操作を行い、繰り越し無しで処理されます。"
+	},
+	"TIDY5E.Settings.LazyMoneyEnable": {
+		"name": "簡易所持金操作",
+		"hint": "所持金に「+10」「-10」「=10」「010」等を入力すると現在の値に大して操作を行い、繰り越し無しで自動変換と処理がされます。"
+	},
+	"TIDY5E.Settings.LazyMoneyAddConvert": {
+		"name": "所持金追加時に変換する",
+		"hint": "所持金を増やしたとき、自動的に次に一番大きい貨幣に変換します。"
+	},
+	"TIDY5E.Settings.LazyMoneyIgnoreElectrum": {
+		"name": "エレクトラムを無視",
+		"hint": "自動的に変換する時、エレクトラム化を無視します。直接エレクトラム化を編集したときはこの限りではありませんが、「所持金追加時に変換する」が有効になっている場合は自動的に変換されます。"
+	},
+	"TIDY5E.Settings.LazyMoneyChatLog": {
+		"name": "チャットログ",
+		"hint": "所持金の変更をGMに秘話で通知します。"
+	},
+	"TIDY5E.Settings.AllowCantripToBePreparedOnContext": {
+		"name": "初級呪文も「準備」できる",
+		"hint": "ターシャの釜やOne D&D対応として初級呪文も右クリックメニューで準備を入れ替える事ができます。"
+	},
+	"TIDY5E.Settings.LockMoneyChanges": {
+		"name": "非GMの所持金操作をロック",
+		"hint": "pp, gp, ep, sp, cpの入力をロックし、非GM以外の人が操作できないようにします。この欄を操作する他のModは影響されません。"
+	},
+	"TIDY5E.Settings.LockExpChanges": {
+		"name": "非GMの経験値金操作をロック",
+		"hint": "経験値の入力をロックし、非GM以外の人が操作できないようにします。この欄を操作する他のModは影響されません。"
+	},
+	"TIDY5E.Settings.LockHpMaxChanges": {
+		"name": "非GMの最大HP操作をロックLock change hp max for non GM",
+		"hint": "最大HPの入力をロックし、非GM以外の人が操作できないようにします。この欄を操作する他のModは影響されません。."
+	},
+	"TIDY5E.Settings.LockLevelSelector": {
+		"name": "非GMのレベル操作をロック",
+		"hint": "レベルのドロップダウンをロックし、非GM以外の人が操作できないようにします。この欄を操作する他のModは影響されません。"
+	},
+	"TIDY5E.Settings.LockConfigureSheet": {
+		"name": "非GMのシート設定をロック",
+		"hint": "シート設定の入力をロックし、非GM以外の人が操作できないようにします。この欄を操作する他のModは影響されません。"
+	},
+	"TIDY5E.Settings.LockItemQuantity": {
+		"name": "非GMのアイテム所持数変更をロック",
+		"hint": "アイテム所持数の入力をロックし、非GM以外の人が操作できないようにします。この欄を操作する他のModは影響されません。"
+	},
+
+	"TIDY5E.Settings.ColorPickerEnabled": {
+		"name": "色カスタマイズを有効化",
+		"hint": "色のカスタマイズを有効化／無効化します。"
+	},
+	"TIDY5E.Settings.ColorPickerEquipped": {
+		"name": "「装備」色カスタマイズを有効化",
+		"hint": "「装備」されたアイテムの色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerEquippedOutline": {
+		"name": "「装備された枠」色カスタマイズを有効化",
+		"hint": "「装備されたアイテムの枠」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerEquippedAccent": {
+		"name": "「装備された背景」色カスタマイズを有効化",
+		"hint": "「装備されたアイテムの背景」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerPrepared": {
+		"name": "「準備済み」色カスタマイズを有効化",
+		"hint": "「準備済み」のアイテムの色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerPreparedOutline": {
+		"name": "「準備済み枠」色カスタマイズを有効化",
+		"hint": "「準備済みアイテムの枠」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+		},
+	"TIDY5E.Settings.ColorPickerPreparedAccent": {
+		"name": "「準備済み背景」色カスタマイズを有効化",
+		"hint": "「準備済みアイテムの背景」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerPact": {
+		"name": "「契約」色カスタマイズを有効化",
+		"hint": "「契約」として設定されたアイテムの色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerPactOutline": {
+		"name": "「契約枠」色カスタマイズを有効化",
+		"hint": "「契約アイテムの枠」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerPactAccent": {
+		"name": "「契約背景」色カスタマイズを有効化",
+		"hint": "「契約アイテムの背景」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerAtWill": {
+		"name": "「常に発動可能」色カスタマイズを有効化",
+		"hint": "「常に発動可能」として指定されたアイテムの色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerAtWillOutline": {
+		"name": "「常に発動可能枠」色カスタマイズを有効化",
+		"hint": "「常に発動可能なアイテムの枠」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerAtWillAccent": {
+		"name": "「常に発動可能背景」色カスタマイズを有効化",
+		"hint": "「常に発動可能なアイテムの背景」されたアイテムの色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerInnate": {
+		"name": "「生得呪文」色カスタマイズを有効化",
+		"hint": "「生得呪文」として指定されたアイテムの色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerInnateOutline": {
+		"name": "「生得呪文枠」色カスタマイズを有効化",
+		"hint": "「生得呪文の枠」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerInnateAccent": {
+		"name": "「生得呪文背景」色カスタマイズを有効化",
+		"hint": "「生得呪文の背景」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerAlwaysPrepared": {
+		"name": "「常に準備済み」色カスタマイズを有効化",
+		"hint": "「常に準備済み」として指定されたアイテムの色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerAlwaysPreparedOutline": {
+		"name": "「常に準備済み枠」色カスタマイズを有効化",
+		"hint": "「常に準備済みの枠」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.ColorPickerAlwaysPreparedAccent": {
+		"name": "「常に準備済みの背景」色カスタマイズを有効化",
+		"hint": "「常に準備済みの背景」の色をカスタマイズします。「#00000000」に設定すると透明となり、カスタマイズをオフしているのと同じ効果になります。"
+	},
+	"TIDY5E.Settings.AllowHpMaxOverride": {
+		"name": "キャラクターの最大HP手動変更",
+		"hint": "キャラクターシートのデフォルトの設定を上書きし、プレイヤーキャラクターの最大HPをGMが手動で変更できるようになります。"
+	},
+
+	"TIDY5E.Settings.Reset": {
+		"name": "設定を初期化",
+		"hint": "シートの設定をデフォルトに戻します。",
+		"dialogs": {
+			"title": "Mod設定を初期化",
+			"content": "設定を初期化しますか？　この操作は元に戻せません！",
+			"confirm": "設定を初期化する",
+			"cancel": "キャンセル"
+		}
 	},
 	"Save Changes": "保存"
 }
