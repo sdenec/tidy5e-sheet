@@ -7,6 +7,7 @@ import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksVehicleSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
+import { is_real_number } from "./app/helpers.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 	static get defaultOptions() {
@@ -50,6 +51,20 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
 		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
+
+		context.hpOverlayCalculationCurrent = 
+		(   
+			100 /
+			(
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) 
+				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
+			)
+		)
+		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
+		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+		
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%"
+
 		return context;
 	}
 

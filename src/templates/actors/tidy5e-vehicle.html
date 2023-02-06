@@ -37,7 +37,12 @@
 					<div class="hp-overlay-wrapper">
 						<div
 							class="hp-overlay"
-							style="background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) calc(100% - ((100% / ({{system.attributes.hp.max}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ), rgba(255, 255, 255, 1) 100%);"
+							style="background: linear-gradient(
+								0deg,
+								rgba(255, 0, 0, 1) 0%,
+								rgba(255, 0, 0, 1) calc(100% - {{hpOverlayCalculationCurrent}}),
+								rgba(255, 255, 255, 1) calc(100% - {{hpOverlayCalculationCurrent}}),
+								rgba(255, 255, 255, 1) 100%);"
 						></div>
 					</div>
 

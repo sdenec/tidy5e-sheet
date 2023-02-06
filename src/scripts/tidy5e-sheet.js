@@ -16,6 +16,7 @@ import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 import { updateExhaustion } from "./app/exhaustion.js";
 import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
+import { is_real_number } from "./app/helpers.js";
 
 let position = 0;
 
@@ -99,6 +100,19 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
 		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
+
+		context.hpOverlayCalculationCurrent = 
+		(   
+			100 /
+			(
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) 
+				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
+			)
+		)
+		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
+		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+		
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%"
 
 		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
 		if (this.actor.system.attributes.exhaustion === 0) {

@@ -3133,6 +3133,7 @@
 	padding: 0.5rem;
 	border-top: 1px solid var(--t5e-faint-color);
 	font-size: 12px;
+	width: 100%;
 }
 .tidy5e.sheet.actor .items-list .item .item-summary p:not(:first-child) {
 	margin-top: 0.5em;

@@ -16,6 +16,10 @@ Thank you very much!
 
 ## Version History
 
+### Version 0.8.5-6-7-8-9-10-1-12-13-14-15-16-17
+
+- Bug fixing and improvements
+
 ### Version 0.8.0-1-2-3-4
 
 - Compatibility with dnd5e 2.1.X
