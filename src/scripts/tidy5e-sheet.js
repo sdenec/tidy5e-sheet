@@ -583,11 +583,12 @@ async function tidyCustomEffect(actor, changes) {
 		if (changeMaxPreparedList.value?.length > 0) {
 			let oldValue = getProperty(actor, changeMaxPreparedList.key) || 0;
 			let changeMaxPreparedListText = changeMaxPreparedList.value.trim();
-			let op = "none";
-			if (["+", "-", "/", "*", "="].includes(changeMaxPreparedListText[0])) {
-				op = changeMaxPreparedListText[0];
-				changeMaxPreparedListText = changeMaxPreparedListText.slice(1);
-			}
+			// let op = "none";
+			// if (["+", "-", "/", "*", "="].includes(changeMaxPreparedListText[0])) {
+			// 	op = changeMaxPreparedListText[0];
+			// 	changeMaxPreparedListText = changeMaxPreparedListText.slice(1);
+			// }
+			let op = changeMaxPreparedList.mode;
 			const rollData = actor.getRollData();
 			Object.keys(rollData.abilities).forEach((abl) => {
 				rollData.abilities[abl].mod = Math.floor((rollData.abilities[abl].value - 10) / 2);
@@ -598,19 +599,36 @@ async function tidyCustomEffect(actor, changes) {
 			oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
 			if(oldValue != value) {
 				switch (op) {
-					case "+":
-						return setProperty(actor, changeMaxPreparedList.key, oldValue + value);
-					case "-":
-						return setProperty(actor, changeMaxPreparedList.key, oldValue - value);
-					case "*":
-						return setProperty(actor, changeMaxPreparedList.key, oldValue * value);
-					case "/":
-						return setProperty(actor, changeMaxPreparedList.key, oldValue / value);
-					case "=":
-						return setProperty(actor, changeMaxPreparedList.key, value);
-					default:
-						return setProperty(actor, changeMaxPreparedList.key, value);
+					case CONST.ACTIVE_EFFECT_MODES.ADD: {
+						setProperty(actor, changeMaxPreparedList.key, oldValue + value);
+						break;
+					}
+					case CONST.ACTIVE_EFFECT_MODES.DOWNGRADE: {
+						setProperty(actor, changeMaxPreparedList.key, oldValue - value);
+						break;
+					}
+					case CONST.ACTIVE_EFFECT_MODES.MULTIPLY: {
+						setProperty(actor, changeMaxPreparedList.key, oldValue * value);
+						break;
+					}
+					case CONST.ACTIVE_EFFECT_MODES.UPGRADE: {
+						setProperty(actor, changeMaxPreparedList.key, value);
+						break;
+					}
+					case CONST.ACTIVE_EFFECT_MODES.OVERRIDE: {
+						setProperty(actor, changeMaxPreparedList.key, value);
+						break;
+					}
+					case CONST.ACTIVE_EFFECT_MODES.CUSTOM: {
+						setProperty(actor, changeMaxPreparedList.key, value);
+						break;
+					}
+					default: {
+						setProperty(actor, changeMaxPreparedList.key, value);
+						break;
+					}
 				}
+				return;
 			} else {
 				return;
 			}
