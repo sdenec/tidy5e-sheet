@@ -86,7 +86,7 @@
 
           {{#if ctx.attunement}}
           <div class="item-detail attunement">
-              <i class="fas {{ctx.attunement.icon}} {{ctx.attunement.cls}}" title="{{localize ctx.attunement.title}}"></i>
+              <i class="item-state-icon fas {{ctx.attunement.icon}} {{ctx.attunement.cls}}" title="{{localize ctx.attunement.title}}"></i>
           </div>
           {{/if}}
         
@@ -141,7 +141,7 @@
             <p class="info-card-name">{{item.name}}</p>
             <div class="info-card-states">
               {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
-              {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
+              {{~#if ctx.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
             </div>
             {{#if item.hasUses }}
             <div class="info-card-amount">
@@ -164,9 +164,13 @@
 
           {{#if @root.owner}}
           <div class="item-controls flexrow" {{#if @root.classicControlsDisabled}} style="display:none" {{/if}}>
-            {{#if item.attunement}}
+            {{#if ctx.attunement}}
               <a class="item-control item-attunement {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-                <i class="fas fa-sun"></i> 
+                {{#if (eq item.system.attunement 2) }}
+                  <i class="fas fa-sun"></i> 
+                {{else}}
+                  <i class="fas fa-sun inactive"></i> 
+                {{/if}}
                 <span class="control-label">
                   {{#if (eq item.system.attunement 2) }}
                     {{localize "TIDY5E.Deattune"}}

@@ -296,7 +296,7 @@ const _getItemContextOptions = function (item) {
 		// });
 		options.push({
 			name: isAttuned ? "TIDY5E.Deattune" : "TIDY5E.Attune",
-			icon: "<i class='fas fa-sun fa-fw'></i>",
+			icon: isAttuned ? "<i class='fas fa-sun fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>" : "<i class='fas fa-sun fa-fw'></i>",
 			callback: () =>
 				item.update({
 					"system.attunement": CONFIG.DND5E.attunementTypes[isAttuned ? "REQUIRED" : "ATTUNED"],

@@ -162,7 +162,7 @@
         </div>
         {{#if @root.owner}}
         <div class="item-controls flexrow" {{#if @root.classicControlsDisabled}} style="display:none" {{/if}}>
-          {{#if item.attunement}}
+          {{#if ctx.attunement}}
             <a class="item-control item-attunement 
               {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
               <i class="fas fa-sun"></i> 

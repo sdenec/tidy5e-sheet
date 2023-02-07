@@ -12,7 +12,7 @@
       {{#each section.items as |item iid|}}
       {{#with (lookup @root.itemContext item.id) as |ctx|}}
         <li class="item {{#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}magic-item{{/if}} {{item.attunement.cls}} {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item.id}}{{/if}}" data-item-index="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
-          {{~#if item.attunement}} 
+          {{~#if ctx.attunement}} 
             <i class="fas fa-sun icon-attuned {{item.attunement.cls}}" title="{{localize item.attunement.title}}"></i>
           {{/if}}
 
@@ -52,7 +52,7 @@
             {{/if}}
             <div class="info-card-states">
               {{~#if (or item.flags.magicitems.enabled item.system.properties.mgc)}}<span><i class="fas fa-magic"></i>Magic Item</span>{{/if}}
-              {{~#if item.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
+              {{~#if ctx.attunement}}<span class="info-attuned {{item.attunement.cls}}"><i class="fas fa-sun"></i>{{localize item.attunement.title}}</span>{{/if}}
             </div>
             {{#if item.hasUses }}
             <div class="info-card-amount">
