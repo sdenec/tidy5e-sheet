@@ -32,7 +32,9 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 	 * @type {String}
 	 */
 	get template() {
-		if (!game.user.isGM && this.actor.limited) return "modules/tidy5e-sheet/templates/actors/tidy5e-vehicle-ltd.html";
+		if (!game.user.isGM && this.actor.limited) {
+			return "modules/tidy5e-sheet/templates/actors/tidy5e-vehicle-ltd.html";
+		}
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-vehicle.html";
 	}
 

@@ -120,12 +120,14 @@ function _onChangeHp(ev) {
 		newAmount = hp;
 	}
 
-	if (newAmount > maxHp) {
-		newAmount = maxHp;
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
+		if (newAmount > maxHp) {
+			newAmount = maxHp;
+		}
+		// if(newAmount <  minHp) {
+		//     newAmount = minHp;
+		// }
 	}
-	// if(newAmount <  minHp) {
-	//     newAmount = minHp;
-	// }
 	if (newAmount < 0) {
 		newAmount = 0;
 	}
@@ -207,6 +209,41 @@ function _onChangeHpMax(ev) {
 		.catch(console.log.bind(console));
 }
 
+function _onChangeHpForceHpValueLimit(ev) {
+	const input = ev.target;
+	const actor = ev.data.app.actor;
+	const sheet = ev.data.app.options;
+	const hp = ev.data.app.actor.system.attributes.hp.value;
+	const maxHp = ev.data.app.actor.system.attributes.hp.max;
+	
+	let newAmount = hp;
+
+	if (!is_real_number(newAmount)) {
+		newAmount = hp;
+	}
+
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
+		if (newAmount > maxHp) {
+			newAmount = maxHp;
+		}
+		// if(newAmount <  minHp) {
+		//     newAmount = minHp;
+		// }
+	}
+	if (newAmount < 0) {
+		newAmount = 0;
+	}
+
+	sheet.submitOnChange = false;
+	actor
+		.update({ "system.attributes.hp.value": Number(newAmount) })
+		.then(() => {
+			input.value = Number(getProperty(actor, input.name));
+			sheet.submitOnChange = true;
+		})
+		.catch(console.log.bind(console));
+}
+
 export function applyLazyExp(app, html, actorData) {
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable")) {
 		return;
@@ -228,6 +265,20 @@ export function applyLazyExp(app, html, actorData) {
 
 export function applyLazyHp(app, html, actorData) {
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable")) {
+		if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
+			for (const elem of html.find("input[name^='system.attributes.hp.value']")) {
+				elem.type = "text";
+				elem.classList.add("lazyhp");
+			}
+			html.find("input[name^='system.attributes.hp.value']").off("change");
+			html.find("input[name^='system.attributes.hp.value']").change(
+				{
+					app: app,
+					data: actorData,
+				},
+				_onChangeHpForceHpValueLimit
+			);
+		}
 		return;
 	}
 

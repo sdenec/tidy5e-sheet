@@ -653,6 +653,15 @@ export function settingsList() {
 		type: Boolean,
 	});
 
+	game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit", {
+		name: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit.hint")}`,
+		scope: "world",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+
 	// Lazy Money
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyMoneyEnable", {

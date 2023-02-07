@@ -731,6 +731,13 @@
 			</div>
 		</article>
 		<article class="setting">
+			<input type="checkbox" data-dtype="boolean" name="lazyHpForceHpValueLimit" id="lazyHpForceHpValueLimit" {{checked settings.lazyHpForceHpValueLimit.value}} />
+			<div class="description">
+				<label for="lazyHpForceHpValueLimit">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
 			<input type="checkbox" data-dtype="boolean" name="allowHpMaxOverride" id="allowHpMaxOverride" {{checked settings.allowHpMaxOverride.value}} />
 			<div class="description">
 				<label for="allowHpMaxOverride">{{localize 'TIDY5E.Settings.AllowHpMaxOverride.name'}}</label>
