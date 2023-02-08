@@ -96,7 +96,10 @@ function _onChangeHp(ev) {
 	} else {
 		delta = Number(splitVal[0]);
 	}
+
 	let newAmount = hp;
+	let newAmountTemp = ev.data.app.actor.system.attributes.hp.temp;
+	let newAmountTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	switch (sign) {
 		case signCase.add: {
@@ -123,50 +126,56 @@ function _onChangeHp(ev) {
 
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
 		if (newAmount > maxHp) {
+			let tmp = (newAmount - maxHp);
+			let tmp2 = newAmountTemp + tmp;
+			if(newAmountTempMax < tmp2) {
+				let tmp3 = tmp2 - newAmountTempMax;
+				newAmountTempMax = newAmountTempMax + tmp3;
+			}
+			newAmountTemp = tmp2;
 			newAmount = maxHp;
 		}
-    let newAmountTemp = ev.data.app.actor.system.attributes.hp.temp;
-    let newAmountTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 		// if(newAmount <  minHp) {
 		//     newAmount = minHp;
 		// }
-		if (newAmount > maxHp) {
-      newAmountTemp = newAmountTemp + (newAmount - maxHp);
-      newAmountTempMax = newAmountTempMax + (newAmount - maxHp);
-			newAmount = maxHp;
+
+		if (newAmount < 0) {
+			newAmount = 0;
+		}
+		if (newAmountTemp < 0) {
+			newAmountTemp = 0;
+		}
+		if (newAmountTempMax < 0) {
+			newAmountTempMax = 0;
 		}
 
-    if (newAmount < 0) {
-      newAmount = 0;
-    }
-
-    sheet.submitOnChange = false;
-    actor
-      .update({
-        "system.attributes.hp.value": Number(newAmount),
-        "system.attributes.hp.temp": Number(newAmountTemp),
-        "system.attributes.hp.tempmax": Number(newAmountTempMax),
-      })
-      .then(() => {
-        input.value = Number(getProperty(actor, input.name));
-        sheet.submitOnChange = true;
-      })
-      .catch(console.log.bind(console));
+		sheet.submitOnChange = false;
+		actor
+		.update({
+			"system.attributes.hp.value": Number(newAmount),
+			"system.attributes.hp.temp": Number(newAmountTemp),
+			"system.attributes.hp.tempmax": Number(newAmountTempMax),
+		})
+		.then(() => {
+			input.value = Number(getProperty(actor, input.name));
+			sheet.submitOnChange = true;
+		})
+		.catch(console.log.bind(console));
 
 	} else {
 
-    if (newAmount < 0) {
-      newAmount = 0;
-    }
+		if (newAmount < 0) {
+			newAmount = 0;
+		}
 
-    sheet.submitOnChange = false;
-    actor
-      .update({ "system.attributes.hp.value": Number(newAmount) })
-      .then(() => {
-        input.value = Number(getProperty(actor, input.name));
-        sheet.submitOnChange = true;
-      })
-      .catch(console.log.bind(console));
+		sheet.submitOnChange = false;
+		actor
+			.update({ "system.attributes.hp.value": Number(newAmount) })
+			.then(() => {
+				input.value = Number(getProperty(actor, input.name));
+				sheet.submitOnChange = true;
+			})
+			.catch(console.log.bind(console));
   }
 
 }
@@ -245,9 +254,9 @@ function _onChangeHpForceHpValueLimit(ev) {
 	const hp = ev.data.app.actor.system.attributes.hp.value;
 	const maxHp = ev.data.app.actor.system.attributes.hp.max;
 
-	let newAmount = hp;
-  let newAmountTemp = ev.data.app.actor.system.attributes.hp.temp;
-  let newAmountTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
+	let newAmount = Number(input.value);
+	let newAmountTemp = ev.data.app.actor.system.attributes.hp.temp;
+	let newAmountTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (!is_real_number(newAmount)) {
 		newAmount = hp;
@@ -255,8 +264,13 @@ function _onChangeHpForceHpValueLimit(ev) {
 
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
 		if (newAmount > maxHp) {
-      newAmountTemp = newAmountTemp + (newAmount - maxHp);
-      newAmountTempMax = newAmountTempMax + (newAmount - maxHp);
+			let tmp = (newAmount - maxHp);
+			let tmp2 = newAmountTemp + tmp;
+			if(newAmountTempMax < tmp2) {
+				let tmp3 = tmp2 - newAmountTempMax;
+				newAmountTempMax = newAmountTempMax + tmp3;
+			}
+			newAmountTemp = tmp2;
 			newAmount = maxHp;
 		}
 		// if(newAmount <  minHp) {
@@ -266,14 +280,20 @@ function _onChangeHpForceHpValueLimit(ev) {
 	if (newAmount < 0) {
 		newAmount = 0;
 	}
+	if (newAmountTemp < 0) {
+		newAmountTemp = 0;
+	}
+	if (newAmountTempMax < 0) {
+		newAmountTempMax = 0;
+	}
 
 	sheet.submitOnChange = false;
 	actor
 		.update({
-      "system.attributes.hp.value": Number(newAmount),
-      "system.attributes.hp.temp": Number(newAmountTemp),
-      "system.attributes.hp.tempmax": Number(newAmountTempMax),
-    })
+			"system.attributes.hp.value": Number(newAmount),
+			"system.attributes.hp.temp": Number(newAmountTemp),
+			"system.attributes.hp.tempmax": Number(newAmountTempMax),
+		})
 		.then(() => {
 			input.value = Number(getProperty(actor, input.name));
 			sheet.submitOnChange = true;
@@ -285,18 +305,18 @@ function _onChangeHpForceHpTempLimit(ev) {
 	const input = ev.target;
 	const actor = ev.data.app.actor;
 	const sheet = ev.data.app.options;
-	const hp = ev.data.app.actor.system.attributes.hp.temp;
-	const maxHp = ev.data.app.actor.system.attributes.hp.tempmax;
+	const hpTemp = ev.data.app.actor.system.attributes.hp.temp;
+	const maxHpTemp = ev.data.app.actor.system.attributes.hp.tempmax;
 
-	let newAmount = hp;
+	let newAmount = Number(input.value);
 
 	if (!is_real_number(newAmount)) {
-		newAmount = hp;
+		newAmount = hpTemp;
 	}
 
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
-		if (newAmount > maxHp) {
-			newAmount = maxHp;
+		if (newAmount > maxHpTemp) {
+			newAmount = maxHpTemp;
 		}
 		// if(newAmount <  minHp) {
 		//     newAmount = minHp;
@@ -321,12 +341,12 @@ export function applyLazyExp(app, html, actorData) {
 		return;
 	}
 
-	for (const elem of html.find("input[name^='system.details.xp.value']")) {
+	for (const elem of html.find("input[name='system.details.xp.value']")) {
 		elem.type = "text";
 		elem.classList.add("lazyexp");
 	}
-	html.find("input[name^='system.details.xp.value']").off("change");
-	html.find("input[name^='system.details.xp.value']").change(
+	html.find("input[name='system.details.xp.value']").off("change");
+	html.find("input[name='system.details.xp.value']").change(
 		{
 			app: app,
 			data: actorData,
@@ -338,24 +358,24 @@ export function applyLazyExp(app, html, actorData) {
 export function applyLazyHp(app, html, actorData) {
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable")) {
 		if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
-			for (const elem of html.find("input[name^='system.attributes.hp.value']")) {
+			for (const elem of html.find("input[name='system.attributes.hp.value']")) {
 				elem.type = "text";
 				elem.classList.add("lazyhp");
 			}
-			html.find("input[name^='system.attributes.hp.value']").off("change");
-			html.find("input[name^='system.attributes.hp.value']").change(
+			html.find("input[name='system.attributes.hp.value']").off("change");
+			html.find("input[name='system.attributes.hp.value']").change(
 				{
 					app: app,
 					data: actorData,
 				},
 				_onChangeHpForceHpValueLimit
 			);
-      for (const elem of html.find("input[name^='system.attributes.hp.temp']")) {
+			for (const elem of html.find("input[name='system.attributes.hp.temp']")) {
 				elem.type = "text";
 				elem.classList.add("lazyhp");
 			}
-			html.find("input[name^='system.attributes.hp.temp']").off("change");
-			html.find("input[name^='system.attributes.hp.temp']").change(
+			html.find("input[name='system.attributes.hp.temp']").off("change");
+			html.find("input[name='system.attributes.hp.temp']").change(
 				{
 					app: app,
 					data: actorData,
@@ -366,12 +386,12 @@ export function applyLazyHp(app, html, actorData) {
 		return;
 	}
 
-	for (const elem of html.find("input[name^='system.attributes.hp.value']")) {
+	for (const elem of html.find("input[name='system.attributes.hp.value']")) {
 		elem.type = "text";
 		elem.classList.add("lazyhp");
 	}
-	html.find("input[name^='system.attributes.hp.value']").off("change");
-	html.find("input[name^='system.attributes.hp.value']").change(
+	html.find("input[name='system.attributes.hp.value']").off("change");
+	html.find("input[name='system.attributes.hp.value']").change(
 		{
 			app: app,
 			data: actorData,
@@ -379,12 +399,12 @@ export function applyLazyHp(app, html, actorData) {
 		_onChangeHp
 	);
 
-	for (const elem of html.find("input[name^='system.attributes.hp.max']")) {
+	for (const elem of html.find("input[name='system.attributes.hp.max']")) {
 		elem.type = "text";
 		elem.classList.add("lazyhp");
 	}
-	html.find("input[name^='system.attributes.hp.max']").off("change");
-	html.find("input[name^='system.attributes.hp.max']").change(
+	html.find("input[name='system.attributes.hp.max']").off("change");
+	html.find("input[name='system.attributes.hp.max']").change(
 		{
 			app: app,
 			data: actorData,
@@ -392,20 +412,20 @@ export function applyLazyHp(app, html, actorData) {
 		_onChangeHpMax
 	);
 
-  if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
-    for (const elem of html.find("input[name^='system.attributes.hp.temp']")) {
-      elem.type = "text";
-      elem.classList.add("lazyhp");
-    }
-    html.find("input[name^='system.attributes.hp.temp']").off("change");
-    html.find("input[name^='system.attributes.hp.temp']").change(
-      {
-        app: app,
-        data: actorData,
-      },
-      _onChangeHpForceHpTempLimit
-    );
-  }
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
+		for (const elem of html.find("input[name='system.attributes.hp.temp']")) {
+		elem.type = "text";
+		elem.classList.add("lazyhp");
+		}
+		html.find("input[name='system.attributes.hp.temp']").off("change");
+		html.find("input[name='system.attributes.hp.temp']").change(
+		{
+			app: app,
+			data: actorData,
+		},
+		_onChangeHpForceHpTempLimit
+		);
+	}
 }
 
 Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {

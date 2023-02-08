@@ -3346,9 +3346,9 @@
 	padding: 0.5rem;
 }
 .tidy5e.sheet.actor .items-list .item-state-icon {
-	display: -webkit-box;
+	/* display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
+	display: flex; */
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
