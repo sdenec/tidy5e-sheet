@@ -131,7 +131,7 @@
 	"TIDY5E.Settings.NpcLabel": "NPCs",
 	"TIDY5E.Settings.VehicleLabel": "Vehicles",
 	"TIDY5E.Settings.MulticlassSpellbookFilterLabel": "Multiclass Spellbook Filter",
-	"TIDY5E.Settings.ColorPickerLabel": "Color Picker (Customize the color)",
+	"TIDY5E.Settings.ColorPickerLabel": "Customize the color (It's advisable to install the module 'Color Settings')",
 
 	"TIDY5E.Settings.SheetMenu": {
 		"name": "Tidy Sheet Settings",
