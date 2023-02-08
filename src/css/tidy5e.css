@@ -2527,6 +2527,7 @@
 .tidy5e.sheet.actor .favorites .items-list {
 	overflow: visible;
 	padding-right: 0;
+	min-height: 200px;
 }
 .tidy5e.sheet.actor .favorites .items-list .item .item-name .item-image i {
 	font-size: 16px;
