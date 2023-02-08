@@ -127,6 +127,20 @@
 			<input
 				type="checkbox"
 				data-dtype="boolean"
+				name="hideIconsNextToTheItemName"
+				id="hideIconsNextToTheItemName"
+				{{checked
+				settings.hideIconsNextToTheItemName.value}}
+			/>
+			<div class="description">
+				<label for="hideIconsNextToTheItemName">{{localize 'TIDY5E.Settings.HideIconsNextToTheItemName.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HideIconsNextToTheItemName.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input
+				type="checkbox"
+				data-dtype="boolean"
 				name="enableSortFavoritesItemsAlphabetically"
 				id="enableSortFavoritesItemsAlphabetically"
 				{{checked

@@ -53,6 +53,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
 		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
+		context.notHideIconsNextToTheItemName = !game.settings.get(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName");
 
 		context.hpOverlayCalculationCurrent = 
 		(   

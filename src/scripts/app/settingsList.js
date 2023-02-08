@@ -65,6 +65,15 @@ export function settingsList() {
 		type: Boolean,
 	});
 
+	game.settings.register(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName", {
+		name: `${game.i18n.localize("TIDY5E.Settings.HideIconsNextToTheItemName.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.HideIconsNextToTheItemName.hint"),
+		scope: "client",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+
 	// Item Info Cards
 	game.settings.register(CONSTANTS.MODULE_ID, "itemCardsForAllItems", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ItemCardsForAllItems.name")}`,

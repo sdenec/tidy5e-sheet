@@ -84,7 +84,7 @@
             {{/if}}
           </div>
 
-          {{#if @root.classicControlsDisabled }}
+          {{#if @root.notHideIconsNextToTheItemName }}
             {{#if ctx.attunement}}
             <div class="item-detail attunement">
                 <i class="item-state-icon fas {{ctx.attunement.icon}} {{ctx.attunement.cls}}" title="{{localize ctx.attunement.title}}"></i>

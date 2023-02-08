@@ -205,6 +205,10 @@
 		"name": "Use classic item controls in list view.",
 		"hint": "Always shows item controls this will not disable the right click menu. Only applies for PC item/spell inventory in list layout."
 	},
+	"TIDY5E.Settings.HideIconsNextToTheItemName": {
+		"name": "Hide icons next to the item name",
+		"hint": "If enabled this setting hides the support icons present next to the object name (Favorite, Attunement, etc.), this is usually useful with the 'Use classic item controls in list view' setting enabled in order to avoid a redundancy of icons..."
+	},
 	"TIDY5E.Settings.RollButtonsToCard": {
 		"name": "Show midiQol Item Buttons in item's info card",
 		"hint": "Per default roll buttons appear in the item's description. Enable to move them to the item's info card. Works in all layout modes."
