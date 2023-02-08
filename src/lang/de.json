@@ -241,7 +241,7 @@
 		"name": "Zeige Marker für Gegenstände mit Aktiven Effekten.",
 		"hint": "Aktivieren, um einen Marker neben Gegenständen mit Aktiven Effekten anzuzeigen (nur für Listen-Ansicht)."
 	},
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Rechtsklick-Menü deaktivieren.",
 		"hint": "Im Falle von Modulkonflikten oder persönlicher Vorliebe kann das Rechtsklickmenü deaktiviert werden. Stattdessen erscheint ein Menü-Button neben Gegenständen. Der Mittelklick bleibt."
 	},

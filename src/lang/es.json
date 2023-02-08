@@ -233,7 +233,7 @@
 		"name": "Mostrar un marcador de Efectos Activos en los objetos.",
 		"hint": "Actívalo si quieres ver si los objetos tienen efectos activos en ellos (solo en diseño de lista)."
 	},
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Desactivar el menú contextual del botón derecho",
 		"hint": "En caso de conflictos de módulos o de preferencias, puedes desactivar el menú contextual del botón derecho. Los elementos mostrarán un icono de menú en su lugar."
 	},

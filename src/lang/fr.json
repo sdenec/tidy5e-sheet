@@ -233,7 +233,7 @@
 		"name": "Afficher le marqueru d'effet actif sur les objets",
 		"hint": "Activer cette option pour visualiser les objets avec un effet actif (uniquement pour la vue liste)."
 	},
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Désactiver le menu contextuel au clic droit",
 		"hint": "En cas de conflits de modules ou par choix personnel, activer cette option pour désactiver le menu contextuel au clic droit."
 	},

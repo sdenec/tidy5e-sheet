@@ -47,14 +47,14 @@ export function settingsList() {
 
 	// Disable Right Click
 	game.settings.register(CONSTANTS.MODULE_ID, "rightClickDisabled", {
-		name: `${game.i18n.localize("TIDY5E.Settings.RightClick.name")}`,
-		hint: game.i18n.localize("TIDY5E.Settings.RightClick.hint"),
+		name: `${game.i18n.localize("TIDY5E.Settings.RightClickDisabled.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.RightClickDisabled.hint"),
 		scope: "client",
 		config: false,
 		default: false,
 		type: Boolean,
 	});
-	
+
 	// Classic Item Controls
 	game.settings.register(CONSTANTS.MODULE_ID, "classicControlsEnabled", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ClassicControls.name")}`,

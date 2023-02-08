@@ -233,7 +233,7 @@
 		"name": "Zobrazovat na předmětech Značku Aktivního Efektu.",
 		"hint": "Zaškrtněte, pokud chcete vidět, zda mají předměty na sobě aktivní efekt (pouze v řádkovém zobrazení)."
 	},
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Zakázat kontextové menu pravého tlačítka.",
 		"hint": "V případě konfliktu modulů a nebo preference, můžete zakázat kontextové menu. Položky namísto toho zobrazí ikonku menu."
 	},

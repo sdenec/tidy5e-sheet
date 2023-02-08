@@ -241,7 +241,7 @@
 		"name": "Aktív Hatások Jelölő mutatása a tételeken.",
 		"hint": "Kapcsold be, hogy lásd a tételeken lévő aktív hatásokat (csak lista nézetben)."
 	},
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Jobb klikk menü elrejtése.",
 		"hint": "Modul összeakadás vagy csak tetszés miatt kikapcsolhatod a jobb klikk menüt. Helyette a tételeken egy menü ikon lesz."
 	},

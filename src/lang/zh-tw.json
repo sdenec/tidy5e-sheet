@@ -239,7 +239,7 @@
 		"name": "禁用生命值條。",
 		"hint": "啟用後，用於指示剩餘 HP 的著色條將會被隱藏 (HP 數字仍將可見)。"
 	},
-	"TIDY5E.Settings.DisableRightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "禁用右鍵上下文菜單。",
 		"hint": "你可以禁用右鍵上下文菜單以避免 MOD 或設置的衝突。物品條目上將會顯示菜單按鈕作為替代。"
 	},

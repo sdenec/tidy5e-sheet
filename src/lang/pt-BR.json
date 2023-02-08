@@ -229,7 +229,7 @@
 		"name": "Mostrar marcador de Efeitos Ativos em itens.",
 		"hint": "Habilite se você deseja ver se itens possuem efeitos ativos neles (somente para lista)"
 	},
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Desativar o menu de contexto do botão direito.",
 		"hint": "No caso de conflitos de módulos ou preferência, você pode desativar o botão de contexto do botão direito do mouse. Itens mostrarão um ícone de menu no lugar."
 	},

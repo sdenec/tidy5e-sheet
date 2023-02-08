@@ -203,7 +203,7 @@
 
 	"TIDY5E.Settings.ClassicControls": {
 		"name": "Use classic item controls in list view.",
-		"hint": "Always shows item controls and disable right click menu. Only applies for PC item/spell inventory in list layout."
+		"hint": "Always shows item controls this will not disable the right click menu. Only applies for PC item/spell inventory in list layout."
 	},
 	"TIDY5E.Settings.RollButtonsToCard": {
 		"name": "Show midiQol Item Buttons in item's info card",
@@ -280,9 +280,9 @@
 		"name": "Show Active Effects Marker on items.",
 		"hint": "Enable if you want to see if items have active effects on them (only for list view)."
 	},
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Disable right click context menu.",
-		"hint": "In case of module conflicts or preference you can disable the right click context menu. Items will show a menu icon instead."
+		"hint": "In case of module conflicts or preference you can disable the right click context menu."
 	},
 	"TIDY5E.Settings.ExpandedSheet": {
 		"name": "Expanded Limited view for character sheets.",

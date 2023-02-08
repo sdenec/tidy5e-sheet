@@ -170,9 +170,9 @@
 		"hint": "Per impostazione predefinita, le abilità non competenti sono nascoste da un pulsante di attivazione/disattivazione. Seleziona perché non siano mai nascosti."
 	},
 
-	"TIDY5E.Settings.RightClick": {
+	"TIDY5E.Settings.RightClickDisabled": {
 		"name": "Disabilita menu tasto destro.",
-		"hint": "In caso di conflitti tra moduli o preferenze è possibile disabilitare il menu contestuale tasto destro. Gli elementi mostreranno al suo posto un'icona di menu."
+		"hint": "In caso di conflitti tra moduli o preferenze è possibile disabilitare il menu contestuale tasto destro."
 	},
 	"TIDY5E.Settings.ExpandedSheet": {
 		"name": "Vista limitata espansa per le schede PG.",
