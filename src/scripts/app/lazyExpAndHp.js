@@ -125,22 +125,50 @@ function _onChangeHp(ev) {
 		if (newAmount > maxHp) {
 			newAmount = maxHp;
 		}
+    let newAmountTemp = ev.data.app.actor.system.attributes.hp.temp;
+    let newAmountTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 		// if(newAmount <  minHp) {
 		//     newAmount = minHp;
 		// }
-	}
-	if (newAmount < 0) {
-		newAmount = 0;
-	}
+		if (newAmount > maxHp) {
+      newAmountTemp = newAmountTemp + (newAmount - maxHp);
+      newAmountTempMax = newAmountTempMax + (newAmount - maxHp);
+			newAmount = maxHp;
+		}
 
-	sheet.submitOnChange = false;
-	actor
-		.update({ "system.attributes.hp.value": Number(newAmount) })
-		.then(() => {
-			input.value = Number(getProperty(actor, input.name));
-			sheet.submitOnChange = true;
-		})
-		.catch(console.log.bind(console));
+    if (newAmount < 0) {
+      newAmount = 0;
+    }
+
+    sheet.submitOnChange = false;
+    actor
+      .update({
+        "system.attributes.hp.value": Number(newAmount),
+        "system.attributes.hp.temp": Number(newAmountTemp),
+        "system.attributes.hp.tempmax": Number(newAmountTempMax),
+      })
+      .then(() => {
+        input.value = Number(getProperty(actor, input.name));
+        sheet.submitOnChange = true;
+      })
+      .catch(console.log.bind(console));
+
+	} else {
+
+    if (newAmount < 0) {
+      newAmount = 0;
+    }
+
+    sheet.submitOnChange = false;
+    actor
+      .update({ "system.attributes.hp.value": Number(newAmount) })
+      .then(() => {
+        input.value = Number(getProperty(actor, input.name));
+        sheet.submitOnChange = true;
+      })
+      .catch(console.log.bind(console));
+  }
+
 }
 
 function _onChangeHpMax(ev) {
@@ -218,6 +246,8 @@ function _onChangeHpForceHpValueLimit(ev) {
 	const maxHp = ev.data.app.actor.system.attributes.hp.max;
 
 	let newAmount = hp;
+  let newAmountTemp = ev.data.app.actor.system.attributes.hp.temp;
+  let newAmountTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (!is_real_number(newAmount)) {
 		newAmount = hp;
@@ -225,6 +255,8 @@ function _onChangeHpForceHpValueLimit(ev) {
 
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
 		if (newAmount > maxHp) {
+      newAmountTemp = newAmountTemp + (newAmount - maxHp);
+      newAmountTempMax = newAmountTempMax + (newAmount - maxHp);
 			newAmount = maxHp;
 		}
 		// if(newAmount <  minHp) {
@@ -237,7 +269,11 @@ function _onChangeHpForceHpValueLimit(ev) {
 
 	sheet.submitOnChange = false;
 	actor
-		.update({ "system.attributes.hp.value": Number(newAmount) })
+		.update({
+      "system.attributes.hp.value": Number(newAmount),
+      "system.attributes.hp.temp": Number(newAmountTemp),
+      "system.attributes.hp.tempmax": Number(newAmountTempMax),
+    })
 		.then(() => {
 			input.value = Number(getProperty(actor, input.name));
 			sheet.submitOnChange = true;
