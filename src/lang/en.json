@@ -414,8 +414,8 @@
 		"hint": "Easily add or remove HP and Experience with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
 	},
 	"TIDY5E.Settings.LazyHpForceHpValueLimit": {
-		"name": "Force current hp to be always <= to the max hp",
-		"hint": "Forcefully ensure that current hp never exceeds maximum hp. This setting is useful for those who prefer to use temporary hp fields to manage a temporary addition of hp"
+		"name": "Force current 'hp.value <= hp.max' and 'hp.temp <= hp.tempmax' as mathematical logic would have it",
+		"hint": "This setting forces the correct logic of calculating the addition of temporary life points by forcing the user to fill the temporary life point field (hp.temp) instead of wrongly increasing the current life point field (hp.value), but for avoid controversy by default it is disabled to respect the behavior of the standard sheet, if enabled ensure that current 'hp.value <= hp.max' and 'hp.temp <= hp.tempmax'. THIS IS THE CORRECT LOGIC. YOU DON'T LIKE ? LEAVE THE SETTING DISABLED!."
 	},
 	"TIDY5E.Settings.LazyMoneyEnable": {
 		"name": "Enable Lazy Money",

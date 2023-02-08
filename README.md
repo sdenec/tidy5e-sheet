@@ -18,6 +18,10 @@ To install this module manually:
 4. Click 'Install' and wait for installation to complete
 5. Don't forget to enable the module in game using the "Manage Module" button
 
+### Color Settings
+
+This module uses the [colorsettings](https://github.com/ardittristan/VTTColorSettings). It is a optional dependency but it is recommended for the best experience and compatibility with other modules.
+
 ## Known issue / TODO
 
 - Update integration for [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 

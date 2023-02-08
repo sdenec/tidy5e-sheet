@@ -98,14 +98,7 @@
 				}
 			}
 		],
-		"requires": [
-			{
-				"id": "colorsettings",
-				"type": "module",
-				"manifest": "https://raw.githubusercontent.com/ardittristan/VTTColorSettings/master/module.json",
-				"compatibility": {}
-			}
-		],
+		"requires": [],
 		"conflicts": [
 			{
 				"id": "spell-level-buttons-for-dnd5e",

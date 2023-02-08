@@ -1,4 +1,5 @@
 import CONSTANTS from "./constants.js";
+import { is_lazy_number, is_real_number } from "./helpers.js";
 
 const signCase = {
 	add: "+",
@@ -215,7 +216,7 @@ function _onChangeHpForceHpValueLimit(ev) {
 	const sheet = ev.data.app.options;
 	const hp = ev.data.app.actor.system.attributes.hp.value;
 	const maxHp = ev.data.app.actor.system.attributes.hp.max;
-	
+
 	let newAmount = hp;
 
 	if (!is_real_number(newAmount)) {
@@ -237,6 +238,41 @@ function _onChangeHpForceHpValueLimit(ev) {
 	sheet.submitOnChange = false;
 	actor
 		.update({ "system.attributes.hp.value": Number(newAmount) })
+		.then(() => {
+			input.value = Number(getProperty(actor, input.name));
+			sheet.submitOnChange = true;
+		})
+		.catch(console.log.bind(console));
+}
+
+function _onChangeHpForceHpTempLimit(ev) {
+	const input = ev.target;
+	const actor = ev.data.app.actor;
+	const sheet = ev.data.app.options;
+	const hp = ev.data.app.actor.system.attributes.hp.temp;
+	const maxHp = ev.data.app.actor.system.attributes.hp.tempmax;
+
+	let newAmount = hp;
+
+	if (!is_real_number(newAmount)) {
+		newAmount = hp;
+	}
+
+	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
+		if (newAmount > maxHp) {
+			newAmount = maxHp;
+		}
+		// if(newAmount <  minHp) {
+		//     newAmount = minHp;
+		// }
+	}
+	if (newAmount < 0) {
+		newAmount = 0;
+	}
+
+	sheet.submitOnChange = false;
+	actor
+		.update({ "system.attributes.hp.temp": Number(newAmount) })
 		.then(() => {
 			input.value = Number(getProperty(actor, input.name));
 			sheet.submitOnChange = true;
@@ -278,6 +314,18 @@ export function applyLazyHp(app, html, actorData) {
 				},
 				_onChangeHpForceHpValueLimit
 			);
+      for (const elem of html.find("input[name^='system.attributes.hp.temp']")) {
+				elem.type = "text";
+				elem.classList.add("lazyhp");
+			}
+			html.find("input[name^='system.attributes.hp.temp']").off("change");
+			html.find("input[name^='system.attributes.hp.temp']").change(
+				{
+					app: app,
+					data: actorData,
+				},
+				_onChangeHpForceHpTempLimit
+			);
 		}
 		return;
 	}
@@ -307,20 +355,21 @@ export function applyLazyHp(app, html, actorData) {
 		},
 		_onChangeHpMax
 	);
-}
 
-function is_real_number(inNumber) {
-	return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
-}
-
-function is_lazy_number(inNumber) {
-	const isSign = String(inNumber).startsWith(signCase.add) || String(inNumber).startsWith(signCase.subtract) || String(inNumber).startsWith(signCase.equals) || String(inNumber).startsWith(signCase.default);
-	if (isSign) {
-		const withoutFirst = String(inNumber).slice(1);
-		return is_real_number(withoutFirst);
-	} else {
-		return true;
-	}
+  if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit")) {
+    for (const elem of html.find("input[name^='system.attributes.hp.temp']")) {
+      elem.type = "text";
+      elem.classList.add("lazyhp");
+    }
+    html.find("input[name^='system.attributes.hp.temp']").off("change");
+    html.find("input[name^='system.attributes.hp.temp']").change(
+      {
+        app: app,
+        data: actorData,
+      },
+      _onChangeHpForceHpTempLimit
+    );
+  }
 }
 
 Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
