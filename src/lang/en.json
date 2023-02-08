@@ -94,7 +94,7 @@
 	"TIDY5E.AbbrSavingThrow": "Save",
 	"TIDY5E.SpellAttackMod": "Attack Mod",
 	"TIDY5E.PreparedSpells": "Prepared spells",
-	"TIDY5E.PreparedSpellsMax": "Maximum for prepared spells",
+	"TIDY5E.PreparedSpellsMax": "Maximum for prepared spells (Note: do not use 'Override' mode on the active effect')",
 	"TIDY5E.Components": "Comps",
 	"TIDY5E.SpellSchool": "School",
 

@@ -17,6 +17,7 @@ import { updateExhaustion } from "./app/exhaustion.js";
 import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
 import { is_real_number } from "./app/helpers.js";
+import { error } from "./app/logger-util.js";
 
 let position = 0;
 
@@ -617,7 +618,8 @@ async function tidyCustomEffect(actor, changes) {
 						break;
 					}
 					case CONST.ACTIVE_EFFECT_MODES.OVERRIDE: {
-						setProperty(actor, changeMaxPreparedList.key, value);
+						//setProperty(actor, changeMaxPreparedList.key, value);
+						throw error (`Do not use the mode 'OVERRIDE' when you try to set the Max Prepared Spells`, true);
 						break;
 					}
 					case CONST.ACTIVE_EFFECT_MODES.CUSTOM: {
@@ -629,9 +631,12 @@ async function tidyCustomEffect(actor, changes) {
 						break;
 					}
 				}
-				return;
+				await actor.update({
+					"flags.tidy5e-sheet.maxPreparedSpells": getProperty(actor, changeMaxPreparedList.key)
+				})
+				return getProperty(actor, changeMaxPreparedList.key);
 			} else {
-				return;
+				return undefined;
 			}
 		}
 	}
