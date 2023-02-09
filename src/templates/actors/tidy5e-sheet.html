@@ -193,8 +193,8 @@
 				<section class="bonus-information">
 					{{!-- Player Name --}}
 					<div id="playerName">
-						<input data-input="{{actor._id}}-playerName" name="system.details.playerName" type="hidden" value="{{system.details.playerName}}" placeholder="{{ localize 'TIDY5E.PlayerName' }}" maxlength="40">
-						<span class="playerName" {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-playerName" data-placeholder="{{ localize 'TIDY5E.PlayerName' }}" data-maxlength="40">{{system.details.playerName}}</span>
+						<input data-input="{{actor._id}}-playerName" name="flags.tidy5e-sheet.playerName" type="hidden" value="{{actor.flags.tidy5e-sheet.playerName}}" placeholder="{{ localize 'TIDY5E.PlayerName' }}" maxlength="40">
+						<span class="playerName" {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-playerName" data-placeholder="{{ localize 'TIDY5E.PlayerName' }}" data-maxlength="40">{{actor.flags.tidy5e-sheet.playerName}}</span>
 					</div>
 					{{!-- Character Class List --}}
 				</section>
