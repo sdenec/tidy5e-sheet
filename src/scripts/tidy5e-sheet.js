@@ -496,7 +496,7 @@ async function addClassList(app, html, data) {
 
 		html.find(".origin-summary span.origin-summary-text").each(function () {
 			let originalText = $(this).text();
-			$(this).text(truncate($(this).text(), 15, false));
+			$(this).text(truncate($(this).text(), 20, false));
 			$(this).attr("data-tooltip", originalText);
 		});
 		// html.find(".origin-summary input").each(function () {
