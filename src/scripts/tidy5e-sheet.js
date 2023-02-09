@@ -494,7 +494,7 @@ async function addClassList(app, html, data) {
 
 		// Prepare summary
 
-		html.find(".origin-summary span").each(function () {
+		html.find(".origin-summary span.origin-summary-text").each(function () {
 			let originalText = $(this).text();
 			$(this).text(truncate($(this).text(), 15, false));
 			$(this).attr("data-tooltip", originalText);
@@ -513,7 +513,7 @@ function truncate( str, n, useWordBoundary ){
 	const subString = str.slice(0, n-1); // the original check
 	return (useWordBoundary 
 	  ? subString.slice(0, subString.lastIndexOf(" ")) 
-	  : subString) + "&hellip;";
+	  : subString) + "..."; // "&hellip;";
 };
 
 // Calculate Spell Attack modifier

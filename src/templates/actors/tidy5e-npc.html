@@ -144,12 +144,14 @@
                     <span data-placeholder="{{ localize 'TIDY5E.Environment' }}">{{system.details.environment}}</span>
                 </span>
             </span>
-            <span data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
-            <span class="source source-info" data-placeholder="{{ localize 'DND5E.Source' }}">{{system.details.source}}</span>
+            <span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
+            <span class="origin-summary-text source source-info" data-placeholder="{{ localize 'DND5E.Source' }}">{{system.details.source}}</span>
             {{#if owner}}
+            <span>
             <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
                 <i class="fas fa-cog"></i>
             </a>
+            </span>
             {{/if}}
           </li>
           <li class="proficiency">

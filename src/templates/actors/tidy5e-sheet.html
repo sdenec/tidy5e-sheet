@@ -220,13 +220,15 @@
 						<input type="hidden" data-input="{{actor._id}}-background" name="system.details.background" value="{{system.details.background}}" placeholder="{{ localize 'DND5E.Background' }}">
 						<input type="hidden" data-input="{{actor._id}}-alignment" name="system.details.alignment" value="{{system.details.alignment}}" placeholder="{{ localize 'DND5E.Alignment' }}">
                         -->
-                        <span data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
-						<span data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
-						<span data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
+                        <span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
+						<span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
+						<span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
                         {{#if owner}}
+						<span>
                         <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
                             <i class="fas fa-cog"></i>
                         </a>
+						</span>
                         {{/if}}
 					</li>
 					<li class="proficiency">

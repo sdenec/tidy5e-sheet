@@ -1427,7 +1427,7 @@
 	padding: 3px 0 2px 0;
 	margin-top: 2px;
 	white-space: nowrap;
-	position: relative;
+	/* position: relative; */
 	z-index: 100;
 }
 .tidy5e.sheet.actor .origin-summary li {
@@ -1440,7 +1440,7 @@
 	display: flex;
 }
 .tidy5e.sheet.actor .origin-summary li span {
-	position: relative;
+	/* position: relative; */
 	margin-left: 4px;
 	padding: 0 4px 0 8px;
 }
@@ -1658,7 +1658,7 @@
 	font-weight: 700;
 	margin: 0 auto;
 	width: 44px;
-	z-index: 40;
+	/* z-index: 40; */
 }
 .tidy5e.sheet.actor .header-attributes .ac-display .attribute-value .property-attribution {
 	display: none;

@@ -151,11 +151,13 @@
 						<input type="hidden" data-input="{{actor._id}}-dimensions" name="system.traits.dimensions" value="{{system.traits.dimensions}}" placeholder="{{localize 'DND5E.Dimensions'}}" />
 						<input type="hidden" data-input="{{actor._id}}-source" name="system.details.source" value="{{system.details.source}}" placeholder="{{localize 'DND5E.Source'}}" />
                         -->
-                        <span data-placeholder="{{localize 'DND5E.Dimensions'}}">{{system.traits.dimensions}}</span>
+                        <span class="origin-summary-text" data-placeholder="{{localize 'DND5E.Dimensions'}}">{{system.traits.dimensions}}</span>
                         {{#if owner}}
+						<span>
                         <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
                             <i class="fas fa-cog"></i>
                         </a>
+						</span>
                         {{/if}}
 					</li>
 				</ul>
