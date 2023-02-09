@@ -14,7 +14,15 @@ export function isEmptyObject(obj) {
 	return result;
 }
 
+const signCase = {
+	add: "+",
+	subtract: "-",
+	equals: "=",
+	default: " ",
+};
+
 export function is_lazy_number(inNumber) {
+
 	const isSign = String(inNumber).startsWith(signCase.add) || String(inNumber).startsWith(signCase.subtract) || String(inNumber).startsWith(signCase.equals) || String(inNumber).startsWith(signCase.default);
 	if (isSign) {
 		const withoutFirst = String(inNumber).slice(1);

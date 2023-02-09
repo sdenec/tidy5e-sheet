@@ -59,7 +59,10 @@ export default class ActorHitPointsConfig extends BaseConfigSheet {
     const hp = foundry.utils.expandObject(formData).hp;
     this.clone.updateSource({"system.attributes.hp": hp});
     const maxDelta = this.clone.system.attributes.hp.max - this.document.system.attributes.hp.max;
-    hp.value = Math.max(this.document.system.attributes.hp.value + maxDelta, 0);
+    // Start of the patch for tidy5e and the strange reset to 0 behaviour...
+    //hp.value = Math.max(this.document.system.attributes.hp.value + maxDelta, 0);
+    hp.value = Math.max(this.document.system.attributes.hp.value, 0);
+    // End of the patch for tidy5e and the strange reset to 0 behaviour...
     return this.document.update({"system.attributes.hp": hp});
   }
 
