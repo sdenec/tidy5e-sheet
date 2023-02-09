@@ -1,0 +1,242 @@
+{
+    "name": "Tidy Dark Theme",
+    "theme": {
+        "--color-shadow-primary": {
+            "value": "#bb2211ff"
+        },
+        "--font-primary": {
+            "value": "\"Signika\""
+        },
+        "--font-awesome": {
+            "value": "\"Font Awesome 6 Pro\""
+        },
+        "cssDnDColors": {
+            "value": "true"
+        },
+        "--palette-primary": {
+            "value": "#444444ff"
+        },
+        "--palette-secondary": {
+            "value": "#bb2211ff"
+        },
+        "cssTidySidebar": {
+            "value": "false"
+        },
+        "--app-background-image": {
+            "value": {
+                "url": "",
+                "blend": "normal"
+            }
+        },
+        "--app-dialog-background": {
+            "value": "#333333ff"
+        },
+        "--app-dialog-background-image": {
+            "value": {
+                "url": "",
+                "blend": "normal"
+            }
+        },
+        "cssfoundryVTTColors": {
+            "value": "true"
+        },
+        "--palette-danger": {
+            "value": "#c92030ff"
+        },
+        "--app-background": {
+            "value": "#111111ee"
+        },
+        "--palette-quaternary": {
+            "value": "#bb2211ff"
+        },
+        "--color-text-light-highlight": {
+            "value": "#ddddddff"
+        },
+        "--color-text-light-heading": {
+            "value": "#ddddddff"
+        },
+        "--color-text-light-primary": {
+            "value": "#ddddddff"
+        },
+        "--color-text-dark-primary": {
+            "value": "#111111ff"
+        },
+        "--color-text-dark-secondary": {
+            "value": "#111111ff"
+        },
+        "--color-text-dark-header": {
+            "value": "#111111ff"
+        },
+        "--color-text-dark-inactive": {
+            "value": "#bb2211ff"
+        },
+        "--color-text-hyperlink": {
+            "value": "#bb2211ff"
+        },
+        "--color-text-light-0": {
+            "value": "#eeeeeeff"
+        },
+        "--color-text-light-1": {
+            "value": "#ddddddff"
+        },
+        "--color-text-dark-1": {
+            "value": "#111111ff"
+        },
+        "--color-text-dark-2": {
+            "value": "#222222ff"
+        },
+        "--color-text-dark-3": {
+            "value": "#333333ff"
+        },
+        "--color-shadow-highlight": {
+            "value": "#bb2211ff"
+        },
+        "--color-underline-inactive": {
+            "value": "#666666ff"
+        },
+        "--color-underline-active": {
+            "value": "#bb2211ff"
+        },
+        "--color-underline-header": {
+            "value": "#bb2211ff"
+        },
+        "--color-border-light-highlight": {
+            "value": "#ccccccff"
+        },
+        "--color-border-light-primary": {
+            "value": "#aaaaaaff"
+        },
+        "--color-border-light-secondary": {
+            "value": "#888888ff"
+        },
+        "--color-border-light-tertiary": {
+            "value": "#666666ff"
+        },
+        "--color-border-dark-primary": {
+            "value": "#222222ff"
+        },
+        "--color-border-dark-secondary": {
+            "value": "#333333ff"
+        },
+        "--color-border-dark-tertiary": {
+            "value": "#444444ff"
+        },
+        "--color-border-highlight": {
+            "value": "#bb2211ff"
+        },
+        "--color-border-highlight-alt": {
+            "value": "#bb2211ff"
+        },
+        "--color-bg-btn-minor-inactive": {
+            "value": "#333333ff"
+        },
+        "--color-bg-btn-minor-active": {
+            "value": "#444444ff"
+        },
+        "--color-bg-option": {
+            "value": "#555555ff"
+        },
+        "--color-ownership-none": {
+            "value": "#7711bbff"
+        },
+        "--color-ownership-observer": {
+            "value": "#333333ff"
+        },
+        "--color-ownership-owner": {
+            "value": "#eeeeeeff"
+        },
+        "cssMonksTokenbarColors": {
+            "value": "true"
+        },
+        "cssQuickInsertColors": {
+            "value": "true"
+        },
+        "cssTidy5eColors": {
+            "value": "true"
+        },
+        "--palette-tertiary": {
+            "value": "#bb2211ff"
+        },
+        "--palette-light": {
+            "value": "#eeeeeeff"
+        },
+        "--palette-dark": {
+            "value": "#111111ff"
+        },
+        "--palette-deep-purple": {
+            "value": "#673ab7ff"
+        },
+        "--palette-deep-orange": {
+            "value": "#ff5722ff"
+        },
+        "--color-border-light-1": {
+            "value": "#888888ff"
+        },
+        "--color-level-info": {
+            "value": "#0dcaf0ff"
+        },
+        "--color-level-warning": {
+            "value": "#ffc107ff"
+        },
+        "--color-level-error": {
+            "value": "#c92030ff"
+        },
+        "--color-text-light-2": {
+            "value": "#ccccccff"
+        },
+        "--color-text-light-3": {
+            "value": "#bbbbbbff"
+        },
+        "--color-text-light-4": {
+            "value": "#aaaaaaff"
+        },
+        "--color-border-light-2": {
+            "value": "#777777ff"
+        },
+        "--color-border-dark": {
+            "value": "#111111ff"
+        },
+        "cssTidyHUDDisableLogo": {
+            "value": "false"
+        },
+        "cssTidyHUDControls": {
+            "value": "false"
+        },
+        "cssTidyHUDSceneBrowser": {
+            "value": "false"
+        },
+        "cssTidyHUD": {
+            "value": "false"
+        },
+        "cssTidyHUDPlayers": {
+            "value": "false"
+        },
+        "cssTidyHUDPlayersExpandOffline": {
+            "value": "false"
+        },
+        "--color-text-light-7": {
+            "value": "#777777ff"
+        },
+        "--color-text-light-6": {
+            "value": "#888888ff"
+        },
+        "--color-text-light-5": {
+            "value": "#999999ff"
+        },
+        "--color-shadow-dark": {
+            "value": "#111111ff"
+        },
+        "--color-text-dark-4": {
+            "value": "#444444ff"
+        },
+        "--color-text-dark-5": {
+            "value": "#555555ff"
+        },
+        "--color-text-dark-6": {
+            "value": "#666666ff"
+        },
+        "--tah-button": {
+            "value": "#111111ee"
+        }
+    }
+}
