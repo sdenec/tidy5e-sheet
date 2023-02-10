@@ -312,7 +312,7 @@ Hooks.on(`createActiveEffect`, (effect, data, id) => {
 				}
 			} else if (actor.type === "npc") {
 				let exhaustion = effectName.slice(-1);
-				if (actor.flags.tidy5e - sheet.exhaustion != exhaustion) {
+				if (actor.flags[CONSTANTS.MODULE_ID].exhaustion != exhaustion) {
 					debug("exhaustion = " + exhaustion);
 					actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion });
 				}

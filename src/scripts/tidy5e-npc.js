@@ -13,6 +13,9 @@ import { applyColorPickerCustomization } from "./app/color-picker.js";
 import { updateExhaustion } from "./app/exhaustion.js";
 import CONSTANTS from "./app/constants.js";
 import { is_real_number } from "./app/helpers.js";
+import LongRestDialog from "./app/tidy5e-npc-long-rest-dialog.js";
+import ShortRestDialog from "./app/tidy5e-npc-short-rest-dialog.js";
+import { debug } from "./app/logger-util.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -528,9 +531,9 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 				dialog: true,
 				chat: false,
 			};
-			return this.actor.longRest(obj);
+			return this.shortRest(obj);
 		}
-		return this.actor.longRest();
+		return this.shortRest();
 	}
 
 	/* -------------------------------------------- */
@@ -543,19 +546,153 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 	async _onLongRest(event) {
 		event.preventDefault();
 		await this._onSubmit(event);
-		let exhaustion = this.actor.flags[CONSTANTS.MODULE_ID].exhaustion;
-		if (exhaustion > 0) {
-			this.actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
-		}
 		if (game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsChatDisabled")) {
 			let obj = {
 				dialog: true,
 				chat: false,
 			};
-			return this.actor.longRest(obj);
+			return this.longRest(obj);
 		}
-		return this.actor.longRest();
+		return this.longRest();
 	}
+
+  	/* -------------------------------------------- */
+
+	/**
+	 * Take a short rest, possibly spending hit dice and recovering resources, item uses, and pact slots.
+	 * @param {RestConfiguration} [config]  Configuration options for a short rest.
+	 * @returns {Promise<RestResult>}       A Promise which resolves once the short rest workflow has completed.
+	 */
+	async shortRest(config={}) {
+		config = foundry.utils.mergeObject({
+		dialog: true, chat: true, newDay: false, autoHD: false, autoHDThreshold: 3
+		}, config);
+
+		// /**
+		//  * A hook event that fires before a short rest is started.
+		//  * @function dnd5e.preShortRest
+		//  * @memberof hookEvents
+		//  * @param {Actor5e} actor             The actor that is being rested.
+		//  * @param {RestConfiguration} config  Configuration options for the rest.
+		//  * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
+		//  */
+		// if ( Hooks.call("dnd5e.preShortRest", this, config) === false ) return;
+
+		// Take note of the initial hit points and number of hit dice the Actor has
+		const hd0 = this.actor.system.details.cr // this.actor.system.attributes.hd;
+		const hp0 = this.actor.system.attributes.hp.value;
+
+		// Display a Dialog for rolling hit dice
+		if ( config.dialog ) {
+			try { 
+				config.newDay = await ShortRestDialog.shortRestDialog({actor: this.actor, canRoll: hd0 > 0});
+			} catch(err) { 
+				return; 
+			}
+		}
+
+		// Automatically spend hit dice
+		else if ( config.autoHD ) await this.autoSpendHitDice({ threshold: config.autoHDThreshold });
+
+		// Return the rest result
+		const dhd = this.actor.system.details.cr // this.system.attributes.hd - hd0;
+		const dhp = this.actor.system.attributes.hp.value - hp0;
+		return this._rest(config.chat, config.newDay, false, dhd, dhp);
+	}
+
+	/* -------------------------------------------- */
+
+	/**
+	 * Take a long rest, recovering hit points, hit dice, resources, item uses, and spell slots.
+	 * @param {RestConfiguration} [config]  Configuration options for a long rest.
+	 * @returns {Promise<RestResult>}       A Promise which resolves once the long rest workflow has completed.
+	 */
+	async longRest(config={}) {
+		config = foundry.utils.mergeObject({
+		dialog: true, chat: true, newDay: true
+		}, config);
+
+		// /**
+		//  * A hook event that fires before a long rest is started.
+		//  * @function dnd5e.preLongRest
+		//  * @memberof hookEvents
+		//  * @param {Actor5e} actor             The actor that is being rested.
+		//  * @param {RestConfiguration} config  Configuration options for the rest.
+		//  * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
+		//  */
+		// if ( Hooks.call("dnd5e.preLongRest", this, config) === false ) return;
+
+		if ( config.dialog ) {
+			try { 
+				config.newDay = await LongRestDialog.longRestDialog({actor: this.actor}); }
+			catch(err) { 
+				return;
+			}
+		}
+
+		return this._rest(config.chat, config.newDay, true);
+	}
+
+	/* -------------------------------------------- */
+
+  /**
+   * Perform all of the changes needed for a short or long rest.
+   *
+   * @param {boolean} chat           Summarize the results of the rest workflow as a chat message.
+   * @param {boolean} newDay         Has a new day occurred during this rest?
+   * @param {boolean} longRest       Is this a long rest?
+   * @param {number} [dhd=0]         Number of hit dice spent during so far during the rest.
+   * @param {number} [dhp=0]         Number of hit points recovered so far during the rest.
+   * @returns {Promise<RestResult>}  Consolidated results of the rest workflow.
+   * @private
+   */
+  async _rest(chat, newDay, longRest, dhd=0, dhp=0) {
+    // Recover hit points & hit dice on long rest
+    if ( longRest || newDay ) {
+		this.actor.update({ "system.attributes.hp.value": Number(this.actor.system.attributes.hp.max ?? 0)})
+		// Pacth NPC
+		if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion > 0) {
+			const exhaustion = this.actor.flags[CONSTANTS.MODULE_ID].exhaustion;
+			debug("exhaustion = " + exhaustion);
+			await this.actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
+			updateExhaustion(this.actor);
+		}
+	} else {
+		const rollData = this.actor.getRollData();
+		const roll_value = await new Roll(this.actor.system.details.cr+"d6", rollData).roll();
+		const value = roll_value.total;
+		let newHpValue =  this.actor.system.attributes.hp.value + Number(value ?? 0);
+		if(newHpValue >  this.actor.system.attributes.hp.max) {
+			newHpValue = this.actor.system.attributes.hp.max;
+		}
+		this.actor.update({ "system.attributes.hp.value": newHpValue})
+	}
+
+	let hitPointsRecovered = 0;
+    let hitPointUpdates = {};
+    let hitDiceRecovered = 0;
+    let hitDiceUpdates = [];
+    const rolls = [];
+
+    // Figure out the rest of the changes
+    const result = {
+      dhd: dhd + hitDiceRecovered,
+      dhp: dhp + hitPointsRecovered,
+      updateData: {
+        ...hitPointUpdates
+	  },
+      updateItems: [ ],
+      longRest,
+      newDay
+    };
+    result.rolls = rolls;
+
+    // Display a Chat Message summarizing the rest effects
+    if ( chat ) await this.actor._displayRestResultMessage(result, longRest);
+
+    // Return data summarizing the rest effects
+    return result;
+  }
 
 	/* -------------------------------------------- */
 
