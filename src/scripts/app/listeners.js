@@ -1,5 +1,4 @@
 import CONSTANTS from "./constants.js";
-import { rollDeathSaveForNoActorCharacter } from "./helpers.js";
 import ActorHitPointsConfig from "./tidy5e-actor-hit-points-config.js";
 import ActorOriginSummaryConfig from "./tidy5e-actor-origin-summary-config.js";
 
@@ -100,12 +99,8 @@ export const tidy5eListeners = function (html, actor, app) {
 		app?.render(true);
 	});
 
-  html.find(".origin-summary-tidy").click(() => {
+	html.find(".origin-summary-tidy").click(() => {
 		let app = new ActorOriginSummaryConfig(actor);
 		app?.render(true);
-	});
-
-  html.find(".death-save-tidy").click(() => {
-    rollDeathSaveForNoActorCharacter(actor);
 	});
 };

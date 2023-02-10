@@ -33,8 +33,14 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 	 * @return {Object}
 	 */
 	static get defaultOptions() {
-		let defaultTab = game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default" ? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") : "attributes";
-		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions") {
+		let defaultTab =
+			game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default"
+				? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab")
+				: "attributes";
+		if (
+			!game.modules.get("character-actions-list-5e")?.active &&
+			game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions"
+		) {
 			defaultTab = "attributes";
 		}
 
@@ -201,33 +207,45 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 
 		// Journal HTML enrichment
 
-		context.journalNotes1HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes1?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes1HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes1?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
-		context.journalNotes2HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes2?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes2HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes2?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
-		context.journalNotes3HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes3?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes3HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes3?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
-		context.journalNotes4HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes4?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes4HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes4?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
 		context.journalHTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes?.value, {
 			secrets: this.actor.isOwner,
@@ -237,7 +255,10 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		});
 
 		context.appId = this.appId;
-		context.allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
+		context.allowCantripToBePreparedOnContext = game.settings.get(
+			CONSTANTS.MODULE_ID,
+			"allowCantripToBePreparedOnContext"
+		);
 		context.hideSpellbookTabNpc = game.settings.get(CONSTANTS.MODULE_ID, "hideSpellbookTabNpc");
 		context.isGM = game.user.isGM;
 		context.allowHpMaxOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpMaxOverride");
@@ -247,36 +268,34 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		context.notHideIconsNextToTheItemName = !game.settings.get(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName");
 
 		context.hpOverlayCalculationCurrent =
-		(
-			100 /
-			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
-				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
-			)
-		)
-		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
-		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+			(100 /
+				((is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) +
+					(is_real_number(this.actor.system?.attributes?.hp?.tempmax)
+						? this.actor.system.attributes.hp.tempmax
+						: 0))) *
+				(is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0) +
+			(is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%";
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent + "%";
 
-    context.hpBarCalculationCurrent =
-    (
-			100 /
-			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
-				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
-			)
-		)
-    * (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
-		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+		context.hpBarCalculationCurrent =
+			(100 /
+				((is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) +
+					(is_real_number(this.actor.system?.attributes?.hp?.tempmax)
+						? this.actor.system.attributes.hp.tempmax
+						: 0))) *
+				(is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0) +
+			(is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-    context.hpBarCalculationCurrent =  context.hpBarCalculationCurrent + "%";
+		context.hpBarCalculationCurrent = context.hpBarCalculationCurrent + "%";
 
-	if(!is_real_number(this.actor.flags[CONSTANTS.MODULE_ID]?.exhaustion)) {
-		setProperty(this.actor, `flags.tidy5e-sheet.exhaustion` , 0);
-	}
+		if (!is_real_number(this.actor.flags[CONSTANTS.MODULE_ID]?.exhaustion)) {
+			setProperty(this.actor, `flags.tidy5e-sheet.exhaustion`, 0);
+		}
 
-    const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.flags[CONSTANTS.MODULE_ID].exhaustion}`;
+		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize(
+			"DND5E.AbbreviationLevel"
+		)} ${this.actor.flags[CONSTANTS.MODULE_ID].exhaustion}`;
 		if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 0) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion0")}`;
 		} else if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 1) {
@@ -411,7 +430,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 			}
 		});
 
-    // set exhaustion level with portrait icon
+		// set exhaustion level with portrait icon
 		html.find(".exhaust-level li").click(async (event) => {
 			event.preventDefault();
 			let target = event.currentTarget;
@@ -454,8 +473,8 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		// Short and Long Rest
 		html.find(".short-rest").click(this._onShortRest.bind(this));
 		html.find(".long-rest").click(this._onLongRest.bind(this));
+		html.find(".death-save-tidy").click(this._rollDeathSave.bind(this));
 	}
-
 	/* -------------------------------------------- */
 
 	/**
@@ -524,6 +543,10 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 	async _onLongRest(event) {
 		event.preventDefault();
 		await this._onSubmit(event);
+		let exhaustion = this.actor.flags[CONSTANTS.MODULE_ID].exhaustion;
+		if (exhaustion > 0) {
+			this.actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
+		}
 		if (game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsChatDisabled")) {
 			let obj = {
 				dialog: true,
@@ -534,17 +557,155 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		return this.actor.longRest();
 	}
 
+	/* -------------------------------------------- */
+
+	/**
+	 * Perform a death saving throw, rolling a d20 plus any global save bonuses
+	 * @param {object} options          Additional options which modify the roll
+	 * @returns {Promise<D20Roll|null>} A Promise which resolves to the Roll instance
+	 */
+	async _rollDeathSave(options = {}) {
+		const death = this.actor.flags[CONSTANTS.MODULE_ID].death ?? {};
+
+		// Display a warning if we are not at zero HP or if we already have reached 3
+		if (this.actor.system.attributes.hp.value > 0 || death.failure >= 3 || death.success >= 3) {
+			ui.notifications.warn(game.i18n.localize("DND5E.DeathSaveUnnecessary"));
+			return null;
+		}
+
+		// Evaluate a global saving throw bonus
+		const speaker = options.speaker || ChatMessage.getSpeaker({ actor: this });
+		const globalBonuses = this.actor.system.bonuses?.abilities ?? {};
+		const parts = [];
+		const data = this.actor.getRollData();
+
+		// Diamond Soul adds proficiency
+		if (this.actor.getFlag("dnd5e", "diamondSoul")) {
+			parts.push("@prof");
+			data.prof = new Proficiency(this.actor.system.attributes.prof, 1).term;
+		}
+
+		// Include a global actor ability save bonus
+		if (globalBonuses.save) {
+			parts.push("@saveBonus");
+			data.saveBonus = Roll.replaceFormulaData(globalBonuses.save, data);
+		}
+
+		// Evaluate the roll
+		const flavor = game.i18n.localize("DND5E.DeathSavingThrow");
+		const rollData = foundry.utils.mergeObject(
+			{
+				data,
+				title: `${flavor}: ${this.actor.name}`,
+				flavor,
+				halflingLucky: this.actor.getFlag("dnd5e", "halflingLucky"),
+				targetValue: 10,
+				messageData: {
+					speaker: speaker,
+					"flags.dnd5e.roll": { type: "death" },
+				},
+			},
+			options
+		);
+		rollData.parts = parts.concat(options.parts ?? []);
+
+		// /**
+		//  * A hook event that fires before a death saving throw is rolled for an Actor.
+		//  * @function dnd5e.preRollDeathSave
+		//  * @memberof hookEvents
+		//  * @param {Actor5e} actor                Actor for which the death saving throw is being rolled.
+		//  * @param {D20RollConfiguration} config  Configuration data for the pending roll.
+		//  * @returns {boolean}                    Explicitly return `false` to prevent death saving throw from being rolled.
+		//  */
+		// if ( Hooks.call("dnd5e.preRollDeathSave", this, rollData) === false ) return;
+
+		const roll = await d20Roll(rollData);
+		if (!roll) return null;
+
+		// Take action depending on the result
+		const details = {};
+
+		// Save success
+		if (roll.total >= (roll.options.targetValue ?? 10)) {
+			let successes = (death.success || 0) + 1;
+
+			// Critical Success = revive with 1hp
+			if (roll.isCritical) {
+				details.updates = {
+					"flags.tidy5e-sheet.death.success": 0,
+					"flags.tidy5e-sheet.death.failure": 0,
+					"system.attributes.hp.value": 1,
+				};
+				details.chatString = "DND5E.DeathSaveCriticalSuccess";
+			}
+
+			// 3 Successes = survive and reset checks
+			else if (successes === 3) {
+				details.updates = {
+					"flags.tidy5e-sheet.death.success": 0,
+					"flags.tidy5e-sheet.death.failure": 0,
+				};
+				details.chatString = "DND5E.DeathSaveSuccess";
+			}
+
+			// Increment successes
+			else details.updates = { "flags.tidy5e-sheet.death.success": Math.clamped(successes, 0, 3) };
+		}
+
+		// Save failure
+		else {
+			let failures = (death.failure || 0) + (roll.isFumble ? 2 : 1);
+			details.updates = { "flags.tidy5e-sheet.death.failure": Math.clamped(failures, 0, 3) };
+			if (failures >= 3) {
+				// 3 Failures = death
+				details.chatString = "DND5E.DeathSaveFailure";
+			}
+		}
+
+		// /**
+		//  * A hook event that fires after a death saving throw has been rolled for an Actor, but before
+		//  * updates have been performed.
+		//  * @function dnd5e.rollDeathSave
+		//  * @memberof hookEvents
+		//  * @param {Actor5e} actor              Actor for which the death saving throw has been rolled.
+		//  * @param {D20Roll} roll               The resulting roll.
+		//  * @param {object} details
+		//  * @param {object} details.updates     Updates that will be applied to the actor as a result of this save.
+		//  * @param {string} details.chatString  Localizable string displayed in the create chat message. If not set, then
+		//  *                                     no chat message will be displayed.
+		//  * @returns {boolean}                  Explicitly return `false` to prevent updates from being performed.
+		//  */
+		// if ( Hooks.call("dnd5e.rollDeathSave", this, roll, details) === false ) return roll;
+
+		if (!foundry.utils.isEmpty(details.updates)) await this.actor.update(details.updates);
+
+		// Display success/failure chat message
+		if (details.chatString) {
+			let chatData = { content: game.i18n.format(details.chatString, { name: this.actor.name }), speaker };
+			ChatMessage.applyRollMode(chatData, roll.options.rollMode);
+			await ChatMessage.create(chatData);
+		}
+
+		// Return the rolled result
+		return roll;
+	}
+
+	/* -------------------------------------------- */
+
 	// add actions module
 	async _renderInner(...args) {
 		const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 		let injectNPCSheet;
-		if (game.modules.get("character-actions-list-5e")?.active) injectNPCSheet = game.settings.get("character-actions-list-5e", "inject-npcs");
+		if (game.modules.get("character-actions-list-5e")?.active)
+			injectNPCSheet = game.settings.get("character-actions-list-5e", "inject-npcs");
 
 		try {
 			if (game.modules.get("character-actions-list-5e")?.active && injectNPCSheet) {
 				// Update the nav menu
-				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>");
+				const actionsTabButton = $(
+					'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
+				);
 				const tabs = html.find('.tabs[data-group="primary"]');
 				tabs.prepend(actionsTabButton);
 
@@ -621,7 +782,7 @@ async function setSheetClasses(app, html, data) {
 	if (actor.getFlag(CONSTANTS.MODULE_ID, "showNpcPersonalityInfo")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .left-notes").removeClass("hidden");
 	}
-  if (game.settings.get(CONSTANTS.MODULE_ID, "journalTabNPCDisabled")) {
+	if (game.settings.get(CONSTANTS.MODULE_ID, "journalTabNPCDisabled")) {
 		html.find('.tidy5e-sheet.tidy5e-npc .tidy5e-navigation a[data-tab="journal"]').remove();
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
@@ -645,7 +806,10 @@ async function setSheetClasses(app, html, data) {
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .rest-container").remove();
 	}
-	if (game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "npc" || game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all") {
+	if (
+		game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "npc" ||
+		game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all"
+	) {
 		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("roundPortrait");
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayDisabledNpc")) {
@@ -670,14 +834,36 @@ async function setSheetClasses(app, html, data) {
 	if (game.settings.get(CONSTANTS.MODULE_ID, "skillsAlwaysShownNpc")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .skills-list").addClass("always-visible");
 	}
-	if (token && token.actor.prototypeToken.actorLink && game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both") {
+	if (
+		token &&
+		token.actor.prototypeToken.actorLink &&
+		game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both"
+	) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("linked");
 	}
-	if (token && !token.actor.prototypeToken.actorLink && (game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "unlinked" || game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both")) {
+	if (
+		token &&
+		!token.actor.prototypeToken.actorLink &&
+		(game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "unlinked" ||
+			game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both")
+	) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("unlinked");
 	}
-	if (!token && (game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "unlinked" || game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both")) {
+	if (
+		!token &&
+		(game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "unlinked" ||
+			game.settings.get(CONSTANTS.MODULE_ID, "linkMarkerNpc") == "both")
+	) {
 		html.find(".tidy5e-sheet.tidy5e-npc").addClass("original");
+	}
+	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionDisabled")) {
+		html.find(".tidy5e-sheet.tidy5e-npc .profile .exhaustion-container").remove();
+	}
+	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionOnHover")) {
+		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("exhaustionOnHover");
+	}
+	if (game.settings.get(CONSTANTS.MODULE_ID, "hiddenDeathSavesEnabled") && !game.user.isGM) {
+		html.find(".tidy5e-sheet .death-saves").addClass("gmOnly");
 	}
 
 	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
@@ -753,7 +939,11 @@ async function editProtection(app, html, data) {
 
 		let itemContainer = html.find(".inventory-list:not(.spellbook-list).items-list");
 		html.find(".inventory-list:not(.spellbook-list) .items-header").each(function () {
-			if ($(this).next(".item-list").find("li").length - $(this).next(".item-list").find("li.items-footer").length == 0) {
+			if (
+				$(this).next(".item-list").find("li").length -
+					$(this).next(".item-list").find("li.items-footer").length ==
+				0
+			) {
 				$(this).next(".item-list").addClass("hidden").hide();
 				$(this).addClass("hidden").hide();
 			}
@@ -914,7 +1104,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
 Hooks.on("renderActorSheet", (app, html, data) => {
 	// Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills
 	// Issue https://github.com/sdenec/tidy5e-sheet/issues/662
-	if(game.modules.get("dnd5e-custom-skills")?.active) {
+	if (game.modules.get("dnd5e-custom-skills")?.active) {
 		html.find(".tidy5e-sheet.tidy5e-npc .ability-scores.custom-abilities").removeClass("custom-abilities");
 	}
 });

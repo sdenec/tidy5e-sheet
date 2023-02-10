@@ -5,19 +5,19 @@ export const tidy5eContextMenu = function (html, sheet) {
 	const actor = sheet.actor ? sheet.actor : sheet.parent;
 
 	// Manage Middle Click behavior
-	html.find('.item-list .item .item-name').mousedown( async (event) => {
-		if(event.which === 2) {
+	html.find(".item-list .item .item-name").mousedown(async (event) => {
+		if (event.which === 2) {
 			// let target = event.target.class;
 			// let item = event.currentTarget;
 			// Middle mouse opens item editor
 			event.preventDefault();
 			let li = $(event.target).parents(".item");
-			if($(li).find('.item-edit')) {
-				$(li).find('.item-edit').trigger('click');
+			if ($(li).find(".item-edit")) {
+				$(li).find(".item-edit").trigger("click");
 			}
 
-			if($(li).find('.effect-edit')) {
-				$(li).find('.effect-edit').trigger('click');
+			if ($(li).find(".effect-edit")) {
+				$(li).find(".effect-edit").trigger("click");
 			}
 			// let itemId = $(event.target).parents(".item")[0].dataset.itemId;
 			// if(!itemId || !actor) {
@@ -31,7 +31,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 			// item.render(true);
 		}
 	});
-	
+
 	// Override COntext Menu
 	// Item Context Menu
 	// new ContextMenu(html, ".item-list .item #context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
@@ -227,7 +227,8 @@ const _getActiveEffectContextOptions = function (effect) {
 		options.push({
 			name: "DND5E.ContextMenuActionDuplicate",
 			icon: "<i class='fas fa-copy fa-fw'></i>",
-			callback: () => effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.label }) }, { save: true }),
+			callback: () =>
+				effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.label }) }, { save: true }),
 		});
 		options.push({
 			name: "DND5E.ContextMenuActionDelete",
@@ -247,16 +248,19 @@ const _getActiveEffectContextOptions = function (effect) {
  */
 const _getItemContextOptions = function (item) {
 	const actor = item.actor ? item.actor : item.parent;
-	if(!actor) {
+	if (!actor) {
 		return;
 	}
 	let options = [];
 
 	const isCharacter = actor.type === "character";
-    const isNPC = actor.type === "npc";
-    const isVehicle = actor.type === "vehicle";
+	const isNPC = actor.type === "npc";
+	const isVehicle = actor.type === "vehicle";
 
-	const allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
+	const allowCantripToBePreparedOnContext = game.settings.get(
+		CONSTANTS.MODULE_ID,
+		"allowCantripToBePreparedOnContext"
+	);
 	let toggleClass = "";
 	let toggleTitle = "";
 	let canToggle = false;
@@ -296,7 +300,9 @@ const _getItemContextOptions = function (item) {
 		// });
 		options.push({
 			name: isAttuned ? "TIDY5E.Deattune" : "TIDY5E.Attune",
-			icon: isAttuned ? "<i class='fas fa-sun fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>" : "<i class='fas fa-sun fa-fw'></i>",
+			icon: isAttuned
+				? "<i class='fas fa-sun fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>"
+				: "<i class='fas fa-sun fa-fw'></i>",
 			callback: () =>
 				item.update({
 					"system.attunement": CONFIG.DND5E.attunementTypes[isAttuned ? "REQUIRED" : "ATTUNED"],
@@ -314,7 +320,9 @@ const _getItemContextOptions = function (item) {
 		const isEquipped = item.system.equipped;
 		options.push({
 			name: isEquipped ? "TIDY5E.Unequip" : "TIDY5E.Equip",
-			icon: isEquipped ? "<i class='fas fa-user-alt fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i> " : "<i class='fas fa-user-alt fa-fw'></i> ",
+			icon: isEquipped
+				? "<i class='fas fa-user-alt fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i> "
+				: "<i class='fas fa-user-alt fa-fw'></i> ",
 			callback: () => item.update({ "system.equipped": !isEquipped }),
 		});
 	}
@@ -350,8 +358,7 @@ const _getItemContextOptions = function (item) {
 	}
 
 	// TODO SUPPORT FAVORITE ON NPC ?
-	if(isCharacter) {
-
+	if (isCharacter) {
 		// Add favorites to context menu
 		let isFav = isItemFavorite(item);
 
@@ -363,7 +370,9 @@ const _getItemContextOptions = function (item) {
 		}
 		options.push({
 			name: isFav ? "TIDY5E.RemoveFav" : "TIDY5E.AddFav",
-			icon: isFav ? `<i class='fas ${favoriteIcon} fa-fw'></i>` : `<i class='fas ${favoriteIcon} fa-fw inactive'></i>`,
+			icon: isFav
+				? `<i class='fas ${favoriteIcon} fa-fw'></i>`
+				: `<i class='fas ${favoriteIcon} fa-fw inactive'></i>`,
 			callback: () => {
 				// const item_id = ev[0].dataset.itemId; //ev.currentTarget.closest('[data-item-id]').dataset.itemId;
 				// const item = actor.items.get(item_id);
@@ -437,7 +446,8 @@ const _getItemContextOptions = function (item) {
 				name: "DND5E.ContextMenuActionDuplicate",
 				icon: "<i class='fas fa-copy fa-fw'></i>",
 				condition: () => !["race", "background", "class", "subclass"].includes(item.type),
-				callback: () => item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
+				callback: () =>
+					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
 			});
 			options.push({
 				name: "TIDY5E.DeleteSpell",
@@ -457,7 +467,8 @@ const _getItemContextOptions = function (item) {
 				name: "DND5E.ContextMenuActionDuplicate",
 				icon: "<i class='fas fa-copy fa-fw'></i>",
 				condition: () => !["race", "background", "class", "subclass"].includes(item.type),
-				callback: () => item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
+				callback: () =>
+					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
 			});
 			options.push({
 				name: "DND5E.ContextMenuActionDelete",

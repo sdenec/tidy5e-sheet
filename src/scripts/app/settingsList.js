@@ -36,7 +36,9 @@ export function settingsList() {
 		},
 		default: "default",
 		onChange: (data) => {
-			data === "dark" ? document.querySelector("html").classList.add("tidy5eDark") : document.querySelector("html").classList.remove("tidy5eDark");
+			data === "dark"
+				? document.querySelector("html").classList.add("tidy5eDark")
+				: document.querySelector("html").classList.remove("tidy5eDark");
 		},
 	});
 
@@ -152,7 +154,7 @@ export function settingsList() {
 		type: Boolean,
 	});
 
-  game.settings.register(CONSTANTS.MODULE_ID, "journalTabNPCDisabled", {
+	game.settings.register(CONSTANTS.MODULE_ID, "journalTabNPCDisabled", {
 		name: `${game.i18n.localize("TIDY5E.Settings.JournalTabNPCDisabled.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.JournalTabNPCDisabled.hint"),
 		scope: "client",
@@ -421,7 +423,10 @@ export function settingsList() {
 		onChange: (data) => {
 			$(".system-dnd5e")
 				.get(0)
-				.style.setProperty("--vehicle-border", game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") + "px");
+				.style.setProperty(
+					"--vehicle-border",
+					game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") + "px"
+				);
 		},
 	});
 
@@ -671,7 +676,7 @@ export function settingsList() {
 		type: Boolean,
 	});
 
-  game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1", {
+	game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1", {
 		name: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit1.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit1.hint")}`,
 		scope: "world",
@@ -1035,13 +1040,18 @@ class ResetSettingsDialog extends FormApplication {
 		//@ts-ignore
 		return new Dialog({
 			title: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.title`),
-			content: '<p style="margin-bottom:1rem;">' + game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.content`) + "</p>",
+			content:
+				'<p style="margin-bottom:1rem;">' +
+				game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.content`) +
+				"</p>",
 			buttons: {
 				confirm: {
 					icon: '<i class="fas fa-check"></i>',
 					label: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.confirm`),
 					callback: async () => {
-						for (let setting of game.settings.storage.get("world").filter((setting) => setting.key.startsWith(`${CONSTANTS.MODULE_ID}.`))) {
+						for (let setting of game.settings.storage
+							.get("world")
+							.filter((setting) => setting.key.startsWith(`${CONSTANTS.MODULE_ID}.`))) {
 							console.log(`Reset setting '${setting.key}'`);
 							await setting.delete();
 						}

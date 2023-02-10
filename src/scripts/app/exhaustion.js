@@ -2,21 +2,20 @@ import CONSTANTS from "./constants.js";
 import { warn } from "./logger-util.js";
 
 export async function updateExhaustion(actorEntity) {
-  const actorC = game.actors.get(actorEntity._id);
-  if (!actorC) {
-    warn(`The actor with id '${actorEntity._id}' must exists for apply a Exhaustion`);
+	const actorC = game.actors.get(actorEntity._id);
+	if (!actorC) {
+		warn(`The actor with id '${actorEntity._id}' must exists for apply a Exhaustion`);
 		return;
 	}
 	if (actorC.type !== "character" && actorC.type !== "npc") {
-    warn(`The actor with id '${actorEntity._id}' must be a Character or a NPC for apply a Exhaustion`);
+		warn(`The actor with id '${actorEntity._id}' must be a Character or a NPC for apply a Exhaustion`);
 		return;
 	}
 
-	let exhaustion = 0 ;
-	if(actorC.type === "character") {
+	let exhaustion = 0;
+	if (actorC.type === "character") {
 		exhaustion = actorEntity.system.attributes.exhaustion ?? 0;
-	}
-	else if(actorC.type === "npc") {
+	} else if (actorC.type === "npc") {
 		exhaustion = actorEntity.flags[CONSTANTS.MODULE_ID]?.exhaustion ?? 0;
 	}
 
@@ -24,7 +23,9 @@ export async function updateExhaustion(actorEntity) {
 		let icon = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectIcon");
 		let currentExhaustion;
 		let exhaustionPresent = null;
-		let effectName = `${game.i18n.localize("DND5E.ConExhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${exhaustion}`;
+		let effectName = `${game.i18n.localize("DND5E.ConExhaustion")} ${game.i18n.localize(
+			"DND5E.AbbreviationLevel"
+		)} ${exhaustion}`;
 
 		// define exhaustion effects by level
 		let exhaustionSet = [];
@@ -211,7 +212,12 @@ export async function updateExhaustion(actorEntity) {
 				await game.dfreds.effectInterface.addEffect(contextEffect);
 			}
 		} else {
-			warn(`${game.i18n.localize("The module 'Dfreds Convenient Effects' is not active, but the module setting 'Auto Exhaustion effects' is enabled")}`, true);
+			warn(
+				`${game.i18n.localize(
+					"The module 'Dfreds Convenient Effects' is not active, but the module setting 'Auto Exhaustion effects' is enabled"
+				)}`,
+				true
+			);
 		}
 	}
 
@@ -243,7 +249,12 @@ export async function updateExhaustion(actorEntity) {
 				game.cub.addCondition(effectNameCustom, [token], { warn: false });
 			}
 		} else {
-			warn(`${game.i18n.localize("The module 'CUB' is not active, but the module setting 'Auto Exhaustion effects' is enabled")}`, true);
+			warn(
+				`${game.i18n.localize(
+					"The module 'CUB' is not active, but the module setting 'Auto Exhaustion effects' is enabled"
+				)}`,
+				true
+			);
 		}
 	}
 }
@@ -267,55 +278,57 @@ Hooks.on(`dnd5e.restComplete`, (actorEntity, data) => {
 	}
 	let actor = game.actors.get(actorEntity._id);
 	if (data.longRest) {
-    if(actor.type === "character") {
-      let exhaustion = actorEntity.system.attributes.exhaustion;
-      if (exhaustion > 0) {
-        actor.update({ "system.attributes.exhaustion": exhaustion - 1 });
-      }
-    }
-    else if(actor.type === "npc") {
-      let exhaustion = actorEntity.flags[CONSTANTS.MODULE_ID].exhaustion;
-      if (exhaustion > 0) {
-        actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
-      }
-    }
-    else {
-      warn(`Long rest is not supported for actor ype '${actor.type}'`);
-    }
+		if (actor.type === "character") {
+			let exhaustion = actorEntity.system.attributes.exhaustion;
+			if (exhaustion > 0) {
+				actor.update({ "system.attributes.exhaustion": exhaustion - 1 });
+			}
+		} else if (actor.type === "npc") {
+			let exhaustion = actorEntity.flags[CONSTANTS.MODULE_ID].exhaustion;
+			if (exhaustion > 0) {
+				actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
+			}
+		} else {
+			warn(`Long rest is not supported for actor ype '${actor.type}'`);
+		}
 	}
 });
 
 // set exhaustion value to dfred/cub effect level
 Hooks.on(`createActiveEffect`, (effect, data, id) => {
-	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "dfredce" || game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "cub") {
+	if (
+		game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "dfredce" ||
+		game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "cub"
+	) {
 		let actor = game.actors.get(effect.parent._id);
 		let effectName = effect.label;
 		if (effectName.includes(game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustom"))) {
-      debug("effectName = " + effectName);
-      if(actor.type === "character") {
-        let exhaustion = effectName.slice(-1);
-        if (actor.system.attributes.exhaustion != exhaustion) {
-          debug("exhaustion = " + exhaustion);
-          actor.update({ "system.attributes.exhaustion": exhaustion });
-        }
-      }
-      else if(actor.type === "npc") {
-        let exhaustion = effectName.slice(-1);
-        if (actor.flags.tidy5e-sheet.exhaustion != exhaustion) {
-          debug("exhaustion = " + exhaustion);
-          actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion });
-        }
-      }
-      else {
-        warn(`createActiveEffect is not supported for actor ype '${actor.type}'`);
-      }
+			debug("effectName = " + effectName);
+			if (actor.type === "character") {
+				let exhaustion = effectName.slice(-1);
+				if (actor.system.attributes.exhaustion != exhaustion) {
+					debug("exhaustion = " + exhaustion);
+					actor.update({ "system.attributes.exhaustion": exhaustion });
+				}
+			} else if (actor.type === "npc") {
+				let exhaustion = effectName.slice(-1);
+				if (actor.flags.tidy5e - sheet.exhaustion != exhaustion) {
+					debug("exhaustion = " + exhaustion);
+					actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion });
+				}
+			} else {
+				warn(`createActiveEffect is not supported for actor ype '${actor.type}'`);
+			}
 		}
 	}
 });
 
 // reset exhaustion value when dfred/cub effect is removed
 Hooks.on(`deleteActiveEffect`, (effect, data, id) => {
-	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "dfredce" || game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "cub") {
+	if (
+		game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "dfredce" ||
+		game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "cub"
+	) {
 		const actor = game.actors.get(effect.parent._id);
 		const effectName = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustom");
 		const levels = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustomTiers");
@@ -344,20 +357,17 @@ Hooks.on(`deleteActiveEffect`, (effect, data, id) => {
 					return;
 				}
 			}
-      if(actor.type === "character") {
-        if (actor.system.attributes.exhaustion != 0) {
-          actor.update({ "system.attributes.exhaustion": 0 });
-        }
-      }
-      else if(actor.type === "npc") {
-        if (actor.flags.tidy5e-sheet.exhaustion != 0) {
-          actor.update({ "flags.tidy5e-sheet.exhaustion": 0 });
-        }
-      }
-      else {
-        warn(`deleteActiveEffect is not supported for actor ype '${actor.type}'`);
-      }
-
+			if (actor.type === "character") {
+				if (actor.system.attributes.exhaustion != 0) {
+					actor.update({ "system.attributes.exhaustion": 0 });
+				}
+			} else if (actor.type === "npc") {
+				if (actor.flags.tidy5e - sheet.exhaustion != 0) {
+					actor.update({ "flags.tidy5e-sheet.exhaustion": 0 });
+				}
+			} else {
+				warn(`deleteActiveEffect is not supported for actor ype '${actor.type}'`);
+			}
 		}
 	}
 });

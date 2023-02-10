@@ -11,8 +11,14 @@ import { is_real_number } from "./app/helpers.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 	static get defaultOptions() {
-		let defaultTab = game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default" ? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") : "attributes";
-		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions") {
+		let defaultTab =
+			game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default"
+				? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab")
+				: "attributes";
+		if (
+			!game.modules.get("character-actions-list-5e")?.active &&
+			game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions"
+		) {
 			defaultTab = "attributes";
 		}
 		return mergeObject(super.defaultOptions, {
@@ -56,30 +62,26 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		context.notHideIconsNextToTheItemName = !game.settings.get(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName");
 
 		context.hpOverlayCalculationCurrent =
-		(
-			100 /
-			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
-				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
-			)
-		)
-		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
-		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+			(100 /
+				((is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) +
+					(is_real_number(this.actor.system?.attributes?.hp?.tempmax)
+						? this.actor.system.attributes.hp.tempmax
+						: 0))) *
+				(is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0) +
+			(is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%";
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent + "%";
 
-    context.hpBarCalculationCurrent =
-    (
-			100 /
-			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
-				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
-			)
-		)
-    * (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
-		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+		context.hpBarCalculationCurrent =
+			(100 /
+				((is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) +
+					(is_real_number(this.actor.system?.attributes?.hp?.tempmax)
+						? this.actor.system.attributes.hp.tempmax
+						: 0))) *
+				(is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0) +
+			(is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-    context.hpBarCalculationCurrent =  context.hpBarCalculationCurrent + "%";
+		context.hpBarCalculationCurrent = context.hpBarCalculationCurrent + "%";
 
 		return context;
 	}
@@ -135,12 +137,15 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 		let injectVehicleSheet;
-		if (game.modules.get("character-actions-list-5e")?.active) injectVehicleSheet = game.settings.get("character-actions-list-5e", "inject-vehicles");
+		if (game.modules.get("character-actions-list-5e")?.active)
+			injectVehicleSheet = game.settings.get("character-actions-list-5e", "inject-vehicles");
 
 		try {
 			if (game.modules.get("character-actions-list-5e")?.active && injectVehicleSheet) {
 				// Update the nav menu
-				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>");
+				const actionsTabButton = $(
+					'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
+				);
 				const tabs = html.find('.tabs[data-group="primary"]');
 				tabs.prepend(actionsTabButton);
 
@@ -170,7 +175,11 @@ async function editProtection(app, html, data) {
 	if (!actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 		let itemContainer = html.find(".inventory-list.items-list");
 		html.find(".inventory-list .items-header").each(function () {
-			if ($(this).next(".item-list").find("li").length - $(this).next(".item-list").find("li.items-footer").length == 0) {
+			if (
+				$(this).next(".item-list").find("li").length -
+					$(this).next(".item-list").find("li.items-footer").length ==
+				0
+			) {
 				$(this).next(".item-list").remove();
 				$(this).remove();
 			}
@@ -228,13 +237,19 @@ async function setSheetClasses(app, html, data) {
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "restingForNpcsEnabled")) {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .rest-container").remove();
 	}
-	if (game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "npc" || game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all") {
+	if (
+		game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "npc" ||
+		game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all"
+	) {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .profile").addClass("roundPortrait");
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") > 0) {
 		$(".system-dnd5e")
 			.get(0)
-			.style.setProperty("--vehicle-border", game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") + "px");
+			.style.setProperty(
+				"--vehicle-border",
+				game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") + "px"
+			);
 	} else {
 		$(".system-dnd5e").get(0).style.removeProperty("--vehicle-border");
 	}
@@ -274,7 +289,7 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
 Hooks.on("renderActorSheet", (app, html, data) => {
 	// Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills
 	// Issue https://github.com/sdenec/tidy5e-sheet/issues/662
-	if(game.modules.get("dnd5e-custom-skills")?.active) {
+	if (game.modules.get("dnd5e-custom-skills")?.active) {
 		html.find(".tidy5e-sheet.tidy5e-vehicle .ability-scores.custom-abilities").removeClass("custom-abilities");
 	}
 });

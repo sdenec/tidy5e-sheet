@@ -1,6 +1,9 @@
 export const tidy5eShowItemArt = function (html, item) {
 	let image = html.find("img.profile");
-	image.attr("title", `${game.i18n.localize("TIDY5E.EditActorImage")} / ${game.i18n.localize("TIDY5E.ShowItemImage")}`);
+	image.attr(
+		"title",
+		`${game.i18n.localize("TIDY5E.EditActorImage")} / ${game.i18n.localize("TIDY5E.ShowItemImage")}`
+	);
 	let container = `<div class="item-image item-image-show-item-art"></div>`;
 	let menu = `<div class="item-menu hidden"><a class="showItemArt">${game.i18n.localize("TIDY5E.ShowItemArt")}</a>`;
 	image.wrap(container);

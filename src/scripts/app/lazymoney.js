@@ -111,7 +111,10 @@ function _onChangeCurrency(ev) {
 		delta = Number(splitVal[1]);
 	} else {
 		delta = Number(splitVal[0]);
-		chatLog(actor, `${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`);
+		chatLog(
+			actor,
+			`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
+		);
 		return;
 	}
 	let newAmount = {};
@@ -133,12 +136,18 @@ function _onChangeCurrency(ev) {
 			}
 			case signCase.equals: {
 				newAmount = updateMoney(money, delta, denom);
-				chatLog(actor, `${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`);
+				chatLog(
+					actor,
+					`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
+				);
 				break;
 			}
 			default: {
 				newAmount = updateMoney(money, delta, denom);
-				chatLog(actor, `${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`);
+				chatLog(
+					actor,
+					`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
+				);
 				break;
 			}
 		}

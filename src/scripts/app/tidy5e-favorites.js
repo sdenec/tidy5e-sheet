@@ -25,7 +25,11 @@ export const isItemFavorite = function (item) {
 	if (!item) {
 		return false;
 	}
-	let isFav = (game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) || (game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) || item.flags[CONSTANTS.MODULE_ID]?.favorite || false;
+	let isFav =
+		(game.modules.get("favtab")?.active && item.flags["favtab"]?.isFavorite) ||
+		(game.modules.get("favorite-items")?.active && item.flags["favorite-items"]?.favorite) ||
+		item.flags[CONSTANTS.MODULE_ID]?.favorite ||
+		false;
 
 	const isAlreadyTidyFav = getProperty(item.flags[CONSTANTS.MODULE_ID]?.favorite);
 	// for retrocompatibility
@@ -60,7 +64,9 @@ export const addFavorites = async function (app, html, data, position) {
 
 	let context = {
 		owner: data.owner,
-		inventory: favs.filter((i) => ["weapon", "equipment", "consumable", "tool", "backpack", "loot"].includes(i.type)),
+		inventory: favs.filter((i) =>
+			["weapon", "equipment", "consumable", "tool", "backpack", "loot"].includes(i.type)
+		),
 		features: favs.filter((i) => ["feat", "background", "class", "subclass"].includes(i.type)),
 		spells: app._prepareSpellbook(
 			{ actor: app.actor },
@@ -167,9 +173,13 @@ export const addFavorites = async function (app, html, data, position) {
 		// add button to toggle favorite of the item in their native tab
 		if (app.options.editable) {
 			let favBtn = $(
-				`<a class="item-control item-fav ${isFav ? "active" : ""}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${
+				`<a class="item-control item-fav ${isFav ? "active" : ""}" title="${
+					isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")
+				}" data-fav="${isFav}"><i class="${
 					isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"
-				}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`
+				}"></i> <span class="control-label">${
+					isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")
+				}</span></a>`
 			);
 			favBtn.click((ev) => {
 				const item_id = ev.currentTarget.closest("[data-item-id]").dataset.itemId;
@@ -231,7 +241,9 @@ export const addFavorites = async function (app, html, data, position) {
 			if (item.system.activation && item.system.activation.type) {
 				let key = item.system.activation.type;
 				// item.system.activation.type.capitalize()
-				labels.activation = `${item.system.activation.cost ? item.system.activation.cost + " " : ""}${translateLabels(key)}`;
+				labels.activation = `${
+					item.system.activation.cost ? item.system.activation.cost + " " : ""
+				}${translateLabels(key)}`;
 			}
 
 			// is item chargeable and on Cooldown
@@ -261,7 +273,10 @@ export const addFavorites = async function (app, html, data, position) {
 
 			// check magic item
 			item.isMagic = false;
-			if ((item.flags.magicitems && item.flags.magicitems.enabled) || (item.system.properties && item.system.properties.mgc)) {
+			if (
+				(item.flags.magicitems && item.flags.magicitems.enabled) ||
+				(item.system.properties && item.system.properties.mgc)
+			) {
 				item.isMagic = true;
 			}
 
@@ -297,7 +312,7 @@ export const addFavorites = async function (app, html, data, position) {
 			switch (item.type) {
 				case "feat": {
 					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
-					  item.flags[CONSTANTS.MODULE_ID].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
+						item.flags[CONSTANTS.MODULE_ID].sort = (favFeats.count + 1) * 100000; // initial sort key if not present
 					}
 					item.isFeat = true;
 					favFeats.push(item);
@@ -333,7 +348,7 @@ export const addFavorites = async function (app, html, data, position) {
 				}
 				default: {
 					if (!is_real_number(item.flags[CONSTANTS.MODULE_ID].sort)) {
-					  item.flags[CONSTANTS.MODULE_ID].sort = (favItems.count + 1) * 100000; // initial sort key if not present
+						item.flags[CONSTANTS.MODULE_ID].sort = (favItems.count + 1) * 100000; // initial sort key if not present
 					}
 					item.isItem = true;
 					favItems.push(item);
@@ -346,11 +361,12 @@ export const addFavorites = async function (app, html, data, position) {
 		}
 	}
 
-	let enableSortFavoritesItemsAlphabetically = 
-		game.settings.get(CONSTANTS.MODULE_ID, "enableSortFavoritesItemsAlphabetically");
+	let enableSortFavoritesItemsAlphabetically = game.settings.get(
+		CONSTANTS.MODULE_ID,
+		"enableSortFavoritesItemsAlphabetically"
+	);
 
-	if(enableSortFavoritesItemsAlphabetically) {
-
+	if (enableSortFavoritesItemsAlphabetically) {
 		// sorting favItems alphabetically
 
 		const favItemsArray = Object.keys(favItems);
@@ -506,24 +522,28 @@ export const addFavorites = async function (app, html, data, position) {
 		context.favItems =
 			favItems.length > 0
 				? favItems
-				//? enableSortFavoritesItemsAlphabetically ? favItems : favItems?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
-				: false;
+				: //? enableSortFavoritesItemsAlphabetically ? favItems : favItems?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
+				  false;
 		context.favFeats =
 			favFeats.length > 0
 				? favFeats
-				//? enableSortFavoritesItemsAlphabetically ? favFeats : favFeats?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
-				: false;
+				: //? enableSortFavoritesItemsAlphabetically ? favFeats : favFeats?.sort((a, b) => a.flags[CONSTANTS.MODULE_ID].sort - b.flags[CONSTANTS.MODULE_ID].sort)
+				  false;
 		context.favSpellsPrepMode = spellPrepModeCount > 0 ? favSpellsPrepMode : false;
 		context.favSpells = spellCount > 0 ? favSpells : false;
 		context.editable = app.options.editable;
-		context.allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
+		context.allowCantripToBePreparedOnContext = game.settings.get(
+			CONSTANTS.MODULE_ID,
+			"allowCantripToBePreparedOnContext"
+		);
 
 		await loadTemplates(["modules/tidy5e-sheet/templates/favorites/favorite-item.html"]);
-		let favHtml = $(await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context));
+		let favHtml = $(
+			await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context)
+		);
 
 		// Activating favorite-list events
 		tidy5eContextMenu(favHtml, app);
-
 
 		// showing item summary
 		favHtml.find(".item-name h4").click((event) => app._onItemSummary(event));
@@ -697,7 +717,7 @@ export const addFavorites = async function (app, html, data, position) {
 		favContainer.addClass("hasFavs");
 		favContent.append(favHtml);
 		// attributesTab.prepend(favMarker);
-		if(position) {
+		if (position) {
 			html.find(".tab.attributes")?.scrollTop(position.top);
 		}
 		if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {

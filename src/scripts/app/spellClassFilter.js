@@ -36,11 +36,14 @@ export async function applySpellClassFilterItemSheet(app, html, itemData) {
 	if (type == "spell") {
 		const spellDetailsDiv = html.find(".tab.details");
 		const firstChild = spellDetailsDiv.children("h3:first");
-		const spellClassForm = await renderTemplate("modules/tidy5e-sheet/templates/items/tidy5e-spell-class-filter-form.html", {
-			SCF: classesConfiguration,
-			item,
-			flags: item.flags,
-		});
+		const spellClassForm = await renderTemplate(
+			"modules/tidy5e-sheet/templates/items/tidy5e-spell-class-filter-form.html",
+			{
+				SCF: classesConfiguration,
+				item,
+				flags: item.flags,
+			}
+		);
 		// Under the first header in the details tab.
 		firstChild.after(spellClassForm);
 	}
@@ -75,12 +78,15 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
 
 		// Inject a simple dropdown menu.
 		if (user_setting_filterSelect) {
-			const actorClassFilter = await renderTemplate("modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-class-filter.html", {
-				SCF: classesConfiguration,
-				actor,
-				flags: flags,
-				scFlags: actor.flags[CONSTANTS.MODULE_ID],
-			});
+			const actorClassFilter = await renderTemplate(
+				"modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-class-filter.html",
+				{
+					SCF: classesConfiguration,
+					actor,
+					flags: flags,
+					scFlags: actor.flags[CONSTANTS.MODULE_ID],
+				}
+			);
 			firstItem.before(actorClassFilter);
 		}
 

@@ -39,7 +39,6 @@ export class Tidy5eUserSettings extends FormApplication {
 	getSettingsData() {
 		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
-
 			"ammoEquippedOnly",
 			"activeEffectsMarker",
 			"classListDisabled",
@@ -77,7 +76,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"itemCardsFixKey",
 			"itemCardsForAllItems",
 			"journalTabDisabled",
-      "journalTabNPCDisabled",
+			"journalTabNPCDisabled",
 			"linkMarkerNpc",
 
 			"playerNameEnabled",
@@ -102,7 +101,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"traitsTogglePc",
 
 			"lazyHpAndExpEnable",
-      "lazyHpForceHpValueLimit1",
+			"lazyHpForceHpValueLimit1",
 			"lazyHpForceHpValueLimit2",
 			"lazyMoneyEnable",
 			"lazyMoneyAddConvert",
@@ -142,7 +141,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"colorPickerAlwaysPreparedOutline",
 			"colorPickerAlwaysPreparedAccent",
 
-			"debug"
+			"debug",
 		];
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

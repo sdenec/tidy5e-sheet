@@ -122,7 +122,7 @@
 	"TIDY5E.ClassWarlock": "Warlock",
 	"TIDY5E.ClassWizard": "Wizard",
 
-  "TIDY5E.OriginSummaryConfig": "Origin Summary Configuration",
+	"TIDY5E.OriginSummaryConfig": "Origin Summary Configuration",
 
 	"TIDY5E.Settings.GlobalLabel": "Global",
 	"TIDY5E.Settings.DebugLabel": "Debug",
@@ -226,7 +226,7 @@
 		"name": "Hide character journal.",
 		"hint": "Enable to hide the character journal tab."
 	},
-  "TIDY5E.Settings.JournalTabNPCDisabled": {
+	"TIDY5E.Settings.JournalTabNPCDisabled": {
 		"name": "Hide npc journal.",
 		"hint": "Enable to hide the npc journal tab."
 	},
@@ -573,5 +573,4 @@
 		"name": "Enable Sort Favorites Alphabetically",
 		"hint": "It enabled this setting will sort the items, features, spells alphabetically on the favorites html template"
 	}
-
 }

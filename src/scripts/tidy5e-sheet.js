@@ -14,7 +14,15 @@ import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 import { updateExhaustion } from "./app/exhaustion.js";
-import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
+import {
+	HexToRGBA,
+	colorPicker,
+	mapDefaultColorsRGBA,
+	mapDefaultColorsDarkRGBA,
+	mapDefaultColorsDarkRGB,
+	mapDefaultColorsRGB,
+	applyColorPickerCustomization,
+} from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
 import { is_real_number } from "./app/helpers.js";
 import { debug, error } from "./app/logger-util.js";
@@ -23,13 +31,20 @@ let position = 0;
 
 export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter {
 	get template() {
-		if (!game.user.isGM && this.actor.limited && !game.settings.get(CONSTANTS.MODULE_ID, "expandedSheetEnabled")) return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
+		if (!game.user.isGM && this.actor.limited && !game.settings.get(CONSTANTS.MODULE_ID, "expandedSheetEnabled"))
+			return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/actors/tidy5e-sheet.html";
 	}
 
 	static get defaultOptions() {
-		let defaultTab = game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default" ? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") : "attributes";
-		if (!game.modules.get("character-actions-list-5e")?.active && game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions") {
+		let defaultTab =
+			game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") != "default"
+				? game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab")
+				: "attributes";
+		if (
+			!game.modules.get("character-actions-list-5e")?.active &&
+			game.settings.get(CONSTANTS.MODULE_ID, "defaultActionsTab") == "actions"
+		) {
 			defaultTab = "attributes";
 		}
 		return mergeObject(super.defaultOptions, {
@@ -59,33 +74,45 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 
 		// Journal HTML enrichment
 
-		context.journalNotes1HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes1?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes1HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes1?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
-		context.journalNotes2HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes2?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes2HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes2?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
-		context.journalNotes3HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes3?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes3HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes3?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
-		context.journalNotes4HTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes4?.value, {
-			secrets: this.actor.isOwner,
-			rollData: context.rollData,
-			async: true,
-			relativeTo: this.actor,
-		});
+		context.journalNotes4HTML = await TextEditor.enrichHTML(
+			context.actor.flags[CONSTANTS.MODULE_ID]?.notes4?.value,
+			{
+				secrets: this.actor.isOwner,
+				rollData: context.rollData,
+				async: true,
+				relativeTo: this.actor,
+			}
+		);
 
 		context.journalHTML = await TextEditor.enrichHTML(context.actor.flags[CONSTANTS.MODULE_ID]?.notes?.value, {
 			secrets: this.actor.isOwner,
@@ -95,7 +122,10 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		});
 
 		context.appId = this.appId;
-		context.allowCantripToBePreparedOnContext = game.settings.get(CONSTANTS.MODULE_ID, "allowCantripToBePreparedOnContext");
+		context.allowCantripToBePreparedOnContext = game.settings.get(
+			CONSTANTS.MODULE_ID,
+			"allowCantripToBePreparedOnContext"
+		);
 		context.isGM = game.user.isGM;
 		context.allowHpMaxOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpMaxOverride");
 		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
@@ -104,32 +134,30 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		context.notHideIconsNextToTheItemName = !game.settings.get(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName");
 
 		context.hpOverlayCalculationCurrent =
-		(
-			100 /
-			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
-				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
-			)
-		)
-		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
-		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+			(100 /
+				((is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) +
+					(is_real_number(this.actor.system?.attributes?.hp?.tempmax)
+						? this.actor.system.attributes.hp.tempmax
+						: 0))) *
+				(is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0) +
+			(is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%";
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent + "%";
 
-    context.hpBarCalculationCurrent =
-    (
-			100 /
-			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
-				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
-			)
-		)
-    * (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
-		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+		context.hpBarCalculationCurrent =
+			(100 /
+				((is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) +
+					(is_real_number(this.actor.system?.attributes?.hp?.tempmax)
+						? this.actor.system.attributes.hp.tempmax
+						: 0))) *
+				(is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0) +
+			(is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-    context.hpBarCalculationCurrent =  context.hpBarCalculationCurrent + "%";
+		context.hpBarCalculationCurrent = context.hpBarCalculationCurrent + "%";
 
-		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
+		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize(
+			"DND5E.AbbreviationLevel"
+		)} ${this.actor.system.attributes.exhaustion}`;
 		if (this.actor.system.attributes.exhaustion === 0) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion0")}`;
 		} else if (this.actor.system.attributes.exhaustion === 1) {
@@ -307,12 +335,15 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		const html = await super._renderInner(...args);
 		const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 		let injectCharacterSheet;
-		if (game.modules.get("character-actions-list-5e")?.active) injectCharacterSheet = game.settings.get("character-actions-list-5e", "inject-characters");
+		if (game.modules.get("character-actions-list-5e")?.active)
+			injectCharacterSheet = game.settings.get("character-actions-list-5e", "inject-characters");
 
 		try {
 			if (game.modules.get("character-actions-list-5e")?.active && injectCharacterSheet) {
 				// Update the nav menu
-				const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>");
+				const actionsTabButton = $(
+					'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
+				);
 				const tabs = html.find('.tabs[data-group="primary"]');
 				tabs.prepend(actionsTabButton);
 
@@ -372,39 +403,39 @@ async function checkDeathSaveStatus(app, html, data) {
 	if (data.editable) {
 		// var actor = game.actors.entities.find(a => a._id === data.actor._id);
 		let actor = app.actor;
-    if(actor.type == "character") {
-      var currentHealth = actor.system.attributes.hp.value;
-      var deathSaveSuccess = actor.system.attributes.death.success;
-      var deathSaveFailure = actor.system.attributes.death.failure;
+		if (actor.type == "character") {
+			var currentHealth = actor.system.attributes.hp.value;
+			var deathSaveSuccess = actor.system.attributes.death.success;
+			var deathSaveFailure = actor.system.attributes.death.failure;
 
-      debug(`current HP Character : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
-      if (currentHealth <= 0) {
-        html.find(".tidy5e-sheet .profile").addClass("dead");
-      }
+			debug(
+				`current HP Character : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`
+			);
+			if (currentHealth <= 0) {
+				html.find(".tidy5e-sheet .profile").addClass("dead");
+			}
 
-      if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
-        await actor.update({ "system.attributes.death.success": 0 });
-        await actor.update({ "system.attributes.death.failure": 0 });
-      }
-    }
-    else if(actor.type == "npc"){
-      var currentHealth = actor.system.attributes.hp.value;
-      var deathSaveSuccess = actor.flags[CONSTANTS.MODULE_ID].death.success;
-      var deathSaveFailure = actor.flags[CONSTANTS.MODULE_ID].death.failure;
+			if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
+				await actor.update({ "system.attributes.death.success": 0 });
+				await actor.update({ "system.attributes.death.failure": 0 });
+			}
+		} else if (actor.type == "npc") {
+			var currentHealth = actor.system.attributes.hp.value;
+			var deathSaveSuccess = actor.flags[CONSTANTS.MODULE_ID].death.success;
+			var deathSaveFailure = actor.flags[CONSTANTS.MODULE_ID].death.failure;
 
-      debug(`current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
-      if (currentHealth <= 0) {
-        html.find(".tidy5e-sheet .profile").addClass("dead");
-      }
+			debug(`current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
+			if (currentHealth <= 0) {
+				html.find(".tidy5e-sheet .profile").addClass("dead");
+			}
 
-      if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
-        await actor.update({ "flags.tidy5e-sheet.death.success": 0 });
-        await actor.update({ "flags.tidy5e-sheet.death.failure": 0 });
-      }
-    }
-    else {
-      // TODO ADD A WARNING
-    }
+			if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
+				await actor.update({ "flags.tidy5e-sheet.death.success": 0 });
+				await actor.update({ "flags.tidy5e-sheet.death.failure": 0 });
+			}
+		} else {
+			// TODO ADD A WARNING
+		}
 	}
 }
 
@@ -455,12 +486,18 @@ async function editProtection(app, html, data) {
 		}
 
 		let itemContainer = html.find(".inventory-list.items-list, .effects-list.items-list");
-		html.find(".inventory-list .items-header:not(.spellbook-header), .effects-list .items-header").each(function () {
-			if ($(this).next(".item-list").find("li").length - $(this).next(".item-list").find("li.items-footer").length == 0) {
-				$(this).next(".item-list").addClass("hidden").hide();
-				$(this).addClass("hidden").hide();
+		html.find(".inventory-list .items-header:not(.spellbook-header), .effects-list .items-header").each(
+			function () {
+				if (
+					$(this).next(".item-list").find("li").length -
+						$(this).next(".item-list").find("li.items-footer").length ==
+					0
+				) {
+					$(this).next(".item-list").addClass("hidden").hide();
+					$(this).addClass("hidden").hide();
+				}
 			}
-		});
+		);
 
 		html.find(".inventory-list .items-footer").addClass("hidden").hide();
 		html.find(".inventory-list .item-control.item-delete").remove();
@@ -479,14 +516,22 @@ async function editProtection(app, html, data) {
 			let totalSections = $(this).children().not(".notice").length;
 			// console.log('hidden: '+ hiddenSections + '/ total: '+totalSections);
 			if (hiddenSections >= totalSections) {
-				if ($(this).hasClass("effects-list") && !game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled")) {
+				if (
+					$(this).hasClass("effects-list") &&
+					!game.user.isGM &&
+					game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled")
+				) {
 					$(this).prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
 				} else {
 					$(this).append(`<span class="notice">${game.i18n.localize("TIDY5E.EmptySection")}</span>`);
 				}
 			}
 		});
-	} else if (!game.user.isGM && actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit") && game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled")) {
+	} else if (
+		!game.user.isGM &&
+		actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit") &&
+		game.settings.get(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled")
+	) {
 		let itemContainer = html.find(".effects-list.items-list");
 
 		itemContainer.prepend(`<span class="notice">${game.i18n.localize("TIDY5E.GmOnlyEdit")}</span>`);
@@ -512,10 +557,16 @@ async function addClassList(app, html, data) {
 			for (let item of items) {
 				if (item.type === "class") {
 					let levelsHtml = item.system.levels ? `<span class='levels-info'>${item.system.levels}</span>` : ``;
-					classList.push(`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${truncate(item.name, 30, false) + levelsHtml}</li>`);
+					classList.push(
+						`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${
+							truncate(item.name, 30, false) + levelsHtml
+						}</li>`
+					);
 				}
 				if (item.type === "subclass") {
-					classList.push(`<li class='class-item' data-tooltip='${item.name}'>${truncate(item.name, 30, false)}</li>`);
+					classList.push(
+						`<li class='class-item' data-tooltip='${item.name}'>${truncate(item.name, 30, false)}</li>`
+					);
 				}
 			}
 			let classListHtml = `<ul class='class-list'>${classList.join("")}</ul>`;
@@ -539,15 +590,13 @@ async function addClassList(app, html, data) {
 	}
 }
 
-function truncate( str, n, useWordBoundary ){
+function truncate(str, n, useWordBoundary) {
 	if (str.length <= n) {
 		return str;
 	}
-	const subString = str.slice(0, n-1); // the original check
-	return (useWordBoundary
-	  ? subString.slice(0, subString.lastIndexOf(" "))
-	  : subString) + "..."; // "&hellip;";
-};
+	const subString = str.slice(0, n - 1); // the original check
+	return (useWordBoundary ? subString.slice(0, subString.lastIndexOf(" ")) : subString) + "..."; // "&hellip;";
+}
 
 // Calculate Spell Attack modifier
 
@@ -583,10 +632,24 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
 	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
 
-	console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod+'/ Spell Bonus :'+spellBonus);
+	console.log(
+		"Prof: " +
+			prof +
+			"/ Spell Ability: " +
+			spellAbility +
+			"/ ability Mod: " +
+			abilityMod +
+			"/ Spell Attack Mod:" +
+			spellAttackMod +
+			"/ Spell Bonus :" +
+			spellBonus
+	);
 
 	html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
-	html.find(".spell-mod .spell-attack-mod").attr("data-tooltip", `${spellAttackTextTooltip} [${spellAttackTextTooltipWithBonus}] `);
+	html.find(".spell-mod .spell-attack-mod").attr(
+		"data-tooltip",
+		`${spellAttackTextTooltip} [${spellAttackTextTooltipWithBonus}] `
+	);
 }
 
 // Abbreviate Currency
@@ -614,7 +677,7 @@ async function tidyCustomEffect(actor, changes) {
 	const changeMaxPreparedList = changes.find((c) => {
 		return c.key === "flags.tidy5e-sheet.maxPreparedSpells";
 	});
-	if(changeMaxPreparedList){
+	if (changeMaxPreparedList) {
 		if (changeMaxPreparedList.value?.length > 0) {
 			let oldValue = getProperty(actor, changeMaxPreparedList.key) || 0;
 			let changeMaxPreparedListText = changeMaxPreparedList.value.trim();
@@ -632,7 +695,7 @@ async function tidyCustomEffect(actor, changes) {
 			const roll_value = await new Roll(changeMaxPreparedListText, rollData).roll();
 			const value = roll_value.total;
 			oldValue = Number.isNumeric(oldValue) ? parseInt(oldValue) : 0;
-			if(oldValue != value) {
+			if (oldValue != value) {
 				switch (op) {
 					case CONST.ACTIVE_EFFECT_MODES.ADD: {
 						setProperty(actor, changeMaxPreparedList.key, oldValue + value);
@@ -652,7 +715,7 @@ async function tidyCustomEffect(actor, changes) {
 					}
 					case CONST.ACTIVE_EFFECT_MODES.OVERRIDE: {
 						//setProperty(actor, changeMaxPreparedList.key, value);
-						throw error (`Do not use the mode 'OVERRIDE' when you try to set the Max Prepared Spells`, true);
+						throw error(`Do not use the mode 'OVERRIDE' when you try to set the Max Prepared Spells`, true);
 						break;
 					}
 					case CONST.ACTIVE_EFFECT_MODES.CUSTOM: {
@@ -665,8 +728,8 @@ async function tidyCustomEffect(actor, changes) {
 					}
 				}
 				await actor.update({
-					"flags.tidy5e-sheet.maxPreparedSpells": getProperty(actor, changeMaxPreparedList.key)
-				})
+					"flags.tidy5e-sheet.maxPreparedSpells": getProperty(actor, changeMaxPreparedList.key),
+				});
 				return getProperty(actor, changeMaxPreparedList.key);
 			} else {
 				return undefined;
@@ -800,7 +863,10 @@ async function setSheetClasses(app, html, data) {
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {
 		html.find(".tidy5e-sheet .items-header-controls").remove();
 	}
-	if (game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "pc" || game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all") {
+	if (
+		game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "pc" ||
+		game.settings.get(CONSTANTS.MODULE_ID, "portraitStyle") == "all"
+	) {
 		html.find(".tidy5e-sheet .profile").addClass("roundPortrait");
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayDisabled")) {
@@ -876,9 +942,7 @@ Hooks.once("init", () => {
 });
 // TODO nos sure if this hook exists anymore ???
 Hooks.on("applyActiveEffects", (activeEffect, _config, options) => {
-	if (!(activeEffect?.parent instanceof Actor) ||
-		!_config.changes
-	) {
+	if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
 		return;
 	}
 	const changes = _config.changes;
@@ -888,10 +952,8 @@ Hooks.on("applyActiveEffects", (activeEffect, _config, options) => {
 /**
  * Handle adding any actor data changes when an active effect is added to an actor
  */
-Hooks.on('createActiveEffect', (activeEffect, _config, options) => {
-	if (!(activeEffect?.parent instanceof Actor) ||
-		!_config.changes
-	) {
+Hooks.on("createActiveEffect", (activeEffect, _config, options) => {
+	if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
 		return;
 	}
 	const changes = _config.changes;
@@ -901,10 +963,8 @@ Hooks.on('createActiveEffect', (activeEffect, _config, options) => {
 /**
  * Handle re-rendering the app if it is open and an update occurs
  */
-Hooks.on('updateActiveEffect', (activeEffect, _config, options) => {
-	if (!(activeEffect?.parent instanceof Actor) ||
-		!_config.changes
-	) {
+Hooks.on("updateActiveEffect", (activeEffect, _config, options) => {
+	if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
 		return;
 	}
 	const changes = _config.changes;
@@ -914,10 +974,8 @@ Hooks.on('updateActiveEffect', (activeEffect, _config, options) => {
 /**
  * Handle removing any actor data changes when an active effect is deleted from an actor
  */
-Hooks.on('deleteActiveEffect', (activeEffect, _config, options) => {
-	if (!(activeEffect?.parent instanceof Actor) ||
-		!_config.changes
-	) {
+Hooks.on("deleteActiveEffect", (activeEffect, _config, options) => {
+	if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
 		return;
 	}
 	const changes = _config.changes;
@@ -953,7 +1011,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 Hooks.on("renderActorSheet", (app, html, data) => {
 	// Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills
 	// Issue https://github.com/sdenec/tidy5e-sheet/issues/662
-	if(game.modules.get("dnd5e-custom-skills")?.active) {
+	if (game.modules.get("dnd5e-custom-skills")?.active) {
 		html.find(".tidy5e-sheet .ability-scores.custom-abilities").removeClass("custom-abilities");
 	}
 });
@@ -1063,7 +1121,9 @@ Hooks.on("renderAbilityUseDialog", (application, html, context) => {
 					if (!availableTextSlotsFounded) {
 						console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\(\d+\s\w+\)/}`);
 					}
-					let availableSlotsFounded = availableTextSlotsFounded ? availableTextSlotsFounded[0].match(/\d+/) : undefined;
+					let availableSlotsFounded = availableTextSlotsFounded
+						? availableTextSlotsFounded[0].match(/\d+/)
+						: undefined;
 					if (!availableSlotsFounded) {
 						console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\d+/}`);
 					}

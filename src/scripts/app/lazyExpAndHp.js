@@ -52,7 +52,7 @@ function _onChangeExp(ev) {
 	}
 
 	if (newAmountExp < 0 || !is_real_number(newAmountExp)) {
-    debug(`[0] WARN: The xp value ${newAmountExp} is not a valid number`);
+		debug(`[0] WARN: The xp value ${newAmountExp} is not a valid number`);
 		newAmountExp = exp;
 	}
 
@@ -63,7 +63,7 @@ function _onChangeExp(ev) {
 	//     newAmount = minExp;
 	// }
 	if (newAmountExp < 0 || !is_real_number(newAmountExp)) {
-    debug(`[1] WARN: The xp value ${newAmountExp} is not a valid number`);
+		debug(`[1] WARN: The xp value ${newAmountExp} is not a valid number`);
 		newAmountExp = 0;
 	}
 
@@ -123,16 +123,16 @@ function _onChangeHp(ev) {
 		}
 	}
 
-	if (newAmountHpValue <  0 || !is_real_number(newAmountHpValue)) {
-    debug(`[2] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
+		debug(`[2] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = hp;
 	}
 
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit2")) {
 		if (newAmountHpValue > maxHp) {
-			let tmp = (newAmountHpValue - maxHp);
+			let tmp = newAmountHpValue - maxHp;
 			let tmp2 = newAmountHpTemp + tmp;
-			if(newAmountHpTempMax < tmp2) {
+			if (newAmountHpTempMax < tmp2) {
 				let tmp3 = tmp2 - newAmountHpTempMax;
 				newAmountHpTempMax = newAmountHpTempMax + tmp3;
 			}
@@ -143,44 +143,42 @@ function _onChangeHp(ev) {
 		//     newAmount = minHp;
 		// }
 
-		if (newAmountHpValue < 0  || !is_real_number(newAmountHpValue)) {
-      debug(`[3] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
+			debug(`[3] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 			newAmountHpValue = 0;
 		}
 		if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-      debug(`[4] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+			debug(`[4] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 			newAmountHpTemp = 0;
 		}
 		if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-      debug(`[5] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+			debug(`[5] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
 			newAmountHpTempMax = 0;
 		}
 
 		sheet.submitOnChange = false;
 		actor
-		.update({
-			"system.attributes.hp.value": Number(newAmountHpValue),
-			"system.attributes.hp.temp": Number(newAmountHpTemp),
-			"system.attributes.hp.tempmax": Number(newAmountHpTempMax),
-		})
-		.then(() => {
-			input.value = Number(getProperty(actor, input.name));
-			sheet.submitOnChange = true;
-		})
-		.catch(console.log.bind(console));
-
+			.update({
+				"system.attributes.hp.value": Number(newAmountHpValue),
+				"system.attributes.hp.temp": Number(newAmountHpTemp),
+				"system.attributes.hp.tempmax": Number(newAmountHpTempMax),
+			})
+			.then(() => {
+				input.value = Number(getProperty(actor, input.name));
+				sheet.submitOnChange = true;
+			})
+			.catch(console.log.bind(console));
 	} else {
-
 		if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-      debug(`[6] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+			debug(`[6] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 			newAmountHpValue = 0;
 		}
 
-    if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1")) {
-      if(newAmountHpValue > (maxHp + newAmountHpTempMax)) {
-          newAmountHpValue = maxHp + newAmountHpTempMax;
-      }
-    }
+		if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1")) {
+			if (newAmountHpValue > maxHp + newAmountHpTempMax) {
+				newAmountHpValue = maxHp + newAmountHpTempMax;
+			}
+		}
 
 		sheet.submitOnChange = false;
 		actor
@@ -190,8 +188,7 @@ function _onChangeHp(ev) {
 				sheet.submitOnChange = true;
 			})
 			.catch(console.log.bind(console));
-  }
-
+	}
 }
 
 function _onChangeHpMax(ev) {
@@ -238,7 +235,7 @@ function _onChangeHpMax(ev) {
 	}
 
 	if (newAmountHpMax < 0 || !is_real_number(newAmountHpMax)) {
-    debug(`[7] WARN: The hp.max value ${newAmountHpMax} is not a valid number`);
+		debug(`[7] WARN: The hp.max value ${newAmountHpMax} is not a valid number`);
 		newAmountHpMax = maxHp;
 	}
 
@@ -248,8 +245,8 @@ function _onChangeHpMax(ev) {
 	// if(newAmount <  minHp) {
 	//     newAmount = minHp;
 	// }
-	if (newAmountHpMax < 0  || !is_real_number(newAmountHpMax)) {
-    debug(`[8] WARN: The hp.value value ${newAmountHpMax} is not a valid number`);
+	if (newAmountHpMax < 0 || !is_real_number(newAmountHpMax)) {
+		debug(`[8] WARN: The hp.value value ${newAmountHpMax} is not a valid number`);
 		newAmountHpMax = 0;
 	}
 
@@ -275,26 +272,26 @@ function _onChangeHpForceHpValueLimit1(ev) {
 	let newAmountHpTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (!is_real_number(newAmountHpValue)) {
-    debug(`[9] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(`[9] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = hp;
 	}
 
-	if (newAmountHpValue < 0  || !is_real_number(newAmountHpValue)) {
-    debug(`[10] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
+		debug(`[10] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = 0;
 	}
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-    debug(`[11] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(`[11] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = 0;
 	}
 	if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-    debug(`[12] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+		debug(`[12] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
 		newAmountHpTempMax = 0;
 	}
 
-  if(newAmountHpValue > (maxHp + newAmountHpTempMax)) {
-      newAmountHpValue = maxHp + newAmountHpTempMax;
-  }
+	if (newAmountHpValue > maxHp + newAmountHpTempMax) {
+		newAmountHpValue = maxHp + newAmountHpTempMax;
+	}
 
 	sheet.submitOnChange = false;
 	actor
@@ -320,34 +317,34 @@ function _onChangeHpForceHpValueLimit2(ev) {
 	let newAmountHpTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-    debug(`[13] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(`[13] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = hp;
 	}
 
-  if (newAmountHpValue > maxHp) {
-    let tmp = (newAmountHpValue - maxHp);
-    let tmp2 = newAmountHpTemp + tmp;
-    if(newAmountHpTempMax < tmp2) {
-      let tmp3 = tmp2 - newAmountHpTempMax;
-      newAmountHpTempMax = newAmountHpTempMax + tmp3;
-    }
-    newAmountHpTemp = tmp2;
-    newAmountHpValue = maxHp;
-  }
-  // if(newAmount <  minHp) {
-  //     newAmount = minHp;
-  // }
+	if (newAmountHpValue > maxHp) {
+		let tmp = newAmountHpValue - maxHp;
+		let tmp2 = newAmountHpTemp + tmp;
+		if (newAmountHpTempMax < tmp2) {
+			let tmp3 = tmp2 - newAmountHpTempMax;
+			newAmountHpTempMax = newAmountHpTempMax + tmp3;
+		}
+		newAmountHpTemp = tmp2;
+		newAmountHpValue = maxHp;
+	}
+	// if(newAmount <  minHp) {
+	//     newAmount = minHp;
+	// }
 
-	if (newAmountHpValue < 0  || !is_real_number(newAmountHpValue)) {
-    debug(`[14] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
+		debug(`[14] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = 0;
 	}
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-    debug(`[15] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(`[15] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = 0;
 	}
 	if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-    debug(`[16] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+		debug(`[16] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
 		newAmountHpTempMax = 0;
 	}
 
@@ -374,13 +371,13 @@ function _onChangeHpForceHpTempLimit2(ev) {
 
 	let newAmountHpTemp = Number(input.value);
 
-	if (newAmountHpTemp <0 ||  !is_real_number(newAmountHpTemp)) {
-    debug(`[17] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
+		debug(`[17] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = hpTemp;
 	}
 
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-    debug(`[18] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(`[18] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = 0;
 	}
 
@@ -440,8 +437,7 @@ export function applyLazyHp(app, html, actorData) {
 				},
 				_onChangeHpForceHpTempLimit2
 			);
-		}
-    else if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1")) {
+		} else if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1")) {
 			for (const elem of html.find("input[name='system.attributes.hp.value']")) {
 				elem.type = "text";
 				elem.classList.add("lazyhp");
@@ -486,16 +482,16 @@ export function applyLazyHp(app, html, actorData) {
 
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit2")) {
 		for (const elem of html.find("input[name='system.attributes.hp.temp']")) {
-		elem.type = "text";
-		elem.classList.add("lazyhp");
+			elem.type = "text";
+			elem.classList.add("lazyhp");
 		}
 		html.find("input[name='system.attributes.hp.temp']").off("change");
 		html.find("input[name='system.attributes.hp.temp']").change(
-		{
-			app: app,
-			data: actorData,
-		},
-		_onChangeHpForceHpTempLimit2
+			{
+				app: app,
+				data: actorData,
+			},
+			_onChangeHpForceHpTempLimit2
 		);
 	}
 }
