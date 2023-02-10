@@ -17,7 +17,7 @@ import { updateExhaustion } from "./app/exhaustion.js";
 import { HexToRGBA, colorPicker, mapDefaultColorsRGBA, mapDefaultColorsDarkRGBA, mapDefaultColorsDarkRGB, mapDefaultColorsRGB, applyColorPickerCustomization } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
 import { is_real_number } from "./app/helpers.js";
-import { error } from "./app/logger-util.js";
+import { debug, error } from "./app/logger-util.js";
 
 let position = 0;
 
@@ -114,7 +114,20 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
 		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%"
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%";
+
+    context.hpBarCalculationCurrent =
+    (
+			100 /
+			(
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
+				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
+			)
+		)
+    * (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
+		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+
+    context.hpBarCalculationCurrent =  context.hpBarCalculationCurrent + "%";
 
 		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
 		if (this.actor.system.attributes.exhaustion === 0) {
@@ -359,19 +372,39 @@ async function checkDeathSaveStatus(app, html, data) {
 	if (data.editable) {
 		// var actor = game.actors.entities.find(a => a._id === data.actor._id);
 		let actor = app.actor;
-		var currentHealth = actor.system.attributes.hp.value;
-		var deathSaveSuccess = actor.system.attributes.death.success;
-		var deathSaveFailure = actor.system.attributes.death.failure;
+    if(actor.type == "character") {
+      var currentHealth = actor.system.attributes.hp.value;
+      var deathSaveSuccess = actor.system.attributes.death.success;
+      var deathSaveFailure = actor.system.attributes.death.failure;
 
-		// console.log(`current HP: ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
-		if (currentHealth <= 0) {
-			html.find(".tidy5e-sheet .profile").addClass("dead");
-		}
+      debug(`current HP Character : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
+      if (currentHealth <= 0) {
+        html.find(".tidy5e-sheet .profile").addClass("dead");
+      }
 
-		if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
-			await actor.update({ "system.attributes.death.success": 0 });
-			await actor.update({ "system.attributes.death.failure": 0 });
-		}
+      if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
+        await actor.update({ "system.attributes.death.success": 0 });
+        await actor.update({ "system.attributes.death.failure": 0 });
+      }
+    }
+    else if(actor.type == "npc"){
+      var currentHealth = actor.system.attributes.hp.value;
+      var deathSaveSuccess = actor.flags.tidy5e-sheet.death.success;
+      var deathSaveFailure = actor.flags.tidy5e-sheet.death.failure;
+
+      debug(`current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
+      if (currentHealth <= 0) {
+        html.find(".tidy5e-sheet .profile").addClass("dead");
+      }
+
+      if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
+        await actor.update({ "flags.tidy5e-sheet.death.success": 0 });
+        await actor.update({ "flags.tidy5e-sheet.death.failure": 0 });
+      }
+    }
+    else {
+      // TODO ADD A WARNING
+    }
 	}
 }
 
@@ -841,8 +874,8 @@ Hooks.once("init", () => {
 	// init user settings menu
 	Tidy5eUserSettings.init();
 });
-
-Hooks.on("applyActiveEffect", (activeEffect, _config, options) => {
+// TODO nos sure if this hook exists anymore ???
+Hooks.on("applyActiveEffects", (activeEffect, _config, options) => {
 	if (!(activeEffect?.parent instanceof Actor) ||
 		!_config.changes
 	) {

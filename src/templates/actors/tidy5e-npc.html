@@ -22,6 +22,23 @@
     <header class="tidy5e-header">
       <section class="profile-wrap">
         <div class="profile">
+
+            {{!-- Death Saves --}}
+            <div class="death-saves">
+                <div class="counter-value">
+                    <i class="fas fa-check"></i>
+                    <input type="text" name="flags.tidy5e-sheet.death.success" data-dtype="Number" placeholder="0"
+                    value="{{flags.tidy5e-sheet.death.success}}" maxlength="1" data-tooltip="{{ localize 'DND5E.DeathSave' }}">
+                    <div class="death-save rollable has-note death-save-tidy">  <!-- data-action="rollDeathSave" -->
+                        <!-- <div class="note">{{ localize "DND5E.DeathSave" }}</div> -->
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <input type="text" name="flags.tidy5e-sheet.death.failure" data-dtype="Number" placeholder="0"
+                    value="{{flags.tidy5e-sheet.death.failure}}" maxlength="1">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
           {{!-- Portrait --}}
           <div class="portrait">
             <img class="player-image" src="{{actor.img}}" alt="{{actor.name}}" title="{{ localize 'TIDY5E.EditActorImage' }} / {{ localize 'TIDY5E.ShowActorImage' }}" data-edit="img">
@@ -42,6 +59,31 @@
             </div>
           </div>
 
+          {{!-- Exhaustion --}}
+          <div class="exhaustion-container level-{{flags.tidy5e-sheet.exhaustion}} has-note" data-tooltip="{{ @root.exhaustionTooltip }}">
+              <div class="level-display">{{flags.tidy5e-sheet.exhaustion}}</div>
+              <div class="exhaustion-wrap">
+                  <div class="exhaustion-icon">
+                      <i class="far fa-grin"></i>
+                      <i class="far fa-smile"></i>
+                      <i class="far fa-meh"></i>
+                      <i class="far fa-frown"></i>
+                      <i class="far fa-frown-open"></i>
+                      <i class="far fa-tired"></i>
+                      <i class="far fa-dizzy"></i>
+                  </div>
+                  <ul class="exhaust-level">
+                      <li data-elvl="0">0</li>
+                      <li data-elvl="1">1</li>
+                      <li data-elvl="2">2</li>
+                      <li data-elvl="3">3</li>
+                      <li data-elvl="4">4</li>
+                      <li data-elvl="5">5</li>
+                      <li data-elvl="6">6</li>
+                  </ul>
+              </div>
+          </div>
+
           {{!-- Resting --}}
           <div class="rest-container has-note" data-tooltip="{{ localize 'TIDY5E.RestHint' }}">
             <!-- <div class="note">{{ localize 'TIDY5E.RestHint' }}</div> -->
@@ -57,8 +99,8 @@
             <div class="hp-bar" style="background: linear-gradient(
 								-90deg,
 								transparent 0%,
-								transparent calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
-								 	rgba(0, 200, 0, 0.5) calc(100% - ((100% / ({{#if (eq system.attributes.hp.max 0)}} 1 {{else}} {{system.attributes.hp.max}} {{/if}} + {{#if system.attributes.hp.tempmax}}{{system.attributes.hp.tempmax}}{{else}}0{{/if}} )) * ({{system.attributes.hp.value}} + {{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{else}}0{{/if}})) ),
+								transparent calc(100% -  {{hpBarCalculationCurrent}}),
+								 	rgba(0, 200, 0, 0.5) calc(100% - {{hpBarCalculationCurrent}}),
 								 	rgba(0, 200, 0, 0.5) 100%);">
 						</div>
             <input class="hp-min" name="system.attributes.hp.value" type="number" value="{{hp.value}}" placeholder="10"

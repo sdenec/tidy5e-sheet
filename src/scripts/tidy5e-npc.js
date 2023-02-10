@@ -9,7 +9,8 @@ import { applyLazyMoney } from "./app/lazymoney.js";
 import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
-import { addFavorites } from "./app/tidy5e-favorites.js";
+// import { addFavorites } from "./app/tidy5e-favorites.js";
+import { updateExhaustion } from "./app/exhaustion.js";
 import CONSTANTS from "./app/constants.js";
 import { is_real_number } from "./app/helpers.js";
 
@@ -256,7 +257,39 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
 		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
 
-		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%"
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%";
+
+    context.hpBarCalculationCurrent =
+    (
+			100 /
+			(
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
+				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
+			)
+		)
+    * (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
+		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+
+    context.hpBarCalculationCurrent =  context.hpBarCalculationCurrent + "%";
+
+    const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.flags.tidy5e-sheet.exhaustion}`;
+		if (this.actor.flags.tidy5e-sheet.exhaustion === 0) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion0")}`;
+		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 1) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion1")}`;
+		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 2) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion2")}`;
+		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 3) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion3")}`;
+		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 4) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion4")}`;
+		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 5) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion5")}`;
+		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 6) {
+			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion6")}`;
+		} else {
+			context.exhaustionTooltip = exhaustionTooltipPrefix;
+		}
 
 		return context;
 	}
@@ -371,6 +404,23 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 				await actor.unsetFlag(CONSTANTS.MODULE_ID, "traitsExpanded");
 			} else {
 				await actor.setFlag(CONSTANTS.MODULE_ID, "traitsExpanded", true);
+			}
+		});
+
+    // set exhaustion level with portrait icon
+		html.find(".exhaust-level li").click(async (event) => {
+			event.preventDefault();
+			let target = event.currentTarget;
+			let value = Number(target.dataset.elvl);
+			await actor.update({ "flags.tidy5e-sheet.exhaustion": value });
+			// TODO strange why i did need this ???
+			setProperty(actor, "flags.tidy5e-sheet.exhaustion", value);
+			if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") != "default") {
+				if (actor.constructor.name != "Actor5e") {
+					// Only act if we initiated the update ourselves, and the effect is a child of a character
+				} else {
+					updateExhaustion(actor, value);
+				}
 			}
 		});
 

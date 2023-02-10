@@ -55,18 +55,31 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.notHideIconsNextToTheItemName = !game.settings.get(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName");
 
-		context.hpOverlayCalculationCurrent = 
-		(   
+		context.hpOverlayCalculationCurrent =
+		(
 			100 /
 			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) 
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
 				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
 			)
 		)
 		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
 		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
-		
-		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%"
+
+		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%";
+
+    context.hpBarCalculationCurrent =
+    (
+			100 /
+			(
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
+				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
+			)
+		)
+    * (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
+		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
+
+    context.hpBarCalculationCurrent =  context.hpBarCalculationCurrent + "%";
 
 		return context;
 	}
