@@ -423,6 +423,13 @@
 		<h2>{{localize 'TIDY5E.Settings.TabNPCsVehicles.header'}}</h2>
 
 		<h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelNPCs'}}</h3>
+        <article class="setting">
+			<input type="checkbox" data-dtype="boolean" name="journalTabNPCDisabled" id="journalTabNPCDisabled" {{checked settings.journalTabNPCDisabled.value}} />
+			<div class="description">
+				<label for="journalTabNPCDisabled">{{localize 'TIDY5E.Settings.JournalTabNPCDisabled.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.JournalTabNPCDisabled.hint'}}</p>
+			</div>
+		</article>
 		<article class="setting gm-only">
 			<input type="checkbox" data-dtype="boolean" name="restingForNpcsEnabled" id="restingForNpcsEnabled" {{checked settings.restingForNpcsEnabled.value}} />
 			<div class="description">
@@ -745,10 +752,17 @@
 			</div>
 		</article>
 		<article class="setting">
-			<input type="checkbox" data-dtype="boolean" name="lazyHpForceHpValueLimit" id="lazyHpForceHpValueLimit" {{checked settings.lazyHpForceHpValueLimit.value}} />
+			<input type="checkbox" data-dtype="boolean" name="lazyHpForceHpValueLimit1" id="lazyHpForceHpValueLimit1" {{checked settings.lazyHpForceHpValueLimit1.value}} />
 			<div class="description">
-				<label for="lazyHpForceHpValueLimit">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit.name'}}</label>
-				<p class="notes">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit.hint'}}</p>
+				<label for="lazyHpForceHpValueLimit1">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit1.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit1.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input type="checkbox" data-dtype="boolean" name="lazyHpForceHpValueLimit2" id="lazyHpForceHpValueLimit2" {{checked settings.lazyHpForceHpValueLimit2.value}} />
+			<div class="description">
+				<label for="lazyHpForceHpValueLimit2">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit2.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.LazyHpForceHpValueLimit2.hint'}}</p>
 			</div>
 		</article>
 		<article class="setting">

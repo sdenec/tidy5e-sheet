@@ -152,6 +152,15 @@ export function settingsList() {
 		type: Boolean,
 	});
 
+  game.settings.register(CONSTANTS.MODULE_ID, "journalTabNPCDisabled", {
+		name: `${game.i18n.localize("TIDY5E.Settings.JournalTabNPCDisabled.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.JournalTabNPCDisabled.hint"),
+		scope: "client",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+
 	game.settings.register(CONSTANTS.MODULE_ID, "classListDisabled", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ClassList.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.ClassList.hint"),
@@ -662,9 +671,18 @@ export function settingsList() {
 		type: Boolean,
 	});
 
-	game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit", {
-		name: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit.name")}`,
-		hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit.hint")}`,
+  game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1", {
+		name: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit1.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit1.hint")}`,
+		scope: "world",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+
+	game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit2", {
+		name: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit2.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpForceHpValueLimit2.hint")}`,
 		scope: "world",
 		config: false,
 		default: false,

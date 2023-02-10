@@ -245,11 +245,11 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.notHideIconsNextToTheItemName = !game.settings.get(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName");
 
-		context.hpOverlayCalculationCurrent = 
-		(   
+		context.hpOverlayCalculationCurrent =
+		(
 			100 /
 			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) 
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
 				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
 			)
 		)
@@ -566,6 +566,9 @@ async function setSheetClasses(app, html, data) {
 	const actor = app.actor;
 	if (actor.getFlag(CONSTANTS.MODULE_ID, "showNpcPersonalityInfo")) {
 		html.find(".tidy5e-sheet.tidy5e-npc .left-notes").removeClass("hidden");
+	}
+  if (game.settings.get(CONSTANTS.MODULE_ID, "journalTabNPCDisabled")) {
+		html.find('.tidy5e-sheet.tidy5e-npc .tidy5e-navigation a[data-tab="journal"]').remove();
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
 		if (game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled")) {

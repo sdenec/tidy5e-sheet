@@ -103,17 +103,17 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.notHideIconsNextToTheItemName = !game.settings.get(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName");
 
-		context.hpOverlayCalculationCurrent = 
-		(   
+		context.hpOverlayCalculationCurrent =
+		(
 			100 /
 			(
-				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1) 
+				(is_real_number(this.actor.system?.attributes?.hp?.max) ? this.actor.system.attributes.hp.max : 1)
 				+ (is_real_number(this.actor.system?.attributes?.hp?.tempmax) ? this.actor.system.attributes.hp.tempmax : 0)
 			)
 		)
 		* (is_real_number(this.actor.system?.attributes?.hp?.value) ? this.actor.system.attributes.hp.value : 0)
 		+ (is_real_number(this.actor.system?.attributes?.hp?.temp) ? this.actor.system.attributes.hp.temp : 0);
-		
+
 		context.hpOverlayCalculationCurrent = context.hpOverlayCalculationCurrent  + "%"
 
 		const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.system.attributes.exhaustion}`;
@@ -507,12 +507,12 @@ async function addClassList(app, html, data) {
 }
 
 function truncate( str, n, useWordBoundary ){
-	if (str.length <= n) { 
-		return str; 
+	if (str.length <= n) {
+		return str;
 	}
 	const subString = str.slice(0, n-1); // the original check
-	return (useWordBoundary 
-	  ? subString.slice(0, subString.lastIndexOf(" ")) 
+	return (useWordBoundary
+	  ? subString.slice(0, subString.lastIndexOf(" "))
 	  : subString) + "..."; // "&hellip;";
 };
 
@@ -549,7 +549,7 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackTextWithBonus = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
 	let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
 	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
-	
+
 	console.log('Prof: '+prof+ '/ Spell Ability: '+spellAbility+ '/ ability Mod: '+abilityMod+'/ Spell Attack Mod:'+spellAttackMod+'/ Spell Bonus :'+spellBonus);
 
 	html.find(".spell-mod .spell-attack-mod").html(spellAttackText);

@@ -224,7 +224,11 @@
 	},
 	"TIDY5E.Settings.JournalTab": {
 		"name": "Hide character journal.",
-		"hint": "Enable to hide the journal tab."
+		"hint": "Enable to hide the character journal tab."
+	},
+  "TIDY5E.Settings.JournalTabNPCDisabled": {
+		"name": "Hide npc journal.",
+		"hint": "Enable to hide the npc journal tab."
 	},
 	"TIDY5E.Settings.ClassList": {
 		"name": "Hide character class list.",
@@ -417,9 +421,13 @@
 		"name": "Enable Lazy Hp and Exp",
 		"hint": "Easily add or remove HP and Experience with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
 	},
-	"TIDY5E.Settings.LazyHpForceHpValueLimit": {
-		"name": "Force (on the sheet side) to not to exceed the current hp value, but instead add temporary hit points",
-		"hint": "This setting forces the correct logic of calculating the addition of temporary life points by forcing the user to fill the temporary life point field (hp.temp) instead of wrongly increasing the current life point field (hp.value), but for avoid controversy by default it is disabled to respect the behavior of the standard sheet. If enabled ensure that current 'hp.value <= hp.max' increasing the temporary hit points accordingly if 'hp.value > hp.max', but always with 'hp.temp <= hp.tempmax'."
+	"TIDY5E.Settings.LazyHpForceHpValueLimit1": {
+		"name": "Force (ONLY on the sheet side) to not to exceed the current hp max value + hp max temp (hp.value <= hp.max + hp.tempmax)",
+		"hint": "This setting forces if enabled ensure that current 'hp.value <= (hp.max + hp.tempmax)'."
+	},
+	"TIDY5E.Settings.LazyHpForceHpValueLimit2": {
+		"name": "Force (ONLY on the sheet side) to not to exceed the current hp max value, but instead add temporary hit points (hp.value <= hp.max && hp.temp <= hp.tempmax)",
+		"hint": "This setting forces the logic of calculating the addition of temporary life points by forcing the user to fill the temporary life point field (hp.temp) instead of increasing the current life point field (hp.value), but for avoid controversy by default it is disabled to respect the behavior of the standard sheet. If enabled ensure that current 'hp.value <= hp.max' increasing the temporary hit points 'hp.temp' accordingly if 'hp.value > hp.max', but always with 'hp.temp <= hp.tempmax'."
 	},
 	"TIDY5E.Settings.LazyMoneyEnable": {
 		"name": "Enable Lazy Money",
