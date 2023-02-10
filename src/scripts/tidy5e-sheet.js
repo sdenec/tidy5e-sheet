@@ -389,8 +389,8 @@ async function checkDeathSaveStatus(app, html, data) {
     }
     else if(actor.type == "npc"){
       var currentHealth = actor.system.attributes.hp.value;
-      var deathSaveSuccess = actor.flags.tidy5e-sheet.death.success;
-      var deathSaveFailure = actor.flags.tidy5e-sheet.death.failure;
+      var deathSaveSuccess = actor.flags[CONSTANTS.MODULE_ID].death.success;
+      var deathSaveFailure = actor.flags[CONSTANTS.MODULE_ID].death.failure;
 
       debug(`current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
       if (currentHealth <= 0) {

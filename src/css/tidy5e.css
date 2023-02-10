@@ -1388,7 +1388,7 @@
 	white-space: nowrap;
 }
 .tidy5e.sheet.actor .class-list {
-	/* position: relative; */
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1440,7 +1440,7 @@
 	display: flex;
 }
 .tidy5e.sheet.actor .origin-summary li span {
-	/* position: relative; */
+	position: relative;
 	margin-left: 4px;
 	padding: 0 4px 0 8px;
 }

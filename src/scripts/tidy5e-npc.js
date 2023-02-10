@@ -272,20 +272,24 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 
     context.hpBarCalculationCurrent =  context.hpBarCalculationCurrent + "%";
 
-    const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.flags.tidy5e-sheet.exhaustion}`;
-		if (this.actor.flags.tidy5e-sheet.exhaustion === 0) {
+	if(!is_real_number(this.actor.flags[CONSTANTS.MODULE_ID]?.exhaustion)) {
+		setProperty(this.actor, `flags.tidy5e-sheet.exhaustion` , 0);
+	}
+
+    const exhaustionTooltipPrefix = `${game.i18n.localize("DND5E.Exhaustion")} ${game.i18n.localize("DND5E.AbbreviationLevel")} ${this.actor.flags[CONSTANTS.MODULE_ID].exhaustion}`;
+		if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 0) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion0")}`;
-		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 1) {
+		} else if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 1) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion1")}`;
-		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 2) {
+		} else if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 2) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion2")}`;
-		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 3) {
+		} else if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 3) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion3")}`;
-		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 4) {
+		} else if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 4) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion4")}`;
-		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 5) {
+		} else if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 5) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion5")}`;
-		} else if (this.actor.flags.tidy5e-sheet.exhaustion === 6) {
+		} else if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion === 6) {
 			context.exhaustionTooltip = exhaustionTooltipPrefix + `, ${game.i18n.localize("TIDY5E.Exhaustion6")}`;
 		} else {
 			context.exhaustionTooltip = exhaustionTooltipPrefix;

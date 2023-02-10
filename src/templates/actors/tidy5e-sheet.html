@@ -19,8 +19,6 @@
 		{{> "dnd5e.actor-warnings"}}
 		{{!-- Sheet Header --}}
 		<header class="tidy5e-header">
-
-
 			<section class="profile-wrap">
 				<div class="profile">
 
@@ -224,17 +222,17 @@
                         <span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
 						<span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
 						<span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
-                        {{#if owner}}
-						<span>
-                        <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
-                            <i class="fas fa-cog"></i>
-                        </a>
-						</span>
-                        {{/if}}
 					</li>
 					<li class="proficiency">
 						{{ localize 'DND5E.Proficiency' }}: {{labels.proficiency}}
 					</li>
+					{{#if owner}}
+					<li>
+                        <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
+                            <i class="fas fa-cog"></i>
+                        </a>
+					</li>
+					{{/if}}
 				</ul>
 
 				{{!-- Character Movement --}}

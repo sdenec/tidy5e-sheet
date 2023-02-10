@@ -152,14 +152,16 @@
 						<input type="hidden" data-input="{{actor._id}}-source" name="system.details.source" value="{{system.details.source}}" placeholder="{{localize 'DND5E.Source'}}" />
                         -->
                         <span class="origin-summary-text" data-placeholder="{{localize 'DND5E.Dimensions'}}">{{system.traits.dimensions}}</span>
-                        {{#if owner}}
+					</li>
+					{{#if owner}}
+					<li>
 						<span>
                         <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
                             <i class="fas fa-cog"></i>
                         </a>
 						</span>
-                        {{/if}}
 					</li>
+					{{/if}}
 				</ul>
 
 				{{!-- Character Movement --}}

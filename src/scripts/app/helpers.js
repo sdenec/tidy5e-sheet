@@ -38,7 +38,7 @@ export function is_lazy_number(inNumber) {
  * @returns {Promise<D20Roll|null>} A Promise which resolves to the Roll instance
  */
 export async function rollDeathSaveForNoActorCharacter(actor, options={}) {
-  const death = actor.flags.tidy5e-sheet.death ?? {};
+  const death = actor.flags[CONSTANTS.MODULE_ID].death ?? {};
 
   // Display a warning if we are not at zero HP or if we already have reached 3
   if ( (actor.system.attributes.hp.value > 0) || (death.failure >= 3) || (death.success >= 3) ) {

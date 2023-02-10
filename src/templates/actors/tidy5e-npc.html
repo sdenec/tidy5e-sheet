@@ -28,13 +28,13 @@
                 <div class="counter-value">
                     <i class="fas fa-check"></i>
                     <input type="text" name="flags.tidy5e-sheet.death.success" data-dtype="Number" placeholder="0"
-                    value="{{flags.tidy5e-sheet.death.success}}" maxlength="1" data-tooltip="{{ localize 'DND5E.DeathSave' }}">
+                    value="{{actor.flags.tidy5e-sheet.death.success}}" maxlength="1" data-tooltip="{{ localize 'DND5E.DeathSave' }}">
                     <div class="death-save rollable has-note death-save-tidy">  <!-- data-action="rollDeathSave" -->
                         <!-- <div class="note">{{ localize "DND5E.DeathSave" }}</div> -->
                         <i class="fas fa-skull"></i>
                     </div>
                     <input type="text" name="flags.tidy5e-sheet.death.failure" data-dtype="Number" placeholder="0"
-                    value="{{flags.tidy5e-sheet.death.failure}}" maxlength="1">
+                    value="{{actor.flags.tidy5e-sheet.death.failure}}" maxlength="1">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
@@ -188,17 +188,17 @@
             </span>
             <span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
             <span class="origin-summary-text source source-info" data-placeholder="{{ localize 'DND5E.Source' }}">{{system.details.source}}</span>
-            {{#if owner}}
-            <span>
-            <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
-                <i class="fas fa-cog"></i>
-            </a>
-            </span>
-            {{/if}}
           </li>
           <li class="proficiency">
             {{ localize 'DND5E.Proficiency' }}: {{numberFormat system.attributes.prof decimals=0 sign=true}}
           </li>
+          {{#if owner}}
+          <li>
+            <a class="config-button origin-summary-tidy" data-tooltip="{{localize 'TIDY5E.OriginSummaryConfig'}}">
+                <i class="fas fa-cog"></i>
+            </a>
+          </li>
+          {{/if}}
         </ul>
 
         {{!-- Character Movement --}}

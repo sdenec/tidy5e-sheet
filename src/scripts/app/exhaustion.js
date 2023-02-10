@@ -13,12 +13,12 @@ export async function updateExhaustion(actorEntity) {
 	}
 
 	let exhaustion = 0 ;
-  if(actorC.type === "character") {
-    exhaustion = actorEntity.system.attributes.exhaustion ?? 0;
-  }
-  else if(actorC.type === "npc") {
-    exhaustion = actorEntity.flags.tidy5e-sheet?.exhaustion ?? 0;
-  }
+	if(actorC.type === "character") {
+		exhaustion = actorEntity.system.attributes.exhaustion ?? 0;
+	}
+	else if(actorC.type === "npc") {
+		exhaustion = actorEntity.flags[CONSTANTS.MODULE_ID]?.exhaustion ?? 0;
+	}
 
 	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "tidy5e") {
 		let icon = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectIcon");
@@ -274,7 +274,7 @@ Hooks.on(`dnd5e.restComplete`, (actorEntity, data) => {
       }
     }
     else if(actor.type === "npc") {
-      let exhaustion = actorEntity.flags.tidy5e-sheet.exhaustion;
+      let exhaustion = actorEntity.flags[CONSTANTS.MODULE_ID].exhaustion;
       if (exhaustion > 0) {
         actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
       }
