@@ -1,9 +1,9 @@
 ### 0.8.21
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/698
-- New Feature: Add short rest and long rest to NPC
+- New Feature: [Experimental] Add short rest and long rest to NPC
 - New Feature: Add Exhaustion to NPC
-- New Feature: Add Death Save to NPC
+- New Feature: [Experimental] Add Death Save to NPC
 - New Feature: Add Dropdown ammunition to Favorites Template (https://github.com/sdenec/tidy5e-sheet/issues/697)
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/694
 - New Feature : option to hide journal on NPC (https://github.com/sdenec/tidy5e-sheet/issues/454)

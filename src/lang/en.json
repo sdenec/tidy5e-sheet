@@ -552,9 +552,8 @@
 	},
 	"TIDY5E.Settings.AllowHpMaxOverride": {
 		"name": "Allow Hp Max override on Character",
-		"hint": "If enable this module replace will let the GM to manually change the hp max  value on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOUR OF THE SYSTEM FOR AVOID THE RESET TO '0' ISSUE EXPLAINED HERE https://github.com/sdenec/tidy5e-sheet/issues/659"
+		"hint": "If enable this module replace will let the GM to manually change the hp max  value on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOUR OF THE SYSTEM FOR AVOID THE RESET TO '0' ISSUE EXPLAINED HERE https://github.com/sdenec/tidy5e-sheet/issues/659 and https://github.com/sdenec/tidy5e-sheet/issues/696"
 	},
-
 	"TIDY5E.Settings.Reset": {
 		"name": "Reset settings to default",
 		"hint": "This will reset all of the settings of back to the active game system's default.",
