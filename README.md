@@ -127,7 +127,13 @@ This is an embedded version of the module [Lazy Money](https://github.com/p45359
 ![](/doc/Lazy_Money_1.gif)
 
 ### Feature: Attunement Tracker
+
 In the PC inventory you'll find the new attunement tracker at the bottom left. By default you can attune to 3 items. DMs can change the attunement limit for each character by entering a max value in the tracker.
+
+### Feature: Exhaustion, Death Save and Rest on NPC
+
+An 'integration more from flavor than from system functionality, a very "crude" integration of Exhaustion, Death Save and Rest (both Short and Long)  is been applied on the NPC sheet
+
 
 ## Settings
 there are plenty of settings from dark mode to round/square portraits, health visualization and user specific options.

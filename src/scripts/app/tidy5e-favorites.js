@@ -16,6 +16,7 @@
  * and can be found at https://gitlab.com/mxzf/favorite-items.
  */
 
+import { tidy5eAmmoSwitch } from "./ammo-switch.js";
 import { applyColorPickerCustomization } from "./color-picker.js";
 import CONSTANTS from "./constants.js";
 import { tidy5eContextMenu } from "./context-menu.js";
@@ -724,6 +725,8 @@ export const addFavorites = async function (app, html, data, position) {
 			favContent.find(".items-list").addClass("alt-context");
 		}
 
+		tidy5eAmmoSwitch(favHtml,app.actor);
 		applyColorPickerCustomization(favHtml);
+
 	}
 };
