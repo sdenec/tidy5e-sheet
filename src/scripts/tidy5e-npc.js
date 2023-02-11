@@ -12,7 +12,7 @@ import { applyColorPickerCustomization } from "./app/color-picker.js";
 // import { addFavorites } from "./app/tidy5e-favorites.js";
 import { updateExhaustion } from "./app/exhaustion.js";
 import CONSTANTS from "./app/constants.js";
-import { is_real_number } from "./app/helpers.js";
+import { d20Roll, isLessThanOneIsOne, is_real_number } from "./app/helpers.js";
 import LongRestDialog from "./app/tidy5e-npc-long-rest-dialog.js";
 import ShortRestDialog from "./app/tidy5e-npc-short-rest-dialog.js";
 import { debug } from "./app/logger-util.js";
@@ -317,6 +317,13 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 			context.exhaustionTooltip = exhaustionTooltipPrefix;
 		}
 
+		if (!is_real_number(this.actor.flags[CONSTANTS.MODULE_ID]?.death?.success)) {
+			setProperty(this.actor, `flags.tidy5e-sheet.death.success`, 0);
+		}
+		if (!is_real_number(this.actor.flags[CONSTANTS.MODULE_ID]?.death?.failure)) {
+			setProperty(this.actor, `flags.tidy5e-sheet.death.failure`, 0);
+		}
+
 		return context;
 	}
 
@@ -579,7 +586,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		// if ( Hooks.call("dnd5e.preShortRest", this, config) === false ) return;
 
 		// Take note of the initial hit points and number of hit dice the Actor has
-		const hd0 = this.actor.system.details.cr // this.actor.system.attributes.hd;
+		const hd0 = isLessThanOneIsOne(this.actor.system.details.cr) // this.actor.system.attributes.hd;
 		const hp0 = this.actor.system.attributes.hp.value;
 
 		// Display a Dialog for rolling hit dice
@@ -595,7 +602,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		else if ( config.autoHD ) await this.autoSpendHitDice({ threshold: config.autoHDThreshold });
 
 		// Return the rest result
-		const dhd = this.actor.system.details.cr // this.system.attributes.hd - hd0;
+		const dhd = hd0 // this.system.attributes.hd - hd0;
 		const dhp = this.actor.system.attributes.hp.value - hp0;
 		return this._rest(config.chat, config.newDay, false, dhd, dhp);
 	}
@@ -659,7 +666,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		}
 	} else {
 		const rollData = this.actor.getRollData();
-		const roll_value = await new Roll(this.actor.system.details.cr+"d6", rollData).roll();
+		const roll_value = await new Roll(isLessThanOneIsOne(dhd)+"d6", rollData).roll();
 		const value = roll_value.total;
 		let newHpValue =  this.actor.system.attributes.hp.value + Number(value ?? 0);
 		if(newHpValue >  this.actor.system.attributes.hp.max) {
@@ -746,16 +753,6 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		);
 		rollData.parts = parts.concat(options.parts ?? []);
 
-		// /**
-		//  * A hook event that fires before a death saving throw is rolled for an Actor.
-		//  * @function dnd5e.preRollDeathSave
-		//  * @memberof hookEvents
-		//  * @param {Actor5e} actor                Actor for which the death saving throw is being rolled.
-		//  * @param {D20RollConfiguration} config  Configuration data for the pending roll.
-		//  * @returns {boolean}                    Explicitly return `false` to prevent death saving throw from being rolled.
-		//  */
-		// if ( Hooks.call("dnd5e.preRollDeathSave", this, rollData) === false ) return;
-
 		const roll = await d20Roll(rollData);
 		if (!roll) return null;
 
@@ -798,21 +795,6 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 				details.chatString = "DND5E.DeathSaveFailure";
 			}
 		}
-
-		// /**
-		//  * A hook event that fires after a death saving throw has been rolled for an Actor, but before
-		//  * updates have been performed.
-		//  * @function dnd5e.rollDeathSave
-		//  * @memberof hookEvents
-		//  * @param {Actor5e} actor              Actor for which the death saving throw has been rolled.
-		//  * @param {D20Roll} roll               The resulting roll.
-		//  * @param {object} details
-		//  * @param {object} details.updates     Updates that will be applied to the actor as a result of this save.
-		//  * @param {string} details.chatString  Localizable string displayed in the create chat message. If not set, then
-		//  *                                     no chat message will be displayed.
-		//  * @returns {boolean}                  Explicitly return `false` to prevent updates from being performed.
-		//  */
-		// if ( Hooks.call("dnd5e.rollDeathSave", this, roll, details) === false ) return roll;
 
 		if (!foundry.utils.isEmpty(details.updates)) await this.actor.update(details.updates);
 
@@ -880,6 +862,29 @@ async function toggleSkillList(app, html, data) {
 // handle traits list display
 async function toggleTraitsList(app, html, data) {
 	html.find(".traits:not(.always-visible):not(.expanded) .form-group.inactive").remove();
+}
+
+// Check Death Save Status
+async function checkDeathSaveStatus(app, html, data) {
+	if (data.editable) {
+		// var actor = game.actors.entities.find(a => a._id === data.actor._id);
+		let actor = app.actor;
+
+		var currentHealth = actor.system.attributes.hp.value;
+		var deathSaveSuccess = actor.flags[CONSTANTS.MODULE_ID].death.success;
+		var deathSaveFailure = actor.flags[CONSTANTS.MODULE_ID].death.failure;
+
+		debug(`current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
+		if (currentHealth <= 0) {
+			html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("dead");
+		}
+
+		if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
+			await actor.update({ "flags.tidy5e-sheet.death.success": 0 });
+			await actor.update({ "flags.tidy5e-sheet.death.failure": 0 });
+		}
+
+	}
 }
 
 // toggle item icon
@@ -1000,7 +1005,7 @@ async function setSheetClasses(app, html, data) {
 		html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("exhaustionOnHover");
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "hiddenDeathSavesEnabled") && !game.user.isGM) {
-		html.find(".tidy5e-sheet .death-saves").addClass("gmOnly");
+		html.find(".tidy5e-sheet.tidy5e-npc .death-saves").addClass("gmOnly");
 	}
 
 	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
@@ -1219,6 +1224,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	toggleSkillList(app, html, data);
 	toggleTraitsList(app, html, data);
+	checkDeathSaveStatus(app, html, data);
 	toggleItemMode(app, html, data);
 	restoreScrollPosition(app, html, data);
 	abbreviateCurrency(app, html, data);

@@ -35,6 +35,10 @@ export function is_lazy_number(inNumber) {
 	}
 }
 
+export function isLessThanOneIsOne(inNumber){
+	return inNumber < 1 ? 1 : inNumber;
+}
+
 /* -------------------------------------------- */
 /* D20 Roll                                     */
 /* -------------------------------------------- */

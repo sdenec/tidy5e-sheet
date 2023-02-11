@@ -1,3 +1,5 @@
+import { isLessThanOneIsOne } from "./helpers.js";
+
 /**
  * A helper Dialog subclass for rolling Hit Dice on short rest.
  *
@@ -40,7 +42,7 @@ export default class ShortRestDialog extends Dialog {
 
         // Determine Hit Dice
         const   hd = {};
-        const hitDice = this.actor.system.details.cr + "d6";
+        const hitDice = isLessThanOneIsOne(this.actor.system.details.cr) + "d6";
         const denom = hitDice ?? "d6";
         const available = 1; //parseInt(this.actor.system.details.cr ?? 1);
         hd[denom] = denom in hd ? hd[denom] + available : available;

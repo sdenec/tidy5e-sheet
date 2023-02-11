@@ -403,39 +403,23 @@ async function checkDeathSaveStatus(app, html, data) {
 	if (data.editable) {
 		// var actor = game.actors.entities.find(a => a._id === data.actor._id);
 		let actor = app.actor;
-		if (actor.type == "character") {
-			var currentHealth = actor.system.attributes.hp.value;
-			var deathSaveSuccess = actor.system.attributes.death.success;
-			var deathSaveFailure = actor.system.attributes.death.failure;
 
-			debug(
-				`current HP Character : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`
-			);
-			if (currentHealth <= 0) {
-				html.find(".tidy5e-sheet .profile").addClass("dead");
-			}
+		var currentHealth = actor.system.attributes.hp.value;
+		var deathSaveSuccess = actor.system.attributes.death.success;
+		var deathSaveFailure = actor.system.attributes.death.failure;
 
-			if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
-				await actor.update({ "system.attributes.death.success": 0 });
-				await actor.update({ "system.attributes.death.failure": 0 });
-			}
-		} else if (actor.type == "npc") {
-			var currentHealth = actor.system.attributes.hp.value;
-			var deathSaveSuccess = actor.flags[CONSTANTS.MODULE_ID].death.success;
-			var deathSaveFailure = actor.flags[CONSTANTS.MODULE_ID].death.failure;
-
-			debug(`current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
-			if (currentHealth <= 0) {
-				html.find(".tidy5e-sheet .profile").addClass("dead");
-			}
-
-			if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
-				await actor.update({ "flags.tidy5e-sheet.death.success": 0 });
-				await actor.update({ "flags.tidy5e-sheet.death.failure": 0 });
-			}
-		} else {
-			// TODO ADD A WARNING
+		debug(
+			`current HP Character : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`
+		);
+		if (currentHealth <= 0) {
+			html.find(".tidy5e-sheet .profile").addClass("dead");
 		}
+
+		if ((currentHealth > 0 && deathSaveSuccess != 0) || (currentHealth > 0 && deathSaveFailure != 0)) {
+			await actor.update({ "system.attributes.death.success": 0 });
+			await actor.update({ "system.attributes.death.failure": 0 });
+		}
+		
 	}
 }
 
