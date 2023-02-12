@@ -1,3 +1,7 @@
+### 0.8.22
+
+- Bug https://github.com/sdenec/tidy5e-sheet/issues/701g fix 
+
 ### 0.8.21
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/698

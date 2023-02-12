@@ -309,6 +309,9 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				}
 			}
 		});
+		
+		html.find(".item-uses input.uses-max").off("change");
+		html.find(".item-uses input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
 	}
 
 	/* -------------------------------------------- */
@@ -616,17 +619,17 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
 	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
 
-	console.log(
+	debug(
 		"Prof: " +
-			prof +
+			(prof ?? "") +
 			"/ Spell Ability: " +
-			spellAbility +
+			(spellAbility ?? "") +
 			"/ ability Mod: " +
-			abilityMod +
+			(abilityMod ?? "")+
 			"/ Spell Attack Mod:" +
-			spellAttackMod +
+			(spellAttackMod ?? "") +
 			"/ Spell Bonus :" +
-			spellBonus
+			(spellBonus ?? "")
 	);
 
 	html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
@@ -909,6 +912,24 @@ async function setSheetClasses(app, html, data) {
 	$(".info-card-hint .key").html(game.settings.get(CONSTANTS.MODULE_ID, "itemCardsFixKey"));
 
 	applyColorPickerCustomization(html);
+}
+
+  /* -------------------------------------------- */
+
+/**
+ * Change the uses amount of an Owned Item within the Actor.
+ * @param {Event} event        The triggering click event.
+ * @returns {Promise<Item5e>}  Updated item.
+ * @private
+ */
+async function _onUsesMaxChange(event) {
+	event.preventDefault();
+	const itemId = event.currentTarget.closest(".item").dataset.itemId;
+	const item = this.actor.items.get(itemId);
+	// const uses = Math.clamped(0, parseInt(event.target.value), ;
+	// event.target.value = uses;
+	const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
+	return item.update({"system.uses.max": uses});
 }
 
 // Register Tidy5e Sheet and make default character sheet

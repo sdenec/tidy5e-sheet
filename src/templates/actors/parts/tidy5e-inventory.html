@@ -79,7 +79,7 @@
               <span class="ammo" data-id="{{item._id}}"></span>
               {{/if}}
               <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
-                (<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" >)
+                (<input class="item-count" name="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" >)
               </span>
             {{/if}}
           </div>
@@ -121,8 +121,8 @@
 
             <div class="item-detail item-uses" title="{{localize 'DND5E.Uses'}}">
               {{#if ctx.hasUses }}
-              <input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0"/>
-              / <input class="uses-max" type="text" data-path="system.uses.max" value="{{item.system.uses.max}}">
+              <input type="text" name="system.uses.value" value="{{item.system.uses.value}}" placeholder="0"/>
+              / <input class="uses-max" type="text" name="system.uses.max" value="{{item.system.uses.max}}">
               <!-- {{item.system.uses.max}} -->
 
               {{else}}

@@ -52,7 +52,7 @@
           <div class="item-stats">
             <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
               {{#if item.hasUses }}
-              <i class="fas fa-bolt"></i><input type="text" data-path="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
+              <i class="fas fa-bolt"></i><input type="text" name="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
               {{/if}}
             </div>
           </div>

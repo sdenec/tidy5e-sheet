@@ -11,7 +11,7 @@
 		<span class="ammo" data-id="{{item._id}}"></span>
 		{{/if}}
 		{{#if item.system.quantity}}
-		<span class="item-quantity{{#if item.isStack}} isStack{{/if}}">(<input class="item-count" data-path="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" {{#if item.editable}}{{else}}disabled{{/if}}>)</span>
+		<span class="item-quantity{{#if item.isStack}} isStack{{/if}}">(<input class="item-count" name="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" {{#if item.editable}}{{else}}disabled{{/if}}>)</span>
 		{{/if}}
 	</div>
 
@@ -26,11 +26,14 @@
 	{{/if}} 
 	{{#if item.isItem}}
 	<div class="item-detail item-uses" title="{{localize 'DND5E.Uses'}}">
-		{{#if item.system.uses.max}} <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}> / <input class="uses-max" data-path="system.uses.max" type="text"
-		value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}> {{else}} {{#if item.editable}}
-		<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
-		{{/if}} 
-	{{/if}}
+		{{#if item.system.uses.max}} 
+		<input class="uses-value" type="text" name="system.uses.value"  value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}> / 
+		<input class="uses-max" type="text" name="system.uses.max" value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}> 
+		{{else}} 
+			{{#if item.editable}}
+			<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
+			{{/if}}
+		{{/if}}
 	</div>
 	{{/if}} {{#if item.isFeat}}
 	<div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
@@ -41,7 +44,7 @@
 		</a>
 		{{else if item.system.recharge.value}}
 		<i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
-		{{else if item.system.uses.max}} <input data-path="system.uses.value" type="text" value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}> / <input class="uses-max" data-path="system.uses.max" type="text"
+		{{else if item.system.uses.max}} <input type="text" name="system.uses.value" value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}> / <input class="uses-max" type="text"
 		value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}> {{else}} {{#if item.editable}}
 		<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
 		{{/if}} {{/if}}

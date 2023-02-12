@@ -712,6 +712,25 @@ export const addFavorites = async function (app, html, data, position) {
 
 				app.actor.updateEmbeddedDocuments("Item", updateData);
 			});
+
+			favHtml.find(".item-uses input.uses-max").off("change");
+			favHtml.find(".item-uses input.uses-max").click(ev => ev.target.select()).change(async (event) => {
+				event.preventDefault();
+				const itemId = event.currentTarget.closest(".item").dataset.itemId;
+				const item = app.actor.items.get(itemId);
+				const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
+				return item.update({"system.uses.max": uses});
+			});
+
+			favHtml.find(".item-uses input.uses-value").off("change");
+			favHtml.find(".item-uses input.uses-value").click(ev => ev.target.select()).change(async (event) => {
+				event.preventDefault();
+				const itemId = event.currentTarget.closest(".item").dataset.itemId;
+				const item = app.actor.items.get(itemId);
+				const uses = Math.clamped(0, parseInt(event.target.value), item.system.uses.max);
+				event.target.value = uses;
+				return item.update({"system.uses.value": uses});
+			});
 		}
 
 		// adding the html to the appropiate containers

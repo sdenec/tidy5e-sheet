@@ -55,9 +55,9 @@ export function applyLocksCharacterSheet(app, html, actorData) {
 		}
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lockItemQuantity")) {
-		for (const elem of html.find("input[data-path^='system.quantity']")) {
-			elem.setAttribute("readonly", true);
-		}
+		// for (const elem of html.find("input[data-path^='system.quantity']")) {
+		// 	elem.setAttribute("readonly", true);
+		// }
 		for (const elem of html.find("input[name^='system.quantity']")) {
 			elem.setAttribute("readonly", true);
 		}
@@ -100,9 +100,9 @@ export function applyLocksItemSheet(app, html, actorData) {
 		return;
 	}
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lockItemQuantity")) {
-		for (const elem of html.find("input[data-path^='system.quantity']")) {
-			elem.setAttribute("readonly", true);
-		}
+		// for (const elem of html.find("input[data-path^='system.quantity']")) {
+		// 	elem.setAttribute("readonly", true);
+		// }
 		for (const elem of html.find("input[name^='system.quantity']")) {
 			elem.setAttribute("readonly", true);
 		}
