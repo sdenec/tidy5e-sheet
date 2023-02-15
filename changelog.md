@@ -1,3 +1,7 @@
+### 0.8.24
+
+- Little update on currency template
+
 ### 0.8.23
 
 - Little bug fix on the methos 'isItemfavorite'
