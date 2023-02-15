@@ -1,3 +1,6 @@
+### 0.8.23
+
+- Little bug fix on the methos 'isItemfavorite'
 ### 0.8.22
 
 - Bug https://github.com/sdenec/tidy5e-sheet/issues/701g fix 

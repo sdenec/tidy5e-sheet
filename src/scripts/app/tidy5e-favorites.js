@@ -32,9 +32,9 @@ export const isItemFavorite = function (item) {
 		item.flags[CONSTANTS.MODULE_ID]?.favorite ||
 		false;
 
-	const isAlreadyTidyFav = getProperty(item.flags[CONSTANTS.MODULE_ID]?.favorite);
-	// for retrocompatibility
-	const isAlreadyFabTab = getProperty(item.flags["favtab"]?.isFavorite);
+  const isAlreadyTidyFav = getProperty(item.flags[CONSTANTS.MODULE_ID], `favorite`);
+  // for retrocompatibility
+  const isAlreadyFabTab = getProperty(item.flags["favtab"], `isFavorite`);
 	if (String(isAlreadyFabTab) === "true" && String(isAlreadyFabTab) === "false") {
 		if (String(isAlreadyTidyFav) !== "true" && String(isAlreadyTidyFav) !== "false") {
 			isFav = item.flags["favtab"]?.isFavorite; // for retrocompatibility
