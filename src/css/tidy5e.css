@@ -2010,6 +2010,13 @@
 .tidy5e.sheet.actor .allow-edit .tidy5e-navigation .toggle-allow-edit .fa-lock {
 	display: none;
 }
+.tidy5e.sheet.actor .allow-edit .items-header-controls {
+	min-width: 120px!important;
+	max-width: 120px!important;
+}
+.tidy5e.sheet.actor .allow-edit .list-layout .items-list .item .item-controls:not(#context-menu) {
+	min-width: 120px!important;
+}
 .tidy5e.sheet.actor .sheet-body {
 	padding: 1rem 0.25rem 1rem 1rem;
 	-webkit-box-flex: 1;
@@ -2987,7 +2994,8 @@
 	width: 120px;
 }
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-controls {
-	width: 85px;
+	min-width: 85px;
+    max-width: 120px;
 }
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-subclass,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-source {

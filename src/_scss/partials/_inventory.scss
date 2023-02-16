@@ -419,13 +419,13 @@
 		.items-header-target,
 		.items-header-duration,
 		.items-header-feat-source,
-		.items-header-requirements,
-		.items-header-controls {
+		.items-header-requirements {
 			width: 120px;
 		}
 
 		.items-header-controls {
-			width: 85px;
+			min-width: 85px;
+			max-width: 120px;
 		}
 
 		.items-header-subclass,
