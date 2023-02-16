@@ -312,6 +312,8 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		
 		html.find(".item-uses input.uses-max").off("change");
 		html.find(".item-uses input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
+		html.find(".item-quantity input.item-count").off("change");
+		html.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(_onQuantityChange.bind(this));
 	}
 
 	/* -------------------------------------------- */
@@ -931,6 +933,23 @@ async function _onUsesMaxChange(event) {
 	const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
 	return item.update({"system.uses.max": uses});
 }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Change the uses amount of an Owned Item within the Actor.
+   * @param {Event} event        The triggering click event.
+   * @returns {Promise<Item5e>}  Updated item.
+   * @private
+   */
+  async function _onQuantityChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    const uses = parseInt(event.target.value ?? item.system.quantity);
+    event.target.value = uses;
+    return item.update({"system.quantity": uses});
+  }
 
 // Register Tidy5e Sheet and make default character sheet
 Actors.registerSheet("dnd5e", Tidy5eSheet, {

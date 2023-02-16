@@ -2,6 +2,7 @@
 
 - bug fix : https://github.com/sdenec/tidy5e-sheet/issues/705 
 - Little css on "allow-edit" min-width on item controls
+- bug fix: https://github.com/sdenec/tidy5e-sheet/issues/702
 
 ### 0.8.24
 

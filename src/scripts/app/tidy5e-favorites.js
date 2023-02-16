@@ -731,6 +731,16 @@ export const addFavorites = async function (app, html, data, position) {
 				event.target.value = uses;
 				return item.update({"system.uses.value": uses});
 			});
+
+			favHtml.find(".item-quantity input.item-count").off("change");
+			favHtml.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(async (event) => {
+				event.preventDefault();
+				const itemId = event.currentTarget.closest(".item").dataset.itemId;
+				const item = app.actor.items.get(itemId);
+				const uses = parseInt(event.target.value ?? item.system.quantity);
+				event.target.value = uses;
+				return item.update({"system.quantity": uses});
+			});
 		}
 
 		// adding the html to the appropiate containers

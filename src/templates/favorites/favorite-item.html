@@ -11,7 +11,9 @@
 		<span class="ammo" data-id="{{item._id}}"></span>
 		{{/if}}
 		{{#if item.system.quantity}}
-		<span class="item-quantity{{#if item.isStack}} isStack{{/if}}">(<input class="item-count" name="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" {{#if item.editable}}{{else}}disabled{{/if}}>)</span>
+		<span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
+			(<input class="item-count" name="system.quantity" type="text" value="{{item.system.quantity}}" maxlength="3" {{#if item.editable}}{{else}}disabled{{/if}}>)
+		</span>
 		{{/if}}
 	</div>
 
