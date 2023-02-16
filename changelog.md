@@ -1,3 +1,7 @@
+### 0.8.25 
+
+- bug fix : https://github.com/sdenec/tidy5e-sheet/issues/705 
+
 ### 0.8.24
 
 - Little update on currency template
