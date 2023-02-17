@@ -1459,9 +1459,11 @@
 	margin-left: 4px;
 	padding: 0 4px 0 8px;
 }
-/* .tidy5e.sheet.actor .origin-summary li span.origin-summary-text {
-	min-width: 125px;
-} */
+.tidy5e.sheet.actor .origin-summary li span.origin-summary-text {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .tidy5e.sheet.actor .origin-summary li span::after {
 	content: "";
 	display: block;

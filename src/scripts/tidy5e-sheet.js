@@ -309,7 +309,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				}
 			}
 		});
-		
+
 		html.find(".item-uses input.uses-max").off("change");
 		html.find(".item-uses input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
 		html.find(".item-quantity input.item-count").off("change");
@@ -424,7 +424,7 @@ async function checkDeathSaveStatus(app, html, data) {
 			await actor.update({ "system.attributes.death.success": 0 });
 			await actor.update({ "system.attributes.death.failure": 0 });
 		}
-		
+
 	}
 }
 
@@ -547,14 +547,13 @@ async function addClassList(app, html, data) {
 				if (item.type === "class") {
 					let levelsHtml = item.system.levels ? `<span class='levels-info'>${item.system.levels}</span>` : ``;
 					classList.push(
-						`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${
-							truncate(item.name, 30, false) + levelsHtml
+						`<li class='class-item' style='overflow: hidden; text-overflow: ellipsis; white-space: nowrap;' data-tooltip='${item.name} (${item.system.levels})'>${item.name} + levelsHtml
 						}</li>`
 					);
 				}
 				if (item.type === "subclass") {
 					classList.push(
-						`<li class='class-item' data-tooltip='${item.name}'>${truncate(item.name, 30, false)}</li>`
+						`<li class='class-item' style='overflow: hidden; text-overflow: ellipsis; white-space: nowrap;' data-tooltip='${item.name}'>${item.name}</li>`
 					);
 				}
 			}
@@ -567,24 +566,12 @@ async function addClassList(app, html, data) {
 
 		// Prepare summary
 
-		html.find(".origin-summary span.origin-summary-text").each(function () {
-			let originalText = $(this).text();
-			$(this).text(truncate($(this).text(), 20, false));
-			$(this).attr("data-tooltip", originalText);
-		});
-		// html.find(".origin-summary input").each(function () {
+		// html.find(".origin-summary span.origin-summary-text").each(function () {
 		// 	let originalText = $(this).text();
+		// 	$(this).text(truncate($(this).text(), 20, false));
 		// 	$(this).attr("data-tooltip", originalText);
 		// });
 	}
-}
-
-function truncate(str, n, useWordBoundary) {
-	if (str.length <= n) {
-		return str;
-	}
-	const subString = str.slice(0, n - 1); // the original check
-	return (useWordBoundary ? subString.slice(0, subString.lastIndexOf(" ")) : subString) + "..."; // "&hellip;";
 }
 
 // Calculate Spell Attack modifier

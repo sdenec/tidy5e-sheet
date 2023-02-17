@@ -172,22 +172,14 @@
             <span class="creature-type" title="{{labels.type}}">
               <a class="config-button" data-action="type" title="{{localize 'DND5E.CreatureTypeConfig'}}">{{#if (or (eq labels.type '') (eq labels.type none))}} {{localize 'DND5E.CreatureType'}} {{else}} {{labels.type}} {{/if}}</a>
             </span>
-            <!--
-            <span class="environment" title="{{ localize 'TIDY5E.Environment' }}"><i class="fas fa-tree"></i><span class="environment-label"><span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-environment" data-placeholder="{{ localize 'TIDY5E.Environment' }}" data-maxlength="80">{{system.details.environment}}</span></span></span>
-            <span contenteditable="true" spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
-            <span class="source source-info" contenteditable="true" spellcheck="false" data-target="{{actor._id}}-source" data-placeholder="{{ localize 'DND5E.Source' }}" title="{{system.details.source}}">{{system.details.source}}</span>
-            <input type="hidden" data-input="{{actor._id}}-environment" name="system.details.environment" value="{{system.details.environment}}" placeholder="{{ localize 'TIDY5E.Environment' }}">
-            <input type="hidden" data-input="{{actor._id}}-alignment" name="system.details.alignment" value="{{system.details.alignment}}" placeholder="{{ localize 'DND5E.Alignment' }}">
-            <input data-input="{{actor._id}}-source" name="system.details.source" type="hidden" value="{{system.details.source}}" placeholder="{{ localize 'DND5E.Source' }}" >
-            -->
             <span class="environment">
                 <i class="fas fa-tree"></i>
                 <span class="environment-label">
                     <span data-placeholder="{{ localize 'TIDY5E.Environment' }}">{{system.details.environment}}</span>
                 </span>
             </span>
-            <span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
-            <span class="origin-summary-text source source-info" data-placeholder="{{ localize 'DND5E.Source' }}">{{system.details.source}}</span>
+            <span class="origin-summary-text" data-tooltip="{{system.details.alignment}}" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
+            <span class="origin-summary-text source source-info" data-tooltip="{{system.details.source}}" data-placeholder="{{ localize 'DND5E.Source' }}">{{system.details.source}}</span>
           </li>
           <li class="proficiency">
             {{ localize 'DND5E.Proficiency' }}: {{numberFormat system.attributes.prof decimals=0 sign=true}}

@@ -185,9 +185,11 @@
 		padding: 0 4px 0 8px;
 	}
 
-	// li span.origin-summary-text {
-	// 	min-width: 125px;
-	// }
+	li span.origin-summary-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	}
 
 	li span::after {
 		content: "";

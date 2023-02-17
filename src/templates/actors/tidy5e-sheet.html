@@ -199,17 +199,9 @@
 								</ul>
 							</li>
 						</ul>
-                        <!--
-						<span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-race" data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
-						<span {{#if (and owner (not labels.background))}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-background" data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
-						<span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" data-target="{{actor._id}}-alignment" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
-                        <input type="hidden" data-input="{{actor._id}}-race" name="system.details.race" value="{{system.details.race}}" placeholder="{{ localize 'DND5E.Race' }}">
-						<input type="hidden" data-input="{{actor._id}}-background" name="system.details.background" value="{{system.details.background}}" placeholder="{{ localize 'DND5E.Background' }}">
-						<input type="hidden" data-input="{{actor._id}}-alignment" name="system.details.alignment" value="{{system.details.alignment}}" placeholder="{{ localize 'DND5E.Alignment' }}">
-                        -->
-                        <span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
-						<span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
-						<span class="origin-summary-text" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
+                        <span class="origin-summary-text" data-tooltip="{{system.details.race}}" data-placeholder="{{ localize 'DND5E.Race' }}">{{system.details.race}}</span>
+						<span class="origin-summary-text" data-tooltip="{{system.details.background}}" data-placeholder="{{ localize 'DND5E.Background' }}">{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</span>
+						<span class="origin-summary-text" data-tooltip="{{system.details.alignment}}" data-placeholder="{{ localize 'DND5E.Alignment' }}">{{system.details.alignment}}</span>
 					</li>
 					<li class="proficiency">
 						{{ localize 'DND5E.Proficiency' }}: {{labels.proficiency}}
