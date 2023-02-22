@@ -1,5 +1,6 @@
 import { RGBAToHexAFromColor } from "./color-picker.js";
 import CONSTANTS from "./constants.js";
+import { log } from "./logger-util.js";
 import { Tidy5eUserSettings } from "./settings.js";
 
 export function settingsList() {
@@ -1074,7 +1075,7 @@ class ResetSettingsDialog extends FormApplication {
 						for (let setting of game.settings.storage
 							.get("world")
 							.filter((setting) => setting.key.startsWith(`${CONSTANTS.MODULE_ID}.`))) {
-							console.log(`Reset setting '${setting.key}'`);
+							log(`Reset setting '${setting.key}'`);
 							await setting.delete();
 						}
 						//window.location.reload();

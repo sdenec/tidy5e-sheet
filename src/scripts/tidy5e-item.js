@@ -13,7 +13,7 @@ export class Tidy5eItemSheet extends dnd5e.applications.item.ItemSheet5e {
 		super.activateListeners(html);
 
 		let item = this.item;
-		console.log(item);
+    debug(`tidy5e-item | activateListeners | item: ${item}`);
 
 		tidy5eShowItemArt(html, item);
 	}

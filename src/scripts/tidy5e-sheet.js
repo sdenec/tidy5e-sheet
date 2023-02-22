@@ -9,10 +9,10 @@ import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
-import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
+import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
-import { updateExhaustion } from "./app/exhaustion.js";
+import { updateExhaustion } from "./app/tidy5e-exhaustion.js";
 import {
 	HexToRGBA,
 	colorPicker,
@@ -24,7 +24,7 @@ import {
 } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
 import { is_real_number } from "./app/helpers.js";
-import { debug, error } from "./app/logger-util.js";
+import { debug, error, warn } from "./app/logger-util.js";
 import { tidy5eSpellLevelButtons } from "./app/tidy5e-spell-level-buttons.js";
 import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-Spell.js";
 
@@ -367,8 +367,8 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
 				actionsLayout.html(actionsTabHtml);
 			}
-		} catch (e) {
-			console.error(e.message);
+		} catch (err) {
+			error(err?.message, true);
 		}
 
 		return html;
@@ -417,7 +417,7 @@ async function checkDeathSaveStatus(app, html, data) {
 		var deathSaveFailure = actor.system.attributes.death.failure;
 
 		debug(
-			`current HP Character : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`
+			`tidy5e-sheet | checkDeathSaveStatus | current HP Character : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`
 		);
 		if (currentHealth <= 0) {
 			html.find(".tidy5e-sheet .profile").addClass("dead");
@@ -478,7 +478,7 @@ async function editProtection(app, html, data) {
 		itemContainer.each(function () {
 			let hiddenSections = $(this).find("> .hidden").length;
 			let totalSections = $(this).children().not(".notice").length;
-			// console.log('hidden: '+ hiddenSections + '/ total: '+totalSections);
+      debug(`tidy5e-sheet | editProtection | hidden: ${hiddenSections}'/ total: ${totalSections}`);
 			if (hiddenSections >= totalSections) {
 				if (
 					$(this).hasClass("effects-list") &&
@@ -571,8 +571,7 @@ async function spellAttackMod(app, html, data) {
 		try {
 			spellBonus = new Roll(formula).evaluate({ async: false }).total;
 		} catch (err) {
-			console.error("spell bonus calculation failed");
-			console.error(err);
+			error("spell bonus calculation failed : " + err?.message, true);
 		}
 	}
 
@@ -584,16 +583,7 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
 
 	debug(
-		"Prof: " +
-			(prof ?? "") +
-			"/ Spell Ability: " +
-			(spellAbility ?? "") +
-			"/ ability Mod: " +
-			(abilityMod ?? "")+
-			"/ Spell Attack Mod:" +
-			(spellAttackMod ?? "") +
-			"/ Spell Bonus :" +
-			(spellBonus ?? "")
+		`tidy5e-sheet | spellAttackMod | Prof: ${(prof ?? "")} / Spell Ability: ${(spellAbility ?? "")} / ability Mod: ${(abilityMod ?? "")} / Spell Attack Mod: ${(spellAttackMod ?? "")} / Spell Bonus : ${(spellBonus ?? "")}`
 	);
 
 	html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
@@ -607,7 +597,7 @@ async function spellAttackMod(app, html, data) {
 async function abbreviateCurrency(app, html, data) {
 	html.find(".currency .currency-item label").each(function () {
 		let currency = $(this).data("denom").toUpperCase();
-		// console.log('Currency Abbr: '+CONFIG.DND5E.currencies[currency].abbreviation);
+    debug(`tidy5e-sheet | abbreviateCurrency | Currency Abbr: ${CONFIG.DND5E.currencies[currency]?.abbreviation ?? ""}`);
 		// let abbr = CONFIG.DND5E.currencies[currency].abbreviation;
 		// if(abbr == CONFIG.DND5E.currencies[currency].abbreviation){
 		// 	abbr = currency;
@@ -696,11 +686,10 @@ function markActiveEffects(app, html, data) {
 		let items = data.actor.items;
 		let marker = `<span class="ae-marker" title="Item has active effects">Æ</span>`;
 		for (let item of items) {
-			// console.log(item);
+      debug(`tidy5e-sheet | markActiveEffects | item: ${item}`);
 			if (item.effects.length > 0) {
-				// console.log(item);
 				let id = item._id;
-				// console.log(id);
+				debug(`tidy5e-sheet | markActiveEffects | itemId: ${id}`);
 				html.find(`.item[data-item-id="${id}"] .item-name h4`).append(marker);
 			}
 		}
@@ -762,7 +751,7 @@ function spellSlotMarker(app, html, data) {
 		const index = [...ev.currentTarget.parentElement.children].indexOf(ev.currentTarget);
 		const slots = $(ev.currentTarget).parents(".spell-level-slots");
 		const spellLevel = slots.find(".spell-max").data("level");
-		// console.log(spellLevel, index);
+    debug(`tidy5e-sheet | spellSlotMarker | spellLevel: ${spellLevel}, index: ${index}`);
 		if (spellLevel) {
 			let path = `data.spells.${spellLevel}.value`;
 			if (ev.currentTarget.classList.contains("empty")) {
@@ -988,8 +977,6 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	applyLazyExp(app, html, data);
 	applyLazyHp(app, html, data);
 	applySpellClassFilterActorSheet(app, html, data);
-	// console.log(data.actor);
-	// console.log("Tidy5e Sheet rendered!");
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksCharacterSheet(app, html, data);
@@ -1005,16 +992,14 @@ Hooks.on("renderActorSheet", (app, html, data) => {
 });
 
 Hooks.once("ready", (app, html, data) => {
-	// console.log("Tidy5e Sheet is ready!");
-	/*
 	if (!game.modules.get("colorsettings")?.active && game.user?.isGM) {
 		let word = "install and activate";
 		if (game.modules.get("colorsettings")) word = "activate";
 		const errorText = `tidy5e-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace("<br>", "\n");
-		ui.notifications?.error(errorText);
-		throw new Error(errorText);
+    warn(errorText);
+		//ui.notifications?.error(errorText);
+		//throw new Error(errorText);
 	}
-	*/
 });
 
 Hooks.on("renderAbilityUseDialog", (app, html, options) => {

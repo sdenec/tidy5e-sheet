@@ -6,11 +6,11 @@ import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
-import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
+import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
 // import { addFavorites } from "./app/tidy5e-favorites.js";
-import { updateExhaustion } from "./app/exhaustion.js";
+import { updateExhaustion } from "./app/tidy5e-exhaustion.js";
 import CONSTANTS from "./app/constants.js";
 import { d20Roll, isLessThanOneIsOne, is_real_number } from "./app/helpers.js";
 import LongRestDialog from "./app/tidy5e-npc-long-rest-dialog.js";
@@ -353,10 +353,10 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 			switch (event.which) {
 				case 3: {
 					let formula = actor.system.attributes.hp.formula;
-					// console.log(formula);
+					debug(`tidy5e-npc | activateListeners | formula: ${formula}`);
 					let r = new Roll(formula);
 					let term = r.terms;
-					// console.log(term);
+					debug(`tidy5e-npc | activateListeners | term: ${term}`);
 					let averageString = "";
 					for (let i = 0; i < term.length; i++) {
 						let type = term[i].constructor.name;
@@ -378,14 +378,13 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 							}
 						}
 					}
-					// console.log(averageString);
-
+          debug(`tidy5e-npc | activateListeners | averageString: ${averageString}`);
 					let average = 0;
 					averageString = averageString.replace(/\s/g, "").match(/[+\-]?([0-9\.\s]+)/g) || [];
 					while (averageString.length) {
 						average += parseFloat(averageString.shift());
 					}
-					// console.log(average);
+          debug(`tidy5e-npc | activateListeners | average: ${average}`);
 					let data = {};
 					data["system.attributes.hp.value"] = average;
 					data["system.attributes.hp.max"] = average;
@@ -670,7 +669,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		// Pacth NPC
 		if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion > 0) {
 			const exhaustion = this.actor.flags[CONSTANTS.MODULE_ID].exhaustion;
-			debug("exhaustion = " + exhaustion);
+			debug("tidy5e-npc | _rest | exhaustion = " + exhaustion);
 			await this.actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
 			updateExhaustion(this.actor);
 		}
@@ -884,7 +883,7 @@ async function checkDeathSaveStatus(app, html, data) {
 		var deathSaveSuccess = actor.flags[CONSTANTS.MODULE_ID].death.success;
 		var deathSaveFailure = actor.flags[CONSTANTS.MODULE_ID].death.failure;
 
-		debug(`current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
+		debug(`tidy5e-npc | checkDeathSaveStatus | current HP NPC : ${currentHealth}, success: ${deathSaveSuccess}, failure: ${deathSaveFailure}`);
 		if (currentHealth <= 0) {
 			html.find(".tidy5e-sheet.tidy5e-npc .profile").addClass("dead");
 		}
@@ -903,7 +902,7 @@ async function toggleItemMode(app, html, data) {
 		ev.preventDefault();
 		let itemId = ev.currentTarget.closest(".item").dataset.itemId;
 		let item = app.actor.items.get(itemId);
-		console.log(item.type);
+    debug(`tidy5e-npc | toggleItemMode | item.type: ${item.type}`);
 		let attr = item.type === "spell" ? "system.preparation.prepared" : "system.equipped";
 		if (item.type !== "feat") {
 			return item.update({ [attr]: !foundry.utils.getProperty(item, attr) });
@@ -1162,7 +1161,7 @@ function spellSlotMarker(app, html, data) {
 		const index = [...ev.currentTarget.parentElement.children].indexOf(ev.currentTarget);
 		const slots = $(ev.currentTarget).parents(".spell-level-slots");
 		const spellLevel = slots.find(".spell-max").data("level");
-		console.log(spellLevel, index);
+    debug(`tidy5e-npc | spellSlotMarker | spellLevel: ${spellLevel}, index: ${index}`);
 		if (spellLevel) {
 			let path = `data.spells.${spellLevel}.value`;
 			if (ev.currentTarget.classList.contains("empty")) {
@@ -1261,7 +1260,6 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
 	applyLazyMoney(app, html, data);
 	applyLazyExp(app, html, data);
 	applyLazyHp(app, html, data);
-	// console.log(data.actor);
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksNpcSheet(app, html, data);

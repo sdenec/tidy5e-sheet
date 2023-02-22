@@ -1,4 +1,5 @@
 import CONSTANTS from "./constants.js";
+import { debug } from "./logger-util.js";
 
 export const tidy5eAmmoSwitch = function (html, actor) {
 	html.find(".ammo").each(function () {
@@ -11,7 +12,7 @@ export const tidy5eAmmoSwitch = function (html, actor) {
 		const ammoItems = actor.items.filter(
 			(x) => x.system.consumableType === "ammo" && (!equippedOnly || x.system.equipped)
 		);
-		// console.log(ammoItems);
+    debug(`tidy5e-ammo-switch | tidy5eAmmoSwitch | ammoItems: ${ammoItems}`);
 		const target = item.system.consume.target;
 		const ammoItemStrings = ['<option value=""></option>']
 			.concat(

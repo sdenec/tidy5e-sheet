@@ -127,7 +127,7 @@ export async function updateExhaustion(actorEntity) {
 			if (typeof effectEntity.getFlag(CONSTANTS.MODULE_ID, "exhaustion") === "number") {
 				exhaustionPresent = effectEntity;
 				currentExhaustion = effectEntity.getFlag(CONSTANTS.MODULE_ID, "exhaustion");
-				// console.log(currentExhaustion);
+        debug(`tidy5e-exhaustion | updateExhaustion | currentExhaustion: ${currentExhaustion}`);
 				if (currentExhaustion != exhaustion) {
 					await exhaustionPresent.delete();
 					createExhaustionEffect();
@@ -141,8 +141,7 @@ export async function updateExhaustion(actorEntity) {
 
 		async function createExhaustionEffect() {
 			if (exhaustion > 0) {
-				// console.log('create Effect!');
-
+        debug(`tidy5e-exhaustion | createExhaustionEffect | create Effect exhaustion lv: ${exhaustion}`);
 				let effectChange = {
 					disabled: false,
 					label: effectName,
@@ -181,7 +180,7 @@ export async function updateExhaustion(actorEntity) {
 				let tier = `${effectName} ${i}`;
 				if (tier != effectNameCustom) {
 					if (game.dfreds.effectInterface.hasEffectApplied(tier, actorToCheck.uuid)) {
-						// console.log(tier);
+            debug(`tidy5e-exhaustion | createExhaustionEffect | tier: ${tier}`);
 						const contextEffect = {
 							effectName: tier,
 							uuid: actorToCheck.uuid,
@@ -236,7 +235,7 @@ export async function updateExhaustion(actorEntity) {
 			for (let i = 1; i <= levels; i++) {
 				let tier = `${effectName} ${i}`;
 				if (tier != effectNameCustom) {
-					// console.log(tier);
+					debug(`tidy5e-exhaustion | createExhaustionEffect | tier: ${tier}`);
 					await game.cub.removeCondition(tier, [token], { warn: false });
 				}
 			}
@@ -268,7 +267,6 @@ export async function updateExhaustion(actorEntity) {
 // 		}
 // 		updateExhaustion(actorEntity);
 // 	}
-// 	// console.log('actor updated!')
 // });
 
 // Rest reduces by 1
@@ -303,17 +301,17 @@ Hooks.on(`createActiveEffect`, (effect, data, id) => {
 		let actor = game.actors.get(effect.parent._id);
 		let effectName = effect.label;
 		if (effectName.includes(game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustom"))) {
-			debug("effectName = " + effectName);
+			debug("tidy5e-exhaustion | createActiveEffect | effectName = " + effectName);
 			if (actor.type === "character") {
 				let exhaustion = effectName.slice(-1);
 				if (actor.system.attributes.exhaustion != exhaustion) {
-					debug("exhaustion = " + exhaustion);
+					debug("tidy5e-exhaustion | createActiveEffect | exhaustion = " + exhaustion);
 					actor.update({ "system.attributes.exhaustion": exhaustion });
 				}
 			} else if (actor.type === "npc") {
 				let exhaustion = effectName.slice(-1);
 				if (actor.flags[CONSTANTS.MODULE_ID].exhaustion != exhaustion) {
-					debug("exhaustion = " + exhaustion);
+					debug("tidy5e-exhaustion | createActiveEffect | exhaustion = " + exhaustion);
 					actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion });
 				}
 			} else {

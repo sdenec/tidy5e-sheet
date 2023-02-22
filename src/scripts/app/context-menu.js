@@ -1,4 +1,5 @@
 import CONSTANTS from "./constants.js";
+import { warn } from "./logger-util.js";
 import { isItemFavorite } from "./tidy5e-favorites.js";
 
 export const tidy5eContextMenu = function (html, sheet) {
@@ -129,7 +130,7 @@ const _getAdvancementContextMenuOptions = function (html) {
 	// const condition = li => (this.advancementConfigurationMode || !this.isEmbedded) && this.isEditable;
 
 	/*
-  { 
+  {
     name: "DND5E.AdvancementControlEdit",
     icon: "<i class='fas fa-edit fa-fw'></i>",
     condition,
@@ -377,7 +378,7 @@ const _getItemContextOptions = function (item) {
 				// const item_id = ev[0].dataset.itemId; //ev.currentTarget.closest('[data-item-id]').dataset.itemId;
 				// const item = actor.items.get(item_id);
 				if (!item) {
-					console.warn(`tidy5e-sheet | Item no founded!`);
+					warn(`tidy5e-context-menu | _getItemContextOptions | Item no founded!`);
 					return;
 				}
 				let isFav = isItemFavorite(item);

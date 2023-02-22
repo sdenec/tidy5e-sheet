@@ -3,7 +3,7 @@ import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { applyLazyMoney } from "./app/lazymoney.js";
-import { applyLazyExp, applyLazyHp } from "./app/lazyExpAndHp.js";
+import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksVehicleSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
@@ -279,7 +279,6 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
 	applyLazyMoney(app, html, data);
 	applyLazyExp(app, html, data);
 	applyLazyHp(app, html, data);
-	// console.log(data);
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksVehicleSheet(app, html, data);

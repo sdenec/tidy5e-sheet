@@ -1,5 +1,6 @@
 import CONSTANTS from "./constants.js";
 import { isEmptyObject, is_lazy_number, is_real_number } from "./helpers.js";
+import { debug } from "./logger-util.js";
 
 const signCase = {
 	add: "+",
@@ -164,7 +165,7 @@ function _onChangeCurrency(ev) {
 	}
 }
 function chatLog(actor, money) {
-	console.log("tidy5e-sheet | " + money);
+  debug(`tidy5e-lazymoney | chatlog | money: ${money}`);
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyChatLog")) {
 		const msgData = {
 			content: money,
@@ -630,5 +631,4 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
 			update.system.currency = patchCurrency(update.system.currency);
 		}
 	}
-	// console.log('actor updated!')
 });

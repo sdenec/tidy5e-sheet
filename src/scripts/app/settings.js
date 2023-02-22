@@ -37,7 +37,7 @@ export class Tidy5eUserSettings extends FormApplication {
 	}
 
 	getSettingsData() {
-		// console.log(game.settings.get('tidy5e-sheet'))
+		// debug(game.settings.get('tidy5e-sheet'))
 		const settings = [
 			"ammoEquippedOnly",
 			"activeEffectsMarker",
@@ -151,7 +151,7 @@ export class Tidy5eUserSettings extends FormApplication {
 		let data = {};
 		settings.forEach((setting) => {
 			data[setting] = { value: game.settings.get(CONSTANTS.MODULE_ID, setting) };
-			// console.log(data[setting]);
+			// debug(data[setting]);
 		});
 		return data;
 	}
@@ -164,12 +164,12 @@ export class Tidy5eUserSettings extends FormApplication {
 
 	activateListeners(html) {
 		super.activateListeners(html);
-		// console.log('Listeners Active!')
-		// console.log(html)
+		// debug('Listeners Active!')
+		// debug(html)
 
 		let exhaustionEffectSelect = html.find("select#exhaustionEffectsEnabled");
 		let exhaustionSelected = $(exhaustionEffectSelect).val();
-		// console.log(exhaustionSelected)
+		// debug(exhaustionSelected)
 		switch (exhaustionSelected) {
 			case "default": {
 				html.find("input#exhaustionEffectIcon").closest(".setting").hide();
@@ -203,7 +203,7 @@ export class Tidy5eUserSettings extends FormApplication {
 		});
 
 		html.find("input#exhaustionEffectIcon").on("change", function (e) {
-			// console.log(e.target.value)
+			// debug(e.target.value)
 			if (e.target.value == "" || e.target.value == null) {
 				e.target.value = "modules/tidy5e-sheet/images/exhaustion.svg";
 			}
@@ -217,14 +217,14 @@ export class Tidy5eUserSettings extends FormApplication {
 	_updateObject(ev, formData) {
 		const data = expandObject(formData);
 		let settingsUpdated = false;
-		// console.log(formData);
-		// console.log(settingOptions);
+		// debug(formData);
+		// debug(settingOptions);
 		for (let key in data) {
-			// console.log(`Key: ${key} with value: ${data[key]}`);
+			// debug(`Key: ${key} with value: ${data[key]}`);
 			let oldSetting = game.settings.get(CONSTANTS.MODULE_ID, key);
 			let newSetting = data[key];
 			if (oldSetting == newSetting) continue;
-			// console.log(`${key} changed to "${data[key]}"`);
+			// debug(`${key} changed to "${data[key]}"`);
 			game.settings.set(CONSTANTS.MODULE_ID, key, data[key]);
 			settingsUpdated = true;
 		}

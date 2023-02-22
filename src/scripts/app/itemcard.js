@@ -1,4 +1,5 @@
 import CONSTANTS from "./constants.js";
+import { debug } from "./logger-util.js";
 
 export const tidy5eItemCard = function (html, actor) {
 	// show/hide grid layout item info card on mouse enter/leave
@@ -98,7 +99,7 @@ export const tidy5eItemCard = function (html, actor) {
 	});
 
 	let itemCardDelayCard = async (event) => {
-		// console.log(`itemCardDelaying card: ${itemCardDelay} ms`);
+    debug(`tidy5e-itemcard | itemCardDelayCard | itemCardDelaying card: ${itemCardDelay} ms`);
 		timer = setTimeout(async function () {
 			if (!itemCardIsFixed) {
 				removeCard();
@@ -171,7 +172,7 @@ export const tidy5eItemCard = function (html, actor) {
 		}
 		let item = actor.items.get(li.data("item-id"));
 		if (!item) {
-			console.warn(`tidy5e-sheet | no item found on actor '${actor.name}' with id '${li.data("item-id")}'`);
+			warn(`tidy5e-context-menu | showCard | no item found on actor '${actor.name}' with id '${li.data("item-id")}'`);
 			return;
 		}
 		let chatData = await item.getChatData({ secrets: actor.isOwner });

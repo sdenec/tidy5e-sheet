@@ -21,6 +21,7 @@ import { applyColorPickerCustomization } from "./color-picker.js";
 import CONSTANTS from "./constants.js";
 import { tidy5eContextMenu } from "./context-menu.js";
 import { is_real_number } from "./helpers.js";
+import { warn } from "./logger-util.js";
 
 export const isItemFavorite = function (item) {
 	if (!item) {
@@ -186,7 +187,7 @@ export const addFavorites = async function (app, html, data, position) {
 				const item_id = ev.currentTarget.closest("[data-item-id]").dataset.itemId;
 				const item = app.actor.items.get(item_id);
 				if (!item) {
-					console.warn(`tidy5e-sheet | Item no founded!`);
+          warn(`tidy5e-favorites | addFavorites | Item no founded!`);
 					return;
 				}
 				let isFav = isItemFavorite(item);
@@ -604,7 +605,7 @@ export const addFavorites = async function (app, html, data, position) {
 				const item_id = ev.currentTarget.closest("[data-item-id]").dataset.itemId;
 				const item = app.actor.items.get(item_id);
 				if (!item) {
-					console.warn(`tidy5e-sheet | Item no founded!`);
+					warn(`tidy5e-favorites | addFavorites | Item no founded!`);
 					return;
 				}
 				let isFav = isItemFavorite(item);
@@ -690,11 +691,10 @@ export const addFavorites = async function (app, html, data, position) {
 				let targetId = ev.target.closest(".item").dataset.itemId;
 				let dragTarget = siblings.find((s) => s._id === targetId);
 
-				// console.log(`dragSource: ${dragSource} // siblings: ${siblings} // targetID: ${targetId} // dragTarget: ${dragTarget}`)
-
+        debug(`tidy5e-favorites | addFavorite | dragSource: ${dragSource} // siblings: ${siblings} // targetID: ${targetId} // dragTarget: ${dragTarget}`);
 				if (dragTarget === undefined) {
 					// catch trying to drag from one list to the other, which is not supported
-					// console.log("folder not supported")
+          debug(`tidy5e-favorites | addFavorite | catch trying to drag from one list to the other, which is not supported, folder not supported`);
 					return;
 				}
 

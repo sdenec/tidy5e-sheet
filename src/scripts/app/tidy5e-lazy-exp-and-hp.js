@@ -52,7 +52,7 @@ function _onChangeExp(ev) {
 	}
 
 	if (newAmountExp < 0 || !is_real_number(newAmountExp)) {
-		debug(`[0] WARN: The xp value ${newAmountExp} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeExp | [0] WARN: The xp value ${newAmountExp} is not a valid number`);
 		newAmountExp = exp;
 	}
 
@@ -63,7 +63,7 @@ function _onChangeExp(ev) {
 	//     newAmount = minExp;
 	// }
 	if (newAmountExp < 0 || !is_real_number(newAmountExp)) {
-		debug(`[1] WARN: The xp value ${newAmountExp} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeExp | [1] WARN: The xp value ${newAmountExp} is not a valid number`);
 		newAmountExp = 0;
 	}
 
@@ -124,7 +124,7 @@ function _onChangeHp(ev) {
 	}
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`[2] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [2] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = hp;
 	}
 
@@ -144,15 +144,15 @@ function _onChangeHp(ev) {
 		// }
 
 		if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-			debug(`[3] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [3] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 			newAmountHpValue = 0;
 		}
 		if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-			debug(`[4] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [4] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 			newAmountHpTemp = 0;
 		}
 		if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-			debug(`[5] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [5] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
 			newAmountHpTempMax = 0;
 		}
 
@@ -170,7 +170,7 @@ function _onChangeHp(ev) {
 			.catch(console.log.bind(console));
 	} else {
 		if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-			debug(`[6] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [6] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 			newAmountHpValue = 0;
 		}
 
@@ -235,7 +235,7 @@ function _onChangeHpMax(ev) {
 	}
 
 	if (newAmountHpMax < 0 || !is_real_number(newAmountHpMax)) {
-		debug(`[7] WARN: The hp.max value ${newAmountHpMax} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpMax | [7] WARN: The hp.max value ${newAmountHpMax} is not a valid number`);
 		newAmountHpMax = maxHp;
 	}
 
@@ -246,7 +246,7 @@ function _onChangeHpMax(ev) {
 	//     newAmount = minHp;
 	// }
 	if (newAmountHpMax < 0 || !is_real_number(newAmountHpMax)) {
-		debug(`[8] WARN: The hp.value value ${newAmountHpMax} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpMax | [8] WARN: The hp.value value ${newAmountHpMax} is not a valid number`);
 		newAmountHpMax = 0;
 	}
 
@@ -272,20 +272,20 @@ function _onChangeHpForceHpValueLimit1(ev) {
 	let newAmountHpTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (!is_real_number(newAmountHpValue)) {
-		debug(`[9] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [9] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = hp;
 	}
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`[10] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [10] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = 0;
 	}
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`[11] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [11] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = 0;
 	}
 	if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-		debug(`[12] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [12] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
 		newAmountHpTempMax = 0;
 	}
 
@@ -317,7 +317,7 @@ function _onChangeHpForceHpValueLimit2(ev) {
 	let newAmountHpTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`[13] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [13] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = hp;
 	}
 
@@ -336,15 +336,15 @@ function _onChangeHpForceHpValueLimit2(ev) {
 	// }
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`[14] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [14] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
 		newAmountHpValue = 0;
 	}
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`[15] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [15] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = 0;
 	}
 	if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-		debug(`[16] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [16] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
 		newAmountHpTempMax = 0;
 	}
 
@@ -372,12 +372,12 @@ function _onChangeHpForceHpTempLimit2(ev) {
 	let newAmountHpTemp = Number(input.value);
 
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`[17] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | [17] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = hpTemp;
 	}
 
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`[18] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | [18] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
 		newAmountHpTemp = 0;
 	}
 
@@ -552,5 +552,4 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
 			setProperty(update, "system.details.xp.value", Number(xpValue));
 		}
 	}
-	// console.log('actor updated!')
 });
