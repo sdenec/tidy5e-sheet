@@ -1,3 +1,8 @@
+### 0.8.27
+
+- newAmountExp > maxExp removed
+- Disable 'lazyHp' feature by defaults
+
 ### 0.8.26
 
 - Testing for 2.1.5...
@@ -21,7 +26,8 @@
 
 ### 0.8.23
 
-- Little bug fix on the methos 'isItemfavorite'
+- Little bug fix on the method 'isItemfavorite'
+
 ### 0.8.22
 
 - Bug https://github.com/sdenec/tidy5e-sheet/issues/701g fix 

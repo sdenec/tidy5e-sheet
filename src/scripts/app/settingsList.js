@@ -673,7 +673,7 @@ export function settingsList() {
 		hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpAndExpEnable.hint")}`,
 		scope: "world",
 		config: false,
-		default: true,
+		default: false,
 		type: Boolean,
 	});
 

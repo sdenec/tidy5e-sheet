@@ -56,10 +56,10 @@ function _onChangeExp(ev) {
 		debug(`tidy5e-lazy-exp-and-hp | _onChangeExp | [0] WARN: The xp value ${newAmountExp} is not a valid number`);
 		newAmountExp = exp;
 	}
-
-	if (newAmountExp > maxExp) {
-		newAmountExp = maxExp;
-	}
+	// REMOVED NOT ESSENTIAL
+	// if (newAmountExp > maxExp) {
+	// 	newAmountExp = maxExp;
+	// }
 	// if(newAmount <  minExp) {
 	//     newAmount = minExp;
 	// }
