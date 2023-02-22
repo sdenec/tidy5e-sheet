@@ -124,6 +124,8 @@
 
 	"TIDY5E.OriginSummaryConfig": "Origin Summary Configuration",
 
+  "TIDY5E.LevelBump": "Level Bump",
+
 	"TIDY5E.Settings.GlobalLabel": "Global",
 	"TIDY5E.Settings.DebugLabel": "Debug",
 	"TIDY5E.Settings.UserLabel": "User",
@@ -152,6 +154,11 @@
 	"TIDY5E.Settings.TabGM": {
 		"tabLabel": "GM Options",
 		"header": "GM Sheet Options"
+	},
+  "TIDY5E.Settings.TabHomebrewRules": {
+		"tabLabel": "Homebrew Rules",
+		"header": "Homebrew Rules",
+    "labelHBUpcastFreeSpell": "Upcast Free Spell"
 	},
 	"TIDY5E.Settings.TabModules": {
 		"tabLabel": "Modules",
@@ -571,5 +578,13 @@
 	"TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically": {
 		"name": "Enable Sort Favorites Alphabetically",
 		"hint": "It enabled this setting will sort the items, features, spells alphabetically on the favorites html template"
+	},
+	"TIDY5E.Settings.HBEnableUpcastFreeSpell": {
+		"name": "Enable upcast free spell.",
+		"hint": "Add an additional button when you are casting a spell for cast it one level higher. This is a homebrew rule. Ty to @mxfz on discord for the macro code and to @thundershield on for the idea, you can find more details here https://discord.com/channels/170995199584108546/699750150674972743/1055686421198946465"
+	},
+    "TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell": {
+		"name": "Set features for upcast free spell",
+		"hint": "This setting work only with the module setting 'Enable upcast free spell' enabled, is a string of feature names separated by the character '|' , the search for such features is case unsensitive if found a 'valid' feature enables actors to use the feature upcast"
 	}
 }

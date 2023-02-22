@@ -15,7 +15,7 @@ import CONSTANTS from "./app/constants.js";
 import { d20Roll, isLessThanOneIsOne, is_real_number } from "./app/helpers.js";
 import LongRestDialog from "./app/tidy5e-npc-long-rest-dialog.js";
 import ShortRestDialog from "./app/tidy5e-npc-short-rest-dialog.js";
-import { debug } from "./app/logger-util.js";
+import { debug, error } from "./app/logger-util.js";
 
 /**
  * An Actor sheet for NPC type characters in the D&D5E system.
@@ -480,11 +480,19 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 			actor.items.get(itemId).update(data);
 		});
 
+    // Quantity and Charges listener
+    // TODO why i need this... the html template is wrong ?
+    html.find(".item-detail input.uses-max").off("change");
+		html.find(".item-detail input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
+		html.find(".item-quantity input.item-count").off("change");
+		html.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(_onQuantityChange.bind(this));
+
 		// Short and Long Rest
 		html.find(".short-rest").click(this._onShortRest.bind(this));
 		html.find(".long-rest").click(this._onLongRest.bind(this));
 		html.find(".death-save-tidy").click(this._rollDeathSave.bind(this));
 	}
+
 	/* -------------------------------------------- */
 
 	/**
@@ -591,10 +599,11 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 
 		// Display a Dialog for rolling hit dice
 		if ( config.dialog ) {
-			try { 
+			try {
 				config.newDay = await ShortRestDialog.shortRestDialog({actor: this.actor, canRoll: hd0 > 0});
-			} catch(err) { 
-				return; 
+			} catch(err) {
+        error(err?.message, true);
+				return;
 			}
 		}
 
@@ -630,9 +639,10 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		// if ( Hooks.call("dnd5e.preLongRest", this, config) === false ) return;
 
 		if ( config.dialog ) {
-			try { 
-				config.newDay = await LongRestDialog.longRestDialog({actor: this.actor}); }
-			catch(err) { 
+			try {
+				config.newDay = await LongRestDialog.longRestDialog({actor: this.actor});
+      } catch(err) {
+        error(err?.message, true);
 				return;
 			}
 		}
@@ -840,8 +850,8 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 				const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
 				actionsLayout.html(actionsTabHtml);
 			}
-		} catch (e) {
-			// log(true, e);
+		} catch (err) {
+			error(err?.message, true);
 		}
 
 		return html;
@@ -1054,30 +1064,7 @@ async function hideSpellbook(app, html, data) {
 async function editProtection(app, html, data) {
 	let actor = app.actor;
 	if (!actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
-		/* MOVED TO LOCKERS.JS
-    if (game.settings.get(CONSTANTS.MODULE_ID, "editTotalLockEnabled")) {
-      html.find(".skill input").prop("disabled", true);
-      html.find(".skill .config-button").remove();
-      html.find(".skill .proficiency-toggle").remove();
-      html.find(".ability-score").prop("disabled", true);
-      html.find(".ac-display input").prop("disabled", true);
-      html.find(".initiative input").prop("disabled", true);
-      html.find(".hp-max").prop("disabled", true);
-      html.find(".resource-name input").prop("disabled", true);
-      html.find(".res-max").prop("disabled", true);
-      html.find(".res-options").remove();
-      html.find(".ability-modifiers .proficiency-toggle").remove();
-      html.find(".ability .config-button").remove();
-      html
-        .find(
-          ".traits .config-button,.traits .trait-selector,.traits .proficiency-selector"
-        )
-        .remove();
-      html.find("[contenteditable]").prop("contenteditable", false);
-      html.find(".caster-level input").prop("disabled", true);
-      html.find(".spellcasting-attribute select").prop("disabled", true);
-    }
-    */
+		// CODE "editTotalLockEnabled" MOVED TO LOCKERS.JS
 
 		let itemContainer = html.find(".inventory-list:not(.spellbook-list).items-list");
 		html.find(".inventory-list:not(.spellbook-list) .items-header").each(function () {
@@ -1203,6 +1190,43 @@ function hideStandardEncumbranceBar(app, html, data) {
 		}
 	}
 }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Change the uses amount of an Owned Item within the Actor.
+   * @param {Event} event        The triggering click event.
+   * @returns {Promise<Item5e>}  Updated item.
+   * @private
+   */
+   async function _onUsesMaxChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    // const uses = Math.clamped(0, parseInt(event.target.value), ;
+    // event.target.value = uses;
+    const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
+    return item.update({"system.uses.max": uses});
+  }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Change the quantity amount of an Owned Item within the Actor.
+   * @param {Event} event        The triggering click event.
+   * @returns {Promise<Item5e>}  Updated item.
+   * @private
+   */
+  async function _onQuantityChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    const uses = parseInt(event.target.value ?? item.system.quantity);
+    event.target.value = uses;
+    return item.update({"system.quantity": uses});
+  }
+
+  /* -------------------------------------------- */
 
 Actors.registerSheet("dnd5e", Tidy5eNPC, {
 	types: ["npc"],

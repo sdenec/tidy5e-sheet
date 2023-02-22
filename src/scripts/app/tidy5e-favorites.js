@@ -712,18 +712,18 @@ export const addFavorites = async function (app, html, data, position) {
 
 				app.actor.updateEmbeddedDocuments("Item", updateData);
 			});
-
-			favHtml.find(".item-uses input.uses-max").off("change");
-			favHtml.find(".item-uses input.uses-max").click(ev => ev.target.select()).change(async (event) => {
+      // TODO why i need this... the html template is wrong ?
+			favHtml.find(".item-detail input.uses-max").off("change");
+			favHtml.find(".item-detail input.uses-max").click(ev => ev.target.select()).change(async (event) => {
 				event.preventDefault();
 				const itemId = event.currentTarget.closest(".item").dataset.itemId;
 				const item = app.actor.items.get(itemId);
 				const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
 				return item.update({"system.uses.max": uses});
 			});
-
-			favHtml.find(".item-uses input.uses-value").off("change");
-			favHtml.find(".item-uses input.uses-value").click(ev => ev.target.select()).change(async (event) => {
+      // TODO why i need this... the html template is wrong ?
+			favHtml.find(".item-detail input.uses-value").off("change");
+			favHtml.find(".item-detail input.uses-value").click(ev => ev.target.select()).change(async (event) => {
 				event.preventDefault();
 				const itemId = event.currentTarget.closest(".item").dataset.itemId;
 				const item = app.actor.items.get(itemId);

@@ -1,6 +1,6 @@
 import CONSTANTS from "./constants.js";
-import ActorHitPointsConfig from "./tidy5e-actor-hit-points-config.js";
-import ActorOriginSummaryConfig from "./tidy5e-actor-origin-summary-config.js";
+import Tidy5eActorHitPointsConfig from "./tidy5e-actor-hit-points-config.js";
+import Tidy5eActorOriginSummaryConfig from "./tidy5e-actor-origin-summary-config.js";
 
 export const tidy5eListeners = function (html, actor, app) {
 	// set input fields via editable elements
@@ -95,12 +95,12 @@ export const tidy5eListeners = function (html, actor, app) {
 	html.on("click", "[data-action='itemDuplicate']", app._onItemDuplicate.bind(app));
 
 	html.find(".hit-points-tidy").click(() => {
-		let app = new ActorHitPointsConfig(actor);
+		let app = new Tidy5eActorHitPointsConfig(actor);
 		app?.render(true);
 	});
 
 	html.find(".origin-summary-tidy").click(() => {
-		let app = new ActorOriginSummaryConfig(actor);
+		let app = new Tidy5eActorOriginSummaryConfig(actor);
 		app?.render(true);
 	});
 };

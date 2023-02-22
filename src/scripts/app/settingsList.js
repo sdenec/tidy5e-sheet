@@ -1022,6 +1022,28 @@ export function settingsList() {
 		config: false,
 	});
 
+  // ===============================
+  // Homebrew Rules
+  // ===============================
+
+  game.settings.register(CONSTANTS.MODULE_ID, "hbEnableUpcastFreeSpell", {
+		name: `${game.i18n.localize("TIDY5E.Settings.HBEnableUpcastFreeSpell.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.HBEnableUpcastFreeSpell.hint")}`,
+		scope: "world",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+
+	game.settings.register(CONSTANTS.MODULE_ID, "hbSetFeaturesForUpcastFreeSpell", {
+		name: `${game.i18n.localize("TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell.hint")}`,
+		scope: "world",
+		config: false,
+		default: "",
+		type: String,
+	});
+
 	// ========================================================================
 	game.settings.register(CONSTANTS.MODULE_ID, "debug", {
 		name: `TIDY5E.Settings.Debug.name`,

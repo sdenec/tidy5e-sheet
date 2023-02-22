@@ -4,7 +4,7 @@ import CONSTANTS from "./constants.js";
 /**
  * A form for configuring actor hit points and bonuses.
  */
-export default class ActorOriginSummaryConfig extends BaseConfigSheet {
+export default class Tidy5eActorOriginSummaryConfig extends BaseConfigSheet {
 	constructor(...args) {
 		super(...args);
 

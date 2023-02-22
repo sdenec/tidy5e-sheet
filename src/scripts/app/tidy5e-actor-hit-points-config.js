@@ -3,7 +3,7 @@ import BaseConfigSheet from "./tidy5e-base-config-sheet.js";
 /**
  * A form for configuring actor hit points and bonuses.
  */
-export default class ActorHitPointsConfig extends BaseConfigSheet {
+export default class Tidy5eActorHitPointsConfig extends BaseConfigSheet {
 	constructor(...args) {
 		super(...args);
 

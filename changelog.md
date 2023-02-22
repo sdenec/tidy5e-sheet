@@ -1,3 +1,10 @@
+### 0.8.26
+
+- bug fix: https://github.com/foundryvtt/dnd5e/pull/2198/files
+- bug fix: https://github.com/sdenec/tidy5e-sheet/issues/713
+- New Feature: add tab for homebrew rules from the community
+- Update css instead javascript for solve the issue https://github.com/sdenec/tidy5e-sheet/issues/694
+
 ### 0.8.25 
 
 - bug fix : https://github.com/sdenec/tidy5e-sheet/issues/705 

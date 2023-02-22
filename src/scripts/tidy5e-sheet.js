@@ -1,4 +1,3 @@
-// import { tidy5eSettings } from "./app/settings.js";
 import { Tidy5eUserSettings } from "./app/settings.js";
 
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
@@ -26,6 +25,8 @@ import {
 import CONSTANTS from "./app/constants.js";
 import { is_real_number } from "./app/helpers.js";
 import { debug, error } from "./app/logger-util.js";
+import { tidy5eSpellLevelButtons } from "./app/tidy5e-spell-level-buttons.js";
+import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-Spell.js";
 
 let position = 0;
 
@@ -310,8 +311,10 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			}
 		});
 
-		html.find(".item-uses input.uses-max").off("change");
-		html.find(".item-uses input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
+    // Quantity and Charges listener
+    // TODO why i need this... the html template is wrong ?
+		html.find(".item-detail input.uses-max").off("change");
+		html.find(".item-detail input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
 		html.find(".item-quantity input.item-count").off("change");
 		html.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(_onQuantityChange.bind(this));
 	}
@@ -434,35 +437,7 @@ async function editProtection(app, html, data) {
 	if (game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, "editGmAlwaysEnabled")) {
 		html.find(".classic-controls").addClass("gmEdit");
 	} else if (!actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
-		/* MOVED TO LOCKERS.JS
-    if (game.settings.get(CONSTANTS.MODULE_ID, "editTotalLockEnabled")) {
-      html.find(".skill input").prop("disabled", true);
-      html.find(".skill .config-button").remove();
-      // html.find(".skill .proficiency-toggle").remove();
-      html.find(".skill .proficiency-toggle").removeClass("proficiency-toggle");
-      html.find(".ability-score").prop("disabled", true);
-      html.find(".ac-display input").prop("disabled", true);
-      html.find(".initiative input").prop("disabled", true);
-      html.find(".hp-max").prop("disabled", true);
-      html.find(".resource-name input").prop("disabled", true);
-      html.find(".res-max").prop("disabled", true);
-      html.find(".res-options").remove();
-      html.find(".ability-modifiers .proficiency-toggle").remove();
-      html.find(".ability .config-button").remove();
-      html
-        .find(
-          ".traits .config-button,.traits .trait-selector,.traits .proficiency-selector"
-        )
-        .remove();
-      html.find("[contenteditable]").prop("contenteditable", false);
-      html.find(".spellbook .slot-max-override").remove();
-      html.find(".spellcasting-attribute select").prop("disabled", true);
-      const spellbook = html.find(
-        ".spellbook .inventory-list .item-list"
-      ).length;
-      if (spellbook == 0) html.find(".item[data-tab='spellbook']").remove();
-    }
-    */
+		// MOVED CODE "editTotalLockEnabled" TO LOCKERS.JS
 
 		let resourcesUsed = 0;
 		html.find('.resources input[type="text"]').each(function () {
@@ -905,26 +880,26 @@ async function setSheetClasses(app, html, data) {
 
   /* -------------------------------------------- */
 
-/**
- * Change the uses amount of an Owned Item within the Actor.
- * @param {Event} event        The triggering click event.
- * @returns {Promise<Item5e>}  Updated item.
- * @private
- */
-async function _onUsesMaxChange(event) {
-	event.preventDefault();
-	const itemId = event.currentTarget.closest(".item").dataset.itemId;
-	const item = this.actor.items.get(itemId);
-	// const uses = Math.clamped(0, parseInt(event.target.value), ;
-	// event.target.value = uses;
-	const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
-	return item.update({"system.uses.max": uses});
-}
+  /**
+   * Change the uses amount of an Owned Item within the Actor.
+   * @param {Event} event        The triggering click event.
+   * @returns {Promise<Item5e>}  Updated item.
+   * @private
+   */
+  async function _onUsesMaxChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    // const uses = Math.clamped(0, parseInt(event.target.value), ;
+    // event.target.value = uses;
+    const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
+    return item.update({"system.uses.max": uses});
+  }
 
   /* -------------------------------------------- */
 
   /**
-   * Change the uses amount of an Owned Item within the Actor.
+   * Change the quantity amount of an Owned Item within the Actor.
    * @param {Event} event        The triggering click event.
    * @returns {Promise<Item5e>}  Updated item.
    * @private
@@ -937,6 +912,8 @@ async function _onUsesMaxChange(event) {
     event.target.value = uses;
     return item.update({"system.quantity": uses});
   }
+
+  /* -------------------------------------------- */
 
 // Register Tidy5e Sheet and make default character sheet
 Actors.registerSheet("dnd5e", Tidy5eSheet, {
@@ -1040,146 +1017,7 @@ Hooks.once("ready", (app, html, data) => {
 	*/
 });
 
-Hooks.on("renderAbilityUseDialog", (application, html, context) => {
-	if (application?.item?.type != "spell") {
-		return; // Nevermind if this isn't a spell
-	}
-	if (html.find('[name="consumeSpellSlot"]').length == 0) {
-		return;
-	}
-
-	// TODO Integration checkbox upcast (ty to mxzf on discord )
-	/*
-  // Add a new checkbox and insert it at the end of the list
-  let new_checkbox = $('<div class="form-group"><label class="checkbox"><input type="checkbox" name="freeUpcast"="">Level Bump</label></div>')
-  new_checkbox.insertAfter(html.find('.form-group').last())
-  // Bind a change handler to the new checkbox to increment/decrement the options in the dropdown
-  // This is so that dnd5e will scale the spell up under the hood as-if it's upcast
-  new_checkbox.change(ev => {
-    if (ev.target.checked) {
-      Object.values(html.find('[name="consumeSpellLevel"] option')).map(o => {
-        if (o.value === 'pact') o.value = String(application.item.actor.system.spells.pact.level+1)
-        else o.value = String(parseInt(o.value)+1)
-
-      })
-    } else {
-      Object.values(html.find('[name="consumeSpellLevel"] option')).map(o => {
-          if (o.text.includes('Pact')) o.value = 'pact'
-          else o.value = String(parseInt(o.value)-1)
-      })
-    }
-  })
-  application.setPosition({height:'auto'}) // Reset the height of the window to match the new content
-})
-  Hooks.on('dnd5e.preItemUsageConsumption', (item,config,options) => {
-    // If the checkbox is checked, drop the spell level used to calculate the slot cost by 1
-    if (config?.freeUpcast) {
-      if (item.system.preparation.mode === 'pact') config.consumeSpellLevel = 'pact'
-      else config.consumeSpellLevel = String(parseInt(config.consumeSpellLevel)-1)
-    }
-  });
-  */
-	if (
-		game.settings.get(CONSTANTS.MODULE_ID, "enableSpellLevelButtons") &&
-		// The module already do the job so for avoid redundance...
-		!game.modules.get("spell-level-buttons-for-dnd5e")?.active
-	) {
-		const options = application;
-
-		if ($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) {
-			// If the dialog box has a option to select a spell level
-
-			// Resize the window to fit the contents
-			let originalWindowHeight = parseInt($(options._element[0]).css("height"));
-			let heightOffset = 42;
-
-			$(options._element[0]).height(originalWindowHeight + heightOffset);
-
-			// Find the label that says "Cast at level", and select it's parent parent (There's no specific class or ID for this wrapper)
-			let levelSelectWrapper = $(options._element[0])
-				.find(`.form-group label:contains("${game.i18n.localize(`DND5E.SpellCastUpcast`)}")`)
-				.parent();
-			let selectedLevel = levelSelectWrapper.find("select").val();
-
-			let appId = options.appId;
-
-			// Hide the default level select menu
-			levelSelectWrapper.css("display", "none");
-
-			// Append a container for the buttons
-			levelSelectWrapper.after(`
-            <div class="form-group spell-lvl-btn">
-                <label>${game.i18n.localize(`DND5E.SpellCastUpcast`)}</label>
-                <div class="form-fields"></div>
-            </div>
-        `);
-
-			// Append a button for each spell level that the user can cast
-			$(options._element[0])
-				.find(`select[name="consumeSpellLevel"] option`)
-				.each(function () {
-					let availableTextSlotsFounded = $(this)
-						.text()
-						.match(/\(\d+\s\w+\)/);
-					if (!availableTextSlotsFounded) {
-						availableTextSlotsFounded = $(this).text().match(/\d+/g);
-						const lastMatch = availableTextSlotsFounded[availableTextSlotsFounded.length - 1];
-						if (lastMatch) {
-							availableTextSlotsFounded = lastMatch;
-						}
-					}
-
-					if (!availableTextSlotsFounded) {
-						console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\(\d+\s\w+\)/}`);
-					}
-					let availableSlotsFounded = availableTextSlotsFounded
-						? availableTextSlotsFounded[0].match(/\d+/)
-						: undefined;
-					if (!availableSlotsFounded) {
-						console.warn(`Cannot find the spell slots on text '${$(this).text()}' with ${/\d+/}`);
-					}
-					let availableSlots = availableSlotsFounded ? availableSlotsFounded[0] : 0;
-					let availableSlotsBadge = "";
-					let value = $(this).val();
-					let i;
-
-					if (value == "pact") {
-						// i = "p" + $(this).text().match(/\d/)[0]; // Get the pact slot level
-						let availablePactSlotsFounded = $(this).text().match(/\d/);
-						if (!availablePactSlotsFounded) {
-							console.warn(`Cannot find the pact slots on text '${$(this).text()}' with ${/\d/}`);
-						}
-						if (availablePactSlotsFounded) {
-							i = "p" + availablePactSlotsFounded[0]; // Get the pact slot level
-						} else {
-							i = "p" + 0;
-						}
-					} else {
-						i = value;
-					}
-
-					if (availableSlots > 0) {
-						availableSlotsBadge = `<span class="available-slots">${availableSlots}</span>`;
-					}
-
-					$(options._element[0]).find(".spell-lvl-btn .form-fields").append(`
-                <label title="${$(this).text()}" class="spell-lvl-btn__label" for="${appId}lvl-btn-${i}">
-                    <input type="radio" id="${appId}lvl-btn-${i}" name="lvl-btn" value="${value}">
-                    <div class="spell-lvl-btn__btn">${i}</div>
-                    ${availableSlotsBadge}
-                </label>
-            `);
-				});
-
-			// Click on the button corresponding to the default value on the cast level dropdown menu
-			$(options._element[0]).find(`#${appId}lvl-btn-${selectedLevel}`).trigger("click");
-
-			// Change the dropdown menu value when user clicks on a button
-			$(options._element[0])
-				.find(".spell-lvl-btn__label")
-				.on("click", function () {
-					levelSelectWrapper.find("select").val($(this).find("input").val());
-				});
-		}
-	}
+Hooks.on("renderAbilityUseDialog", (app, html, options) => {
+  tidy5eSpellLevelButtons(app, html, options);
+  tidy5eHBEnableUpcastFreeSpell(app, html, options);
 });

@@ -4,6 +4,7 @@
 		<a class="item" data-tab="npc-sheet">{{localize 'TIDY5E.Settings.TabNPCsVehicles.tabLabel'}}</a>
 		<a class="item gm-only" data-tab="gm-options">{{localize 'TIDY5E.Settings.TabGM.tabLabel'}}</a>
 		<a class="item gm-only" data-tab="modules">{{localize 'TIDY5E.Settings.TabModules.tabLabel'}}</a>
+        <a class="item gm-only" data-tab="homebrew-rules">{{localize 'TIDY5E.Settings.TabHomebrewRules.tabLabel'}}</a>
 		<a class="item gm-only" data-tab="locks">{{localize 'TIDY5E.Settings.TabLocks.tabLabel'}}</a>
 		<a class="item" data-tab="info">{{localize 'TIDY5E.Settings.TabInfo.tabLabel'}}</a>
 	</nav>
@@ -864,6 +865,29 @@
 				<p class="notes">{{localize 'TIDY5E.Settings.LazyMoneyChatLog.hint'}}</p>
 			</div>
 		</article>
+	</section>
+
+    {{!-- HOMEBREW RULES OPTIONS --}}
+
+    <section class="tab gm-only" data-tab="homebrew-rules">
+		<h2>{{localize 'TIDY5E.Settings.TabHomebrewRules.header'}}</h2>
+
+		<h3>{{localize 'TIDY5E.Settings.TabHomebrewRules.labelHBUpcastFreeSpell'}}</h3>
+		<article class="setting">
+			<input type="checkbox" data-dtype="boolean" name="hbEnableUpcastFreeSpell" id="hbEnableUpcastFreeSpell" {{checked settings.hbEnableUpcastFreeSpell.value}} />
+			<div class="description">
+				<label for="hbEnableUpcastFreeSpell">{{localize 'TIDY5E.Settings.HBEnableUpcastFreeSpell.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HBEnableUpcastFreeSpell.hint'}}</p>
+			</div>
+		</article>
+		<article class="setting">
+			<input type="text" data-dtype="string" name="hbSetFeaturesForUpcastFreeSpell" id="hbSetFeaturesForUpcastFreeSpell" value="{{settings.hbSetFeaturesForUpcastFreeSpell.value}}" />
+			<div class="description">
+				<label for="hbSetFeaturesForUpcastFreeSpell">{{localize 'TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell.hint'}}</p>
+			</div>
+		</article>
+
 	</section>
 
 	{{!-- LOCKS OPTIONS --}}
