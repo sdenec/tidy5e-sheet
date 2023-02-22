@@ -3,7 +3,7 @@
  * @extends {DocumentSheet}
  * @abstract
  */
-export default class BaseConfigSheet extends DocumentSheet {
+export default class Tidy5eBaseConfigSheet extends DocumentSheet {
 	/** @inheritdoc */
 	activateListeners(html) {
 		super.activateListeners(html);

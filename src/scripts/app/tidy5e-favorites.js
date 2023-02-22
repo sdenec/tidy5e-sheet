@@ -539,9 +539,9 @@ export const addFavorites = async function (app, html, data, position) {
 			"allowCantripToBePreparedOnContext"
 		);
 
-		await loadTemplates(["modules/tidy5e-sheet/templates/favorites/favorite-item.html"]);
+		await loadTemplates(["modules/tidy5e-sheet/templates/favorites/tidy5e-favorite-item.html"]);
 		let favHtml = $(
-			await renderTemplate("modules/tidy5e-sheet/templates/favorites/favorite-template.html", context)
+			await renderTemplate("modules/tidy5e-sheet/templates/favorites/tidy5e-favorite-template.html", context)
 		);
 
 		// Activating favorite-list events
@@ -627,20 +627,20 @@ export const addFavorites = async function (app, html, data, position) {
 				}
 			});
 
-			// changing the charges values (removing if both value and max are 0)
-			favHtml.find(".item input").change((ev) => {
-				let itemId = $(ev.target).parents(".item")[0].dataset.itemId;
-				let path = ev.target.dataset.path;
-				let data = {};
-				data[path] = Number(ev.target.value);
-				app.actor.items.get(itemId).update(data);
-				// app.activateFavs = true;
-			});
+			// // changing the charges values (removing if both value and max are 0)
+			// favHtml.find(".item input").change((ev) => {
+			// 	let itemId = $(ev.target).parents(".item")[0].dataset.itemId;
+			// 	let path = ev.target.dataset.path;
+			// 	let data = {};
+			// 	data[path] = Number(ev.target.value ?? 0);
+			// 	app.actor.items.get(itemId).update(data);
+			// 	// app.activateFavs = true;
+			// });
 
 			// changing the spell slot values and overrides
 			favHtml.find(".spell-slots input").change((ev) => {
 				let path = ev.target.dataset.target;
-				let data = Number(ev.target.value);
+				let data = Number(ev.target.value ?? 0);
 				app.actor.update({ [path]: data });
 			});
 

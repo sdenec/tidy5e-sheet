@@ -15,7 +15,7 @@ function patchCurrency(currency) {
 			// Do nothing
 		}
 		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(ppValue).startsWith("0")) {
+		else if (String(ppValue).startsWith("0") && String(ppValue) !== "0") {
 			while (String(ppValue).startsWith("0")) {
 				if (String(ppValue) === "0") {
 					break;
@@ -23,7 +23,7 @@ function patchCurrency(currency) {
 				ppValue = String(ppValue).slice(1);
 			}
 		}
-		setProperty(currency, "pp", Number(ppValue));
+		setProperty(currency, "pp", Number(ppValue ?? 0));
 	}
 	if (hasProperty(currency, "gp")) {
 		let gpValue = getProperty(currency, "gp") || 0;
@@ -31,7 +31,7 @@ function patchCurrency(currency) {
 			// Do nothing
 		}
 		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(gpValue).startsWith("0")) {
+		else if (String(gpValue).startsWith("0") && String(gpValue) !== "0") {
 			while (String(gpValue).startsWith("0")) {
 				if (String(gpValue) === "0") {
 					break;
@@ -39,7 +39,7 @@ function patchCurrency(currency) {
 				gpValue = String(gpValue).slice(1);
 			}
 		}
-		setProperty(currency, "gp", Number(gpValue));
+		setProperty(currency, "gp", Number(gpValue ?? 0));
 	}
 	if (hasProperty(currency, "ep")) {
 		let epValue = getProperty(currency, "ep") || 0;
@@ -47,7 +47,7 @@ function patchCurrency(currency) {
 			// Do nothing
 		}
 		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(epValue).startsWith("0")) {
+		else if (String(epValue).startsWith("0") && String(epValue) !== "0") {
 			while (String(epValue).startsWith("0")) {
 				if (String(epValue) === "0") {
 					break;
@@ -55,7 +55,7 @@ function patchCurrency(currency) {
 				epValue = String(epValue).slice(1);
 			}
 		}
-		setProperty(currency, "ep", Number(epValue));
+		setProperty(currency, "ep", Number(epValue ?? 0));
 	}
 	if (hasProperty(currency, "sp")) {
 		let spValue = getProperty(currency, "sp") || 0;
@@ -63,7 +63,7 @@ function patchCurrency(currency) {
 			// Do nothing
 		}
 		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(spValue).startsWith("0")) {
+		else if (String(spValue).startsWith("0") && String(spValue) !== "0") {
 			while (String(spValue).startsWith("0")) {
 				if (String(spValue) === "0") {
 					break;
@@ -71,7 +71,7 @@ function patchCurrency(currency) {
 				spValue = String(spValue).slice(1);
 			}
 		}
-		setProperty(currency, "sp", Number(spValue));
+		setProperty(currency, "sp", Number(spValue ?? 0));
 	}
 	if (hasProperty(currency, "cp")) {
 		let cpValue = getProperty(currency, "cp") || 0;
@@ -79,7 +79,7 @@ function patchCurrency(currency) {
 			// Do nothing
 		}
 		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(cpValue).startsWith("0")) {
+		else if (String(cpValue).startsWith("0") && String(cpValue) !== "0") {
 			while (String(cpValue).startsWith("0")) {
 				if (String(cpValue) === "0") {
 					break;
@@ -87,7 +87,7 @@ function patchCurrency(currency) {
 				cpValue = String(cpValue).slice(1);
 			}
 		}
-		setProperty(currency, "cp", Number(cpValue));
+		setProperty(currency, "cp", Number(cpValue ?? 0));
 	}
 	return currency;
 }
@@ -158,7 +158,7 @@ function _onChangeCurrency(ev) {
 		actor
 			.update({ "system.currency": newAmount })
 			.then(() => {
-				input.value = Number(getProperty(actor, input.name));
+				input.value = Number(getProperty(actor, input.name) ?? 0);
 				sheet.submitOnChange = true;
 			})
 			.catch(console.log.bind(console));

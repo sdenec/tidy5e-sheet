@@ -10,7 +10,7 @@
 			</div>
 		</li>
 		<ul class="item-list">
-			{{#each favItems as |item id|}} {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=item}} {{/each}}
+			{{#each favItems as |item id|}} {{> "modules/tidy5e-sheet/templates/favorites/tidy5e-favorite-item.html" item=item}} {{/each}}
 		</ul>
 		{{/if}} {{#if favFeats}}
 		<li class="items-header">
@@ -21,7 +21,7 @@
 			</div>
 		</li>
 		<ul class="item-list">
-			{{#each favFeats as |feat lvl|}} {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=feat}} {{/each}}
+			{{#each favFeats as |feat lvl|}} {{> "modules/tidy5e-sheet/templates/favorites/tidy5e-favorite-item.html" item=feat}} {{/each}}
 		</ul>
 		{{/if}} {{#if favSpellsPrepMode}} {{#each favSpellsPrepMode as |section lvl|}} {{#if section.spells}} {{#if lvl}}
 		<li class="items-header spellbook-header">
@@ -45,7 +45,7 @@
 		</li>
 		{{/if}}
 		<ul class="item-list">
-			{{#each section.spells as |spell id|}} {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=spell}} {{/each}}
+			{{#each section.spells as |spell id|}} {{> "modules/tidy5e-sheet/templates/favorites/tidy5e-favorite-item.html" item=spell}} {{/each}}
 		</ul>
 		{{/if}} {{/each}} {{/if}} {{#if favSpells}} {{#each favSpells as |section lvl|}} {{#if section.spells}} {{#if lvl}}
 		<li class="items-header spellbook-header">
@@ -69,7 +69,7 @@
 		</li>
 		{{/if}}
 		<ul class="item-list">
-			{{#each section.spells as |spell id|}} {{> "modules/tidy5e-sheet/templates/favorites/favorite-item.html" item=spell}} {{/each}}
+			{{#each section.spells as |spell id|}} {{> "modules/tidy5e-sheet/templates/favorites/tidy5e-favorite-item.html" item=spell}} {{/each}}
 		</ul>
 		{{/if}} {{/each}} {{/if}}
 	</ul>

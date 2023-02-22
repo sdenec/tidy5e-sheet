@@ -19,12 +19,6 @@
 			"email": ""
 		}
 	],
-	"minimumCoreVersion": "10",
-	"compatibleCoreVersion": "10",
-	"compatibility": {
-		"minimum": "10.283",
-		"verified": "10"
-	},
 	"esmodules": ["./scripts/tidy5e-sheet.js", "./scripts/tidy5e-npc.js", "./scripts/tidy5e-vehicle.js", "./scripts/tidy5e-item.js", "./scripts/app/exhaustion.js"],
 	"styles": ["./css/tidy-icons.css", "./css/tidy5e.css", "./css/tidy5e-dark.css"],
 	"languages": [
@@ -84,9 +78,18 @@
 			"path": "lang/hu.json"
 		}
 	],
+	"compatibility": {
+		"minimum": 10,
+		"verified": 10,
+		"maximum": 10
+	},
+	"manifestPlusVersion": "1.2.1",
 	"url": "https://github.com/sdenec/tidy5e-sheet",
-	"manifest": "https://github.com/sdenec/tidy5e-sheet/releases/download/0.8.25/module.json",
-	"download": "https://github.com/sdenec/tidy5e-sheet/releases/download/0.8.25/module.zip",
+	"manifest": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.json",
+	"download": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.zip",
+	"readme": "https://github.com/sdenec/tidy5e-sheet/blob/master/README.md",
+	"changelog": "https://github.com/sdenec/tidy5e-sheet/blob/master/changelog.md",
+	"bugs": "https://github.com/sdenec/tidy5e-sheet/issues",
 	"relationships": {
 		"systems": [
 			{
@@ -110,7 +113,7 @@
 			},
 			{
 				"id": "spell-class-filter-for-5e",
-				"reason": "Redundancy of features you can disable 'Multiclass Spellbook Filter"
+				"reason": "Redundancy of features you can disable 'Multiclass Spellbook Filter'"
 			}
 		]
 	}

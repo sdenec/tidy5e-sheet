@@ -1,6 +1,7 @@
-import { debug } from "./logger-util.js";
+import { debug, info, warn } from "./logger-util.js";
 import CONSTANTS from "./constants.js";
 import { is_lazy_number, is_real_number } from "./helpers.js";
+import { isEmptyObject } from "./helpers.js";
 
 const signCase = {
 	add: "+",
@@ -71,7 +72,7 @@ function _onChangeExp(ev) {
 	actor
 		.update({ "system.details.xp.value": Number(newAmountExp) })
 		.then(() => {
-			input.value = Number(getProperty(actor, input.name));
+			input.value = Number(getProperty(actor, input.name) ?? 0);
 			sheet.submitOnChange = true;
 		})
 		.catch(console.log.bind(console));
@@ -164,7 +165,7 @@ function _onChangeHp(ev) {
 				"system.attributes.hp.tempmax": Number(newAmountHpTempMax),
 			})
 			.then(() => {
-				input.value = Number(getProperty(actor, input.name));
+				input.value = Number(getProperty(actor, input.name) ?? 0);
 				sheet.submitOnChange = true;
 			})
 			.catch(console.log.bind(console));
@@ -184,7 +185,7 @@ function _onChangeHp(ev) {
 		actor
 			.update({ "system.attributes.hp.value": Number(newAmountHpValue) })
 			.then(() => {
-				input.value = Number(getProperty(actor, input.name));
+				input.value = Number(getProperty(actor, input.name) ?? 0);
 				sheet.submitOnChange = true;
 			})
 			.catch(console.log.bind(console));
@@ -254,7 +255,7 @@ function _onChangeHpMax(ev) {
 	actor
 		.update({ "system.attributes.hp.max": Number(newAmountHpMax) })
 		.then(() => {
-			input.value = Number(getProperty(actor, input.name));
+			input.value = Number(getProperty(actor, input.name) ?? 0);
 			sheet.submitOnChange = true;
 		})
 		.catch(console.log.bind(console));
@@ -299,7 +300,7 @@ function _onChangeHpForceHpValueLimit1(ev) {
 			"system.attributes.hp.value": Number(newAmountHpValue),
 		})
 		.then(() => {
-			input.value = Number(getProperty(actor, input.name));
+			input.value = Number(getProperty(actor, input.name) ?? 0);
 			sheet.submitOnChange = true;
 		})
 		.catch(console.log.bind(console));
@@ -356,7 +357,7 @@ function _onChangeHpForceHpValueLimit2(ev) {
 			"system.attributes.hp.tempmax": Number(newAmountHpTempMax),
 		})
 		.then(() => {
-			input.value = Number(getProperty(actor, input.name));
+			input.value = Number(getProperty(actor, input.name) ?? 0);
 			sheet.submitOnChange = true;
 		})
 		.catch(console.log.bind(console));
@@ -385,7 +386,7 @@ function _onChangeHpForceHpTempLimit2(ev) {
 	actor
 		.update({ "system.attributes.hp.temp": Number(newAmountHpTemp) })
 		.then(() => {
-			input.value = Number(getProperty(actor, input.name));
+			input.value = Number(getProperty(actor, input.name) ?? 0);
 			sheet.submitOnChange = true;
 		})
 		.catch(console.log.bind(console));
@@ -505,51 +506,72 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
 		return;
 	}
 	if (hasProperty(update, "system.attributes.hp.value")) {
-		let hpValue = getProperty(update, "system.attributes.hp.value") || 0;
-		if (!is_lazy_number(hpValue)) {
-			setProperty(update, "system.attributes.hp.value", Number(hpValue));
-		}
-		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(hpValue).startsWith("0")) {
-			while (String(hpValue).startsWith("0")) {
-				if (String(hpValue) === "0") {
-					break;
-				}
-				hpValue = String(hpValue).slice(1);
-			}
-			setProperty(update, "system.attributes.hp.value", Number(hpValue));
-		}
+		let hpValue = getProperty(update, "system.attributes.hp.value");
+    if(isEmptyObject(hpValue)) {
+      // Do nothing
+    } else {
+      if (!is_lazy_number(hpValue)) {
+        setProperty(update, "system.attributes.hp.value", Number(hpValue));
+        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.attributes.hp.value from '${hpValue}' to '${Number(hpValue)}'`);
+      }
+      // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+      else if (String(hpValue).startsWith("0") && String(hpValue) !== "0") {
+        let hpValueTmp = hpValue;
+        while (String(hpValueTmp).startsWith("0")) {
+          if (String(hpValueTmp) === "0") {
+            break;
+          }
+          hpValueTmp = String(hpValueTmp).slice(1);
+        }
+        setProperty(update, "system.attributes.hp.value", Number(hpValueTmp ?? 0));
+        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.attributes.hp.value from '${hpValue}' to '${Number(hpValueTmp)}'`);
+      }
+    }
 	}
 	if (hasProperty(update, "system.attributes.hp.max")) {
-		let hpMaxValue = getProperty(update, "system.attributes.hp.max") || 0;
-		if (!is_lazy_number(hpMaxValue)) {
-			setProperty(update, "system.attributes.hp.max", Number(hpMaxValue));
-		}
-		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(hpMaxValue).startsWith("0")) {
-			while (String(hpMaxValue).startsWith("0")) {
-				if (String(hpMaxValue) === "0") {
-					break;
-				}
-				hpMaxValue = String(hpMaxValue).slice(1);
-			}
-			setProperty(update, "system.attributes.hp.max", Number(hpMaxValue));
-		}
+		let hpMaxValue = getProperty(update, "system.attributes.hp.max");
+    if(isEmptyObject(hpMaxValue)) {
+      // Do nothing
+    } else {
+      if (!is_lazy_number(hpMaxValue)) {
+        setProperty(update, "system.attributes.hp.max", Number(hpMaxValue ?? 0));
+        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.attributes.hp.max from '${hpMaxValue}' to '${Number(hpMaxValue}'`);
+      }
+      // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+      else if (String(hpMaxValue).startsWith("0") && String(hpMaxValue) !== "0") {
+        let hpMaxValueTmp = hpMaxValue;
+        while (String(hpMaxValueTmp).startsWith("0")) {
+          if (String(hpMaxValueTmp) === "0") {
+            break;
+          }
+          hpMaxValueTmp  = String(hpMaxValueTmp).slice(1);
+        }
+        setProperty(update, "system.attributes.hp.max", Number(hpMaxValueTmp ?? 0));
+        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.attributes.hp.max from '${hpMaxValue}' to '${Number(hpMaxValueTmp)}'`);
+      }
+    }
 	}
 	if (hasProperty(update, "system.details.xp.value")) {
-		let xpValue = getProperty(update, "system.details.xp.value") || 0;
-		if (!is_lazy_number(xpValue)) {
-			setProperty(update, "system.details.xp.value", Number(xpValue));
-		}
-		// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-		else if (String(xpValue).startsWith("0")) {
-			while (String(xpValue).startsWith("0")) {
-				if (String(xpValue) === "0") {
-					break;
-				}
-				xpValue = String(xpValue).slice(1);
-			}
-			setProperty(update, "system.details.xp.value", Number(xpValue));
-		}
+		let xpValue = getProperty(update, "system.details.xp.value");
+    if(isEmptyObject(xpValue)) {
+      // Do nothing
+    } else {
+      if (!is_lazy_number(xpValue)) {
+        setProperty(update, "system.details.xp.value", Number(xpValue ?? 0));
+        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.details.xp.value from '${xpValue}' to '${Number(xpValue}'`);
+      }
+      // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+      else if (String(xpValue).startsWith("0") && String(xpValue) !== "0") {
+        let xpValueTmp = xpValue;
+        while (String(xpValueTmp).startsWith("0")) {
+          if (String(xpValueTmp) === "0") {
+            break;
+          }
+          xpValueTmp = String(xpValueTmp).slice(1);
+        }
+        setProperty(update, "system.details.xp.value", Number(xpValueTmp ?? 0));
+        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.details.xp.value from '${xpValue}' to '${Number(xpValueTmp)}'`);
+      }
+    }
 	}
 });
