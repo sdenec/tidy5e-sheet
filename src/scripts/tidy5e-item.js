@@ -1,4 +1,5 @@
 import { applyLocksItemSheet } from "./app/lockers.js";
+import { debug } from "./app/logger-util.js";
 import { tidy5eShowItemArt } from "./app/show-item-art.js";
 import { applySpellClassFilterItemSheet } from "./app/spellClassFilter.js";
 
@@ -13,7 +14,7 @@ export class Tidy5eItemSheet extends dnd5e.applications.item.ItemSheet5e {
 		super.activateListeners(html);
 
 		let item = this.item;
-    debug(`tidy5e-item | activateListeners | item: ${item}`);
+    	debug(`tidy5e-item | activateListeners | item: ${item}`);
 
 		tidy5eShowItemArt(html, item);
 	}

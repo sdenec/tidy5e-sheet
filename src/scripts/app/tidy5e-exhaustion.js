@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { warn } from "./logger-util.js";
+import { debug, warn } from "./logger-util.js";
 
 export async function updateExhaustion(actorEntity) {
 	const actorC = game.actors.get(actorEntity._id);
@@ -127,7 +127,7 @@ export async function updateExhaustion(actorEntity) {
 			if (typeof effectEntity.getFlag(CONSTANTS.MODULE_ID, "exhaustion") === "number") {
 				exhaustionPresent = effectEntity;
 				currentExhaustion = effectEntity.getFlag(CONSTANTS.MODULE_ID, "exhaustion");
-        debug(`tidy5e-exhaustion | updateExhaustion | currentExhaustion: ${currentExhaustion}`);
+        		debug(`tidy5e-exhaustion | updateExhaustion | currentExhaustion: ${currentExhaustion}`);
 				if (currentExhaustion != exhaustion) {
 					await exhaustionPresent.delete();
 					createExhaustionEffect();

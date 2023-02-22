@@ -1673,8 +1673,10 @@
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-	font-size: 45px;
-	height: 40px;
+	/* font-size: 45px;
+	height: 40px; */
+	font-size: 35px;
+    height: 25px;
 	font-weight: 700;
 	margin: 0 auto;
 	width: 44px;

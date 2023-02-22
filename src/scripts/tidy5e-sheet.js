@@ -23,10 +23,10 @@ import {
 	applyColorPickerCustomization,
 } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
-import { is_real_number, truncate } from "./app/helpers.js";
+import { isEmptyObject, is_real_number, truncate } from "./app/helpers.js";
 import { debug, error, warn } from "./app/logger-util.js";
 import { tidy5eSpellLevelButtons } from "./app/tidy5e-spell-level-buttons.js";
-import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-spell.js";
+import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-Spell.js";
 
 let position = 0;
 
@@ -1015,6 +1015,17 @@ Hooks.on("renderActorSheet", (app, html, data) => {
 	// Issue https://github.com/sdenec/tidy5e-sheet/issues/662
 	if (game.modules.get("dnd5e-custom-skills")?.active) {
 		html.find(".tidy5e-sheet .ability-scores.custom-abilities").removeClass("custom-abilities");
+	}
+	
+	// WHY THIS ??? PATCH FOR https://github.com/sdenec/tidy5e-sheet/issues/714
+	if(!isEmptyObject(app.actor.system?.attributes?.init?.bonus) 
+		&& !is_real_number(Number(app.actor.system.attributes.init.bonus))){
+		app.actor.update(
+			{ 
+				"system.attributes.init.bonus": 0
+			}
+		);
+		warn(`tidy5e-sheet | renderActorSheet | Patch 'system.attributes.init.bonus' for value ${app.actor.system?.attributes?.init?.bonus}`);
 	}
 });
 
