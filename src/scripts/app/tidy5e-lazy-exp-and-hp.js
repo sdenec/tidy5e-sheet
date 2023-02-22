@@ -507,71 +507,89 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
 	}
 	if (hasProperty(update, "system.attributes.hp.value")) {
 		let hpValue = getProperty(update, "system.attributes.hp.value");
-    if(isEmptyObject(hpValue)) {
-      // Do nothing
-    } else {
-      if (!is_lazy_number(hpValue)) {
-        setProperty(update, "system.attributes.hp.value", Number(hpValue));
-        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.attributes.hp.value from '${hpValue}' to '${Number(hpValue)}'`);
-      }
-      // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-      else if (String(hpValue).startsWith("0") && String(hpValue) !== "0") {
-        let hpValueTmp = hpValue;
-        while (String(hpValueTmp).startsWith("0")) {
-          if (String(hpValueTmp) === "0") {
-            break;
-          }
-          hpValueTmp = String(hpValueTmp).slice(1);
-        }
-        setProperty(update, "system.attributes.hp.value", Number(hpValueTmp ?? 0));
-        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.attributes.hp.value from '${hpValue}' to '${Number(hpValueTmp)}'`);
-      }
-    }
+		if(isEmptyObject(hpValue)) {
+			// Do nothing
+		} else {
+			if (!is_lazy_number(hpValue) && Number(hpValue) !== Number(actorEntity.system.attributes.hp.value)) {
+				setProperty(update, "system.attributes.hp.value", Number(hpValue));
+				info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.attributes.hp.value from '${hpValue}' to '${getProperty(update, "system.attributes.hp.value")}'`);
+			}
+			// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+			else if (String(hpValue).startsWith("0") && String(hpValue) !== "0") {
+				let hpValueTmp = hpValue;
+				while (String(hpValueTmp).startsWith("0")) {
+					if (String(hpValueTmp) === "0") {
+						break;
+					}
+					hpValueTmp = String(hpValueTmp).slice(1);
+				}
+				if(Number(hpValueTmp) !== Number(actorEntity.system.attributes.hp.value)) {
+					setProperty(update, "system.attributes.hp.value", Number(hpValueTmp ?? 0));
+					info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.attributes.hp.value from '${hpValue}' to '${getProperty(update, "system.attributes.hp.value")}'`);
+				}
+			}
+			if(!is_real_number(getProperty(update, "system.attributes.hp.value"))) {
+				setProperty(update, "system.attributes.hp.value", 0);
+				info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [2] update system.attributes.hp.value from '${getProperty(update, "system.attributes.hp.value")}' to number 0`);
+			}
+		}
 	}
 	if (hasProperty(update, "system.attributes.hp.max")) {
 		let hpMaxValue = getProperty(update, "system.attributes.hp.max");
-    if(isEmptyObject(hpMaxValue)) {
-      // Do nothing
-    } else {
-      if (!is_lazy_number(hpMaxValue)) {
-        setProperty(update, "system.attributes.hp.max", Number(hpMaxValue ?? 0));
-        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.attributes.hp.max from '${hpMaxValue}' to '${Number(hpMaxValue}'`);
-      }
-      // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-      else if (String(hpMaxValue).startsWith("0") && String(hpMaxValue) !== "0") {
-        let hpMaxValueTmp = hpMaxValue;
-        while (String(hpMaxValueTmp).startsWith("0")) {
-          if (String(hpMaxValueTmp) === "0") {
-            break;
-          }
-          hpMaxValueTmp  = String(hpMaxValueTmp).slice(1);
-        }
-        setProperty(update, "system.attributes.hp.max", Number(hpMaxValueTmp ?? 0));
-        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.attributes.hp.max from '${hpMaxValue}' to '${Number(hpMaxValueTmp)}'`);
-      }
-    }
+		if(isEmptyObject(hpMaxValue)) {
+			// Do nothing
+		} else {
+			if (!is_lazy_number(hpMaxValue) && Number(hpMaxValue) !== Number(actorEntity.system.attributes.hp.max)) {
+				setProperty(update, "system.attributes.hp.max", Number(hpMaxValue ?? 0));
+				info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.attributes.hp.max from '${hpMaxValue}' to '${getProperty(update, "system.attributes.hp.max")}'`);
+			}
+			// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+			else if (String(hpMaxValue).startsWith("0") && String(hpMaxValue) !== "0") {
+				let hpMaxValueTmp = hpMaxValue;
+				while (String(hpMaxValueTmp).startsWith("0")) {
+					if (String(hpMaxValueTmp) === "0") {
+						break;
+					}
+					hpMaxValueTmp  = String(hpMaxValueTmp).slice(1);
+				}
+				if(Number(hpMaxValueTmp) !== Number(actorEntity.system.attributes.hp.max)) {
+					setProperty(update, "system.attributes.hp.max", Number(hpMaxValueTmp ?? 0));
+					info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.attributes.hp.max from '${hpMaxValue}' to '${getProperty(update, "system.attributes.hp.max")}'`);
+				}
+			}
+			if(!is_real_number(getProperty(update, "system.attributes.hp.max"))) {
+				setProperty(update, "system.attributes.hp.max", 0);
+				info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [2] update system.attributes.hp.max from '${getProperty(update, "system.attributes.hp.max")}' to number 0`);
+			}
+		}
 	}
 	if (hasProperty(update, "system.details.xp.value")) {
 		let xpValue = getProperty(update, "system.details.xp.value");
-    if(isEmptyObject(xpValue)) {
-      // Do nothing
-    } else {
-      if (!is_lazy_number(xpValue)) {
-        setProperty(update, "system.details.xp.value", Number(xpValue ?? 0));
-        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.details.xp.value from '${xpValue}' to '${Number(xpValue}'`);
-      }
-      // Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
-      else if (String(xpValue).startsWith("0") && String(xpValue) !== "0") {
-        let xpValueTmp = xpValue;
-        while (String(xpValueTmp).startsWith("0")) {
-          if (String(xpValueTmp) === "0") {
-            break;
-          }
-          xpValueTmp = String(xpValueTmp).slice(1);
-        }
-        setProperty(update, "system.details.xp.value", Number(xpValueTmp ?? 0));
-        info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.details.xp.value from '${xpValue}' to '${Number(xpValueTmp)}'`);
-      }
-    }
+		if(isEmptyObject(xpValue)) {
+			// Do nothing
+		} else {
+			if (!is_lazy_number(xpValue) && Number(xpValue) !== Number(actorEntity.system.details.xp.value)) {
+				setProperty(update, "system.details.xp.value", Number(xpValue ?? 0));
+				info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [0] update system.details.xp.value from '${xpValue}' to '${getProperty(update, "system.details.xp.value")}'`);
+			}
+			// Module compatibility with https://foundryvtt.com/packages/link-item-resource-5e
+			else if (String(xpValue).startsWith("0") && String(xpValue) !== "0") {
+				let xpValueTmp = xpValue;
+				while (String(xpValueTmp).startsWith("0")) {
+					if (String(xpValueTmp) === "0") {
+						break;
+					}
+					xpValueTmp = String(xpValueTmp).slice(1);
+				}
+				if(Number(xpValueTmp) !== Number(actorEntity.system.details.xp.value)) {
+					setProperty(update, "system.details.xp.value", Number(xpValueTmp ?? 0));
+					info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [1] update system.details.xp.value from '${xpValue}' to '${getProperty(update, "system.details.xp.value")}'`);
+				}
+			}
+			if(!is_real_number(getProperty(update, "system.details.xp.value"))) {
+				setProperty(update, "system.details.xp.value", 0);
+				info(`tidy5e-lazy-exp-and-hp | preUpdateActor | [2] update system.details.xp.value from '${getProperty(update, "system.details.xp.value")}' to number 0`);
+			}
+		}
 	}
 });

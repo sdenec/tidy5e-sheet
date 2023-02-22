@@ -23,7 +23,13 @@ function patchCurrency(currency) {
 				ppValue = String(ppValue).slice(1);
 			}
 		}
-		setProperty(currency, "pp", Number(ppValue ?? 0));
+    if(!is_real_number(ppValue)) {
+      ppValue = 0;
+    }
+    if(getProperty(currency, "pp") !== ppValue) {
+      setProperty(currency, "pp", Number(ppValue ?? 0));
+      info(`tidy5e-lazymoney | patchCurrency | update pp from '${getProperty(currency, "pp")}' to '${ppValue}'`);
+    }
 	}
 	if (hasProperty(currency, "gp")) {
 		let gpValue = getProperty(currency, "gp") || 0;
@@ -39,7 +45,13 @@ function patchCurrency(currency) {
 				gpValue = String(gpValue).slice(1);
 			}
 		}
-		setProperty(currency, "gp", Number(gpValue ?? 0));
+    if(!is_real_number(gpValue)) {
+      gpValue = 0;
+    }
+    if(getProperty(currency, "gp") !== gpValue) {
+      setProperty(currency, "gp", Number(gpValue ?? 0));
+      info(`tidy5e-lazymoney | patchCurrency | update gp from '${getProperty(currency, "gp")}' to '${gpValue}'`);
+    }
 	}
 	if (hasProperty(currency, "ep")) {
 		let epValue = getProperty(currency, "ep") || 0;
@@ -55,7 +67,13 @@ function patchCurrency(currency) {
 				epValue = String(epValue).slice(1);
 			}
 		}
-		setProperty(currency, "ep", Number(epValue ?? 0));
+    if(!is_real_number(epValue)) {
+      epValue = 0;
+    }
+    if(getProperty(currency, "ep") !== epValue) {
+      setProperty(currency, "ep", Number(epValue ?? 0));
+      info(`tidy5e-lazymoney | patchCurrency | update ep from '${getProperty(currency, "ep")}' to '${epValue}'`);
+    }
 	}
 	if (hasProperty(currency, "sp")) {
 		let spValue = getProperty(currency, "sp") || 0;
@@ -71,7 +89,13 @@ function patchCurrency(currency) {
 				spValue = String(spValue).slice(1);
 			}
 		}
-		setProperty(currency, "sp", Number(spValue ?? 0));
+    if(!is_real_number(spValue)) {
+      spValue = 0;
+    }
+    if(getProperty(currency, "sp") !== spValue) {
+      setProperty(currency, "sp", Number(spValue ?? 0));
+      info(`tidy5e-lazymoney | patchCurrency | update sp from '${getProperty(currency, "sp")}' to '${spValue}'`);
+    }
 	}
 	if (hasProperty(currency, "cp")) {
 		let cpValue = getProperty(currency, "cp") || 0;
@@ -87,7 +111,13 @@ function patchCurrency(currency) {
 				cpValue = String(cpValue).slice(1);
 			}
 		}
-		setProperty(currency, "cp", Number(cpValue ?? 0));
+    if(!is_real_number(cpValue)) {
+      cpValue = 0;
+    }
+    if(getProperty(currency, "cp") !== cpValue) {
+      setProperty(currency, "cp", Number(cpValue ?? 0));
+      info(`tidy5e-lazymoney | patchCurrency | update cp from '${getProperty(currency, "cp")}' to '${cpValue}'`);
+    }
 	}
 	return currency;
 }
@@ -624,9 +654,8 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
 
 	if (hasProperty(update, "system.currency")) {
 		const currency = getProperty(update, "system.currency");
-		const isCurrencyUndefined = isEmptyObject(currency);
-		if (isCurrencyUndefined) {
-			return;
+		if (isEmptyObject(currency)) {
+      // Do nothing
 		} else {
 			update.system.currency = patchCurrency(update.system.currency);
 		}
