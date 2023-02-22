@@ -6,6 +6,8 @@
 - New Feature: add tab for homebrew rules from the community
 - Update css instead javascript for solve the issue https://github.com/sdenec/tidy5e-sheet/issues/694
 - Add more checks and logs for manage the strange error on https://github.com/sdenec/tidy5e-sheet/issues/696 and https://github.com/sdenec/tidy5e-sheet/issues/707
+- Update css on ac value for vehicle sheet
+- Update module.json for point to the last "release" for trick the update of foundry  
 
 ### 0.8.25 
 
