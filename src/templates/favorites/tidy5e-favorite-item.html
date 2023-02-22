@@ -40,15 +40,16 @@
 	{{/if}} {{#if item.isFeat}}
 	<div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}">
 		{{#if item.isOnCooldown}}
-		<a class="item-recharge rollable" title="{{item.labels.recharge}}">
-			<i class="fas fa-dice-six"></i>
-			{{item.system.recharge.value}}{{#if (ne item.system.recharge.value 6)}}+{{/if}}
-		</a>
+			<a class="item-recharge rollable" title="{{item.labels.recharge}}">
+				<i class="fas fa-dice-six"></i>
+				{{item.system.recharge.value}}{{#if (ne item.system.recharge.value 6)}}+{{/if}}
+			</a>
 		{{else if item.system.recharge.value}}
-		<i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
-		{{else if item.system.uses.max}} <input type="text" name="system.uses.value" value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}> / <input class="uses-max" type="text"
-		value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}> {{else}} {{#if item.editable}}
-		<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
+			<i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
+		{{else if item.system.uses.max}} 
+			<input class="uses-value" type="text" name="system.uses.value" value="{{item.system.uses.value}}" {{#if item.editable}}{{else}}disabled{{/if}}> / 
+			<input class="uses-max" type="text" value="{{item.system.uses.max}}" {{#if item.editable}}{{else}}disabled{{/if}}> {{else}} {{#if item.editable}}
+			<a class="addCharges" value="Add">{{localize "DND5E.Add"}}</a>
 		{{/if}} {{/if}}
 	</div>
 	{{/if}} {{#if item.spellComps}}

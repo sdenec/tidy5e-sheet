@@ -8,7 +8,7 @@ import { addFavorites } from "./app/tidy5e-favorites.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
-import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyMoney } from "./app/tidy5e-lazy-money.js";
 import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
@@ -23,10 +23,10 @@ import {
 	applyColorPickerCustomization,
 } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
-import { is_real_number } from "./app/helpers.js";
+import { is_real_number, truncate } from "./app/helpers.js";
 import { debug, error, warn } from "./app/logger-util.js";
 import { tidy5eSpellLevelButtons } from "./app/tidy5e-spell-level-buttons.js";
-import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-Spell.js";
+import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-spell.js";
 
 let position = 0;
 
@@ -311,10 +311,14 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			}
 		});
 
-    // Quantity and Charges listener
-    // TODO why i need this... the html template is wrong ?
+		// Quantity and Charges listener
+		// TODO why i need this... the html template is wrong ?
 		html.find(".item-detail input.uses-max").off("change");
 		html.find(".item-detail input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
+		// TODO why i need this... the html template is wrong ?
+		html.find(".item-detail input.uses-value").off("change");
+		html.find(".item-detail input.uses-value").click(ev => ev.target.select()).change(_onUsesChange.bind(this));
+		// TODO why i need this... the html template is wrong ?
 		html.find(".item-quantity input.item-count").off("change");
 		html.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(_onQuantityChange.bind(this));
 	}
@@ -522,13 +526,13 @@ async function addClassList(app, html, data) {
 				if (item.type === "class") {
 					let levelsHtml = item.system.levels ? `<span class='levels-info'>${item.system.levels}</span>` : ``;
 					classList.push(
-						`<li class='class-item' style='overflow: hidden; text-overflow: ellipsis; white-space: nowrap;' data-tooltip='${item.name} (${item.system.levels})'>${item.name} + levelsHtml
+						`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${truncate(item.name, 30, false)} + levelsHtml
 						}</li>`
 					);
 				}
 				if (item.type === "subclass") {
 					classList.push(
-						`<li class='class-item' style='overflow: hidden; text-overflow: ellipsis; white-space: nowrap;' data-tooltip='${item.name}'>${item.name}</li>`
+						`<li class='class-item' data-tooltip='${item.name}'>${truncate(item.name, 30, false)}</li>`
 					);
 				}
 			}
@@ -540,6 +544,12 @@ async function addClassList(app, html, data) {
 		}
 
 		// Prepare summary
+
+		html.find(".origin-summary span.origin-summary-text").each(function () {
+			let originalText = $(this).text();
+			$(this).text(truncate($(this).text(), 20, false));
+			$(this).attr("data-tooltip", originalText);
+		});
 
 		// html.find(".origin-summary span.origin-summary-text").each(function () {
 		// 	let originalText = $(this).text();
@@ -866,6 +876,23 @@ async function setSheetClasses(app, html, data) {
 
 	applyColorPickerCustomization(html);
 }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Change the uses amount of an Owned Item within the Actor.
+   * @param {Event} event        The triggering click event.
+   * @returns {Promise<Item5e>}  Updated item.
+   * @private
+   */
+  async function _onUsesChange(event) {
+	event.preventDefault();
+	const itemId = event.currentTarget.closest(".item").dataset.itemId;
+	const item = this.actor.items.get(itemId);
+	const uses = Math.clamped(0, parseInt(event.target.value), item.system.uses.max);
+	event.target.value = uses;
+	return item.update({"system.uses.value": uses});
+  }
 
   /* -------------------------------------------- */
 

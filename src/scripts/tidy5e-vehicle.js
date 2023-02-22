@@ -2,7 +2,7 @@ import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eListeners } from "./app/listeners.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
-import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyMoney } from "./app/tidy5e-lazy-money.js";
 import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksVehicleSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";

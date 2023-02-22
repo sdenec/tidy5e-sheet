@@ -5,7 +5,7 @@ import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
-import { applyLazyMoney } from "./app/lazymoney.js";
+import { applyLazyMoney } from "./app/tidy5e-lazy-money.js";
 import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
@@ -479,10 +479,14 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 			actor.items.get(itemId).update(data);
 		});
 
-    // Quantity and Charges listener
-    // TODO why i need this... the html template is wrong ?
-    html.find(".item-detail input.uses-max").off("change");
+		// Quantity and Charges listener
+		// TODO why i need this... the html template is wrong ?
+		html.find(".item-detail input.uses-max").off("change");
 		html.find(".item-detail input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
+		// TODO why i need this... the html template is wrong ?
+		html.find(".item-detail input.uses-value").off("change");
+		html.find(".item-detail input.uses-value").click(ev => ev.target.select()).change(_onUsesChange.bind(this));
+		// TODO why i need this... the html template is wrong ?
 		html.find(".item-quantity input.item-count").off("change");
 		html.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(_onQuantityChange.bind(this));
 
@@ -1189,6 +1193,23 @@ function hideStandardEncumbranceBar(app, html, data) {
 		}
 	}
 }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Change the uses amount of an Owned Item within the Actor.
+   * @param {Event} event        The triggering click event.
+   * @returns {Promise<Item5e>}  Updated item.
+   * @private
+   */
+  async function _onUsesChange(event) {
+	event.preventDefault();
+	const itemId = event.currentTarget.closest(".item").dataset.itemId;
+	const item = this.actor.items.get(itemId);
+	const uses = Math.clamped(0, parseInt(event.target.value), item.system.uses.max);
+	event.target.value = uses;
+	return item.update({"system.uses.value": uses});
+  }
 
   /* -------------------------------------------- */
 

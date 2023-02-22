@@ -19,7 +19,18 @@
 			"email": ""
 		}
 	],
-	"esmodules": ["./scripts/tidy5e-sheet.js", "./scripts/tidy5e-npc.js", "./scripts/tidy5e-vehicle.js", "./scripts/tidy5e-item.js", "./scripts/app/exhaustion.js"],
+	"esmodules": [
+		"./scripts/tidy5e-sheet.js", 
+		"./scripts/tidy5e-npc.js", 
+		"./scripts/tidy5e-vehicle.js", 
+		"./scripts/tidy5e-item.js",
+		"./scripts/app/tidy5e-exhaustion.js",
+		"./scripts/app/tidy5e-lazy-money.js",
+		"./scripts/app/tidy5e-lazy-exp-and-hp.js",
+		"./scripts/app/settings.js",
+		"./scripts/app/context-menu.js",
+		"./scripts/app/tidy5e-hb-upcast-free-spell.js"
+	],
 	"styles": ["./css/tidy-icons.css", "./css/tidy5e.css", "./css/tidy5e-dark.css"],
 	"languages": [
 		{

@@ -86,7 +86,8 @@
           <i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
 
           {{else if ctx.hasUses}}
-          <input name="system.uses.value" type="text" value="{{item.system.uses.value}}">/ <input  class="uses-max" name="system.uses.max" type="text" value="{{item.system.uses.max}}">
+          <input class="uses-value" name="system.uses.value" type="text" value="{{item.system.uses.value}}"> / 
+          <input class="uses-max" name="system.uses.max" type="text" value="{{item.system.uses.max}}">
           {{else unless @root.isNPC}}
           <a class="addCharges" value="Add">Add</a>
           {{/if}}
