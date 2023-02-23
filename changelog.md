@@ -1,3 +1,7 @@
+### 0.8.28
+
+- Fix import js
+
 ### 0.8.27
 
 - newAmountExp > maxExp removed

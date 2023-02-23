@@ -26,7 +26,7 @@ import CONSTANTS from "./app/constants.js";
 import { isEmptyObject, is_real_number, truncate } from "./app/helpers.js";
 import { debug, error, warn } from "./app/logger-util.js";
 import { tidy5eSpellLevelButtons } from "./app/tidy5e-spell-level-buttons.js";
-import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-Spell.js";
+import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-spell.js";
 
 let position = 0;
 
@@ -1016,12 +1016,12 @@ Hooks.on("renderActorSheet", (app, html, data) => {
 	if (game.modules.get("dnd5e-custom-skills")?.active) {
 		html.find(".tidy5e-sheet .ability-scores.custom-abilities").removeClass("custom-abilities");
 	}
-	
+
 	// WHY THIS ??? PATCH FOR https://github.com/sdenec/tidy5e-sheet/issues/714
-	if(!isEmptyObject(app.actor.system?.attributes?.init?.bonus) 
+	if(!isEmptyObject(app.actor.system?.attributes?.init?.bonus)
 		&& !is_real_number(Number(app.actor.system.attributes.init.bonus))){
 		app.actor.update(
-			{ 
+			{
 				"system.attributes.init.bonus": 0
 			}
 		);

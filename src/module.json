@@ -2,7 +2,7 @@
 	"id": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.8.27",
+	"version": "0.8.28",
 	"authors": [
 		{
 			"name": "sednec#3813"
@@ -20,9 +20,9 @@
 		}
 	],
 	"esmodules": [
-		"./scripts/tidy5e-sheet.js", 
-		"./scripts/tidy5e-npc.js", 
-		"./scripts/tidy5e-vehicle.js", 
+		"./scripts/tidy5e-sheet.js",
+		"./scripts/tidy5e-npc.js",
+		"./scripts/tidy5e-vehicle.js",
 		"./scripts/tidy5e-item.js",
 		"./scripts/app/tidy5e-exhaustion.js",
 		"./scripts/app/tidy5e-lazy-money.js",
