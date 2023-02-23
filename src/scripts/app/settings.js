@@ -113,6 +113,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"spellClassFilterSelect",
 			"spellClassFilterIconReplace",
 			"allowHpMaxOverride",
+      "allowHpConfigOverride",
 
 			"lockMoneyChanges",
 			"lockExpChanges",

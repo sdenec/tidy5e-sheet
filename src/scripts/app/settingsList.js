@@ -838,6 +838,15 @@ export function settingsList() {
 		type: Boolean,
 	});
 
+  game.settings.register(CONSTANTS.MODULE_ID, "allowHpConfigOverride", {
+		name: `${game.i18n.localize("TIDY5E.Settings.AllowHpConfigOverride.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.AllowHpConfigOverride.hint")}`,
+		scope: "world",
+		config: false,
+		default: false,
+		type: Boolean,
+	});
+
 	// Color customization
 
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerEnabled", {

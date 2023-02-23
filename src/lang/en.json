@@ -557,9 +557,13 @@
 		"name": "Color Picker for 'Always Prepared Accent'",
 		"hint": "Select what color you want to use for 'Always Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
 	},
-	"TIDY5E.Settings.AllowHpMaxOverride": {
+  "TIDY5E.Settings.AllowHpMaxOverride": {
 		"name": "Allow Hp Max override on Character",
-		"hint": "If enable this module replace will let the GM to manually change the hp max  value on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOUR OF THE SYSTEM FOR AVOID THE RESET TO '0' ISSUE EXPLAINED HERE https://github.com/sdenec/tidy5e-sheet/issues/659 and https://github.com/sdenec/tidy5e-sheet/issues/696"
+		"hint": "If enable this module replace will let the GM to manually change the hp max  value on the character sheet."
+	},
+	"TIDY5E.Settings.AllowHpConfigOverride": {
+		"name": "Allow hp panel configuration override on Character",
+		"hint": "Usually you don't need this but if enable this module setting replace the hp configuration panel on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOR OF THE SYSTEM IS USEFUL FOR AVOID SOME NOT UNWANTED DEFAULT BEHAVIOR OF THE SYSTEM."
 	},
 	"TIDY5E.Settings.Reset": {
 		"name": "Reset settings to default",
