@@ -1,7 +1,9 @@
 ### 0.8.31
 
-- Remove preUpdateActor from 'lazyhp' feature for https://github.com/sdenec/tidy5e-sheet/issues/696 and https://github.com/sdenec/tidy5e-sheet/issues/707
+- Remove 'preUpdateActor' from 'lazyhp' feature for https://github.com/sdenec/tidy5e-sheet/issues/696 and https://github.com/sdenec/tidy5e-sheet/issues/707
 - Separate 'allowHpMaxOverride' in 'allowHpMaxOverride' and 'allowHpConfigOverride'
+- bug fix: https://github.com/sdenec/tidy5e-sheet/issues/717
+
 ### 0.8.28-29-30
 
 - Fix import js

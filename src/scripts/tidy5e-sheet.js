@@ -527,7 +527,8 @@ async function addClassList(app, html, data) {
 				if (item.type === "class") {
 					let levelsHtml = item.system.levels ? `<span class='levels-info'>${item.system.levels}</span>` : ``;
 					classList.push(
-						`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${truncate(item.name, 30, false)} + levelsHtml
+						`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${
+							truncate(item.name, 30, false) + levelsHtml
 						}</li>`
 					);
 				}
