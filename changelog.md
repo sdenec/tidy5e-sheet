@@ -1,3 +1,8 @@
+### 0.8.32 
+
+- Update feature ofor reston NPC and try tosolve the issue https://github.com/sdenec/tidy5e-sheet/issues/719
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/704
+
 ### 0.8.31
 
 - Remove 'preUpdateActor' from 'lazyhp' feature for https://github.com/sdenec/tidy5e-sheet/issues/696 and https://github.com/sdenec/tidy5e-sheet/issues/707
