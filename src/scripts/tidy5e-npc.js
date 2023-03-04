@@ -587,15 +587,15 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		dialog: true, chat: true, newDay: false, autoHD: false, autoHDThreshold: 3
 		}, config);
 
-		// /**
-		//  * A hook event that fires before a short rest is started.
-		//  * @function dnd5e.preShortRest
-		//  * @memberof hookEvents
-		//  * @param {Actor5e} actor             The actor that is being rested.
-		//  * @param {RestConfiguration} config  Configuration options for the rest.
-		//  * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
-		//  */
-		// if ( Hooks.call("dnd5e.preShortRest", this, config) === false ) return;
+		/**
+		 * A hook event that fires before a short rest is started.
+		 * @function dnd5e.preShortRest
+		 * @memberof hookEvents
+		 * @param {Actor5e} actor             The actor that is being rested.
+		 * @param {RestConfiguration} config  Configuration options for the rest.
+		 * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
+		 */
+		if ( Hooks.call("dnd5e.preShortRest", this.actor, config) === false ) return;
 
 		// Take note of the initial hit points and number of hit dice the Actor has
 		const hd0 = isLessThanOneIsOne(this.actor.system.details.cr) // this.actor.system.attributes.hd;
@@ -632,15 +632,15 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		dialog: true, chat: true, newDay: true
 		}, config);
 
-		// /**
-		//  * A hook event that fires before a long rest is started.
-		//  * @function dnd5e.preLongRest
-		//  * @memberof hookEvents
-		//  * @param {Actor5e} actor             The actor that is being rested.
-		//  * @param {RestConfiguration} config  Configuration options for the rest.
-		//  * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
-		//  */
-		// if ( Hooks.call("dnd5e.preLongRest", this, config) === false ) return;
+		/**
+		 * A hook event that fires before a long rest is started.
+		 * @function dnd5e.preLongRest
+		 * @memberof hookEvents
+		 * @param {Actor5e} actor             The actor that is being rested.
+		 * @param {RestConfiguration} config  Configuration options for the rest.
+		 * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
+		 */
+		if ( Hooks.call("dnd5e.preLongRest", this.actor, config) === false ) return;
 
 		if ( config.dialog ) {
 			try {
@@ -671,12 +671,12 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
     // Recover hit points & hit dice on long rest
     if ( longRest || newDay ) {
 		this.actor.update({ "system.attributes.hp.value": Number(this.actor.system.attributes.hp.max ?? 0)})
-		// Pacth NPC
+		// Patch for NPC
 		if (this.actor.flags[CONSTANTS.MODULE_ID].exhaustion > 0) {
 			const exhaustion = this.actor.flags[CONSTANTS.MODULE_ID].exhaustion;
 			debug("tidy5e-npc | _rest | exhaustion = " + exhaustion);
 			await this.actor.update({ "flags.tidy5e-sheet.exhaustion": exhaustion - 1 });
-			updateExhaustion(this.actor);
+			await updateExhaustion(this.actor);
 		}
 	} else {
 		const rollData = this.actor.getRollData();
@@ -686,30 +686,65 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		if(newHpValue >  this.actor.system.attributes.hp.max) {
 			newHpValue = this.actor.system.attributes.hp.max;
 		}
-		this.actor.update({ "system.attributes.hp.value": newHpValue})
+		await this.actor.update({ "system.attributes.hp.value": newHpValue})
 	}
-
+	// TODO for some reason doen't work...i copy and paste the code from the system
+	// return this.actor._rest(chat, newDay, longRest, dhd, dhp);
 	let hitPointsRecovered = 0;
     let hitPointUpdates = {};
     let hitDiceRecovered = 0;
     let hitDiceUpdates = [];
     const rolls = [];
 
+    // Recover hit points & hit dice on long rest
+    if ( longRest ) {
+      ({ updates: hitPointUpdates, hitPointsRecovered } = this.actor._getRestHitPointRecovery());
+      ({ updates: hitDiceUpdates, hitDiceRecovered } = this.actor._getRestHitDiceRecovery());
+    }
+
     // Figure out the rest of the changes
     const result = {
       dhd: dhd + hitDiceRecovered,
       dhp: dhp + hitPointsRecovered,
       updateData: {
-        ...hitPointUpdates
-	  },
-      updateItems: [ ],
+        ...hitPointUpdates,
+        ...this.actor._getRestResourceRecovery({ recoverShortRestResources: !longRest, recoverLongRestResources: longRest }),
+        ...this.actor._getRestSpellRecovery({ recoverSpells: longRest })
+      },
+      updateItems: [
+        ...hitDiceUpdates,
+        ...(await this.actor._getRestItemUsesRecovery({ recoverLongRestUses: longRest, recoverDailyUses: newDay, rolls }))
+      ],
       longRest,
       newDay
     };
     result.rolls = rolls;
 
+    /**
+     * A hook event that fires after rest result is calculated, but before any updates are performed.
+     * @function dnd5e.preRestCompleted
+     * @memberof hookEvents
+     * @param {Actor5e} actor      The actor that is being rested.
+     * @param {RestResult} result  Details on the rest to be completed.
+     * @returns {boolean}          Explicitly return `false` to prevent the rest updates from being performed.
+     */
+    if ( Hooks.call("dnd5e.preRestCompleted", this.actor, result) === false ) return result;
+
+    // Perform updates
+    await this.actor.update(result.updateData);
+    await this.actor.updateEmbeddedDocuments("Item", result.updateItems);
+
     // Display a Chat Message summarizing the rest effects
     if ( chat ) await this.actor._displayRestResultMessage(result, longRest);
+
+    /**
+     * A hook event that fires when the rest process is completed for an actor.
+     * @function dnd5e.restCompleted
+     * @memberof hookEvents
+     * @param {Actor5e} actor      The actor that just completed resting.
+     * @param {RestResult} result  Details on the rest completed.
+     */
+    Hooks.callAll("dnd5e.restCompleted", this.actor, result);
 
     // Return data summarizing the rest effects
     return result;
