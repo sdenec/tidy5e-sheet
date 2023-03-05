@@ -12,7 +12,7 @@ export const tidy5eAmmoSwitch = function (html, actor) {
 		const ammoItems = actor.items.filter(
 			(x) => x.system.consumableType === "ammo" && (!equippedOnly || x.system.equipped)
 		);
-    debug(`tidy5e-ammo-switch | tidy5eAmmoSwitch | ammoItems: ${ammoItems}`);
+		debug(`tidy5e-ammo-switch | tidy5eAmmoSwitch | ammoItems: ${ammoItems}`);
 		const target = item.system.consume.target;
 		const ammoItemStrings = ['<option value=""></option>']
 			.concat(
@@ -41,9 +41,9 @@ export const tidy5eAmmoSwitch = function (html, actor) {
 					consume: {
 						amount: !ammo ? null : !!item.system.consume.amount ? item.system.consume.amount : 1,
 						target: !ammo ? "" : val,
-						type: !ammo ? "" : ammo.system.consumableType,
-					},
-				},
+						type: !ammo ? "" : ammo.system.consumableType
+					}
+				}
 			});
 		});
 		element.after(selector);

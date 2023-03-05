@@ -53,7 +53,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 					"DND5E.ContextMenuActionUnequip",
 					"DND5E.ContextMenuActionEquip",
 					"DND5E.ContextMenuActionUnprepare",
-					"DND5E.ContextMenuActionPrepare",
+					"DND5E.ContextMenuActionPrepare"
 				].includes(obj?.name);
 			});
 			if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
@@ -82,7 +82,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 					"DND5E.ContextMenuActionUnequip",
 					"DND5E.ContextMenuActionEquip",
 					"DND5E.ContextMenuActionUnprepare",
-					"DND5E.ContextMenuActionPrepare",
+					"DND5E.ContextMenuActionPrepare"
 				].includes(obj?.name);
 			});
 			if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
@@ -159,7 +159,7 @@ const _getAdvancementContextMenuOptions = function (html) {
 			name: "DND5E.AdvancementControlEdit",
 			icon: "<i class='fas fas fa-pencil-alt fa-fw'></i>",
 			condition,
-			callback: (li) => this._onAdvancementAction(li[0], "edit"),
+			callback: (li) => this._onAdvancementAction(li[0], "edit")
 		},
 		{
 			name: "DND5E.AdvancementControlDuplicate",
@@ -169,13 +169,13 @@ const _getAdvancementContextMenuOptions = function (html) {
 				const advancement = this.item.advancement.byId[id];
 				return condition(li) && advancement?.constructor.availableForItem(this.item);
 			},
-			callback: (li) => this._onAdvancementAction(li[0], "duplicate"),
+			callback: (li) => this._onAdvancementAction(li[0], "duplicate")
 		},
 		{
 			name: "DND5E.AdvancementControlDelete",
 			icon: "<i class='fas fa-trash fa-fw' style='color: rgb(255, 65, 65);'></i>",
 			condition,
-			callback: (li) => this._onAdvancementAction(li[0], "delete"),
+			callback: (li) => this._onAdvancementAction(li[0], "delete")
 		}
 	);
 };
@@ -216,25 +216,25 @@ const _getActiveEffectContextOptions = function (effect) {
 	options.push({
 		name: effect.disabled ? "DND5E.ContextMenuActionEnable" : "DND5E.ContextMenuActionDisable",
 		icon: effect.disabled ? "<i class='fas fa-check fa-fw'></i>" : "<i class='fas fa-times fa-fw'></i>",
-		callback: () => effect.update({ disabled: !effect.disabled }),
+		callback: () => effect.update({ disabled: !effect.disabled })
 	});
 
 	options.push({
 		name: "DND5E.ContextMenuActionEdit",
 		icon: "<i class='fas fas fa-pencil-alt fa-fw'></i>",
-		callback: () => effect.sheet.render(true),
+		callback: () => effect.sheet.render(true)
 	});
 	if (actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 		options.push({
 			name: "DND5E.ContextMenuActionDuplicate",
 			icon: "<i class='fas fa-copy fa-fw'></i>",
 			callback: () =>
-				effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.label }) }, { save: true }),
+				effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.label }) }, { save: true })
 		});
 		options.push({
 			name: "DND5E.ContextMenuActionDelete",
 			icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
-			callback: () => effect.deleteDialog(),
+			callback: () => effect.deleteDialog()
 		});
 	}
 
@@ -306,8 +306,8 @@ const _getItemContextOptions = function (item) {
 				: "<i class='fas fa-sun fa-fw'></i>",
 			callback: () =>
 				item.update({
-					"system.attunement": CONFIG.DND5E.attunementTypes[isAttuned ? "REQUIRED" : "ATTUNED"],
-				}),
+					"system.attunement": CONFIG.DND5E.attunementTypes[isAttuned ? "REQUIRED" : "ATTUNED"]
+				})
 		});
 	}
 
@@ -324,7 +324,7 @@ const _getItemContextOptions = function (item) {
 			icon: isEquipped
 				? "<i class='fas fa-user-alt fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i> "
 				: "<i class='fas fa-user-alt fa-fw'></i> ",
-			callback: () => item.update({ "system.equipped": !isEquipped }),
+			callback: () => item.update({ "system.equipped": !isEquipped })
 		});
 	}
 
@@ -344,7 +344,7 @@ const _getItemContextOptions = function (item) {
 				options.push({
 					name: isActive ? "TIDY5E.Unprepare" : "TIDY5E.Prepare",
 					icon: isActive ? "<i class='fas fa-book fa-fw'></i>" : "<i class='fas fa-book fa-fw'></i>",
-					callback: () => item.update({ "system.preparation.prepared": !isPrepared }),
+					callback: () => item.update({ "system.preparation.prepared": !isPrepared })
 				});
 			}
 		} else {
@@ -352,7 +352,7 @@ const _getItemContextOptions = function (item) {
 				options.push({
 					name: isActive ? "TIDY5E.Unprepare" : "TIDY5E.Prepare",
 					icon: isActive ? "<i class='fas fa-book fa-fw'></i>" : "<i class='fas fa-book fa-fw'></i>",
-					callback: () => item.update({ "system.preparation.prepared": !isPrepared }),
+					callback: () => item.update({ "system.preparation.prepared": !isPrepared })
 				});
 			}
 		}
@@ -384,21 +384,21 @@ const _getItemContextOptions = function (item) {
 				let isFav = isItemFavorite(item);
 
 				item.update({
-					"flags.tidy5e-sheet.favorite": !isFav,
+					"flags.tidy5e-sheet.favorite": !isFav
 				});
 				// Sync favorite flag with module 'favorite-items'
 				if (game.modules.get("favorite-items")?.active) {
 					item.update({
-						"flags.favorite-items.favorite": !isFav,
+						"flags.favorite-items.favorite": !isFav
 					});
 				}
 				// Sync favorite flag with module 'favtab'
 				if (game.modules.get("favtab")?.active) {
 					item.update({
-						"flags.favtab.isFavorite": !isFav,
+						"flags.favtab.isFavorite": !isFav
 					});
 				}
-			},
+			}
 		});
 
 		// TODO commented waiting for this PR https://github.com/KageJittai/lets-trade-5e/pulls
@@ -440,7 +440,7 @@ const _getItemContextOptions = function (item) {
 		options.push({
 			name: "TIDY5E.EditSpell",
 			icon: "<i class='fas fa-pencil-alt fa-fw'></i>",
-			callback: () => item.sheet.render(true),
+			callback: () => item.sheet.render(true)
 		});
 		if (actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
 			options.push({
@@ -448,19 +448,19 @@ const _getItemContextOptions = function (item) {
 				icon: "<i class='fas fa-copy fa-fw'></i>",
 				condition: () => !["race", "background", "class", "subclass"].includes(item.type),
 				callback: () =>
-					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
+					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true })
 			});
 			options.push({
 				name: "TIDY5E.DeleteSpell",
 				icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
-				callback: () => item.deleteDialog(),
+				callback: () => item.deleteDialog()
 			});
 		}
 	} else {
 		options.push({
 			name: "DND5E.ContextMenuActionEdit",
 			icon: "<i class='fas fa-pencil-alt fa-fw'></i>",
-			callback: () => item.sheet.render(true),
+			callback: () => item.sheet.render(true)
 		});
 
 		if (actor.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
@@ -469,12 +469,12 @@ const _getItemContextOptions = function (item) {
 				icon: "<i class='fas fa-copy fa-fw'></i>",
 				condition: () => !["race", "background", "class", "subclass"].includes(item.type),
 				callback: () =>
-					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true }),
+					item.clone({ name: game.i18n.format("DOCUMENT.CopyOf", { name: item.name }) }, { save: true })
 			});
 			options.push({
 				name: "DND5E.ContextMenuActionDelete",
 				icon: "<i class='fas fa-trash fa-fw' style='color: rgba(255, 30, 0, 0.65);'></i>",
-				callback: () => item.deleteDialog(),
+				callback: () => item.deleteDialog()
 			});
 		}
 	}

@@ -7,7 +7,7 @@ const signCase = {
 	add: "+",
 	subtract: "-",
 	equals: "=",
-	default: " ",
+	default: " "
 };
 function _onChangeExp(ev) {
 	const input = ev.target;
@@ -68,7 +68,7 @@ function _onChangeExp(ev) {
 		newAmountExp = 0;
 	}
 
-  debug(`tidy5e-lazy-exp-and-hp | _onChangeExp | Update system.details.xp.value to ${newAmountExp}`);
+	debug(`tidy5e-lazy-exp-and-hp | _onChangeExp | Update system.details.xp.value to ${newAmountExp}`);
 
 	sheet.submitOnChange = false;
 	actor
@@ -127,7 +127,9 @@ function _onChangeHp(ev) {
 	}
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [2] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHp | [2] WARN: The hp.value value ${newAmountHpValue} is not a valid number`
+		);
 		newAmountHpValue = hp;
 	}
 
@@ -147,28 +149,34 @@ function _onChangeHp(ev) {
 		// }
 
 		if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [3] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+			debug(
+				`tidy5e-lazy-exp-and-hp | _onChangeHp | [3] WARN: The hp.value value ${newAmountHpValue} is not a valid number`
+			);
 			newAmountHpValue = 0;
 		}
 		if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [4] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+			debug(
+				`tidy5e-lazy-exp-and-hp | _onChangeHp | [4] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`
+			);
 			newAmountHpTemp = 0;
 		}
 		if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [5] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+			debug(
+				`tidy5e-lazy-exp-and-hp | _onChangeHp | [5] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`
+			);
 			newAmountHpTempMax = 0;
 		}
 
-    debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.value to ${newAmountHpValue}`);
-    debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.temp to ${newAmountHpTemp}`);
-    debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.tempmax to ${newAmountHpTempMax}`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.value to ${newAmountHpValue}`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.temp to ${newAmountHpTemp}`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.tempmax to ${newAmountHpTempMax}`);
 
 		sheet.submitOnChange = false;
 		actor
 			.update({
 				"system.attributes.hp.value": Number(newAmountHpValue),
 				"system.attributes.hp.temp": Number(newAmountHpTemp),
-				"system.attributes.hp.tempmax": Number(newAmountHpTempMax),
+				"system.attributes.hp.tempmax": Number(newAmountHpTempMax)
 			})
 			.then(() => {
 				input.value = Number(getProperty(actor, input.name) ?? 0);
@@ -177,7 +185,9 @@ function _onChangeHp(ev) {
 			.catch(console.log.bind(console));
 	} else {
 		if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-			debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | [6] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+			debug(
+				`tidy5e-lazy-exp-and-hp | _onChangeHp | [6] WARN: The hp.value value ${newAmountHpValue} is not a valid number`
+			);
 			newAmountHpValue = 0;
 		}
 
@@ -187,7 +197,7 @@ function _onChangeHp(ev) {
 			}
 		}
 
-    debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.value to ${newAmountHpValue}`);
+		debug(`tidy5e-lazy-exp-and-hp | _onChangeHp | Update system.attributes.hp.value to ${newAmountHpValue}`);
 
 		sheet.submitOnChange = false;
 		actor
@@ -244,7 +254,9 @@ function _onChangeHpMax(ev) {
 	}
 
 	if (newAmountHpMax < 0 || !is_real_number(newAmountHpMax)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpMax | [7] WARN: The hp.max value ${newAmountHpMax} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpMax | [7] WARN: The hp.max value ${newAmountHpMax} is not a valid number`
+		);
 		newAmountHpMax = maxHp;
 	}
 
@@ -255,11 +267,13 @@ function _onChangeHpMax(ev) {
 	//     newAmount = minHp;
 	// }
 	if (newAmountHpMax < 0 || !is_real_number(newAmountHpMax)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpMax | [8] WARN: The hp.value value ${newAmountHpMax} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpMax | [8] WARN: The hp.value value ${newAmountHpMax} is not a valid number`
+		);
 		newAmountHpMax = 0;
 	}
 
-  debug(`tidy5e-lazy-exp-and-hp | _onChangeHpMax | Update system.attributes.hp.max to ${newAmountHpMax}`);
+	debug(`tidy5e-lazy-exp-and-hp | _onChangeHpMax | Update system.attributes.hp.max to ${newAmountHpMax}`);
 
 	sheet.submitOnChange = false;
 	actor
@@ -283,20 +297,28 @@ function _onChangeHpForceHpValueLimit1(ev) {
 	let newAmountHpTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (!is_real_number(newAmountHpValue)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [9] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [9] WARN: The hp.value value ${newAmountHpValue} is not a valid number`
+		);
 		newAmountHpValue = hp;
 	}
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [10] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [10] WARN: The hp.value value ${newAmountHpValue} is not a valid number`
+		);
 		newAmountHpValue = 0;
 	}
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [11] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [11] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`
+		);
 		newAmountHpTemp = 0;
 	}
 	if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [12] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | [12] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`
+		);
 		newAmountHpTempMax = 0;
 	}
 
@@ -304,12 +326,14 @@ function _onChangeHpForceHpValueLimit1(ev) {
 		newAmountHpValue = maxHp + newAmountHpTempMax;
 	}
 
-  debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | Update system.attributes.hp.value to ${newAmountHpValue}`);
+	debug(
+		`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit1 | Update system.attributes.hp.value to ${newAmountHpValue}`
+	);
 
 	sheet.submitOnChange = false;
 	actor
 		.update({
-			"system.attributes.hp.value": Number(newAmountHpValue),
+			"system.attributes.hp.value": Number(newAmountHpValue)
 		})
 		.then(() => {
 			input.value = Number(getProperty(actor, input.name) ?? 0);
@@ -330,7 +354,9 @@ function _onChangeHpForceHpValueLimit2(ev) {
 	let newAmountHpTempMax = ev.data.app.actor.system.attributes.hp.tempmax;
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [13] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [13] WARN: The hp.value value ${newAmountHpValue} is not a valid number`
+		);
 		newAmountHpValue = hp;
 	}
 
@@ -349,28 +375,40 @@ function _onChangeHpForceHpValueLimit2(ev) {
 	// }
 
 	if (newAmountHpValue < 0 || !is_real_number(newAmountHpValue)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [14] WARN: The hp.value value ${newAmountHpValue} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [14] WARN: The hp.value value ${newAmountHpValue} is not a valid number`
+		);
 		newAmountHpValue = 0;
 	}
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [15] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [15] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`
+		);
 		newAmountHpTemp = 0;
 	}
 	if (newAmountHpTempMax < 0 || !is_real_number(newAmountHpTempMax)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [16] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | [16] WARN: The hp.tempmax value ${newAmountHpTempMax} is not a valid number`
+		);
 		newAmountHpTempMax = 0;
 	}
 
-  debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | Update system.attributes.hp.value to ${newAmountHpValue}`);
-  debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | Update system.attributes.hp.temp to ${newAmountHpTemp}`);
-  debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | Update system.attributes.hp.tempmax to ${newAmountHpTempMax}`);
+	debug(
+		`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | Update system.attributes.hp.value to ${newAmountHpValue}`
+	);
+	debug(
+		`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | Update system.attributes.hp.temp to ${newAmountHpTemp}`
+	);
+	debug(
+		`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpValueLimit2 | Update system.attributes.hp.tempmax to ${newAmountHpTempMax}`
+	);
 
 	sheet.submitOnChange = false;
 	actor
 		.update({
 			"system.attributes.hp.value": Number(newAmountHpValue),
 			"system.attributes.hp.temp": Number(newAmountHpTemp),
-			"system.attributes.hp.tempmax": Number(newAmountHpTempMax),
+			"system.attributes.hp.tempmax": Number(newAmountHpTempMax)
 		})
 		.then(() => {
 			input.value = Number(getProperty(actor, input.name) ?? 0);
@@ -389,16 +427,22 @@ function _onChangeHpForceHpTempLimit2(ev) {
 	let newAmountHpTemp = Number(input.value);
 
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | [17] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | [17] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`
+		);
 		newAmountHpTemp = hpTemp;
 	}
 
 	if (newAmountHpTemp < 0 || !is_real_number(newAmountHpTemp)) {
-		debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | [18] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`);
+		debug(
+			`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | [18] WARN: The hp.temp value ${newAmountHpTemp} is not a valid number`
+		);
 		newAmountHpTemp = 0;
 	}
 
-  debug(`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | Update system.attributes.hp.temp to ${newAmountHpTemp}`);
+	debug(
+		`tidy5e-lazy-exp-and-hp | _onChangeHpForceHpTempLimit2 | Update system.attributes.hp.temp to ${newAmountHpTemp}`
+	);
 
 	sheet.submitOnChange = false;
 	actor
@@ -423,7 +467,7 @@ export function applyLazyExp(app, html, actorData) {
 	html.find("input[name='system.details.xp.value']").change(
 		{
 			app: app,
-			data: actorData,
+			data: actorData
 		},
 		_onChangeExp
 	);
@@ -440,7 +484,7 @@ export function applyLazyHp(app, html, actorData) {
 			html.find("input[name='system.attributes.hp.value']").change(
 				{
 					app: app,
-					data: actorData,
+					data: actorData
 				},
 				_onChangeHpForceHpValueLimit2
 			);
@@ -452,7 +496,7 @@ export function applyLazyHp(app, html, actorData) {
 			html.find("input[name='system.attributes.hp.temp']").change(
 				{
 					app: app,
-					data: actorData,
+					data: actorData
 				},
 				_onChangeHpForceHpTempLimit2
 			);
@@ -465,7 +509,7 @@ export function applyLazyHp(app, html, actorData) {
 			html.find("input[name='system.attributes.hp.value']").change(
 				{
 					app: app,
-					data: actorData,
+					data: actorData
 				},
 				_onChangeHpForceHpValueLimit1
 			);
@@ -481,7 +525,7 @@ export function applyLazyHp(app, html, actorData) {
 	html.find("input[name='system.attributes.hp.value']").change(
 		{
 			app: app,
-			data: actorData,
+			data: actorData
 		},
 		_onChangeHp
 	);
@@ -494,7 +538,7 @@ export function applyLazyHp(app, html, actorData) {
 	html.find("input[name='system.attributes.hp.max']").change(
 		{
 			app: app,
-			data: actorData,
+			data: actorData
 		},
 		_onChangeHpMax
 	);
@@ -508,7 +552,7 @@ export function applyLazyHp(app, html, actorData) {
 		html.find("input[name='system.attributes.hp.temp']").change(
 			{
 				app: app,
-				data: actorData,
+				data: actorData
 			},
 			_onChangeHpForceHpTempLimit2
 		);

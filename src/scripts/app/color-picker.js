@@ -179,7 +179,7 @@ export const mapDefaultColorsRGB = {
 	t5e_checkbox_font: "rgb(0, 0, 0)",
 	t5e_checkbox_outline: "rgb(150, 150, 150)",
 	t5e_checkbox_unchecked: "#D8D7D1",
-	t5e_checkbox_checked: "rgb(0, 255, 0)",
+	t5e_checkbox_checked: "rgb(0, 255, 0)"
 };
 export const mapDefaultColorsRGBA = {
 	t5e_primary_font: "rgba(0, 0, 0, 0.9)",
@@ -247,7 +247,7 @@ export const mapDefaultColorsRGBA = {
 	t5e_checkbox_font: "rgba(0, 0, 0, 0.9)",
 	t5e_checkbox_outline: "rgba(150, 150, 150, 1)",
 	t5e_checkbox_unchecked: "#D8D7D1",
-	t5e_checkbox_checked: "rgba(0, 255, 0, 0.3)",
+	t5e_checkbox_checked: "rgba(0, 255, 0, 0.3)"
 };
 
 export const mapDefaultColorsDarkRGBA = {
@@ -319,7 +319,7 @@ export const mapDefaultColorsDarkRGBA = {
 	t5e_exhaustion_lvl3: "rgba(255, 50, 0, 1)",
 	t5e_ability_accent: "darkslategrey",
 	t5e_context_outline: "rgba(0, 0, 0, 0.4)",
-	t5e_context_shadow: "rgba(0, 0, 0, 0.65)",
+	t5e_context_shadow: "rgba(0, 0, 0, 0.65)"
 };
 
 export const mapDefaultColorsDarkRGB = {
@@ -391,7 +391,7 @@ export const mapDefaultColorsDarkRGB = {
 	t5e_exhaustion_lvl3: "rgb(255, 50, 0)",
 	t5e_ability_accent: "darkslategrey",
 	t5e_context_outline: "rgb(0, 0, 0)",
-	t5e_context_shadow: "rgb(0, 0, 0)",
+	t5e_context_shadow: "rgb(0, 0, 0)"
 };
 
 export function applyColorPickerCustomization(html) {

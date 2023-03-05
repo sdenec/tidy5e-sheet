@@ -25,7 +25,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 			classes: ["tidy5e", "sheet", "actor", "vehicle"],
 			width: game.settings.get(CONSTANTS.MODULE_ID, "vehicleSheetWidth") ?? 740,
 			height: 720,
-			tabs: [{ navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab }],
+			tabs: [{ navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab }]
 		});
 	}
 
@@ -56,7 +56,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 
 		context.isGM = game.user.isGM;
 		context.allowHpMaxOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpMaxOverride");
-    context.allowHpConfigOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpConfigOverride");
+		context.allowHpConfigOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpConfigOverride");
 		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
 		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
@@ -269,7 +269,7 @@ async function setSheetClasses(app, html, data) {
 // Register Tidy5e Vehicle Sheet and make default vehicle sheet
 Actors.registerSheet("dnd5e", Tidy5eVehicle, {
 	types: ["vehicle"],
-	makeDefault: true,
+	makeDefault: true
 });
 
 Hooks.on("renderTidy5eVehicle", (app, html, data) => {

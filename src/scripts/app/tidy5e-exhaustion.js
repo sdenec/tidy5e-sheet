@@ -36,7 +36,7 @@ export async function updateExhaustion(actorEntity) {
 					key: "flags.midi-qol.disadvantage.ability.check.all",
 					value: true,
 					mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
-					priority: 20,
+					priority: 20
 				};
 				exhaustionSet.push(effect);
 			}
@@ -58,7 +58,7 @@ export async function updateExhaustion(actorEntity) {
 						key: changeKey,
 						value: "0.5",
 						mode: CONST.ACTIVE_EFFECT_MODES.MULTIPLY,
-						priority: 20,
+						priority: 20
 					};
 					exhaustionSet.push(effect);
 				});
@@ -68,7 +68,7 @@ export async function updateExhaustion(actorEntity) {
 					key: "flags.midi-qol.disadvantage.ability.save.all",
 					value: true,
 					mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
-					priority: 20,
+					priority: 20
 				};
 				exhaustionSet.push(effect);
 
@@ -76,7 +76,7 @@ export async function updateExhaustion(actorEntity) {
 					key: "flags.midi-qol.disadvantage.attack.all",
 					value: true,
 					mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
-					priority: 20,
+					priority: 20
 				};
 				exhaustionSet.push(effect);
 			}
@@ -85,7 +85,7 @@ export async function updateExhaustion(actorEntity) {
 					key: "system.attributes.hp.max",
 					value: "0.5",
 					mode: 1,
-					priority: 20,
+					priority: 20
 				};
 				exhaustionSet.push(effect);
 			}
@@ -107,7 +107,7 @@ export async function updateExhaustion(actorEntity) {
 						key: changeKey,
 						value: "0",
 						mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
-						priority: 20,
+						priority: 20
 					};
 					exhaustionSet.push(effect);
 				});
@@ -117,7 +117,7 @@ export async function updateExhaustion(actorEntity) {
 					key: "system.attributes.hp.value",
 					value: "0",
 					mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
-					priority: 20,
+					priority: 20
 				};
 				exhaustionSet.push(effect);
 			}
@@ -127,7 +127,7 @@ export async function updateExhaustion(actorEntity) {
 			if (typeof effectEntity.getFlag(CONSTANTS.MODULE_ID, "exhaustion") === "number") {
 				exhaustionPresent = effectEntity;
 				currentExhaustion = effectEntity.getFlag(CONSTANTS.MODULE_ID, "exhaustion");
-        		debug(`tidy5e-exhaustion | updateExhaustion | currentExhaustion: ${currentExhaustion}`);
+				debug(`tidy5e-exhaustion | updateExhaustion | currentExhaustion: ${currentExhaustion}`);
 				if (currentExhaustion != exhaustion) {
 					await exhaustionPresent.delete();
 					createExhaustionEffect();
@@ -141,7 +141,7 @@ export async function updateExhaustion(actorEntity) {
 
 		async function createExhaustionEffect() {
 			if (exhaustion > 0) {
-        debug(`tidy5e-exhaustion | createExhaustionEffect | create Effect exhaustion lv: ${exhaustion}`);
+				debug(`tidy5e-exhaustion | createExhaustionEffect | create Effect exhaustion lv: ${exhaustion}`);
 				let effectChange = {
 					disabled: false,
 					label: effectName,
@@ -150,10 +150,10 @@ export async function updateExhaustion(actorEntity) {
 					duration: { seconds: 31536000 },
 					flags: {
 						[CONSTANTS.MODULE_ID]: {
-							exhaustion: exhaustion,
-						},
+							exhaustion: exhaustion
+						}
 					},
-					origin: `Actor.${actorEntity._id}`,
+					origin: `Actor.${actorEntity._id}`
 				};
 
 				await actorEntity.createEmbeddedDocuments("ActiveEffect", [effectChange]);
@@ -180,11 +180,11 @@ export async function updateExhaustion(actorEntity) {
 				let tier = `${effectName} ${i}`;
 				if (tier != effectNameCustom) {
 					if (game.dfreds.effectInterface.hasEffectApplied(tier, actorToCheck.uuid)) {
-            debug(`tidy5e-exhaustion | createExhaustionEffect | tier: ${tier}`);
+						debug(`tidy5e-exhaustion | createExhaustionEffect | tier: ${tier}`);
 						const contextEffect = {
 							effectName: tier,
 							uuid: actorToCheck.uuid,
-							origin: undefined,
+							origin: undefined
 						};
 						await game.dfreds.effectInterface.removeEffect(contextEffect);
 					}
@@ -206,7 +206,7 @@ export async function updateExhaustion(actorEntity) {
 					uuid: actorToCheck.uuid,
 					origin: undefined,
 					overlay: false,
-					metadata: undefined,
+					metadata: undefined
 				};
 				await game.dfreds.effectInterface.addEffect(contextEffect);
 			}

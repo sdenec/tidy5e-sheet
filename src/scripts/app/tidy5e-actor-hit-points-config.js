@@ -23,7 +23,7 @@ export default class Tidy5eActorHitPointsConfig extends Tidy5eBaseConfigSheet {
 			template: "systems/dnd5e/templates/apps/hit-points-config.hbs",
 			width: 320,
 			height: "auto",
-			sheetConfig: false,
+			sheetConfig: false
 		});
 	}
 
@@ -41,7 +41,7 @@ export default class Tidy5eActorHitPointsConfig extends Tidy5eBaseConfigSheet {
 		return {
 			hp: this.clone.system.attributes.hp,
 			source: this.clone.toObject().system.attributes.hp,
-			isCharacter: this.document.type === "character",
+			isCharacter: this.document.type === "character"
 		};
 	}
 

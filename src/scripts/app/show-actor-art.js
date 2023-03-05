@@ -21,13 +21,13 @@ export const tidy5eShowActorArt = function (html, actor) {
 			new ImagePopout(portraitImg, {
 				title: "Portrait: " + actor.name,
 				shareable: true,
-				uuid: actor.uuid,
+				uuid: actor.uuid
 			}).render(true);
 		} else {
 			new ImagePopout(tokenImg, {
 				title: "Token: " + actor.name,
 				shareable: true,
-				uuid: actor.uuid,
+				uuid: actor.uuid
 			}).render(true);
 		}
 	});

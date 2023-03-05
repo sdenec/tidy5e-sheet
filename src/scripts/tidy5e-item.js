@@ -6,7 +6,7 @@ import { applySpellClassFilterItemSheet } from "./app/spellClassFilter.js";
 export class Tidy5eItemSheet extends dnd5e.applications.item.ItemSheet5e {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
-			classes: ["tidy5e", "dnd5ebak", "sheet", "item"],
+			classes: ["tidy5e", "dnd5ebak", "sheet", "item"]
 		});
 	}
 
@@ -14,7 +14,7 @@ export class Tidy5eItemSheet extends dnd5e.applications.item.ItemSheet5e {
 		super.activateListeners(html);
 
 		let item = this.item;
-    	debug(`tidy5e-item | activateListeners | item: ${item}`);
+		debug(`tidy5e-item | activateListeners | item: ${item}`);
 
 		tidy5eShowItemArt(html, item);
 	}

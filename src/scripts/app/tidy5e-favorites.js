@@ -33,9 +33,9 @@ export const isItemFavorite = function (item) {
 		item.flags[CONSTANTS.MODULE_ID]?.favorite ||
 		false;
 
-  const isAlreadyTidyFav = getProperty(item.flags[CONSTANTS.MODULE_ID], `favorite`);
-  // for retrocompatibility
-  const isAlreadyFabTab = getProperty(item.flags["favtab"], `isFavorite`);
+	const isAlreadyTidyFav = getProperty(item.flags[CONSTANTS.MODULE_ID], `favorite`);
+	// for retrocompatibility
+	const isAlreadyFabTab = getProperty(item.flags["favtab"], `isFavorite`);
 	if (String(isAlreadyFabTab) === "true" && String(isAlreadyFabTab) === "false") {
 		if (String(isAlreadyTidyFav) !== "true" && String(isAlreadyTidyFav) !== "false") {
 			isFav = item.flags["favtab"]?.isFavorite; // for retrocompatibility
@@ -78,7 +78,7 @@ export const addFavorites = async function (app, html, data, position) {
 			obj[i.id] ??= { hasUses: i.system.uses && i.system.uses.max > 0 };
 			app._prepareItemToggleState(i, obj[i.id]);
 			return obj;
-		}, {}),
+		}, {})
 	};
 
 	let favItems = [];
@@ -86,69 +86,69 @@ export const addFavorites = async function (app, html, data, position) {
 	let favSpellsPrepMode = {
 		atwill: {
 			isAtWill: true,
-			spells: [],
+			spells: []
 		},
 		innate: {
 			isInnate: true,
-			spells: [],
+			spells: []
 		},
 		pact: {
 			isPact: true,
 			spells: [],
 			value: data.actor.system.spells.pact.value,
-			max: data.actor.system.spells.pact.max,
-		},
+			max: data.actor.system.spells.pact.max
+		}
 	};
 	let favSpells = {
 		0: {
 			isCantrip: true,
-			spells: [],
+			spells: []
 		},
 		1: {
 			spells: [],
 			value: data.actor.system.spells.spell1.value,
-			max: data.actor.system.spells.spell1.max,
+			max: data.actor.system.spells.spell1.max
 		},
 		2: {
 			spells: [],
 			value: data.actor.system.spells.spell2.value,
-			max: data.actor.system.spells.spell2.max,
+			max: data.actor.system.spells.spell2.max
 		},
 		3: {
 			spells: [],
 			value: data.actor.system.spells.spell3.value,
-			max: data.actor.system.spells.spell3.max,
+			max: data.actor.system.spells.spell3.max
 		},
 		4: {
 			spells: [],
 			value: data.actor.system.spells.spell4.value,
-			max: data.actor.system.spells.spell4.max,
+			max: data.actor.system.spells.spell4.max
 		},
 		5: {
 			spells: [],
 			value: data.actor.system.spells.spell5.value,
-			max: data.actor.system.spells.spell5.max,
+			max: data.actor.system.spells.spell5.max
 		},
 		6: {
 			spells: [],
 			value: data.actor.system.spells.spell6.value,
-			max: data.actor.system.spells.spell6.max,
+			max: data.actor.system.spells.spell6.max
 		},
 		7: {
 			spells: [],
 			value: data.actor.system.spells.spell7.value,
-			max: data.actor.system.spells.spell7.max,
+			max: data.actor.system.spells.spell7.max
 		},
 		8: {
 			spells: [],
 			value: data.actor.system.spells.spell8.value,
-			max: data.actor.system.spells.spell8.max,
+			max: data.actor.system.spells.spell8.max
 		},
 		9: {
 			spells: [],
 			value: data.actor.system.spells.spell9.value,
-			max: data.actor.system.spells.spell9.max,
-		},
+			max: data.actor.system.spells.spell9.max
+		}
 	};
 
 	let spellCount = 0;
@@ -187,24 +187,24 @@ export const addFavorites = async function (app, html, data, position) {
 				const item_id = ev.currentTarget.closest("[data-item-id]").dataset.itemId;
 				const item = app.actor.items.get(item_id);
 				if (!item) {
-          warn(`tidy5e-favorites | addFavorites | Item no founded!`);
+					warn(`tidy5e-favorites | addFavorites | Item no founded!`);
 					return;
 				}
 				let isFav = isItemFavorite(item);
 
 				item.update({
-					"flags.tidy5e-sheet.favorite": !isFav,
+					"flags.tidy5e-sheet.favorite": !isFav
 				});
 				// Sync favorite flag with module 'favorite-items'
 				if (game.modules.get("favorite-items")?.active) {
 					item.update({
-						"flags.favorite-items.favorite": !isFav,
+						"flags.favorite-items.favorite": !isFav
 					});
 				}
 				// Sync favorite flag with module 'favtab'
 				if (game.modules.get("favtab")?.active) {
 					item.update({
-						"flags.favtab.isFavorite": !isFav,
+						"flags.favtab.isFavorite": !isFav
 					});
 				}
 			});
@@ -233,7 +233,7 @@ export const addFavorites = async function (app, html, data, position) {
 				hour: game.i18n.localize("DND5E.TimeHour"),
 				minute: game.i18n.localize("DND5E.TimeMinute"),
 				reactiondamage: game.i18n.localize("midi-qol.reactionDamaged"),
-				reactionmanual: game.i18n.localize("midi-qol.reactionManual"),
+				reactionmanual: game.i18n.localize("midi-qol.reactionManual")
 			};
 
 			function translateLabels(key) {
@@ -254,7 +254,7 @@ export const addFavorites = async function (app, html, data, position) {
 				item.isOnCooldown = true;
 				item.labels = {
 					recharge: game.i18n.localize("DND5E.FeatureRechargeOn") + " [" + item.system.recharge.value + "+]",
-					rechargeValue: "[" + item.system.recharge.value + "+]",
+					rechargeValue: "[" + item.system.recharge.value + "+]"
 				};
 			}
 
@@ -591,7 +591,7 @@ export const addFavorites = async function (app, html, data, position) {
 						let count = actor.system.details.attunedItemsCount;
 						ui.notifications.warn(
 							`${game.i18n.format("TIDY5E.AttunementWarning", {
-								number: count,
+								number: count
 							})}`
 						);
 					} else {
@@ -611,18 +611,18 @@ export const addFavorites = async function (app, html, data, position) {
 				let isFav = isItemFavorite(item);
 
 				item.update({
-					"flags.tidy5e-sheet.favorite": !isFav,
+					"flags.tidy5e-sheet.favorite": !isFav
 				});
 				// Sync favorite flag with module 'favorite-items'
 				if (game.modules.get("favorite-items")?.active) {
 					item.update({
-						"flags.favorite-items.favorite": !isFav,
+						"flags.favorite-items.favorite": !isFav
 					});
 				}
 				// Sync favorite flag with module 'favtab'
 				if (game.modules.get("favtab")?.active) {
 					item.update({
-						"flags.favtab.isFavorite": !isFav,
+						"flags.favtab.isFavorite": !isFav
 					});
 				}
 			});
@@ -691,10 +691,14 @@ export const addFavorites = async function (app, html, data, position) {
 				let targetId = ev.target.closest(".item").dataset.itemId;
 				let dragTarget = siblings.find((s) => s._id === targetId);
 
-        		debug(`tidy5e-favorites | addFavorite | dragSource: ${dragSource} // siblings: ${siblings} // targetID: ${targetId} // dragTarget: ${dragTarget}`);
+				debug(
+					`tidy5e-favorites | addFavorite | dragSource: ${dragSource} // siblings: ${siblings} // targetID: ${targetId} // dragTarget: ${dragTarget}`
+				);
 				if (dragTarget === undefined) {
 					// catch trying to drag from one list to the other, which is not supported
-          			debug(`tidy5e-favorites | addFavorite | catch trying to drag from one list to the other, which is not supported, folder not supported`);
+					debug(
+						`tidy5e-favorites | addFavorite | catch trying to drag from one list to the other, which is not supported, folder not supported`
+					);
 					return;
 				}
 
@@ -702,7 +706,7 @@ export const addFavorites = async function (app, html, data, position) {
 				const sortUpdates = SortingHelpers.performIntegerSort(dragSource, {
 					target: dragTarget,
 					siblings: siblings,
-					sortKey: "flags.tidy5e-sheet.sort",
+					sortKey: "flags.tidy5e-sheet.sort"
 				});
 				const updateData = sortUpdates.map((u) => {
 					const update = u.update;
@@ -712,35 +716,44 @@ export const addFavorites = async function (app, html, data, position) {
 
 				app.actor.updateEmbeddedDocuments("Item", updateData);
 			});
-      		// TODO why i need this... the html template is wrong ?
+			// TODO why i need this... the html template is wrong ?
 			favHtml.find(".item-detail input.uses-max").off("change");
-			favHtml.find(".item-detail input.uses-max").click(ev => ev.target.select()).change(async (event) => {
-				event.preventDefault();
-				const itemId = event.currentTarget.closest(".item").dataset.itemId;
-				const item = app.actor.items.get(itemId);
-				const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
-				return item.update({"system.uses.max": uses});
-			});
-      		// TODO why i need this... the html template is wrong ?
+			favHtml
+				.find(".item-detail input.uses-max")
+				.click((ev) => ev.target.select())
+				.change(async (event) => {
+					event.preventDefault();
+					const itemId = event.currentTarget.closest(".item").dataset.itemId;
+					const item = app.actor.items.get(itemId);
+					const uses = parseInt(event.target.value ?? item.system.uses.max ?? 0);
+					return item.update({ "system.uses.max": uses });
+				});
+			// TODO why i need this... the html template is wrong ?
 			favHtml.find(".item-detail input.uses-value").off("change");
-			favHtml.find(".item-detail input.uses-value").click(ev => ev.target.select()).change(async (event) => {
-				event.preventDefault();
-				const itemId = event.currentTarget.closest(".item").dataset.itemId;
-				const item = app.actor.items.get(itemId);
-				const uses = Math.clamped(0, parseInt(event.target.value), item.system.uses.max);
-				event.target.value = uses;
-				return item.update({"system.uses.value": uses});
-			});
+			favHtml
+				.find(".item-detail input.uses-value")
+				.click((ev) => ev.target.select())
+				.change(async (event) => {
+					event.preventDefault();
+					const itemId = event.currentTarget.closest(".item").dataset.itemId;
+					const item = app.actor.items.get(itemId);
+					const uses = Math.clamped(0, parseInt(event.target.value), item.system.uses.max);
+					event.target.value = uses;
+					return item.update({ "system.uses.value": uses });
+				});
 
 			favHtml.find(".item-quantity input.item-count").off("change");
-			favHtml.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(async (event) => {
-				event.preventDefault();
-				const itemId = event.currentTarget.closest(".item").dataset.itemId;
-				const item = app.actor.items.get(itemId);
-				const uses = parseInt(event.target.value ?? item.system.quantity);
-				event.target.value = uses;
-				return item.update({"system.quantity": uses});
-			});
+			favHtml
+				.find(".item-quantity input.item-count")
+				.click((ev) => ev.target.select())
+				.change(async (event) => {
+					event.preventDefault();
+					const itemId = event.currentTarget.closest(".item").dataset.itemId;
+					const item = app.actor.items.get(itemId);
+					const uses = parseInt(event.target.value ?? item.system.quantity);
+					event.target.value = uses;
+					return item.update({ "system.quantity": uses });
+				});
 		}
 
 		// adding the html to the appropiate containers
@@ -754,8 +767,7 @@ export const addFavorites = async function (app, html, data, position) {
 			favContent.find(".items-list").addClass("alt-context");
 		}
 
-		tidy5eAmmoSwitch(favHtml,app.actor);
+		tidy5eAmmoSwitch(favHtml, app.actor);
 		applyColorPickerCustomization(favHtml);
-
 	}
 };

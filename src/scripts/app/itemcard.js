@@ -79,7 +79,7 @@ export const tidy5eItemCard = function (html, actor) {
 
 			card.css({
 				top: topPos,
-				left: leftPos,
+				left: leftPos
 			});
 		}
 	}
@@ -99,7 +99,7 @@ export const tidy5eItemCard = function (html, actor) {
 	});
 
 	let itemCardDelayCard = async (event) => {
-    debug(`tidy5e-itemcard | itemCardDelayCard | itemCardDelaying card: ${itemCardDelay} ms`);
+		debug(`tidy5e-itemcard | itemCardDelayCard | itemCardDelaying card: ${itemCardDelay} ms`);
 		timer = setTimeout(async function () {
 			if (!itemCardIsFixed) {
 				removeCard();
@@ -172,7 +172,11 @@ export const tidy5eItemCard = function (html, actor) {
 		}
 		let item = actor.items.get(li.data("item-id"));
 		if (!item) {
-			warn(`tidy5e-context-menu | showCard | no item found on actor '${actor.name}' with id '${li.data("item-id")}'`);
+			warn(
+				`tidy5e-context-menu | showCard | no item found on actor '${actor.name}' with id '${li.data(
+					"item-id"
+				)}'`
+			);
 			return;
 		}
 		let chatData = await item.getChatData({ secrets: actor.isOwner });

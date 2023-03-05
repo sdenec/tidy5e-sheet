@@ -14,7 +14,7 @@ const classesConfiguration = {
 	sorcerer: "TIDY5E.ClassSorcerer",
 	warlock: "TIDY5E.ClassWarlock",
 	wizard: "TIDY5E.ClassWizard",
-	custom: "TIDY5E.ClassCustom",
+	custom: "TIDY5E.ClassCustom"
 };
 
 export async function applySpellClassFilterItemSheet(app, html, itemData) {
@@ -41,7 +41,7 @@ export async function applySpellClassFilterItemSheet(app, html, itemData) {
 			{
 				SCF: classesConfiguration,
 				item,
-				flags: item.flags,
+				flags: item.flags
 			}
 		);
 		// Under the first header in the details tab.
@@ -84,7 +84,7 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
 					SCF: classesConfiguration,
 					actor,
 					flags: flags,
-					scFlags: actor.flags[CONSTANTS.MODULE_ID],
+					scFlags: actor.flags[CONSTANTS.MODULE_ID]
 				}
 			);
 			firstItem.before(actorClassFilter);

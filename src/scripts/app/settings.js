@@ -19,10 +19,10 @@ export class Tidy5eUserSettings extends FormApplication {
 				{
 					navSelector: ".tabs",
 					contentSelector: "form",
-					initial: "Players",
-				},
+					initial: "Players"
+				}
 			],
-			submitOnClose: true,
+			submitOnClose: true
 		};
 	}
 
@@ -113,7 +113,8 @@ export class Tidy5eUserSettings extends FormApplication {
 			"spellClassFilterSelect",
 			"spellClassFilterIconReplace",
 			"allowHpMaxOverride",
-      "allowHpConfigOverride",
+			"allowHpConfigOverride",
+			"betterAttackDialog",
 
 			"lockMoneyChanges",
 			"lockExpChanges",
@@ -145,7 +146,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"hbEnableUpcastFreeSpell",
 			"hbSetFeaturesForUpcastFreeSpell",
 
-			"debug",
+			"debug"
 		];
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');

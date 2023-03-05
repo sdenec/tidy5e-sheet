@@ -1,18 +1,18 @@
 import CONSTANTS from "./constants.js";
 import { warn } from "./logger-util.js";
 
-export const tidy5eSpellLevelButtons = async function(app, html, options) {
+export const tidy5eSpellLevelButtons = async function (app, html, options) {
 	if (
 		game.settings.get(CONSTANTS.MODULE_ID, "enableSpellLevelButtons") &&
 		// The module already do the job so for avoid redundance...
 		!game.modules.get("spell-level-buttons-for-dnd5e")?.active
 	) {
-    if (app?.item?.type != "spell") {
-      return; // Nevermind if this isn't a spell
-    }
-    if (html.find('[name="consumeSpellSlot"]').length == 0) {
-      return;
-    }
+		if (app?.item?.type != "spell") {
+			return; // Nevermind if this isn't a spell
+		}
+		if (html.find('[name="consumeSpellSlot"]').length == 0) {
+			return;
+		}
 		const optionsApplication = app;
 
 		if ($('.dnd5e.dialog #ability-use-form select[name="consumeSpellLevel"]').length > 0) {
@@ -59,13 +59,21 @@ export const tidy5eSpellLevelButtons = async function(app, html, options) {
 					}
 
 					if (!availableTextSlotsFounded) {
-            warn(`tidy5e-spell-level-buttons | tidy5eSpellLevelButtons | Cannot find the spell slots on text '${$(this).text()}' with ${/\(\d+\s\w+\)/}`);
+						warn(
+							`tidy5e-spell-level-buttons | tidy5eSpellLevelButtons | Cannot find the spell slots on text '${$(
+								this
+							).text()}' with ${/\(\d+\s\w+\)/}`
+						);
 					}
 					let availableSlotsFounded = availableTextSlotsFounded
 						? availableTextSlotsFounded[0].match(/\d+/)
 						: undefined;
 					if (!availableSlotsFounded) {
-            warn(`tidy5e-spell-level-buttons | tidy5eSpellLevelButtons | Cannot find the spell slots on text '${$(this).text()}' with ${/\d+/}`);
+						warn(
+							`tidy5e-spell-level-buttons | tidy5eSpellLevelButtons | Cannot find the spell slots on text '${$(
+								this
+							).text()}' with ${/\d+/}`
+						);
 					}
 					let availableSlots = availableSlotsFounded ? availableSlotsFounded[0] : 0;
 					let availableSlotsBadge = "";
@@ -76,7 +84,11 @@ export const tidy5eSpellLevelButtons = async function(app, html, options) {
 						// i = "p" + $(this).text().match(/\d/)[0]; // Get the pact slot level
 						let availablePactSlotsFounded = $(this).text().match(/\d/);
 						if (!availablePactSlotsFounded) {
-              warn(`tidy5e-spell-level-buttons | tidy5eSpellLevelButtons | Cannot find the pact slots on text '${$(this).text()}' with ${/\d/}`);
+							warn(
+								`tidy5e-spell-level-buttons | tidy5eSpellLevelButtons | Cannot find the pact slots on text '${$(
+									this
+								).text()}' with ${/\d/}`
+							);
 						}
 						if (availablePactSlotsFounded) {
 							i = "p" + availablePactSlotsFounded[0]; // Get the pact slot level
@@ -111,4 +123,4 @@ export const tidy5eSpellLevelButtons = async function(app, html, options) {
 				});
 		}
 	}
-}
+};

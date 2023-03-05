@@ -24,7 +24,7 @@ export default class Tidy5eActorOriginSummaryConfig extends Tidy5eBaseConfigShee
 			template: `modules/${CONSTANTS.MODULE_ID}/templates/actors/parts/tidy5e-origin-summary-config.html`,
 			width: 320,
 			height: "auto",
-			sheetConfig: false,
+			sheetConfig: false
 		});
 	}
 
@@ -49,7 +49,7 @@ export default class Tidy5eActorOriginSummaryConfig extends Tidy5eBaseConfigShee
 
 			isCharacter: this.document.type === "character",
 			isNPC: this.document.type === "npc",
-			isVehicle: this.document.type === "vehicle",
+			isVehicle: this.document.type === "vehicle"
 		};
 	}
 
@@ -86,7 +86,7 @@ export default class Tidy5eActorOriginSummaryConfig extends Tidy5eBaseConfigShee
 			return this.document.update({
 				"system.details.race": race,
 				"system.details.background": background,
-				"system.details.alignment": alignment,
+				"system.details.alignment": alignment
 			});
 		} else if (isNPC) {
 			// this.clone.updateSource({
@@ -98,7 +98,7 @@ export default class Tidy5eActorOriginSummaryConfig extends Tidy5eBaseConfigShee
 			return this.document.update({
 				"system.details.environment": environment,
 				"system.details.alignment": alignment,
-				"system.details.source": source,
+				"system.details.source": source
 			});
 		} else if (isVehicle) {
 			// this.clone.updateSource({
@@ -107,7 +107,7 @@ export default class Tidy5eActorOriginSummaryConfig extends Tidy5eBaseConfigShee
 			// });
 
 			return this.document.update({
-				"system.traits.dimensions": dimensions,
+				"system.traits.dimensions": dimensions
 			});
 		}
 	}

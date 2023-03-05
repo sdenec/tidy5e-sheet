@@ -20,7 +20,7 @@ import {
 	mapDefaultColorsDarkRGBA,
 	mapDefaultColorsDarkRGB,
 	mapDefaultColorsRGB,
-	applyColorPickerCustomization,
+	applyColorPickerCustomization
 } from "./app/color-picker.js";
 import CONSTANTS from "./app/constants.js";
 import { isEmptyObject, is_real_number, truncate } from "./app/helpers.js";
@@ -57,9 +57,9 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				{
 					navSelector: ".tabs",
 					contentSelector: ".sheet-body",
-					initial: defaultTab,
-				},
-			],
+					initial: defaultTab
+				}
+			]
 		});
 	}
 
@@ -81,7 +81,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				secrets: this.actor.isOwner,
 				rollData: context.rollData,
 				async: true,
-				relativeTo: this.actor,
+				relativeTo: this.actor
 			}
 		);
 
@@ -91,7 +91,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				secrets: this.actor.isOwner,
 				rollData: context.rollData,
 				async: true,
-				relativeTo: this.actor,
+				relativeTo: this.actor
 			}
 		);
 
@@ -101,7 +101,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				secrets: this.actor.isOwner,
 				rollData: context.rollData,
 				async: true,
-				relativeTo: this.actor,
+				relativeTo: this.actor
 			}
 		);
 
@@ -111,7 +111,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 				secrets: this.actor.isOwner,
 				rollData: context.rollData,
 				async: true,
-				relativeTo: this.actor,
+				relativeTo: this.actor
 			}
 		);
 
@@ -119,7 +119,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			secrets: this.actor.isOwner,
 			rollData: context.rollData,
 			async: true,
-			relativeTo: this.actor,
+			relativeTo: this.actor
 		});
 
 		context.appId = this.appId;
@@ -129,7 +129,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		);
 		context.isGM = game.user.isGM;
 		context.allowHpMaxOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpMaxOverride");
-    context.allowHpConfigOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpConfigOverride");
+		context.allowHpConfigOverride = game.settings.get(CONSTANTS.MODULE_ID, "allowHpConfigOverride");
 		context.rightClickDisabled = game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled");
 		context.classicControlsEnabled = game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
 		context.classicControlsDisabled = !game.settings.get(CONSTANTS.MODULE_ID, "classicControlsEnabled");
@@ -315,13 +315,19 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		// Quantity and Charges listener
 		// TODO why i need this... the html template is wrong ?
 		html.find(".item-detail input.uses-max").off("change");
-		html.find(".item-detail input.uses-max").click(ev => ev.target.select()).change(_onUsesMaxChange.bind(this));
+		html.find(".item-detail input.uses-max")
+			.click((ev) => ev.target.select())
+			.change(_onUsesMaxChange.bind(this));
 		// TODO why i need this... the html template is wrong ?
 		html.find(".item-detail input.uses-value").off("change");
-		html.find(".item-detail input.uses-value").click(ev => ev.target.select()).change(_onUsesChange.bind(this));
+		html.find(".item-detail input.uses-value")
+			.click((ev) => ev.target.select())
+			.change(_onUsesChange.bind(this));
 		// TODO why i need this... the html template is wrong ?
 		html.find(".item-quantity input.item-count").off("change");
-		html.find(".item-quantity input.item-count").click(ev => ev.target.select()).change(_onQuantityChange.bind(this));
+		html.find(".item-quantity input.item-count")
+			.click((ev) => ev.target.select())
+			.change(_onQuantityChange.bind(this));
 	}
 
 	/* -------------------------------------------- */
@@ -432,7 +438,6 @@ async function checkDeathSaveStatus(app, html, data) {
 			await actor.update({ "system.attributes.death.success": 0 });
 			await actor.update({ "system.attributes.death.failure": 0 });
 		}
-
 	}
 }
 
@@ -483,7 +488,7 @@ async function editProtection(app, html, data) {
 		itemContainer.each(function () {
 			let hiddenSections = $(this).find("> .hidden").length;
 			let totalSections = $(this).children().not(".notice").length;
-      debug(`tidy5e-sheet | editProtection | hidden: ${hiddenSections}'/ total: ${totalSections}`);
+			debug(`tidy5e-sheet | editProtection | hidden: ${hiddenSections}'/ total: ${totalSections}`);
 			if (hiddenSections >= totalSections) {
 				if (
 					$(this).hasClass("effects-list") &&
@@ -595,7 +600,9 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
 
 	debug(
-		`tidy5e-sheet | spellAttackMod | Prof: ${(prof ?? "")} / Spell Ability: ${(spellAbility ?? "")} / ability Mod: ${(abilityMod ?? "")} / Spell Attack Mod: ${(spellAttackMod ?? "")} / Spell Bonus : ${(spellBonus ?? "")}`
+		`tidy5e-sheet | spellAttackMod | Prof: ${prof ?? ""} / Spell Ability: ${spellAbility ?? ""} / ability Mod: ${
+			abilityMod ?? ""
+		} / Spell Attack Mod: ${spellAttackMod ?? ""} / Spell Bonus : ${spellBonus ?? ""}`
 	);
 
 	html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
@@ -609,7 +616,11 @@ async function spellAttackMod(app, html, data) {
 async function abbreviateCurrency(app, html, data) {
 	html.find(".currency .currency-item label").each(function () {
 		let currency = $(this).data("denom").toUpperCase();
-    debug(`tidy5e-sheet | abbreviateCurrency | Currency Abbr: ${CONFIG.DND5E.currencies[currency]?.abbreviation ?? ""}`);
+		debug(
+			`tidy5e-sheet | abbreviateCurrency | Currency Abbr: ${
+				CONFIG.DND5E.currencies[currency]?.abbreviation ?? ""
+			}`
+		);
 		// let abbr = CONFIG.DND5E.currencies[currency].abbreviation;
 		// if(abbr == CONFIG.DND5E.currencies[currency].abbreviation){
 		// 	abbr = currency;
@@ -681,7 +692,7 @@ async function tidyCustomEffect(actor, changes) {
 					}
 				}
 				await actor.update({
-					"flags.tidy5e-sheet.maxPreparedSpells": getProperty(actor, changeMaxPreparedList.key),
+					"flags.tidy5e-sheet.maxPreparedSpells": getProperty(actor, changeMaxPreparedList.key)
 				});
 				return getProperty(actor, changeMaxPreparedList.key);
 			} else {
@@ -698,7 +709,7 @@ function markActiveEffects(app, html, data) {
 		let items = data.actor.items;
 		let marker = `<span class="ae-marker" title="Item has active effects">Æ</span>`;
 		for (let item of items) {
-      debug(`tidy5e-sheet | markActiveEffects | item: ${item}`);
+			debug(`tidy5e-sheet | markActiveEffects | item: ${item}`);
 			if (item.effects.length > 0) {
 				let id = item._id;
 				debug(`tidy5e-sheet | markActiveEffects | itemId: ${id}`);
@@ -763,16 +774,16 @@ function spellSlotMarker(app, html, data) {
 		const index = [...ev.currentTarget.parentElement.children].indexOf(ev.currentTarget);
 		const slots = $(ev.currentTarget).parents(".spell-level-slots");
 		const spellLevel = slots.find(".spell-max").data("level");
-    debug(`tidy5e-sheet | spellSlotMarker | spellLevel: ${spellLevel}, index: ${index}`);
+		debug(`tidy5e-sheet | spellSlotMarker | spellLevel: ${spellLevel}, index: ${index}`);
 		if (spellLevel) {
 			let path = `data.spells.${spellLevel}.value`;
 			if (ev.currentTarget.classList.contains("empty")) {
 				await actor.update({
-					[path]: index + 1,
+					[path]: index + 1
 				});
 			} else {
 				await actor.update({
-					[path]: index,
+					[path]: index
 				});
 			}
 		}
@@ -879,64 +890,64 @@ async function setSheetClasses(app, html, data) {
 	applyColorPickerCustomization(html);
 }
 
-  /* -------------------------------------------- */
+/* -------------------------------------------- */
 
-  /**
-   * Change the uses amount of an Owned Item within the Actor.
-   * @param {Event} event        The triggering click event.
-   * @returns {Promise<Item5e>}  Updated item.
-   * @private
-   */
-  async function _onUsesChange(event) {
+/**
+ * Change the uses amount of an Owned Item within the Actor.
+ * @param {Event} event        The triggering click event.
+ * @returns {Promise<Item5e>}  Updated item.
+ * @private
+ */
+async function _onUsesChange(event) {
 	event.preventDefault();
 	const itemId = event.currentTarget.closest(".item").dataset.itemId;
 	const item = this.actor.items.get(itemId);
 	const uses = Math.clamped(0, parseInt(event.target.value), item.system.uses.max);
 	event.target.value = uses;
-	return item.update({"system.uses.value": uses});
-  }
+	return item.update({ "system.uses.value": uses });
+}
 
-  /* -------------------------------------------- */
+/* -------------------------------------------- */
 
-  /**
-   * Change the uses amount of an Owned Item within the Actor.
-   * @param {Event} event        The triggering click event.
-   * @returns {Promise<Item5e>}  Updated item.
-   * @private
-   */
-  async function _onUsesMaxChange(event) {
-    event.preventDefault();
-    const itemId = event.currentTarget.closest(".item").dataset.itemId;
-    const item = this.actor.items.get(itemId);
-    // const uses = Math.clamped(0, parseInt(event.target.value), ;
-    // event.target.value = uses;
-    const uses =parseInt(event.target.value ?? item.system.uses.max ?? 0);
-    return item.update({"system.uses.max": uses});
-  }
+/**
+ * Change the uses amount of an Owned Item within the Actor.
+ * @param {Event} event        The triggering click event.
+ * @returns {Promise<Item5e>}  Updated item.
+ * @private
+ */
+async function _onUsesMaxChange(event) {
+	event.preventDefault();
+	const itemId = event.currentTarget.closest(".item").dataset.itemId;
+	const item = this.actor.items.get(itemId);
+	// const uses = Math.clamped(0, parseInt(event.target.value), ;
+	// event.target.value = uses;
+	const uses = parseInt(event.target.value ?? item.system.uses.max ?? 0);
+	return item.update({ "system.uses.max": uses });
+}
 
-  /* -------------------------------------------- */
+/* -------------------------------------------- */
 
-  /**
-   * Change the quantity amount of an Owned Item within the Actor.
-   * @param {Event} event        The triggering click event.
-   * @returns {Promise<Item5e>}  Updated item.
-   * @private
-   */
-  async function _onQuantityChange(event) {
-    event.preventDefault();
-    const itemId = event.currentTarget.closest(".item").dataset.itemId;
-    const item = this.actor.items.get(itemId);
-    const uses = parseInt(event.target.value ?? item.system.quantity);
-    event.target.value = uses;
-    return item.update({"system.quantity": uses});
-  }
+/**
+ * Change the quantity amount of an Owned Item within the Actor.
+ * @param {Event} event        The triggering click event.
+ * @returns {Promise<Item5e>}  Updated item.
+ * @private
+ */
+async function _onQuantityChange(event) {
+	event.preventDefault();
+	const itemId = event.currentTarget.closest(".item").dataset.itemId;
+	const item = this.actor.items.get(itemId);
+	const uses = parseInt(event.target.value ?? item.system.quantity);
+	event.target.value = uses;
+	return item.update({ "system.quantity": uses });
+}
 
-  /* -------------------------------------------- */
+/* -------------------------------------------- */
 
 // Register Tidy5e Sheet and make default character sheet
 Actors.registerSheet("dnd5e", Tidy5eSheet, {
 	types: ["character"],
-	makeDefault: true,
+	makeDefault: true
 });
 
 // Preload tidy5e Handlebars Templates
@@ -1020,14 +1031,16 @@ Hooks.on("renderActorSheet", (app, html, data) => {
 	}
 
 	// WHY THIS ??? PATCH FOR https://github.com/sdenec/tidy5e-sheet/issues/714
-	if(!isEmptyObject(app.actor.system?.attributes?.init?.bonus)
-		&& !is_real_number(Number(app.actor.system.attributes.init.bonus))){
-		app.actor.update(
-			{
-				"system.attributes.init.bonus": 0
-			}
+	if (
+		!isEmptyObject(app.actor.system?.attributes?.init?.bonus) &&
+		!is_real_number(Number(app.actor.system.attributes.init.bonus))
+	) {
+		app.actor.update({
+			"system.attributes.init.bonus": 0
+		});
+		warn(
+			`tidy5e-sheet | renderActorSheet | Patch 'system.attributes.init.bonus' for value ${app.actor.system?.attributes?.init?.bonus}`
 		);
-		warn(`tidy5e-sheet | renderActorSheet | Patch 'system.attributes.init.bonus' for value ${app.actor.system?.attributes?.init?.bonus}`);
 	}
 });
 
@@ -1035,14 +1048,17 @@ Hooks.once("ready", (app, html, data) => {
 	if (!game.modules.get("colorsettings")?.active && game.user?.isGM) {
 		let word = "install and activate";
 		if (game.modules.get("colorsettings")) word = "activate";
-		const errorText = `tidy5e-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace("<br>", "\n");
-    warn(errorText);
+		const errorText = `tidy5e-sheet | Requires the 'colorsettings' module. Please ${word} it.`.replace(
+			"<br>",
+			"\n"
+		);
+		warn(errorText);
 		//ui.notifications?.error(errorText);
 		//throw new Error(errorText);
 	}
 });
 
 Hooks.on("renderAbilityUseDialog", (app, html, options) => {
-  tidy5eSpellLevelButtons(app, html, options);
-  tidy5eHBEnableUpcastFreeSpell(app, html, options);
+	tidy5eSpellLevelButtons(app, html, options);
+	tidy5eHBEnableUpcastFreeSpell(app, html, options);
 });

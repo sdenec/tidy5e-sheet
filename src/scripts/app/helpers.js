@@ -18,7 +18,7 @@ const signCase = {
 	add: "+",
 	subtract: "-",
 	equals: "=",
-	default: " ",
+	default: " "
 };
 
 export function is_lazy_number(inNumber) {
@@ -35,7 +35,7 @@ export function is_lazy_number(inNumber) {
 	}
 }
 
-export function isLessThanOneIsOne(inNumber){
+export function isLessThanOneIsOne(inNumber) {
 	return inNumber < 1 ? 1 : inNumber;
 }
 
@@ -117,7 +117,7 @@ export async function d20Roll({
 	chatMessage = true,
 	messageData = {},
 	rollMode,
-	flavor,
+	flavor
 } = {}) {
 	// Handle input arguments
 	const formula = ["1d20"].concat(parts).join(" + ");
@@ -125,7 +125,7 @@ export async function d20Roll({
 		advantage,
 		disadvantage,
 		fastForward,
-		event,
+		event
 	});
 	const defaultRollMode = rollMode || game.settings.get("core", "rollMode");
 	if (chooseModifier && !isFF) {
@@ -144,7 +144,7 @@ export async function d20Roll({
 		targetValue,
 		elvenAccuracy,
 		halflingLucky,
-		reliableTalent,
+		reliableTalent
 	});
 
 	// Prompt a Dialog to further configure the D20Roll
@@ -156,7 +156,7 @@ export async function d20Roll({
 				defaultRollMode,
 				defaultAction: advantageMode,
 				defaultAbility: data?.item?.ability || data?.defaultAbility,
-				template,
+				template
 			},
 			dialogOptions
 		);

@@ -6,7 +6,7 @@ const signCase = {
 	add: "+",
 	subtract: "-",
 	equals: "=",
-	default: " ",
+	default: " "
 };
 function patchCurrency(currency) {
 	if (hasProperty(currency, "pp")) {
@@ -23,10 +23,10 @@ function patchCurrency(currency) {
 				ppValue = String(ppValue).slice(1);
 			}
 		}
-		if(!is_real_number(ppValue)) {
+		if (!is_real_number(ppValue)) {
 			ppValue = 0;
 		}
-		if(getProperty(currency, "pp") !== ppValue) {
+		if (getProperty(currency, "pp") !== ppValue) {
 			setProperty(currency, "pp", Number(ppValue ?? 0));
 			info(`tidy5e-lazymoney | patchCurrency | update pp from '${getProperty(currency, "pp")}' to '${ppValue}'`);
 		}
@@ -45,10 +45,10 @@ function patchCurrency(currency) {
 				gpValue = String(gpValue).slice(1);
 			}
 		}
-		if(!is_real_number(gpValue)) {
+		if (!is_real_number(gpValue)) {
 			gpValue = 0;
 		}
-		if(getProperty(currency, "gp") !== gpValue) {
+		if (getProperty(currency, "gp") !== gpValue) {
 			setProperty(currency, "gp", Number(gpValue ?? 0));
 			info(`tidy5e-lazymoney | patchCurrency | update gp from '${getProperty(currency, "gp")}' to '${gpValue}'`);
 		}
@@ -67,10 +67,10 @@ function patchCurrency(currency) {
 				epValue = String(epValue).slice(1);
 			}
 		}
-		if(!is_real_number(epValue)) {
+		if (!is_real_number(epValue)) {
 			epValue = 0;
 		}
-		if(getProperty(currency, "ep") !== epValue) {
+		if (getProperty(currency, "ep") !== epValue) {
 			setProperty(currency, "ep", Number(epValue ?? 0));
 			info(`tidy5e-lazymoney | patchCurrency | update ep from '${getProperty(currency, "ep")}' to '${epValue}'`);
 		}
@@ -89,10 +89,10 @@ function patchCurrency(currency) {
 				spValue = String(spValue).slice(1);
 			}
 		}
-		if(!is_real_number(spValue)) {
+		if (!is_real_number(spValue)) {
 			spValue = 0;
 		}
-		if(getProperty(currency, "sp") !== spValue) {
+		if (getProperty(currency, "sp") !== spValue) {
 			setProperty(currency, "sp", Number(spValue ?? 0));
 			info(`tidy5e-lazymoney | patchCurrency | update sp from '${getProperty(currency, "sp")}' to '${spValue}'`);
 		}
@@ -111,10 +111,10 @@ function patchCurrency(currency) {
 				cpValue = String(cpValue).slice(1);
 			}
 		}
-		if(!is_real_number(cpValue)) {
+		if (!is_real_number(cpValue)) {
 			cpValue = 0;
 		}
-		if(getProperty(currency, "cp") !== cpValue) {
+		if (getProperty(currency, "cp") !== cpValue) {
 			setProperty(currency, "cp", Number(cpValue ?? 0));
 			info(`tidy5e-lazymoney | patchCurrency | update cp from '${getProperty(currency, "cp")}' to '${cpValue}'`);
 		}
@@ -195,12 +195,12 @@ function _onChangeCurrency(ev) {
 	}
 }
 function chatLog(actor, money) {
-  debug(`tidy5e-lazymoney | chatlog | money: ${money}`);
+	debug(`tidy5e-lazymoney | chatlog | money: ${money}`);
 	if (game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyChatLog")) {
 		const msgData = {
 			content: money,
 			speaker: ChatMessage.getSpeaker({ actor: actor }),
-			whisper: ChatMessage.getWhisperRecipients("GM"),
+			whisper: ChatMessage.getWhisperRecipients("GM")
 		};
 		return ChatMessage.create(msgData);
 	} else {
@@ -272,88 +272,88 @@ function getCpValue() {
 		}
 		if (ignorePP && ignoreGP && ignoreEP && ignoreSP && !ignoreCP) {
 			cpValue = {
-				cp: { value: cpConvert, up: "", down: "" },
+				cp: { value: cpConvert, up: "", down: "" }
 			};
 		}
 		if (ignorePP && ignoreGP && ignoreEP && !ignoreSP && ignoreCP) {
 			cpValue = {
-				sp: { value: cpConvert, up: "", down: "" },
+				sp: { value: cpConvert, up: "", down: "" }
 			};
 		}
 		if (ignorePP && ignoreGP && ignoreEP && !ignoreSP && !ignoreCP) {
 			cpValue = {
 				sp: { value: spConvert, up: "", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (ignorePP && ignoreGP && !ignoreEP && ignoreSP && ignoreCP) {
 			cpValue = {
-				ep: { value: cpConvert, up: "", down: "" },
+				ep: { value: cpConvert, up: "", down: "" }
 			};
 		}
 		if (ignorePP && ignoreGP && !ignoreEP && ignoreSP && !ignoreCP) {
 			cpValue = {
 				ep: { value: epConvert, up: "", down: "sp" },
-				cp: { value: cpConvert, up: "ep", down: "" },
+				cp: { value: cpConvert, up: "ep", down: "" }
 			};
 		}
 		if (ignorePP && ignoreGP && !ignoreEP && !ignoreSP && ignoreCP) {
 			cpValue = {
 				ep: { value: epConvert, up: "", down: "sp" },
-				sp: { value: spConvert, up: "ep", down: "" },
+				sp: { value: spConvert, up: "ep", down: "" }
 			};
 		}
 		if (ignorePP && ignoreGP && !ignoreEP && !ignoreSP && !ignoreCP) {
 			cpValue = {
 				ep: { value: epConvert, up: "", down: "sp" },
 				sp: { value: spConvert, up: "ep", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && ignoreEP && ignoreSP && ignoreCP) {
 			cpValue = {
 				gp: { value: gpConvert, up: "", down: "sp" },
 				sp: { value: spConvert, up: "gp", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && ignoreEP && ignoreSP && !ignoreCP) {
 			cpValue = {
 				gp: { value: gpConvert, up: "", down: "cp" },
-				cp: { value: cpConvert, up: "gp", down: "" },
+				cp: { value: cpConvert, up: "gp", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && ignoreEP && !ignoreSP && ignoreCP) {
 			cpValue = {
 				gp: { value: gpConvert, up: "", down: "sp" },
-				sp: { value: spConvert, up: "gp", down: "" },
+				sp: { value: spConvert, up: "gp", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && ignoreEP && !ignoreSP && !ignoreCP) {
 			cpValue = {
 				gp: { value: gpConvert, up: "", down: "sp" },
 				sp: { value: spConvert, up: "gp", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && !ignoreEP && ignoreSP && ignoreCP) {
 			cpValue = {
 				gp: { value: gpConvert, up: "", down: "ep" },
-				ep: { value: epConvert, up: "gp", down: "" },
+				ep: { value: epConvert, up: "gp", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && !ignoreEP && ignoreSP && !ignoreCP) {
 			cpValue = {
 				gp: { value: gpConvert, up: "", down: "ep" },
 				ep: { value: epConvert, up: "gp", down: "cp" },
-				cp: { value: cpConvert, up: "ep", down: "" },
+				cp: { value: cpConvert, up: "ep", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && !ignoreEP && !ignoreSP && ignoreCP) {
 			cpValue = {
 				gp: { value: gpConvert, up: "", down: "ep" },
 				ep: { value: epConvert, up: "gp", down: "sp" },
-				sp: { value: spConvert, up: "ep", down: "" },
+				sp: { value: spConvert, up: "ep", down: "" }
 			};
 		}
 		if (ignorePP && !ignoreGP && !ignoreEP && !ignoreSP && !ignoreCP) {
@@ -361,51 +361,51 @@ function getCpValue() {
 				gp: { value: gpConvert, up: "", down: "ep" },
 				ep: { value: epConvert, up: "gp", down: "sp" },
 				sp: { value: spConvert, up: "ep", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && ignoreEP && ignoreSP && ignoreCP) {
 			cpValue = {
-				pp: { value: cpConvert, up: "", down: "" },
+				pp: { value: cpConvert, up: "", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && ignoreEP && ignoreSP && !ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "cp" },
-				cp: { value: cpConvert, up: "pp", down: "" },
+				cp: { value: cpConvert, up: "pp", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && ignoreEP && !ignoreSP && ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "sp" },
-				sp: { value: spConvert, up: "pp", down: "" },
+				sp: { value: spConvert, up: "pp", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && ignoreEP && !ignoreSP && !ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "sp" },
 				sp: { value: spConvert, up: "pp", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && !ignoreEP && ignoreSP && ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "ep" },
-				ep: { value: epConvert, up: "pp", down: "" },
+				ep: { value: epConvert, up: "pp", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && !ignoreEP && ignoreSP && !ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "ep" },
 				ep: { value: epConvert, up: "pp", down: "cp" },
-				cp: { value: cpConvert, up: "ep", down: "" },
+				cp: { value: cpConvert, up: "ep", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && !ignoreEP && !ignoreSP && ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "ep" },
 				ep: { value: epConvert, up: "pp", down: "sp" },
-				sp: { value: spConvert, up: "ep", down: "" },
+				sp: { value: spConvert, up: "ep", down: "" }
 			};
 		}
 		if (!ignorePP && ignoreGP && !ignoreEP && !ignoreSP && !ignoreCP) {
@@ -413,27 +413,27 @@ function getCpValue() {
 				pp: { value: ppConvert, up: "", down: "ep" },
 				ep: { value: epConvert, up: "pp", down: "sp" },
 				sp: { value: spConvert, up: "ep", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && ignoreEP && ignoreSP && ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "gp" },
-				gp: { value: gpConvert, up: "pp", down: "" },
+				gp: { value: gpConvert, up: "pp", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && ignoreEP && ignoreSP && !ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "gp" },
 				gp: { value: gpConvert, up: "pp", down: "cp" },
-				cp: { value: cpConvert, up: "gp", down: "" },
+				cp: { value: cpConvert, up: "gp", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && ignoreEP && !ignoreSP && ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "gp" },
 				gp: { value: gpConvert, up: "pp", down: "sp" },
-				sp: { value: spConvert, up: "gp", down: "" },
+				sp: { value: spConvert, up: "gp", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && ignoreEP && !ignoreSP && !ignoreCP) {
@@ -441,14 +441,14 @@ function getCpValue() {
 				pp: { value: ppConvert, up: "", down: "gp" },
 				gp: { value: gpConvert, up: "pp", down: "sp" },
 				sp: { value: spConvert, up: "gp", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && !ignoreEP && ignoreSP && ignoreCP) {
 			cpValue = {
 				pp: { value: ppConvert, up: "", down: "gp" },
 				gp: { value: gpConvert, up: "pp", down: "ep" },
-				ep: { value: epConvert, up: "gp", down: "" },
+				ep: { value: epConvert, up: "gp", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && !ignoreEP && ignoreSP && !ignoreCP) {
@@ -456,7 +456,7 @@ function getCpValue() {
 				pp: { value: ppConvert, up: "", down: "gp" },
 				gp: { value: gpConvert, up: "pp", down: "ep" },
 				ep: { value: epConvert, up: "gp", down: "cp" },
-				cp: { value: cpConvert, up: "ep", down: "" },
+				cp: { value: cpConvert, up: "ep", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && !ignoreEP && !ignoreSP && ignoreCP) {
@@ -464,7 +464,7 @@ function getCpValue() {
 				pp: { value: ppConvert, up: "", down: "gp" },
 				gp: { value: gpConvert, up: "pp", down: "ep" },
 				ep: { value: epConvert, up: "gp", down: "sp" },
-				sp: { value: spConvert, up: "ep", down: "" },
+				sp: { value: spConvert, up: "ep", down: "" }
 			};
 		}
 		if (!ignorePP && !ignoreGP && !ignoreEP && !ignoreSP && !ignoreCP) {
@@ -473,7 +473,7 @@ function getCpValue() {
 				gp: { value: gpConvert, up: "pp", down: "ep" },
 				ep: { value: epConvert, up: "gp", down: "sp" },
 				sp: { value: spConvert, up: "ep", down: "cp" },
-				cp: { value: cpConvert, up: "sp", down: "" },
+				cp: { value: cpConvert, up: "sp", down: "" }
 			};
 		}
 	} else {
@@ -482,7 +482,7 @@ function getCpValue() {
 				pp: { value: 1000, up: "", down: "gp" },
 				gp: { value: 100, up: "pp", down: "sp" },
 				sp: { value: 10, up: "gp", down: "cp" },
-				cp: { value: 1, up: "sp", down: "" },
+				cp: { value: 1, up: "sp", down: "" }
 			};
 		} else {
 			cpValue = {
@@ -490,7 +490,7 @@ function getCpValue() {
 				gp: { value: 100, up: "pp", down: "ep" },
 				ep: { value: 50, up: "gp", down: "sp" },
 				sp: { value: 10, up: "ep", down: "cp" },
-				cp: { value: 1, up: "sp", down: "" },
+				cp: { value: 1, up: "sp", down: "" }
 			};
 		}
 	}
@@ -634,7 +634,7 @@ export function applyLazyMoney(app, html, actorData) {
 	html.find("input[name^='system.currency']").change(
 		{
 			app: app,
-			data: actorData,
+			data: actorData
 		},
 		_onChangeCurrency
 	);
@@ -655,7 +655,7 @@ Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
 	if (hasProperty(update, "system.currency")) {
 		const currency = getProperty(update, "system.currency");
 		if (isEmptyObject(currency)) {
-      		// Do nothing
+			// Do nothing
 		} else {
 			update.system.currency = patchCurrency(update.system.currency);
 		}

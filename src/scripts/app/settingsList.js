@@ -11,7 +11,7 @@ export function settingsList() {
 		hint: `TIDY5E.Settings.SheetMenu.hint`,
 		icon: "fas fa-cog",
 		type: Tidy5eUserSettings,
-		restricted: false,
+		restricted: false
 	});
 
 	game.settings.registerMenu(CONSTANTS.MODULE_ID, "resetAllSettings", {
@@ -19,7 +19,7 @@ export function settingsList() {
 		hint: `TIDY5E.Settings.Reset.hint`,
 		icon: "fas fa-database",
 		type: ResetSettingsDialog,
-		restricted: true,
+		restricted: true
 	});
 
 	// ========================================================================
@@ -33,14 +33,14 @@ export function settingsList() {
 		type: String,
 		choices: {
 			default: game.i18n.localize("TIDY5E.Settings.SheetTheme.default"),
-			dark: game.i18n.localize("TIDY5E.Settings.SheetTheme.dark"),
+			dark: game.i18n.localize("TIDY5E.Settings.SheetTheme.dark")
 		},
 		default: "default",
 		onChange: (data) => {
 			data === "dark"
 				? document.querySelector("html").classList.add("tidy5eDark")
 				: document.querySelector("html").classList.remove("tidy5eDark");
-		},
+		}
 	});
 
 	const colorScheme = game.settings.get(CONSTANTS.MODULE_ID, "colorScheme");
@@ -55,7 +55,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Classic Item Controls
@@ -65,7 +65,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: true,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hideIconsNextToTheItemName", {
@@ -74,7 +74,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Item Info Cards
@@ -84,7 +84,7 @@ export function settingsList() {
 		scope: "client",
 		config: true,
 		default: true,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "itemCardsForNpcs", {
@@ -93,7 +93,7 @@ export function settingsList() {
 		scope: "world",
 		config: true,
 		default: true,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "itemCardsAreFloating", {
@@ -102,7 +102,7 @@ export function settingsList() {
 		scope: "client",
 		config: true,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "itemCardsDelay", {
@@ -111,7 +111,7 @@ export function settingsList() {
 		scope: "client",
 		config: true,
 		default: 300,
-		type: Number,
+		type: Number
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "itemCardsFixKey", {
@@ -120,7 +120,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: "x",
-		type: String,
+		type: String
 	});
 
 	// Show Roll buttons in context Menu
@@ -130,7 +130,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	//Show trait labels
@@ -140,7 +140,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: true,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Settings Menu
@@ -152,7 +152,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "journalTabNPCDisabled", {
@@ -161,7 +161,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "classListDisabled", {
@@ -170,7 +170,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "inspirationAnimationDisabled", {
@@ -179,7 +179,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hideIfZero", {
@@ -188,7 +188,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "inspirationOnHover", {
@@ -197,7 +197,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "exhaustionOnHover", {
@@ -206,7 +206,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpBarDisabled", {
@@ -215,7 +215,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpOverlayDisabled", {
@@ -224,7 +224,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "traitsTogglePc", {
@@ -233,7 +233,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "traitsMovedBelowResource", {
@@ -242,7 +242,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "ammoEquippedOnly", {
@@ -251,7 +251,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// NPC Sheet Settings
@@ -262,7 +262,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpBarDisabledNpc", {
@@ -271,7 +271,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpOverlayDisabledNpc", {
@@ -280,7 +280,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "traitsAlwaysShownNpc", {
@@ -289,7 +289,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "skillsAlwaysShownNpc", {
@@ -298,7 +298,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hideSpellbookTabNpc", {
@@ -307,7 +307,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: true,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Vehicle Sheet Settings
@@ -318,7 +318,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpOverlayDisabledVehicle", {
@@ -327,7 +327,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	//
@@ -340,7 +340,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Expanded Sheet
@@ -350,7 +350,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Portrait Settings
@@ -365,7 +365,7 @@ export function settingsList() {
 			default: game.i18n.localize("TIDY5E.Settings.PortraitStyle.default"),
 			pc: game.i18n.localize("TIDY5E.Settings.PortraitStyle.pc"),
 			npc: game.i18n.localize("TIDY5E.Settings.PortraitStyle.npc"),
-			all: game.i18n.localize("TIDY5E.Settings.PortraitStyle.all"),
+			all: game.i18n.localize("TIDY5E.Settings.PortraitStyle.all")
 		},
 		default: "all",
 		onChange: (data) => {
@@ -383,7 +383,7 @@ export function settingsList() {
 				$(".tidy5e-sheet.tidy5e-npc .profile").removeClass("roundPortrait");
 				$(".tidy5e-sheet.tidy5e-vehicle .profile").removeClass("roundPortrait");
 			}
-		},
+		}
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpOverlayBorder", {
@@ -397,7 +397,7 @@ export function settingsList() {
 			$(".system-dnd5e")
 				.get(0)
 				.style.setProperty("--pc-border", game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorder") + "px");
-		},
+		}
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpOverlayBorderNpc", {
@@ -411,7 +411,7 @@ export function settingsList() {
 			$(".system-dnd5e")
 				.get(0)
 				.style.setProperty("--npc-border", game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderNpc") + "px");
-		},
+		}
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle", {
@@ -428,7 +428,7 @@ export function settingsList() {
 					"--vehicle-border",
 					game.settings.get(CONSTANTS.MODULE_ID, "hpOverlayBorderVehicle") + "px"
 				);
-		},
+		}
 	});
 
 	// Total Edit Lock
@@ -438,7 +438,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "editGmAlwaysEnabled", {
@@ -447,7 +447,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "editEffectsGmOnlyEnabled", {
@@ -456,7 +456,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Hidden Death Saves
@@ -466,7 +466,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Hide marker spell slot
@@ -476,7 +476,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Enable Spell Level Buttons
@@ -486,7 +486,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: true,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Hide Standard Encumbrance Bar
@@ -496,7 +496,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Item quantity
@@ -506,7 +506,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Tracker Settings
@@ -519,10 +519,10 @@ export function settingsList() {
 			default: game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default"),
 			tidy5e: game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.default"),
 			dfredce: game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.dfredce"),
-			cub: game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.cub"),
+			cub: game.i18n.localize("TIDY5E.Settings.ExhaustionEffects.cub")
 		},
 		type: String,
-		default: "default",
+		default: "default"
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "exhaustionEffectIcon", {
@@ -531,7 +531,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		type: String,
-		default: "modules/tidy5e-sheet/images/exhaustion.svg",
+		default: "modules/tidy5e-sheet/images/exhaustion.svg"
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "exhaustionEffectCustom", {
@@ -540,7 +540,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: "Exhaustion",
-		type: String,
+		type: String
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "exhaustionEffectCustomTiers", {
@@ -549,7 +549,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: 5,
-		type: Number,
+		type: Number
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "exhaustionDisabled", {
@@ -558,7 +558,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "inspirationDisabled", {
@@ -567,7 +567,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// NPC Resting
@@ -577,7 +577,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "restingForNpcsChatDisabled", {
@@ -586,7 +586,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Link Marker
@@ -599,9 +599,9 @@ export function settingsList() {
 		choices: {
 			default: game.i18n.localize("TIDY5E.Settings.LinkMarker.default"),
 			unlinked: game.i18n.localize("TIDY5E.Settings.LinkMarker.unlinked"),
-			both: game.i18n.localize("TIDY5E.Settings.LinkMarker.both"),
+			both: game.i18n.localize("TIDY5E.Settings.LinkMarker.both")
 		},
-		default: "default",
+		default: "default"
 	});
 
 	// Show if item has active effects
@@ -611,7 +611,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Set default Tab for character actions list
@@ -631,9 +631,9 @@ export function settingsList() {
 			effects: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.effects"),
 			biography: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.biography"),
 			journal: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.journal"),
-			actions: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.actions"),
+			actions: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.actions")
 		},
-		default: "default",
+		default: "default"
 	});
 
 	// Default width for player sheet
@@ -643,7 +643,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		type: Number,
-		default: 740,
+		default: 740
 	});
 
 	// Default width for NPC sheet
@@ -653,7 +653,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		type: Number,
-		default: 740,
+		default: 740
 	});
 
 	// Default width for vehicle sheet
@@ -663,7 +663,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		type: Number,
-		default: 740,
+		default: 740
 	});
 
 	// Lazy HP and Exp
@@ -674,7 +674,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit1", {
@@ -683,7 +683,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyHpForceHpValueLimit2", {
@@ -692,7 +692,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Lazy Money
@@ -703,7 +703,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyMoneyAddConvert", {
@@ -712,7 +712,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyMoneyIgnoreElectrum", {
@@ -721,7 +721,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: true,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyMoneyChatLog", {
@@ -730,7 +730,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Favorites
@@ -741,7 +741,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Locks
@@ -752,7 +752,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lockExpChanges", {
@@ -761,7 +761,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lockHpMaxChanges", {
@@ -770,7 +770,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lockLevelSelector", {
@@ -779,7 +779,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lockConfigureSheet", {
@@ -788,7 +788,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lockItemQuantity", {
@@ -797,7 +797,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// Other
@@ -808,7 +808,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "spellClassFilterSelect", {
@@ -817,7 +817,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "spellClassFilterIconReplace", {
@@ -826,7 +826,7 @@ export function settingsList() {
 		scope: "client",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "allowHpMaxOverride", {
@@ -835,16 +835,38 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
-  game.settings.register(CONSTANTS.MODULE_ID, "allowHpConfigOverride", {
+	game.settings.register(CONSTANTS.MODULE_ID, "allowHpConfigOverride", {
 		name: `${game.i18n.localize("TIDY5E.Settings.AllowHpConfigOverride.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.AllowHpConfigOverride.hint")}`,
 		scope: "world",
 		config: false,
 		default: false,
+		type: Boolean
+	});
+
+	game.settings.register(CONSTANTS.MODULE_ID, "betterAttackDialog", {
+		name: `${game.i18n.localize("TIDY5E.Settings.BetterAttackDialog.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.BetterAttackDialog.hint")}`,
+		scope: "world",
 		type: Boolean,
+		default: true,
+		config: true,
+		onChange: (newValue) => {
+			const style = `<style id="dfqol-better-attack">
+			.dialog-button.default.advantage {
+			border: 2px groove green !important;
+			}
+			.dialog-button.default.disadvantage {
+			border: 2px groove red !important;
+			}
+			</style>`;
+			const styleElement = $("#tidy5e-sheet-better-attack");
+			if (styleElement.length == 0 && newValue) $("body").append(style);
+			else if (styleElement.length != 0 && !newValue) styleElement.remove();
+		}
 	});
 
 	// Color customization
@@ -855,7 +877,7 @@ export function settingsList() {
 		scope: "client",
 		type: Boolean,
 		default: false,
-		config: false,
+		config: false
 	});
 
 	// --t5e-equipped: 					rgba(50, 205, 50, 0.3);
@@ -868,7 +890,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 0.3),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerEquippedOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquippedOutline.name")}`,
@@ -876,7 +898,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 1),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerEquippedAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerEquippedAccent.name")}`,
@@ -884,7 +906,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(173, 255, 47, 1),
-		config: false,
+		config: false
 	});
 
 	// --t5e-prepared: 					rgba(50, 205, 50, 0.3);
@@ -897,7 +919,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 0.3),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerPreparedOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPreparedOutline.name")}`,
@@ -905,7 +927,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(50, 205, 50, 1),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerPreparedAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPreparedAccent.name")}`,
@@ -913,7 +935,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(173, 255, 47, 1),
-		config: false,
+		config: false
 	});
 
 	// --t5e-pact:					    rgba(250, 0, 180, 0.3);
@@ -926,7 +948,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(250, 0, 180, 0.3),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerPactOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPactOutline.name")}`,
@@ -934,7 +956,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(250, 50, 213, 1),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerPactAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerPactAccent.name")}`,
@@ -942,7 +964,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(198, 119, 193, 1),
-		config: false,
+		config: false
 	});
 
 	// --t5e-atwill: 					rgba(226, 246, 4, 0.3);
@@ -955,7 +977,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(226, 246, 4, 0.3),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerAtWillOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWillOutline.name")}`,
@@ -963,7 +985,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(163, 165, 50, 1),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerAtWillAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAtWillAccent.name")}`,
@@ -971,7 +993,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(255, 242, 0, 1),
-		config: false,
+		config: false
 	});
 
 	// --t5e-innate: 					rgba(255, 0, 0, 0.3);
@@ -984,7 +1006,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(255, 0, 0, 0.3),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerInnateOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnateOutline.name")}`,
@@ -992,7 +1014,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(231, 23, 23, 1),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerInnateAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerInnateAccent.name")}`,
@@ -1000,7 +1022,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(195, 69, 69, 1),
-		config: false,
+		config: false
 	});
 
 	// --t5e-alwaysprepared: 			rgba(0, 0, 255, 0.15);
@@ -1013,7 +1035,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(0, 0, 255, 0.15),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerAlwaysPreparedOutline", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPreparedOutline.name")}`,
@@ -1021,7 +1043,7 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(65, 105, 225, 1),
-		config: false,
+		config: false
 	});
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerAlwaysPreparedAccent", {
 		name: `${game.i18n.localize("TIDY5E.Settings.ColorPickerAlwaysPreparedAccent.name")}`,
@@ -1029,20 +1051,20 @@ export function settingsList() {
 		scope: "client",
 		type: String,
 		default: RGBAToHexAFromColor(0, 191, 255, 1),
-		config: false,
+		config: false
 	});
 
-  // ===============================
-  // Homebrew Rules
-  // ===============================
+	// ===============================
+	// Homebrew Rules
+	// ===============================
 
-  game.settings.register(CONSTANTS.MODULE_ID, "hbEnableUpcastFreeSpell", {
+	game.settings.register(CONSTANTS.MODULE_ID, "hbEnableUpcastFreeSpell", {
 		name: `${game.i18n.localize("TIDY5E.Settings.HBEnableUpcastFreeSpell.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.HBEnableUpcastFreeSpell.hint")}`,
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_ID, "hbSetFeaturesForUpcastFreeSpell", {
@@ -1051,7 +1073,7 @@ export function settingsList() {
 		scope: "world",
 		config: false,
 		default: "",
-		type: String,
+		type: String
 	});
 
 	// ========================================================================
@@ -1061,7 +1083,7 @@ export function settingsList() {
 		scope: "client",
 		config: true,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 }
 
@@ -1088,14 +1110,14 @@ class ResetSettingsDialog extends FormApplication {
 							await setting.delete();
 						}
 						//window.location.reload();
-					},
+					}
 				},
 				cancel: {
 					icon: '<i class="fas fa-times"></i>',
-					label: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.cancel`),
-				},
+					label: game.i18n.localize(`TIDY5E.Settings.Reset.dialogs.cancel`)
+				}
 			},
-			default: "cancel",
+			default: "cancel"
 		});
 	}
 

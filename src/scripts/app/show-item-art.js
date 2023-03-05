@@ -28,7 +28,7 @@ export const tidy5eShowItemArt = function (html, item) {
 		new ImagePopout(itemImg, {
 			title: "Item: " + item.name,
 			shareable: true,
-			uuid: item.uuid,
+			uuid: item.uuid
 		}).render(true);
 	});
 };
