@@ -780,6 +780,13 @@
 				<p class="notes">{{localize 'TIDY5E.Settings.AllowHpConfigOverride.hint'}}</p>
 			</div>
 		</article>
+		<article class="setting">
+			<input type="checkbox" data-dtype="boolean" name="betterAttackDialog" id="betterAttackDialog" {{checked settings.betterAttackDialog.value}} />
+			<div class="description">
+				<label for="betterAttackDialog">{{localize 'TIDY5E.Settings.BetterAttackDialog.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.BetterAttackDialog.hint'}}</p>
+			</div>
+		</article>	
 		<h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
 		<article class="setting">
 			<input type="checkbox" data-dtype="boolean" name="spellClassFilterSelect" id="spellClassFilterSelect" {{checked settings.spellClassFilterSelect.value}} />
@@ -875,7 +882,7 @@
 	</section>
 
     {{!-- HOMEBREW RULES OPTIONS --}}
-	<!-- TODO
+	
 	<section class="tab gm-only" data-tab="homebrew-rules">
 		<h2>{{localize 'TIDY5E.Settings.TabHomebrewRules.header'}}</h2>
 
@@ -896,7 +903,7 @@
 		</article>
 
 	</section>
-	-->
+	
 	{{!-- LOCKS OPTIONS --}}
 
 	<section class="tab gm-only" data-tab="locks">

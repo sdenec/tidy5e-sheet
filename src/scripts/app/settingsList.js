@@ -306,7 +306,7 @@ export function settingsList() {
 		hint: game.i18n.localize("TIDY5E.Settings.SkillsAlwaysShown.hint"),
 		scope: "client",
 		config: false,
-		default: true,
+		default: false,
 		type: Boolean
 	});
 
@@ -851,11 +851,11 @@ export function settingsList() {
 		name: `${game.i18n.localize("TIDY5E.Settings.BetterAttackDialog.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.BetterAttackDialog.hint")}`,
 		scope: "world",
-		type: Boolean,
+		config: false,
 		default: true,
-		config: true,
+		type: Boolean,
 		onChange: (newValue) => {
-			const style = `<style id="dfqol-better-attack">
+			const style = `<style id="tidy5e-better-attack">
 			.dialog-button.default.advantage {
 			border: 2px groove green !important;
 			}
@@ -864,11 +864,15 @@ export function settingsList() {
 			}
 			</style>`;
 			const styleElement = $("#tidy5e-sheet-better-attack");
-			if (styleElement.length == 0 && newValue) $("body").append(style);
-			else if (styleElement.length != 0 && !newValue) styleElement.remove();
+			if (styleElement.length == 0 && newValue) {
+				$("body").append(style);
+			}
+			else if (styleElement.length != 0 && !newValue) {
+				styleElement.remove();
+			}
 		}
 	});
-
+	
 	// Color customization
 
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerEnabled", {

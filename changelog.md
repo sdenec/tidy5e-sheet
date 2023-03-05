@@ -1,3 +1,9 @@
+### 0.8.33
+
+- Add module settings 'BetterAttackDialog'
+- Enable tab homebrew rule for community testing
+- Set default module setting 'hideSpellbookTabNpc' to false
+
 ### 0.8.32 
 
 - Update feature ofor reston NPC and try tosolve the issue https://github.com/sdenec/tidy5e-sheet/issues/719

@@ -124,7 +124,8 @@
 
 	"TIDY5E.OriginSummaryConfig": "Origin Summary Configuration",
 
-  "TIDY5E.LevelBump": "Level Bump",
+    "TIDY5E.LevelBump": "Level Bump",
+    "TIDY5E.LevelBumpTooltip": "When you are casting a spell you can cast it one level higher for free.",
 
 	"TIDY5E.Settings.GlobalLabel": "Global",
 	"TIDY5E.Settings.DebugLabel": "Debug",
@@ -565,6 +566,10 @@
 		"name": "Allow hp panel configuration override on Character",
 		"hint": "Usually you don't need this but if enable this module setting replace the hp configuration panel on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOR OF THE SYSTEM IS USEFUL FOR AVOID SOME NOT UNWANTED DEFAULT BEHAVIOR OF THE SYSTEM."
 	},
+	"TIDY5E.Settings.BetterAttackDialog": {
+		"name": "Enable Better Default Attack Buttons Highlight",
+		"hint": "The attack buttons do not show the suggested action very clearly. This adds a Green border for Advantage and Red for Disadvantage depending on which button is highlighted."
+	},
 	"TIDY5E.Settings.Reset": {
 		"name": "Reset settings to default",
 		"hint": "This will reset all of the settings of back to the active game system's default.",
@@ -589,6 +594,6 @@
 	},
     "TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell": {
 		"name": "Set features for upcast free spell",
-		"hint": "This setting work only with the module setting 'Enable upcast free spell' enabled, is a string of feature names separated by the character '|' , the search for such features is case unsensitive if found a 'valid' feature enables actors to use the feature upcast"
+		"hint": "This setting work only with the module setting 'Enable upcast free spell' enabled, is a string of feature names separated by the character '|' , the search for such features is case unsensitive if found a 'valid' feature enables actors to use the feature upcast. IF LEFT EMPTY IT WILL BE IGNORED."
 	}
 }
