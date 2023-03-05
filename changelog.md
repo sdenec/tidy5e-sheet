@@ -1,4 +1,4 @@
-### 0.8.34 
+### 0.8.34-35
 
 - Bug fix on html template on skill ability hidden
 
