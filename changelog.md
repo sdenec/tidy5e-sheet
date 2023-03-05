@@ -1,3 +1,7 @@
+### 0.8.34 
+
+- Bug fix on html template on skill ability hidden
+
 ### 0.8.33
 
 - Add module settings 'BetterAttackDialog'
