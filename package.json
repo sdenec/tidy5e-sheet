@@ -1,0 +1,25 @@
+{
+	"name": "tidy5e-sheet",
+	"title": "Tidy5e Sheet",
+	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
+	"version": "0.8.35",
+  "main": "main.js",
+  "scripts": {
+    "prettier-format": "prettier --config .prettierrc.js --write \"./src/**/*.{ts,js,json,scss,css}\""
+  },
+  "keywords": [
+    "foundryvtt",
+    "fvtt",
+    "module"
+  ],
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+
+  },
+  "dependencies": {
+    "build": "^0.1.4",
+    "prettier": "^2.7.1",
+    "prettier-format": "^3.1.0"
+  }
+}
