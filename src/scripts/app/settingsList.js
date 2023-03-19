@@ -829,6 +829,15 @@ export function settingsList() {
 		type: Boolean
 	});
 
+	game.settings.register(CONSTANTS.MODULE_ID, "spellClassFilterAdditionalClasses", {
+		name: `${game.i18n.localize("TIDY5E.Settings.SpellClassFilterAdditionalClasses.name")}`,
+		hint: `${game.i18n.localize("TIDY5E.Settings.SpellClassFilterAdditionalClasses.hint")}`,
+		scope: "client",
+		config: false,
+		default: "",
+		type: String
+	});
+
 	game.settings.register(CONSTANTS.MODULE_ID, "allowHpMaxOverride", {
 		name: `${game.i18n.localize("TIDY5E.Settings.AllowHpMaxOverride.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.AllowHpMaxOverride.hint")}`,

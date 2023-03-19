@@ -17,6 +17,8 @@ const classesConfiguration = {
 	custom: "TIDY5E.ClassCustom"
 };
 
+let classesConfigurationTmp = {};
+
 export async function applySpellClassFilterItemSheet(app, html, itemData) {
 	if (!game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterSelect")) {
 		return;
@@ -34,12 +36,31 @@ export async function applySpellClassFilterItemSheet(app, html, itemData) {
 
 	// If this is a spell construct the HTML and inject it onto the page.
 	if (type == "spell") {
+		classesConfigurationTmp = classesConfiguration;
+		const user_setting_addClasses = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterAdditionalClasses");
+		if(user_setting_addClasses && user_setting_addClasses.includes("|")){
+			let classes = [];
+			if(user_setting_addClasses.includes(",") ) {
+				classes = user_setting_addClasses.split(",");
+			} else {
+				classes = [user_setting_addClasses];
+			}
+			for(let clazz of classes) {
+				const c = clazz.split("|");
+				const id = c[0];
+				const name = c[1];
+				if(id && name) {
+					classesConfigurationTmp[id] = name;
+				}
+			}
+		}
+
 		const spellDetailsDiv = html.find(".tab.details");
 		const firstChild = spellDetailsDiv.children("h3:first");
 		const spellClassForm = await renderTemplate(
 			"modules/tidy5e-sheet/templates/items/tidy5e-spell-class-filter-form.html",
 			{
-				SCF: classesConfiguration,
+				SCF: classesConfigurationTmp,
 				item,
 				flags: item.flags
 			}
@@ -78,10 +99,28 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
 
 		// Inject a simple dropdown menu.
 		if (user_setting_filterSelect) {
+			classesConfigurationTmp = classesConfiguration;
+			const user_setting_addClasses = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterAdditionalClasses");
+			if(user_setting_addClasses && user_setting_addClasses.includes("|")){
+				let classes = [];
+				if(user_setting_addClasses.includes(",") ) {
+					classes = user_setting_addClasses.split(",");
+				} else {
+					classes = [user_setting_addClasses];
+				}
+				for(let clazz of classes) {
+					const c = clazz.split("|");
+					const id = c[0];
+					const name = c[1];
+					if(id && name) {
+						classesConfigurationTmp[id] = name;
+					}
+				}
+			}
 			const actorClassFilter = await renderTemplate(
 				"modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-class-filter.html",
 				{
-					SCF: classesConfiguration,
+					SCF: classesConfigurationTmp,
 					actor,
 					flags: flags,
 					scFlags: actor.flags[CONSTANTS.MODULE_ID]

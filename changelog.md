@@ -2,6 +2,9 @@
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/734
 - Commented error for fix https://github.com/sdenec/tidy5e-sheet/issues/719
+- Transfer "Multicast Spell Filter" to Player Options Tab
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/725
+- Add module settings "Add additional classes for 'Multiclass Spellbook filter'" fop support homebrewed class
 
 ### 0.8.34-35
 

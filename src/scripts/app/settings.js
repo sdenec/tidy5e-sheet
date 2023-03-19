@@ -112,6 +112,7 @@ export class Tidy5eUserSettings extends FormApplication {
 			"allowCantripToBePreparedOnContext",
 			"spellClassFilterSelect",
 			"spellClassFilterIconReplace",
+			"spellClassFilterAdditionalClasses",
 			"allowHpMaxOverride",
 			"allowHpConfigOverride",
 			"betterAttackDialog",
