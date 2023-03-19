@@ -152,6 +152,13 @@
 				<p class="notes">{{localize 'TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically.hint'}}</p>
 			</div>
 		</article>
+		<article class="setting">
+			<input type="checkbox" data-dtype="boolean" name="enableActionListOnFavoritePanel" id="enableActionListOnFavoritePanel" {{checked settings.enableActionListOnFavoritePanel.value}} />
+			<div class="description">
+				<label for="enableActionListOnFavoritePanel">{{localize 'TIDY5E.Settings.EnableActionListOnFavoritePanel.name'}}</label>
+				<p class="notes">{{localize 'TIDY5E.Settings.EnableActionListOnFavoritePanel.hint'}}</p>
+			</div>
+		</article>
 		<h3>{{localize 'TIDY5E.Settings.MulticlassSpellbookFilterLabel'}}</h3>
 		<article class="setting">
 			<input type="checkbox" data-dtype="boolean" name="spellClassFilterSelect" id="spellClassFilterSelect" {{checked settings.spellClassFilterSelect.value}} />

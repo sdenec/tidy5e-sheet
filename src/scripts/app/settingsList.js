@@ -616,6 +616,15 @@ export function settingsList() {
 
 	// Set default Tab for character actions list
 
+	game.settings.register(CONSTANTS.MODULE_ID, "enableActionListOnFavoritePanel", {
+		name: `${game.i18n.localize("TIDY5E.Settings.EnableActionListOnFavoritePanel.name")}`,
+		hint: game.i18n.localize("TIDY5E.Settings.EnableActionListOnFavoritePanel.hint"),
+		scope: "client",
+		config: false,
+		default: false,
+		type: Boolean
+	});
+
 	game.settings.register(CONSTANTS.MODULE_ID, "defaultActionsTab", {
 		name: `${game.i18n.localize("TIDY5E.Settings.defaultActionsTab.name")}`,
 		hint: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.hint"),

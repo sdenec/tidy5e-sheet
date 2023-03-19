@@ -352,34 +352,47 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 	// add actions module
 	async _renderInner(...args) {
 		const html = await super._renderInner(...args);
-		const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 		let injectCharacterSheet;
-		if (game.modules.get("character-actions-list-5e")?.active)
+		if (game.modules.get("character-actions-list-5e")?.active) {
 			injectCharacterSheet = game.settings.get("character-actions-list-5e", "inject-characters");
+			const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
+			try {
+				if (injectCharacterSheet) {
 
-		try {
-			if (game.modules.get("character-actions-list-5e")?.active && injectCharacterSheet) {
-				// Update the nav menu
-				const actionsTabButton = $(
-					'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
-				);
-				const tabs = html.find('.tabs[data-group="primary"]');
-				tabs.prepend(actionsTabButton);
+					// Update the nav menu
+					const actionsTabButton = $(
+						'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
+					);
+					const tabs = html.find('.tabs[data-group="primary"]');
+					tabs.prepend(actionsTabButton);
 
-				// Create the tab
-				const sheetBody = html.find(".sheet-body");
-				const actionsTab = $(`<div class="tab actions" data-group="primary" data-tab="actions"></div>`);
-				const actionsLayout = $(`<div class="list-layout"></div>`);
-				actionsTab.append(actionsLayout);
-				sheetBody.prepend(actionsTab);
+					// Create the tab
+					const sheetBody = html.find(".sheet-body");
+					const actionsTab = $(`<div class="tab actions" data-group="primary" data-tab="actions"></div>`);
+					const actionsLayout = $(`<div class="list-layout"></div>`);
+					actionsTab.append(actionsLayout);
+					sheetBody.prepend(actionsTab);
 
-				// const actionsTab = html.find('.actions-target');
 
-				const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
-				actionsLayout.html(actionsTabHtml);
+					const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
+					actionsLayout.html(actionsTabHtml);
+				}
+				if (game.modules.get("character-actions-list-5e")?.active &&
+					game.settings.get(CONSTANTS.MODULE_ID, "enableActionListOnFavoritePanel")) {
+
+					const actionsTab = html.find('.actions-target');
+					const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
+					actionsTab.html(actionsTabHtml);
+					
+					actionsTab.find('.item-controls.context-menu').hide();
+					actionsTab.find('item-controls items-header-controls').hide();
+					actionsTab.find('.item-name').css("min-width","130px");
+					actionsTab.find('.item-name').css("max-width","130px");
+
+				}
+			} catch (err) {
+				error(err?.message, true);
 			}
-		} catch (err) {
-			error(err?.message, true);
 		}
 
 		return html;

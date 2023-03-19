@@ -335,8 +335,9 @@
 					{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-traits.html"}}
 				</div>
 
-				<section class="center-pane">
-					{{!-- Body Attributes --}}
+				<section class="center-pane flexcol">
+				{{!-- Body Attributes --}}
+				<ul class="attributes">
 					{{!-- Resources --}}
 					<ul class="resources">
 						{{#each resources as |res|}}
@@ -377,6 +378,7 @@
 					<div class="actions-target list-layout"></div>
 					{{!-- Favorites --}}
 					<div class="favorites-target"></div>
+				</ul>
 				</section>
 			</div>
 

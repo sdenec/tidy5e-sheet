@@ -110,6 +110,7 @@ export class Tidy5eUserSettings extends FormApplication {
 
 			"enableSortFavoritesItemsAlphabetically",
 			"allowCantripToBePreparedOnContext",
+			"enableActionListOnFavoritePanel",
 			"spellClassFilterSelect",
 			"spellClassFilterIconReplace",
 			"spellClassFilterAdditionalClasses",

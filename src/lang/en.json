@@ -588,6 +588,10 @@
 		"name": "Enable Sort Favorites Alphabetically",
 		"hint": "It enabled this setting will sort the items, features, spells alphabetically on the favorites html template"
 	},
+	"TIDY5E.Settings.EnableActionListOnFavoritePanel": {
+		"name": "Enable Action List On Favorite Panel",
+		"hint": "Show favorites item grouped for Action, Bonus Action, Reaction. YOU NEED THE MODULE 'Character Actions 5e Variant forked by p4535992 (https://github.com/p4535992/foundryvtt-character-actions-dnd5e)'"
+	},
 	"TIDY5E.Settings.HBEnableUpcastFreeSpell": {
 		"name": "Enable upcast free spell.",
 		"hint": "Add an additional button when you are casting a spell for cast it one level higher. This is a homebrew rule. Ty to @mxfz on discord for the macro code and to @thundershield on for the idea, you can find more details here https://discord.com/channels/170995199584108546/699750150674972743/1055686421198946465"
