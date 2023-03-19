@@ -1,3 +1,8 @@
+### 0.8.36
+
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/734
+- Commented error for fix https://github.com/sdenec/tidy5e-sheet/issues/719
+
 ### 0.8.34-35
 
 - Bug fix on html template on skill ability hidden

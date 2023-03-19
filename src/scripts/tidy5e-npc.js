@@ -619,7 +619,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 			try {
 				config.newDay = await ShortRestDialog.shortRestDialog({ actor: this.actor, canRoll: hd0 > 0 });
 			} catch (err) {
-				error(err?.message, true);
+				// error(err?.message, true);
 				return;
 			}
 		}
@@ -664,7 +664,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 			try {
 				config.newDay = await LongRestDialog.longRestDialog({ actor: this.actor });
 			} catch (err) {
-				error(err?.message, true);
+				// error(err?.message, true);
 				return;
 			}
 		}
