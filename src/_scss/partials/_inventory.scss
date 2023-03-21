@@ -1028,10 +1028,14 @@
 			}
 
 			span.truncate {
-				white-space: nowrap;
+				padding: 0 4px;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				padding: 0 4px;
+				white-space: nowrap;
+				-o-text-overflow: ellipsis;
+				-ms-text-overflow: ellipsis;
+				max-width: 130px;
+				position: relative;
 			}
 		}
 	} // .items-list

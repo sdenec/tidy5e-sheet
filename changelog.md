@@ -8,6 +8,7 @@
 - Add module setting "enableActionListOnFavoritePanel"
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/675 for all the cry baby of the world..
 - Check for https://github.com/sdenec/tidy5e-sheet/issues/728 not able to replicate
+- Better css for https://github.com/sdenec/tidy5e-sheet/issues/722 and https://github.com/sdenec/tidy5e-sheet/issues/694
 
 ### 0.8.34-35
 

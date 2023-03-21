@@ -1447,6 +1447,7 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	overflow: hidden;
 }
 .tidy5e.sheet.actor .origin-summary li.origin-summary-config {
 	-webkit-box-pack: end;
@@ -1460,9 +1461,23 @@
 	padding: 0 4px 0 8px;
 }
 .tidy5e.sheet.actor .origin-summary li span.origin-summary-text {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: default;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    font-size: 12px;
 	overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+}
+.tidy5e.sheet.actor .origin-summary li span.origin-summary-text h4 {
+    -webkit-box-flex: initial;
+    -ms-flex: initial;
+    flex: initial;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .tidy5e.sheet.actor .origin-summary li span::after {
 	content: "";
@@ -1492,6 +1507,7 @@
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: flex-end;
+	max-width: 150px;
 }
 .tidy5e.sheet.actor .actor-size-select,
 .tidy5e.sheet.actor .actor-size-select ul {
@@ -3623,10 +3639,14 @@
 	border-left-color: transparent;
 }
 .tidy5e.sheet.actor .list-layout .items-list .item-detail span.truncate {
-	white-space: nowrap;
+	padding: 0 4px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	padding: 0 4px;
+	white-space: nowrap;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	max-width: 130px;
+	position: relative;
 }
 .tidy5e.sheet.actor .item-properties {
 	-webkit-box-pack: start;

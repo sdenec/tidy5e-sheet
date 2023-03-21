@@ -544,16 +544,34 @@ async function addClassList(app, html, data) {
 			for (let item of items) {
 				if (item.type === "class") {
 					let levelsHtml = item.system.levels ? `<span class='levels-info'>${item.system.levels}</span>` : ``;
+					
 					classList.push(
 						`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>${
 							truncate(item.name, 30, false) + levelsHtml
 						}</li>`
 					);
+
+					/*
+					classList.push(
+						`<li class='class-item' data-tooltip='${item.name} (${item.system.levels})'>
+							<span class="truncate">${item.name} ${levelsHtml}</span>
+						</li>`
+					);
+					*/
 				}
 				if (item.type === "subclass") {
+					
 					classList.push(
 						`<li class='class-item' data-tooltip='${item.name}'>${truncate(item.name, 30, false)}</li>`
 					);
+
+					/*
+					classList.push(
+						`<li class='class-item' data-tooltip='${item.name}'>
+							<span class="truncate">${item.name}</span>
+						</li>`
+					);
+					*/
 				}
 			}
 			let classListHtml = `<ul class='class-list'>${classList.join("")}</ul>`;
@@ -564,18 +582,13 @@ async function addClassList(app, html, data) {
 		}
 
 		// Prepare summary
-
+		
 		html.find(".origin-summary span.origin-summary-text").each(function () {
 			let originalText = $(this).text();
-			$(this).text(truncate($(this).text(), 20, false));
+			//$(this).text(truncate($(this).text(), 20, false));
 			$(this).attr("data-tooltip", originalText);
 		});
-
-		// html.find(".origin-summary span.origin-summary-text").each(function () {
-		// 	let originalText = $(this).text();
-		// 	$(this).text(truncate($(this).text(), 20, false));
-		// 	$(this).attr("data-tooltip", originalText);
-		// });
+		
 	}
 }
 

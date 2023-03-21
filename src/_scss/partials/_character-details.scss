@@ -170,6 +170,7 @@
 		flex: 1;
 		margin-right: 0.5rem;
 		display: flex;
+		overflow: hidden;
 	}
 
 	li.origin-summary-config {
@@ -186,9 +187,24 @@
 	}
 
 	li span.origin-summary-text {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		cursor: default;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		font-size: 12px;
 		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		
+		h4 {
+			-webkit-box-flex: initial;
+			-ms-flex: initial;
+			flex: initial;
+			text-overflow: ellipsis;
+			font-weight: 400;
+			white-space: nowrap;
+			overflow: hidden;
+		}
 	}
 
 	li span::after {
@@ -219,6 +235,7 @@
 		text-align: center;
 		padding: 0 4px 0 0;
 		justify-content: flex-end;
+		max-width: 150px;
 	}
 } // .origin-summary
 
