@@ -5,6 +5,9 @@
 - Transfer "Multicast Spell Filter" to Player Options Tab
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/725
 - Add module settings "Add additional classes for 'Multiclass Spellbook filter'" fop support homebrewed class
+- Add module setting "enableActionListOnFavoritePanel"
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/675 for all the cry baby of the world..
+- Check for https://github.com/sdenec/tidy5e-sheet/issues/728 not able to replicate
 
 ### 0.8.34-35
 
