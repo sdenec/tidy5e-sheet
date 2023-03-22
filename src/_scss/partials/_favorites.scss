@@ -25,4 +25,7 @@
 			} //.item-name
 		} //.item
 	} //.items-list
+	.inventory-favorites-list {
+		overflow-y: scroll;
+	}
 } //.favorites

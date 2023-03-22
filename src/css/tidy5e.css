@@ -2578,6 +2578,9 @@
 .tidy5e.sheet.actor .favorites .items-list .item .item-name .item-image i {
 	font-size: 16px;
 }
+.tidy5e.sheet.actor .favorites .inventory-favorites-list {
+	overflow-y: scroll;
+}
 .tidy5e.sheet.actor .inventory-filters {
 	margin: 0 14px 1rem 0;
 	-webkit-box-flex: 0;

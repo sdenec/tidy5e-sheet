@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { warn } from "./logger-util.js";
+import { warn, debug } from "./logger-util.js";
 import { isItemFavorite } from "./tidy5e-favorites.js";
 
 export const tidy5eContextMenu = function (html, sheet) {
@@ -8,17 +8,40 @@ export const tidy5eContextMenu = function (html, sheet) {
 	// Manage Middle Click behavior
 	html.find(".item-list .item .item-name").mousedown(async (event) => {
 		if (event.which === 2) {
+			debug(`tidy5eContextMenu | middle click`);
 			// let target = event.target.class;
 			// let item = event.currentTarget;
 			// Middle mouse opens item editor
 			event.preventDefault();
 			let li = $(event.target).parents(".item");
-			if ($(li).find(".item-edit")) {
-				$(li).find(".item-edit").trigger("click");
-			}
-
-			if ($(li).find(".effect-edit")) {
-				$(li).find(".effect-edit").trigger("click");
+			if(li && li[0]) {
+				/*
+				if ($(li).find(".item-edit")) {
+					$(li).find(".item-edit").trigger("click");
+				}
+				if ($(li).find(".effect-edit")) {
+					$(li).find(".effect-edit").trigger("click");
+				}
+				*/
+				const itemId = li[0].dataset.itemId;
+				const effectId = li[0].dataset.effectId;
+				if((!itemId && !effectId) || !actor) {
+					return;
+				}
+				if(itemId) {
+					let item = actor.items.get(itemId);
+					if(!item) {
+						return;
+					}
+					item.sheet.render(true);
+				}
+				if(effectId) {
+					let effect = actor.effects.get(effectId);
+					if(!effect) {
+						return;
+					}
+					effect.sheet.render(true);
+				}
 			}
 			// let itemId = $(event.target).parents(".item")[0].dataset.itemId;
 			// if(!itemId || !actor) {
