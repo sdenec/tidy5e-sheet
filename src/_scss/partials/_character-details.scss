@@ -176,7 +176,7 @@
 	li.origin-summary-config {
 		-webkit-box-pack: end;
 		-ms-flex-pack: end;
-		justify-content: flex-end;
+		justify-content: flex-start;;
 		max-width: 15px;
 	}
 
@@ -234,8 +234,8 @@
 		font-weight: 700;
 		text-align: center;
 		padding: 0 4px 0 0;
-		justify-content: flex-end;
-		max-width: 150px;
+		justify-content: flex-start;
+		max-width: 100px;
 	}
 } // .origin-summary
 
