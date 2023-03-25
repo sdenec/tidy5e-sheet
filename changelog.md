@@ -1,6 +1,7 @@
 ### 0.8.37 
 
-- Remove LazyHpAndExp feature
+- Remove LazyHpAndExp feature because the version system 2.1.5 do the job now, if you have some problem with th hp calculation you should open a issue on the system not this module
+- Some css fix 
 
 ### 0.8.36
 
