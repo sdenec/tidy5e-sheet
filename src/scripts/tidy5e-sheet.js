@@ -9,7 +9,7 @@ import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/tidy5e-lazy-money.js";
-import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
+// import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksCharacterSheet } from "./app/lockers.js";
 import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
 import { updateExhaustion } from "./app/tidy5e-exhaustion.js";
@@ -1040,8 +1040,8 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	spellSlotMarker(app, html, data);
 	hideStandardEncumbranceBar(app, html, data);
 	applyLazyMoney(app, html, data);
-	applyLazyExp(app, html, data);
-	applyLazyHp(app, html, data);
+	// applyLazyExp(app, html, data);
+	// applyLazyHp(app, html, data);
 	applySpellClassFilterActorSheet(app, html, data);
 
 	// NOTE LOCKS ARE THE LAST THING TO SET

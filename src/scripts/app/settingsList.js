@@ -675,8 +675,8 @@ export function settingsList() {
 		default: 740
 	});
 
-	// Lazy HP and Exp
-
+	// Lazy HP and Exp (REMOVED 2.1.5 do the job now)
+	/* 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable", {
 		name: `${game.i18n.localize("TIDY5E.Settings.LazyHpAndExpEnable.name")}`,
 		hint: `${game.i18n.localize("TIDY5E.Settings.LazyHpAndExpEnable.hint")}`,
@@ -703,7 +703,7 @@ export function settingsList() {
 		default: false,
 		type: Boolean
 	});
-
+	*/
 	// Lazy Money
 
 	game.settings.register(CONSTANTS.MODULE_ID, "lazyMoneyEnable", {

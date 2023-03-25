@@ -6,7 +6,7 @@ import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 import { applyLazyMoney } from "./app/tidy5e-lazy-money.js";
-import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
+// import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
 import { applyLocksNpcSheet } from "./app/lockers.js";
 import { applyColorPickerCustomization } from "./app/color-picker.js";
 // import { addFavorites } from "./app/tidy5e-favorites.js";
@@ -1341,8 +1341,8 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
 	spellSlotMarker(app, html, data);
 	hideStandardEncumbranceBar(app, html, data);
 	applyLazyMoney(app, html, data);
-	applyLazyExp(app, html, data);
-	applyLazyHp(app, html, data);
+	// applyLazyExp(app, html, data);
+	// applyLazyHp(app, html, data);
 
 	// NOTE LOCKS ARE THE LAST THING TO SET
 	applyLocksNpcSheet(app, html, data);

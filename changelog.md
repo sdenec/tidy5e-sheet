@@ -1,3 +1,7 @@
+### 0.8.37 
+
+- Remove LazyHpAndExp feature
+
 ### 0.8.36
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/734

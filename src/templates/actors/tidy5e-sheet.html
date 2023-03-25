@@ -116,14 +116,13 @@
 								 	rgba(0, 200, 0, 0.5) calc(100% - {{hpBarCalculationCurrent}}),
 								 	rgba(0, 200, 0, 0.5) 100%);">
 						</div>
-						<input class="hp-min" name="system.attributes.hp.value" type="number" value="{{hp.value}}" placeholder="10"
-						data-tooltip="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5">
+						<input class="hp-min" name="system.attributes.hp.value" type="text" value="{{hp.value}}" placeholder="10"
+						data-tooltip="{{localize 'DND5E.HitPointsCurrent'}}" data-dtype="Number" maxlength="5" aria-describedby="tooltip">
 						<span class="value-seperator sep"> / </span>
 						{{#if @root.allowHpMaxOverride}}
-						<input class="hp-max" name="system.attributes.hp.max" type="number" step="any"
-						value="{{hp.max}}" placeholder="10"
+						<input class="hp-max" name="system.attributes.hp.max" type="text" value="{{hp.max}}" placeholder="10"
 						data-tooltip="{{#if source.attributes.hp.max}}{{localize 'DND5E.HitPointsOverride'}}
-						{{~ else}}{{localize 'DND5E.HitPointsMax'}}{{/if}}" maxlength="5">
+						{{~ else}}{{localize 'DND5E.HitPointsMax'}}{{/if}}" data-dtype="Number" maxlength="5" aria-describedby="tooltip">
 						{{else}}
 						<span class="hp-max" data-tooltip="{{#if source.attributes.hp.max}}{{localize 'DND5E.HitPointsOverride'}}
 						{{~ else}}{{localize 'DND5E.HitPointsMax'}}{{/if}}">{{hp.max}}</span>

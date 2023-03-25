@@ -99,10 +99,10 @@ export class Tidy5eUserSettings extends FormApplication {
 			"traitsMovedBelowResource",
 			"traitsMovedBelowResourceNpc",
 			"traitsTogglePc",
-
-			"lazyHpAndExpEnable",
-			"lazyHpForceHpValueLimit1",
-			"lazyHpForceHpValueLimit2",
+			// REMOVED 2.1.5 do the job now
+			// "lazyHpAndExpEnable",
+			// "lazyHpForceHpValueLimit1",
+			// "lazyHpForceHpValueLimit2",
 			"lazyMoneyEnable",
 			"lazyMoneyAddConvert",
 			"lazyMoneyIgnoreElectrum",
