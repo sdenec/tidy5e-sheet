@@ -106,7 +106,8 @@
 	-webkit-filter: invert(1);
 	filter: invert(1);
 }
-.tidy5e.sheet.item .tab.effects h3 {
+.tidy5e.sheet.item .tab.effects h3,
+.tidy5e.sheet.item .tab.spells h3 {
 	border: none;
 }
 .tidy5e.sheet.item input {
@@ -172,6 +173,7 @@
 }
 .disable .dnd5e.sheet.item .effect-header:first-child,
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-name,
+.disable .dnd5e.sheet.item .dynamiceffects-effect-list .item-spells-name,
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-mode,
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-value,
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
@@ -180,13 +182,15 @@
 }
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header,
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-name,
+.disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .item-spells-name,
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
 	color: var(--t5e-darkmode-tertiary-color);
 }
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect {
 	background: var(--t5e-darkmode-faint-color);
 }
-.disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect .effect-name {
+.disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect .effect-name,
+.disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect .item-spells-name {
 	cursor: default;
 }
 .disable .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create {

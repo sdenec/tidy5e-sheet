@@ -2,7 +2,7 @@
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.8.37",
+	"version": "0.8.38",
   "main": "main.js",
   "scripts": {
     "prettier-format": "prettier --config .prettierrc.js --write \"./src/**/*.{ts,js,json,scss,css}\""
