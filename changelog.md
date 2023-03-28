@@ -1,3 +1,7 @@
+### 0.8.39
+
+- Update labels
+
 ### 0.8.38 
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/737 ty to @szefo09
