@@ -24,9 +24,7 @@ This module uses the [colorsettings](https://github.com/ardittristan/VTTColorSet
 
 ## Known issue / TODO
 
-- Update integration for [Character Actions 5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions) 
 - The current template for favorite items is to complicated ... we should be apply the same template of the module, [Character Sheet Favorites](https://gitlab.com/mxzf/favorite-items), and divide as a option for the player the inventory between Weapons/Equipment/Consumables
-- Integration of a  checkbox upcast (ty to mxzf on discord ) on the tidy sheet for the ability dialog option.
 
 ## Macro to prepare migration from 2.0.3 to 2.1.X
 
