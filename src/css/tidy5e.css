@@ -1447,7 +1447,6 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	overflow: hidden;
 }
 .tidy5e.sheet.actor .origin-summary li.origin-summary-config {
 	-webkit-box-pack: end;
