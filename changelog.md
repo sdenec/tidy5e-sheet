@@ -1,3 +1,9 @@
+### 0.8.40 
+
+- bug fixed : https://github.com/sdenec/tidy5e-sheet/issues/744 
+- bug fixed : https://github.com/sdenec/tidy5e-sheet/issues/742
+- Enable system sw5e : https://github.com/sdenec/tidy5e-sheet/issues/731
+
 ### 0.8.39
 
 - Update labels

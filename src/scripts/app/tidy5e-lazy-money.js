@@ -182,6 +182,35 @@ function _onChangeCurrency(ev) {
 				break;
 			}
 		}
+	} else {
+		switch (sign) {
+			case signCase.add: {
+				newAmount[denom] = money[denom] + delta;
+				chatLog(actor, `${game.user?.name} on ${actor.name} has added ${delta} ${denom}.`);
+				break;
+			}
+			case signCase.subtract: {
+				newAmount[denom] = money[denom] - delta;
+				chatLog(actor, `${game.user?.name} on ${actor.name} has removed ${delta} ${denom}.`);
+				break;
+			}
+			case signCase.equals: {
+				newAmount[denom] = money[denom];
+				chatLog(
+					actor,
+					`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
+				);
+				break;
+			}
+			default: {
+				newAmount[denom] = money[denom];
+				chatLog(
+					actor,
+					`${game.user?.name} on ${actor.name} has replaced ${money[denom]} ${denom} with ${delta} ${denom}.`
+				);
+				break;
+			}
+		}
 	}
 	if (Object.keys(newAmount).length > 0) {
 		sheet.submitOnChange = false;
@@ -640,24 +669,24 @@ export function applyLazyMoney(app, html, actorData) {
 	);
 }
 
-Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
-	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyEnable")) {
-		return;
-	}
-	// The module already do the job so for avoid redundance...
-	if (game.modules.get("lazymoney")?.active) {
-		return;
-	}
-	if (!actorEntity) {
-		return;
-	}
+// Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
+// 	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyMoneyEnable")) {
+// 		return;
+// 	}
+// 	// The module already do the job so for avoid redundance...
+// 	if (game.modules.get("lazymoney")?.active) {
+// 		return;
+// 	}
+// 	if (!actorEntity) {
+// 		return;
+// 	}
 
-	if (hasProperty(update, "system.currency")) {
-		const currency = getProperty(update, "system.currency");
-		if (isEmptyObject(currency)) {
-			// Do nothing
-		} else {
-			update.system.currency = patchCurrency(update.system.currency);
-		}
-	}
-});
+// 	if (hasProperty(update, "system.currency")) {
+// 		const currency = getProperty(update, "system.currency");
+// 		if (isEmptyObject(currency)) {
+// 			// Do nothing
+// 		} else {
+// 			update.system.currency = patchCurrency(update.system.currency);
+// 		}
+// 	}
+// });
