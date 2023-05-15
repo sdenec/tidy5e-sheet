@@ -176,7 +176,6 @@
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect {
 	background: var(--t5e-darkmode-faint-color);
 }
-.disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect .item-spells-name,
 .disable .tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect .item-spells-name  {
 	cursor: default;
 }

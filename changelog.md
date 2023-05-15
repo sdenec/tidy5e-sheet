@@ -1,3 +1,7 @@
+### 0.8.41
+
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/749, ty to @tposney
+
 ### 0.8.40 
 
 - bug fixed : https://github.com/sdenec/tidy5e-sheet/issues/744 
