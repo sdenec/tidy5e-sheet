@@ -313,7 +313,7 @@
 					<ul class="skills-list">
 					{{#each config.skills as |label s|}}
 					{{#with (lookup ../skills s) as |skill|}}
-						<li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
+						<li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}" data-key="{{s}}">
 							<a class="config-button" data-action="skill" data-tooltip="{{localize 'DND5E.SkillConfigure'}}">
 								<i class="fas fa-cog"></i>
 							</a>

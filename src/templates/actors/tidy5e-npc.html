@@ -298,7 +298,7 @@
           <ul class="skills-list {{#if actor.flags.tidy5e-sheet.npcSkillsExpanded}}expanded{{/if}} {{#if actor.flags.tidy5e-sheet.npcSkillsAlwaysVisible}}.always-visible{{/if}}">
             {{#each config.skills as |obj s|}}
             {{#with (lookup ../skills s) as |skill|}}
-            <li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
+            <li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}" data-key="{{s}}">
 							<a class="config-button" data-action="skill" title="{{localize 'DND5E.SkillConfigure'}}"><i class="fas fa-cog"></i></a>
               <input type="hidden" name="system.skills.{{s}}.value"
                 value="{{skill.baseValue}}" data-dtype="Number">
