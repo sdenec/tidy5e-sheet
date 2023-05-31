@@ -19,7 +19,7 @@
 import { tidy5eAmmoSwitch } from "./ammo-switch.js";
 import { applyColorPickerCustomization } from "./color-picker.js";
 import CONSTANTS from "./constants.js";
-import { tidy5eContextMenu } from "./context-menu.js";
+import { tidy5eContextMenu } from "./tidy5e-context-menu.js";
 import { is_real_number } from "./helpers.js";
 import { debug, warn } from "./logger-util.js";
 

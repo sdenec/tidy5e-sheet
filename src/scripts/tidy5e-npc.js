@@ -1,7 +1,7 @@
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-npc-templates.js";
 
 import { tidy5eListeners } from "./app/listeners.js";
-import { tidy5eContextMenu } from "./app/context-menu.js";
+import { tidy5eContextMenu } from "./app/tidy5e-context-menu.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
 import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";

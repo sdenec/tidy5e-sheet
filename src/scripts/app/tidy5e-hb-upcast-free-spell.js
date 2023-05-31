@@ -2,21 +2,23 @@ import CONSTANTS from "./constants.js";
 import { debug } from "./logger-util.js";
 
 function getFeatureItemsFromActor(actor) {
-    return actor.items.filter((item) => {
-		if (["feat"].includes(item.type)) {
-			return true;
-		} else {
-			return true;
-		}
-	}).sort((a, b) => {
-		return a.name.localeCompare(b.name);
-	});
+	return actor.items
+		.filter((item) => {
+			if (["feat"].includes(item.type)) {
+				return true;
+			} else {
+				return true;
+			}
+		})
+		.sort((a, b) => {
+			return a.name.localeCompare(b.name);
+		});
 }
 
 function getFeatureNamesFromActor(actor) {
 	const features = getFeatureItemsFromActor(actor);
 	const names = [];
-	for(const feature of features){
+	for (const feature of features) {
 		names.push(feature.name.toLowerCase());
 	}
 	return names;
@@ -35,12 +37,13 @@ export const tidy5eHBEnableUpcastFreeSpell = async function (app, html, options)
 
 		let tooltip = game.i18n.localize("TIDY5E.LevelBumpTooltip");
 
-		if(game.settings.get(CONSTANTS.MODULE_ID, "hbSetFeaturesForUpcastFreeSpell") && app.item?.actor){
+		if (game.settings.get(CONSTANTS.MODULE_ID, "hbSetFeaturesForUpcastFreeSpell") && app.item?.actor) {
 			debug(`tidy5eHBEnableUpcastFreeSpell | hbSetFeaturesForUpcastFreeSpell check`);
-			const namesFeaturesToCheck = game.settings.get(CONSTANTS.MODULE_ID, "hbSetFeaturesForUpcastFreeSpell").split("|") ?? [];
+			const namesFeaturesToCheck =
+				game.settings.get(CONSTANTS.MODULE_ID, "hbSetFeaturesForUpcastFreeSpell").split("|") ?? [];
 			const namesFeatures = getFeatureNamesFromActor(app.item?.actor) ?? [];
 			const check = namesFeaturesToCheck.some((v) => namesFeatures.includes(v.toLowerCase()));
-			if(!check) {
+			if (!check) {
 				debug(`tidy5eHBEnableUpcastFreeSpell | hbSetFeaturesForUpcastFreeSpell check is failed`);
 				return;
 			}
@@ -65,7 +68,7 @@ export const tidy5eHBEnableUpcastFreeSpell = async function (app, html, options)
 			if (ev.target.checked) {
 				Object.values(html.find('[name="consumeSpellLevel"] option')).map((o) => {
 					// Strange check
-					if(o.value) {
+					if (o.value) {
 						if (o.value === "pact") {
 							o.value = String(app.item.actor.system.spells.pact.level + 1);
 						} else {
@@ -76,7 +79,7 @@ export const tidy5eHBEnableUpcastFreeSpell = async function (app, html, options)
 			} else {
 				Object.values(html.find('[name="consumeSpellLevel"] option')).map((o) => {
 					// Strange check
-					if(o.value) {
+					if (o.value) {
 						if (o.text?.includes("Pact")) {
 							o.value = "pact";
 						} else {

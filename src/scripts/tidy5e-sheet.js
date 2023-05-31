@@ -2,7 +2,7 @@ import { Tidy5eUserSettings } from "./app/settings.js";
 
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
 import { tidy5eListeners } from "./app/listeners.js";
-import { tidy5eContextMenu } from "./app/context-menu.js";
+import { tidy5eContextMenu } from "./app/tidy5e-context-menu.js";
 import { tidy5eSearchFilter } from "./app/search-filter.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
@@ -358,7 +358,6 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 			const actionsListApi = game.modules.get("character-actions-list-5e")?.api;
 			try {
 				if (injectCharacterSheet) {
-
 					// Update the nav menu
 					const actionsTabButton = $(
 						'<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + "</a>"
@@ -373,22 +372,21 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 					actionsTab.append(actionsLayout);
 					sheetBody.prepend(actionsTab);
 
-
 					const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
 					actionsLayout.html(actionsTabHtml);
 				}
-				if (game.modules.get("character-actions-list-5e")?.active &&
-					game.settings.get(CONSTANTS.MODULE_ID, "enableActionListOnFavoritePanel")) {
-
-					const actionsTab = html.find('.actions-target');
+				if (
+					game.modules.get("character-actions-list-5e")?.active &&
+					game.settings.get(CONSTANTS.MODULE_ID, "enableActionListOnFavoritePanel")
+				) {
+					const actionsTab = html.find(".actions-target");
 					const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
 					actionsTab.html(actionsTabHtml);
-					
-					actionsTab.find('.item-controls.context-menu').hide();
-					actionsTab.find('item-controls items-header-controls').hide();
-					actionsTab.find('.item-name').css("min-width","130px");
-					actionsTab.find('.item-name').css("max-width","130px");
 
+					actionsTab.find(".item-controls.context-menu").hide();
+					actionsTab.find("item-controls items-header-controls").hide();
+					actionsTab.find(".item-name").css("min-width", "130px");
+					actionsTab.find(".item-name").css("max-width", "130px");
 				}
 			} catch (err) {
 				error(err?.message, true);
@@ -558,9 +556,7 @@ async function addClassList(app, html, data) {
 					*/
 				}
 				if (item.type === "subclass") {
-					classList.push(
-						`<li class='class-item' data-tooltip='${item.name}'>${item.name}</li>`
-					);
+					classList.push(`<li class='class-item' data-tooltip='${item.name}'>${item.name}</li>`);
 					/*
 					classList.push(
 						`<li class='class-item' data-tooltip='${item.name}'>${truncate(item.name, 30, false)}</li>`
@@ -576,13 +572,12 @@ async function addClassList(app, html, data) {
 		}
 
 		// Prepare summary
-		
+
 		html.find(".origin-summary span.origin-summary-text").each(function () {
 			let originalText = $(this).text();
 			//$(this).text(truncate($(this).text(), 20, false));
 			$(this).attr("data-tooltip", originalText);
 		});
-		
 	}
 }
 

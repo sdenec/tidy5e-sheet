@@ -1461,22 +1461,22 @@
 }
 .tidy5e.sheet.actor .origin-summary li span.origin-summary-text {
 	display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    cursor: default;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    font-size: 12px;
+	display: -ms-flexbox;
+	display: flex;
+	cursor: default;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	font-size: 12px;
 	overflow: hidden;
 }
 .tidy5e.sheet.actor .origin-summary li span.origin-summary-text h4 {
-    -webkit-box-flex: initial;
-    -ms-flex: initial;
-    flex: initial;
-    text-overflow: ellipsis;
-    font-weight: 400;
-    white-space: nowrap;
-    overflow: hidden;
+	-webkit-box-flex: initial;
+	-ms-flex: initial;
+	flex: initial;
+	text-overflow: ellipsis;
+	font-weight: 400;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .tidy5e.sheet.actor .origin-summary li span::after {
 	content: "";
@@ -1691,7 +1691,7 @@
 	/* font-size: 45px;
 	height: 40px; */
 	font-size: 35px;
-    height: 25px;
+	height: 25px;
 	font-weight: 700;
 	margin: 0 auto;
 	width: 44px;
@@ -2030,12 +2030,12 @@
 	display: none;
 }
 .tidy5e.sheet.actor .allow-edit .items-header-controls {
-	min-width: 120px!important;
-	max-width: 120px!important;
+	min-width: 120px !important;
+	max-width: 120px !important;
 }
 .tidy5e.sheet.actor .allow-edit .list-layout .items-list .item .item-controls:not(#context-menu) {
-	min-width: 120px!important;
-	max-width: 120px!important;
+	min-width: 120px !important;
+	max-width: 120px !important;
 }
 .tidy5e.sheet.actor .sheet-body {
 	padding: 1rem 0.25rem 1rem 1rem;
@@ -3018,7 +3018,7 @@
 }
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-controls {
 	min-width: 85px;
-    max-width: 120px;
+	max-width: 120px;
 }
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-subclass,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-source {

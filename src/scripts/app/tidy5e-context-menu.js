@@ -14,7 +14,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 			// Middle mouse opens item editor
 			event.preventDefault();
 			let li = $(event.target).parents(".item");
-			if(li && li[0]) {
+			if (li && li[0]) {
 				/*
 				if ($(li).find(".item-edit")) {
 					$(li).find(".item-edit").trigger("click");
@@ -25,19 +25,19 @@ export const tidy5eContextMenu = function (html, sheet) {
 				*/
 				const itemId = li[0].dataset.itemId;
 				const effectId = li[0].dataset.effectId;
-				if((!itemId && !effectId) || !actor) {
+				if ((!itemId && !effectId) || !actor) {
 					return;
 				}
-				if(itemId) {
+				if (itemId) {
 					let item = actor.items.get(itemId);
-					if(!item) {
+					if (!item) {
 						return;
 					}
 					item.sheet.render(true);
 				}
-				if(effectId) {
+				if (effectId) {
 					let effect = actor.effects.get(effectId);
-					if(!effect) {
+					if (!effect) {
 						return;
 					}
 					effect.sheet.render(true);
@@ -60,41 +60,42 @@ export const tidy5eContextMenu = function (html, sheet) {
 	// Item Context Menu
 	// new ContextMenu(html, ".item-list .item #context-menu", [], {onOpen: sheet._onItemContext.bind(sheet)});
 
-	if (!sheet.getActiveEffectContextOptionsId){
-		sheet.getActiveEffectContextOptionsId = 
-		Hooks.on("dnd5e.getActiveEffectContextOptions", (effect, contextOptions) => {
-			const actor = effect.actor ? effect.actor : effect.parent;
-			if (actor?.isOwner) {
-				contextOptions = contextOptions.filter((obj) => {
-					//check for default options and remove them.
-					return ![
-						"DND5E.ContextMenuActionEdit",
-						"DND5E.ContextMenuActionDuplicate",
-						"DND5E.ContextMenuActionDelete",
-						"DND5E.ContextMenuActionEnable",
-						"DND5E.ContextMenuActionDisable",
-						"DND5E.ContextMenuActionUnattune",
-						"DND5E.ContextMenuActionAttune",
-						"DND5E.ContextMenuActionUnequip",
-						"DND5E.ContextMenuActionEquip",
-						"DND5E.ContextMenuActionUnprepare",
-						"DND5E.ContextMenuActionPrepare"
-					].includes(obj?.name);
-				});
-				if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
-					contextOptions = [];
-				} else {
-					let tidy5eContextOptions = _getActiveEffectContextOptions(effect);
-					contextOptions = tidy5eContextOptions.concat(contextOptions);
+	if (!sheet.getActiveEffectContextOptionsId) {
+		sheet.getActiveEffectContextOptionsId = Hooks.on(
+			"dnd5e.getActiveEffectContextOptions",
+			(effect, contextOptions) => {
+				const actor = effect.actor ? effect.actor : effect.parent;
+				if (actor?.isOwner) {
+					contextOptions = contextOptions.filter((obj) => {
+						//check for default options and remove them.
+						return ![
+							"DND5E.ContextMenuActionEdit",
+							"DND5E.ContextMenuActionDuplicate",
+							"DND5E.ContextMenuActionDelete",
+							"DND5E.ContextMenuActionEnable",
+							"DND5E.ContextMenuActionDisable",
+							"DND5E.ContextMenuActionUnattune",
+							"DND5E.ContextMenuActionAttune",
+							"DND5E.ContextMenuActionUnequip",
+							"DND5E.ContextMenuActionEquip",
+							"DND5E.ContextMenuActionUnprepare",
+							"DND5E.ContextMenuActionPrepare"
+						].includes(obj?.name);
+					});
+					if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
+						contextOptions = [];
+					} else {
+						let tidy5eContextOptions = _getActiveEffectContextOptions(effect);
+						contextOptions = tidy5eContextOptions.concat(contextOptions);
+					}
+					ui.context.menuItems = contextOptions;
 				}
-				ui.context.menuItems = contextOptions;
 			}
-		});
+		);
 	}
 
 	if (!sheet.getItemContextOptionsId) {
-		sheet.getItemContextOptionsId =
-		Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
+		sheet.getItemContextOptionsId = Hooks.on("dnd5e.getItemContextOptions", (item, contextOptions) => {
 			const actor = item.actor ? item.actor : item.parent;
 			if (actor?.isOwner) {
 				contextOptions = contextOptions.filter((obj) => {
@@ -114,7 +115,10 @@ export const tidy5eContextMenu = function (html, sheet) {
 					].includes(obj?.name);
 				});
 				if (game.settings.get(CONSTANTS.MODULE_ID, "rightClickDisabled")) {
-					if (item.type === "spell" && !item.actor.getFlag(CONSTANTS.MODULE_ID, "tidy5e-sheet.spellbook-grid")) {
+					if (
+						item.type === "spell" &&
+						!item.actor.getFlag(CONSTANTS.MODULE_ID, "tidy5e-sheet.spellbook-grid")
+					) {
 						contextOptions = [];
 					} else if (item.type !== "spell" && !item.actor.getFlag(CONSTANTS.MODULE_ID, "inventory-grid")) {
 						contextOptions = [];
@@ -134,8 +138,7 @@ export const tidy5eContextMenu = function (html, sheet) {
 	}
 
 	if (!sheet.getItemAdvancementContextId) {
-		sheet.getItemAdvancementContextId =
-		Hooks.on("dnd5e.getItemAdvancementContext", (html, contextOptions) => {
+		sheet.getItemAdvancementContextId = Hooks.on("dnd5e.getItemAdvancementContext", (html, contextOptions) => {
 			// TODO cannot recover the 'this' reference
 			/*
 		if ( actor?.isOwner ) {

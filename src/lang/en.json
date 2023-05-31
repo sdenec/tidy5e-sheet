@@ -124,8 +124,8 @@
 
 	"TIDY5E.OriginSummaryConfig": "Origin Summary Configuration",
 
-    "TIDY5E.LevelBump": "Level Bump",
-    "TIDY5E.LevelBumpTooltip": "When you are casting a spell you can cast it one level higher for free.",
+	"TIDY5E.LevelBump": "Level Bump",
+	"TIDY5E.LevelBumpTooltip": "When you are casting a spell you can cast it one level higher for free.",
 
 	"TIDY5E.Settings.GlobalLabel": "Global",
 	"TIDY5E.Settings.DebugLabel": "Debug",
@@ -156,10 +156,10 @@
 		"tabLabel": "GM Options",
 		"header": "GM Sheet Options"
 	},
-  "TIDY5E.Settings.TabHomebrewRules": {
+	"TIDY5E.Settings.TabHomebrewRules": {
 		"tabLabel": "Homebrew Rules",
 		"header": "Homebrew Rules",
-    "labelHBUpcastFreeSpell": "Upcast Free Spell"
+		"labelHBUpcastFreeSpell": "Upcast Free Spell"
 	},
 	"TIDY5E.Settings.TabModules": {
 		"tabLabel": "Modules",
@@ -562,7 +562,7 @@
 		"name": "Color Picker for 'Always Prepared Accent'",
 		"hint": "Select what color you want to use for 'Always Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
 	},
-  "TIDY5E.Settings.AllowHpMaxOverride": {
+	"TIDY5E.Settings.AllowHpMaxOverride": {
 		"name": "Allow Hp Max override on Character",
 		"hint": "If enable this module setting will let the GM to manually change the hp max  value on the character sheet."
 	},
@@ -600,7 +600,7 @@
 		"name": "Enable upcast free spell.",
 		"hint": "Add an additional button when you are casting a spell for cast it one level higher. This is a homebrew rule. Ty to @mxfz on discord for the macro code and to @thundershield on for the idea, you can find more details here https://discord.com/channels/170995199584108546/699750150674972743/1055686421198946465"
 	},
-    "TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell": {
+	"TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell": {
 		"name": "Set features for upcast free spell",
 		"hint": "This setting work only with the module setting 'Enable upcast free spell' enabled, is a string of feature names separated by the character '|' , the search for such features is case unsensitive if found a 'valid' feature enables actors to use the feature upcast. IF LEFT EMPTY IT WILL BE IGNORED."
 	}

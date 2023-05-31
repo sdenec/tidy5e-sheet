@@ -38,18 +38,18 @@ export async function applySpellClassFilterItemSheet(app, html, itemData) {
 	if (type == "spell") {
 		classesConfigurationTmp = classesConfiguration;
 		const user_setting_addClasses = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterAdditionalClasses");
-		if(user_setting_addClasses && user_setting_addClasses.includes("|")){
+		if (user_setting_addClasses && user_setting_addClasses.includes("|")) {
 			let classes = [];
-			if(user_setting_addClasses.includes(",") ) {
+			if (user_setting_addClasses.includes(",")) {
 				classes = user_setting_addClasses.split(",");
 			} else {
 				classes = [user_setting_addClasses];
 			}
-			for(let clazz of classes) {
+			for (let clazz of classes) {
 				const c = clazz.split("|");
 				const id = c[0];
 				const name = c[1];
-				if(id && name) {
+				if (id && name) {
 					classesConfigurationTmp[id] = name;
 				}
 			}
@@ -101,18 +101,18 @@ export async function applySpellClassFilterActorSheet(app, html, actorData) {
 		if (user_setting_filterSelect) {
 			classesConfigurationTmp = classesConfiguration;
 			const user_setting_addClasses = game.settings.get(CONSTANTS.MODULE_ID, "spellClassFilterAdditionalClasses");
-			if(user_setting_addClasses && user_setting_addClasses.includes("|")){
+			if (user_setting_addClasses && user_setting_addClasses.includes("|")) {
 				let classes = [];
-				if(user_setting_addClasses.includes(",") ) {
+				if (user_setting_addClasses.includes(",")) {
 					classes = user_setting_addClasses.split(",");
 				} else {
 					classes = [user_setting_addClasses];
 				}
-				for(let clazz of classes) {
+				for (let clazz of classes) {
 					const c = clazz.split("|");
 					const id = c[0];
 					const name = c[1];
-					if(id && name) {
+					if (id && name) {
 						classesConfigurationTmp[id] = name;
 					}
 				}

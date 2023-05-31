@@ -27,7 +27,7 @@
 		"./scripts/app/tidy5e-exhaustion.js",
 		"./scripts/app/tidy5e-lazy-money.js",
 		"./scripts/app/settings.js",
-		"./scripts/app/context-menu.js",
+		"./scripts/app/tidy5e-context-menu.js",
 		"./scripts/app/tidy5e-hb-upcast-free-spell.js"
 	],
 	"styles": ["./css/tidy-icons.css", "./css/tidy5e.css", "./css/tidy5e-dark.css"],

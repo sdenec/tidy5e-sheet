@@ -884,13 +884,12 @@ export function settingsList() {
 			const styleElement = $("#tidy5e-sheet-better-attack");
 			if (styleElement.length == 0 && newValue) {
 				$("body").append(style);
-			}
-			else if (styleElement.length != 0 && !newValue) {
+			} else if (styleElement.length != 0 && !newValue) {
 				styleElement.remove();
 			}
 		}
 	});
-	
+
 	// Color customization
 
 	game.settings.register(CONSTANTS.MODULE_ID, "colorPickerEnabled", {
