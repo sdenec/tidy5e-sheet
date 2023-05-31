@@ -1,7 +1,7 @@
-import { applyLocksItemSheet } from "./app/lockers.js";
-import { debug } from "./app/logger-util.js";
-import { tidy5eShowItemArt } from "./app/show-item-art.js";
-import { applySpellClassFilterItemSheet } from "./app/spellClassFilter.js";
+import { applyLocksItemSheet } from "./app/tidy5e-lockers.js";
+import { debug } from "./app/tidy5e-logger-util.js";
+import { tidy5eShowItemArt } from "./app/tidy5e-show-item-art.js";
+import { applySpellClassFilterItemSheet } from "./app/tidy5e-spellClassFilter.js";
 
 export class Tidy5eItemSheet extends dnd5e.applications.item.ItemSheet5e {
 	static get defaultOptions() {

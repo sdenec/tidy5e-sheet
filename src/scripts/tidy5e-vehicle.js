@@ -1,13 +1,13 @@
 import { tidy5eContextMenu } from "./app/tidy5e-context-menu.js";
-import { tidy5eListeners } from "./app/listeners.js";
-import { tidy5eShowActorArt } from "./app/show-actor-art.js";
-import { tidy5eItemCard } from "./app/itemcard.js";
+import { tidy5eListeners } from "./app/tidy5e-listeners.js";
+import { tidy5eShowActorArt } from "./app/tidy5e-show-actor-art.js";
+import { tidy5eItemCard } from "./app/tidy5e-itemcard.js";
 import { applyLazyMoney } from "./app/tidy5e-lazy-money.js";
 // import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
-import { applyLocksVehicleSheet } from "./app/lockers.js";
-import { applyColorPickerCustomization } from "./app/color-picker.js";
+import { applyLocksVehicleSheet } from "./app/tidy5e-lockers.js";
+import { applyColorPickerCustomization } from "./app/tidy5e-color-picker.js";
 import CONSTANTS from "./app/constants.js";
-import { is_real_number } from "./app/helpers.js";
+import { is_real_number } from "./app/tidy5e-helpers.js";
 
 export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle {
 	static get defaultOptions() {

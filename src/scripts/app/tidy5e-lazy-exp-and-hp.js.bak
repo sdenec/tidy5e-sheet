@@ -1,7 +1,7 @@
-import { debug, info, warn } from "./logger-util.js";
+import { debug, info, warn } from "./tidy5e-logger-util.js";
 import CONSTANTS from "./constants.js";
-import { is_lazy_number, is_real_number } from "./helpers.js";
-import { isEmptyObject } from "./helpers.js";
+import { is_lazy_number, is_real_number } from "./tidy5e-helpers.js";
+import { isEmptyObject } from "./tidy5e-helpers.js";
 
 const signCase = {
 	add: "+",

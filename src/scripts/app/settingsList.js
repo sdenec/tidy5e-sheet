@@ -1,6 +1,6 @@
-import { RGBAToHexAFromColor } from "./color-picker.js";
+import { RGBAToHexAFromColor } from "./tidy5e-color-picker.js";
 import CONSTANTS from "./constants.js";
-import { log } from "./logger-util.js";
+import { log } from "./tidy5e-logger-util.js";
 import { Tidy5eUserSettings } from "./settings.js";
 
 export function settingsList() {

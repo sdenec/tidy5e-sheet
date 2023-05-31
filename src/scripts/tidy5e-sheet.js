@@ -1,17 +1,17 @@
 import { Tidy5eUserSettings } from "./app/settings.js";
 
 import { preloadTidy5eHandlebarsTemplates } from "./app/tidy5e-templates.js";
-import { tidy5eListeners } from "./app/listeners.js";
+import { tidy5eListeners } from "./app/tidy5e-listeners.js";
 import { tidy5eContextMenu } from "./app/tidy5e-context-menu.js";
-import { tidy5eSearchFilter } from "./app/search-filter.js";
+import { tidy5eSearchFilter } from "./app/tidy5e-search-filter.js";
 import { addFavorites } from "./app/tidy5e-favorites.js";
-import { tidy5eShowActorArt } from "./app/show-actor-art.js";
-import { tidy5eItemCard } from "./app/itemcard.js";
-import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
+import { tidy5eShowActorArt } from "./app/tidy5e-show-actor-art.js";
+import { tidy5eItemCard } from "./app/tidy5e-itemcard.js";
+import { tidy5eAmmoSwitch } from "./app/tidy5e-ammo-switch.js";
 import { applyLazyMoney } from "./app/tidy5e-lazy-money.js";
 // import { applyLazyExp, applyLazyHp } from "./app/tidy5e-lazy-exp-and-hp.js";
-import { applyLocksCharacterSheet } from "./app/lockers.js";
-import { applySpellClassFilterActorSheet } from "./app/spellClassFilter.js";
+import { applyLocksCharacterSheet } from "./app/tidy5e-lockers.js";
+import { applySpellClassFilterActorSheet } from "./app/tidy5e-spellClassFilter.js";
 import { updateExhaustion } from "./app/tidy5e-exhaustion.js";
 import {
 	HexToRGBA,
@@ -21,10 +21,10 @@ import {
 	mapDefaultColorsDarkRGB,
 	mapDefaultColorsRGB,
 	applyColorPickerCustomization
-} from "./app/color-picker.js";
+} from "./app/tidy5e-color-picker.js";
 import CONSTANTS from "./app/constants.js";
-import { isEmptyObject, is_real_number, truncate } from "./app/helpers.js";
-import { debug, error, warn } from "./app/logger-util.js";
+import { isEmptyObject, is_real_number, truncate } from "./app/tidy5e-helpers.js";
+import { debug, error, warn } from "./app/tidy5e-logger-util.js";
 import { tidy5eSpellLevelButtons } from "./app/tidy5e-spell-level-buttons.js";
 import { tidy5eHBEnableUpcastFreeSpell } from "./app/tidy5e-hb-upcast-free-spell.js";
 

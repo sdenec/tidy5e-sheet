@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { warn, debug } from "./logger-util.js";
+import { warn, debug } from "./tidy5e-logger-util.js";
 import { isItemFavorite } from "./tidy5e-favorites.js";
 
 export const tidy5eContextMenu = function (html, sheet) {

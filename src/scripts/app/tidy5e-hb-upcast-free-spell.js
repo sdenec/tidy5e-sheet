@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { debug } from "./logger-util.js";
+import { debug } from "./tidy5e-logger-util.js";
 
 function getFeatureItemsFromActor(actor) {
 	return actor.items

@@ -16,12 +16,12 @@
  * and can be found at https://gitlab.com/mxzf/favorite-items.
  */
 
-import { tidy5eAmmoSwitch } from "./ammo-switch.js";
-import { applyColorPickerCustomization } from "./color-picker.js";
+import { tidy5eAmmoSwitch } from "./tidy5e-ammo-switch.js";
+import { applyColorPickerCustomization } from "./tidy5e-color-picker.js";
 import CONSTANTS from "./constants.js";
 import { tidy5eContextMenu } from "./tidy5e-context-menu.js";
-import { is_real_number } from "./helpers.js";
-import { debug, warn } from "./logger-util.js";
+import { is_real_number } from "./tidy5e-helpers.js";
+import { debug, warn } from "./tidy5e-logger-util.js";
 
 export const isItemFavorite = function (item) {
 	if (!item) {

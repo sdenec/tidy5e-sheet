@@ -1,4 +1,4 @@
-import { isLessThanOneIsOne } from "./helpers.js";
+import { isLessThanOneIsOne } from "./tidy5e-helpers.js";
 
 /**
  * A helper Dialog subclass for rolling Hit Dice on short rest.

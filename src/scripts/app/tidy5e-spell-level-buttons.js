@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { warn } from "./logger-util.js";
+import { warn } from "./tidy5e-logger-util.js";
 
 export const tidy5eSpellLevelButtons = async function (app, html, options) {
 	if (

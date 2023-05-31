@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { debug, warn } from "./logger-util.js";
+import { debug, warn } from "./tidy5e-logger-util.js";
 
 export async function updateExhaustion(actorEntity) {
 	const actorC = game.actors.get(actorEntity._id);
