@@ -259,7 +259,7 @@
 					{{!-- Ability Scores --}}
 					<ul class="ability-scores">
 						{{#each abilities as |ability id|}}
-						<li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
+						<li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}" data-key="{{id}}">
 							<div class="wrapper" data-ability="{{id}}">
 								<h4 class="ability-name box-title rollable" title="{{ability.label}}">{{ability.abbr}}</h4>
 								<div class="value">
@@ -313,7 +313,7 @@
 					<ul class="skills-list">
 					{{#each config.skills as |label s|}}
 					{{#with (lookup ../skills s) as |skill|}}
-						<li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}" data-key="{{s}}">
+					<li class="proficiency-row skill {{#if skill.value}}proficient{{/if}}" data-property="skills" data-key="{{s}}">
 							<a class="config-button" data-action="skill" data-tooltip="{{localize 'DND5E.SkillConfigure'}}">
 								<i class="fas fa-cog"></i>
 							</a>
