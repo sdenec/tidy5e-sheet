@@ -1461,22 +1461,22 @@
 }
 .tidy5e.sheet.actor .origin-summary li span.origin-summary-text {
 	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	cursor: default;
-	-ms-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-	font-size: 12px;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: default;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    font-size: 12px;
 	overflow: hidden;
 }
 .tidy5e.sheet.actor .origin-summary li span.origin-summary-text h4 {
-	-webkit-box-flex: initial;
-	-ms-flex: initial;
-	flex: initial;
-	text-overflow: ellipsis;
-	font-weight: 400;
-	white-space: nowrap;
-	overflow: hidden;
+    -webkit-box-flex: initial;
+    -ms-flex: initial;
+    flex: initial;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .tidy5e.sheet.actor .origin-summary li span::after {
 	content: "";
@@ -1691,7 +1691,7 @@
 	/* font-size: 45px;
 	height: 40px; */
 	font-size: 35px;
-	height: 25px;
+    height: 25px;
 	font-weight: 700;
 	margin: 0 auto;
 	width: 44px;
@@ -2469,6 +2469,12 @@
 .tidy5e.sheet.actor .traits .tag::after {
 	content: ",";
 }
+.tidy5e.sheet.actor .traits .tag.tool{
+	display:inline-flex;
+	align-items: center;
+	gap:2px;
+	padding: 0px 2px;
+}
 .tidy5e.sheet.actor .traits .tag:last-child::after {
 	content: none;
 }
@@ -3018,7 +3024,7 @@
 }
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-controls {
 	min-width: 85px;
-	max-width: 120px;
+    max-width: 120px;
 }
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-subclass,
 .tidy5e.sheet.actor .items-list .items-header-labels .items-header-source {
@@ -6754,3 +6760,4 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	font-weight: 600;
 	padding: 0 4px 8px 4px;
 }
+
