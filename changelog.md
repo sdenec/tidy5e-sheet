@@ -1,3 +1,11 @@
+### 0.9.0 
+
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/759
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/758
+- Cannot roll skill checks https://github.com/sdenec/tidy5e-sheet/issues/752
+- Cannot change skill check proficiency
+- No tools listed under Tool Proficiency https://github.com/sdenec/tidy5e-sheet/issues/760
+
 ### 0.8.41
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/749, ty to @tposney

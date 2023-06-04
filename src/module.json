@@ -90,8 +90,7 @@
 	],
 	"compatibility": {
 		"minimum": 10,
-		"verified": 10,
-		"maximum": 11
+		"verified": 10
 	},
 	"manifestPlusVersion": "1.2.1",
 	"url": "https://github.com/sdenec/tidy5e-sheet",
