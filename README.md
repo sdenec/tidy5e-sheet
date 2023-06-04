@@ -6,8 +6,6 @@
 
 # The module is in maintenance and will have no developments, efforts will be made where possible to fix bug fixes. 
 # The module should be rewritten for good with the new sheet logic of Dnd5e.
-# A bounty has been opened on the League's server for anyone interested in offering financial compensation.
-# Or if you want to take ownership directly contact me (4535992) without any problems on the foundryvtt discord server.
 
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI, and many many many other features
 
