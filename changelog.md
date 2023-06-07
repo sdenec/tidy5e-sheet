@@ -1,3 +1,7 @@
+### 0.9.1
+
+- Try Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/763
+
 ### 0.9.0 
 
 - Start integration system 
