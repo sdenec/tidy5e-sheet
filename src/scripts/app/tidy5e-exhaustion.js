@@ -270,7 +270,7 @@ export async function updateExhaustion(actorEntity) {
 // });
 
 // Rest reduces by 1
-Hooks.on(`dnd5e.restComplete`, (actorEntity, data) => {
+Hooks.on(`dnd5e.restCompleted`, (actorEntity, data) => {
 	if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "default") {
 		return;
 	}
