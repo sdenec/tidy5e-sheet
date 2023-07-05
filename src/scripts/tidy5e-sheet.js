@@ -609,7 +609,7 @@ async function spellAttackMod(app, html, data) {
 
 	let spellAttackMod = prof + abilityMod;
 	let spellAttackModWihBonus = prof + abilityMod + spellBonus;
-	let spellAttackText = spellAttackMod > 0 ? "+" + spellAttackMod : spellAttackMod;
+	let spellAttackText = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
 	let spellAttackTextWithBonus = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
 	let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
 	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
