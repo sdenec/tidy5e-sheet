@@ -613,14 +613,14 @@ async function spellAttackMod(app, html, data) {
 	let spellAttackTextWithBonus = spellAttackModWihBonus > 0 ? "+" + spellAttackModWihBonus : spellAttackModWihBonus;
 	let spellAttackTextTooltip = `${prof} (prof.)+${abilityMod} (${spellAbility})`;
 	let spellAttackTextTooltipWithBonus = `with bonus ${spellAttackTextWithBonus} = ${prof} (prof.)+${abilityMod} (${spellAbility})+${formula} (bonus 'actor.system.bonuses.rsak.attack')`;
-
+	spellAttackTextTooltipWithBonus = spellAttackTextTooltipWithBonus.replace("++", "+");
 	debug(
 		`tidy5e-sheet | spellAttackMod | Prof: ${prof ?? ""} / Spell Ability: ${spellAbility ?? ""} / ability Mod: ${
 			abilityMod ?? ""
 		} / Spell Attack Mod: ${spellAttackMod ?? ""} / Spell Bonus : ${spellBonus ?? ""}`
 	);
 
-	html.find(".spell-mod .spell-attack-mod").html(spellAttackText);
+	html.find(".spell-mod .spell-attack-mod").html(spellAttackTextWithBonus);
 	html.find(".spell-mod .spell-attack-mod").attr(
 		"data-tooltip",
 		`${spellAttackTextTooltip} [${spellAttackTextTooltipWithBonus}] `
