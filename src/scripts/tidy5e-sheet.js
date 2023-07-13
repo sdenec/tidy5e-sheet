@@ -973,12 +973,12 @@ Hooks.once("init", () => {
 	Tidy5eUserSettings.init();
 });
 // TODO nos sure if this hook exists anymore ???
-Hooks.on("applyActiveEffects", (activeEffect, _config, options) => {
-	if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
-		return;
-	}
-	const changes = _config.changes;
-	tidyCustomEffect(activeEffect?.parent, changes);
+Hooks.on("applyActiveEffect", (actor, effect, options) => {
+    if (!(actor instanceof Actor) || !effect.effect.changes) {
+        return;
+    }
+    const changes = effect.effect.changes;
+    tidyCustomEffect(actor, changes);
 });
 
 /**
