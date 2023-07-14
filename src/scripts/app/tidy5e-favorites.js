@@ -99,57 +99,22 @@ export const addFavorites = async function (app, html, data, position) {
 			max: data.actor.system.spells.pact.max
 		}
 	};
-	let favSpells = {
-		0: {
-			isCantrip: true,
-			spells: []
-		},
-		1: {
-			spells: [],
-			value: data.actor.system.spells.spell1.value,
-			max: data.actor.system.spells.spell1.max
-		},
-		2: {
-			spells: [],
-			value: data.actor.system.spells.spell2.value,
-			max: data.actor.system.spells.spell2.max
-		},
-		3: {
-			spells: [],
-			value: data.actor.system.spells.spell3.value,
-			max: data.actor.system.spells.spell3.max
-		},
-		4: {
-			spells: [],
-			value: data.actor.system.spells.spell4.value,
-			max: data.actor.system.spells.spell4.max
-		},
-		5: {
-			spells: [],
-			value: data.actor.system.spells.spell5.value,
-			max: data.actor.system.spells.spell5.max
-		},
-		6: {
-			spells: [],
-			value: data.actor.system.spells.spell6.value,
-			max: data.actor.system.spells.spell6.max
-		},
-		7: {
-			spells: [],
-			value: data.actor.system.spells.spell7.value,
-			max: data.actor.system.spells.spell7.max
-		},
-		8: {
-			spells: [],
-			value: data.actor.system.spells.spell8.value,
-			max: data.actor.system.spells.spell8.max
-		},
-		9: {
-			spells: [],
-			value: data.actor.system.spells.spell9.value,
-			max: data.actor.system.spells.spell9.max
-		}
-	};
+	let favSpells = {};
+
+	for (const level in CONFIG.DND5E.spellLevels) {
+	  if (level === "0") {
+		favSpells[level] = {
+		  isCantrip: true,
+		  spells: []
+		};
+	  } else {
+		favSpells[level] = {
+		  spells: [],
+		  value: data.actor.system.spells[`spell${level}`].value,
+		  max: data.actor.system.spells[`spell${level}`].max
+		};
+	  }
+	}
 
 	let spellCount = 0;
 	let spellPrepModeCount = 0;
