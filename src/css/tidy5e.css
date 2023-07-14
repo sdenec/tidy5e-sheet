@@ -6800,3 +6800,6 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	margin: 0px;
 	border:none;
   }
+  :not(.items-footer) > .item-create {
+    display: none;
+  }
