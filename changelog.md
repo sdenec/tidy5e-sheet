@@ -1,3 +1,9 @@
+
+### 0-9.3 
+
+- Fixes for maxPreparedSpells cusotm spell ty to szefo09
+- BUg fix: https://github.com/sdenec/tidy5e-sheet/issues/769 ty to szefo09
+
 ### 0.9.1
 
 - Try Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/763

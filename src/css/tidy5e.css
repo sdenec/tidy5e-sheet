@@ -6761,6 +6761,9 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	padding: 0 4px 8px 4px;
 }
 
+.items-with-spells-items-list {
+	padding: 0px;
+}
 .items-with-spells-items-list .items-header {
 	height: 28px;
 	margin: 2px 0;
@@ -6769,37 +6772,37 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	background: rgba(0, 0, 0, 0.05);
 	border: 2px groove #eeede0;
 	font-weight: bold;
-  }
+}
   .items-with-spells-items-list .items-header > * {
 	font-size: 12px;
 	text-align: center;
-  }
-  .items-with-spells-items-list .items-header h3 {
+}
+.items-with-spells-items-list .items-header h3 {
 	padding-left: 5px;
 	font-family: "Modesto Condensed", "Palatino Linotype", serif;
 	font-size: 20px;
 	font-weight: 700;
 	text-align: left;
 	font-size: 16px;
-  }
-  .items-with-spells-items-list .item .item-name .item-image {
+}
+.items-with-spells-items-list .items-header .item-name {
+	margin: 0px;
+	border: none;
+}
+.items-with-spells-items-list .item .item-name .item-image {
 	flex: 0 0 30px;
 	height: 30px;
 	background-size: cover;
 	background-position: 50% 0;
 	border: none;
 	margin-right: 5px;
-  }
-  .items-with-spells-items-list, .items-with-spells-items-list .item-list {
+}
+.items-with-spells-items-list .item-list {
 	padding: 0px;
-  }
-  .items-with-spells-items-list .item-control {
+}
+.items-with-spells-items-list .item-control {
 	text-align: center;
-  }
-  .items-with-spells-items-list .items-header .item-name {
-	margin: 0px;
-	border:none;
-  }
-  :not(.items-footer) > .item-create {
-    display: none;
-  }
+}
+.items-with-spells-items-list:not(.items-footer) > .item-create {
+	display: none;
+}
