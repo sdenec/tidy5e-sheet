@@ -20,15 +20,7 @@
 		}
 	],
 	"esmodules": [
-		"./scripts/tidy5e-sheet.js",
-		"./scripts/tidy5e-npc.js",
-		"./scripts/tidy5e-vehicle.js",
-		"./scripts/tidy5e-item.js",
-		"./scripts/app/tidy5e-exhaustion.js",
-		"./scripts/app/tidy5e-lazy-money.js",
-		"./scripts/app/settings.js",
-		"./scripts/app/tidy5e-context-menu.js",
-		"./scripts/app/tidy5e-hb-upcast-free-spell.js"
+		"module.js"
 	],
 	"styles": ["./css/tidy-icons.css", "./css/tidy5e.css", "./css/tidy5e-dark.css"],
 	"languages": [
@@ -106,7 +98,7 @@
 				"id": "dnd5e",
 				"manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
 				"compatibility": {
-					"minimum": "2.1.2",
+					"minimum": "2.2.1",
 					"verified": "2.2.1"
 				}
 			},

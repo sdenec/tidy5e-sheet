@@ -3,6 +3,7 @@
 
 - Fixes for maxPreparedSpells cusotm spell ty to szefo09
 - BUg fix: https://github.com/sdenec/tidy5e-sheet/issues/769 ty to szefo09
+- Removed Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills for https://github.com/sdenec/tidy5e-sheet/issues/662
 
 ### 0.9.1
 
