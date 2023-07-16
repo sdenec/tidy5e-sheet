@@ -1,281 +1,281 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
-	"TIDY5E.Gender": "Gender",
-	"TIDY5E.Age": "Age",
-	"TIDY5E.Weight": "Weight",
-	"TIDY5E.Height": "Height",
-	"TIDY5E.Eyes": "Eyes",
-	"TIDY5E.Skin": "Skin",
-	"TIDY5E.Hair": "Hair",
-	"TIDY5E.EditActorImage": "編輯圖片",
+  "TIDY5E.PlayerName": "Player Name",
+  "TIDY5E.Gender": "Gender",
+  "TIDY5E.Age": "Age",
+  "TIDY5E.Weight": "Weight",
+  "TIDY5E.Height": "Height",
+  "TIDY5E.Eyes": "Eyes",
+  "TIDY5E.Skin": "Skin",
+  "TIDY5E.Hair": "Hair",
+  "TIDY5E.EditActorImage": "編輯圖片",
 
-	"TIDY5E.Exhaustion0": "無負面效應",
-	"TIDY5E.Exhaustion1": "屬性檢定具有劣勢",
-	"TIDY5E.Exhaustion2": "速度減半",
-	"TIDY5E.Exhaustion3": "攻擊和豁免檢定具有劣勢",
-	"TIDY5E.Exhaustion4": "生命值上限減半",
-	"TIDY5E.Exhaustion5": "速度降為 0",
-	"TIDY5E.Exhaustion6": "死亡",
+  "TIDY5E.Exhaustion0": "無負面效應",
+  "TIDY5E.Exhaustion1": "屬性檢定具有劣勢",
+  "TIDY5E.Exhaustion2": "速度減半",
+  "TIDY5E.Exhaustion3": "攻擊和豁免檢定具有劣勢",
+  "TIDY5E.Exhaustion4": "生命值上限減半",
+  "TIDY5E.Exhaustion5": "速度降為 0",
+  "TIDY5E.Exhaustion6": "死亡",
 
-	"TIDY5E.AbbrInitiative": "Ini",
+  "TIDY5E.AbbrInitiative": "Ini",
 
-	"TIDY5E.RestHint": "進行休息",
-	"TIDY5E.RestS": "短休",
-	"TIDY5E.RestL": "長休",
-	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
+  "TIDY5E.RestHint": "進行休息",
+  "TIDY5E.RestS": "短休",
+  "TIDY5E.RestL": "長休",
+  "TIDY5E.HitDiceRollAverage": "Right Click: Average",
 
-	"TIDY5E.AttrHitPoints": "生命值",
+  "TIDY5E.AttrHitPoints": "生命值",
 
-	"TIDY5E.HitDiceHint": "在短休時使用",
+  "TIDY5E.HitDiceHint": "在短休時使用",
 
-	"TIDY5E.Journal": "日誌",
+  "TIDY5E.Journal": "日誌",
 
-	"TIDY5E.SkillPassive": "被動技能",
+  "TIDY5E.SkillPassive": "被動技能",
 
-	"TIDY5E.RestoreOnRest": "休息時恢復",
+  "TIDY5E.RestoreOnRest": "休息時恢復",
 
-	"TIDY5E.BioTraits": "特點",
-	"TIDY5E.BioIdeals": "理念",
-	"TIDY5E.BioBonds": "羈絆",
-	"TIDY5E.BioFlaws": "缺陷",
-	"TIDY5E.BioAppearance": "外貌",
-	"TIDY5E.BioBackground": "背景/傳記",
+  "TIDY5E.BioTraits": "特點",
+  "TIDY5E.BioIdeals": "理念",
+  "TIDY5E.BioBonds": "羈絆",
+  "TIDY5E.BioFlaws": "缺陷",
+  "TIDY5E.BioAppearance": "外貌",
+  "TIDY5E.BioBackground": "背景/傳記",
 
-	"TIDY5E.JournalPoi": "相關人物",
-	"TIDY5E.JournalLoi": "相關地點",
-	"TIDY5E.JournalQuests": "任務",
-	"TIDY5E.JournalMisc": "雜項",
-	"TIDY5E.JournalEntries": "日誌條目",
+  "TIDY5E.JournalPoi": "相關人物",
+  "TIDY5E.JournalLoi": "相關地點",
+  "TIDY5E.JournalQuests": "任務",
+  "TIDY5E.JournalMisc": "雜項",
+  "TIDY5E.JournalEntries": "日誌條目",
 
-	"TIDY5E.DeleteDisabled": "不可刪除",
-	"TIDY5E.DeleteEnabled": "可以刪除",
-	"TIDY5E.DeleteDisabledHint": "點擊以顯示刪除按鈕",
-	"TIDY5E.DeleteEnabledHint": "點擊以隱藏刪除按鈕",
+  "TIDY5E.DeleteDisabled": "不可刪除",
+  "TIDY5E.DeleteEnabled": "可以刪除",
+  "TIDY5E.DeleteDisabledHint": "點擊以顯示刪除按鈕",
+  "TIDY5E.DeleteEnabledHint": "點擊以隱藏刪除按鈕",
 
-	"TIDY5E.ConvertCurrencyHint": "將貨幣兌換為最高面額貨幣",
-	"TIDY5E.ConvertCurrencyButton": "兌換",
+  "TIDY5E.ConvertCurrencyHint": "將貨幣兌換為最高面額貨幣",
+  "TIDY5E.ConvertCurrencyButton": "兌換",
 
-	"TIDY5E.Encumbrance": "負重",
+  "TIDY5E.Encumbrance": "負重",
 
-	"TIDY5E.EditSpell": "編輯法術",
-	"TIDY5E.DeleteSpell": "刪除法術",
-	"TIDY5E.AddFav": "添加到收藏",
-	"TIDY5E.RemoveFav": "從收藏中移除",
+  "TIDY5E.EditSpell": "編輯法術",
+  "TIDY5E.DeleteSpell": "刪除法術",
+  "TIDY5E.AddFav": "添加到收藏",
+  "TIDY5E.RemoveFav": "從收藏中移除",
 
-	"TIDY5E.ItemCardsKeyHint": "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint": "middle mouse to view/edit item.",
+  "TIDY5E.ItemCardsKeyHint": "hold Key to interact with card.",
+  "TIDY5E.ItemCardsMouseHint": "middle mouse to view/edit item.",
 
-	"TIDY5E.ToggleInfo": "切換顯示信息",
+  "TIDY5E.ToggleInfo": "切換顯示信息",
 
-	"TIDY5E.Show": "顯示/編輯",
-	"TIDY5E.Hide": "隱藏",
-	"TIDY5E.Edit": "編輯",
-	"TIDY5E.SkillsNotProficient": "非熟練項",
-	"TIDY5E.TraitsEmpty": "空白特性",
+  "TIDY5E.Show": "顯示/編輯",
+  "TIDY5E.Hide": "隱藏",
+  "TIDY5E.Edit": "編輯",
+  "TIDY5E.SkillsNotProficient": "非熟練項",
+  "TIDY5E.TraitsEmpty": "空白特性",
 
-	"TIDY5E.AbbrArmorClass": "AC",
+  "TIDY5E.AbbrArmorClass": "AC",
 
-	"TIDY5E.strAbility": "力量",
-	"TIDY5E.dexAbility": "敏捷",
-	"TIDY5E.conAbility": "體質",
-	"TIDY5E.intAbility": "智力",
-	"TIDY5E.wisAbility": "感知",
-	"TIDY5E.chaAbility": "魅力",
+  "TIDY5E.strAbility": "力量",
+  "TIDY5E.dexAbility": "敏捷",
+  "TIDY5E.conAbility": "體質",
+  "TIDY5E.intAbility": "智力",
+  "TIDY5E.wisAbility": "感知",
+  "TIDY5E.chaAbility": "魅力",
 
-	"TIDY5E.Abilities": "屬性",
+  "TIDY5E.Abilities": "屬性",
 
-	"TIDY5E.Environment": "環境",
+  "TIDY5E.Environment": "環境",
 
-	"TIDY5E.AbbrMod": "加值",
+  "TIDY5E.AbbrMod": "加值",
 
-	"TIDY5E.Settings.PcLabel": "PC 卡: ",
-	"TIDY5E.Settings.NpcLabel": "NPC 卡: ",
+  "TIDY5E.Settings.PcLabel": "PC 卡: ",
+  "TIDY5E.Settings.NpcLabel": "NPC 卡: ",
 
-	"TIDY5E.Settings.UseExpandedSheet": {
-		"name": "擴展顯示限制權限下的角色卡。",
-		"hint": "對該角色的權限為限制的玩家打開擴展後的角色卡時，該角色的角色卡將會完整顯示（去掉個人筆記部分）。"
-	},
-	"TIDY5E.Settings.UseDarkMode": {
-		"name": "使用可選暗黑模式。",
-		"hint": "勾選後，Tidy 5e 卡片將會啟用可選的暗黑版本的樣式。"
-	},
-	"TIDY5E.Settings.PrimaryAccentColor": {
-		"name": "主色調。",
-		"hint": "覆寫默認的主色調(默認: #ff6400/暗黑模式: #48BB78)，主色調用於比如按鈕、輸入框邊緣和懸停高亮色。可以使用任意的CSS 有效顏色值諸如red /#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
-	},
-	"TIDY5E.Settings.SecondaryAccentColor": {
-		"name": "副色調。",
-		"hint": "覆寫默認的副色調(默認: rgba(210,0,255,.1)/暗黑模式: rgba(0,150,150,.325))，副色調用於高亮準備狀態。可以使用任意的CSS有效顏色值諸如red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
-	},
-	"TIDY5E.Settings.AlwaysPreparedAccentColor": {
-		"name": "始終可用法術的色調。",
-		"hint": "覆寫默認色調(默認: rgba(210,0,255,.1)/暗黑模式: rgba(0,150,150,.325))，該色調用於始終可用狀態的法術。可以使用任意的CSS 有效顏色值諸如red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
-	},
-	"TIDY5E.Settings.UseRoundPortraits": {
-		"name": "角色卡使用圓形立繪框。",
-		"hint": "如果使用圓形立繪圖請勾選該項。開啟後，將會使HP 疊加層和立繪框按鈕看起來更好看一些。使用沒有定制邊框的方形立繪圖上也會比較好看。"
-	},
-	"TIDY5E.Settings.HpOverlayBorder": {
-		"name": "HP 疊加層的邊緣寬度。",
-		"hint": "如果你的立繪圖有邊框，可以調整 HP 疊加層以補償邊框寬度。如果 HP 疊加層變色時不會改變邊框顏色會更好看一些。"
-	},
-	"TIDY5E.Settings.DisableHpOverlay": {
-		"name": "禁用 HP 疊加層。",
-		"hint": "如果你不喜歡你角色立繪框上的電子遊戲風格的 HP 疊加層，可以關閉該項。"
-	},
-	"TIDY5E.Settings.HideClassList": {
-		"name": "隱藏角色職業列表。",
-		"hint": "勾選後，角色卡等級旁的職業列表將會被隱藏。該角色卡模板可以正確處理 3 個職業，超過時雖然沒有問題但是看起來可能會蛋疼 ;)"
-	},
-	"TIDY5E.Settings.DisableInspirationAnimation": {
-		"name": "禁用激勵指示動畫。",
-		"hint": "如果激勵指示的小動畫過於乾擾使用，可以禁用該項。"
-	},
-	"TIDY5E.Settings.DisableInspiration": {
-		"name": "禁用激勵追踪器。",
-		"hint": "如果你的戰役不使用激勵，你可以完全禁用該追踪器。"
-	},
-	"TIDY5E.Settings.DisableExhaustion": {
-		"name": "禁用力竭追踪器。",
-		"hint": "如果你的戰役不使用力竭，你可以完全禁用該追踪器。"
-	},
-	"TIDY5E.Settings.HideIfZero": {
-		"name": "無效時隱藏力竭和激勵 (0).",
-		"hint": "如果想要力竭為 0 和沒有激勵時隱藏兩項請勾選該項，將會在鼠標懸停其上時顯示。"
-	},
-	"TIDY5E.Settings.ExhaustionOnHover": {
-		"name": "僅在鼠標懸停時顯示力竭追踪器。",
-		"hint": "勾選後，只會在鼠標懸停於立繪框上時才會顯示力竭追踪器。"
-	},
-	"TIDY5E.Settings.InspirationOnHover": {
-		"name": "僅在鼠標懸停時顯示激勵追踪器。",
-		"hint": "勾選後，只會在鼠標懸停於立繪框上時才會顯示激勵追踪器。"
-	},
-	"TIDY5E.Settings.RestOnHover": {
-		"name": "鼠標懸停時顯示休息按鈕。",
-		"hint": "勾選後，只會在鼠標懸停於立繪框上時才會顯示休息按鈕。"
-	},
-	"TIDY5E.Settings.MoveTraits": {
-		"name": "將特性欄移動到資源欄下。",
-		"hint": "勾選後，特性欄將會顯示在資源欄下。"
-	},
-	"TIDY5E.Settings.PcToggleTraits": {
-		"name": "角色特性欄中顯示切換按鈕。",
-		"hint": "勾選後，將會顯示用於切換空白特性的按鈕。"
-	},
-	"TIDY5E.Settings.AlwaysShowTraits": {
-		"name": "始終顯示所有特性。",
-		"hint": "如果不想隱藏/切換 NPC 空白特性，可以勾選該項。"
-	},
-	"TIDY5E.Settings.AlwaysShowSkills": {
-		"name": "始終顯示所有技能。",
-		"hint": "如果不想隱藏/切換 NPC 未熟練的技能，可以勾選該項。"
-	},
-	"TIDY5E.Settings.MarkLinked": {
-		"name": "高亮鏈接到角色的卡片。",
-		"hint": "可以高亮顯示鏈接角色了的 NPC 卡，避免自己編輯到錯誤的卡片。"
-	},
-	"TIDY5E.Settings.MarkUnlinked": {
-		"name": "高亮未鏈接到角色的卡片。",
-		"hint": "可以高亮顯示未鏈接角色的 NPC 卡，避免自己編輯到錯誤的卡片。"
-	},
-	"TIDY5E.Subclass": "子職",
-	"TIDY5E.ShowActorImage": "右鍵單擊: 顯示角色立繪",
-	"TIDY5E.ShowPortraitArt": "顯示立繪",
-	"TIDY5E.ShowTokenArt": "顯示指示物",
-	"TIDY5E.ShowItemImage": "right click: show item art",
-	"TIDY5E.ShowItemArt": "show image",
-	"TIDY5E.TogglePersonalityInfo": "切換個人信息顯示",
-	"TIDY5E.EnableEdit": "啟用編輯",
-	"TIDY5E.DisableEdit": "禁用編輯",
-	"TIDY5E.EditHint": "切換添加/刪除按鈕和未空區塊的顯示",
-	"TIDY5E.EmptySection": "該區塊沒有內容。解鎖該卡片以編輯。",
-	"TIDY5E.GmOnlyEdit": "僅有你的 GM 可以編輯該區塊。",
-	"TIDY5E.AttunementWarning": "同調警告: 你不可以同調超過 {number} 件物品!",
-	"TIDY5E.AttunementItems": "已同調物品",
-	"TIDY5E.AttunementMax": "同調上限",
-	"TIDY5E.GridLayout": "網格佈局",
-	"TIDY5E.ListLayout": "列表佈局",
-	"TIDY5E.isFav": "收藏",
-	"TIDY5E.ToggleMovement": "切換新版和舊版速度顯示",
-	"TIDY5E.SearchItem": "搜索物品",
-	"TIDY5E.SearchSpell": "搜索法術",
-	"TIDY5E.SearchClear": "清空搜索",
-	"TIDY5E.SearchHint": "輸入你想要搜索的東西就夠了。",
-	"TIDY5E.AbbrSavingThrow": "豁免",
-	"TIDY5E.SpellAttackMod": "攻擊加值",
-	"TIDY5E.PreparedSpells": "已準備法術",
-	"TIDY5E.PreparedSpellsMax": "準備法術上限",
-	"TIDY5E.Components": "構材",
-	"TIDY5E.SpellSchool": "學派",
-	"TIDY5E.TokenLinked": "指示物已鏈接到角色",
-	"TIDY5E.TokenUnlinked": "指示物未鏈接到角色",
-	"TIDY5E.ItemDetailsHeadline": "機制/背景敘述",
-	"TIDY5E.Settings.GlobalLabel": "全局",
-	"TIDY5E.Settings.UserLabel": "用戶",
-	"TIDY5E.Settings.VehicleLabel": "載具",
-	"TIDY5E.Settings.SheetMenu": {
-		"label": "卡片設定"
-	},
-	"TIDY5E.Settings.SheetTheme": {
-		"name": "Tidy5e 色彩主題。",
-		"hint": "使用 Tidy5e 的默認的明亮或暗黑的色彩主題。",
-		"default": "默認 (明亮)",
-		"dark": "可選 (暗黑)"
-	},
-	"TIDY5E.Settings.UseClassicControls": {
-		"name": "列表視圖下使用舊版物品操作按鈕。",
-		"hint": "始終顯示物品操作按鈕並禁用右鍵菜單。僅適用於 PC 物品和法術的列表視圖。"
-	},
-	"TIDY5E.Settings.ContextRollButtons": {
-		"name": "上下文菜單中顯示 midiQol/BetterRolls 的物品按鈕。",
-		"hint": "啟用後，物品描述中的擲骰按鈕將會顯示到上下文菜單中。使用網格佈局或者使用頻繁時比較方便。"
-	},
-	"TIDY5E.Settings.ShowTraitLabels": {
-		"name": "顯示特性標籤。",
-		"hint": "默認僅顯示特性圖標。啟用後，也會顯示標籤。"
-	},
-	"TIDY5E.Settings.DisableHpBar": {
-		"name": "禁用生命值條。",
-		"hint": "啟用後，用於指示剩餘 HP 的著色條將會被隱藏 (HP 數字仍將可見)。"
-	},
-	"TIDY5E.Settings.RightClickDisabled": {
-		"name": "禁用右鍵上下文菜單。",
-		"hint": "你可以禁用右鍵上下文菜單以避免 MOD 或設置的衝突。物品條目上將會顯示菜單按鈕作為替代。"
-	},
-	"TIDY5E.Settings.UseRoundPortraits": {
-		"all": "所有角色",
-		"pc": "所有 PC",
-		"npc": "所有 NPC/載具",
-		"none": "無",
-		"default": "無"
-	},
-	"TIDY5E.Settings.GmEditPermission": {
-		"name": "GM 始終可以編輯 PC 角色卡。",
-		"hint": "啟用後，允許 GM 在未切換卡片鎖定的情況下也可以編輯 PC 角色卡。"
-	},
-	"TIDY5E.Settings.GmEditEffects": {
-		"name": "僅允許 GM 編輯主動效果。",
-		"hint": "啟用後，將禁止玩家編輯自己卡片上的主動效果。玩家仍將查看到已應用的效果。"
-	},
-	"TIDY5E.Settings.AlwaysShowQty": {
-		"name": "始終顯示物品數量。",
-		"hint": "啟用後，將不再隱藏物品數量。。"
-	},
-	"TIDY5E.Settings.ExhaustionEffects": {
-		"name": "力竭效果 (使用主動效果)。",
-		"hint": "設定力竭等級時應用對應的主動效果 - 需要 midiQol 以設置劣勢擲骰！"
-	},
-	"TIDY5E.Settings.ShowNpcRest": {
-		"name": "NPC 休息.",
-		"hint": "啟用後，將在 NPC 角色卡上顯示休息圖標/按鈕。"
-	},
-	"TIDY5E.Settings.LinkMarker": {
-		"name": "標記鏈接/未鏈接的 NPC。",
-		"hint": "在鏈接/未鏈接的 NPC 卡上添加著色邊框和圖標。",
-		"default": "無鏈接標記 (默認)",
-		"unlinked": "高亮未鏈接指示物的卡片",
-		"linked": "高亮已鏈接指示物的卡片",
-		"both": "高亮已鏈接和未鏈接的指示物的卡片"
-	}
+  "TIDY5E.Settings.UseExpandedSheet": {
+    "name": "擴展顯示限制權限下的角色卡。",
+    "hint": "對該角色的權限為限制的玩家打開擴展後的角色卡時，該角色的角色卡將會完整顯示（去掉個人筆記部分）。"
+  },
+  "TIDY5E.Settings.UseDarkMode": {
+    "name": "使用可選暗黑模式。",
+    "hint": "勾選後，Tidy 5e 卡片將會啟用可選的暗黑版本的樣式。"
+  },
+  "TIDY5E.Settings.PrimaryAccentColor": {
+    "name": "主色調。",
+    "hint": "覆寫默認的主色調(默認: #ff6400/暗黑模式: #48BB78)，主色調用於比如按鈕、輸入框邊緣和懸停高亮色。可以使用任意的CSS 有效顏色值諸如red /#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
+  },
+  "TIDY5E.Settings.SecondaryAccentColor": {
+    "name": "副色調。",
+    "hint": "覆寫默認的副色調(默認: rgba(210,0,255,.1)/暗黑模式: rgba(0,150,150,.325))，副色調用於高亮準備狀態。可以使用任意的CSS有效顏色值諸如red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
+  },
+  "TIDY5E.Settings.AlwaysPreparedAccentColor": {
+    "name": "始終可用法術的色調。",
+    "hint": "覆寫默認色調(默認: rgba(210,0,255,.1)/暗黑模式: rgba(0,150,150,.325))，該色調用於始終可用狀態的法術。可以使用任意的CSS 有效顏色值諸如red/#ff0000/rgba(255,0,0)/rgba(255,0,0,1)。"
+  },
+  "TIDY5E.Settings.UseRoundPortraits": {
+    "name": "角色卡使用圓形立繪框。",
+    "hint": "如果使用圓形立繪圖請勾選該項。開啟後，將會使HP 疊加層和立繪框按鈕看起來更好看一些。使用沒有定制邊框的方形立繪圖上也會比較好看。"
+  },
+  "TIDY5E.Settings.HpOverlayBorder": {
+    "name": "HP 疊加層的邊緣寬度。",
+    "hint": "如果你的立繪圖有邊框，可以調整 HP 疊加層以補償邊框寬度。如果 HP 疊加層變色時不會改變邊框顏色會更好看一些。"
+  },
+  "TIDY5E.Settings.DisableHpOverlay": {
+    "name": "禁用 HP 疊加層。",
+    "hint": "如果你不喜歡你角色立繪框上的電子遊戲風格的 HP 疊加層，可以關閉該項。"
+  },
+  "TIDY5E.Settings.HideClassList": {
+    "name": "隱藏角色職業列表。",
+    "hint": "勾選後，角色卡等級旁的職業列表將會被隱藏。該角色卡模板可以正確處理 3 個職業，超過時雖然沒有問題但是看起來可能會蛋疼 ;)"
+  },
+  "TIDY5E.Settings.DisableInspirationAnimation": {
+    "name": "禁用激勵指示動畫。",
+    "hint": "如果激勵指示的小動畫過於乾擾使用，可以禁用該項。"
+  },
+  "TIDY5E.Settings.DisableInspiration": {
+    "name": "禁用激勵追踪器。",
+    "hint": "如果你的戰役不使用激勵，你可以完全禁用該追踪器。"
+  },
+  "TIDY5E.Settings.DisableExhaustion": {
+    "name": "禁用力竭追踪器。",
+    "hint": "如果你的戰役不使用力竭，你可以完全禁用該追踪器。"
+  },
+  "TIDY5E.Settings.HideIfZero": {
+    "name": "無效時隱藏力竭和激勵 (0).",
+    "hint": "如果想要力竭為 0 和沒有激勵時隱藏兩項請勾選該項，將會在鼠標懸停其上時顯示。"
+  },
+  "TIDY5E.Settings.ExhaustionOnHover": {
+    "name": "僅在鼠標懸停時顯示力竭追踪器。",
+    "hint": "勾選後，只會在鼠標懸停於立繪框上時才會顯示力竭追踪器。"
+  },
+  "TIDY5E.Settings.InspirationOnHover": {
+    "name": "僅在鼠標懸停時顯示激勵追踪器。",
+    "hint": "勾選後，只會在鼠標懸停於立繪框上時才會顯示激勵追踪器。"
+  },
+  "TIDY5E.Settings.RestOnHover": {
+    "name": "鼠標懸停時顯示休息按鈕。",
+    "hint": "勾選後，只會在鼠標懸停於立繪框上時才會顯示休息按鈕。"
+  },
+  "TIDY5E.Settings.MoveTraits": {
+    "name": "將特性欄移動到資源欄下。",
+    "hint": "勾選後，特性欄將會顯示在資源欄下。"
+  },
+  "TIDY5E.Settings.PcToggleTraits": {
+    "name": "角色特性欄中顯示切換按鈕。",
+    "hint": "勾選後，將會顯示用於切換空白特性的按鈕。"
+  },
+  "TIDY5E.Settings.AlwaysShowTraits": {
+    "name": "始終顯示所有特性。",
+    "hint": "如果不想隱藏/切換 NPC 空白特性，可以勾選該項。"
+  },
+  "TIDY5E.Settings.AlwaysShowSkills": {
+    "name": "始終顯示所有技能。",
+    "hint": "如果不想隱藏/切換 NPC 未熟練的技能，可以勾選該項。"
+  },
+  "TIDY5E.Settings.MarkLinked": {
+    "name": "高亮鏈接到角色的卡片。",
+    "hint": "可以高亮顯示鏈接角色了的 NPC 卡，避免自己編輯到錯誤的卡片。"
+  },
+  "TIDY5E.Settings.MarkUnlinked": {
+    "name": "高亮未鏈接到角色的卡片。",
+    "hint": "可以高亮顯示未鏈接角色的 NPC 卡，避免自己編輯到錯誤的卡片。"
+  },
+  "TIDY5E.Subclass": "子職",
+  "TIDY5E.ShowActorImage": "右鍵單擊: 顯示角色立繪",
+  "TIDY5E.ShowPortraitArt": "顯示立繪",
+  "TIDY5E.ShowTokenArt": "顯示指示物",
+  "TIDY5E.ShowItemImage": "right click: show item art",
+  "TIDY5E.ShowItemArt": "show image",
+  "TIDY5E.TogglePersonalityInfo": "切換個人信息顯示",
+  "TIDY5E.EnableEdit": "啟用編輯",
+  "TIDY5E.DisableEdit": "禁用編輯",
+  "TIDY5E.EditHint": "切換添加/刪除按鈕和未空區塊的顯示",
+  "TIDY5E.EmptySection": "該區塊沒有內容。解鎖該卡片以編輯。",
+  "TIDY5E.GmOnlyEdit": "僅有你的 GM 可以編輯該區塊。",
+  "TIDY5E.AttunementWarning": "同調警告: 你不可以同調超過 {number} 件物品!",
+  "TIDY5E.AttunementItems": "已同調物品",
+  "TIDY5E.AttunementMax": "同調上限",
+  "TIDY5E.GridLayout": "網格佈局",
+  "TIDY5E.ListLayout": "列表佈局",
+  "TIDY5E.isFav": "收藏",
+  "TIDY5E.ToggleMovement": "切換新版和舊版速度顯示",
+  "TIDY5E.SearchItem": "搜索物品",
+  "TIDY5E.SearchSpell": "搜索法術",
+  "TIDY5E.SearchClear": "清空搜索",
+  "TIDY5E.SearchHint": "輸入你想要搜索的東西就夠了。",
+  "TIDY5E.AbbrSavingThrow": "豁免",
+  "TIDY5E.SpellAttackMod": "攻擊加值",
+  "TIDY5E.PreparedSpells": "已準備法術",
+  "TIDY5E.PreparedSpellsMax": "準備法術上限",
+  "TIDY5E.Components": "構材",
+  "TIDY5E.SpellSchool": "學派",
+  "TIDY5E.TokenLinked": "指示物已鏈接到角色",
+  "TIDY5E.TokenUnlinked": "指示物未鏈接到角色",
+  "TIDY5E.ItemDetailsHeadline": "機制/背景敘述",
+  "TIDY5E.Settings.GlobalLabel": "全局",
+  "TIDY5E.Settings.UserLabel": "用戶",
+  "TIDY5E.Settings.VehicleLabel": "載具",
+  "TIDY5E.Settings.SheetMenu": {
+    "label": "卡片設定"
+  },
+  "TIDY5E.Settings.SheetTheme": {
+    "name": "Tidy5e 色彩主題。",
+    "hint": "使用 Tidy5e 的默認的明亮或暗黑的色彩主題。",
+    "default": "默認 (明亮)",
+    "dark": "可選 (暗黑)"
+  },
+  "TIDY5E.Settings.UseClassicControls": {
+    "name": "列表視圖下使用舊版物品操作按鈕。",
+    "hint": "始終顯示物品操作按鈕並禁用右鍵菜單。僅適用於 PC 物品和法術的列表視圖。"
+  },
+  "TIDY5E.Settings.ContextRollButtons": {
+    "name": "上下文菜單中顯示 midiQol/BetterRolls 的物品按鈕。",
+    "hint": "啟用後，物品描述中的擲骰按鈕將會顯示到上下文菜單中。使用網格佈局或者使用頻繁時比較方便。"
+  },
+  "TIDY5E.Settings.ShowTraitLabels": {
+    "name": "顯示特性標籤。",
+    "hint": "默認僅顯示特性圖標。啟用後，也會顯示標籤。"
+  },
+  "TIDY5E.Settings.DisableHpBar": {
+    "name": "禁用生命值條。",
+    "hint": "啟用後，用於指示剩餘 HP 的著色條將會被隱藏 (HP 數字仍將可見)。"
+  },
+  "TIDY5E.Settings.RightClickDisabled": {
+    "name": "禁用右鍵上下文菜單。",
+    "hint": "你可以禁用右鍵上下文菜單以避免 MOD 或設置的衝突。物品條目上將會顯示菜單按鈕作為替代。"
+  },
+  "TIDY5E.Settings.UseRoundPortraits": {
+    "all": "所有角色",
+    "pc": "所有 PC",
+    "npc": "所有 NPC/載具",
+    "none": "無",
+    "default": "無"
+  },
+  "TIDY5E.Settings.GmEditPermission": {
+    "name": "GM 始終可以編輯 PC 角色卡。",
+    "hint": "啟用後，允許 GM 在未切換卡片鎖定的情況下也可以編輯 PC 角色卡。"
+  },
+  "TIDY5E.Settings.GmEditEffects": {
+    "name": "僅允許 GM 編輯主動效果。",
+    "hint": "啟用後，將禁止玩家編輯自己卡片上的主動效果。玩家仍將查看到已應用的效果。"
+  },
+  "TIDY5E.Settings.AlwaysShowQty": {
+    "name": "始終顯示物品數量。",
+    "hint": "啟用後，將不再隱藏物品數量。。"
+  },
+  "TIDY5E.Settings.ExhaustionEffects": {
+    "name": "力竭效果 (使用主動效果)。",
+    "hint": "設定力竭等級時應用對應的主動效果 - 需要 midiQol 以設置劣勢擲骰！"
+  },
+  "TIDY5E.Settings.ShowNpcRest": {
+    "name": "NPC 休息.",
+    "hint": "啟用後，將在 NPC 角色卡上顯示休息圖標/按鈕。"
+  },
+  "TIDY5E.Settings.LinkMarker": {
+    "name": "標記鏈接/未鏈接的 NPC。",
+    "hint": "在鏈接/未鏈接的 NPC 卡上添加著色邊框和圖標。",
+    "default": "無鏈接標記 (默認)",
+    "unlinked": "高亮未鏈接指示物的卡片",
+    "linked": "高亮已鏈接指示物的卡片",
+    "both": "高亮已鏈接和未鏈接的指示物的卡片"
+  }
 }

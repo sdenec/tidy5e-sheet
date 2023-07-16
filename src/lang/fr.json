@@ -1,314 +1,314 @@
 {
-	"TIDY5E.PlayerName": "Nom du joueur",
-	"TIDY5E.Gender": "Genre",
-	"TIDY5E.Age": "Age",
-	"TIDY5E.Weight": "Poids",
-	"TIDY5E.Height": "Taille",
-	"TIDY5E.Eyes": "Yeux",
-	"TIDY5E.Skin": "Peau",
-	"TIDY5E.Hair": "Cheveux",
-	"TIDY5E.Subclass": "Sous-classe",
-	"TIDY5E.EditActorImage": "Clic gauche : éditer l'image",
-	"TIDY5E.ShowActorImage": "Clic droit : voir l'image du personnage",
-	"TIDY5E.ShowPortraitArt": "Voir le portrait",
-	"TIDY5E.ShowTokenArt": "Voir le token",
-	"TIDY5E.ShowItemImage": "right click: show item art",
-	"TIDY5E.ShowItemArt": "show image",
+  "TIDY5E.PlayerName": "Nom du joueur",
+  "TIDY5E.Gender": "Genre",
+  "TIDY5E.Age": "Age",
+  "TIDY5E.Weight": "Poids",
+  "TIDY5E.Height": "Taille",
+  "TIDY5E.Eyes": "Yeux",
+  "TIDY5E.Skin": "Peau",
+  "TIDY5E.Hair": "Cheveux",
+  "TIDY5E.Subclass": "Sous-classe",
+  "TIDY5E.EditActorImage": "Clic gauche : éditer l'image",
+  "TIDY5E.ShowActorImage": "Clic droit : voir l'image du personnage",
+  "TIDY5E.ShowPortraitArt": "Voir le portrait",
+  "TIDY5E.ShowTokenArt": "Voir le token",
+  "TIDY5E.ShowItemImage": "right click: show item art",
+  "TIDY5E.ShowItemArt": "show image",
 
-	"TIDY5E.Exhaustion0": "Aucun effet négatifs",
-	"TIDY5E.Exhaustion1": "Désavantage aux tests de caractéristiques",
-	"TIDY5E.Exhaustion2": "Vitesse réduite de moitié",
-	"TIDY5E.Exhaustion3": "Désavantage aux jets d'attaques et jets de sauvegardes",
-	"TIDY5E.Exhaustion4": "Points de vie maximum réduit de moitié",
-	"TIDY5E.Exhaustion5": "Vitesse réduite à 0",
-	"TIDY5E.Exhaustion6": "Mort",
+  "TIDY5E.Exhaustion0": "Aucun effet négatifs",
+  "TIDY5E.Exhaustion1": "Désavantage aux tests de caractéristiques",
+  "TIDY5E.Exhaustion2": "Vitesse réduite de moitié",
+  "TIDY5E.Exhaustion3": "Désavantage aux jets d'attaques et jets de sauvegardes",
+  "TIDY5E.Exhaustion4": "Points de vie maximum réduit de moitié",
+  "TIDY5E.Exhaustion5": "Vitesse réduite à 0",
+  "TIDY5E.Exhaustion6": "Mort",
 
-	"TIDY5E.AbbrInitiative": "Ini",
+  "TIDY5E.AbbrInitiative": "Ini",
 
-	"TIDY5E.RestHint": "Se reposer",
-	"TIDY5E.RestS": "Repos Court",
-	"TIDY5E.RestL": "Repos Long",
-	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
+  "TIDY5E.RestHint": "Se reposer",
+  "TIDY5E.RestS": "Repos Court",
+  "TIDY5E.RestL": "Repos Long",
+  "TIDY5E.HitDiceRollAverage": "Right Click: Average",
 
-	"TIDY5E.Journal": "Journal",
+  "TIDY5E.Journal": "Journal",
 
-	"TIDY5E.RestoreOnRest": "Restaurer lors d'un repos",
+  "TIDY5E.RestoreOnRest": "Restaurer lors d'un repos",
 
-	"TIDY5E.JournalPoi": "Personnages importants",
-	"TIDY5E.JournalLoi": "Lieux importants",
-	"TIDY5E.JournalQuests": "Quêtes",
-	"TIDY5E.JournalMisc": "Divers",
-	"TIDY5E.JournalEntries": "Journal de bord",
-	"TIDY5E.TogglePersonalityInfo": "Afficher / masquer les informations sur la personnalité",
+  "TIDY5E.JournalPoi": "Personnages importants",
+  "TIDY5E.JournalLoi": "Lieux importants",
+  "TIDY5E.JournalQuests": "Quêtes",
+  "TIDY5E.JournalMisc": "Divers",
+  "TIDY5E.JournalEntries": "Journal de bord",
+  "TIDY5E.TogglePersonalityInfo": "Afficher / masquer les informations sur la personnalité",
 
-	"TIDY5E.EnableEdit": "Permettre les modifications",
-	"TIDY5E.DisableEdit": "Désactiver les modifications",
-	"TIDY5E.EditHint": "Visibilité des boutons d'ajout/suppression et des sections vides",
+  "TIDY5E.EnableEdit": "Permettre les modifications",
+  "TIDY5E.DisableEdit": "Désactiver les modifications",
+  "TIDY5E.EditHint": "Visibilité des boutons d'ajout/suppression et des sections vides",
 
-	"TIDY5E.Equip": "Équiper objet",
-	"TIDY5E.Unequip": "Déséquiper objet",
-	"TIDY5E.Attune": "Se lier à l'objet",
-	"TIDY5E.Deattune": "Briser le lien",
-	"TIDY5E.Prepare": "Préparer le sort",
-	"TIDY5E.Unprepare": "Supprimer la préparation",
+  "TIDY5E.Equip": "Équiper objet",
+  "TIDY5E.Unequip": "Déséquiper objet",
+  "TIDY5E.Attune": "Se lier à l'objet",
+  "TIDY5E.Deattune": "Briser le lien",
+  "TIDY5E.Prepare": "Préparer le sort",
+  "TIDY5E.Unprepare": "Supprimer la préparation",
 
-	"TIDY5E.EmptySection": "Cette section est vide. Déverrouiller la feuille pour la modifier.",
-	"TIDY5E.GmOnlyEdit": "Seul votre MJ peut modifier cette section.",
+  "TIDY5E.EmptySection": "Cette section est vide. Déverrouiller la feuille pour la modifier.",
+  "TIDY5E.GmOnlyEdit": "Seul votre MJ peut modifier cette section.",
 
-	"TIDY5E.AttunementWarning": "Attention : Vous ne pouvez pas vous lier à plus de {number} objets !",
-	"TIDY5E.AttunementItems": "Objets liés",
-	"TIDY5E.AttunementMax": "Liens maximum",
+  "TIDY5E.AttunementWarning": "Attention : Vous ne pouvez pas vous lier à plus de {number} objets !",
+  "TIDY5E.AttunementItems": "Objets liés",
+  "TIDY5E.AttunementMax": "Liens maximum",
 
-	"TIDY5E.GridLayout": "Affichage grille",
-	"TIDY5E.ListLayout": "Affichage liste",
+  "TIDY5E.GridLayout": "Affichage grille",
+  "TIDY5E.ListLayout": "Affichage liste",
 
-	"TIDY5E.Encumbrance": "Encombrement",
+  "TIDY5E.Encumbrance": "Encombrement",
 
-	"TIDY5E.EditSpell": "Editer le Sort",
-	"TIDY5E.DeleteSpell": "Supprimer le Sort",
-	"TIDY5E.AddFav": "Ajouter aux Favoris",
-	"TIDY5E.RemoveFav": "Enlever des Favoris",
-	"TIDY5E.isFav": "Favori",
+  "TIDY5E.EditSpell": "Editer le Sort",
+  "TIDY5E.DeleteSpell": "Supprimer le Sort",
+  "TIDY5E.AddFav": "Ajouter aux Favoris",
+  "TIDY5E.RemoveFav": "Enlever des Favoris",
+  "TIDY5E.isFav": "Favori",
 
-	"TIDY5E.ToggleInfo": "Afficher / masquer les informations",
+  "TIDY5E.ToggleInfo": "Afficher / masquer les informations",
 
-	"TIDY5E.Show": "Voir / éditer",
-	"TIDY5E.Hide": "Cacher",
-	"TIDY5E.Edit": "Éditer",
-	"TIDY5E.TraitsEmpty": "Trait vide",
+  "TIDY5E.Show": "Voir / éditer",
+  "TIDY5E.Hide": "Cacher",
+  "TIDY5E.Edit": "Éditer",
+  "TIDY5E.TraitsEmpty": "Trait vide",
 
-	"TIDY5E.Abilities": "Caractéristiques",
+  "TIDY5E.Abilities": "Caractéristiques",
 
-	"TIDY5E.Environment": "Environnement",
+  "TIDY5E.Environment": "Environnement",
 
-	"TIDY5E.SearchItem": "Rechercher objet",
-	"TIDY5E.SearchSpell": "Rechercher sort",
-	"TIDY5E.SearchFeat": "Fonction de recherche",
-	"TIDY5E.SearchClear": "Annuler la recherche",
-	"TIDY5E.SearchHint": "Saisir votre recherche",
+  "TIDY5E.SearchItem": "Rechercher objet",
+  "TIDY5E.SearchSpell": "Rechercher sort",
+  "TIDY5E.SearchFeat": "Fonction de recherche",
+  "TIDY5E.SearchClear": "Annuler la recherche",
+  "TIDY5E.SearchHint": "Saisir votre recherche",
 
-	"TIDY5E.ItemCardsKeyHint": "Maintenir la touche pour interagir avec la carte.",
-	"TIDY5E.ItemCardsMouseHint": "Clic central de la souris pour voir / éditer.",
+  "TIDY5E.ItemCardsKeyHint": "Maintenir la touche pour interagir avec la carte.",
+  "TIDY5E.ItemCardsMouseHint": "Clic central de la souris pour voir / éditer.",
 
-	"TIDY5E.AbbrMod": "Mod",
-	"TIDY5E.AbbrSavingThrow": "Sauvegarde",
-	"TIDY5E.SpellAttackMod": "Bonus d'attaque",
-	"TIDY5E.PreparedSpells": "Sorts préparés",
-	"TIDY5E.PreparedSpellsMax": "Maximum de sorts préparés",
-	"TIDY5E.Components": "Compo",
-	"TIDY5E.SpellSchool": "École",
+  "TIDY5E.AbbrMod": "Mod",
+  "TIDY5E.AbbrSavingThrow": "Sauvegarde",
+  "TIDY5E.SpellAttackMod": "Bonus d'attaque",
+  "TIDY5E.PreparedSpells": "Sorts préparés",
+  "TIDY5E.PreparedSpellsMax": "Maximum de sorts préparés",
+  "TIDY5E.Components": "Compo",
+  "TIDY5E.SpellSchool": "École",
 
-	"TIDY5E.TokenLinked": "Token lié à l'acteur",
-	"TIDY5E.TokenUnlinked": "Token non lié à l'acteur",
+  "TIDY5E.TokenLinked": "Token lié à l'acteur",
+  "TIDY5E.TokenUnlinked": "Token non lié à l'acteur",
 
-	"TIDY5E.ItemDetailsHeadline": "Mécanique / Contexte",
+  "TIDY5E.ItemDetailsHeadline": "Mécanique / Contexte",
 
-	"TIDY5E.Settings.GlobalLabel": "Global",
-	"TIDY5E.Settings.DebugLabel": "Debug",
-	"TIDY5E.Settings.UserLabel": "Utilisateur",
-	"TIDY5E.Settings.PcLabel": "PJs",
-	"TIDY5E.Settings.NpcLabel": "PNJs",
-	"TIDY5E.Settings.VehicleLabel": "Véhicules",
+  "TIDY5E.Settings.GlobalLabel": "Global",
+  "TIDY5E.Settings.DebugLabel": "Debug",
+  "TIDY5E.Settings.UserLabel": "Utilisateur",
+  "TIDY5E.Settings.PcLabel": "PJs",
+  "TIDY5E.Settings.NpcLabel": "PNJs",
+  "TIDY5E.Settings.VehicleLabel": "Véhicules",
 
-	"TIDY5E.Settings.SheetMenu": {
-		"label": "Configuration des feuilles",
-		"title": "Configuration des feuilles Tidy5e"
-	},
-	"TIDY5E.Settings.TabPlayers": {
-		"tabLabel": "Joueur",
-		"header": "Option des feuilles de joueur"
-	},
-	"TIDY5E.Settings.TabNPCsVehicles": {
-		"tabLabel": "PNJ / Véhicule",
-		"header": "Options des feuilles de PNJ / véhicule",
-		"labelNPCs": "PNJ",
-		"labelVehicles": "Véhicule"
-	},
-	"TIDY5E.Settings.TabGM": {
-		"tabLabel": "Options MJ",
-		"header": "Options pour le MJ"
-	},
-	"TIDY5E.Settings.TabModules": {
-		"tabLabel": "Modules",
-		"header": "Options des modules tiers",
-		"labelActionsFavorites": "Actor Actions/Favorites",
-		"labelMidiQoL": "Midi Qol"
-	},
-	"TIDY5E.Settings.TabInfo": {
-		"tabLabel": "Informations",
-		"header": "Informations"
-	},
-	"TIDY5E.Settings.ItemCardsForAllItems": {
-		"name": "Montrer la carte d'information des éléments dans toutes les mise en page",
-		"hint": "Désactiver cette option pour afficher la carte d'information uniquement en mode grille."
-	},
-	"TIDY5E.Settings.ItemCardsForNpcs": {
-		"name": "Montrer la carte d'information des éléments pour les PNJs / véhicules",
-		"hint": "Désactiver cette option pour masquer la carte d'information pour les PNJs / véhicules."
-	},
-	"TIDY5E.Settings.ItemCardsAreFloating": {
-		"name": "Carte d'information flottante",
-		"hint": "Activer cette option pour détacher la carte d'information et l'afficher près du curseur (fonctionne mieux avec un délai ou quand la fiche est en pop-up)."
-	},
-	"TIDY5E.Settings.ItemCardsDelay": {
-		"name": "Délai avant l'affichage de la carte d'information",
-		"hint": "La carte d'information s'affichera au survol d'un élément après un délai en millisecondes (0 = pas de délai, 300 par défaut)."
-	},
-	"TIDY5E.Settings.ItemCardsFixKey": {
-		"name": "Touche à maintenir pour interagir avec la carte d'information",
-		"hint": "Saisir une touche (par exemple : x) à utiliser pour l'interaction avec la carte d'information. Il peut s'agir de n'importe quelle touche, à l'exception des touches de fonction (ctrl, alt, etc.)."
-	},
+  "TIDY5E.Settings.SheetMenu": {
+    "label": "Configuration des feuilles",
+    "title": "Configuration des feuilles Tidy5e"
+  },
+  "TIDY5E.Settings.TabPlayers": {
+    "tabLabel": "Joueur",
+    "header": "Option des feuilles de joueur"
+  },
+  "TIDY5E.Settings.TabNPCsVehicles": {
+    "tabLabel": "PNJ / Véhicule",
+    "header": "Options des feuilles de PNJ / véhicule",
+    "labelNPCs": "PNJ",
+    "labelVehicles": "Véhicule"
+  },
+  "TIDY5E.Settings.TabGM": {
+    "tabLabel": "Options MJ",
+    "header": "Options pour le MJ"
+  },
+  "TIDY5E.Settings.TabModules": {
+    "tabLabel": "Modules",
+    "header": "Options des modules tiers",
+    "labelActionsFavorites": "Actor Actions/Favorites",
+    "labelMidiQoL": "Midi Qol"
+  },
+  "TIDY5E.Settings.TabInfo": {
+    "tabLabel": "Informations",
+    "header": "Informations"
+  },
+  "TIDY5E.Settings.ItemCardsForAllItems": {
+    "name": "Montrer la carte d'information des éléments dans toutes les mise en page",
+    "hint": "Désactiver cette option pour afficher la carte d'information uniquement en mode grille."
+  },
+  "TIDY5E.Settings.ItemCardsForNpcs": {
+    "name": "Montrer la carte d'information des éléments pour les PNJs / véhicules",
+    "hint": "Désactiver cette option pour masquer la carte d'information pour les PNJs / véhicules."
+  },
+  "TIDY5E.Settings.ItemCardsAreFloating": {
+    "name": "Carte d'information flottante",
+    "hint": "Activer cette option pour détacher la carte d'information et l'afficher près du curseur (fonctionne mieux avec un délai ou quand la fiche est en pop-up)."
+  },
+  "TIDY5E.Settings.ItemCardsDelay": {
+    "name": "Délai avant l'affichage de la carte d'information",
+    "hint": "La carte d'information s'affichera au survol d'un élément après un délai en millisecondes (0 = pas de délai, 300 par défaut)."
+  },
+  "TIDY5E.Settings.ItemCardsFixKey": {
+    "name": "Touche à maintenir pour interagir avec la carte d'information",
+    "hint": "Saisir une touche (par exemple : x) à utiliser pour l'interaction avec la carte d'information. Il peut s'agir de n'importe quelle touche, à l'exception des touches de fonction (ctrl, alt, etc.)."
+  },
 
-	"TIDY5E.Settings.SheetTheme": {
-		"name": "Thème Tidy5e",
-		"hint": "Utiliser le thème de couleur clair ou foncé par défaut de Tidy5e.",
-		"default": "Défaut (lumineux)",
-		"dark": "Alternatif (sombre)"
-	},
+  "TIDY5E.Settings.SheetTheme": {
+    "name": "Thème Tidy5e",
+    "hint": "Utiliser le thème de couleur clair ou foncé par défaut de Tidy5e.",
+    "default": "Défaut (lumineux)",
+    "dark": "Alternatif (sombre)"
+  },
 
-	"TIDY5E.Settings.ClassicControls": {
-		"name": "Contrôles classiques en mode liste",
-		"hint": "Toujours afficher les option de contrôle des éléments et désactive le menu du clic droit. Ne s'applique qu'à l'inventaire des objets / sorts du PJ en mode liste."
-	},
-	"TIDY5E.Settings.RollButtonsToCard": {
-		"name": "Afficher les boutons midiQol dans la carte d'information",
-		"hint": "Par défaut, les boutons pour les lancers apparaissent dans la description de l'élément. Activer cette option pour les déplacer dans la carte d'information. Fonctionne dans tous les modes de mise en page."
-	},
-	"TIDY5E.Settings.TraitLabels": {
-		"name": "Afficher les noms de traits",
-		"hint": "Par défaut, seules des icones sont affichées pour les traits. Activer cette option pour afficher les noms également."
-	},
+  "TIDY5E.Settings.ClassicControls": {
+    "name": "Contrôles classiques en mode liste",
+    "hint": "Toujours afficher les option de contrôle des éléments et désactive le menu du clic droit. Ne s'applique qu'à l'inventaire des objets / sorts du PJ en mode liste."
+  },
+  "TIDY5E.Settings.RollButtonsToCard": {
+    "name": "Afficher les boutons midiQol dans la carte d'information",
+    "hint": "Par défaut, les boutons pour les lancers apparaissent dans la description de l'élément. Activer cette option pour les déplacer dans la carte d'information. Fonctionne dans tous les modes de mise en page."
+  },
+  "TIDY5E.Settings.TraitLabels": {
+    "name": "Afficher les noms de traits",
+    "hint": "Par défaut, seules des icones sont affichées pour les traits. Activer cette option pour afficher les noms également."
+  },
 
-	"TIDY5E.Settings.PlayerName": {
-		"name": "Afficher le nom du joueur",
-		"hint": "Activer cette option pour afficher le nom du joueur en dessous de celui de son personnage."
-	},
-	"TIDY5E.Settings.ClassList": {
-		"name": "Masquer la liste des classes du personnage",
-		"hint": "Activer cette option pour cacher la liste des classes du personnage à côté de l'affichage du niveau. La feuille peut gérer 3 classes : plus cela devient compliqué ;)"
-	},
-	"TIDY5E.Settings.InspirationAnimation": {
-		"name": "Pas d'animation de l'indicateur d'inspiration",
-		"hint": "Activer cette option pour masquer l'animation lumineuse de l'indicateur d'inspiration."
-	},
-	"TIDY5E.Settings.HideIfZero": {
-		"name": "Cacher l'épuisement et l'inspiration lorsqu'ils ne sont pas affectés",
-		"hint": "Activer cette option pour masquer l'épuisment si son niveau est de 0 et l'inspiration si elle n'est pas donnée."
-	},
-	"TIDY5E.Settings.InspirationOnHover": {
-		"name": "Afficher l'indicateur d'inspiration uniquement au survol",
-		"hint": "Activer cette option pour rendre l'indicateur d'inspiration visible uniquement au survol du portrait avec la souris."
-	},
-	"TIDY5E.Settings.ExhaustionOnHover": {
-		"name": "Afficher l'indicateur d'épuisement uniquement au survol",
-		"hint": "Activer cette option pour rendre l'indicateur d'épuisement visible uniquement au survol du portrait avec la souris."
-	},
-	"TIDY5E.Settings.HpBar": {
-		"name": "Désactiver la barre d'HP",
-		"hint": "Activer cette option pour masquer la barre colorée indiquant les HP restants (les chiffres seront toujours visibles)."
-	},
-	"TIDY5E.Settings.HpOverlay": {
-		"name": "Masquer l'overlay des HP",
-		"hint": "Activer cette option pour masque l'overlay des HP pour ce type d'acteur."
-	},
-	"TIDY5E.Settings.TraitsTogglePc": {
-		"name": "Afficher un bouton de bascule de l'affichage des traits",
-		"hint": "Activer cette option pour afficher un bouton de bascule de l'affichage des traits."
-	},
-	"TIDY5E.Settings.TraitsMovedBelowResource": {
-		"name": "Déplacer les traits sous les ressources",
-		"hint": "Activer cette option pour afficher les traits sous les ressources."
-	},
+  "TIDY5E.Settings.PlayerName": {
+    "name": "Afficher le nom du joueur",
+    "hint": "Activer cette option pour afficher le nom du joueur en dessous de celui de son personnage."
+  },
+  "TIDY5E.Settings.ClassList": {
+    "name": "Masquer la liste des classes du personnage",
+    "hint": "Activer cette option pour cacher la liste des classes du personnage à côté de l'affichage du niveau. La feuille peut gérer 3 classes : plus cela devient compliqué ;)"
+  },
+  "TIDY5E.Settings.InspirationAnimation": {
+    "name": "Pas d'animation de l'indicateur d'inspiration",
+    "hint": "Activer cette option pour masquer l'animation lumineuse de l'indicateur d'inspiration."
+  },
+  "TIDY5E.Settings.HideIfZero": {
+    "name": "Cacher l'épuisement et l'inspiration lorsqu'ils ne sont pas affectés",
+    "hint": "Activer cette option pour masquer l'épuisment si son niveau est de 0 et l'inspiration si elle n'est pas donnée."
+  },
+  "TIDY5E.Settings.InspirationOnHover": {
+    "name": "Afficher l'indicateur d'inspiration uniquement au survol",
+    "hint": "Activer cette option pour rendre l'indicateur d'inspiration visible uniquement au survol du portrait avec la souris."
+  },
+  "TIDY5E.Settings.ExhaustionOnHover": {
+    "name": "Afficher l'indicateur d'épuisement uniquement au survol",
+    "hint": "Activer cette option pour rendre l'indicateur d'épuisement visible uniquement au survol du portrait avec la souris."
+  },
+  "TIDY5E.Settings.HpBar": {
+    "name": "Désactiver la barre d'HP",
+    "hint": "Activer cette option pour masquer la barre colorée indiquant les HP restants (les chiffres seront toujours visibles)."
+  },
+  "TIDY5E.Settings.HpOverlay": {
+    "name": "Masquer l'overlay des HP",
+    "hint": "Activer cette option pour masque l'overlay des HP pour ce type d'acteur."
+  },
+  "TIDY5E.Settings.TraitsTogglePc": {
+    "name": "Afficher un bouton de bascule de l'affichage des traits",
+    "hint": "Activer cette option pour afficher un bouton de bascule de l'affichage des traits."
+  },
+  "TIDY5E.Settings.TraitsMovedBelowResource": {
+    "name": "Déplacer les traits sous les ressources",
+    "hint": "Activer cette option pour afficher les traits sous les ressources."
+  },
 
-	"TIDY5E.Settings.TraitsAlwaysShown": {
-		"name": "Toujours montrer les traits",
-		"hint": "Par défaut, les traits vides sont masqués et affichables vie un bouton. Activer cette option pour ne jamais les masquer."
-	},
-	"TIDY5E.Settings.SkillsAlwaysShown": {
-		"name": "Toujours montrer les caractéristiques",
-		"hint": "Par défaut, les caractéristiques sans compétence sont masquées et affichables vie un bouton. Activer cette option pour ne jamais les masquer."
-	},
+  "TIDY5E.Settings.TraitsAlwaysShown": {
+    "name": "Toujours montrer les traits",
+    "hint": "Par défaut, les traits vides sont masqués et affichables vie un bouton. Activer cette option pour ne jamais les masquer."
+  },
+  "TIDY5E.Settings.SkillsAlwaysShown": {
+    "name": "Toujours montrer les caractéristiques",
+    "hint": "Par défaut, les caractéristiques sans compétence sont masquées et affichables vie un bouton. Activer cette option pour ne jamais les masquer."
+  },
 
-	"TIDY5E.Settings.ActiveEffectsMarker": {
-		"name": "Afficher le marqueru d'effet actif sur les objets",
-		"hint": "Activer cette option pour visualiser les objets avec un effet actif (uniquement pour la vue liste)."
-	},
-	"TIDY5E.Settings.RightClickDisabled": {
-		"name": "Désactiver le menu contextuel au clic droit",
-		"hint": "En cas de conflits de modules ou par choix personnel, activer cette option pour désactiver le menu contextuel au clic droit."
-	},
-	"TIDY5E.Settings.ExpandedSheet": {
-		"name": "Vue étendue pour la feuille limitée",
-		"hint": "Activer cette option pour afficher l'intégralité de la feuille de personnage (sans l'onglet Notes Privées) pour les joueurs ayant une autorisation limitée pour cet acteur."
-	},
-	"TIDY5E.Settings.PortraitStyle": {
-		"name": "Utiliser des portraits ronds",
-		"hint": "Activer cette option pour pour utiliser des portraits ronds.",
-		"all": "Tous les acteurs",
-		"pc": "PJs",
-		"npc": "PNJs / véhicules",
-		"none": "Aucun",
-		"default": "Aucun"
-	},
-	"TIDY5E.Settings.HpOverlayBorder": {
-		"name": "Largeur de la bordure de la barre d'HP",
-		"hint": "Si votre portrait possède une bordure, vous pouvez ajuster la largeur de la barre de vie pour compenser celle du cadre."
-	},
-	"TIDY5E.Settings.EditTotalLock": {
-		"name": "Verrouiller les champs sensibles.",
-		"hint": "Activer cette option pour prévenir les modifications de champs sensibles."
-	},
-	"TIDY5E.Settings.EditGmAlways": {
-		"name": "Le MJ peut toujours éditer les feuilles",
-		"hint": "Activer cette option pour permettre au MJ d'éditer les feuilles sans basculer le mode verrouillé."
-	},
-	"TIDY5E.Settings.EditEffectsGmOnly": {
-		"name": "Seul le MJ peut éditer les effets actifs",
-		"hint": "Activer cette option pour interdire aux joueurs de modifier les effets actifs sur leur feuille. Ils verront toujours les effets appliqués."
-	},
-	"TIDY5E.Settings.QuantityAlwaysShown": {
-		"name": "Toujours montrer la quantité des objets",
-		"hint": "Activer cette option pour ne jamais masquer la quantité des objets."
-	},
-	"TIDY5E.Settings.InspirationDisabled": {
-		"name": "Désactiver l'indicateur d'inspiration",
-		"hint": "Si la campagne n'utilise pas l'inspiration : désactive complètement l'indicateur."
-	},
-	"TIDY5E.Settings.ExhaustionEffects": {
-		"name": "Effets d'épuisement automatiques",
-		"hint": "Choisir comment appliquer les effets d'épuisement correspondant aux niveaux (nécessite midiQol pour les jets de désavantage).",
-		"default": "Pas d'effet automatique",
-		"tidy5e": "Tidy5e - Applique les effets de base (utilise Active Effects)",
-		"custom": "Custom - Utilisez vos propres effets (necessite CUB)"
-	},
-	"TIDY5E.Settings.CustomExhaustionIcon": {
-		"name": "Icône personnalisée pour l'épuisement",
-		"hint": "Définir une icône d'effet d'épuisement personnalisée en fournissant une url d'image. Disponible uniquement lorsque l'effet d'épuisement est défini sur \"tidy 5e\" (par exemple : modules/tidy5e-sheet/images/exhaustion.svg)."
-	},
-	"TIDY5E.Settings.CustomExhaustionEffect": {
-		"name": "CUB : nom personnalisé de l'effet d'épuisement",
-		"hint": "Définir le nom de l'effet d'épuisement personnalisé - doit être le même que celui défini dans CUB mais SANS le numéro de niveau (par exemple :  \"Exhaustion\").",
-		"tiers": "Nombre de niveaux d'épuisement CUB personnalisés. Valeur par défaut = 5",
-		"warning": "Impossible de trouver un token sur lequel appliquer l'épuisement."
-	},
-	"TIDY5E.Settings.ExhaustionDisabled": {
-		"name": "Désactiver l'indicateur d'épuisement",
-		"hint": "Si la campagne n'utilise pas l'épuisement : désactive complètement l'indicateur."
-	},
-	"TIDY5E.Settings.RestingForNpcs": {
-		"name": "Repos pour les PNJs",
-		"hint": "Activer cette option pour afficher le bouton de repos sur les feuilles de PNJs."
-	},
-	"TIDY5E.Settings.RestingForNpcsChat": {
-		"name": "Masquer le message de tchat",
-		"hint": "Activer cette option pour masquer le message de tchat lors du repos d'un PNJ (valable pour le MJ et les joueurs)."
-	},
-	"TIDY5E.Settings.LinkMarker": {
-		"name": "Marquer les PNJs liés / non liés",
-		"hint": "Ajoute un contour coloré et une icone pour les feuilles de PNJs liés / non liés",
-		"default": "Aucun marqueur de lien (par défaut)",
-		"unlinked": "Mise en évidence des tokens non liés",
-		"linked": "Mise en évidence des tokens liés",
-		"both": "Mise en évidence des tokens liés ET non liés"
-	}
+  "TIDY5E.Settings.ActiveEffectsMarker": {
+    "name": "Afficher le marqueru d'effet actif sur les objets",
+    "hint": "Activer cette option pour visualiser les objets avec un effet actif (uniquement pour la vue liste)."
+  },
+  "TIDY5E.Settings.RightClickDisabled": {
+    "name": "Désactiver le menu contextuel au clic droit",
+    "hint": "En cas de conflits de modules ou par choix personnel, activer cette option pour désactiver le menu contextuel au clic droit."
+  },
+  "TIDY5E.Settings.ExpandedSheet": {
+    "name": "Vue étendue pour la feuille limitée",
+    "hint": "Activer cette option pour afficher l'intégralité de la feuille de personnage (sans l'onglet Notes Privées) pour les joueurs ayant une autorisation limitée pour cet acteur."
+  },
+  "TIDY5E.Settings.PortraitStyle": {
+    "name": "Utiliser des portraits ronds",
+    "hint": "Activer cette option pour pour utiliser des portraits ronds.",
+    "all": "Tous les acteurs",
+    "pc": "PJs",
+    "npc": "PNJs / véhicules",
+    "none": "Aucun",
+    "default": "Aucun"
+  },
+  "TIDY5E.Settings.HpOverlayBorder": {
+    "name": "Largeur de la bordure de la barre d'HP",
+    "hint": "Si votre portrait possède une bordure, vous pouvez ajuster la largeur de la barre de vie pour compenser celle du cadre."
+  },
+  "TIDY5E.Settings.EditTotalLock": {
+    "name": "Verrouiller les champs sensibles.",
+    "hint": "Activer cette option pour prévenir les modifications de champs sensibles."
+  },
+  "TIDY5E.Settings.EditGmAlways": {
+    "name": "Le MJ peut toujours éditer les feuilles",
+    "hint": "Activer cette option pour permettre au MJ d'éditer les feuilles sans basculer le mode verrouillé."
+  },
+  "TIDY5E.Settings.EditEffectsGmOnly": {
+    "name": "Seul le MJ peut éditer les effets actifs",
+    "hint": "Activer cette option pour interdire aux joueurs de modifier les effets actifs sur leur feuille. Ils verront toujours les effets appliqués."
+  },
+  "TIDY5E.Settings.QuantityAlwaysShown": {
+    "name": "Toujours montrer la quantité des objets",
+    "hint": "Activer cette option pour ne jamais masquer la quantité des objets."
+  },
+  "TIDY5E.Settings.InspirationDisabled": {
+    "name": "Désactiver l'indicateur d'inspiration",
+    "hint": "Si la campagne n'utilise pas l'inspiration : désactive complètement l'indicateur."
+  },
+  "TIDY5E.Settings.ExhaustionEffects": {
+    "name": "Effets d'épuisement automatiques",
+    "hint": "Choisir comment appliquer les effets d'épuisement correspondant aux niveaux (nécessite midiQol pour les jets de désavantage).",
+    "default": "Pas d'effet automatique",
+    "tidy5e": "Tidy5e - Applique les effets de base (utilise Active Effects)",
+    "custom": "Custom - Utilisez vos propres effets (necessite CUB)"
+  },
+  "TIDY5E.Settings.CustomExhaustionIcon": {
+    "name": "Icône personnalisée pour l'épuisement",
+    "hint": "Définir une icône d'effet d'épuisement personnalisée en fournissant une url d'image. Disponible uniquement lorsque l'effet d'épuisement est défini sur \"tidy 5e\" (par exemple : modules/tidy5e-sheet/images/exhaustion.svg)."
+  },
+  "TIDY5E.Settings.CustomExhaustionEffect": {
+    "name": "CUB : nom personnalisé de l'effet d'épuisement",
+    "hint": "Définir le nom de l'effet d'épuisement personnalisé - doit être le même que celui défini dans CUB mais SANS le numéro de niveau (par exemple :  \"Exhaustion\").",
+    "tiers": "Nombre de niveaux d'épuisement CUB personnalisés. Valeur par défaut = 5",
+    "warning": "Impossible de trouver un token sur lequel appliquer l'épuisement."
+  },
+  "TIDY5E.Settings.ExhaustionDisabled": {
+    "name": "Désactiver l'indicateur d'épuisement",
+    "hint": "Si la campagne n'utilise pas l'épuisement : désactive complètement l'indicateur."
+  },
+  "TIDY5E.Settings.RestingForNpcs": {
+    "name": "Repos pour les PNJs",
+    "hint": "Activer cette option pour afficher le bouton de repos sur les feuilles de PNJs."
+  },
+  "TIDY5E.Settings.RestingForNpcsChat": {
+    "name": "Masquer le message de tchat",
+    "hint": "Activer cette option pour masquer le message de tchat lors du repos d'un PNJ (valable pour le MJ et les joueurs)."
+  },
+  "TIDY5E.Settings.LinkMarker": {
+    "name": "Marquer les PNJs liés / non liés",
+    "hint": "Ajoute un contour coloré et une icone pour les feuilles de PNJs liés / non liés",
+    "default": "Aucun marqueur de lien (par défaut)",
+    "unlinked": "Mise en évidence des tokens non liés",
+    "linked": "Mise en évidence des tokens liés",
+    "both": "Mise en évidence des tokens liés ET non liés"
+  }
 }

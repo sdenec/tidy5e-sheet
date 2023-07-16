@@ -1,607 +1,607 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
-	"TIDY5E.Gender": "Gender",
-	"TIDY5E.Age": "Age",
-	"TIDY5E.Weight": "Weight",
-	"TIDY5E.Height": "Height",
-	"TIDY5E.Eyes": "Eyes",
-	"TIDY5E.Skin": "Skin",
-	"TIDY5E.Hair": "Hair",
-	"TIDY5E.Subclass": "Subclass",
-	"TIDY5E.EditActorImage": "left click: edit image",
-	"TIDY5E.ShowActorImage": "right click: show character art",
-	"TIDY5E.ShowPortraitArt": "show portrait",
-	"TIDY5E.ShowTokenArt": "show token",
-	"TIDY5E.ShowItemImage": "right click: show item art",
-	"TIDY5E.ShowItemArt": "show image",
+  "TIDY5E.PlayerName": "Player Name",
+  "TIDY5E.Gender": "Gender",
+  "TIDY5E.Age": "Age",
+  "TIDY5E.Weight": "Weight",
+  "TIDY5E.Height": "Height",
+  "TIDY5E.Eyes": "Eyes",
+  "TIDY5E.Skin": "Skin",
+  "TIDY5E.Hair": "Hair",
+  "TIDY5E.Subclass": "Subclass",
+  "TIDY5E.EditActorImage": "left click: edit image",
+  "TIDY5E.ShowActorImage": "right click: show character art",
+  "TIDY5E.ShowPortraitArt": "show portrait",
+  "TIDY5E.ShowTokenArt": "show token",
+  "TIDY5E.ShowItemImage": "right click: show item art",
+  "TIDY5E.ShowItemArt": "show image",
 
-	"TIDY5E.Exhaustion0": "No negative effects",
-	"TIDY5E.Exhaustion1": "Disadvantage on Ability Checks",
-	"TIDY5E.Exhaustion2": "Speed halved",
-	"TIDY5E.Exhaustion3": "Disadvantage on Attack rolls and Saving Throws",
-	"TIDY5E.Exhaustion4": "Hit point maximum halved",
-	"TIDY5E.Exhaustion5": "Speed reduced to 0",
-	"TIDY5E.Exhaustion6": "Death",
+  "TIDY5E.Exhaustion0": "No negative effects",
+  "TIDY5E.Exhaustion1": "Disadvantage on Ability Checks",
+  "TIDY5E.Exhaustion2": "Speed halved",
+  "TIDY5E.Exhaustion3": "Disadvantage on Attack rolls and Saving Throws",
+  "TIDY5E.Exhaustion4": "Hit point maximum halved",
+  "TIDY5E.Exhaustion5": "Speed reduced to 0",
+  "TIDY5E.Exhaustion6": "Death",
 
-	"TIDY5E.AbbrInitiative": "Ini",
+  "TIDY5E.AbbrInitiative": "Ini",
 
-	"TIDY5E.RestHint": "Take A Rest",
-	"TIDY5E.RestS": "Short Rest",
-	"TIDY5E.RestL": "Long Rest",
-	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
+  "TIDY5E.RestHint": "Take A Rest",
+  "TIDY5E.RestS": "Short Rest",
+  "TIDY5E.RestL": "Long Rest",
+  "TIDY5E.HitDiceRollAverage": "Right Click: Average",
 
-	"TIDY5E.Journal": "Journal",
+  "TIDY5E.Journal": "Journal",
 
-	"TIDY5E.RestoreOnRest": "Restore on rest",
+  "TIDY5E.RestoreOnRest": "Restore on rest",
 
-	"TIDY5E.JournalPoi": "Persons of Interest",
-	"TIDY5E.JournalLoi": "Locations of Interest",
-	"TIDY5E.JournalQuests": "Quests",
-	"TIDY5E.JournalMisc": "Miscellaneous",
-	"TIDY5E.JournalEntries": "Journal Entries",
-	"TIDY5E.TogglePersonalityInfo": "Toggle Personality Info",
+  "TIDY5E.JournalPoi": "Persons of Interest",
+  "TIDY5E.JournalLoi": "Locations of Interest",
+  "TIDY5E.JournalQuests": "Quests",
+  "TIDY5E.JournalMisc": "Miscellaneous",
+  "TIDY5E.JournalEntries": "Journal Entries",
+  "TIDY5E.TogglePersonalityInfo": "Toggle Personality Info",
 
-	"TIDY5E.EnableEdit": "Enable Edit",
-	"TIDY5E.DisableEdit": "Disable Edit",
-	"TIDY5E.EditHint": "Toggles visibility of add/delete buttons and empty sections",
+  "TIDY5E.EnableEdit": "Enable Edit",
+  "TIDY5E.DisableEdit": "Disable Edit",
+  "TIDY5E.EditHint": "Toggles visibility of add/delete buttons and empty sections",
 
-	"TIDY5E.Equip": "Equip Item",
-	"TIDY5E.Unequip": "Unequip Item",
-	"TIDY5E.Attune": "Attune to Item",
-	"TIDY5E.Deattune": "Break Attunement",
-	"TIDY5E.Prepare": "Prepare Spell",
-	"TIDY5E.Unprepare": "Remove Preparation",
+  "TIDY5E.Equip": "Equip Item",
+  "TIDY5E.Unequip": "Unequip Item",
+  "TIDY5E.Attune": "Attune to Item",
+  "TIDY5E.Deattune": "Break Attunement",
+  "TIDY5E.Prepare": "Prepare Spell",
+  "TIDY5E.Unprepare": "Remove Preparation",
 
-	"TIDY5E.EmptySection": "This section is empty. Unlock the sheet to edit.",
-	"TIDY5E.GmOnlyEdit": "Only your GM can edit this section.",
+  "TIDY5E.EmptySection": "This section is empty. Unlock the sheet to edit.",
+  "TIDY5E.GmOnlyEdit": "Only your GM can edit this section.",
 
-	"TIDY5E.AttunementWarning": "Attunement warning: You can't attune to more than {number} items!",
-	"TIDY5E.AttunementItems": "Attuned Items",
-	"TIDY5E.AttunementMax": "Attunement maximum",
+  "TIDY5E.AttunementWarning": "Attunement warning: You can't attune to more than {number} items!",
+  "TIDY5E.AttunementItems": "Attuned Items",
+  "TIDY5E.AttunementMax": "Attunement maximum",
 
-	"TIDY5E.GridLayout": "Grid Layout",
-	"TIDY5E.ListLayout": "List Layout",
+  "TIDY5E.GridLayout": "Grid Layout",
+  "TIDY5E.ListLayout": "List Layout",
 
-	"TIDY5E.Encumbrance": "Encumbrance",
+  "TIDY5E.Encumbrance": "Encumbrance",
 
-	"TIDY5E.EditSpell": "Edit Spell",
-	"TIDY5E.DeleteSpell": "Delete Spell",
-	"TIDY5E.AddFav": "Add Favorite",
-	"TIDY5E.isFav": "Favorite",
-	"TIDY5E.RemoveFav": "Remove Favorite",
+  "TIDY5E.EditSpell": "Edit Spell",
+  "TIDY5E.DeleteSpell": "Delete Spell",
+  "TIDY5E.AddFav": "Add Favorite",
+  "TIDY5E.isFav": "Favorite",
+  "TIDY5E.RemoveFav": "Remove Favorite",
 
-	"TIDY5E.ToggleInfo": "Toggle Info",
+  "TIDY5E.ToggleInfo": "Toggle Info",
 
-	"TIDY5E.Show": "show/edit",
-	"TIDY5E.Hide": "hide",
-	"TIDY5E.Edit": "edit",
-	"TIDY5E.TraitsEmpty": "empty traits",
+  "TIDY5E.Show": "show/edit",
+  "TIDY5E.Hide": "hide",
+  "TIDY5E.Edit": "edit",
+  "TIDY5E.TraitsEmpty": "empty traits",
 
-	"TIDY5E.Abilities": "Abilities",
+  "TIDY5E.Abilities": "Abilities",
 
-	"TIDY5E.Environment": "Environment",
+  "TIDY5E.Environment": "Environment",
 
-	"TIDY5E.SearchItem": "search item",
-	"TIDY5E.SearchSpell": "search spell",
-	"TIDY5E.SearchFeat": "search feature",
-	"TIDY5E.SearchClear": "clear search",
-	"TIDY5E.SearchHint": "Just start to type what you are searching for.",
+  "TIDY5E.SearchItem": "search item",
+  "TIDY5E.SearchSpell": "search spell",
+  "TIDY5E.SearchFeat": "search feature",
+  "TIDY5E.SearchClear": "clear search",
+  "TIDY5E.SearchHint": "Just start to type what you are searching for.",
 
-	"TIDY5E.ItemCardsKeyHint": "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint": "middle mouse to view/edit item.",
+  "TIDY5E.ItemCardsKeyHint": "hold Key to interact with card.",
+  "TIDY5E.ItemCardsMouseHint": "middle mouse to view/edit item.",
 
-	"TIDY5E.AbbrMod": "Mod",
-	"TIDY5E.AbbrSavingThrow": "Save",
-	"TIDY5E.SpellAttackMod": "Attack Mod",
-	"TIDY5E.PreparedSpells": "Prepared spells",
-	"TIDY5E.PreparedSpellsMax": "Maximum for prepared spells (Note: do not use 'Override' mode on the active effect')",
-	"TIDY5E.Components": "Comps",
-	"TIDY5E.SpellSchool": "School",
+  "TIDY5E.AbbrMod": "Mod",
+  "TIDY5E.AbbrSavingThrow": "Save",
+  "TIDY5E.SpellAttackMod": "Attack Mod",
+  "TIDY5E.PreparedSpells": "Prepared spells",
+  "TIDY5E.PreparedSpellsMax": "Maximum for prepared spells (Note: do not use 'Override' mode on the active effect')",
+  "TIDY5E.Components": "Comps",
+  "TIDY5E.SpellSchool": "School",
 
-	"TIDY5E.TokenLinked": "Token linked to actor",
-	"TIDY5E.TokenUnlinked": "Token not linked to actor",
+  "TIDY5E.TokenLinked": "Token linked to actor",
+  "TIDY5E.TokenUnlinked": "Token not linked to actor",
 
-	"TIDY5E.ItemDetailsHeadline": "Mechanics/Flavor Text",
+  "TIDY5E.ItemDetailsHeadline": "Mechanics/Flavor Text",
 
-	"TIDY5E.Class": "Class",
-	"TIDY5E.SpellClass": "Spell Class",
-	"TIDY5E.Spellbook": "Spellbook",
+  "TIDY5E.Class": "Class",
+  "TIDY5E.SpellClass": "Spell Class",
+  "TIDY5E.Spellbook": "Spellbook",
 
-	"TIDY5E.ClassArtificer": "Artificer",
-	"TIDY5E.ClassBarbarian": "Barbarian",
-	"TIDY5E.ClassBard": "Bard",
-	"TIDY5E.ClassCleric": "Cleric",
-	"TIDY5E.ClassCustom": "Custom",
-	"TIDY5E.ClassDruid": "Druid",
-	"TIDY5E.ClassFighter": "Fighter",
-	"TIDY5E.ClassMonk": "Monk",
-	"TIDY5E.ClassPaladin": "Paladin",
-	"TIDY5E.ClassRanger": "Ranger",
-	"TIDY5E.ClassRogue": "Rogue",
-	"TIDY5E.ClassSorcerer": "Sorcerer",
-	"TIDY5E.ClassWarlock": "Warlock",
-	"TIDY5E.ClassWizard": "Wizard",
+  "TIDY5E.ClassArtificer": "Artificer",
+  "TIDY5E.ClassBarbarian": "Barbarian",
+  "TIDY5E.ClassBard": "Bard",
+  "TIDY5E.ClassCleric": "Cleric",
+  "TIDY5E.ClassCustom": "Custom",
+  "TIDY5E.ClassDruid": "Druid",
+  "TIDY5E.ClassFighter": "Fighter",
+  "TIDY5E.ClassMonk": "Monk",
+  "TIDY5E.ClassPaladin": "Paladin",
+  "TIDY5E.ClassRanger": "Ranger",
+  "TIDY5E.ClassRogue": "Rogue",
+  "TIDY5E.ClassSorcerer": "Sorcerer",
+  "TIDY5E.ClassWarlock": "Warlock",
+  "TIDY5E.ClassWizard": "Wizard",
 
-	"TIDY5E.OriginSummaryConfig": "Origin Summary Configuration",
+  "TIDY5E.OriginSummaryConfig": "Origin Summary Configuration",
 
-	"TIDY5E.LevelBump": "Level Bump",
-	"TIDY5E.LevelBumpTooltip": "When you are casting a spell you can cast it one level higher for free.",
+  "TIDY5E.LevelBump": "Level Bump",
+  "TIDY5E.LevelBumpTooltip": "When you are casting a spell you can cast it one level higher for free.",
 
-	"TIDY5E.Settings.GlobalLabel": "Global",
-	"TIDY5E.Settings.DebugLabel": "Debug",
-	"TIDY5E.Settings.UserLabel": "User",
-	"TIDY5E.Settings.PcLabel": "PCs",
-	"TIDY5E.Settings.NpcLabel": "NPCs",
-	"TIDY5E.Settings.VehicleLabel": "Vehicles",
-	"TIDY5E.Settings.MulticlassSpellbookFilterLabel": "Multiclass Spellbook Filter",
-	"TIDY5E.Settings.ColorPickerLabel": "Customize the color (It's advisable to install the module 'Color Settings')",
+  "TIDY5E.Settings.GlobalLabel": "Global",
+  "TIDY5E.Settings.DebugLabel": "Debug",
+  "TIDY5E.Settings.UserLabel": "User",
+  "TIDY5E.Settings.PcLabel": "PCs",
+  "TIDY5E.Settings.NpcLabel": "NPCs",
+  "TIDY5E.Settings.VehicleLabel": "Vehicles",
+  "TIDY5E.Settings.MulticlassSpellbookFilterLabel": "Multiclass Spellbook Filter",
+  "TIDY5E.Settings.ColorPickerLabel": "Customize the color (It's advisable to install the module 'Color Settings')",
 
-	"TIDY5E.Settings.SheetMenu": {
-		"name": "Tidy Sheet Settings",
-		"hint": "Customize your own version of Tidy",
-		"label": "Sheet Settings",
-		"title": "Tidy5e Sheet Settings"
-	},
-	"TIDY5E.Settings.TabPlayers": {
-		"tabLabel": "Players",
-		"header": "Player Character Sheets"
-	},
-	"TIDY5E.Settings.TabNPCsVehicles": {
-		"tabLabel": "NPCs/Vehicles",
-		"header": "NPC/Vehicle Sheets",
-		"labelNPCs": "NPCs",
-		"labelVehicles": "Vehicles"
-	},
-	"TIDY5E.Settings.TabGM": {
-		"tabLabel": "GM Options",
-		"header": "GM Sheet Options"
-	},
-	"TIDY5E.Settings.TabHomebrewRules": {
-		"tabLabel": "Homebrew Rules",
-		"header": "Homebrew Rules",
-		"labelHBUpcastFreeSpell": "Upcast Free Spell"
-	},
-	"TIDY5E.Settings.TabModules": {
-		"tabLabel": "Modules",
-		"header": "Module Options",
-		"labelActionsFavorites": "Actor Actions/Favorites",
-		"labelMidiQoL": "Midi Qol",
-		"labelLazyMoney": "Lazy Money"
-	},
-	"TIDY5E.Settings.TabLocks": {
-		"tabLabel": "Locks",
-		"header": "Lock Options",
-		"hint": "Prevents players from making changes to aspects of their character sheets that should change infrequently, and provides the option to completely hide some elements that you don't want to use at all. Settings are available to customize exactly what is locked / hidden, and determine who has permission to make sheets editable through a toggle button.",
-		"hint2": "Note that this is not a secure lockdown and players could get around the restrictions, so this is not a sufficient answer if your players are malicious. This is intended for games where the players are inexperienced (with D&D and/or with using computers) to prevent them from making mistakes (ex. accidentally adding/removing saving throw proficiency).",
-		"labelGeneralLocks": "General Locks",
-		"labelInventoryLocks": "Inventory Locks",
-		"labelFeaturesLocks": "Features Locks"
-	},
-	"TIDY5E.Settings.TabInfo": {
-		"tabLabel": "Info",
-		"header": "Info"
-	},
-	"TIDY5E.Settings.ItemCardsForAllItems": {
-		"name": "Show item info cards in all layouts.",
-		"hint": "Disable if you only want the slide out item info cards in grid layout."
-	},
-	"TIDY5E.Settings.ItemCardsForNpcs": {
-		"name": "Show item info cards for NPCs/vehicles.",
-		"hint": "Disable if you don't want the slide out item info cards for NPCs/vehicles."
-	},
-	"TIDY5E.Settings.ItemCardsAreFloating": {
-		"name": "Item info cards float next to cursor.",
-		"hint": "Enable to detach item info cards from sheet and float them next to the cursor. Best to use with delay. Also useful when sheet is popped out."
-	},
-	"TIDY5E.Settings.ItemCardsDelay": {
-		"name": "Delay showing info cards.",
-		"hint": "The Item Card will show when you hover an item for the value in milliseconds (0 = no delay, 300 is default)."
-	},
-	"TIDY5E.Settings.ItemCardsFixKey": {
-		"name": "Key to hold for Item Card interaction.",
-		"hint": "Enter a key (e.g.: x) to use for item card interaction. Can be any key except function keys (ctrl, alt, etc.)"
-	},
+  "TIDY5E.Settings.SheetMenu": {
+    "name": "Tidy Sheet Settings",
+    "hint": "Customize your own version of Tidy",
+    "label": "Sheet Settings",
+    "title": "Tidy5e Sheet Settings"
+  },
+  "TIDY5E.Settings.TabPlayers": {
+    "tabLabel": "Players",
+    "header": "Player Character Sheets"
+  },
+  "TIDY5E.Settings.TabNPCsVehicles": {
+    "tabLabel": "NPCs/Vehicles",
+    "header": "NPC/Vehicle Sheets",
+    "labelNPCs": "NPCs",
+    "labelVehicles": "Vehicles"
+  },
+  "TIDY5E.Settings.TabGM": {
+    "tabLabel": "GM Options",
+    "header": "GM Sheet Options"
+  },
+  "TIDY5E.Settings.TabHomebrewRules": {
+    "tabLabel": "Homebrew Rules",
+    "header": "Homebrew Rules",
+    "labelHBUpcastFreeSpell": "Upcast Free Spell"
+  },
+  "TIDY5E.Settings.TabModules": {
+    "tabLabel": "Modules",
+    "header": "Module Options",
+    "labelActionsFavorites": "Actor Actions/Favorites",
+    "labelMidiQoL": "Midi Qol",
+    "labelLazyMoney": "Lazy Money"
+  },
+  "TIDY5E.Settings.TabLocks": {
+    "tabLabel": "Locks",
+    "header": "Lock Options",
+    "hint": "Prevents players from making changes to aspects of their character sheets that should change infrequently, and provides the option to completely hide some elements that you don't want to use at all. Settings are available to customize exactly what is locked / hidden, and determine who has permission to make sheets editable through a toggle button.",
+    "hint2": "Note that this is not a secure lockdown and players could get around the restrictions, so this is not a sufficient answer if your players are malicious. This is intended for games where the players are inexperienced (with D&D and/or with using computers) to prevent them from making mistakes (ex. accidentally adding/removing saving throw proficiency).",
+    "labelGeneralLocks": "General Locks",
+    "labelInventoryLocks": "Inventory Locks",
+    "labelFeaturesLocks": "Features Locks"
+  },
+  "TIDY5E.Settings.TabInfo": {
+    "tabLabel": "Info",
+    "header": "Info"
+  },
+  "TIDY5E.Settings.ItemCardsForAllItems": {
+    "name": "Show item info cards in all layouts.",
+    "hint": "Disable if you only want the slide out item info cards in grid layout."
+  },
+  "TIDY5E.Settings.ItemCardsForNpcs": {
+    "name": "Show item info cards for NPCs/vehicles.",
+    "hint": "Disable if you don't want the slide out item info cards for NPCs/vehicles."
+  },
+  "TIDY5E.Settings.ItemCardsAreFloating": {
+    "name": "Item info cards float next to cursor.",
+    "hint": "Enable to detach item info cards from sheet and float them next to the cursor. Best to use with delay. Also useful when sheet is popped out."
+  },
+  "TIDY5E.Settings.ItemCardsDelay": {
+    "name": "Delay showing info cards.",
+    "hint": "The Item Card will show when you hover an item for the value in milliseconds (0 = no delay, 300 is default)."
+  },
+  "TIDY5E.Settings.ItemCardsFixKey": {
+    "name": "Key to hold for Item Card interaction.",
+    "hint": "Enter a key (e.g.: x) to use for item card interaction. Can be any key except function keys (ctrl, alt, etc.)"
+  },
 
-	"TIDY5E.Settings.SheetTheme": {
-		"name": "Tidy5e color theme.",
-		"hint": "Use either the default light or alternate dark color theme of Tidy5e.",
-		"default": "Default (light)",
-		"dark": "Alternate (dark)"
-	},
+  "TIDY5E.Settings.SheetTheme": {
+    "name": "Tidy5e color theme.",
+    "hint": "Use either the default light or alternate dark color theme of Tidy5e.",
+    "default": "Default (light)",
+    "dark": "Alternate (dark)"
+  },
 
-	"TIDY5E.Settings.ClassicControls": {
-		"name": "Use classic item controls in list view.",
-		"hint": "Always shows item controls this will not disable the right click menu. Only applies for PC item/spell inventory in list layout."
-	},
-	"TIDY5E.Settings.HideIconsNextToTheItemName": {
-		"name": "Hide icons next to the item name",
-		"hint": "If enabled this setting hides the support icons present next to the object name (Favorite, Attunement, etc.), this is usually useful with the 'Use classic item controls in list view' setting enabled in order to avoid a redundancy of icons..."
-	},
-	"TIDY5E.Settings.RollButtonsToCard": {
-		"name": "Show midiQol Item Buttons in item's info card",
-		"hint": "Per default roll buttons appear in the item's description. Enable to move them to the item's info card. Works in all layout modes."
-	},
-	"TIDY5E.Settings.TraitLabels": {
-		"name": "Show Trait Labels.",
-		"hint": "Disable to only show icons for PC/NPC traits."
-	},
+  "TIDY5E.Settings.ClassicControls": {
+    "name": "Use classic item controls in list view.",
+    "hint": "Always shows item controls this will not disable the right click menu. Only applies for PC item/spell inventory in list layout."
+  },
+  "TIDY5E.Settings.HideIconsNextToTheItemName": {
+    "name": "Hide icons next to the item name",
+    "hint": "If enabled this setting hides the support icons present next to the object name (Favorite, Attunement, etc.), this is usually useful with the 'Use classic item controls in list view' setting enabled in order to avoid a redundancy of icons..."
+  },
+  "TIDY5E.Settings.RollButtonsToCard": {
+    "name": "Show midiQol Item Buttons in item's info card",
+    "hint": "Per default roll buttons appear in the item's description. Enable to move them to the item's info card. Works in all layout modes."
+  },
+  "TIDY5E.Settings.TraitLabels": {
+    "name": "Show Trait Labels.",
+    "hint": "Disable to only show icons for PC/NPC traits."
+  },
 
-	"TIDY5E.Settings.PlayerName": {
-		"name": "Show player name.",
-		"hint": "Enable to show a field for the player name below the character's name."
-	},
-	"TIDY5E.Settings.JournalTab": {
-		"name": "Hide character journal.",
-		"hint": "Enable to hide the character journal tab."
-	},
-	"TIDY5E.Settings.JournalTabNPCDisabled": {
-		"name": "Hide npc journal.",
-		"hint": "Enable to hide the npc journal tab."
-	},
-	"TIDY5E.Settings.ClassList": {
-		"name": "Hide character class list.",
-		"hint": "Enable to hide the class list below the character's name."
-	},
-	"TIDY5E.Settings.InspirationAnimation": {
-		"name": "Inanimate inspiration tracker.",
-		"hint": "Enable to turn off inspiration tracker glow animation."
-	},
-	"TIDY5E.Settings.HideIfZero": {
-		"name": "Hide exhaustion and inspiration tracker on 0.",
-		"hint": "Enable to hide exhaustion and inspiration if 0. Will show on hover."
-	},
-	"TIDY5E.Settings.InspirationOnHover": {
-		"name": "Show inspiration indicator only on hover.",
-		"hint": "Enable to only show the inspiration indicator when you hover over the portrait."
-	},
-	"TIDY5E.Settings.ExhaustionOnHover": {
-		"name": "Show exhaustion tracker only on hover.",
-		"hint": "Enable to only show the exhaustion tracker when you hover over the portrait."
-	},
-	"TIDY5E.Settings.HpBar": {
-		"name": "Disable health bar.",
-		"hint": "Enable to hide the colored bar indicating the remaining HP (Health Numbers will still be visible)."
-	},
-	"TIDY5E.Settings.HpOverlay": {
-		"name": "Hide hit point overlay.",
-		"hint": "Enable to hide the HP overlay for this actor type."
-	},
-	"TIDY5E.Settings.TraitsTogglePc": {
-		"name": "Toggle empty character traits.",
-		"hint": "By default empty traits are always visible. Enable to add a toggle button."
-	},
-	"TIDY5E.Settings.TraitsMovedBelowResource": {
-		"name": "Move traits below resources.",
-		"hint": "Enable to move traits from the left side below resources."
-	},
-	"TIDY5E.Settings.AmmoEquippedOnly": {
-		"name": "Only show equipped ammunition.",
-		"hint": "Enable to only show currently equipped ammunition in Weapon ammo selector."
-	},
+  "TIDY5E.Settings.PlayerName": {
+    "name": "Show player name.",
+    "hint": "Enable to show a field for the player name below the character's name."
+  },
+  "TIDY5E.Settings.JournalTab": {
+    "name": "Hide character journal.",
+    "hint": "Enable to hide the character journal tab."
+  },
+  "TIDY5E.Settings.JournalTabNPCDisabled": {
+    "name": "Hide npc journal.",
+    "hint": "Enable to hide the npc journal tab."
+  },
+  "TIDY5E.Settings.ClassList": {
+    "name": "Hide character class list.",
+    "hint": "Enable to hide the class list below the character's name."
+  },
+  "TIDY5E.Settings.InspirationAnimation": {
+    "name": "Inanimate inspiration tracker.",
+    "hint": "Enable to turn off inspiration tracker glow animation."
+  },
+  "TIDY5E.Settings.HideIfZero": {
+    "name": "Hide exhaustion and inspiration tracker on 0.",
+    "hint": "Enable to hide exhaustion and inspiration if 0. Will show on hover."
+  },
+  "TIDY5E.Settings.InspirationOnHover": {
+    "name": "Show inspiration indicator only on hover.",
+    "hint": "Enable to only show the inspiration indicator when you hover over the portrait."
+  },
+  "TIDY5E.Settings.ExhaustionOnHover": {
+    "name": "Show exhaustion tracker only on hover.",
+    "hint": "Enable to only show the exhaustion tracker when you hover over the portrait."
+  },
+  "TIDY5E.Settings.HpBar": {
+    "name": "Disable health bar.",
+    "hint": "Enable to hide the colored bar indicating the remaining HP (Health Numbers will still be visible)."
+  },
+  "TIDY5E.Settings.HpOverlay": {
+    "name": "Hide hit point overlay.",
+    "hint": "Enable to hide the HP overlay for this actor type."
+  },
+  "TIDY5E.Settings.TraitsTogglePc": {
+    "name": "Toggle empty character traits.",
+    "hint": "By default empty traits are always visible. Enable to add a toggle button."
+  },
+  "TIDY5E.Settings.TraitsMovedBelowResource": {
+    "name": "Move traits below resources.",
+    "hint": "Enable to move traits from the left side below resources."
+  },
+  "TIDY5E.Settings.AmmoEquippedOnly": {
+    "name": "Only show equipped ammunition.",
+    "hint": "Enable to only show currently equipped ammunition in Weapon ammo selector."
+  },
 
-	"TIDY5E.Settings.TraitsAlwaysShown": {
-		"name": "Always show traits.",
-		"hint": "By default empty traits are hidden by a toggle button. Enable to never hide."
-	},
-	"TIDY5E.Settings.SkillsAlwaysShown": {
-		"name": "Always show skills.",
-		"hint": "By default unproficient skills are hidden by a toggle button. Enable to never hide."
-	},
-	"TIDY5E.Settings.HideSpellbookTabNpc": {
-		"name": "Hide Spellbook tab on NPC",
-		"hint": "By default the spellbook tab on NPC is moved on the attributes tab. Disable this for never do that."
-	},
+  "TIDY5E.Settings.TraitsAlwaysShown": {
+    "name": "Always show traits.",
+    "hint": "By default empty traits are hidden by a toggle button. Enable to never hide."
+  },
+  "TIDY5E.Settings.SkillsAlwaysShown": {
+    "name": "Always show skills.",
+    "hint": "By default unproficient skills are hidden by a toggle button. Enable to never hide."
+  },
+  "TIDY5E.Settings.HideSpellbookTabNpc": {
+    "name": "Hide Spellbook tab on NPC",
+    "hint": "By default the spellbook tab on NPC is moved on the attributes tab. Disable this for never do that."
+  },
 
-	"TIDY5E.Settings.ActiveEffectsMarker": {
-		"name": "Show Active Effects Marker on items.",
-		"hint": "Enable if you want to see if items have active effects on them (only for list view)."
-	},
-	"TIDY5E.Settings.RightClickDisabled": {
-		"name": "Disable right click context menu.",
-		"hint": "In case of module conflicts or preference you can disable the right click context menu."
-	},
-	"TIDY5E.Settings.ExpandedSheet": {
-		"name": "Expanded Limited view for character sheets.",
-		"hint": "Displays the entire character sheet (minus the journal) to players with limited permission."
-	},
-	"TIDY5E.Settings.PortraitStyle": {
-		"name": "Round portrait style.",
-		"hint": "Choose to enable round portraits/icons for actors.",
-		"all": "All actors",
-		"pc": "PCs",
-		"npc": "NPCs/Vehicles",
-		"none": "none",
-		"default": "none"
-	},
-	"TIDY5E.Settings.HpOverlayBorder": {
-		"name": "Offset hit point overlay.",
-		"hint": "Enter offset value to compensate for portrait frames and prevent tinting."
-	},
-	"TIDY5E.Settings.EditTotalLock": {
-		"name": "Lock down sensitive fields.",
-		"hint": "Enable to prevent accidentally changing sensible, mostly static values."
-	},
-	"TIDY5E.Settings.EditGmAlways": {
-		"name": "GM can always edit PC sheets.",
-		"hint": "Enable to allow GMs to edit PC sheets without toggling the sheet lock."
-	},
-	"TIDY5E.Settings.EditEffectsGmOnly": {
-		"name": "Only GM can edit active effects.",
-		"hint": "Enable to deny players to edit active effects on their sheets. They will still see applied effects."
-	},
-	"TIDY5E.Settings.QuantityAlwaysShown": {
-		"name": "Always show item quantity.",
-		"hint": "Enable to never hide item quantity."
-	},
-	"TIDY5E.Settings.InspirationDisabled": {
-		"name": "Disable inspiration tracker.",
-		"hint": "If your campaign doesn't use inspiration you can disable the tracker completely."
-	},
-	"TIDY5E.Settings.ExhaustionEffects": {
-		"name": "Auto Exhaustion effects.",
-		"hint": "Choose how to apply exhaustion effects corresponding to tiers (requires midiQol for disadvantage rolls)",
-		"default": "No automatic exhaustion effects",
-		"tidy5e": "Tidy5e - Apply integrated effects (uses Active Effects)",
-		"dfredce": "DFreds Convenient Effects - Use your own effects",
-		"cub": "CUB - Use your own effects",
-		"custom": "Custom - Use your own effects (requires CUB)"
-	},
-	"TIDY5E.Settings.CustomExhaustionIcon": {
-		"name": "Custom exhaustion effect icon.",
-		"hint": "Set your custom exhaustion effect icon by providing an image url. Only available when Exhaustion Effect is set to \"tidy 5e\" (e. g.: modules/tidy5e-sheet/images/exhaustion.svg)."
-	},
-	"TIDY5E.Settings.CustomExhaustionEffect": {
-		"name": "Custom CUB exhaustion effect name.",
-		"hint": "Set the name for your custom Exhaustion Effect - must be the same as defined in CUB but WITHOUT tier number. (e. g. \"Exhaustion\")",
-		"tiers": "Number of custom CUB exhaustion tiers. Default = 5",
-		"warning": "Can't find actor token to apply exhaustion effect to!"
-	},
-	"TIDY5E.Settings.ExhaustionDisabled": {
-		"name": "Disable exhaustion tracker.",
-		"hint": "If your campaign doesn't use exhaustion you can disable the tracker completely."
-	},
-	"TIDY5E.Settings.RestingForNpcs": {
-		"name": "Resting for NPCs.",
-		"hint": "Enable to shows the rest icon/buttons on NPC sheets."
-	},
-	"TIDY5E.Settings.RestingForNpcsChat": {
-		"name": "Hide chat card for NPC rest.",
-		"hint": "Enable to hide the Chat Card for NPC rest (applies to GM and Players)."
-	},
-	"TIDY5E.Settings.LinkMarker": {
-		"name": "Mark linked/unlinked NPCs.",
-		"hint": "Adds a colored border and icon to linked/unliked NPC sheets.",
-		"default": "No link marker (default)",
-		"unlinked": "Highlight unlinked tokens",
-		"linked": "Highlight linked tokens",
-		"both": "Highlight linked and unlinked tokens"
-	},
-	"TIDY5E.Settings.DefaultActionsTab": {
-		"name": "Default Tab when opening a sheet for the first time.",
-		"hint": "Chose between 'Actions' and 'Attributes'.",
-		"default": "",
-		"attributes": "Attributes",
-		"inventory": "Inventory",
-		"spellbook": "Spellbook",
-		"features": "Features",
-		"effects": "Effects",
-		"biography": "Biography",
-		"journal": "Journal",
-		"actions": "Actions"
-	},
-	"TIDY5E.Settings.HiddenDeathSaves": {
-		"name": "Hide Death Saves from Players.",
-		"hint": "Enable to make Death Saves and Death Save Results only visible to the GM"
-	},
-	"TIDY5E.Settings.HideSpellSlotMarker": {
-		"name": "Hide Spell Slot Marker on sheet.",
-		"hint": "Enable to hide the colored spell slot marker, this is usually useful when the spell points variant rule is use."
-	},
-	"TIDY5E.Settings.EnableSpellLevelButtons": {
-		"name": "Enable Spell Level Buttons.",
-		"hint": "Enable to replaces the spell level select dropdown menu with buttons."
-	},
-	"TIDY5E.Settings.HideStandardEncumbranceBar": {
-		"name": "Remove/Hide standard encumbrance bar from the character sheet",
-		"hint": "If enabled it will hide the standard bar of encumbrance, if you are using 'Variant Encumbrance' module you probably DO NOT NEED THIS"
-	},
-	"TIDY5E.Settings.npsSheetWidth": {
-		"name": "Default NPC sheet width.",
-		"hint": "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."
-	},
-	"TIDY5E.Settings.playerSheetWidth": {
-		"name": "Default player sheet width.",
-		"hint": "The width of the player sheet in pixels, requires a refresh to take effect (default 740)."
-	},
-	"TIDY5E.Settings.vehicleSheetWidth": {
-		"name": "Default vehicle sheet width.",
-		"hint": "The width of the vehicle sheet in pixels, requires a refresh to take effect (default 740)."
-	},
-	"TIDY5E.Settings.SpellClassFilterSelect": {
-		"name": "Enable Multiclass Spellbook filter",
-		"hint": "If you don't need this for your character, disabling this option will allow you to reclaim the space and declutter your sheet."
-	},
-	"TIDY5E.Settings.SpellClassFilterIconReplace": {
-		"name": "Cover spell icon with class icon",
-		"hint": "Enabling this will change the spellbook tab to display the icon for the spell's class instead of the spell's image. Useful for managing multiple lists without having to switch between them."
-	},
-	"TIDY5E.Settings.SpellClassFilterAdditionalClasses": {
-		"name": "Add additional classes for 'Multiclass Spellbook filter'",
-		"hint": "Add additional homebrewed classes to the dropdown with this syntax 'id1|name1,id2|name2' e.g. 'occultist|Occultist,alchemist|Alchemist'"
-	},
-	"TIDY5E.Settings.LazyHpAndExpEnable": {
-		"name": "Enable Lazy Hp and Exp",
-		"hint": "Easily add or remove HP and Experience with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
-	},
-	"TIDY5E.Settings.LazyHpForceHpValueLimit1": {
-		"name": "Force (ONLY on the sheet side) to not to exceed the current hp max value + hp max temp (hp.value <= hp.max + hp.tempmax)",
-		"hint": "This setting forces if enabled ensure that current 'hp.value <= (hp.max + hp.tempmax)'."
-	},
-	"TIDY5E.Settings.LazyHpForceHpValueLimit2": {
-		"name": "Force (ONLY on the sheet side) to not to exceed the current hp max value, but instead add temporary hit points (hp.value <= hp.max && hp.temp <= hp.tempmax)",
-		"hint": "This setting forces the logic of calculating the addition of temporary life points by forcing the user to fill the temporary life point field (hp.temp) instead of increasing the current life point field (hp.value), but for avoid controversy by default it is disabled to respect the behavior of the standard sheet. If enabled ensure that current 'hp.value <= hp.max' increasing the temporary hit points 'hp.temp' accordingly if 'hp.value > hp.max', but always with 'hp.temp <= hp.tempmax'."
-	},
-	"TIDY5E.Settings.LazyMoneyEnable": {
-		"name": "Enable Lazy Money",
-		"hint": "Easily add or remove currency with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
-	},
-	"TIDY5E.Settings.LazyMoneyAddConvert": {
-		"name": "Convert when adding money",
-		"hint": "Automatically convert currency to higher denominations when adding money instead of the default behaviour of preserving the denominations you receive."
-	},
-	"TIDY5E.Settings.LazyMoneyIgnoreElectrum": {
-		"name": "Ignore electrum",
-		"hint": "When converting, ignore electrum. This won't affect directly adding or removing it, except in the case when \"Convert when adding money\" is also enabled."
-	},
-	"TIDY5E.Settings.LazyMoneyChatLog": {
-		"name": "Chat log",
-		"hint": "Whisper any currency changes to the GM."
-	},
-	"TIDY5E.Settings.AllowCantripToBePreparedOnContext": {
-		"name": "Allow cantrips to be 'prepared' via right-click",
-		"hint": "The \"cantrip formulas\" optional rule from Tashas Cauldron of Everything allows Wizards to prepare their cantrips after a long rest in the same way that they do with leveled spells."
-	},
-	"TIDY5E.Settings.LockMoneyChanges": {
-		"name": "Lock change money for non GM",
-		"hint": "This will lock up the money input pp, gp, ep, sp, cp on the tidy sheet for non GM player. All other module working with these fields are working just fine."
-	},
-	"TIDY5E.Settings.LockExpChanges": {
-		"name": "Lock change experience for non GM",
-		"hint": "This will lock up the experience input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
-	},
-	"TIDY5E.Settings.LockHpMaxChanges": {
-		"name": "Lock change hp max for non GM",
-		"hint": "This will lock up the hp max input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
-	},
-	"TIDY5E.Settings.LockLevelSelector": {
-		"name": "Lock level selector for non GM",
-		"hint": "Disable Level Dropdown on the tidy sheet under Features Tab or Offer Option to Lock PLayers out from changing it. All other module working with these fields are working just fine."
-	},
-	"TIDY5E.Settings.LockConfigureSheet": {
-		"name": "Lock configure sheet for non GM",
-		"hint": "Disable and hide the button for configure sheet on the tidy sheet, to avoid players to use other sheet. All other module working with these fields are working just fine."
-	},
-	"TIDY5E.Settings.LockItemQuantity": {
-		"name": "Lock item quantity for non GM",
-		"hint": "Enable this to lock the input quantity on the inventory and item sheet on the tidy sheet. All other module working with these fields are working just fine."
-	},
+  "TIDY5E.Settings.ActiveEffectsMarker": {
+    "name": "Show Active Effects Marker on items.",
+    "hint": "Enable if you want to see if items have active effects on them (only for list view)."
+  },
+  "TIDY5E.Settings.RightClickDisabled": {
+    "name": "Disable right click context menu.",
+    "hint": "In case of module conflicts or preference you can disable the right click context menu."
+  },
+  "TIDY5E.Settings.ExpandedSheet": {
+    "name": "Expanded Limited view for character sheets.",
+    "hint": "Displays the entire character sheet (minus the journal) to players with limited permission."
+  },
+  "TIDY5E.Settings.PortraitStyle": {
+    "name": "Round portrait style.",
+    "hint": "Choose to enable round portraits/icons for actors.",
+    "all": "All actors",
+    "pc": "PCs",
+    "npc": "NPCs/Vehicles",
+    "none": "none",
+    "default": "none"
+  },
+  "TIDY5E.Settings.HpOverlayBorder": {
+    "name": "Offset hit point overlay.",
+    "hint": "Enter offset value to compensate for portrait frames and prevent tinting."
+  },
+  "TIDY5E.Settings.EditTotalLock": {
+    "name": "Lock down sensitive fields.",
+    "hint": "Enable to prevent accidentally changing sensible, mostly static values."
+  },
+  "TIDY5E.Settings.EditGmAlways": {
+    "name": "GM can always edit PC sheets.",
+    "hint": "Enable to allow GMs to edit PC sheets without toggling the sheet lock."
+  },
+  "TIDY5E.Settings.EditEffectsGmOnly": {
+    "name": "Only GM can edit active effects.",
+    "hint": "Enable to deny players to edit active effects on their sheets. They will still see applied effects."
+  },
+  "TIDY5E.Settings.QuantityAlwaysShown": {
+    "name": "Always show item quantity.",
+    "hint": "Enable to never hide item quantity."
+  },
+  "TIDY5E.Settings.InspirationDisabled": {
+    "name": "Disable inspiration tracker.",
+    "hint": "If your campaign doesn't use inspiration you can disable the tracker completely."
+  },
+  "TIDY5E.Settings.ExhaustionEffects": {
+    "name": "Auto Exhaustion effects.",
+    "hint": "Choose how to apply exhaustion effects corresponding to tiers (requires midiQol for disadvantage rolls)",
+    "default": "No automatic exhaustion effects",
+    "tidy5e": "Tidy5e - Apply integrated effects (uses Active Effects)",
+    "dfredce": "DFreds Convenient Effects - Use your own effects",
+    "cub": "CUB - Use your own effects",
+    "custom": "Custom - Use your own effects (requires CUB)"
+  },
+  "TIDY5E.Settings.CustomExhaustionIcon": {
+    "name": "Custom exhaustion effect icon.",
+    "hint": "Set your custom exhaustion effect icon by providing an image url. Only available when Exhaustion Effect is set to \"tidy 5e\" (e. g.: modules/tidy5e-sheet/images/exhaustion.svg)."
+  },
+  "TIDY5E.Settings.CustomExhaustionEffect": {
+    "name": "Custom CUB exhaustion effect name.",
+    "hint": "Set the name for your custom Exhaustion Effect - must be the same as defined in CUB but WITHOUT tier number. (e. g. \"Exhaustion\")",
+    "tiers": "Number of custom CUB exhaustion tiers. Default = 5",
+    "warning": "Can't find actor token to apply exhaustion effect to!"
+  },
+  "TIDY5E.Settings.ExhaustionDisabled": {
+    "name": "Disable exhaustion tracker.",
+    "hint": "If your campaign doesn't use exhaustion you can disable the tracker completely."
+  },
+  "TIDY5E.Settings.RestingForNpcs": {
+    "name": "Resting for NPCs.",
+    "hint": "Enable to shows the rest icon/buttons on NPC sheets."
+  },
+  "TIDY5E.Settings.RestingForNpcsChat": {
+    "name": "Hide chat card for NPC rest.",
+    "hint": "Enable to hide the Chat Card for NPC rest (applies to GM and Players)."
+  },
+  "TIDY5E.Settings.LinkMarker": {
+    "name": "Mark linked/unlinked NPCs.",
+    "hint": "Adds a colored border and icon to linked/unliked NPC sheets.",
+    "default": "No link marker (default)",
+    "unlinked": "Highlight unlinked tokens",
+    "linked": "Highlight linked tokens",
+    "both": "Highlight linked and unlinked tokens"
+  },
+  "TIDY5E.Settings.DefaultActionsTab": {
+    "name": "Default Tab when opening a sheet for the first time.",
+    "hint": "Chose between 'Actions' and 'Attributes'.",
+    "default": "",
+    "attributes": "Attributes",
+    "inventory": "Inventory",
+    "spellbook": "Spellbook",
+    "features": "Features",
+    "effects": "Effects",
+    "biography": "Biography",
+    "journal": "Journal",
+    "actions": "Actions"
+  },
+  "TIDY5E.Settings.HiddenDeathSaves": {
+    "name": "Hide Death Saves from Players.",
+    "hint": "Enable to make Death Saves and Death Save Results only visible to the GM"
+  },
+  "TIDY5E.Settings.HideSpellSlotMarker": {
+    "name": "Hide Spell Slot Marker on sheet.",
+    "hint": "Enable to hide the colored spell slot marker, this is usually useful when the spell points variant rule is use."
+  },
+  "TIDY5E.Settings.EnableSpellLevelButtons": {
+    "name": "Enable Spell Level Buttons.",
+    "hint": "Enable to replaces the spell level select dropdown menu with buttons."
+  },
+  "TIDY5E.Settings.HideStandardEncumbranceBar": {
+    "name": "Remove/Hide standard encumbrance bar from the character sheet",
+    "hint": "If enabled it will hide the standard bar of encumbrance, if you are using 'Variant Encumbrance' module you probably DO NOT NEED THIS"
+  },
+  "TIDY5E.Settings.npsSheetWidth": {
+    "name": "Default NPC sheet width.",
+    "hint": "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."
+  },
+  "TIDY5E.Settings.playerSheetWidth": {
+    "name": "Default player sheet width.",
+    "hint": "The width of the player sheet in pixels, requires a refresh to take effect (default 740)."
+  },
+  "TIDY5E.Settings.vehicleSheetWidth": {
+    "name": "Default vehicle sheet width.",
+    "hint": "The width of the vehicle sheet in pixels, requires a refresh to take effect (default 740)."
+  },
+  "TIDY5E.Settings.SpellClassFilterSelect": {
+    "name": "Enable Multiclass Spellbook filter",
+    "hint": "If you don't need this for your character, disabling this option will allow you to reclaim the space and declutter your sheet."
+  },
+  "TIDY5E.Settings.SpellClassFilterIconReplace": {
+    "name": "Cover spell icon with class icon",
+    "hint": "Enabling this will change the spellbook tab to display the icon for the spell's class instead of the spell's image. Useful for managing multiple lists without having to switch between them."
+  },
+  "TIDY5E.Settings.SpellClassFilterAdditionalClasses": {
+    "name": "Add additional classes for 'Multiclass Spellbook filter'",
+    "hint": "Add additional homebrewed classes to the dropdown with this syntax 'id1|name1,id2|name2' e.g. 'occultist|Occultist,alchemist|Alchemist'"
+  },
+  "TIDY5E.Settings.LazyHpAndExpEnable": {
+    "name": "Enable Lazy Hp and Exp",
+    "hint": "Easily add or remove HP and Experience with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
+  },
+  "TIDY5E.Settings.LazyHpForceHpValueLimit1": {
+    "name": "Force (ONLY on the sheet side) to not to exceed the current hp max value + hp max temp (hp.value <= hp.max + hp.tempmax)",
+    "hint": "This setting forces if enabled ensure that current 'hp.value <= (hp.max + hp.tempmax)'."
+  },
+  "TIDY5E.Settings.LazyHpForceHpValueLimit2": {
+    "name": "Force (ONLY on the sheet side) to not to exceed the current hp max value, but instead add temporary hit points (hp.value <= hp.max && hp.temp <= hp.tempmax)",
+    "hint": "This setting forces the logic of calculating the addition of temporary life points by forcing the user to fill the temporary life point field (hp.temp) instead of increasing the current life point field (hp.value), but for avoid controversy by default it is disabled to respect the behavior of the standard sheet. If enabled ensure that current 'hp.value <= hp.max' increasing the temporary hit points 'hp.temp' accordingly if 'hp.value > hp.max', but always with 'hp.temp <= hp.tempmax'."
+  },
+  "TIDY5E.Settings.LazyMoneyEnable": {
+    "name": "Enable Lazy Money",
+    "hint": "Easily add or remove currency with automatic conversion and no overdraft. It will allow inputs like '+10', '-10', '=10', '010'"
+  },
+  "TIDY5E.Settings.LazyMoneyAddConvert": {
+    "name": "Convert when adding money",
+    "hint": "Automatically convert currency to higher denominations when adding money instead of the default behaviour of preserving the denominations you receive."
+  },
+  "TIDY5E.Settings.LazyMoneyIgnoreElectrum": {
+    "name": "Ignore electrum",
+    "hint": "When converting, ignore electrum. This won't affect directly adding or removing it, except in the case when \"Convert when adding money\" is also enabled."
+  },
+  "TIDY5E.Settings.LazyMoneyChatLog": {
+    "name": "Chat log",
+    "hint": "Whisper any currency changes to the GM."
+  },
+  "TIDY5E.Settings.AllowCantripToBePreparedOnContext": {
+    "name": "Allow cantrips to be 'prepared' via right-click",
+    "hint": "The \"cantrip formulas\" optional rule from Tashas Cauldron of Everything allows Wizards to prepare their cantrips after a long rest in the same way that they do with leveled spells."
+  },
+  "TIDY5E.Settings.LockMoneyChanges": {
+    "name": "Lock change money for non GM",
+    "hint": "This will lock up the money input pp, gp, ep, sp, cp on the tidy sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockExpChanges": {
+    "name": "Lock change experience for non GM",
+    "hint": "This will lock up the experience input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockHpMaxChanges": {
+    "name": "Lock change hp max for non GM",
+    "hint": "This will lock up the hp max input on the tidy sheet for non GM player. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockLevelSelector": {
+    "name": "Lock level selector for non GM",
+    "hint": "Disable Level Dropdown on the tidy sheet under Features Tab or Offer Option to Lock PLayers out from changing it. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockConfigureSheet": {
+    "name": "Lock configure sheet for non GM",
+    "hint": "Disable and hide the button for configure sheet on the tidy sheet, to avoid players to use other sheet. All other module working with these fields are working just fine."
+  },
+  "TIDY5E.Settings.LockItemQuantity": {
+    "name": "Lock item quantity for non GM",
+    "hint": "Enable this to lock the input quantity on the inventory and item sheet on the tidy sheet. All other module working with these fields are working just fine."
+  },
 
-	"TIDY5E.Settings.ColorPickerEnabled": {
-		"name": "Enable Color Picker",
-		"hint": "Enable/Disable the coloration picker"
-	},
-	"TIDY5E.Settings.ColorPickerEquipped": {
-		"name": "Color Picker for 'Equipped'",
-		"hint": "Select what color you want to use for 'Equipped'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerEquippedOutline": {
-		"name": "Color Picker for 'Equipped Outline'",
-		"hint": "Select what color you want to use for 'Equipped Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerEquippedAccent": {
-		"name": "Color Picker for 'Equipped Accent'",
-		"hint": "Select what color you want to use for 'Equipped Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerPrepared": {
-		"name": "Color Picker for 'Prepared'",
-		"hint": "Select what color you want to use for 'Prepared'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerPreparedOutline": {
-		"name": "Color Picker for 'Prepared Outline'",
-		"hint": "Select what color you want to use for 'Prepared Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerPreparedAccent": {
-		"name": "Color Picker for 'Prepared Accent'",
-		"hint": "Select what color you want to use for 'Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerPact": {
-		"name": "Color Picker for 'Pact'",
-		"hint": "Select what color you want to use for 'Pact'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerPactOutline": {
-		"name": "Color Picker for 'PactOutline'",
-		"hint": "Select what color you want to use for 'PactOutline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerPactAccent": {
-		"name": "Color Picker for 'PactAccent'",
-		"hint": "Select what color you want to use for 'PactAccent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerAtWill": {
-		"name": "Color Picker for 'At Will'",
-		"hint": "Select what color you want to use for 'At Will'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerAtWillOutline": {
-		"name": "Color Picker for 'At Will Outline'",
-		"hint": "Select what color you want to use for 'At Will Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerAtWillAccent": {
-		"name": "Color Picker for 'At Will Accent'",
-		"hint": "Select what color you want to use for 'At Will Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerInnate": {
-		"name": "Color Picker for 'Innate'",
-		"hint": "Select what color you want to use for 'Innate'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerInnateOutline": {
-		"name": "Color Picker for 'Innate Outline'",
-		"hint": "Select what color you want to use for 'Innate Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerInnateAccent": {
-		"name": "Color Picker for 'Innate Accent'",
-		"hint": "Select what color you want to use for 'Innate Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerAlwaysPrepared": {
-		"name": "Color Picker for 'Always Prepared'",
-		"hint": "Select what color you want to use for 'Always Prepared'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerAlwaysPreparedOutline": {
-		"name": "Color Picker for 'Always Prepared Outline'",
-		"hint": "Select what color you want to use for 'Always Prepared Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.ColorPickerAlwaysPreparedAccent": {
-		"name": "Color Picker for 'Always Prepared Accent'",
-		"hint": "Select what color you want to use for 'Always Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
-	},
-	"TIDY5E.Settings.AllowHpMaxOverride": {
-		"name": "Allow Hp Max override on Character",
-		"hint": "If enable this module setting will let the GM to manually change the hp max  value on the character sheet."
-	},
-	"TIDY5E.Settings.AllowHpConfigOverride": {
-		"name": "Allow hp panel configuration override on Character",
-		"hint": "Usually you don't need this but if enable this module setting replace the hp configuration panel on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOR OF THE SYSTEM IS USEFUL FOR AVOID SOME NOT UNWANTED DEFAULT BEHAVIOR OF THE SYSTEM."
-	},
-	"TIDY5E.Settings.BetterAttackDialog": {
-		"name": "Enable Better Default Attack Buttons Highlight",
-		"hint": "The attack buttons do not show the suggested action very clearly. This adds a Green border for Advantage and Red for Disadvantage depending on which button is highlighted."
-	},
-	"TIDY5E.Settings.Reset": {
-		"name": "Reset settings to default",
-		"hint": "This will reset all of the settings of back to the active game system's default.",
-		"dialogs": {
-			"title": "Reset Module Settings",
-			"content": "Are you sure you want to reset all of the module settings to the current system's defaults? <strong>THIS CANNOT BE UNDONE!</strong>",
-			"confirm": "Reset Module Settings",
-			"cancel": "Cancel"
-		}
-	},
-	"TIDY5E.Settings.Debug": {
-		"name": "Enable debugging",
-		"hint": "Prints debug messages to the console"
-	},
-	"TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically": {
-		"name": "Enable Sort Favorites Alphabetically",
-		"hint": "It enabled this setting will sort the items, features, spells alphabetically on the favorites html template"
-	},
-	"TIDY5E.Settings.EnableActionListOnFavoritePanel": {
-		"name": "Enable Action List On Favorite Panel",
-		"hint": "Show favorites item grouped for Action, Bonus Action, Reaction. YOU NEED THE MODULE 'Character Actions 5e Variant forked by p4535992 (https://github.com/p4535992/foundryvtt-character-actions-dnd5e)'"
-	},
-	"TIDY5E.Settings.HBEnableUpcastFreeSpell": {
-		"name": "Enable upcast free spell.",
-		"hint": "Add an additional button when you are casting a spell for cast it one level higher. This is a homebrew rule. Ty to @mxfz on discord for the macro code and to @thundershield on for the idea, you can find more details here https://discord.com/channels/170995199584108546/699750150674972743/1055686421198946465"
-	},
-	"TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell": {
-		"name": "Set features for upcast free spell",
-		"hint": "This setting work only with the module setting 'Enable upcast free spell' enabled, is a string of feature names separated by the character '|' , the search for such features is case unsensitive if found a 'valid' feature enables actors to use the feature upcast. IF LEFT EMPTY IT WILL BE IGNORED."
-	}
+  "TIDY5E.Settings.ColorPickerEnabled": {
+    "name": "Enable Color Picker",
+    "hint": "Enable/Disable the coloration picker"
+  },
+  "TIDY5E.Settings.ColorPickerEquipped": {
+    "name": "Color Picker for 'Equipped'",
+    "hint": "Select what color you want to use for 'Equipped'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerEquippedOutline": {
+    "name": "Color Picker for 'Equipped Outline'",
+    "hint": "Select what color you want to use for 'Equipped Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerEquippedAccent": {
+    "name": "Color Picker for 'Equipped Accent'",
+    "hint": "Select what color you want to use for 'Equipped Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerPrepared": {
+    "name": "Color Picker for 'Prepared'",
+    "hint": "Select what color you want to use for 'Prepared'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerPreparedOutline": {
+    "name": "Color Picker for 'Prepared Outline'",
+    "hint": "Select what color you want to use for 'Prepared Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerPreparedAccent": {
+    "name": "Color Picker for 'Prepared Accent'",
+    "hint": "Select what color you want to use for 'Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerPact": {
+    "name": "Color Picker for 'Pact'",
+    "hint": "Select what color you want to use for 'Pact'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerPactOutline": {
+    "name": "Color Picker for 'PactOutline'",
+    "hint": "Select what color you want to use for 'PactOutline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerPactAccent": {
+    "name": "Color Picker for 'PactAccent'",
+    "hint": "Select what color you want to use for 'PactAccent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerAtWill": {
+    "name": "Color Picker for 'At Will'",
+    "hint": "Select what color you want to use for 'At Will'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerAtWillOutline": {
+    "name": "Color Picker for 'At Will Outline'",
+    "hint": "Select what color you want to use for 'At Will Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerAtWillAccent": {
+    "name": "Color Picker for 'At Will Accent'",
+    "hint": "Select what color you want to use for 'At Will Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerInnate": {
+    "name": "Color Picker for 'Innate'",
+    "hint": "Select what color you want to use for 'Innate'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerInnateOutline": {
+    "name": "Color Picker for 'Innate Outline'",
+    "hint": "Select what color you want to use for 'Innate Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerInnateAccent": {
+    "name": "Color Picker for 'Innate Accent'",
+    "hint": "Select what color you want to use for 'Innate Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerAlwaysPrepared": {
+    "name": "Color Picker for 'Always Prepared'",
+    "hint": "Select what color you want to use for 'Always Prepared'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerAlwaysPreparedOutline": {
+    "name": "Color Picker for 'Always Prepared Outline'",
+    "hint": "Select what color you want to use for 'Always Prepared Outline'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.ColorPickerAlwaysPreparedAccent": {
+    "name": "Color Picker for 'Always Prepared Accent'",
+    "hint": "Select what color you want to use for 'Always Prepared Accent'. The transparency value '#00000000' is equivalent to disabling the color for the current context."
+  },
+  "TIDY5E.Settings.AllowHpMaxOverride": {
+    "name": "Allow Hp Max override on Character",
+    "hint": "If enable this module setting will let the GM to manually change the hp max  value on the character sheet."
+  },
+  "TIDY5E.Settings.AllowHpConfigOverride": {
+    "name": "Allow hp panel configuration override on Character",
+    "hint": "Usually you don't need this but if enable this module setting replace the hp configuration panel on the character sheet. THIS WILL OVERRIDE THE DEFAULT BEHAVIOR OF THE SYSTEM IS USEFUL FOR AVOID SOME NOT UNWANTED DEFAULT BEHAVIOR OF THE SYSTEM."
+  },
+  "TIDY5E.Settings.BetterAttackDialog": {
+    "name": "Enable Better Default Attack Buttons Highlight",
+    "hint": "The attack buttons do not show the suggested action very clearly. This adds a Green border for Advantage and Red for Disadvantage depending on which button is highlighted."
+  },
+  "TIDY5E.Settings.Reset": {
+    "name": "Reset settings to default",
+    "hint": "This will reset all of the settings of back to the active game system's default.",
+    "dialogs": {
+      "title": "Reset Module Settings",
+      "content": "Are you sure you want to reset all of the module settings to the current system's defaults? <strong>THIS CANNOT BE UNDONE!</strong>",
+      "confirm": "Reset Module Settings",
+      "cancel": "Cancel"
+    }
+  },
+  "TIDY5E.Settings.Debug": {
+    "name": "Enable debugging",
+    "hint": "Prints debug messages to the console"
+  },
+  "TIDY5E.Settings.EnableSortFavoritesItemsAlphabetically": {
+    "name": "Enable Sort Favorites Alphabetically",
+    "hint": "It enabled this setting will sort the items, features, spells alphabetically on the favorites html template"
+  },
+  "TIDY5E.Settings.EnableActionListOnFavoritePanel": {
+    "name": "Enable Action List On Favorite Panel",
+    "hint": "Show favorites item grouped for Action, Bonus Action, Reaction. YOU NEED THE MODULE 'Character Actions 5e Variant forked by p4535992 (https://github.com/p4535992/foundryvtt-character-actions-dnd5e)'"
+  },
+  "TIDY5E.Settings.HBEnableUpcastFreeSpell": {
+    "name": "Enable upcast free spell.",
+    "hint": "Add an additional button when you are casting a spell for cast it one level higher. This is a homebrew rule. Ty to @mxfz on discord for the macro code and to @thundershield on for the idea, you can find more details here https://discord.com/channels/170995199584108546/699750150674972743/1055686421198946465"
+  },
+  "TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell": {
+    "name": "Set features for upcast free spell",
+    "hint": "This setting work only with the module setting 'Enable upcast free spell' enabled, is a string of feature names separated by the character '|' , the search for such features is case unsensitive if found a 'valid' feature enables actors to use the feature upcast. IF LEFT EMPTY IT WILL BE IGNORED."
+  }
 }
