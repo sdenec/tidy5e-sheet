@@ -1,121 +1,121 @@
 // #### Sheet Navigation ####
 
 .tidy5e-navigation {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: row;
-	flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-	.item {
-		padding: 5px 8px 0 8px;
-		background: var(--t5e-header-background);
-		border: 1px solid transparent;
-		border-bottom: 1px solid var(--t5e-header-border);
-		font-size: 13px;
-		text-align: left;
-		height: 26px;
-		flex: 1 1 auto;
+  .item {
+    padding: 5px 8px 0 8px;
+    background: var(--t5e-header-background);
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--t5e-header-border);
+    font-size: 13px;
+    text-align: left;
+    height: 26px;
+    flex: 1 1 auto;
 
-		&:first-child {
-			padding-left: 16px;
-		}
+    &:first-child {
+      padding-left: 16px;
+    }
 
-		&:hover {
-			color: var(--t5e-primary-accent);
-		}
-	}
+    &:hover {
+      color: var(--t5e-primary-accent);
+    }
+  }
 
-	.item[data-tab="attributes"] i {
-		margin-right: 4px;
-		color: var(--t5e-tertiary-color);
-		position: relative;
-		top: 1px;
-	}
+  .item[data-tab="attributes"] i {
+    margin-right: 4px;
+    color: var(--t5e-tertiary-color);
+    position: relative;
+    top: 1px;
+  }
 
-	.item.active {
-		background: transparent;
-		border: 1px solid var(--t5e-light-color);
-		border-bottom-color: transparent;
-		font-weight: 700;
-		cursor: default;
-		text-shadow: none;
+  .item.active {
+    background: transparent;
+    border: 1px solid var(--t5e-light-color);
+    border-bottom-color: transparent;
+    font-weight: 700;
+    cursor: default;
+    text-shadow: none;
 
-		&:hover {
-			color: inherit;
-		}
-	}
+    &:hover {
+      color: inherit;
+    }
+  }
 
-	.item:first-child.active {
-		border-left-color: transparent;
-	}
+  .item:first-child.active {
+    border-left-color: transparent;
+  }
 
-	// .item:last-child.active {
-	// 	border-right-color: transparent;
-	// }
+  // .item:last-child.active {
+  // 	border-right-color: transparent;
+  // }
 
-	.toggle-allow-edit {
-		display: flex;
-		order: 2;
-		flex: 0;
-		align-items: center;
-		white-space: nowrap;
-		padding: 2px 1rem;
-		background: var(--t5e-header-background);
-		border: 1px solid transparent;
-		border-bottom: 1px solid var(--t5e-header-border);
-		font-size: 13px;
-		text-align: left;
-		height: 26px;
+  .toggle-allow-edit {
+    display: flex;
+    order: 2;
+    flex: 0;
+    align-items: center;
+    white-space: nowrap;
+    padding: 2px 1rem;
+    background: var(--t5e-header-background);
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--t5e-header-border);
+    font-size: 13px;
+    text-align: left;
+    height: 26px;
 
-		span {
-			cursor: pointer;
-			background: var(--t5e-safe-accent);
-			color: rgba(255, 255, 255, 0.6);
-			border-radius: 3px;
+    span {
+      cursor: pointer;
+      background: var(--t5e-safe-accent);
+      color: rgba(255, 255, 255, 0.6);
+      border-radius: 3px;
 
-			&:hover {
-				color: #fff;
-			}
+      &:hover {
+        color: #fff;
+      }
 
-			i {
-				width: 100%;
-				text-align: center;
-				padding: 4px 6px;
-			}
-		}
+      i {
+        width: 100%;
+        text-align: center;
+        padding: 4px 6px;
+      }
+    }
 
-		.fa-lock-open {
-			display: none;
-		}
-	}
+    .fa-lock-open {
+      display: none;
+    }
+  }
 }
 
 .allow-edit .tidy5e-navigation {
-	.toggle-allow-edit {
-		span {
-			background: var(--t5e-unsafe-accent);
-		}
+  .toggle-allow-edit {
+    span {
+      background: var(--t5e-unsafe-accent);
+    }
 
-		.fa-lock-open {
-			display: inline-block;
-		}
-		.fa-lock {
-			display: none;
-		}
-	}
-	.items-header-controls {
-		min-width: 120px !important;
-		max-width: 120px !important;
-	}
-	.list-layout {
-		.items-list {
-			.item {
-				.item-controls:not(#context-menu) {
-					min-width: 120px !important;
-					max-width: 120px !important;
-				}
-			}
-		}
-	}
+    .fa-lock-open {
+      display: inline-block;
+    }
+    .fa-lock {
+      display: none;
+    }
+  }
+  .items-header-controls {
+    min-width: 120px !important;
+    max-width: 120px !important;
+  }
+  .list-layout {
+    .items-list {
+      .item {
+        .item-controls:not(#context-menu) {
+          min-width: 120px !important;
+          max-width: 120px !important;
+        }
+      }
+    }
+  }
 }

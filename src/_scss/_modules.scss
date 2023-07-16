@@ -3,56 +3,56 @@
 // ------------------------------------
 
 .tidy5e.sheet.actor .items-list .item-summary .item-properties .item-buttons {
-	margin: 4px 0;
+  margin: 4px 0;
 
-	.tag {
-		border: none;
-		border-radius: 0;
-		margin: 2px 4px 2px 0;
-		padding: 0;
-		background: none;
+  .tag {
+    border: none;
+    border-radius: 0;
+    margin: 2px 4px 2px 0;
+    padding: 0;
+    background: none;
 
-		button {
-			border: 1px solid rgba(0, 0, 0, 0.2);
-			background: rgba(0, 0, 0, 0.4);
-			color: rgba(255, 255, 255, 0.8);
-			padding: 2px 4px;
-			box-shadow: none;
-			cursor: pointer;
-			line-height: 1;
-			font-size: 12px;
+    button {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.4);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 2px 4px;
+      box-shadow: none;
+      cursor: pointer;
+      line-height: 1;
+      font-size: 12px;
 
-			&:hover {
-				background: rgba(0, 0, 0, 0.6);
-			}
-		}
-	}
+      &:hover {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
 }
 
 .tidy5e.sheet.item .sheet-body .tab.item-betterRolls {
-	.item-betterRolls input[type="text"],
-	.item-betterRolls select {
-		height: 24px;
-		border: none;
-		background: rgba(255, 255, 255, 0.3);
-	}
+  .item-betterRolls input[type="text"],
+  .item-betterRolls select {
+    height: 24px;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+  }
 
-	.br5e-consume-box {
-		margin-top: 4px;
-		border: none;
-		border-top: 1px solid var(--t5e-light-color);
-		box-shadow: none;
-		background: transparent;
-		border-radius: 0;
-	}
+  .br5e-consume-box {
+    margin-top: 4px;
+    border: none;
+    border-top: 1px solid var(--t5e-light-color);
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+  }
 
-	.br5e-consume-box span {
-		text-align: left;
+  .br5e-consume-box span {
+    text-align: left;
 
-		label {
-			padding-left: 0;
-		}
-	}
+    label {
+      padding-left: 0;
+    }
+  }
 }
 
 // ------------------------
@@ -61,331 +61,331 @@
 
 .tidy5e.sheet.actor .magic-items-spells-content,
 .tidy5e.sheet.actor .magic-items-feats-content {
-	padding: 4px 6px;
-	border: 1px solid yellow;
-	box-shadow: 0 0 10px 0 yellow inset;
-	border-radius: 5px;
-	margin: 8px 0 0 0;
+  padding: 4px 6px;
+  border: 1px solid yellow;
+  box-shadow: 0 0 10px 0 yellow inset;
+  border-radius: 5px;
+  margin: 8px 0 0 0;
 
-	.magic-items-head {
-		margin: 0;
-		padding: 0 0 2px 0;
+  .magic-items-head {
+    margin: 0;
+    padding: 0 0 2px 0;
 
-		h3 {
-			font-size: 13px;
-		}
-	}
+    h3 {
+      font-size: 13px;
+    }
+  }
 
-	.spellbook-header div:not(.spell-slots):not(.spell-rechargeable) {
-		color: var(--t5e-light-color);
-	}
+  .spellbook-header div:not(.spell-slots):not(.spell-rechargeable) {
+    color: var(--t5e-light-color);
+  }
 
-	.item-name {
-		padding: 0 8px 0 0;
-	}
+  .item-name {
+    padding: 0 8px 0 0;
+  }
 
-	.spell-slots {
-		padding: 0 8px 0 0;
+  .spell-slots {
+    padding: 0 8px 0 0;
 
-		input:last-child {
-			text-align: left;
-		}
-	}
+    input:last-child {
+      text-align: left;
+    }
+  }
 
-	.spell-level,
-	.spell-consumption,
-	.spell-upcast {
-		flex: 0 0 70px;
-		text-align: center;
-	}
+  .spell-level,
+  .spell-consumption,
+  .spell-upcast {
+    flex: 0 0 70px;
+    text-align: center;
+  }
 
-	.spellbook-header .spell-level {
-		text-align: right;
-		padding-right: 20px;
-	}
+  .spellbook-header .spell-level {
+    text-align: right;
+    padding-right: 20px;
+  }
 
-	// .spellbook-header .spell-rechargeable+.spell-level {
-	// 	flex-basis: calc(100% - 140px);
-	// }
+  // .spellbook-header .spell-rechargeable+.spell-level {
+  // 	flex-basis: calc(100% - 140px);
+  // }
 
-	.spell-rechargeable {
-		flex: 0 0 1px;
-		white-space: nowrap;
-		padding: 0 8px 0 0;
-	}
+  .spell-rechargeable {
+    flex: 0 0 1px;
+    white-space: nowrap;
+    padding: 0 8px 0 0;
+  }
 
-	.item-list {
-		.spell-level,
-		.spell-consumption,
-		.spell-upcast,
-		.spell-slots,
-		.spell-rechargeable {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 12px;
-			color: var(--t5e-secondary-color);
-			border-left: 1px solid var(--t5e-faint-color);
-		}
+  .item-list {
+    .spell-level,
+    .spell-consumption,
+    .spell-upcast,
+    .spell-slots,
+    .spell-rechargeable {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      color: var(--t5e-secondary-color);
+      border-left: 1px solid var(--t5e-faint-color);
+    }
 
-		.spell-slots {
-			border: none;
-			margin-left: 8px;
-			flex: 0 0 1px;
+    .spell-slots {
+      border: none;
+      margin-left: 8px;
+      flex: 0 0 1px;
 
-			input {
-				width: 20px;
-				height: 16px;
-				background: var(--t5e-faint-color);
-				padding: 0 2px;
-				border-radius: 3px;
-			}
+      input {
+        width: 20px;
+        height: 16px;
+        background: var(--t5e-faint-color);
+        padding: 0 2px;
+        border-radius: 3px;
+      }
 
-			input:first-child {
-				text-align: right;
-			}
-		}
+      input:first-child {
+        text-align: right;
+      }
+    }
 
-		.spell-rechargeable {
-			border: none;
-		}
-	}
+    .spell-rechargeable {
+      border: none;
+    }
+  }
 } //.tidy5e.sheet.actor .magic-items-spells-content
 
 .tidy5e.sheet.actor .grid-layout .magic-items-spells-content .item-list {
-	display: block;
+  display: block;
 
-	.item {
-		width: 100%;
-		height: auto;
-		margin: 2px 0;
-		box-shadow: none;
+  .item {
+    width: 100%;
+    height: auto;
+    margin: 2px 0;
+    box-shadow: none;
 
-		.item-name {
-			display: flex;
-			flex: 1;
-			cursor: default;
-			flex-wrap: nowrap;
-			font-size: 12px;
+    .item-name {
+      display: flex;
+      flex: 1;
+      cursor: default;
+      flex-wrap: nowrap;
+      font-size: 12px;
 
-			&.rollable:hover {
-				color: inherit;
-			}
-		}
+      &.rollable:hover {
+        color: inherit;
+      }
+    }
 
-		h4 {
-			display: flex;
-			align-items: center;
-			flex: initial;
-			text-overflow: ellipsis;
-			font-weight: 400;
-		}
+    h4 {
+      display: flex;
+      align-items: center;
+      flex: initial;
+      text-overflow: ellipsis;
+      font-weight: 400;
+    }
 
-		.rollable h4 {
-			cursor: pointer;
-		}
+    .rollable h4 {
+      cursor: pointer;
+    }
 
-		.item-image {
-			height: 24px;
-			margin-right: 4px;
-			box-shadow: none;
-		}
-	} //.item
+    .item-image {
+      height: 24px;
+      margin-right: 4px;
+      box-shadow: none;
+    }
+  } //.item
 } //.tidy5e.sheet.actor .grid-layout .magic-items-spells-content .item-list
 
 // Magic Item Sheet
 .tidy5e.sheet.item .sheet-body .tab.magic-items {
-	input[type="checkbox"] {
-		margin: 2px 2px 2px 4px !important;
-	}
+  input[type="checkbox"] {
+    margin: 2px 2px 2px 4px !important;
+  }
 
-	input[name="flags.magicitems.equipped"] {
-		margin-right: 8px !important;
-	}
+  input[name="flags.magicitems.equipped"] {
+    margin-right: 8px !important;
+  }
 
-	.form-group label.checkbox {
-		background: rgba(255, 255, 255, 0.3);
+  .form-group label.checkbox {
+    background: rgba(255, 255, 255, 0.3);
 
-		&:hover {
-			background: rgba(255, 255, 255, 0.1);
-		}
-	}
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
 
-	.spell-drag-content {
-		height: 70px;
-		text-align: center;
-		color: #828180;
-		line-height: 5;
-		border: 2px #828180 dashed;
-	}
+  .spell-drag-content {
+    height: 70px;
+    text-align: center;
+    color: #828180;
+    line-height: 5;
+    border: 2px #828180 dashed;
+  }
 
-	.magic-item-sort .form-fields label {
-		flex: unset;
-		background: transparent;
-		align-items: center;
-		margin-left: 8px;
-		border: none;
-		box-shadow: none;
+  .magic-item-sort .form-fields label {
+    flex: unset;
+    background: transparent;
+    align-items: center;
+    margin-left: 8px;
+    border: none;
+    box-shadow: none;
 
-		input {
-			width: 16px;
-			position: relative;
-			top: -1px;
-			margin: 0 2px 0 0;
+    input {
+      width: 16px;
+      position: relative;
+      top: -1px;
+      margin: 0 2px 0 0;
 
-			&::after {
-				content: none;
-			}
-		}
-	}
+      &::after {
+        content: none;
+      }
+    }
+  }
 
-	.magic-items-content {
-		font-size: 13px;
+  .magic-items-content {
+    font-size: 13px;
 
-		select.magic-item-destroy-type,
-		select.magic-item-destroy-check {
-			flex: 0.4;
-			margin-left: 4px;
-		}
+    select.magic-item-destroy-type,
+    select.magic-item-destroy-check {
+      flex: 0.4;
+      margin-left: 4px;
+    }
 
-		.magic-item-list {
-			clear: both;
-			padding: 0;
+    .magic-item-list {
+      clear: both;
+      padding: 0;
 
-			.item-list {
-				margin: 0;
-				padding: 0;
-			}
+      .item-list {
+        margin: 0;
+        padding: 0;
+      }
 
-			// .items-header {
-			// 	margin: 0 0 .25rem 0;
-			// 	padding-top: .5rem;
-			// 	line-height: 20px;
-			// 	background: transparent;
-			// 	border: none;
-			// 	border-top: 1px solid var(--t5e-faintest-color);
-			// 	font-family: var(--t5e-signika);
-			// }
+      // .items-header {
+      // 	margin: 0 0 .25rem 0;
+      // 	padding-top: .5rem;
+      // 	line-height: 20px;
+      // 	background: transparent;
+      // 	border: none;
+      // 	border-top: 1px solid var(--t5e-faintest-color);
+      // 	font-family: var(--t5e-signika);
+      // }
 
-			.item {
-				padding: 0;
-				line-height: 26px;
-				height: 26px;
-				background: var(--t5e-faintest-color);
-				border: none;
-				border-radius: 5px;
-				margin: 2px 0;
-				overflow: hidden;
-				align-items: center;
+      .item {
+        padding: 0;
+        line-height: 26px;
+        height: 26px;
+        background: var(--t5e-faintest-color);
+        border: none;
+        border-radius: 5px;
+        margin: 2px 0;
+        overflow: hidden;
+        align-items: center;
 
-				.item-name {
-					align-items: center;
-				}
+        .item-name {
+          align-items: center;
+        }
 
-				.item-image {
-					flex: 0 0 24px;
-					height: 24px;
-					background-size: cover;
-					margin-right: 4px;
-				}
+        .item-image {
+          flex: 0 0 24px;
+          height: 24px;
+          background-size: cover;
+          margin-right: 4px;
+        }
 
-				h4 {
-					margin: 0;
-					line-height: 24px;
-					height: 24px;
-				}
+        h4 {
+          margin: 0;
+          line-height: 24px;
+          height: 24px;
+        }
 
-				select,
-				input:not([type="checkbox"]) {
-					line-height: 20px;
-					height: 20px;
-					background: rgba(255, 255, 255, 0.3);
-				}
+        select,
+        input:not([type="checkbox"]) {
+          line-height: 20px;
+          height: 20px;
+          background: rgba(255, 255, 255, 0.3);
+        }
 
-				.item-controls {
-					flex: 0 0 1px;
-					height: 24px;
-					line-height: 24px;
-					display: flex;
-					align-items: center;
+        .item-controls {
+          flex: 0 0 1px;
+          height: 24px;
+          line-height: 24px;
+          display: flex;
+          align-items: center;
 
-					a {
-						padding: 0 8px;
-					}
-				}
-			}
+          a {
+            padding: 0 8px;
+          }
+        }
+      }
 
-			.inventory-header {
-				background: var(--t5e-faint-color);
-				box-shadow: 0 0 5px inset var(--t5e-light-color);
-				border-bottom: 1px solid var(--t5e-light-color);
-			}
+      .inventory-header {
+        background: var(--t5e-faint-color);
+        box-shadow: 0 0 5px inset var(--t5e-light-color);
+        border-bottom: 1px solid var(--t5e-light-color);
+      }
 
-			.inventory-header h3 {
-				margin: 0 -5px 0 0;
-				padding-left: 5px;
-				font-size: 13px;
-				font-weight: bold;
-			}
+      .inventory-header h3 {
+        margin: 0 -5px 0 0;
+        padding-left: 5px;
+        font-size: 13px;
+        font-weight: bold;
+      }
 
-			.spell-level-head,
-			.spell-upcast-head,
-			.spell-consumption-head,
-			.spell-cost-head,
-			.spell-dc-head,
-			.feat-consumption-head,
-			.feat-effect-head {
-				font-size: 12px;
-				color: #7a7971;
-				text-align: center;
-				margin: 0 2px;
-			}
+      .spell-level-head,
+      .spell-upcast-head,
+      .spell-consumption-head,
+      .spell-cost-head,
+      .spell-dc-head,
+      .feat-consumption-head,
+      .feat-effect-head {
+        font-size: 12px;
+        color: #7a7971;
+        text-align: center;
+        margin: 0 2px;
+      }
 
-			.spell-level,
-			.spell-upcast,
-			.spell-consumption,
-			.spell-cost,
-			.spell-dc,
-			.feat-consumption,
-			.feat-effect {
-				text-align: center;
-				margin: 0 2px;
-			}
+      .spell-level,
+      .spell-upcast,
+      .spell-consumption,
+      .spell-cost,
+      .spell-dc,
+      .feat-consumption,
+      .feat-effect {
+        text-align: center;
+        margin: 0 2px;
+      }
 
-			.spell-level-head,
-			.spell-level {
-				flex: 0 0 40px;
-			}
+      .spell-level-head,
+      .spell-level {
+        flex: 0 0 40px;
+      }
 
-			.spell-dc-head,
-			.spell-cost-head,
-			.spell-cost {
-				flex: 0 0 56px;
-			}
+      .spell-dc-head,
+      .spell-cost-head,
+      .spell-cost {
+        flex: 0 0 56px;
+      }
 
-			.spell-upcast-head,
-			.spell-upcast {
-				flex: 0 0 80px;
-			}
+      .spell-upcast-head,
+      .spell-upcast {
+        flex: 0 0 80px;
+      }
 
-			.spell-consumption-head,
-			.spell-consumption,
-			.feat-consumption-head,
-			.feat-consumption,
-			.feat-effect-head,
-			.feat-effect {
-				flex: 0 0 80px;
-			}
+      .spell-consumption-head,
+      .spell-consumption,
+      .feat-consumption-head,
+      .feat-consumption,
+      .feat-effect-head,
+      .feat-effect {
+        flex: 0 0 80px;
+      }
 
-			.spell-dc {
-				flex: 0 0 30px;
-			}
+      .spell-dc {
+        flex: 0 0 30px;
+      }
 
-			.spell-controls-head {
-				flex: 0 0 28px;
-			}
-		} //.magic-item-list
-	}
+      .spell-controls-head {
+        flex: 0 0 28px;
+      }
+    } //.magic-item-list
+  }
 } //.tidy5e.sheet.item .sheet-body .tab.magic-items
 
 // -----------------------------
@@ -394,54 +394,54 @@
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select,
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
-	line-height: 14px;
-	font-size: 12px;
-	padding: 0;
-	margin: 0;
-	flex: 0 0 1px;
-	margin-right: 2px;
-	font-family: var(--t5e-signika);
-	height: 14px;
-	color: var(--t5e-primary-font);
+  line-height: 14px;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  flex: 0 0 1px;
+  margin-right: 2px;
+  font-family: var(--t5e-signika);
+  height: 14px;
+  color: var(--t5e-primary-font);
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover,
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus {
-	background: var(--t5e-primary-accent);
-	color: var(--t5e-primary-font);
-	box-shadow: 0 0 0 1px var(--t5e-primary-accent);
+  background: var(--t5e-primary-accent);
+  color: var(--t5e-primary-font);
+  box-shadow: 0 0 0 1px var(--t5e-primary-accent);
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:hover option,
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select:focus option {
-	background: #fff;
+  background: #fff;
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-ability-select {
-	text-align-last: left;
-	-moz-text-align-last: left;
-	-ms-text-align-last: left;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border: none;
-	background: none;
-	padding: 0 2px;
-	height: 12px;
-	margin-top: -2px;
+  text-align-last: left;
+  -moz-text-align-last: left;
+  -ms-text-align-last: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0 2px;
+  height: 12px;
+  margin-top: -2px;
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus {
-	border: none;
-	box-shadow: 0 0 0 1px var(--t5e-light-color) inset;
-	margin-top: -2px;
-	padding-top: 2px;
-	text-align: center;
+  border: none;
+  box-shadow: 0 0 0 1px var(--t5e-light-color) inset;
+  margin-top: -2px;
+  padding-top: 2px;
+  text-align: center;
 }
 
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:hover,
 .tidy5e.sheet.actor .skills-list > .skill > .skill-cust-bonus:focus {
-	box-shadow: 0 0 0 1px var(--t5e-primary-accent) inset;
+  box-shadow: 0 0 0 1px var(--t5e-primary-accent) inset;
 }
 
 // --------------------
@@ -449,77 +449,77 @@
 // -------------------
 
 .tidy5e.sheet.actor {
-	.custom-category {
-		margin-right: auto;
-		font-size: 12px;
+  .custom-category {
+    margin-right: auto;
+    font-size: 12px;
 
-		&:hover {
-			color: var(--t5e-primary-accent);
-		}
-	}
+    &:hover {
+      color: var(--t5e-primary-accent);
+    }
+  }
 
-	.toggle-collapse {
-		width: 12px;
-		font-size: 18px;
-		line-height: 12px;
-		margin-right: 5px;
-		color: var(--t5e-default-light-color);
-		height: 12px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+  .toggle-collapse {
+    width: 12px;
+    font-size: 18px;
+    line-height: 12px;
+    margin-right: 5px;
+    color: var(--t5e-default-light-color);
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-		&:hover {
-			color: var(--t5e-primary-font);
-		}
+    &:hover {
+      color: var(--t5e-primary-font);
+    }
 
-		i {
-			position: relative;
-			top: -1px;
-		}
-	}
+    i {
+      position: relative;
+      top: -1px;
+    }
+  }
 
-	.inv-plus-stuff {
-		align-items: center;
-		opacity: 0;
-		transition: opacity 0.3s ease;
+  .inv-plus-stuff {
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 
-		a {
-			margin-right: 5px;
-			color: var(--t5e-light-color);
-			display: flex;
-			justify-content: center;
-			align-items: center;
+    a {
+      margin-right: 5px;
+      color: var(--t5e-light-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-			&:hover {
-				color: var(--t5e-primary-font);
-			}
-		}
-	}
+      &:hover {
+        color: var(--t5e-primary-font);
+      }
+    }
+  }
 
-	.items-header:hover .inv-plus-stuff {
-		opacity: 1;
-	}
+  .items-header:hover .inv-plus-stuff {
+    opacity: 1;
+  }
 
-	.grid-layout .items-footer .item-control.remove-category,
-	.grid-layout .items-footer .item-control.remove-category:hover {
-		position: relative;
-		color: transparent;
-		z-index: 1;
+  .grid-layout .items-footer .item-control.remove-category,
+  .grid-layout .items-footer .item-control.remove-category:hover {
+    position: relative;
+    color: transparent;
+    z-index: 1;
 
-		i {
-			position: absolute;
-			z-index: -1;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: var(--t5e-faint-color);
-		}
+    i {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--t5e-faint-color);
+    }
 
-		&:hover i {
-			color: var(--t5e-tertiary-color);
-		}
-	}
+    &:hover i {
+      color: var(--t5e-tertiary-color);
+    }
+  }
 }
 
 // ------------------------------------
@@ -527,57 +527,57 @@
 // ------------------------------------
 
 .tidy5e.sheet.actor .list-layout .character-actions-dnd5e.items-list {
-	padding: 0 9px 8px 0;
-	overflow-y: scroll;
+  padding: 0 9px 8px 0;
+  overflow-y: scroll;
 
-	.items-header .item-detail {
-		color: var(--t5e-tertiary-color);
-		line-height: 12px;
-		height: 12px;
-		border: none;
-	}
+  .items-header .item-detail {
+    color: var(--t5e-tertiary-color);
+    line-height: 12px;
+    height: 12px;
+    border: none;
+  }
 
-	.item-detail {
-		padding: 0 4px;
+  .item-detail {
+    padding: 0 4px;
 
-		&.item-uses {
-			flex: 0 0 80px;
-			margin-left: auto;
-		}
+    &.item-uses {
+      flex: 0 0 80px;
+      margin-left: auto;
+    }
 
-		&.action-range {
-			flex: 0 0 100px;
-		}
+    &.action-range {
+      flex: 0 0 100px;
+    }
 
-		&.to-hit-cell {
-			flex: 0 0 120px;
-		}
+    &.to-hit-cell {
+      flex: 0 0 120px;
+    }
 
-		&.damage-cell {
-			flex: 0 0 180px;
-		}
-	}
+    &.damage-cell {
+      flex: 0 0 180px;
+    }
+  }
 
-	.item .item-detail {
-		&.item-uses,
-		&.action-range,
-		&.damage-cell {
-			text-align: center;
-			display: flex;
-			flex-direction: column;
-			height: 24px;
-			line-height: 10px;
+  .item .item-detail {
+    &.item-uses,
+    &.action-range,
+    &.damage-cell {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 24px;
+      line-height: 10px;
 
-			span {
-				// font-size: 10px;
-				color: var(--t5e-secondary-color);
-			}
+      span {
+        // font-size: 10px;
+        color: var(--t5e-secondary-color);
+      }
 
-			small {
-				font-size: 10px;
-				color: var(--t5e-tertiary-color);
-				display: block;
-			}
-		}
-	}
+      small {
+        font-size: 10px;
+        color: var(--t5e-tertiary-color);
+        display: block;
+      }
+    }
+  }
 }

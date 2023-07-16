@@ -1,43 +1,43 @@
 .window-content .tab {
-	height: 100%;
-	flex-direction: column;
-	scrollbar-width: thin;
-	scrollbar-color: #782e22 #0000;
+  height: 100%;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #782e22 #0000;
 
-	&.active {
-		display: flex;
-	}
+  &.active {
+    display: flex;
+  }
 
-	&.attributes,
-	&.biography,
-	&.journal {
-		align-items: flex-start;
-		flex-direction: row;
-		padding-right: 0.75rem;
-		overflow-y: scroll;
-		overflow-x: inherit;
-	}
+  &.attributes,
+  &.biography,
+  &.journal {
+    align-items: flex-start;
+    flex-direction: row;
+    padding-right: 0.75rem;
+    overflow-y: scroll;
+    overflow-x: inherit;
+  }
 
-	&.biography,
-	&.journal {
-		font-size: 13px;
-	}
+  &.biography,
+  &.journal {
+    font-size: 13px;
+  }
 
-	&.biography {
-		flex-wrap: wrap;
-	}
+  &.biography {
+    flex-wrap: wrap;
+  }
 
-	&.inventory {
-		// overflow: hidden;
-	}
+  &.inventory {
+    // overflow: hidden;
+  }
 
-	&.grid .toggle-grid,
-	.toggle-list {
-		display: none;
-	}
+  &.grid .toggle-grid,
+  .toggle-list {
+    display: none;
+  }
 
-	.toggle-grid,
-	&.grid .toggle-list {
-		display: inline-block;
-	}
+  .toggle-grid,
+  &.grid .toggle-list {
+    display: inline-block;
+  }
 }
