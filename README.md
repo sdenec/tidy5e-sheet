@@ -153,6 +153,48 @@ French: @temvaryen
 
 Thank you very much!
 
+# Build
+
+## Install all packages
+
+```bash
+npm install
+```
+
+### dev
+
+`dev` will let you develop you own code with hot reloading on the browser
+
+```bash
+npm run dev
+```
+
+## npm build scripts
+
+### build
+
+`build` will build and set up a symlink between `dist` and your `dataPath`.
+
+```bash
+npm run build
+```
+
+### build-watch
+
+`build-watch` will build and watch for changes, rebuilding automatically.
+
+```bash
+npm run build-watch
+```
+
+### prettier-format
+
+`prettier-format` launch the prettier plugin based on the configuration [here](./.prettierrc)
+
+```bash
+npm run-script prettier-format
+```
+
 ## [Changelog](./changelog.md)
 
 ## Issues
