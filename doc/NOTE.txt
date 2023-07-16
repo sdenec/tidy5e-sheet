@@ -1,0 +1,8 @@
+"sass": "sass src/_scss:dist/tidy5e-sheet/css",
+"prefix": "postcss ./dist/tidy5e-sheet/css/**/*.css --use autoprefixer -map=false -d ./dist/styles-autoprefixed",
+"prefix2": "postcss ./dist/tidy5e-sheet/css/**/*.css --use autoprefixer -d ./dist/styles-autoprefixed --verbose",
+"watch3": "chokidar ./src/_scss/**/*.scss --command 'node-sass-chokidar ./src/_scss/style.scss | postcss --use autoprefixer > ./style.css'",
+"prefix3": "node-sass-chokidar ./src/_scss/style.scss --output-style compressed --quiet | postcss --use autoprefixer --no-map > ./style.css",
+"watch4": "node-sass --output-style=expanded --source-map=true src/_scss/tidy5e.scss -o dist/tidy5e-sheet/css",
+"watch5": "sass ./src/styles:./dist/tidy5e-sheet/css/style.css --no-source-map --style expanded ",
+"prefix4": "npx postcss dist/tidy5e-sheet/css/style.css  --use autoprefixer -d dist/tidy5e-sheet/styles-prefixed "

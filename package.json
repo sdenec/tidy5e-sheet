@@ -3,50 +3,53 @@
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
 	"version": "0.9.2",
-  "main": "module.js",
-  "license": "SEE LICENSE IN LICENSE",
-  "private": true,
-  "type": "module",
-  "author": "",
-  "contributors": [],
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@typhonjs-fvtt/runtime": "^0.1.0",
-    "@typhonjs-fvtt/svelte-standard": "^0.1.0",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "svelte": "^4.0.0",
-    "svelte-virtual-scroll-list": "^1.1.0"
-  },
-  "devDependencies": {
-    "@typhonjs-config/eslint-config": "^0.3.0",
-    "eslint": "^8",
-    "husky": "^8.0.3",
-    "jquery": "^3.6.4",
-    "lint-staged": "^13.2.1",
-    "prettier": "^2.8.7",
-    "sass": "^1.63.6",
-    "svelte-dnd-action": "^0.9.18",
-    "svelte-preprocess": "^5",
-    "vite": "^4.4.0",
-    "vite-plugin-clean": "^1.0.0",
-    "vite-plugin-run": "^0.4.1",
-    "vite-plugin-static-copy": "^0.16.0",
-    "vite-plugin-zip-file": "^2.1.0"
-  },
-  "browserslist": [
-    ">5%",
-    "not IE 11"
-  ],
-  "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "eslint": "eslint .",
-    "prepare": "husky install",
-    "prettier-format": "prettier --config .prettierrc --write \"./src/**/*.{ts,js,mjs,json,scss,css}\""
-  },
-  "lint-staged": {
-    "*.{js,css}": "prettier --write"
-  }
+	"main": "module.js",
+	"license": "SEE LICENSE IN LICENSE",
+	"private": true,
+	"type": "module",
+	"author": "",
+	"contributors": [],
+	"imports": {
+		"#runtime/*": "@typhonjs-fvtt/runtime/*"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.4.0",
+		"@fortawesome/free-solid-svg-icons": "^6.4.0",
+		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@typhonjs-fvtt/runtime": "^0.1.0",
+		"@typhonjs-fvtt/svelte-standard": "^0.1.0",
+		"svelte": "^4.0.0",
+		"svelte-virtual-scroll-list": "^1.1.0"
+	},
+	"devDependencies": {
+		"@typhonjs-config/eslint-config": "^0.3.0",
+		"eslint": "^8",
+		"husky": "^8.0.3",
+		"jquery": "^3.6.4",
+		"lint-staged": "^13.2.1",
+		"prettier": "^2.8.7",
+		"sass": "^1.63.6",
+		"svelte-dnd-action": "^0.9.18",
+		"svelte-preprocess": "^5",
+		"vite": "^4.4.0",
+		"vite-plugin-clean": "^1.0.0",
+		"vite-plugin-run": "^0.4.1",
+		"vite-plugin-static-copy": "^0.16.0"
+	},
+	"browserslist": [
+		">5%",
+		"not IE 11"
+	],
+	"scripts": {
+		"build": "vite build",
+		"dev": "vite",
+		"eslint": "eslint .",
+		"prepare": "husky install",
+		"prettier-format": "prettier --config .prettierrc --write \"./src/**/*.{ts,js,mjs,json,scss,css}\"",
+		"sass": "sass ./src/styles:./dist/tidy5e-sheet/css --no-source-map --style expanded ",
+		"prefix": "postcss dist/tidy5e-sheet/styles/**/*.css  --use autoprefixer -d dist/tidy5e-sheet/styles-prefixed "
+	},
+	"lint-staged": {
+		"*.{js,css}": "prettier --write"
+	}
 }

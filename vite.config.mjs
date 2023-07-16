@@ -6,15 +6,11 @@ import {
   terserConfig,
   typhonjsRuntime
 } from '@typhonjs-fvtt/runtime/rollup';
-//import { viteZip } from 'vite-plugin-zip-file';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import cleanPlugin from 'vite-plugin-clean';
 import { normalizePath } from 'vite';
 import path from 'path';
 import { run } from 'vite-plugin-run'
-// import sassDts from 'vite-plugin-sass-dts'
-// import vue from '@vitejs/plugin-vue'
-// import laravel from "laravel-vite-plugin";
 
 // ATTENTION!
 // Please modify the below variables: s_PACKAGE_ID and s_SVELTE_HASH_ID appropriately.
@@ -65,7 +61,10 @@ export default () => {
 
     css: {
       // Creates a standard configuration for PostCSS with autoprefixer & postcss-preset-env.
-      postcss: postcssConfig({ compress: s_COMPRESS, sourceMap: s_SOURCEMAPS }),
+      postcss: postcssConfig({ 
+        compress: s_COMPRESS, 
+        sourceMap: s_SOURCEMAPS
+      }),
     },
 
     // About server options:
@@ -108,11 +107,15 @@ export default () => {
         fileName: "module",
       },
     },
-    
+
+    // Necessary when using the dev server for top-level await usage inside of TRL.
+    optimizeDeps: {
+      esbuildOptions: {
+        target: 'es2022'
+      }
+    },
+
     plugins: [
-      //   vue(),
-      //   hbsPlugin(),
-      //   translationPlugin('./src/lang', './dist/lang'),
       run([
         {
           name: 'run sass',
@@ -145,10 +148,10 @@ export default () => {
             src: normalizePath(path.resolve(__dirname, './src/languages')) + '/[!.]*',
             dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/languages`)),
           },
-          // {
-          //   src: normalizePath(path.resolve(__dirname, './src/styles')) + '/[!.]/**/*',
-          //   dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/styles`)),
-          // },
+          {
+            src: normalizePath(path.resolve(__dirname, './src/styles')) + '/**/*.css',
+            dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/styles`)),
+          },
           {
             src: normalizePath(path.resolve(__dirname, './src/packs')) + '/[!.]*',
             dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/packs`)),
@@ -160,13 +163,13 @@ export default () => {
         ],
       }),
       svelte({
-        //compilerOptions: {
-        //  // Provides a custom hash adding the string defined in `s_SVELTE_HASH_ID` to scoped Svelte styles;
-        //  // This is reasonable to do as the framework styles in TRL compiled across `n` different packages will
-        //  // be the same. Slightly modifying the hash ensures that your package has uniquely scoped styles for all
-        //  // TRL components and makes it easier to review styles in the browser debugger.
-        //  cssHash: ({ hash, css }) => `svelte-${s_SVELTE_HASH_ID}-${hash(css)}`,
-        //},
+        compilerOptions: {
+         // Provides a custom hash adding the string defined in `s_SVELTE_HASH_ID` to scoped Svelte styles;
+         // This is reasonable to do as the framework styles in TRL compiled across `n` different packages will
+         // be the same. Slightly modifying the hash ensures that your package has uniquely scoped styles for all
+         // TRL components and makes it easier to review styles in the browser debugger.
+         cssHash: ({ hash, css }) => `svelte-${s_SVELTE_HASH_ID}-${hash(css)}`,
+        },
         preprocess: preprocess(),
         onwarn: (warning, handler) => {
           // Suppress `a11y-missing-attribute` for missing href in <a> links.
@@ -185,12 +188,6 @@ export default () => {
       // When s_TYPHONJS_MODULE_LIB is true transpile against the Foundry module version of TRL.
       s_TYPHONJS_MODULE_LIB && typhonjsRuntime(),
 
-      // viteZip({
-      //   folderPath: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}`)),
-      //   outPath: normalizePath(path.resolve(__dirname, './package')),
-      //   zipName: 'module.zip',
-      //   enabled: true
-      // }),
       cleanPlugin()
     ]
   };
