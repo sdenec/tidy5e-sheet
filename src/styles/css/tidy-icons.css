@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "tidy-icons";
+  src: url("../fonts/tidy-icons.eot?hzg6v1");
+  src: url("../fonts/tidy-icons.eot?hzg6v1#iefix") format("embedded-opentype"),
+    url("../fonts/tidy-icons.ttf?hzg6v1") format("truetype"), url("../fonts/tidy-icons.woff2?hzg6v1") format("woff"),
+    url("../fonts/tidy-icons.woff?hzg6v1") format("woff"),
+    url("../fonts/tidy-icons.svg?hzg6v1#tidy-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ti {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "tidy-icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ti-ally:before {
+  content: "\e900";
+}
+
+.ti-circle:before {
+  content: "\e901";
+}
+
+.ti-cone:before {
+  content: "\e902";
+}
+
+.ti-creature:before {
+  content: "\e903";
+}
+
+.ti-cube:before {
+  content: "\e904";
+}
+
+.ti-cylinder:before {
+  content: "\e905";
+}
+
+.ti-enemy:before {
+  content: "\e906";
+}
+
+.ti-line:before {
+  content: "\e907";
+}
+
+.ti-object:before {
+  content: "\e908";
+}
+
+.ti-radius:before {
+  content: "\e909";
+}
+
+.ti-self:before {
+  content: "\e90a";
+}
+
+.ti-space:before {
+  content: "\e90b";
+}
+
+.ti-sphere:before {
+  content: "\e90c";
+}
+
+.ti-square:before {
+  content: "\e90d";
+}
+
+.ti-touch:before {
+  content: "\e90e";
+}
+
+.ti-wall:before {
+  content: "\e90f";
+}
+
+.ti-acid:before {
+  content: "\e910";
+}
+
+.ti-bludgeoning:before {
+  content: "\e911";
+}
+
+.ti-cold:before {
+  content: "\e912";
+}
+
+.ti-fire:before {
+  content: "\e913";
+}
+
+.ti-fire_alt:before {
+  content: "\e914";
+}
+
+.ti-force:before {
+  content: "\e915";
+}
+
+.ti-force_alt:before {
+  content: "\e916";
+}
+
+.ti-healing:before {
+  content: "\e917";
+}
+
+.ti-lightning:before {
+  content: "\e918";
+}
+
+.ti-necrotic:before {
+  content: "\e919";
+}
+
+.ti-necrotic_alt:before {
+  content: "\e91a";
+}
+
+.ti-piercing:before {
+  content: "\e91b";
+}
+
+.ti-poison:before {
+  content: "\e91c";
+}
+
+.ti-psychic:before {
+  content: "\e91d";
+}
+
+.ti-radiant:before {
+  content: "\e91e";
+}
+
+.ti-slashing:before {
+  content: "\e91f";
+}
+
+.ti-thunder:before {
+  content: "\e920";
+}

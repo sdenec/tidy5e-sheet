@@ -169,15 +169,15 @@
           color: var(--t5e-stat-font);
           float: right;
 
-          input {
-            height: 14px;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 1);
-            color: var(--t5e-stat-font);
-            text-align: right;
-            min-width: 0;
-            width: 16px;
-            padding: 0;
-          }
+          // input {
+          height: 14px;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+          color: var(--t5e-stat-font);
+          text-align: right;
+          min-width: 0;
+          width: 16px;
+          padding: 0;
+          // }
         }
 
         .item-charges,

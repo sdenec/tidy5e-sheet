@@ -91,17 +91,19 @@
   }
 }
 
-.allow-edit .tidy5e-navigation {
-  .toggle-allow-edit {
-    span {
-      background: var(--t5e-unsafe-accent);
-    }
+.allow-edit {
+  .tidy5e-navigation {
+    .toggle-allow-edit {
+      span {
+        background: var(--t5e-unsafe-accent);
+      }
 
-    .fa-lock-open {
-      display: inline-block;
-    }
-    .fa-lock {
-      display: none;
+      .fa-lock-open {
+        display: inline-block;
+      }
+      .fa-lock {
+        display: none;
+      }
     }
   }
   .items-header-controls {

@@ -2469,14 +2469,14 @@
 .tidy5e.sheet.actor .traits .tag::after {
   content: ",";
 }
-.tidy5e.sheet.actor .traits .tag:last-child::after {
-  content: none;
-}
-.tidy5e.sheet.actor .traits .tag .tool {
+.tidy5e.sheet.actor .traits .tag.tool {
   display: inline-flex;
   align-items: center;
   gap: 2px;
   padding: 0px 2px;
+}
+.tidy5e.sheet.actor .traits .tag:last-child::after {
+  content: none;
 }
 .tidy5e.sheet.actor .traits .trait-selector,
 .tidy5e.sheet.actor .traits .proficiency-selector,
@@ -4753,10 +4753,10 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
   flex: 0 0 50px;
 }
 .tidy5e.sheet.actor.npc .items-list .item-charges,
-.tidy5e.sheet.actor.npc .items-list .item-uses,
 .tidy5e.sheet.actor.npc .items-list .spell-action,
 .tidy5e.sheet.actor.npc .items-list .spell-target,
-.tidy5e.sheet.actor.npc .items-list .spell-school {
+.tidy5e.sheet.actor.npc .items-list .spell-school,
+.tidy5e.sheet.actor.npc .items-list .item-uses {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 90px;
   flex: 0 0 90px;
