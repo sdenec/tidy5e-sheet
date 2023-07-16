@@ -1,0 +1,131 @@
+name: Release Creation
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Substitute the Manifest and Download URLs in the module.json
+
+      - name: Substitute Manifest and Download Links For Versioned Ones
+        id: sub_release_manifest_version
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: 'src/module.json'
+        env:
+          version: ${{github.event.release.tag_name}}
+          url: https://github.com/${{github.repository}}
+          manifest: https://github.com/${{github.repository}}/releases/latest/download/module.json
+          download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/module.zip
+
+      # for a FULL RELEASE
+      # - name: Substitute Manifest and Download Links For Versioned Ones
+      #   if: "!github.event.release.prerelease"
+      #   id: sub_release_manifest_version
+      #   uses: microsoft/variable-substitution@v1
+      #   with:
+      #     files: 'module.json'
+      #   env:
+      #     version: ${{github.event.release.tag_name}}
+      #     url: https://github.com/${{github.repository}}
+      #     manifest: https://github.com/${{github.repository}}/releases/latest/download/module.json
+      #     download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/module.zip
+
+      # Substitute the Manifest and Download URLs in the module.json
+      # for a PRE RELEASE. Manifest pointing to live module.json on branch,
+      # which is updated after tag.
+      # - name: Substitute Manifest and Download Links For Versioned Ones
+      #   if: "github.event.release.prerelease"
+      #   id: sub_prerelease_manifest_version
+      #   uses: microsoft/variable-substitution@v1
+      #   with:
+      #     files: 'module.json'
+      #   env:
+      #     version: ${{github.event.release.tag_name}}
+      #     url: https://github.com/${{github.repository}}
+      #     manifest: https://raw.githubusercontent.com/${{github.repository}}/next/module.json
+      #     download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/module.zip
+
+      # Install packages.
+      - run: npm install
+
+      # Build distribution.
+      - run: npm run build
+
+      - run: mkdir package
+
+      - run: mv -v ./dist/* ./package/
+
+      # Create a zip file with all files required by the module to add to the release
+      #- run: zip -r ./module.zip module.json LICENSE module.js module.js.map style.css templates/ languages/ packs/ assets/
+      # - run: zip -r ./package/module.zip ./package/*
+
+      # && ensures that zip only runs if the directory was correctly changed, 
+      # and the parentheses run everything in a subshell, so the current directory 
+      # is restored at the end. Using OLDPWD avoids having to calculate the relative path to package.zip.
+      # https://unix.stackexchange.com/questions/385405/zip-all-files-and-subfolder-in-directory-without-parent-directory
+      - run: (cd package && zip -r "$OLDPWD/module.zip" .)
+      
+      - name: Update Release with Files
+        id: create_version_release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true # Set this to false if you want to prevent updating existing releases
+          name: ${{ github.event.release.name }}
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: './src/module.json, ./module.zip'
+          tag: ${{ github.event.release.tag_name }}
+          body: ${{ github.event.release.body }}
+
+      # Create a release for this specific version
+      # - name: Update Release with Files
+      #   if: "!github.event.release.prerelease"
+      #   id: create_version_release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     allowUpdates: true # Set this to false if you want to prevent updating existing releases
+      #     name: ${{ github.event.release.name }}
+      #     draft: false
+      #     prerelease: false
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     artifacts: './module.json, ./module.zip'
+      #     tag: ${{ github.event.release.tag_name }}
+      #     body: ${{ github.event.release.body }}
+
+      #  OR create a pre-release for this specific version
+      # - name: Update Release with Files
+      #   if: "github.event.release.prerelease"
+      #   id: create_version_prerelease
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     allowUpdates: true # Set this to false if you want to prevent updating existing releases
+      #     name: ${{ github.event.release.name }}
+      #     draft: false
+      #     prerelease: true
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     artifacts: './module.json, ./module.zip'
+      #     tag: ${{ github.event.release.tag_name }}
+      #     body: ${{ github.event.release.body }}
+
+      #update next branch
+      # - name: Prepare repository
+      #   if: "github.event.release.prerelease"
+      #   run: |
+      #     git config --global user.name '${{github.actor}}'
+      #     git config --global user.email '${{github.actor}}@users.noreply.github.com'
+      #     git add module.json
+      #     git stash
+      #     git clean -f
+      #     git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY"
+      #     git fetch origin "next"
+      #     git switch -c "next" "origin/next"
+      #     git checkout stash module.json
+      #     git commit -m "${{github.event.release.tag_name}} manifest"
+      #     git push -f

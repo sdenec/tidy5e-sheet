@@ -238,7 +238,7 @@
     "import/resolver": {
         "node": {
             "paths": ["src", "types", "", "dist"],
-            "extensions": [".css", ".js", ".mjs", ".json", ".jsx", ".scss", ".ts", ".tsx"],
+            "extensions": [".css", ".mjs", ".mjs", ".json", ".jsx", ".scss", ".ts", ".tsx"],
         },
         "eslint-import-resolver-typescript": true,
         "typescript": {

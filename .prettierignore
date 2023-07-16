@@ -1,0 +1,8 @@
+/dist
+/package-lock.json
+/.pnp.js
+/.yarn/
+/.vscode/
+/.idea
+.vite-cache/**
+**/*.md
