@@ -1,50 +1,50 @@
 export function is_real_number(inNumber) {
-	return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
+  return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
 }
 
 export function isEmptyObject(obj) {
-	// because Object.keys(new Date()).length === 0;
-	// we have to do some additional check
-	if (obj === null || obj === undefined) {
-		return true;
-	}
-	const result =
-		obj && // null and undefined check
-		Object.keys(obj).length === 0; // || Object.getPrototypeOf(obj) === Object.prototype);
-	return result;
+  // because Object.keys(new Date()).length === 0;
+  // we have to do some additional check
+  if (obj === null || obj === undefined) {
+    return true;
+  }
+  const result =
+    obj && // null and undefined check
+    Object.keys(obj).length === 0; // || Object.getPrototypeOf(obj) === Object.prototype);
+  return result;
 }
 
 const signCase = {
-	add: "+",
-	subtract: "-",
-	equals: "=",
-	default: " "
+  add: "+",
+  subtract: "-",
+  equals: "=",
+  default: " ",
 };
 
 export function is_lazy_number(inNumber) {
-	const isSign =
-		String(inNumber).startsWith(signCase.add) ||
-		String(inNumber).startsWith(signCase.subtract) ||
-		String(inNumber).startsWith(signCase.equals) ||
-		String(inNumber).startsWith(signCase.default);
-	if (isSign) {
-		const withoutFirst = String(inNumber).slice(1);
-		return is_real_number(withoutFirst);
-	} else {
-		return true;
-	}
+  const isSign =
+    String(inNumber).startsWith(signCase.add) ||
+    String(inNumber).startsWith(signCase.subtract) ||
+    String(inNumber).startsWith(signCase.equals) ||
+    String(inNumber).startsWith(signCase.default);
+  if (isSign) {
+    const withoutFirst = String(inNumber).slice(1);
+    return is_real_number(withoutFirst);
+  } else {
+    return true;
+  }
 }
 
 export function isLessThanOneIsOne(inNumber) {
-	return inNumber < 1 ? 1 : inNumber;
+  return inNumber < 1 ? 1 : inNumber;
 }
 
 export function truncate(str, n, useWordBoundary) {
-	if (str.length <= n) {
-		return str;
-	}
-	const subString = str.slice(0, n - 1); // the original check
-	return (useWordBoundary ? subString.slice(0, subString.lastIndexOf(" ")) : subString) + "..."; // "&hellip;";
+  if (str.length <= n) {
+    return str;
+  }
+  const subString = str.slice(0, n - 1); // the original check
+  return (useWordBoundary ? subString.slice(0, subString.lastIndexOf(" ")) : subString) + "..."; // "&hellip;";
 }
 
 /* -------------------------------------------- */
@@ -98,75 +98,75 @@ export function truncate(str, n, useWordBoundary) {
  * @returns {Promise<D20Roll|null>}             The evaluated D20Roll, or null if the workflow was cancelled.
  */
 export async function d20Roll({
-	parts = [],
-	data = {},
-	event,
-	advantage,
-	disadvantage,
-	critical = 20,
-	fumble = 1,
-	targetValue,
-	elvenAccuracy,
-	halflingLucky,
-	reliableTalent,
-	fastForward,
-	chooseModifier = false,
-	template,
-	title,
-	dialogOptions,
-	chatMessage = true,
-	messageData = {},
-	rollMode,
-	flavor
+  parts = [],
+  data = {},
+  event,
+  advantage,
+  disadvantage,
+  critical = 20,
+  fumble = 1,
+  targetValue,
+  elvenAccuracy,
+  halflingLucky,
+  reliableTalent,
+  fastForward,
+  chooseModifier = false,
+  template,
+  title,
+  dialogOptions,
+  chatMessage = true,
+  messageData = {},
+  rollMode,
+  flavor,
 } = {}) {
-	// Handle input arguments
-	const formula = ["1d20"].concat(parts).join(" + ");
-	const { advantageMode, isFF } = CONFIG.Dice.D20Roll.determineAdvantageMode({
-		advantage,
-		disadvantage,
-		fastForward,
-		event
-	});
-	const defaultRollMode = rollMode || game.settings.get("core", "rollMode");
-	if (chooseModifier && !isFF) {
-		data.mod = "@mod";
-		if ("abilityCheckBonus" in data) data.abilityCheckBonus = "@abilityCheckBonus";
-	}
+  // Handle input arguments
+  const formula = ["1d20"].concat(parts).join(" + ");
+  const { advantageMode, isFF } = CONFIG.Dice.D20Roll.determineAdvantageMode({
+    advantage,
+    disadvantage,
+    fastForward,
+    event,
+  });
+  const defaultRollMode = rollMode || game.settings.get("core", "rollMode");
+  if (chooseModifier && !isFF) {
+    data.mod = "@mod";
+    if ("abilityCheckBonus" in data) data.abilityCheckBonus = "@abilityCheckBonus";
+  }
 
-	// Construct the D20Roll instance
-	const roll = new CONFIG.Dice.D20Roll(formula, data, {
-		flavor: flavor || title,
-		advantageMode,
-		defaultRollMode,
-		rollMode,
-		critical,
-		fumble,
-		targetValue,
-		elvenAccuracy,
-		halflingLucky,
-		reliableTalent
-	});
+  // Construct the D20Roll instance
+  const roll = new CONFIG.Dice.D20Roll(formula, data, {
+    flavor: flavor || title,
+    advantageMode,
+    defaultRollMode,
+    rollMode,
+    critical,
+    fumble,
+    targetValue,
+    elvenAccuracy,
+    halflingLucky,
+    reliableTalent,
+  });
 
-	// Prompt a Dialog to further configure the D20Roll
-	if (!isFF) {
-		const configured = await roll.configureDialog(
-			{
-				title,
-				chooseModifier,
-				defaultRollMode,
-				defaultAction: advantageMode,
-				defaultAbility: data?.item?.ability || data?.defaultAbility,
-				template
-			},
-			dialogOptions
-		);
-		if (configured === null) return null;
-	} else roll.options.rollMode ??= defaultRollMode;
+  // Prompt a Dialog to further configure the D20Roll
+  if (!isFF) {
+    const configured = await roll.configureDialog(
+      {
+        title,
+        chooseModifier,
+        defaultRollMode,
+        defaultAction: advantageMode,
+        defaultAbility: data?.item?.ability || data?.defaultAbility,
+        template,
+      },
+      dialogOptions
+    );
+    if (configured === null) return null;
+  } else roll.options.rollMode ??= defaultRollMode;
 
-	// Evaluate the configured roll
-	await roll.evaluate({ async: true });
+  // Evaluate the configured roll
+  await roll.evaluate({ async: true });
 
-	// Create a Chat Message
-	if (roll && chatMessage) await roll.toMessage(messageData);
-	return roll;
+  // Create a Chat Message
+  if (roll && chatMessage) await roll.toMessage(messageData);
+  return roll;
 }
