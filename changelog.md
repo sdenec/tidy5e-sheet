@@ -3,7 +3,10 @@
 
 - Fixes for maxPreparedSpells cusotm spell ty to szefo09
 - BUg fix: https://github.com/sdenec/tidy5e-sheet/issues/769 ty to szefo09
-- Removed Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills for https://github.com/sdenec/tidy5e-sheet/issues/662
+- Removed Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills for https://github.com/sdenec/tidy5e-sheet/issues/662 -
+- New integration with vite and svelte for better developing 
+- Update module.json for point to the specific version instead the latest 
+- Added new scss to css integratation
 
 ### 0.9.1
 

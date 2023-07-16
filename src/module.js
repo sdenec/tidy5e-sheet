@@ -5,6 +5,8 @@ import {
   Tidy5eExhaustionDnd5eRestCompleted,
 } from "./scripts/app/tidy5e-exhaustion";
 import { Tidy5eHBUpcastFreeSpellsDnd5ePreItemUsageConsumption } from "./scripts/app/tidy5e-hb-upcast-free-spell";
+import { isEmptyObject, is_real_number } from "./scripts/app/tidy5e-helpers";
+import { warn } from "./scripts/app/tidy5e-logger-util";
 import { preloadTidy5eHandlebarsTemplates } from "./scripts/app/tidy5e-templates";
 import { Tidy5eSheetItemInitialize } from "./scripts/tidy5e-item";
 import { Tidy5eSheetNPCInitialize } from "./scripts/tidy5e-npc";
@@ -37,7 +39,7 @@ Hooks.once("ready", async (app, html, data) => {
     let word = "install and activate";
     if (game.modules.get("colorsettings")) word = "activate";
     const errorText =
-      `tidy5e-sheet | I'ts advisable to install the 'colorsettings' module for a better behaviour. Please ${word} it.`.replace(
+      `module | I'ts advisable to install the 'colorsettings' module for a better behaviour. Please ${word} it.`.replace(
         "<br>",
         "\n"
       );
@@ -64,7 +66,7 @@ Hooks.on("renderActorSheet", (app, html, data) => {
       "system.attributes.init.bonus": 0,
     });
     warn(
-      `tidy5e-sheet | renderActorSheet | Patch 'system.attributes.init.bonus' for value ${app.actor.system?.attributes?.init?.bonus}`
+      `module | renderActorSheet | Patch 'system.attributes.init.bonus' for value ${app.actor.system?.attributes?.init?.bonus}`
     );
   }
 });

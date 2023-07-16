@@ -559,7 +559,7 @@ export function applyLazyHp(app, html, actorData) {
 	}
 }
 
-// Hooks.on("preUpdateActor", function (actorEntity, update, options, userId) {
+// export function Tidy5eContextMenuPreUpdateActor", function (actorEntity, update, options, userId) {
 // 	if (!game.settings.get(CONSTANTS.MODULE_ID, "lazyHpAndExpEnable")) {
 // 		return;
 // 	}

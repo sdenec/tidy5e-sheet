@@ -82,7 +82,7 @@ export default () => {
       // open: false,
       proxy: {
         // Serves static files from main Foundry server.
-        [`^(/${s_PACKAGE_ID}/(fonts|assets|lang|languages|packs|styles|templates|style.css))`]:
+        [`^(/${s_PACKAGE_ID}/(images|fonts|assets|lang|languages|packs|styles|templates|style.css))`]:
           "http://127.0.0.1:30000",
 
         // All other paths besides package ID path are served from main Foundry server.

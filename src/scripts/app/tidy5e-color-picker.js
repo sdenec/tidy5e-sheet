@@ -178,7 +178,7 @@ export const mapDefaultColorsRGB = {
   t5e_context_shadow: "rgb(0, 0, 0)",
   t5e_checkbox_font: "rgb(0, 0, 0)",
   t5e_checkbox_outline: "rgb(150, 150, 150)",
-  t5e_checkbox_unchecked: "#D8D7D1",
+  t5e_checkbox_unchecked: "rgb(75, 75, 75)",
   t5e_checkbox_checked: "rgb(0, 255, 0)",
 };
 export const mapDefaultColorsRGBA = {
@@ -246,13 +246,13 @@ export const mapDefaultColorsRGBA = {
   t5e_context_shadow: "rgba(0, 0, 0, 0.65)",
   t5e_checkbox_font: "rgba(0, 0, 0, 0.9)",
   t5e_checkbox_outline: "rgba(150, 150, 150, 1)",
-  t5e_checkbox_unchecked: "#D8D7D1",
+  t5e_checkbox_unchecked: "rgba(75, 75, 75, 1)",
   t5e_checkbox_checked: "rgba(0, 255, 0, 0.3)",
 };
 
 export const mapDefaultColorsDarkRGBA = {
   t5e_primary_font: "rgba(255, 255, 255, 0.8)",
-  t5e_background: "rgb(30, 30, 30)",
+  t5e_background: "rgba(30, 30, 30, 1)",
   t5e_white: "rgba(0, 0, 0, 1)",
   t5e_primary_color: "rgba(255, 255, 255, 0.8)",
   t5e_secondary_color: "rgba(255, 255, 255, 0.65)",

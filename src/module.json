@@ -2,7 +2,7 @@
   "id": "tidy5e-sheet",
   "title": "Tidy5e Sheet",
   "description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "authors": [
     {
       "name": "sednec#3813"
@@ -20,7 +20,10 @@
     }
   ],
   "esmodules": ["module.js"],
-  "styles": ["style.css"],
+  "styles": [
+    "styles/tidy-icons.css", 
+    "styles/tidy5e.css", 
+    "styles/dark/tidy5e-dark.css"],
   "languages": [
     {
       "lang": "en",
@@ -80,13 +83,13 @@
   ],
   "compatibility": {
     "minimum": 10,
-    "verified": 10,
+    "verified": 11,
     "maximum": 11
   },
   "manifestPlusVersion": "1.2.1",
   "url": "https://github.com/sdenec/tidy5e-sheet",
-  "manifest": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.json",
-  "download": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/module.zip",
+  "manifest": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/0.9.3/module.json",
+  "download": "https://github.com/sdenec/tidy5e-sheet/releases/latest/download/0.9.3/module.zip",
   "readme": "https://github.com/sdenec/tidy5e-sheet/blob/master/README.md",
   "changelog": "https://github.com/sdenec/tidy5e-sheet/blob/master/changelog.md",
   "bugs": "https://github.com/sdenec/tidy5e-sheet/issues",
