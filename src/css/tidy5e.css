@@ -6800,6 +6800,9 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	margin: 0px;
 	border:none;
   }
-  :not(.items-footer) > .item-create {
+  .tidy5e-sheet :not(.items-footer) > .item-create {
     display: none;
   }
+.tidy5e.sheet .traits .tag.tool h4{
+	font-weight: normal;
+}
