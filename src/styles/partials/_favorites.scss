@@ -1,0 +1,31 @@
+// Favorites
+.favorites {
+  margin-top: 8px;
+
+  &.list-layout {
+    display: block;
+    overflow: visible;
+  }
+
+  .items-list {
+    overflow: visible;
+    padding-right: 0;
+    min-height: 200px;
+
+    .item {
+      .item-name {
+        .item-image {
+          // flex: 0 0 20px;
+          // height: 20px;
+
+          i {
+            font-size: 16px;
+          }
+        }
+      } //.item-name
+    } //.item
+  } //.items-list
+  .inventory-favorites-list {
+    overflow-y: scroll;
+  }
+} //.favorites

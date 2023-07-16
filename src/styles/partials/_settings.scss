@@ -1,0 +1,97 @@
+.app.window-app.tidy5e.settings {
+  border: 2px solid #ff6400;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  max-height: 500px;
+
+  .window-content {
+    padding: 0;
+    overflow: hidden;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  .sheet-tabs {
+    flex: 0;
+    padding: 4px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #222;
+
+    .item {
+      flex: 0;
+      white-space: nowrap;
+      padding: 4px 8px;
+    }
+  }
+
+  .tab {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 0 8px 8px 8px;
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      padding: 0 0 4px;
+      border-bottom: 1px solid var(--t5e-light-color);
+    }
+
+    h3 {
+      font-weight: 600;
+      margin: 8px 0;
+    }
+  }
+
+  .sheet-footer {
+    padding: 8px;
+    flex: 0;
+  }
+
+  .setting {
+    display: flex;
+    background: var(--t5e-faintest-color);
+    border-radius: 5px;
+    margin: 2px 0;
+    padding: 4px;
+
+    &.group {
+      padding-left: 24px;
+    }
+
+    section {
+      width: 100%;
+    }
+
+    input[type="checkbox"] {
+      margin: 0;
+    }
+
+    .description {
+      margin-left: 8px;
+
+      label {
+        font-weight: 600;
+      }
+    }
+
+    .settings-group {
+      margin-left: 8px;
+
+      article {
+        margin: 4px 0;
+      }
+
+      label {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 0 4px 8px 4px;
+      }
+    }
+  }
+}

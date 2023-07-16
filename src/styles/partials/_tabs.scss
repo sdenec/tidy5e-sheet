@@ -1,0 +1,43 @@
+.window-content .tab {
+  height: 100%;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #782e22 #0000;
+
+  &.active {
+    display: flex;
+  }
+
+  &.attributes,
+  &.biography,
+  &.journal {
+    align-items: flex-start;
+    flex-direction: row;
+    padding-right: 0.75rem;
+    overflow-y: scroll;
+    overflow-x: inherit;
+  }
+
+  &.biography,
+  &.journal {
+    font-size: 13px;
+  }
+
+  &.biography {
+    flex-wrap: wrap;
+  }
+
+  &.inventory {
+    // overflow: hidden;
+  }
+
+  &.grid .toggle-grid,
+  .toggle-list {
+    display: none;
+  }
+
+  .toggle-grid,
+  &.grid .toggle-list {
+    display: inline-block;
+  }
+}

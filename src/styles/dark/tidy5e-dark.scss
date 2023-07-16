@@ -1,0 +1,181 @@
+:root.tidy5eDark {
+  // font color
+  --t5e-primary-font: rgba(255, 255, 255, 0.8);
+
+  --t5e-background: rgba(30, 30, 30, 1);
+
+  --t5e-white: rgba(0, 0, 0, 1);
+  --t5e-primary-color: rgba(255, 255, 255, 0.8);
+  --t5e-secondary-color: rgba(255, 255, 255, 0.65);
+  --t5e-tertiary-color: rgba(255, 255, 255, 0.4);
+  --t5e-light-color: rgba(255, 255, 255, 0.25);
+  --t5e-faint-color: rgba(255, 255, 255, 0.1);
+  --t5e-faintest-color: rgba(255, 255, 255, 0.05);
+
+  --t5e-ability-accent: darkslategrey;
+
+  // sheet header
+  --t5e-header-background: rgba(255, 255, 255, 0.05);
+  --t5e-header-border: rgba(255, 255, 255, 0.25);
+
+  // icons
+  // --t5e-primary-accent: #48BB78;
+  --t5e-primary-accent: rgba(255, 100, 0, 1);
+  --t5e-equipped: rgba(0, 250, 180, 0.3);
+  --t5e-prepared: rgba(0, 250, 180, 0.3);
+  --t5e-pact: rgba(250, 0, 180, 0.3);
+  --t5e-atwill: rgba(226, 246, 4, 0.3);
+  --t5e-innate: rgba(255, 0, 0, 0.3);
+  --t5e-alwaysprepared: rgba(0, 100, 255, 0.3);
+
+  //portrait icons
+  --t5e-icon-background: rgba(30, 30, 30, 1);
+  --t5e-icon-shadow: rgba(0, 0, 0, 0.4);
+  --t5e-icon-outline: rgba(0, 0, 0, 0.4);
+  --t5e-icon-font: rgba(255, 255, 255, 0.4);
+  --t5e-icon-hover: rgba(255, 255, 255, 0.8);
+
+  --t5e-warning-accent: rgba(255, 30, 0, 0.65);
+
+  // item sheets
+  --t5e-check-default: url("../images/check-dark-unchecked.svg");
+  --t5e-check-checked: url("../images/check-light-checked.svg");
+  --t5e-checkbox-font: rgba(255, 255, 255, 0.8);
+  --t5e-checkbox-outline: rgba(50, 50, 50, 1);
+  --t5e-checkbox-unchecked: rgba(75, 75, 75, 1);
+  --t5e-checkbox-checked: rgba(0, 255, 0, 0.5);
+
+  .tidy5e {
+    --t5e-color-bg-option: rgba(100, 100, 100, 1);
+    .prosemirror {
+      --t5e-color-control-bg: rgba(50, 50, 50, 1);
+      --t5e-color-hover-bg: rgba(20, 20, 20, 1);
+    }
+  }
+} //.tidy5eDark
+
+.tidy5eDark {
+  .tidy5e.sheet.actor {
+    .tidy5e-sheet {
+      background-color: var(--t5e-background);
+    }
+
+    .spellcasting-ability {
+      background: var(--t5e-background);
+    }
+
+    .environment-label span {
+      color: var(--t5e-background);
+    }
+
+    select option {
+      color: var(--t5e-background);
+    }
+
+    #item-info-container {
+      background: var(--t5e-background);
+    }
+
+    a.entity-link,
+    a.content-link,
+    a.inline-roll {
+      color: var(--t5e-primary-font);
+      background: var(--t5e-faint-color);
+    }
+  }
+
+  .tidy5e.sheet.item {
+    .window-content {
+      color: var(--t5e-primary-font);
+
+      form {
+        background-color: var(--t5e-background);
+      }
+
+      form .hint {
+        color: var(--t5e-tertiary-color);
+      }
+    }
+
+    .tox .tox-toolbar-overlord button {
+      color: #222;
+    }
+
+    .tox-sidebar-wrap {
+      padding: 8px;
+      background: var(--t5e-secondary-color);
+    }
+
+    select option {
+      color: var(--t5e-primary-font);
+      background: var(--t5e-background);
+    }
+
+    a.content-link {
+      color: var(--t5e-primary-font);
+      background: var(--t5e-faint-color);
+    }
+
+    .tab.advancement .items-list {
+      .items-header div.item-checkmark {
+        flex: 0 0 44px;
+        color: var(--t5e-prepared);
+      }
+      .item .item-name {
+        .item-image {
+          filter: invert(1);
+        }
+      }
+    }
+
+    .tab.effects {
+      h3 {
+        border: none;
+      }
+    }
+
+    input {
+      color: var(--t5e-primary-font);
+
+      &::placeholder {
+        color: var(--t5e-tertiary-color);
+      }
+    }
+  }
+
+  .tidy5e.sheet.actor {
+    .tox-toolbar-overlord,
+    .tox-toolbar__primary {
+      background: #fff;
+      background-color: #fff;
+    }
+
+    .tox .tox-toolbar-overlord button {
+      color: #222;
+    }
+
+    .tox-sidebar-wrap {
+      padding: 8px;
+      background: var(--t5e-secondary-color);
+    }
+  }
+
+  .tidy5e.sheet .prosemirror menu {
+    button:hover {
+      background: rgba(100, 100, 100, 1);
+    }
+    .pm-dropdown {
+      background: rgba(100, 100, 100, 1);
+
+      ul {
+        background: rgba(100, 100, 100, 1);
+      }
+
+      li:hover {
+        background: rgba(50, 50, 50, 1);
+      }
+    }
+  }
+}
+
+@import "_dark-modules.scss";

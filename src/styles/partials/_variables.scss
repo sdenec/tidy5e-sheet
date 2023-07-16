@@ -1,0 +1,97 @@
+:root {
+  --t5e-modesto: "Modesto Condensed", "Palatino Linotype", serif;
+  --t5e-signika: "Signika", sans-serif;
+
+  //font colors
+  --t5e-primary-font: rgba(0, 0, 0, 0.9);
+
+  --t5e-background: rgba(236, 233, 223, 1);
+
+  --t5e-faintest-color: rgba(0, 0, 0, 0.05);
+  --t5e-faint-color: rgba(0, 0, 0, 0.1);
+  --t5e-light-color: rgba(0, 0, 0, 0.25);
+  --t5e-primary-color: rgba(0, 0, 0, 0.9);
+  --t5e-secondary-color: rgba(0, 0, 0, 0.65);
+  --t5e-tertiary-color: rgba(0, 0, 0, 0.4);
+  --t5e-primary-accent: rgba(255, 100, 0, 1);
+  --t5e-white: rgba(255, 255, 255, 1);
+  --t5e-faint-white: rgba(255, 255, 255, 0.2);
+  --t5e-linked-accent: rgba(0, 255, 0, 0.75);
+  --t5e-unlinked-accent: rgba(255, 0, 0, 0.75);
+  --t5e-linked-light: rgba(0, 255, 0, 0.4);
+  --t5e-unlinked-light: rgba(255, 0, 0, 0.4);
+  --t5e-safe-accent: rgba(0, 150, 100, 0.6);
+  --t5e-unsafe-accent: rgba(255, 0, 0, 0.6);
+
+  // sheet header
+  --t5e-header-background: rgba(255, 255, 255, 0.2);
+  --t5e-header-border: rgba(0, 0, 0, 0.25);
+
+  //items
+  --t5e-stat-font: rgba(236, 233, 223, 1);
+  --t5e-prepareable: rgba(119, 136, 153, 1);
+  --t5e-equipped: rgba(50, 205, 50, 0.3);
+  --t5e-equipped-outline: rgba(50, 205, 50, 1);
+  --t5e-equipped-accent: rgba(173, 255, 47, 1);
+  --t5e-prepared: rgba(50, 205, 50, 0.3);
+  --t5e-prepared-outline: rgba(50, 205, 50, 1);
+  --t5e-prepared-accent: rgba(173, 255, 47, 1);
+  --t5e-pact: rgba(250, 0, 180, 0.3);
+  --t5e-pact-outline: rgba(250, 50, 213, 1);
+  --t5e-pact-accent: rgba(198, 119, 193, 1);
+  --t5e-atwill: rgba(226, 246, 4, 0.3);
+  --t5e-atwill-outline: rgba(163, 165, 50, 1);
+  --t5e-atwill-accent: rgba(255, 242, 0, 1);
+  --t5e-innate: rgba(255, 0, 0, 0.3);
+  --t5e-innate-outline: rgba(231, 23, 23, 1);
+  --t5e-innate-accent: rgba(195, 69, 69, 1);
+  --t5e-alwaysprepared: rgba(0, 0, 255, 0.15);
+  --t5e-alwaysprepared-outline: rgba(65, 105, 225, 1);
+  --t5e-alwaysprepared-accent: rgba(0, 191, 255, 1);
+
+  --t5e-magic-accent: rgba(255, 255, 0, 1);
+  --t5e-faint-magic-accent: rgba(255, 255, 0, 0.6);
+  --t5e-magic-outline: rgba(175, 255, 47, 1);
+  --t5e-attunement-required: rgba(205, 92, 92, 1);
+  --t5e-icon-attuned: rgba(0, 0, 0, 0.4);
+
+  --t5e-xp-bar: rgba(94, 225, 146, 1);
+  --t5e-encumbrance-bar: rgba(108, 138, 165, 1);
+  --t5e-encumbrance-bar-outline: rgba(205, 228, 255, 1);
+  --t5e-encumbrance-outline: rgba(0, 0, 0, 0.9);
+
+  --t5e-warning-accent: rgba(255, 0, 0, 0.6);
+
+  //portrait icons
+  --t5e-icon-background: rgba(236, 233, 223, 1);
+  --t5e-icon-shadow: rgba(0, 0, 0, 0.4);
+  --t5e-icon-outline: rgba(0, 0, 0, 0.4);
+  --t5e-icon-font: rgba(0, 0, 0, 0.4);
+  --t5e-exhaustion-font: rgba(0, 0, 0, 0.4);
+  --t5e-icon-hover: rgba(0, 0, 0, 0.9);
+
+  --t5e-pc-border: 0px;
+  --t5e-npc-border: 0px;
+  --t5e-vehicle-border: 0px;
+
+  //notes
+  --t5e-note-background: rgba(0, 0, 0, 0.9);
+
+  //exhaustion
+  --t5e-exhaustion-lvl1: rgba(255, 230, 0, 1);
+  --t5e-exhaustion-lvl2: rgba(255, 130, 0, 1);
+  --t5e-exhaustion-lvl3: rgba(255, 50, 0, 1);
+
+  --t5e-ability-accent: darkslategrey;
+  // context menu
+  --t5e-context-outline: rgba(0, 0, 0, 0.4);
+  --t5e-context-shadow: rgba(0, 0, 0, 0.65);
+
+  // item sheets
+  --t5e-check-default: url("../images/check-dark-unchecked.svg");
+  --t5e-check-checked: url("../images/check-dark-checked.svg");
+  --t5e-checkbox-font: rgba(0, 0, 0, 0.9);
+  --t5e-checkbox-outline: rgba(150, 150, 150, 1);
+  --t5e-checkbox-unchecked: #d8d7d1;
+  --t5e-checkbox-checked: rgba(0, 255, 0, 0.3);
+}

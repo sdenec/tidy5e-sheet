@@ -1,0 +1,131 @@
+// font settings
+
+.ae-marker {
+  display: inline-block;
+  padding: 1px 3px 0 3px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 600;
+  background: var(--t5e-warning-accent);
+  color: var(--t5e-secondary-color);
+  border-radius: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 700;
+  border: none;
+}
+
+.char-name,
+.level,
+.attribute-name,
+.header-attribute .value,
+.ability-name,
+.attribute-value {
+  font-family: var(--t5e-modesto);
+}
+
+// general elements
+
+.rollable {
+  cursor: pointer;
+}
+
+.rollable:hover {
+  text-shadow: none;
+  color: var(--t5e-primary-accent);
+}
+
+[contenteditable] {
+  border: none;
+  outline: none;
+  display: inline-block;
+  border-radius: 3px;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -o-user-select: text;
+
+  &:empty::before {
+    content: attr(data-placeholder);
+    pointer-events: none;
+    display: block; // For Firefox
+    color: var(--t5e-tertiary-color);
+  }
+}
+
+.window-content a:hover {
+  text-shadow: none;
+}
+
+img,
+svg {
+  vertical-align: middle;
+  border: none;
+  border-radius: 0;
+}
+
+input {
+  display: block;
+  padding: 0;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: none;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+// pointer styles
+input[type="checkbox"],
+input[type="radio"],
+button,
+select {
+  cursor: pointer;
+  box-shadow: none;
+  color: var(--t5e-primary-font);
+}
+
+[contenteditable],
+input[type="text"],
+input[type="number"] {
+  box-shadow: 0px 0px 0 3px transparent inset;
+  transition: box-shadow 0.3s ease;
+  color: var(--t5e-primary-font);
+}
+
+[contenteditable="true"]:hover,
+[contenteditable="true"]:focus,
+input[type="text"]:hover,
+input[type="text"]:focus {
+  box-shadow: 0px 0px 0px 1px var(--t5e-primary-accent) inset;
+}
+
+input[disabled],
+input[disabled]:hover,
+[contenteditable="false"],
+[contenteditable="false"]:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+input[type="text"]::placeholder {
+  color: var(--t5e-tertiary-color);
+}
+
+button:hover,
+select:hover {
+  background: var(--t5e-faint-color);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+}
