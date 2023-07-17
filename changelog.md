@@ -1,3 +1,7 @@
+### 0.9.6
+
+- Bug fix on hooks
+
 ### 0.9.5
 
 - Add debug messages on the hooks

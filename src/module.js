@@ -87,18 +87,18 @@ Hooks.on("applyActiveEffect", (actor, effect, options) => {
   Tidy5eSheetApplyActiveEffect(actor, effect, options);
 });
 
-Hooks.on(`createActiveEffect`, (effect, data, id) => {
-  Tidy5eSheetCreateActiveEffect(effect, data, id);
-  Tidy5eExhaustionCreateActiveEffect(effect, data, id);
+Hooks.on(`createActiveEffect`, (activeEffect, _config, options) => {
+  Tidy5eSheetCreateActiveEffect(activeEffect, _config, options);
+  Tidy5eExhaustionCreateActiveEffect(activeEffect, _config, options);
 });
 
 Hooks.on("updateActiveEffect", (activeEffect, _config, options) => {
   Tidy5eSheetUpdateActiveEffect(activeEffect, _config, options);
 });
 
-Hooks.on(`deleteActiveEffect`, (effect, data, id) => {
+Hooks.on(`deleteActiveEffect`, (activeEffect, _config, options) => {
   Tidy5eSheetDeleteActiveEffect(activeEffect, _config, options);
-  Tidy5eExhaustionDeleteActiveEffect(effect, data, id);
+  Tidy5eExhaustionDeleteActiveEffect(activeEffect, _config, options);
 });
 
 Hooks.on("renderTidy5eUserSettings", () => {
