@@ -95,6 +95,7 @@ export const tidy5eHBEnableUpcastFreeSpell = async function (app, html, options)
 
 export function Tidy5eHBUpcastFreeSpellsDnd5ePreItemUsageConsumption(item, config, options) {
   if (game.settings.get(CONSTANTS.MODULE_ID, "hbEnableUpcastFreeSpell")) {
+    debug(`tidy5e-hb-upcast-free-spells | Tidy5eHBUpcastFreeSpellsDnd5ePreItemUsageConsumption | start`);
     if (item?.type != "spell") {
       debug(`tidy5eHBEnableUpcastFreeSpell | dnd5e.preItemUsageConsumption | Nevermind if this isn't a spell`);
       return; // Nevermind if this isn't a spell
@@ -107,5 +108,6 @@ export function Tidy5eHBUpcastFreeSpellsDnd5ePreItemUsageConsumption(item, confi
         config.consumeSpellLevel = String(parseInt(config.consumeSpellLevel) - 1);
       }
     }
+    debug(`tidy5e-hb-upcast-free-spells | Tidy5eHBUpcastFreeSpellsDnd5ePreItemUsageConsumption | end`);
   }
 }

@@ -6,7 +6,7 @@ import {
 } from "./scripts/app/tidy5e-exhaustion";
 import { Tidy5eHBUpcastFreeSpellsDnd5ePreItemUsageConsumption } from "./scripts/app/tidy5e-hb-upcast-free-spell";
 import { isEmptyObject, is_real_number } from "./scripts/app/tidy5e-helpers";
-import { warn } from "./scripts/app/tidy5e-logger-util";
+import { debug, warn } from "./scripts/app/tidy5e-logger-util";
 import { preloadTidy5eHandlebarsTemplates } from "./scripts/app/tidy5e-templates";
 import { Tidy5eSheetItemInitialize } from "./scripts/tidy5e-item";
 import { Tidy5eSheetNPCInitialize } from "./scripts/tidy5e-npc";
@@ -22,6 +22,7 @@ import {
 import { Tidy5eSheetVehicleInitialize } from "./scripts/tidy5e-vehicle";
 
 Hooks.once("init", async () => {
+  debug(`module | init | start`);
   // Preload tidy5e Handlebars Templates
   preloadTidy5eHandlebarsTemplates();
 
@@ -32,9 +33,11 @@ Hooks.once("init", async () => {
   Tidy5eSheetNPCInitialize();
   Tidy5eSheetVehicleInitialize();
   Tidy5eSheetItemInitialize();
+  debug(`module | init | end`);
 });
 
 Hooks.once("ready", async (app, html, data) => {
+  debug(`module | ready | start`);
   if (!game.modules.get("colorsettings")?.active && game.user?.isGM) {
     let word = "install and activate";
     if (game.modules.get("colorsettings")) word = "activate";
@@ -47,10 +50,12 @@ Hooks.once("ready", async (app, html, data) => {
     //ui.notifications?.error(errorText);
     //throw new Error(errorText);
   }
+  debug(`module | ready | end`);
 });
 
 /** perform some necessary operations on character sheet **/
 Hooks.on("renderActorSheet", (app, html, data) => {
+  debug(`module | renderActorSheet | start`);
   // Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills
   // Issue https://github.com/sdenec/tidy5e-sheet/issues/662
   // if (game.modules.get("dnd5e-custom-skills")?.active) {
@@ -69,9 +74,10 @@ Hooks.on("renderActorSheet", (app, html, data) => {
       `module | renderActorSheet | Patch 'system.attributes.init.bonus' for value ${app.actor.system?.attributes?.init?.bonus}`
     );
   }
+  debug(`module | renderActorSheet | end`);
 });
 
-Hooks.on("updateActor", function (actorEntity, update, options, userId) {});
+// Hooks.on("updateActor", function (actorEntity, update, options, userId) {});
 
 Hooks.on(`dnd5e.restCompleted`, (actorEntity, data) => {
   Tidy5eExhaustionDnd5eRestCompleted(actorEntity, data);

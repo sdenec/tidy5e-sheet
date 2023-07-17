@@ -950,8 +950,10 @@ export function Tidy5eSheetApplyActiveEffect(actor, effect, options) {
   if (!(actor instanceof Actor) || !effect.effect.changes) {
     return;
   }
+  debug(`tidy5e-sheet | Tidy5eSheetApplyActiveEffect | start`);
   const changes = effect.effect.changes;
   tidyCustomEffect(actor, changes);
+  debug(`tidy5e-sheet | Tidy5eSheetApplyActiveEffect | end`);
 }
 
 /**
@@ -961,8 +963,10 @@ export function Tidy5eSheetCreateActiveEffect(activeEffect, _config, options) {
   if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
     return;
   }
+  debug(`tidy5e-sheet | Tidy5eSheetCreateActiveEffect | start`);
   const changes = _config.changes;
   tidyCustomEffect(activeEffect?.parent, changes);
+  debug(`tidy5e-sheet | Tidy5eSheetCreateActiveEffect | end`);
 }
 
 /**
@@ -972,8 +976,10 @@ export function Tidy5eSheetUpdateActiveEffect(activeEffect, _config, options) {
   if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
     return;
   }
+  debug(`tidy5e-sheet | Tidy5eSheetUpdateActiveEffect | start`);
   const changes = _config.changes;
   tidyCustomEffect(activeEffect?.parent, changes);
+  debug(`tidy5e-sheet | Tidy5eSheetUpdateActiveEffect | end`);
 }
 
 /**
@@ -983,8 +989,10 @@ export function Tidy5eSheetDeleteActiveEffect(activeEffect, _config, options) {
   if (!(activeEffect?.parent instanceof Actor) || !_config.changes) {
     return;
   }
+  debug(`tidy5e-sheet | Tidy5eSheetDeleteActiveEffect | start`);
   const changes = _config.changes;
   tidyCustomEffect(activeEffect?.parent, changes);
+  debug(`tidy5e-sheet | Tidy5eSheetDeleteActiveEffect | end`);
 }
 
 Hooks.on("renderTidy5eSheet", (app, html, data) => {
@@ -1011,6 +1019,8 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 });
 
 export function Tidy5eSheetRenderAbilityUseDialog(app, html, options) {
+  debug(`tidy5e-sheet | Tidy5eSheetRenderAbilityUseDialog | start`);
   tidy5eSpellLevelButtons(app, html, options);
   tidy5eHBEnableUpcastFreeSpell(app, html, options);
+  debug(`tidy5e-sheet | Tidy5eSheetRenderAbilityUseDialog | end`);
 }

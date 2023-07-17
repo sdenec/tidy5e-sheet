@@ -1,5 +1,6 @@
 import CONSTANTS from "./constants.js";
 import { settingsList } from "./settingsList.js";
+import { debug } from "./tidy5e-logger-util.js";
 
 export class Tidy5eUserSettings extends FormApplication {
   static init() {
@@ -240,9 +241,11 @@ export class Tidy5eUserSettings extends FormApplication {
 }
 
 export function Tidy5eSettingsGmOnlySetup() {
+  debug(`settings | Tidy5eSettingsGmOnlySetup | start`);
   if (!game.user.isGM) {
     document.querySelectorAll(".tidy5e.settings .gm-only").forEach(function (el) {
       el.remove();
     });
   }
+  debug(`settings | Tidy5eSettingsGmOnlySetup | end`);
 }

@@ -271,6 +271,7 @@ export async function updateExhaustion(actorEntity) {
 
 // Rest reduces by 1
 export function Tidy5eExhaustionDnd5eRestCompleted(actorEntity, data) {
+  debug(`tidy5e-exhaustion | Tidy5eExhaustionDnd5eRestCompleted | start`);
   if (game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "default") {
     return;
   }
@@ -290,6 +291,7 @@ export function Tidy5eExhaustionDnd5eRestCompleted(actorEntity, data) {
       warn(`Long rest is not supported for actor ype '${actor.type}'`);
     }
   }
+  debug(`tidy5e-exhaustion | Tidy5eExhaustionDnd5eRestCompleted | end`);
 }
 
 // set exhaustion value to dfred/cub effect level
@@ -327,6 +329,7 @@ export function Tidy5eExhaustionDeleteActiveEffect(effect, data, id) {
     game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "dfredce" ||
     game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "cub"
   ) {
+    debug(`tidy5e-exhaustion | Tidy5eExhaustionDeleteActiveEffect | start`);
     const actor = game.actors.get(effect.parent._id);
     const effectName = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustom");
     const levels = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustomTiers");
@@ -367,5 +370,6 @@ export function Tidy5eExhaustionDeleteActiveEffect(effect, data, id) {
         warn(`deleteActiveEffect is not supported for actor ype '${actor.type}'`);
       }
     }
+    debug(`tidy5e-exhaustion | Tidy5eExhaustionDeleteActiveEffect | end`);
   }
 }

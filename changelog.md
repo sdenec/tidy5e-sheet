@@ -1,3 +1,6 @@
+### 0.9.5
+
+- Add debug messages on the hooks
 
 ### 0.9.4
 
