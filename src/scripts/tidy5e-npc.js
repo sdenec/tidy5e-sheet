@@ -1322,5 +1322,7 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   // applyLazyHp(app, html, data);
 
   // NOTE LOCKS ARE THE LAST THING TO SET
-  applyLocksNpcSheet(app, html, data);
+  if (!game.settings.get(CONSTANTS.MODULE_ID, "enablePermanentUnlockOnNPCIfYouAreGM")) {
+    applyLocksNpcSheet(app, html, data);
+  }
 });

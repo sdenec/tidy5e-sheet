@@ -662,6 +662,15 @@ export function settingsList() {
     default: 740,
   });
 
+  game.settings.register(CONSTANTS.MODULE_ID, "enablePermanentUnlockOnNPCIfYouAreGM", {
+    name: `${game.i18n.localize("TIDY5E.Settings.EnablePermanentUnlockOnNPCIfYouAreGM.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.EnablePermanentUnlockOnNPCIfYouAreGM.hint"),
+    scope: "world",
+    config: false,
+    default: false,
+    type: Boolean,
+  });
+
   // Default width for vehicle sheet
 
   game.settings.register(CONSTANTS.MODULE_ID, "vehicleSheetWidth", {
@@ -670,6 +679,15 @@ export function settingsList() {
     config: false,
     type: Number,
     default: 740,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, "enablePermanentUnlockOnVehicleIfYouAreGM", {
+    name: `${game.i18n.localize("TIDY5E.Settings.EnablePermanentUnlockOnVehicleIfYouAreGM.name")}`,
+    hint: game.i18n.localize("TIDY5E.Settings.EnablePermanentUnlockOnVehicleIfYouAreGM.hint"),
+    scope: "world",
+    config: false,
+    default: false,
+    type: Boolean,
   });
 
   // Lazy HP and Exp (REMOVED 2.1.5 do the job now)

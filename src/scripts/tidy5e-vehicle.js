@@ -279,5 +279,7 @@ Hooks.on("renderTidy5eVehicle", (app, html, data) => {
   // applyLazyHp(app, html, data);
 
   // NOTE LOCKS ARE THE LAST THING TO SET
-  applyLocksVehicleSheet(app, html, data);
+  if (!game.settings.get(CONSTANTS.MODULE_ID, "enablePermanentUnlockOnVehicleIfYouAreGM")) {
+    applyLocksVehicleSheet(app, html, data);
+  }
 });

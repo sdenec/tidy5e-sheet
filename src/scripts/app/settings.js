@@ -98,7 +98,9 @@ export class Tidy5eUserSettings extends FormApplication {
 
       "playerSheetWidth",
       "npsSheetWidth",
+      "enablePermanentUnlockOnNPCIfYouAreGM",
       "vehicleSheetWidth",
+      "enablePermanentUnlockOnVehicleIfYouAreGM",
 
       "traitLabelsEnabled",
       "traitsAlwaysShownNpc",

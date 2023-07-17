@@ -607,5 +607,13 @@
   "TIDY5E.Settings.HBSetFeaturesForUpcastFreeSpell": {
     "name": "Set features for upcast free spell",
     "hint": "This setting work only with the module setting 'Enable upcast free spell' enabled, is a string of feature names separated by the character '|' , the search for such features is case unsensitive if found a 'valid' feature enables actors to use the feature upcast. IF LEFT EMPTY IT WILL BE IGNORED."
+  },
+  "TIDY5E.Settings.EnablePermanentUnlockOnNPCIfYouAreGM": {
+    "name": "Permanently enable unlock on NPC Sheet if you are a GM",
+    "hint": "Shouldn't the GM be able to edit NPC sheets even when locked ? If it's not a bug then is it possible to have NPC sheets unlocked by default ? Having to unlocked NPC sheets to just delete active effects or items every time has become tedious"
+  },
+  "TIDY5E.Settings.EnablePermanentUnlockOnVehicleIfYouAreGM": {
+    "name": "Permanently enable unlock on Vehicle Sheet if you are a GM",
+    "hint": "Shouldn't the GM be able to edit Vehicle sheets even when locked ? If it's not a bug then is it possible to have Vehicle sheets unlocked by default ? Having to unlocked Vehicle sheets to just delete active effects or items every time has become tedious"
   }
 }
