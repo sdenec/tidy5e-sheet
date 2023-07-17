@@ -6,13 +6,13 @@ import CONSTANTS from "./constants.js";
 // export let debugEnabled = 0;
 // 0 = none, warnings = 1, debug = 2, all = 3
 export function debug(msg, args = "") {
-  //   if (game.settings.get(CONSTANTS.MODULE_ID, "debug")) {
-  console.log(`DEBUG | ${CONSTANTS.MODULE_ID} | ${msg}`, args);
-  //@ts-ignore
-  if (game.modules.get("_dev-mode")?.api?.getPackageDebugValue(CONSTANTS.MODULE_ID)) {
-    console.log(CONSTANTS.MODULE_ID, "|", ...args);
+  if (game.settings.get(CONSTANTS.MODULE_ID, "debug")) {
+    console.log(`DEBUG | ${CONSTANTS.MODULE_ID} | ${msg}`, args);
+    //@ts-ignore
+    if (game.modules.get("_dev-mode")?.api?.getPackageDebugValue(CONSTANTS.MODULE_ID)) {
+      console.log(CONSTANTS.MODULE_ID, "|", ...args);
+    }
   }
-  //   }
   return msg;
 }
 export function log(message, args = "") {
