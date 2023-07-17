@@ -6761,7 +6761,7 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	padding: 0 4px 8px 4px;
 }
 
-.items-with-spells-items-list .items-header {
+.tidy5e.sheet .items-with-spells-items-list .items-header {
 	height: 28px;
 	margin: 2px 0;
 	padding: 0;
@@ -6770,11 +6770,11 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	border: 2px groove #eeede0;
 	font-weight: bold;
   }
-  .items-with-spells-items-list .items-header > * {
+  .tidy5e.sheet .items-with-spells-items-list .items-header > * {
 	font-size: 12px;
 	text-align: center;
   }
-  .items-with-spells-items-list .items-header h3 {
+  .tidy5e.sheet .items-with-spells-items-list .items-header h3 {
 	padding-left: 5px;
 	font-family: "Modesto Condensed", "Palatino Linotype", serif;
 	font-size: 20px;
@@ -6782,7 +6782,7 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	text-align: left;
 	font-size: 16px;
   }
-  .items-with-spells-items-list .item .item-name .item-image {
+  .tidy5e.sheet .items-with-spells-items-list .item .item-name .item-image {
 	flex: 0 0 30px;
 	height: 30px;
 	background-size: cover;
@@ -6790,19 +6790,19 @@ form .form-group.spell-lvl-btn .form-fields .spell-lvl-btn__label .available-slo
 	border: none;
 	margin-right: 5px;
   }
-  .items-with-spells-items-list, .items-with-spells-items-list .item-list {
+  .tidy5e.sheet .items-with-spells-items-list, .items-with-spells-items-list .item-list {
 	padding: 0px;
   }
-  .items-with-spells-items-list .item-control {
+  .tidy5e.sheet .items-with-spells-items-list .item-control {
 	text-align: center;
   }
-  .items-with-spells-items-list .items-header .item-name {
+  .tidy5e.sheet .items-with-spells-items-list .items-header .item-name {
 	margin: 0px;
 	border:none;
   }
   .tidy5e-sheet :not(.items-footer) > .item-create {
     display: none;
   }
-.tidy5e.sheet .traits .tag.tool h4{
+  .tidy5e.sheet .traits .tag.tool h4{
 	font-weight: normal;
-}
+  }
