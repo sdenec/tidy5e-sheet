@@ -1,4 +1,8 @@
-### 0.9.6-7-8
+### 0.9.10
+
+- Add module settings "enablePermanentUnlockOnVehicleIfYouAreGM" and "enablePermanentUnlockOnNPCIfYouAreGM"" for fix https://github.com/sdenec/tidy5e-sheet/issues/764
+
+### 0.9.6-7-8-9
 
 - Bug fix on hooks
 

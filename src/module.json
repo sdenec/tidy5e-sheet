@@ -2,7 +2,7 @@
   "id": "tidy5e-sheet",
   "title": "Tidy5e Sheet",
   "description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "authors": [
     {
       "name": "sednec#3813"
@@ -85,8 +85,8 @@
   },
   "manifestPlusVersion": "1.2.1",
   "url": "https://github.com/sdenec/tidy5e-sheet",
-  "manifest": "https://github.com/sdenec/tidy5e-sheet/releases/download/0.9.9/module.json",
-  "download": "https://github.com/sdenec/tidy5e-sheet/releases/download/0.9.9/module.zip",
+  "manifest": "https://github.com/sdenec/tidy5e-sheet/releases/download/0.9.10/module.json",
+  "download": "https://github.com/sdenec/tidy5e-sheet/releases/download/0.9.10/module.zip",
   "readme": "https://github.com/sdenec/tidy5e-sheet/blob/master/README.md",
   "changelog": "https://github.com/sdenec/tidy5e-sheet/blob/master/changelog.md",
   "bugs": "https://github.com/sdenec/tidy5e-sheet/issues",

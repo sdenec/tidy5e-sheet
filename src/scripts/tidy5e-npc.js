@@ -1322,7 +1322,15 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   // applyLazyHp(app, html, data);
 
   // NOTE LOCKS ARE THE LAST THING TO SET
-  if (!game.settings.get(CONSTANTS.MODULE_ID, "enablePermanentUnlockOnNPCIfYouAreGM")) {
+  if (game.user.isGM) {
+    if (!game.settings.get(CONSTANTS.MODULE_ID, "enablePermanentUnlockOnNPCIfYouAreGM")) {
+      applyLocksNpcSheet(app, html, data);
+    } else {
+      if (!app.actor?.getFlag(CONSTANTS.MODULE_ID, "allow-edit")) {
+        app.actor?.setFlag(CONSTANTS.MODULE_ID, "allow-edit", true);
+      }
+    }
+  } else {
     applyLocksNpcSheet(app, html, data);
   }
 });
