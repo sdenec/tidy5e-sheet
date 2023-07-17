@@ -27,7 +27,7 @@ async function addEditorHeadline(app, html, data) {
 }
 
 // Register Tidy5e Item Sheet and make default
-Items.registerSheet("dnd5e", Tidy5eItemSheet, { makeDefault: true });
+Items.registerSheet("dnd5e", Tidy5eItemSheet, { makeDefault: true, label:"TIDY5E.Tidy5eItemSheet" });
 
 Hooks.on("renderTidy5eItemSheet", (app, html, data) => {
 	addEditorHeadline(app, html, data);

@@ -51,7 +51,7 @@ export class Tidy5eVehicle extends dnd5e.applications.actor.ActorSheet5eVehicle 
 		const context = await super.getData(options);
 
 		Object.keys(context.abilities).forEach((id) => {
-			context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+			context.abilities[id].abbr = CONFIG.DND5E.abilities[id].abbreviation;
 		});
 
 		context.isGM = game.user.isGM;
@@ -269,7 +269,8 @@ async function setSheetClasses(app, html, data) {
 // Register Tidy5e Vehicle Sheet and make default vehicle sheet
 Actors.registerSheet("dnd5e", Tidy5eVehicle, {
 	types: ["vehicle"],
-	makeDefault: true
+	makeDefault: true,
+	label: "TIDY5E.Tidy5eVehicle"
 });
 
 Hooks.on("renderTidy5eVehicle", (app, html, data) => {

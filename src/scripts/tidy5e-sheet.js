@@ -70,7 +70,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		const context = await super.getData(options);
 
 		Object.keys(context.abilities).forEach((id) => {
-			context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+			context.abilities[id].abbr = CONFIG.DND5E.abilities[id].abbreviation;
 		});
 
 		// Journal HTML enrichment
@@ -962,7 +962,8 @@ async function _onQuantityChange(event) {
 // Register Tidy5e Sheet and make default character sheet
 Actors.registerSheet("dnd5e", Tidy5eSheet, {
 	types: ["character"],
-	makeDefault: true
+	makeDefault: true,
+	label: "TIDY5E.Tidy5eSheet"
 });
 
 // Preload tidy5e Handlebars Templates
