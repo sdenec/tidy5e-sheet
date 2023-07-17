@@ -2,7 +2,7 @@
 	"name": "tidy5e-sheet",
 	"title": "Tidy5e Sheet",
 	"description": "Replaces the default D&D 5e character and NPC sheet with an alternate layout focused on a cleaner UI",
-	"version": "0.9.5",
+	"version": "0.9.7",
 	"main": "module.js",
 	"license": "SEE LICENSE IN LICENSE",
 	"private": true,
@@ -46,6 +46,7 @@
 		"eslint": "eslint .",
 		"prepare": "husky install",
 		"prettier-format": "prettier --config .prettierrc --write \"./src/**/*.{ts,js,mjs,json,scss,css}\"",
+        "prettier-format2": "prettier --config .prettierrc --write \"./doc/backup/**/*.{ts,js,mjs,json,scss,css}\"",
 		"sass": "sass ./src/styles:./dist/tidy5e-sheet/css --no-source-map --style expanded ",
 		"prefix": "postcss dist/tidy5e-sheet/styles/**/*.css  --use autoprefixer -d dist/tidy5e-sheet/styles-prefixed "
 	},

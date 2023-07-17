@@ -121,3 +121,5 @@ foundry.js
 /package
 /.vite-cache
 /package-lock.json
+/doc/backup/tidy5e-sheet-old
+/doc/backup/tidy5e-sheet-new
