@@ -1,24 +1,28 @@
 
-### 0-9.3 
+### 0.9.4
+
+- Some bug fixes https://github.com/sdenec/tidy5e-sheet/pull/774 ty to szefo09
+
+### 0.9.3
 
 - Fixes for maxPreparedSpells cusotm spell ty to szefo09
 - BUg fix: https://github.com/sdenec/tidy5e-sheet/issues/769 ty to szefo09
 - Removed Temporary Patch for module incompatibility with https://github.com/misthero/dnd5e-custom-skills for https://github.com/sdenec/tidy5e-sheet/issues/662 -
-- New integration with vite and svelte for better developing 
-- Update module.json for point to the specific version instead the latest 
+- New integration with vite and svelte for better developing
+- Update module.json for point to the specific version instead the latest
 - Added new scss to css integratation
 
 ### 0.9.1
 
 - Try Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/763
 
-### 0.9.0 
+### 0.9.0
 
-- Start integration system 
+- Start integration system
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/759
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/758
 - Cannot roll skill checks https://github.com/sdenec/tidy5e-sheet/issues/752
-- Cannot change skill check proficiency 
+- Cannot change skill check proficiency
 - No tools listed under Tool Proficiency https://github.com/sdenec/tidy5e-sheet/issues/760
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/747 ty to @Adkaiser for the hint
 
@@ -26,9 +30,9 @@
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/749, ty to @tposney
 
-### 0.8.40 
+### 0.8.40
 
-- bug fixed : https://github.com/sdenec/tidy5e-sheet/issues/744 
+- bug fixed : https://github.com/sdenec/tidy5e-sheet/issues/744
 - bug fixed : https://github.com/sdenec/tidy5e-sheet/issues/742
 - Enable system sw5e : https://github.com/sdenec/tidy5e-sheet/issues/731
 
@@ -36,14 +40,14 @@
 
 - Update labels
 
-### 0.8.38 
+### 0.8.38
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/737 ty to @szefo09
 
-### 0.8.37 
+### 0.8.37
 
 - Remove LazyHpAndExp feature because the version system 2.1.5 do the job now, if you have some problem with th hp calculation you should open a issue on the system not this module
-- Some css fix 
+- Some css fix
 
 ### 0.8.36
 
@@ -68,7 +72,7 @@
 - Enable tab homebrew rule for community testing
 - Set default module setting 'hideSpellbookTabNpc' to false
 
-### 0.8.32 
+### 0.8.32
 
 - Update feature ofor reston NPC and try tosolve the issue https://github.com/sdenec/tidy5e-sheet/issues/719
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/704
@@ -97,11 +101,11 @@
 - Update css instead javascript for solve the issue https://github.com/sdenec/tidy5e-sheet/issues/694
 - Add more checks and logs for manage the strange error on https://github.com/sdenec/tidy5e-sheet/issues/696 and https://github.com/sdenec/tidy5e-sheet/issues/707
 - Update css on ac value for vehicle sheet
-- Update module.json for point to the last "release" for trick the update of foundry  
+- Update module.json for point to the last "release" for trick the update of foundry
 
-### 0.8.25 
+### 0.8.25
 
-- bug fix : https://github.com/sdenec/tidy5e-sheet/issues/705 
+- bug fix : https://github.com/sdenec/tidy5e-sheet/issues/705
 - Little css on "allow-edit" min-width on item controls
 - bug fix: https://github.com/sdenec/tidy5e-sheet/issues/702
 
@@ -115,7 +119,7 @@
 
 ### 0.8.22
 
-- Bug https://github.com/sdenec/tidy5e-sheet/issues/701g fix 
+- Bug https://github.com/sdenec/tidy5e-sheet/issues/701g fix
 
 ### 0.8.21
 

@@ -70,7 +70,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
     const context = await super.getData(options);
 
     Object.keys(context.abilities).forEach((id) => {
-      context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+      context.abilities[id].abbr = CONFIG.DND5E.abilities[id].abbreviation;
     });
 
     // Journal HTML enrichment
