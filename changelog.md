@@ -1,3 +1,8 @@
+### 0.9.11
+
+- Try to fix: https://github.com/sdenec/tidy5e-sheet/issues/775
+
+
 ### 0.9.10
 
 - Add module settings "enablePermanentUnlockOnVehicleIfYouAreGM" and "enablePermanentUnlockOnNPCIfYouAreGM"" for fix https://github.com/sdenec/tidy5e-sheet/issues/764

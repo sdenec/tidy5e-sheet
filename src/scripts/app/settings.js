@@ -3,13 +3,13 @@ import { settingsList } from "./settingsList.js";
 import { debug } from "./tidy5e-logger-util.js";
 
 export class Tidy5eUserSettings extends FormApplication {
-  // static isInitialized = false;
+  static isInitialized = false;
 
   static init() {
-    // if(!Tidy5eUserSettings.isInitialized){
-    settingsList();
-    // Tidy5eUserSettings.isInitialized = true;
-    // }
+    if (!Tidy5eUserSettings.isInitialized) {
+      settingsList();
+      Tidy5eUserSettings.isInitialized = true;
+    }
   }
 
   // settings template
