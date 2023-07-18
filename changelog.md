@@ -1,7 +1,11 @@
+### 0.9.12
+
+- BUg fix: https://github.com/sdenec/tidy5e-sheet/issues/775
+- bug fix: https://github.com/sdenec/tidy5e-sheet/issues/776
+
 ### 0.9.11
 
 - Try to fix: https://github.com/sdenec/tidy5e-sheet/issues/775
-
 
 ### 0.9.10
 

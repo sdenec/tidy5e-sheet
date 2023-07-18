@@ -6,7 +6,14 @@ import CONSTANTS from "./constants.js";
 // export let debugEnabled = 0;
 // 0 = none, warnings = 1, debug = 2, all = 3
 export function debug(msg, args = "") {
-  if (game.settings.get(CONSTANTS.MODULE_ID, "debug")) {
+  let isInDebug = false;
+  try {
+    isInDebug = game.settings.get(CONSTANTS.MODULE_ID, "debug");
+  } catch (e) {
+    // DO NOTHING
+    isInDebug = game.modules.get("_dev-mode")?.api?.getPackageDebugValue(CONSTANTS.MODULE_ID);
+  }
+  if (isInDebug) {
     console.log(`DEBUG | ${CONSTANTS.MODULE_ID} | ${msg}`, args);
     //@ts-ignore
     if (game.modules.get("_dev-mode")?.api?.getPackageDebugValue(CONSTANTS.MODULE_ID)) {

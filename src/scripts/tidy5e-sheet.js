@@ -583,7 +583,7 @@ async function spellAttackMod(app, html, data) {
   } catch (err) {
     // safeEval failed try a roll
     try {
-      spellBonus = new Roll(formula).evaluate({ async: false }).total;
+      spellBonus = await new Roll(formula).evaluate({ async: true }).total;
     } catch (err) {
       error("spell bonus calculation failed : " + err?.message, true);
     }
