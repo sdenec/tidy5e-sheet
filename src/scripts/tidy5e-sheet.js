@@ -947,12 +947,18 @@ export function Tidy5eSheetInitialize() {
 }
 
 export function Tidy5eSheetApplyActiveEffect(actor, effect, options) {
-  if (!(actor instanceof Actor) || !effect.effect.changes) {
+  if (!actor || !effect) {
     return;
   }
   debug(`tidy5e-sheet | Tidy5eSheetApplyActiveEffect | start`);
-  const changes = effect.effect.changes;
-  tidyCustomEffect(actor, changes);
+  if (actor instanceof Actor && effect.effect?.changes) {
+    const changes = effect.effect.changes;
+    tidyCustomEffect(actor, changes);
+  } else if (actor.parent && actor.parent instanceof Actor && effect.changes) {
+    warn(`are you using the old hook ?`);
+    const changes = effect.changes;
+    tidyCustomEffect(actor.parent, changes);
+  }
   debug(`tidy5e-sheet | Tidy5eSheetApplyActiveEffect | end`);
 }
 

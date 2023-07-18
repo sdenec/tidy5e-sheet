@@ -1,4 +1,4 @@
-### 0.9.12
+### 0.9.12-13
 
 - BUg fix: https://github.com/sdenec/tidy5e-sheet/issues/775
 - bug fix: https://github.com/sdenec/tidy5e-sheet/issues/776
