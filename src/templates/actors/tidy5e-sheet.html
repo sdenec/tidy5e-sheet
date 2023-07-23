@@ -132,10 +132,10 @@
 
         		{{!-- Temp Hit Points --}}
 				<div class="portrait-temp">
-					<input name="system.attributes.hp.temp" type="number" step="any" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}" title="+{{ localize 'DND5E.Temp' }}"
-					value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}" maxlength="3">
-					<input name="system.attributes.hp.tempmax" type="number" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}" title="+{{ localize 'DND5E.Max' }}"
-					value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}" maxlength="3">
+					<input name="system.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DND5E.Temp' }}"
+					value="{{#if (eq hp.temp 0)}}{{else}}{{hp.temp}}{{/if}}" title="{{localize 'DND5E.HitPointsTemp'}}" data-dtype="Number" maxlength="5">
+					<input name="system.attributes.hp.tempmax" type="text" class="max-temphp" placeholder="+{{ localize 'DND5E.Max' }}"
+					value="{{#if (eq hp.tempmax 0)}}{{else}}{{hp.tempmax}}{{/if}}" title="{{localize 'DND5E.HitPointsTempMax'}}" data-dtype="Number" maxlength="5">
 					{{#if @root.allowHpConfigOverride}}
 					<a class="config-button hit-points-tidy" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
 						<i class="fas fa-cog"></i>

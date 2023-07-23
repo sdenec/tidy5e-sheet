@@ -1,3 +1,7 @@
+### 0.9.14
+
+- Applied suggestion from : https://github.com/sdenec/tidy5e-sheet/issues/777
+
 ### 0.9.12-13
 
 - BUg fix: https://github.com/sdenec/tidy5e-sheet/issues/775
