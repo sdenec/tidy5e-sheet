@@ -1,3 +1,7 @@
+### 0.9.15
+
+- Applied css fix from https://github.com/sdenec/tidy5e-sheet/pull/761 comment
+
 ### 0.9.14
 
 - Applied suggestion from : https://github.com/sdenec/tidy5e-sheet/issues/777
