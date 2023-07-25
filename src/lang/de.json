@@ -107,6 +107,30 @@
 
   "TIDY5E.ItemDetailsHeadline": "Mechaniken/Flavor-Text",
 
+  "TIDY5E.Class": "Klasse",
+  "TIDY5E.SpellClass": "Zauberklasse",
+  "TIDY5E.Spellbook": "Zauberbuch",
+
+  "TIDY5E.ClassArtificer": "Artifizient",
+  "TIDY5E.ClassBarbarian": "Barbar",
+  "TIDY5E.ClassBard": "Barde",
+  "TIDY5E.ClassCleric": "Kleriker",
+  "TIDY5E.ClassCustom": "Eigene",
+  "TIDY5E.ClassDruid": "Druide",
+  "TIDY5E.ClassFighter": "Kämpfer",
+  "TIDY5E.ClassMonk": "Mönch",
+  "TIDY5E.ClassPaladin": "Paladin",
+  "TIDY5E.ClassRanger": "Waldläufer",
+  "TIDY5E.ClassRogue": "Schurke",
+  "TIDY5E.ClassSorcerer": "Zauberer",
+  "TIDY5E.ClassWarlock": "Hexenmeister",
+  "TIDY5E.ClassWizard": "Magier",
+
+  "TIDY5E.OriginSummaryConfig": "Herkunftskonfiguration",
+
+  "TIDY5E.LevelBump": "Wirkung vom nächsten Grad",
+  "TIDY5E.LevelBumpTooltip": "Den Zauber mit  wirken, als wäre der verbrauchte Zauberplatz einen Grad höher.",
+
   "TIDY5E.Settings.GlobalLabel": "Global",
   "TIDY5E.Settings.DebugLabel": "Debug",
   "TIDY5E.Settings.UserLabel": "Nutzer",
