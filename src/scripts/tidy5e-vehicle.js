@@ -189,7 +189,7 @@ async function editProtection(app, html, data) {
 
     itemContainer.each(function () {
       if ($(this).children().length < 1) {
-        $(this).append(`<span class="notice">This section is empty. Unlock the sheet to edit.</span>`);
+        $(this).append(`<span class="notice">${game.i18n.localize("TIDY5E.EmptySection")}</span>`);
       }
     });
   }
