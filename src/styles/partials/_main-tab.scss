@@ -320,6 +320,15 @@
     padding: 0 8px 0 0;
   }
 
+  .proficiency-row h4 {
+    display: inline;
+  }
+
+  .proficiency-row .config-button {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
   label {
     display: flex;
     justify-content: center;
