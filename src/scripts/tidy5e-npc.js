@@ -1143,7 +1143,7 @@ async function editProtection(app, html, data) {
     }
 
     if (itemContainer.children().length < 1) {
-      itemContainer.append(`<span class="notice">This section is empty. Unlock the sheet to edit.</span>`);
+      itemContainer.append(`<span class="notice">${game.i18n.localize("TIDY5E.EmptySection")}</span>`);
     }
   }
 }
