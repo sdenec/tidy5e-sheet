@@ -1,3 +1,7 @@
+### 0.9.17
+
+- Bug fix: Fix tool proficiency layout ty to @mhilbrunner
+
 ### 0.9.15-16
 
 - Applied css fix from https://github.com/sdenec/tidy5e-sheet/pull/761 comment
