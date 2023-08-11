@@ -129,7 +129,7 @@
   "TIDY5E.OriginSummaryConfig": "Herkunftskonfiguration",
 
   "TIDY5E.LevelBump": "Wirkung vom nächsten Grad",
-  "TIDY5E.LevelBumpTooltip": "Den Zauber mit  wirken, als wäre der verbrauchte Zauberplatz einen Grad höher.",
+  "TIDY5E.LevelBumpTooltip": "Den Zauber wirken, als wäre der verbrauchte Zauberplatz einen Grad höher.",
 
   "TIDY5E.Settings.GlobalLabel": "Global",
   "TIDY5E.Settings.DebugLabel": "Debug",
