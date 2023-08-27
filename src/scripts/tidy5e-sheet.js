@@ -685,9 +685,11 @@ async function tidyCustomEffect(actor, changes) {
             break;
           }
         }
-        await actor.update({
-          "flags.tidy5e-sheet.maxPreparedSpells": getProperty(actor, changeMaxPreparedList.key),
-        });
+        // Removed for module incompatibility
+        // await actor.update({
+        //   "flags.tidy5e-sheet.maxPreparedSpells": getProperty(actor, changeMaxPreparedList.key),
+        // });
+        setProperty(actor, "flags.tidy5e-sheet.maxPreparedSpells", getProperty(actor, changeMaxPreparedList.key));
         return getProperty(actor, changeMaxPreparedList.key);
       } else {
         return undefined;

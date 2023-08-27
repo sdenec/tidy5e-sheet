@@ -1,3 +1,7 @@
+### 0.9.18
+
+- removed `actor.update` on `Tidy5eSheetApplyActiveEffect` function run via `Hooks.on("applyActiveEffect", ...` it was a trick for update the flag, but i'll just remove the max spells feature is bugged anyway. I remove that update hoping it will solve some module compatibility issue.
+
 ### 0.9.17
 
 - Bug fix: Fix tool proficiency layout ty to @mhilbrunner
