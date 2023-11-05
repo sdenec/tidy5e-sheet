@@ -4,12 +4,29 @@
 
 [![Translation status](https://weblate.foundryvtt-hub.com/widgets/tidy5e-sheet/-/287x66-black.png)](https://weblate.foundryvtt-hub.com/engage/tidy5e-sheet/)
 
+# ATTENTION ! The alpha of the new TidySheet is out. I repeat is a alpha so be aware
+
+Tidy 5e Sheets v0.1.0 marks the beginning of Alpha Testing.
+
+If you would like to test out the new Tidy 5e Sheets, you can find Installation instructions here: https://github.com/kgar/foundry-vtt-tidy-5e-sheets#installation
+
+Quick Start: use this URL in your "Install Modules" window: https://github.com/kgar/foundry-vtt-tidy-5e-sheets/releases/latest/download/module.json
+
+These sheets are designed so they can work alongside the current live version of Tidy 5e Sheets.
+The Alpha module is called: Tidy 5e Sheets Kgar Alpha
+
+Note: Alpha testing is focused on core Tidy 5e Sheet functionality and not on module compatibility. This will come later. The goal of Alpha Testing is to be able to declare the sheets working as expected as a standalone module.
+
+During this time, I will be working out any Alpha-specific issues that are found while also continuing my own checklist of tasks.
+You can submit issues here: https://github.com/kgar/foundry-vtt-tidy-5e-sheets/issues - There are no templates yet, so no worries on the formatting.
+
+If you'd like to discuss alpha testing in more freeform format, we can talk here in the discord server in ⁠alpha-testing
+
+Github repo: [https://github.com/kgar/foundry-vtt-tidy-5e-sheets](https://github.com/kgar/foundry-vtt-tidy-5e-sheets)
+
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI, and many many many other features
 
-# The module is in maintenance and will have no active developments, efforts will be made where possible to fix bug fixes. 
-# The module should be rewritten for good from scratch.
-# A bounty has been opened on the League's server for anyone interested in offering financial compensation.
-# Or if you want to take ownership directly contact me (4535992) without any problems on the foundryvtt discord server.
+# At the conclusion of the testing phase of the alpha version , the module will be registered with the same id to allow a less "cumbersome" transition.
 
 ## Installation
 
