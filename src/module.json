@@ -96,8 +96,8 @@
         "id": "dnd5e",
         "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
         "compatibility": {
-          "minimum": "2.2.1",
-          "verified": "2.2.1"
+          "minimum": "2.4.0",
+          "verified": "2.4.0"
         }
       },
       {
