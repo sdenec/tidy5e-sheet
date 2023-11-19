@@ -179,7 +179,7 @@
                 </span>
             </span>
             <span class="origin-summary-text" data-tooltip="{{system.details.alignment}}" data-placeholder="{{ localize 'DND5E.Alignment' }}"><h4>{{system.details.alignment}}</h4></span>
-            <span class="origin-summary-text source source-info" data-tooltip="{{system.details.source}}" data-placeholder="{{ localize 'DND5E.Source' }}"><h4>{{system.details.source}}</h4></span>
+            <span class="origin-summary-text source source-info" data-tooltip="{{system.details.source.label}}" data-placeholder="{{ localize 'DND5E.Source' }}"><h4>{{system.details.source.label}}</h4></span>
           </li>
           <li class="proficiency">
             {{ localize 'DND5E.Proficiency' }}: {{numberFormat system.attributes.prof decimals=0 sign=true}}
