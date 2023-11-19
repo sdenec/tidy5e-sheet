@@ -1,3 +1,8 @@
+### 0.10.0 [BREAKING CHANGES]
+
+- Set Dnd5e 2.4.0 as minimum level
+- Start Dnd5e 2.4.0 Integration, always ty to @kgar
+
 ### 0.9.19 
 
 - Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/714 , ty to @kgar
