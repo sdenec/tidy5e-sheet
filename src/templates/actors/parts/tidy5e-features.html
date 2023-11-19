@@ -86,7 +86,7 @@
           <i class="fas fa-bolt" title="{{localize 'DND5E.Charged'}}"></i>
 
           {{else if ctx.hasUses}}
-          <input class="uses-value" name="system.uses.value" type="text" value="{{item.system.uses.value}}"> / 
+          <input class="uses-value" name="system.uses.value" type="text" value="{{item.system.uses.value}}"> /
           <input class="uses-max" name="system.uses.max" type="text" value="{{item.system.uses.max}}">
           {{else unless @root.isNPC}}
           <a class="addCharges" value="Add">Add</a>
@@ -98,11 +98,11 @@
           {{item.labels.activation}}
           {{/if}}
         </div>
-        
+
         {{#unless @root.isVehicle}}
         {{#if @root.isCharacter}}
         <div class="item-detail item-source">
-          <span class="truncate" title="{{item.system.source}}">{{item.system.source}}</span>
+          <span class="truncate" title="{{item.system.source.label}}">{{item.system.source.label}}</span>
         </div>
         <div class="item-detail item-requirements">
           <span class="truncate" title="{{item.system.requirements}}">{{item.system.requirements}}</span>
@@ -141,7 +141,7 @@
         {{else}}
           {{#if @root.isCharacter}}
           <div class="item-detail item-source">
-            <span class="truncate" title="{{item.system.source}}">{{item.system.source}}</span>
+            <span class="truncate" title="{{item.system.source.label}}">{{item.system.source.label}}</span>
           </div>
           <div class="item-detail item-requirements">
             <span class="truncate" title="{{item.system.requirements}}">{{item.system.requirements}}</span>
@@ -166,9 +166,9 @@
         {{#if @root.owner}}
         <div class="item-controls flexrow" {{#if @root.classicControlsDisabled}} style="display:none" {{/if}}>
           {{#if ctx.attunement}}
-            <a class="item-control item-attunement 
+            <a class="item-control item-attunement
               {{#if (eq item.system.attunement 2) }}active{{/if}} {{item.attunement.cls}}" title="{{localize item.attunement.title}}">
-              <i class="fas fa-sun"></i> 
+              <i class="fas fa-sun"></i>
               <span class="control-label">
                 {{#if (eq item.system.attunement 2) }}
                   {{localize "TIDY5E.Deattune"}}
@@ -182,10 +182,10 @@
 
           <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
             {{#if (eq ctx.toggleClass 'active')}}
-              <i class="fas fa-user-alt"></i> 
+              <i class="fas fa-user-alt"></i>
               <span class="control-label">{{localize "TIDY5E.Unequip"}}</span>
             {{else}}
-              <i class="fas fa-user-alt inactive"></i> 
+              <i class="fas fa-user-alt inactive"></i>
               <span class="control-label">{{localize "TIDY5E.Equip"}}</span>
             {{/if}}
           </a>
