@@ -301,7 +301,7 @@ export function Tidy5eExhaustionCreateActiveEffect(effect, data, id) {
     game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectsEnabled") == "cub"
   ) {
     let actor = game.actors.get(effect.parent._id);
-    let effectName = effect.label;
+    let effectName = effect.name;
     if (effectName.includes(game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustom"))) {
       debug("tidy5e-exhaustion | createActiveEffect | effectName = " + effectName);
       if (actor.type === "character") {
@@ -333,7 +333,7 @@ export function Tidy5eExhaustionDeleteActiveEffect(effect, data, id) {
     const actor = game.actors.get(effect.parent._id);
     const effectName = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustom");
     const levels = game.settings.get(CONSTANTS.MODULE_ID, "exhaustionEffectCustomTiers");
-    const effectLabel = effect.label;
+    const effectLabel = effect.name;
     if (effectLabel.includes(effectName)) {
       const tokens = canvas.tokens.placeables;
       const index = tokens.findIndex((x) => x.actor._id === effect.parent._id);

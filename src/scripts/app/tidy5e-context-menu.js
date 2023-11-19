@@ -231,7 +231,7 @@ const _getActiveEffectContextOptions = function (effect) {
   {
     name: "DND5E.ContextMenuActionDuplicate",
     icon: "<i class='fas fa-copy fa-fw'></i>",
-    callback: () => effect.clone({label: game.i18n.format("DOCUMENT.CopyOf", {name: effect.label})}, {save: true})
+    callback: () => effect.clone({label: game.i18n.format("DOCUMENT.CopyOf", {name: effect.name})}, {save: true})
   },
   {
     name: "DND5E.ContextMenuActionDelete",
@@ -261,7 +261,7 @@ const _getActiveEffectContextOptions = function (effect) {
       name: "DND5E.ContextMenuActionDuplicate",
       icon: "<i class='fas fa-copy fa-fw'></i>",
       callback: () =>
-        effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.label }) }, { save: true }),
+        effect.clone({ label: game.i18n.format("DOCUMENT.CopyOf", { name: effect.name }) }, { save: true }),
     });
     options.push({
       name: "DND5E.ContextMenuActionDelete",
