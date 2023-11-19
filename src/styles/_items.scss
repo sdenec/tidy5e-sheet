@@ -169,11 +169,33 @@
         border-left: 1px solid var(--t5e-faint-color);
         line-height: 20px;
         font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.25em;
 
         input {
           height: 20px;
           background: transparent;
           font-weight: 400;
+        }
+
+        span {
+          padding-inline: 4px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-weight: 400;
+        }
+
+        .config-button {
+          display: none;
+          font-size: var(--font-size-14);
+          font-weight: normal;
+          padding-inline-end: 0.25em;
+        }
+
+        &:hover .config-button {
+          display: block;
         }
 
         select {
