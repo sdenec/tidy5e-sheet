@@ -1,3 +1,7 @@
+### 0.9.19 
+
+- Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/714 , ty to @kgar
+
 ### 0.9.18
 
 - removed `actor.update` on `Tidy5eSheetApplyActiveEffect` function run via `Hooks.on("applyActiveEffect", ...` it was a trick for update the flag, but i'll just remove the max spells feature is bugged anyway. I remove that update hoping it will solve some module compatibility issue.
