@@ -198,7 +198,18 @@
 								</ul>
 							</li>
 						</ul>
+                        <span class="creature-type" title="{{labels.type}}">
+                        {{#if (and system.details.race.id owner)}}
+                            <a class="config-button" data-action="type" title="{{localize 'DND5E.CreatureTypeConfig'}}">
+                                {{labels.type}}
+                            </a>
+                        {{else}}
+                            {{labels.type}}
+                        {{/if}}
+                        </span>
+                        {{#if system.details.race}}
                         <span class="origin-summary-text" data-tooltip="{{system.details.race}}" data-placeholder="{{ localize 'DND5E.Race' }}"><h4>{{system.details.race}}</h4></span>
+                        {{/if}}
 						<span class="origin-summary-text" data-tooltip="{{system.details.background}}" data-placeholder="{{ localize 'DND5E.Background' }}"><h4>{{#if labels.background}}{{labels.background}}{{else}}{{system.details.background}}{{/if}}</h4></span>
 						<span class="origin-summary-text" data-tooltip="{{system.details.alignment}}" data-placeholder="{{ localize 'DND5E.Alignment' }}"><h4>{{system.details.alignment}}</h4></span>
 					</li>

@@ -166,6 +166,10 @@
   // position: relative;
   z-index: 100;
 
+  .creature-type .config-button:hover {
+    color: var(--t5e-primary-accent);
+  }
+
   li {
     flex: 1;
     margin-right: 0.5rem;
